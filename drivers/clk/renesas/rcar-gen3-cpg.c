@@ -172,6 +172,15 @@ struct cpg_z_clk {
 
 #define to_z_clk(_hw)	container_of(_hw, struct cpg_z_clk, hw)
 
+/*
+ * Z2: SYS-CPU divider 2 on V3H seems to be fixed to 1/2 and 1 on V3M.
+ * It is not 100% clear from the User's Manual but at least
+ * FRQCRC register is missed on V3x.
+ */
+#define Z2_SYSCPU_1	BIT(5)	/* Z2 is fixed with SYS-CPU divider 2 set to 1   - V3M */
+#define Z2_SYSCPU_2	BIT(6)	/* Z2 is fixed with SYS-CPU divider 2 set to 1/2 - V3H */
+static u32 cpg_quirks;
+
 static unsigned long cpg_z_clk_recalc_rate(struct clk_hw *hw,
 					   unsigned long parent_rate)
 {
@@ -179,8 +188,16 @@ static unsigned long cpg_z_clk_recalc_rate(struct clk_hw *hw,
 	unsigned int mult;
 	u32 val;
 
-	val = readl(zclk->reg) & zclk->mask;
-	mult = 32 - (val >> __ffs(zclk->mask));
+	if (cpg_quirks & Z2_SYSCPU_1) {
+		/* SYS-CPU divider 2 is 1 == 32/32) */
+		mult = 32;
+	} else if (cpg_quirks & Z2_SYSCPU_2) {
+		/* SYS-CPU divider 2 is 1/2 == 16/32) */
+		mult = 16;
+	} else {
+		val = readl(zclk->reg) & zclk->mask;
+		mult = 32 - (val >> __ffs(zclk->mask));
+	}
 
 	return DIV_ROUND_CLOSEST_ULL((u64)parent_rate * mult,
 				     32 * zclk->fixed_div);
@@ -308,7 +325,6 @@ static const struct clk_div_table cpg_rpcsrc_div_table[] = {
 static const struct rcar_gen3_cpg_pll_config *cpg_pll_config __initdata;
 static unsigned int cpg_clk_extalr __initdata;
 static u32 cpg_mode __initdata;
-static u32 cpg_quirks __initdata;
 
 #define RCKCR_CKSEL	BIT(1)		/* Manual RCLK parent selection */
 
@@ -317,6 +333,14 @@ static const struct soc_device_attribute cpg_quirks_match[] __initconst = {
 	{
 		.soc_id = "r8a7796", .revision = "ES1.0",
 		.data = (void *)(RCKCR_CKSEL),
+	},
+	{
+		.soc_id = "r8a77970",
+		.data = (void *)(Z2_SYSCPU_1),
+	},
+	{
+		.soc_id = "r8a77980",
+		.data = (void *)(Z2_SYSCPU_2),
 	},
 	{ /* sentinel */ }
 };
