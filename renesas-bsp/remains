@@ -1,0 +1,291 @@
+bc7a3426fc67 i2c:rcar: add DMA continuous support
+9e88120780ae arm64: dts: renesas: add DMA continuous mode for I2C driver on R-Car V4H
+7c1c5987ef41 ASoC: ak4619: Fix spelling, spacing and indentation errors
+b8ca63b496f2 ASoC: ak4619: Add hw_constraint rule for Sampling Rate
+e6fc262fa0e3 ASoC: ak4619: Fix bit clock polarity setting
+89ac4358ab25 ASoC: ak4619: Correct the setting for SND_SOC_DAIFMT_DSP_B
+4ba8444c28a3 ASoC: ak4619: Separate playback and capture formats
+b0aa2c59d513 ASoC: ak4619: Add some missing supported sampling rates
+f6d5db3d5736 clk: renesas: r8a779h0-cpg-mssr: Update clock source of ISP device
+a570945a144e clk: renesas: r8a779g0-cpg-mssr: Update clock source of VISIONIP module
+5b328d015d20 arm64: dts: renesas: r8a77980: Add UIO system_ram device on V3H1
+8fb9f82e224b drm: bridge: ti-sn65dsi86: Add checking to detect bridge device connection failure
+e5c8088e2751 clk: renesas: r8a779g0: Fix ISPCS clocks
+ab289abbf294 clk: renesas: r8a779g0: Fix ISP clocks
+c9f097ef9ba0 clk: renesas: r8a779g0: Fix IMP clocks
+1465bd4ef933 clk: renesas: cpg-mssr: Add VCBUS support for R-Car V4H
+3b8c9abef484 arm64: dts: renesas: r8a779g0-gray-hawk: Rename PAP region
+c4e59dfb3a02 arm64: dts: renesas: r8a779g0-gray-hawk: Allocate a 40-bit reserved memory region for multiple IPs
+4f8977e36928 arm64: dts: renesas: r8a779g0-whitehawk: add an 40-bit reserved memory region for multiple IPs
+0deac6146b51 arm64: dts: renesas: r8a779g0-gray-hawk: Rename PAP region
+1eb3fdaa1ffc arm64: dts: renesas: r8a779g0-gray-hawk: Allocate a 40-bit reserved memory region for multiple IPs
+c25a89e05e84 arm64: dts: renesas: r8a779g0-whitehawk: add an 40-bit reserved memory region for multiple IPs
+da47c8b69492 media: rcar-vin: rcar-csi2: Fix timeout issue on R-Car V3H
+aab26071cf68 arm64: dts: r8a779h0: Add GSX device node
+1054b8f6dd40 clk: renesas: r8a779h0: Add ZG clock
+e7fbf9a716ff arm64: dts: renesas: r8a779h0-gray-hawk-uio: Disable QoS Native device
+caff53d84cb9 arm64: dts: renesas: r8a779h0: Correct compatible string for Audio on R-Car V4M
+6b52170d409b arm64: dts: renesas: r8a779h0: Add QOS devices for V4M Ver1.0
+9fdeed193dce arm64: dts: renesas: r8a779h0: Add PCIe support
+b8ec226fcba2 clk: renesas: r8a779h0: Add PCIe clock
+157f14a1041f arm64: dts: renesas: Add alias for I2C on R-Car V4M SoC.
+8f17f2f5a6e1 arm64: dts: renesas: Add DMA support for I2C on R-Car V4M.
+eb9fd742b012 i2c: rcar: Add fast mode plus support for r8a779h0 (R-Car V4M)
+86ff25559c5a i2c: rcar: Add support for r8a779h0 (R-Car V4M)
+03c58f3acc28 arm64: dts: renesas: r8a779h0-gray-hawk-uio: Disable native devices
+eedea8792447 arm64: dts: renesas: r8a779h0-uio: Add GFX UIO device
+4600b00624b0 arm64: dts: renesas: r8a779h0-uio: Add VDSP UIO devices (IMP)
+539830e1b2ad arm64: dts: renesas: r8a779h0-uio: Update power domain for IMP UIO
+6de7c10c2b7a pwm: tpu: Add compatible string for V4M
+fd446b2b77ff arm64: dts: renesas: Add node to support PWM on R-Car V4M
+f14b9cf51ca5 dt-bindings: watchdog: renesas-wdt: Add support for R-Car V4M
+85e57ecb1303 arm64: dts: renesas: Add node to support RWDT on R-Car V4M
+f7f0636f4392 spi: spi-sh-msiof: Add generic structural data for MSIOF on R-Car Gen4.
+cf638184c8e5 arm64: dts: renesas: Add node to support MSIOF on R-Car V4M
+a6fc1fd71314 arm64: dts: renesas: gray-hawk-cpu: Add QSPI FLASH support
+675bcc5d8cbb net: ethernet: renesas: ravb: Returns an error value when gPTP is not used
+e24abd13781d clk: renesas: r8a779h0: Add CMT/TMU clocks
+6fc80bb1190a arm64: dts: renesas: Add node to support Timer(TMU0/1/2/3/4)
+7ebb128dae4f arm64: dts: renesas: Add node to support Timer(CMT0/1/2/3)
+78747ae2a389 arm64: boot: dts: renesas: r8a779h0-gray-hawk-uio: Disable display native devices
+cbee4f577a1e arm64: boot: dts: renesas: r8a779h0-gray-hawk-uio: Disable DSI0 Native device
+c4427579e253 media: rcar-vin: rcar-csi2: Add compatible string for R8A779H0 SoC
+36a34468fc43 media: max96712: Add compatible string for Max96724 Deserializer
+3c87ac93f334 arm64: dts: renesas: Update FBC for FieldBIST devices
+ee7a653d13e3 arm64: dts: renesas: Disable DMAE-RT Native devices on UIO
+100377ab7d0c arm64: dts: renesas: r8a779h0: Update VIN driver nodes
+3bdc50fa6840 arm64: dts: renesas: gray-hawk-csi-dsi: Change support to Max96724 Deserializer
+61cf5c9632b3 arm64: dts: renesas: r8a779h0: grayhawk: Add R-Car Sound support
+4fa0d1c5fd0e arm64: dts: renesas: r8a779h0-gray-hawk: Add setting for Display
+973e01582372 arm64: defconfig: Enable AK4619 codec support
+8d490596fc9a clk: renesas: r8a779h0: Add FCPVD0 clock
+61b876a8fa2c drm: rcar-du: rcar_mipi_dsi: Add R8A779H0 SoC support
+f2fc3314dab2 drm: rcar-du: Add R8A779H0 SoC support
+3396171734c8 drm: rcar-du: rcar_mipi_dsi: fix PHY lock bit mistake in CLOCKSET1
+e7941f29016d drm: rcar-du: rcar_mipi_dsi: fix VCLKSET set erroneously with OR to WRITE
+aa6f30405fe8 pinctrl: renesas: r8a779h0: Add missing MSIOF5
+260abc4da05b arm64: boot: dts: renesas: r8a779h0-uio: Update power domain for TSI UIO devices
+5fed936874d8 ASoC: Add ak4619 codec support
+e39e4c618a8d arm64: dts: renesas: Update FBC for FieldBIST devices
+e43badd592ed arm64: dts: renesas: Disable DMAE-RT Native devices on UIO
+47e1a870dd58 arm64: dts: renesas: Add node to support AVB1/2
+ab5fb7a33bda pinctrl: renesas: r8a779h0: Add missing IP2SR5 setting
+b0cfb2f3bf96 arm64: dts: renesas: Disable CSI native driver
+92231fae0c88 arm64: dts: renesas: Remove device not include UIO devices
+56ea83addba9 arm64: dts: renesas: Enable interrupts ISP devices
+3d505e7e548f arm64: dts: renesas: Update ISP UIO devices
+6b5dccb3318c arm64: dts: renesas: r8a779h0-gray-hawk: add reserved memory region for PAP
+159005d705de arm64: dts: renesas: r8a779h0-gray-hawk: add reserved memory region for Vision DSP{0..3}
+988d48e78931 arm64: dts: renesas: Disable PRR UIO device
+069ead18e7a2 arm64: dts: renesas: Update PAP UIO device
+6286799c11e1 arm64: dts: renesas: Update power-domains property TISP UIO devices
+f6bed07fbeac arm64: dts: renesas: Update FCPC UIO device
+69fcef99c970 arm64: dts: renesas: Update FBA UIO devices
+f4ed1755789b arm64: dts: renesas: Update for IMP UIO devices
+dfe3be47fc87 arm64: dts: renesas: Update power domains for IMR UIO devices
+33d0948c322f arm64: dts: renesas: r8a779h0: Add DMAC node support for R8A779H0 V4M
+68b6cf5b254f dt-bindings: renesas,rcar-dmac: Add r8a779h0 support
+e81eaa900756 dmaengine: rcar-dmac: Add support for R-Car V4M
+35db8eade3b5 arm64: dts: renesas: r8a779h0: Fix clock assignment for GPIO
+7fd6806b2985 clk: renesas: r8a779h0-cpg-mssr: Add define for IMP Slim UIO device
+5e48f5c0c4dc arm64: dts: renesas: Add IMP Slim DMA UIO devices
+5f1d86cc2a8d arm64: dts: renesas: Update power domain for iVCP1E UIO devices
+5469d592fc58 arm64: dts: renesas: Update ISP UIO module to avoid conflict for UIO devices
+36bd9047a0e1 arm64: dts: renesas: Update power domain for UIO devices
+20ce13dce3e4 arm64: dts: renesas: Add UIO devices support for R8A779H0 V4M
+f717557e9947 clk: renesas: r8a779h0: Add UIO devices clock
+0cf550f4b998 PCI: pci-epf-test: Added WQ_UNBOUND flag to alloc_workqueue()
+478beadd7760 clk: renesas: r8a779h0: Add CANFD clock
+6a0b9ce0d579 clk: renesas: r8a779h0: Add Thermal module clock
+9caf04f15267 clk: renesas: r8a779h0: Add Audio clocks
+384727d779a1 clk: renesas: r8a779h0: Add CSI-2 clocks
+66a73d1a3c16 clk: renesas: r8a779h0: Add VIN clocks
+32397139103a clk: renesas: r8a779h0: Add TPU clock
+9800531f0188 clk: renesas: r8a779h0: Add PWM clock
+08d67c3021ba clk: renesas: r8a779h0: Add RPC-IF clock
+ef0e0b4e6165 clk: renesas: r8a779h0: Add SDHI clocks
+d10e0e0da51a clk: renesas: r8a779h0: Add INTC-EX clock
+eec9ded4943b clk: renesas: r8a779h0: Add MSIOF clocks
+c0bdd7bfcbf6 clk: renesas: r8a779h0: Add SYS-DMAC clocks
+41ae06c7f963 clk: renesas: r8a779h0: Add ISPCS clocks
+7693d3749f41 clk: renesas: r8a779h0: Fix dummy issues
+3a2d955daaab net: ethernet: renesas: ravb: Remove PTP initialize in ravb_open()
+fa8a15271377 net: ethernet: renesas: ravb: Fix Null pointer when getting parameters with ethtool
+8c977b4d6d61 net: ethernet: renesas: rtsn: Fix setting wrong PHY address
+82035924e9ca can: rcar_canfd: Add support for V4M SoC
+93a2c7aabc35 can: rcar_canfd: Use generic name for resources
+a4b78a81b5a9 dt-bindings: can: renesas,rcar-canfd: Document R-Car V4M support
+08b45fb10b1b dt-bindings: thermal: rcar-gen3-thermal: Add r8a779h0 support
+2b326677da85 thermal: rcar_gen3_thermal: Add R-Car V4M support
+f408cb16a854 arm64: dts: renesas: r8a779g0: Expand the addr_space region of PCIe Endpoint
+a1fd5deedc01 PCI: pci-epf-test: Change target code for calculating transfer performance
+e9ee03a5a60e misc: pci-endpoint-test: A transfer size of 4 Mbytes or more can be specified.
+6ad9d598947d PCI: pci-epf-test: A transfer size of 4 Mbytes or more can be specified
+6854fc735147 pinctrl: renesas: r8a779h0: Use full description of reserved fields
+09d316980e2e pinctrl: renesas: Add support for 1.8V/2.5V I/O voltage levels
+273c7cbc83fc pinctrl: renesas: Add generic support for resizable buses
+02c3ddcac3df pinctrl: renesas: Add generic support for pin group subsets
+2ca2fb4f23b5 pinctrl: renesas: r8a779h0: Add Audio pins, groups, functions
+7fd4fd580f6e pinctrl: renesas: r8a779h0: Add PCIe pins, groups, functions
+609f50361230 pinctrl: renesas: r8a779h0: Add CANFD pins, groups, functions
+3ff2c00df1e4 pinctrl: renesas: r8a779h0: Add PWM/TPU pins, groups, functions
+723fc666517e pinctrl: renesas: r8a779h0: Add MSIOF pins, groups, functions
+a9e85bd230ae pinctrl: renesas: r8a779h0: Add I2C pins, groups, functions
+f26cfa8de4a2 pinctrl: renesas: r8a779h0: Add HSCIF pins, groups, functions
+866f96d51597 pinctrl: renesas: r8a779h0: Add SCIF pins, groups, functions
+e4b8eaeee97e pinctrl: renesas: r8a779h0: Add RPC pins, groups, functions
+fd296ffd2d35 pinctrl: renesas: r8a779h0: Add SD/MMC pins, groups, functions
+15f50e84307a pinctrl: renesas: r8a779h0: Add Ethernet AVB pins, groups, functions
+26c5d6a2ee57 pinctrl: renesas: Initial R8A779H0 (R-Car V4M) PFC support
+144e51aa3296 pinctrl: renesas: Add R8A779H0 (R-Car V4M) config
+27bec61984ae arm64: defconfig: Enable R8A779H0 SoC
+42c6d5d52539 arm64: dts: renesas: r8a779h0: Sort IPMMU driver nodes
+23b30a5e112b arm64: dts: renesas: r8a779h0: Add CA76 operating points
+05671a26cda5 arm64: dts: renesas: r8a779h0: Add CPU core clocks
+d216905a87bf arm64: dts: renesas: r8a779h0: Add CPUIdle support
+e9d9ac4ff97f arm64: dts: renesas: r8a779h0: Add secondary CA76 CPU cores
+06b3cba25fbd arm64: dts: renesas: r8a779h0: Add L3 cache controller
+dbba32eebda4 arm64: dts: renesas: r8a779h0: Add IPMMU driver nodes
+ee4364f9715c arm64: dts: renesas: gray-hawk, gray-hawk-cpu: Add SCIF/HSCIF support
+989bd625484f arm64: dts: renesas: r8a779h0: Add SCIF/HSCIF node
+b12b57ca7e3d arm64: dts: gray hawk: Enable FAKRA connector
+56b79b145b9d arm64: dts: renesas: gray-hawk-csi-dsi: Add and connect MAX96712
+43cf6cea9838 arm64: dts: renesas: r8a779h0: Add VIN driver nodes
+b2465b6d0efc arm64: dts: renesas: r8a779h0: Add RPC node
+32419982823d arm64: dts: renesas: gray-hawk-cpu: Add eMMC support
+28967c2a80c3 arm64: dts: renesas: r8a779h0: Add SD/MMC node
+3c4ea796c75d arm64: dts: renesas: r8a779h0: Add thermal support
+6c2f3189955b arm64: dts: renesas: grayhawk: Add CANFD support
+1542b2a6219a arm64: dts: renesas: r8a779h0: Add CAN-FD node
+e4e2c486b883 arm64: dts: renesas: r8a779h0: Add Ethernet-AVB support
+31968a5bf2b7 ravb: Support ravb driver for R-Car V4M
+f96f80b3a67a arm64: dts: renesas: r8a779g0: Add a new property for Resizable BAR of PCIe
+e93070510f22 arm64: dts: renesas: r8a779g0: Add PCIe1 clock to PCIe0 node for 4lane
+31a47e8dd8b4 arm64: dts: renesas: r8a779g0: PCIE channels and lanes are selectable.
+c8b7ea3d8000 arm64: dts: renesas: r8a779g0: Add PCIe-ch1 phy access.
+916f9cb5b400 clk: renesas: r8a779h0: Add EtherAVB clocks
+804088707850 clk: renesas: r8a779h0: Add PFC/GPIO clocks
+d4155db1296c clk: renesas: r8a779h0: Add I2C clocks
+d7afbb162f77 clk: renesas: r8a779h0: Add watchdog clock
+351e37ace124 clk: renesas: cpg-mssr: Add support for R-Car V4M
+4ff0b1b671cb soc: renesas: r8a779h0-sysc: Add r8a779h0 support
+d498e954457d soc: renesas: r8a779g0-sysc: Remove redundant code
+a24cc039144d soc: renesas: rcar-gen4-sysc: Introduce R-Car Gen4 SYSC driver
+2a031845abb3 media: rcar-vin: rcar-csi2: Add D-PHY setting for R8A779H0 SoC
+a2d284f9c799 media: rcar-vin: rcar-isp: Add support for R8A779H0 SoC
+df19a197a11a media: rcar-vin: Add support for R-Car R8A779H0 SoC
+91efc4734636 media: rcar-vin: Correct the name of R8A779G0 product to R-Car V4H
+a2a06db37e6b iommu/ipmmu-vmsa: Add Renesas R8A779H0 (R-Car V4M) support
+6592b33cb795 dt-bindings: iommu: renesas,ipmmu-vmsa: add r8a779h0 support
+f029d531a39d dt-bindings: serial: sh-sci: Document r8a779h0 bindings
+8471c5bb3f14 dt-bindings: media: rcar-vin: Document R8A779H0 bindings
+48b89c702c78 media: dt-bindings: media: Add macros for video interface bus types
+28f76220f249 dt-bindings: power: renesas,rcar-sysc: Document r8a779h0 SYSC bindings
+5316857106d3 arm64: dts: renesas: r8a779h0: Add GPIO nodes
+9d58e081d114 arm64: dts: renesas: gray-hawk: Add Ethernet sub-board
+479990bf87e1 arm64: dts: renesas: gray-hawk: Add CSI/DSI sub-board
+3fe02e884ee8 arm64: dts: renesas: gray-hawk: Add I2C0 and EEPROMs
+9e6933be498e arm64: dts: renesas: r8a779h0: Add I2C nodes
+ededd9a075c9 arm64: dts: renesas: gray-hawk-cpu: Add serial port pin control
+48fb71f00a32 arm64: dts: renesas: r8a779h0: Add pinctrl device node
+8cf75d108247 arm64: dts: renesas: Add Renesas Gray Hawk boards support
+6e69371c6a21 arm64: dts: renesas: Add Renesas R8A779H0 V4M SoC support
+e0c20b948e7f arm64: dts: renesas: r8a779g0: Add a new property for Resizable BAR of PCIe
+c13f066be2f6 arm64: dts: renesas: r8a779g0: Add PCIe1 clock to PCIe0 node for 4lane
+773bcf1b7574 arm64: dts: renesas: r8a779g0: PCIE channels and lanes are selectable.
+fc3d3ef7e0b8 arm64: dts: renesas: r8a779g0: Add PCIe-ch1 phy access.
+d66e491f398a PCI: dwc: rcar-gen4: Add support for Resizable BAR
+c8f625bc2254 PCI: dwc: rcar-gen4: Set up BAR to work with 64-bit
+50c884de7a00 PCI: dwc: rcar-gen4: Add pcie firmware update
+c02a5e045e06 PCI: dwc: rcar-gen4: Change the power operation method for 4lane.
+1365bd5899c9 media: i2c: Fix timeout GMSL2 link establish issue of MAX96712
+f7a5c39b20d8 dt-bindings: clock: Add R8A779H0 V4M CPG Core Clock Definitions
+ccde61707b3d dt-bindings: power: Add R8A779H0 V4M SYSC power domain definitions
+e1d847bfd3ca dmaengine: rcar-dmac: Add repeat mode support
+94b086621568 can: rcar_canfd: rcar_canfd_handle_global_receive(): fix IRQ storm on global FIFO receive
+918fab2d8d90 thermal: rcar_gen3_thermal: Add R-Car V4H support
+98721f4180de PCI: dwc: rcar-gen4: Add support for Resizable BAR
+7495f2cb37fb PCI: dwc: rcar-gen4: Set up BAR to work with 64-bit
+c2a47910ed98 arm64: dts: renesas: r8a779g0: Add a new property for Resizable BAR of PCIe
+6a4054c452ec PCI: dwc: rcar-gen4: Add pcie firmware update
+c92b08f78a4f PCI: dwc: rcar-gen4: Change the power operation method for 4lane.
+5f1909e07a3f arm64: dts: renesas: r8a779g0: Add PCIe1 clock to PCIe0 node for 4lane
+578a79fb7d1d arm64: dts: renesas: r8a779g0: PCIE channels and lanes are selectable.
+e821b0fa8382 arm64: dts: renesas: r8a779g0: Add PCIe-ch1 phy access.
+bd5e927aa7eb media: i2c: Fix timeout GMSL2 link establish issue of MAX96712
+6346917cdaa4 media: rcar-csi2: Add interface for C-PHY Analog pin swap on R-Car V4H
+51f0028e4e9c media: rcar-csi2: Add interface for HS Receiver Specific on R-CarV4H
+923c4962b355 media: rcar-csi2: Update C-PHY start-up sequence for R-Car V4H
+96f790ecae56 media: rcar-csi2: Add register modifying helpers
+73be8101dbbe dt-bindings: media: Add specific CSI-2 information for R-Car V4H
+c86f32e3457c dt-bindings: media: Add r8a779g0 support
+11567ce00b4f arm64: defconfig: Update config for other SoCs PCIe driver
+6fa7fc93f2b2 arm64: dts: renesas: r8a779g0: Add PCIe nodes for ch0 endpoint and ch1
+f5f257bbef94 arm64: dts: renesas: r8a779g0-whitehawk: Add power-source setting for ethernet
+b879ce6ca34a arm64: dts: renesas: r8a779g0-whitehawk: Add specific CSI-2 information for R-Car V4H
+42fe03cf3d04 arm64: dts: renesas: r8a779g0: Adding Phy ranges in PCIe node
+638b5616ce65 arm64: dts: renesas: r8a779g0: Fix PCIe node max link speed
+fbeeac1cc8ca arm64: dts: renesas: r8a779g0: Fix PCIe node interrupt settings
+850f6f7ae044 arm64: dts: renesas: r8a779g0: white-hawk: Enable PCIe Host ch0
+e150973fa985 arm64: dts: renesas: r8a779g0: Add PCIe Host and Endpoint nodes
+c76937ee4e4e arm64: dts: renesas: r8a779g0-whitehawk: Change the reserved memory address for Vision DSP{0..3} and PAP regions
+ac051eb7e36f pinctrl: renesas: r8a779g0: Add POC4-7 definition and setting
+9c63a61e8dc6 drm: bridge: ti-sn65dsi86: Improve get_connector timing
+3df1d5f023b1 soc: renesas: r8a779g0-sysc: Always-on A3IR, A2CN0, A1CNN0
+efd1efab854c PCI: dwc: rcar-gen4: Update the initial setting for PCIe
+cda3dd982572 arm64: defconfig: Updated for RCAR_GEN4 PCIe driver
+46fef5911f11 arm64: defconfig: Enable RCAR_GEN4 PCIe driver
+f21055c5aad7 PCI: dwc: rcar-gen4: Implement source code for PCIe 4.0 based on the old Renesas PCIe driver
+cf5e32902f26 PCI: dwc: renesas: Remove the old PCIe driver
+8284a168c63c PCI: dwc: rcar-gen4-host: Fix kernel panic when PCIe link is downgraded
+fb78012bdc47 PCI: dwc: rcar-gen4-host: Assign MAX_MSI_IRQS to num_vectors
+0a0d7acbb5f7 PCI: dwc: rcar-gen4: Add support for PCIe x4 lanes
+528863ed8974 PCI: dwc: rcar-gen4: Fix Gen4 PCIe reset timing
+1b88d0db602b PCI: dwc: rcar-gen4: Add check speed function for PCIe 4.0
+d45f0099b501 tools: PCI: Add 't' command line option to support expired timer
+6e6d099110f7 PCI: pci-epf-test: Add USE_TIMER handling
+25c2de2a9d4d misc: pci-endpoint-test: Add PCITEST_FLAGS_USE_TIMER flag
+9cc98db499af PCI: dwc: rcar-gen4: Add workaround for V4H
+b0414cb9ac6a PCI: endpoint: functions/pci-epf-test: Fix dma_chan direction
+bbc6b81890e1 PCI: endpoint: Enable DMA tests for endpoints with DMA capabilities
+488918782d16 MAINTAINERS: Update PCI DRIVER FOR RENESAS R-CAR for R-Car Gen4
+b05edf1787e1 PCI: dwc: endpoint: Logical revert about struct pci_epc_ops
+38d3aa73c9cc PCI: dwc: rcar-gen4: Add R-Car Gen4 PCIe Endpoint support
+f682fda7c314 PCI: dwc: rcar-gen4: Add R-Car Gen4 PCIe Host support
+819b9bfdf349 PCI: dwc: Add support for triggering legacy IRQs
+dbf40e6c69f6 PCI: designware-ep: Expose dw_pcie_ep_exit() to module
+20ea0dc95135 PCI: Add PCI_EXP_LNKCAP_MLW macros
+04da9301d1fe dt-bindings: PCI: renesas: Add R-Car Gen4 PCIe Endpoint
+f43a3ab927ec dt-bindings: PCI: renesas: Add R-Car Gen4 PCIe Host
+ccedc91c42ac PCI: dwc: logical revert about in dw_handle_msi_irq()
+2656c026b479 PCI: use kernel.h instead of align.h for v5.10.xx
+c8310257b88e PCI and dma: backport from upstream kernel to v5.10.147 for PCIe eDMA
+718f245f523a reset: Fix devm bulk optional exclusive control getter
+513c0f88985a reset: Add reset_control_bulk API
+ad2a1ed888f4 reset: core: fix a kernel-doc markup
+c72af5303abb reset: make shared pulsed reset controls re-triggerable
+611328f8fc4a net: ethernet: renesas: ravb: Fix initialization failed in module state on channel 1/2
+cd6678e10496 net: ethernet: renesas: ravb: Fix Deadlock warning related to EthernetAVB
+b4da13817cb8 net: ethernet: renesas: rtsn: Fix the lack of unregistering PTP device
+846d4ecfc9f9 net: ethernet: renesas: rcar_gen4_ptp: Add a function to unregister the PTP device
+bbb7fb7366c0 drm: bridge: ti-sn65dsi86: Fix memory leak at ti_sn_get_modes()
+d3613e142614 arm64: dts: r8a77980: Update AXI uTLB ID for ACF devices
+657fdfaacb6f arm64: dts: r8a77980: Update AXI uTLB assignment for UIO devices
+d785d96b2961 net: ethernet: renesas: ravb: Fix missing MDIO bus with channel 1/2
+3d02eb8547f1 arm64: dts: renesas: r8a779g0-whitehawk: Change 'no-map' to 'reusable' property
+64aeab9599f3 arm64: dts: renesas: r8a779g0-whitehawk: Increase reverved memory size for Vision DSP{0..3}, PAP
+9cfa746081c7 arm64: dts: renesas: r8a779g0-whitehawk: Adding compatible for DMA API
+bcdeece0e371 arm64: dts: renesas: r8a779g0-whitehawk: add reserved memory region for PAP
+ac4899e37283 arm64: dts: renesas: r8a779g0-whitehawk: add reserved memory region for Vision DSP{0..3}
+3d545d5e0463 net: ethernet: renesas: ravb: Disable Link Signal Change Interrupt for AVB0
+eae72e77117c net: ethernet: renesas: ravb: Add gPTP support on R-Car V4H
+baade5656c1d arm64: dts: renesas: r8a77980: Update AXI bus and uTLB for VISIONIP UIO
+69d815d4b305 arm64: dts: renesas: r8a779g0: Remove power-domains property for vdsp0x_0y UIO devices
+dff57226e020 arm64: dts: renesas: r8a779g0: Remove unnecessary property for irq_xxx_yyy UIO devices
+9333e3d9f2c1 arm64: dts: renesas: r8a779g0: Add power-domains for ECM UIO
+bec782904a9f arm64: dts: renesas: r8a77970: Update ICCOM UIO devices
+5649fdc18f0a arm64: dts: renesas: r8a77980: Update ICCOM UIO devices
+905813c180f4 can: rcar_canfd: Add secondary sample point
+e9ba9ac6fe77 can: rcar_canfd: Configure receive rules
+86ce48264beb can: rcar_canfd: Correct the controller
+41b2f735ef9c Revert "can: rcar_canfd: Correct the value of tseg1"
