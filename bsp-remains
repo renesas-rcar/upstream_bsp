@@ -617,46 +617,6 @@ f2a8944238bd dt-bindings: cpufreq: add AVS bindings for R-Car V4H
 7aa6dec57f0b soc: renesas: rcar-avs: Release node pointer
 7cc188a06318 soc: renesas: rcar-avs: Add clock enable for AVS
 5797c9e12da5 soc: renesas: rcar-avs: Support AVS function
-d1d361016dc7 ASoC: rsnd: care default case on rsnd_ssiu_busif_err_status_clear()
-e9fb55e0c329 ASoC: rsnd: care default case on rsnd_ssiu_busif_err_irq_ctrl()
-dd17c7be740a ASoC: rsnd: adg: clearly handle clock error / NULL case
-2431cf29e460 ASoC: rsnd: check for zero node count
-46edc9a7d6f7 ASoC: rsnd: tidyup __rsnd_mod_xxx macro comments
-6955c8a0047a ASoC: rsnd: adg: check return value for rsnd_adg_get_clkin/out()
-633d5f8cd2cf ASoC: rsnd: adg: use more simple method for null_clk
-928985469372 ASoC: rsnd: adg: tidyup rsnd_adg_get_clkin/out() parameter
-dc58a046f371 ASoC: rsnd: adg: supply __printf(x, y) formatting for dbg_msg()
-96a260e5ead5 ASoC: rsnd: adjust disabled module
-3d8204d93bc8 ASoC: rsnd: tidyup rsnd_parse_connect_xxx()
-12062139af77 ASoC: rsnd: tidyup rsnd_dma_request_channel()
-e3e3670946b5 ASoC: rsnd: tidyup rsnd_parse_connect_common()
-9a8baa8b7f55 ASoC: rsnd: tidyup rsnd_ssiu_busif_err_irq_ctrl()
-58bc7dd0c8c8 ASoC: rsnd: tidyup rsnd_ssiu_busif_err_status_clear()
-ad21d5aca954 ASoC: rsnd: implement BUSIF related code in ssiu.c
-d11d9a682653 ASoC: rsnd: protect mod->status
-088ab87d5b16 ASoC: rsnd: add debugfs support
-9272944edd89 ASoC: rsnd: incidate irq error message
-fc364d9fcc05 ASoC: rsnd: indicate unknown error at rsnd_dai_call()
-ad92cceb10b9 ASoC: rsnd: check BUIF error everytime
-1eb1e5d19afb ASoC: rsnd: attach SSIU when SSI was DMA mode
-7333aca5850c ASoC: rsnd: ignore runtime NULL case at rsnd_runtime_channel_original_with_params()
-0887c9ba4eb9 ASoC: rsnd: call unregister for null_hw when removed
-388c72b20ef0 ASoC: rsnd: add null CLOCKIN support
-ce7428b1e58c ASoC: rsnd: add usage for SRC
-a4260e80aa78 ASoC: rsnd: add rsnd_ssi_busif_err_irq_enable/disable()
-12d1fb68feaf ASoC: rsnd: add rsnd_ssi_busif_err_status_clear()
-0203b59fd8c9 ASoC: rsnd: cleanup ppcheck warning for adg.c
-5231757858a2 ASoC: rsnd: cleanup ppcheck warning for cmd.c
-21d5d81e7c3f ASoC: rsnd: cleanup ppcheck warning for core.c
-8e74c65db901 ASoC: rsnd: cleanup ppcheck warning for ssi.c
-f155dfb0bf47 ASoC: rsnd: cleanup ppcheck warning for ssiu.c
-c141f43ad077 ASoC: sh: rcar: ssi: remove redundant assignment
-83ca675b9419 ASoC: sh: rcar: ctu: add missing error check
-09f3d9db9efb ASoC: sh: rcar: simplify return
-5ab52cdf0d87 ASoC: sh: rcar: align function prototypes
-dcc1adc74565 ALSA: Convert strlcpy to strscpy when return value is unused
-3d4b9d856994 ASoC: rsnd: don't call clk_disable_unprepare() if can't use
-091cf0a87ec7 ASoC: soc-component: Add snd_soc_pcm_component_ack
 9138f2baa207 drm: bridge: max96789: Add basic function for max96789
 72058c09a66e drm: rcar-du: Fix DU setting for V4H
 1e03a491706f drm: rcar-du: Fix the enable process for DSI module

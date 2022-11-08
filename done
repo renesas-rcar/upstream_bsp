@@ -3,3 +3,6 @@ DT
 
 ARM
 	- sample
+
+Sound
+	- All BSP local patches are included in native v6.1
