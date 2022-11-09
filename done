@@ -6,3 +6,6 @@ ARM
 
 Sound
 	- All BSP local patches are included in native v6.1
+
+Pseudo-automatic
+	- Cherry-picked from stable/linux-5.10.y
