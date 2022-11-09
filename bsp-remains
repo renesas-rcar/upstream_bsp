@@ -7,9 +7,6 @@ debcaf2c0296 thermal: rcar_gen3_thermal: Add support ECM
 c726edac6887 thermal: rcar_gen3_thermal: Use generic name for resources
 34133348ec61 thermal: rcar_gen3_thermal: Add r8a779f0 support
 89168202f93c dt-bindings: thermal: rcar-gen3-thermal: Add r8a779f0 support
-bda5f93b2c46 thermal/drivers/rcar_gen3_thermal: Store TSC id as unsigned int
-aea13771e9d3 thermal/drivers/rcar_gen3_thermal: Add support for hardware trip points
-50e0f1fd22da thermal: rcar_gen3_thermal: Do not use interrupts for normal operation
 af51d5309f8c arm64: dts: renesas: r8a779g0: Add compatible string for R-Car V4H
 b5bccf1fc37c arm64: dts: renesas: r8a779f0: Disable CDM check
 9fd7d9ee7993 arm64: dts: renesas: r8a779g0: Disable CDM check
@@ -793,7 +790,6 @@ f60132c67c6e soc: renesas: Identify R-Car M3-W ES1.2
 8776884f313c net: phy: marvell10g: Add mode configuration and MAC type setting for 88E2110
 258a86b3435a net: ethernet: renesas: rswitch: Add support for parallel mode
 5010c78c0c24 net: ethernet: renesas: rswitch: Add Renesas Ethernet Switch
-c57da8895800 watchdog: renesas_wdt: Add R-Car Gen4 support
 c9776655c1ea arm64: defconfig: Enable loadable EMS/IPA module.
 97f37cd0ccff dt-bindings: watchdog: renesas-wdt: Add support for the R8A779A0 WDT
 713a071a3248 arm64: defconfig: Enable EMS/IPA support
@@ -818,19 +814,6 @@ f180287ca73b ravb: Support ravb driver for R-Car Gen4
 fad51de34b7f dt-bindings: spi: renesas,sh-msiof: Add support for S4
 61ce14e6e0f0 dt-binding: spi: renesas,sh-msiof: Add support for V4H
 6e6cf158bb82 spi: spi-sh-msiof: Add generic compatible string for R-Car Gen4
-b3ef4be5591b iommu: Streamline registration interface
-5d737710d704 iommu: Statically set module owner
-b679ee47ac32 regulator: bd9571mwv: Add BD9574MWF support
-e0a0cc6f9968 regulator: bd9571mwv: rid of using struct bd9571mwv
-ad29907e14a6 mfd: rohm-generic: Add BD9571 and BD9574
-b7f3bd645de3 dt-bindings: mfd: bd9571mwv: Document BD9574MWF
-67372ccbca54 gpio: bd9571mwv: Add BD9574MWF support
-bfb8d8785e07 gpio: bd9571mwv: rid of using struct bd9571mwv
-9ec6d22f9533 gpio: bd9571mwv: Use the SPDX license identifier
-89206fdd8b83 mfd: bd9571mwv: Add support for BD9574MWF
-cebb2ac255b1 mfd: bd9571mwv: Make the driver more generic
-3327392aab36 mfd: bd9571mwv: Use devm_regmap_add_irq_chip()
-d69b51d0d559 mfd: bd9571mwv: Use the SPDX license identifier
 739f54df7d2f thermal: rcar_gen3_thermal: fix warning: symbol 'rcar_gen3_ths_tj_1' shadows an earlier one
 78a2fa569e6c dt-bindings: thermal: Add yaml bindings for EMS in thermal zones
 a6068a4c64ee thermal: rcar_gen3_thermal: Correct the order of checking THSCP
@@ -841,14 +824,11 @@ b904fa8a336b can: rcar_canfd: Correct the value of tseg1
 e3e5bccc9244 can: rcar_canfd: rcar_canfd_configure_afl_rules(): Fix Rx FIFO entry setting
 ef7f2c0a8ccd can: rcar_canfd: Add support for r8a779g0 SoC
 44c2e464e680 can: rcar_canfd: Add support for r8a779a0 SoC
-586f4f5afcb0 dt-bindings: can: rcar_canfd: Convert to json-schema
 316c5e8f6e85 memory: renesas-rpc-if: Remove redundant division of dummy
 996adb9c6368 memory: renesas-rpc-if: Clear HS bit during hardware initialization
 05a365ce230e memory: renesas-rpc-if: Add R-Car Gen4 support
 814ea1728520 memory: renesas-rpc-if: Fix PHYCNT.STRTIM setting
-82d838d990dd memory: renesas-rpc-if: avoid use of undocumented bits
 1b212c753d0c memory: renesas-rpc-if: Use burst read operation
-faa4b54d2330 memory: renesas-rpc-if: Avoid unaligned bus access for HyperFlash
 d7c67c1567d0 dt-bindings: gpio: rcar: Document r8a779f0 support
 5e7eaa64ca2b dt-bindings: gpio: rcar: Add r8a779g0 support
 da10d39812f8 gpio: rcar: Add DT binding for R-Car V3U
@@ -885,7 +865,6 @@ a119b30ee6f6 PCI: dwc: renesas: Add Renesas R-Car PCIe v4.0 host controller driv
 56f944e99309 PCI: rcar: Add regulators support
 e98465549d6b dt-bindings: iommu: renesas,ipmmu-vmsa: add r8a779f0 support
 8f12704115d0 dt-bindings: iommu: renesas,ipmmu-vmsa: add r8a779g0 support
-ba9a08ea8904 dt-bindings: iommu: renesas,ipmmu-vmsa: add r8a779a0 support
 fcc3027a09a8 iommu/ipmmu-vmsa: Add R-Car V3H/V3M/D3 to IPMMU denylist
 eac56fb51d70 iommu/ipmmu-vmsa: Adding DMAC1/2 devices to IPMMU devices allowlist
 298d8c6800bb iommu/ipmmu-vmsa: Adding OSAL-supported devices to IPMMU devices allowlist
@@ -893,7 +872,6 @@ eac56fb51d70 iommu/ipmmu-vmsa: Adding DMAC1/2 devices to IPMMU devices allowlist
 2ddd7cb2c54e iommu/ipmmu-vmsa: Add Renesas R8A779F0 (R-Car S4) support
 81363d213337 iommu/ipmmu-vmsa: Update IMSCTLR register offset address for R-Car Gen4
 4ccc89c603cd iommu/ipmmu-vmsa: Update support status for R-Car Gen4
-502c6b140805 iommu/ipmmu-vmsa: Add support for r8a779a0
 20c3cede7fcb iommu/ipmmu-vmsa: Set IPMMU bit IMSCTLR_USE_SECGRP to 0
 4ce9d6f94661 iommu/ipmmu-vmsa: Handle reserved bits correctly
 5b402deae7c6 iommu/ipmmu-vmsa: Set up ipmmu_ops for pci bus
@@ -903,8 +881,6 @@ ca161241c4c3 iommu/ipmmu-vmsa: Adding devices allowlist for IPMMU on R-Car Gen3
 6c286c0f0b71 iommu/ipmmu-vmsa: Invalidate TLB when IPMMU translation error occurred
 8089aa35bf04 iommu/ipmmu-vmsa: Clean up unncessary micro-TLB invalidation
 e44bdceb4adc iommu/ipmmu-vmsa: Add override support for the actual number of MMU contexts
-7439fbb33bc6 iommu/ipmmu-vmsa: Allow SDHI devices
-dd52a8bd24dd iommu/ipmmu-vmsa: Refactor ipmmu_of_xlate()
 eaeb661228d2 spi: sh-msiof: Add MSIOF parent clock
 04be76d59158 spi: sh-msiof: Add support for r8a77961
 4a04f1197c2b spi: sh-msiof: Set 2 clock delay for R-Car H3 Ver.3.0 only
@@ -915,7 +891,6 @@ aa5fd2cbca66 spi: sh-msiof: Add sleep before master transfer for test
 a06a84aaa7b0 dt-bindings: renesas,rcar-dmac: Add r8a779f0 support
 46cca390830d dt-bindings: renesas,rcar-dmac: Add bus rate control support for R-Car V3U/V4H
 344fdaca6787 dt-bindings: renesas,rcar-dmac: Add r8a779g0 support
-d96174d12876 dt-bindings: renesas,rcar-dmac: Add r8a779a0 support
 234e0d5eb188 dt-bindings: renesas,rcar-dmac: Document optional properties
 8825ff829400 dmaengine: rcar-dmac: Add support for R-Car S4
 fdfe96d831f0 dmaengine: rcar-dmac: Add bus rate control support for R-Car V3U/V4H
@@ -947,7 +922,6 @@ e21494bf0175 uio: Add IPMMU info for user-space
 f4abd09012a2 uio: Fix SPDX identifier
 a11d168c6464 uio: Add PMA IOCTL to compat list
 6668f1736f72 uio: Add new ioctl for power management
-1a4fb2f59590 dt-bindings: net: renesas,etheravb: Add r8a779a0 support
 eb9d8f7f183f dt-bindings: net: renesas,etheravb: Add support for r8a779g0 SoC
 bdafe4d861f6 net: ethernet: ravb: Support AVB1/AVB2
 59ede30612bf ravb: Avoid unsupported internal delay mode for R-Car E3/D3
@@ -958,9 +932,7 @@ d72d7b3f9b4e ravb: Fix ravb_ptp_interrupt clear interrupt all status
 286ee3cf3bad ravb: Add ravb_multi_interrupt to IRQF_SHARED
 51a77f0e7660 ravb: Fix register define for Gen3
 c9192124a557 ravb: Add register define for Gen3
-621839dd9ffd dt-bindings: watchdog: renesas-wdt: Document r8a779f0 support
 18fe3fe7bf9c clocksource: sh_cmt: Add R-Car Gen4 support
-88a3b1fa8082 clocksource/drivers/sh_cmt: Don't use CMTOUT_IE with R-Car Gen2/3
 17c8fda8ce3b dt-bindings: timer: renesas, tmu: Document r8a779a0 TMU support
 ad58f44acd44 dt-bindings: timer: renesas, tmu: Document r8a779g0 TMU support
 dfd1133c7ab7 dt-bindings: timer: renesas, cmt: Document r8a779g0 CMT support
@@ -991,45 +963,6 @@ f6bc667ad282 pinctrl: renesas: r8a779g0: Add I2C pins, groups and functions
 82fbba6554b7 pinctrl: renesas:r8a779{50, 51, 6, 65}: add mlb pinmux
 6c161137ceeb pinctrl: renesas: r8a77950: Add VIN pins, groups and functions
 5b474753618c pinctrl: renesas: r8a77990: Remove pullup/pulldown for USB30_OVC pin
-15c8ab088ea1 pinctrl: renesas: Move R-Car bias helpers to sh_pfc.h
-443007a1b79f pinctrl: renesas: Make sh_pfc_pin_to_bias_reg() static
-46eedc1f1a98 pinctrl: renesas: r8a77965: Add vin4_g8 and vin5_high8 pins
-94cae4f733c1 pinctrl: renesas: r8a77990: Add vin4_g8 and vin5_high8 pins
-d53e82583887 pinctrl: renesas: r8a7796: Add vin4_g8 and vin5_high8 pins
-0972b4ed0988 pinctrl: renesas: r8a77951: Add vin4_g8 and vin5_high8 pins
-7113ba81f0d3 pinctrl: renesas: r8a779a0: Add TPU pins, groups and functions
-adee1accc8db pinctrl: renesas: r8a779a0: Add TMU pins, groups and functions
-6739025ce1d7 pinctrl: renesas: r8a779a0: Add QSPI pins, groups, and functions
-1512c34f1281 pinctrl: renesas: r8a779a0: Add PWM pins, groups and functions
-72b5483b8c56 pinctrl: renesas: r8a779a0: Add MSIOF pins, groups and functions
-f5e834144492 pinctrl: renesas: r8a779a0: Add MMC pins, groups and functions
-148c9e6e4b9b pinctrl: renesas: r8a779a0: Add INTC-EX pins, groups and function
-837bccbcee26 pinctrl: renesas: r8a779a0: Add HSCIF pins, groups and functions
-5e002212d867 pinctrl: renesas: r8a779a0: Add DU pins, groups and function
-b14921c0d841 pinctrl: renesas: r8a779a0: Add CANFD pins, groups and functions
-0803cebeea8a pinctrl: renesas: r8a779a0: Add EtherAVB pins, groups and functions
-ef0f3347afd3 pinctrl: renesas: r8a779a0: Add I2C pins, groups and functions
-d703fa23ff79 pinctrl: renesas: r8a779a0: Add SCIF pins, groups and functions
-c14d7825a9b7 pinctrl: renesas: Initial R8A779A0 (V3U) PFC support
-12dba3eb3965 pinctrl: renesas: Add PORT_GP_CFG_{2,31} macros
-faeb459cc8d3 pinctrl: renesas: Add I/O voltage level flag
-8dbd58833acb pinctrl: renesas: Implement unlock register masks
-9a31169c6e60 dt-bindings: pinctrl: renesas,pfc: Document r8a779a0 PFC support
-8409089a16f2 pinctrl: renesas: checker: Restrict checks to Renesas platforms
-5f022dbafccf pinctrl: renesas: r8a77965: Add QSPI[01] pins, groups and functions
-9d640a4e6072 pinctrl: renesas: r8a7796: Add QSPI[01] pins, groups and functions
-8492d425de0c pinctrl: renesas: r8a77951: Add QSPI[01] pins, groups and functions
-cb6910480a5d pinctrl: renesas: r8a77990: Add QSPI[01] pins, groups and functions
-69439a3dec35 pinctrl: renesas: r8a77990: Optimize pinctrl image size for R8A774C0
-f88c4e32fbcd pinctrl: renesas: r8a77965: Optimize pinctrl image size for R8A774B1
-9eaf39569412 pinctrl: renesas: r8a7796: Optimize pinctrl image size for R8A774A1
-eaddab3788cf pinctrl: renesas: r8a77951: Optimize pinctrl image size for R8A774E1
-2487dc8fd8d6 pinctrl: renesas: Protect GPIO leftovers by CONFIG_PINCTRL_SH_FUNC_GPIO
-dc02de114dbb pinctrl: renesas: Factor out common R-Car Gen3 bias handling
-72ec9dcb5dc0 pinctrl: renesas: Optimize sh_pfc_pin_config
-a3d79eec13f7 pinctrl: renesas: Reorder struct sh_pfc_pin to remove hole
-d01b78dfe564 pinctrl: renesas: Singular/plural grammar fixes
-c7c7ef465f07 pinctrl: renesas: Remove superfluous goto in sh_pfc_gpio_set_direction()
 13b497a2f518 clk: renesas: r8a779g0: Update parent clk for (H)SCIF
 1a136874a612 clk: renesas: r8a779g0: Fix the (H)SCIF parents clk
 cfb5b66b2dab clk: renesas: r8a779g0-cpg-mssr: Add module critical clocks
@@ -1071,21 +1004,12 @@ ef1be53f4623 clk: renesas: r8a779g0: Fix can-fd clock
 f858706da84c clk: renesas: r8a779g0: Fix DSI0 clocks
 096b8527e46b clk: renesas: r8a779g0: Add AESACC (caiplite) clocks
 730589c61892 clk: renesas: cpg-mssr: Add support for R-Car V4H
-3356c4bbc6ce clk: renesas: rcar-gen4: Introduce R-Car Gen4 CPG driver
-b567a94b9fd9 clk: renesas: cpg-lib: Move RPC clock registration to the library
-84face10d92f clk: renesas: r8a779a0: Add Z0 and Z1 clock support
 a4894d9c44bf clk: renesas: rcar-gen3: Use max_rate as maximum rate for normal clock instead max_freq
 5343772b5063 clk: renesas: r8a77995: Add ADG clock for R8A77995
 cf32acf13d9f clk: renesas: r8a77990: Add IMR clock
 67c712ca4318 clk: renesas: r8a77995: Add RT-DMAC clocks
 2e4411a93d7c clk: renesas: r8a779a0: Support RPC clock for R8A779A0
 65b50fc476f6 clk: renesas: r8a779a0: Support missing module clocks for R8A779A0
-96a2a1a3d444 clk: renesas: rcar-gen3: Add boost support to Z clocks
-fcf4d14f1e04 clk: renesas: rcar-gen3: Increase Z clock accuracy
-90d8ac91267c clk: renesas: rcar-gen3: Grammar s/dependent of/dependent on/
-0f703bf9193a clk: renesas: rcar-gen3: Remove superfluous masking in cpg_z_clk_set_rate()
-91ade0302563 clk: renesas: rcar-gen3: Make cpg_z_clk.mask u32
-e4cf0324f42f clk: renesas: rcar-gen3: Update Z clock rate formula in comments
 6e430a6a2fb1 clk: renesas: r8a77980: Add VIP clocks
 a232d9186d2b clk: renesas: r8a779{70, 80}: Add ISP clock
 75feb58b222d clk: renesas: r8a779{70, 80}: Add IMR clocks
@@ -1118,37 +1042,6 @@ c0ce50b16e41 clk: renesas: rcar-gen3: Add PLL clock and update z-clock for propa
 35eb4ba8bd88 clk: renesas: r8a77{95, 96, 965, 990}: Add ZG clock
 fbf991b5bd28 clk: renesas: r8a77{95, 96, 965}: Replace PLL3 multiplication setting
 23fcabf79226 clk: renesas: r8a77{95, 96, 965, 990}: Remove INTC-AP and INTC-EX clocks
-c4f1bdb1c30c clk: renesas: Zero init clk_init_data
-c1d59ae59b59 clk: renesas: rcar-gen3: Factor out CPG library
-69e5d4f442b4 clk: renesas: rcar-gen3: Remove cpg_quirks access when registering SD clock
-02fc5bfda135 clk: renesas: r8a779a0: Add CMT clocks
-942142cabf84 clk: renesas: r8a7795: Add TMU clocks
-7ecd67f696c1 clk: renesas: r8a779a0: Add TSC clock
-addeff505b0d clk: renesas: r8a779a0: Add TMU clocks
-eed9876d66e5 clk: renesas: r8a77965: Add DAB clock
-936b21358c60 clk: renesas: r8a77990: Add DAB clock
-096eab59e9e1 clk: renesas: cpg-mssr: Fix formatting issues for 'smstpcr_saved's documentation
-43c527f17ba5 clk: renesas: r8a779a0: Add RAVB clocks
-a445af53643e clk: renesas: r8a779a0: Add I2C clocks
-5211e66aeed9 clk: renesas: r8a779a0: Add SYS-DMAC clocks
-077b3aad1a68 clk: renesas: r8a779a0: Add SDHI support
-568460552d5c clk: renesas: r8a779a0: Add MSIOF clocks
-78127e22a80b clk: renesas: r8a779a0: Add PFC/GPIO clocks
-8965e59ad62d clk: renesas: r8a779a0: Add HSCIF support
-0f340b60c19e clk: renesas: r8a779a0: Add RWDT clocks
-e69317f01b6e clk: renesas: r8a779a0: Add VSPX clock support
-b2b64d9257f6 clk: renesas: r8a779a0: Add VSPD clock support
-0088a6e0c2b0 clk: renesas: r8a779a0: Add FCPVD clock support
-0475b34744fb clk: renesas: r8a77995: Add TMU clocks
-d12ff87830de clk: renesas: r8a77990: Add TMU clocks
-fb9494af6dd0 clk: renesas: r8a77965: Add TMU clocks
-95c6b58e276e clk: renesas: r8a7796: Add TMU clocks
-ca39134c7fa1 clk: renesas: cpg-mssr: fix kerneldoc of cpg_mssr_priv
-81a8c2b0178a clk: renesas: rcar-usb2-clock-sel: Replace devm_reset_control_array_get()
-2a6203ae2572 clk: renesas: r8a779a0: Add VIN clocks
-b34610c295d4 clk: renesas: r8a779a0: Add CSI4[0-3] clocks
-deb9a9306b25 clk: renesas: r8a779a0: Make rcar_r8a779a0_cpg_clk_register() static
-ee5128c48f98 clk: renesas: rcar-gen3: Remove stp_ck handling for SDHI
 d4f31e1a412c arm64: defconfig: Select power allocator as default governor
 7ed8cce11f67 arm64: defconfig: Enable cpufreq configs for rcar
 5a635dcb4468 arm64: defconfig: Enable R-Car DSI Driver in defconfigs
@@ -1251,48 +1144,3 @@ b8fac174f786 arm64: dts: renesas: r8a77951: Unsupport DMA transfer for SCIF2
 87b9b3057086 arm64: dts: renesas: r8a779{51, 60, 61}: Add OPPs table-{1-7} for cpu devices
 18c90aaa519d arm64: dts: renesas: r8a779{50, 51, 60, 61, 65, 90}: Remove clocks properties in gic and irqc node
 59ffe471a5d4 arm64: dts: renesas: r8a77965: Add Sound and Audio DMAC device nodes
-3634ad7ca60e arm64: dts: renesas: Add port@0 node for all CSI-2 nodes to dtsi
-f36cf66c0aab arm64: dts: renesas: salvator-common: Add cpu-supply property to a57_0 node
-d5b3b4796259 arm64: dts: renesas: r8a779a0: Add VSPD support
-9d61a38ecb3b arm64: dts: renesas: r8a779a0: Add FCPVD support
-af0c9598707e arm64: dts: renesas: falcon-cpu: Add GP LEDs
-ff4f79405b7e arm64: dts: renesas: r8a77961: Add VIN and CSI-2 device nodes
-39558aee71d9 arm64: dts: renesas: falcon: Move AVB0 to main DTS
-daed261c4689 arm64: dts: renesas: falcon: Move watchdog config to CPU board DTS
-33a88e729a16 arm64: dts: renesas: falcon: Move console config to CPU board DTS
-484af88114d5 arm64: dts: renesas: r8a77961: Add CAN nodes
-3467f01bc50b arm64: dts: renesas: r8a779a0: Add CMT support
-3e162f72ab5e arm64: dts: renesas: r8a779a0: Add thermal support
-6c68f24f188e arm64: dts: renesas: r8a779a0: Add TMU support
-6f632e6a70c8 arm64: dts: renesas: falcon: Add Ethernet sub-board
-55d5bd5f192f arm64: dts: renesas: falcon: Add CSI/DSI sub-board
-6b7ed17f281b arm64: dts: renesas: falcon: Add I2C EEPROM nodes
-9d05794cc4bc arm64: dts: renesas: Consolidate Salvator-X(S) HDMI0 handling
-3afe080899b9 arm64: dts: renesas: r8a77961-ulcb: add HDMI Display support
-bbee5d6eec4c arm64: dts: renesas: Group tuples in pin control properties
-aa74db93aa12 arm64: dts: renesas: Group tuples in playback and capture properties
-2e567ce19795 arm64: dts: renesas: falcon: Enable MMC
-1dc658b3cebc arm64: dts: renesas: r8a779a0: Add MMC node
-1f7a3704baa2 arm64: dts: renesas: r8a779a0: Add HSCIF support
-fba404b1d625 arm64: dts: renesas: falcon: Complete SCIF0 nodes
-0c844f3a1ac4 arm64: dts: renesas: r8a779a0: Add & update SCIF nodes
-15e7f7e9b83c arm64: dts: renesas: falcon: Add Ethernet-AVB0 support
-fca239524927 arm64: dts: renesas: r8a779a0: Add Ethernet-AVB support
-65333f3f5671 arm64: dts: renesas: falcon: Add I2C0,1,6 support
-6b19f4fcb6d4 arm64: dts: renesas: r8a779a0: Add I2C nodes
-05a47c0a177e arm64: dts: renesas: Disable SD functions for plain eMMC
-46a3b5cad283 arm64: dts: renesas: r8a779a0: Add MSIOF device nodes
-eec0f981af79 arm64: dts: renesas: r8a779a0: Add SYS-DMAC nodes
-35446ce21c37 arm64: dts: renesas: r8a779a0: Add GPIO nodes
-406f5dfffa5f arm64: dts: renesas: r8a779a0: Add pinctrl device node
-ff03b8c2da19 arm64: dts: renesas: Align GPIO hog names with dtschema
-e8642b17dbf5 arm64: dts: renesas: falcon: Enable watchdog timer
-58a82f42d8db arm64: dts: renesas: r8a779a0: Add RWDT node
-119fe156cf74 arm64: dts: renesas: rcar-gen3: Add missing TMU nodes
-f80f650492a9 arm64: dts: renesas: rcar-gen3: Add missing CMT nodes
-ea7ba8ce2a8b arm64: dts: renesas: r8a77951: Add PCIe EP nodes
-65f0103522c2 arm64: dts: renesas: r8a77961: ulcb-kf: Initial device tree
-704bb3989cc0 arm64: dts: renesas: r8a77961: Add CAN{0,1} placeholder nodes
-a3f426e42875 arm64: dts: renesas: rcar-gen3: Convert EtherAVB to explicit delay handling
-56e470d025b8 arm64: dts: renesas: r8a77965: Add DRIF support
-6148f7087811 arm64: dts: renesas: r8a77961: Add MSIOF nodes
