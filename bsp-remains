@@ -508,7 +508,6 @@ dbf5d3835a46 arm64: boot: dts: renesas: ulcb-kf: Enable extra sound cards
 33a9d7f9f32d arm64: dts: renesas: r8a77965: Add RPC device node
 9d936304232b arm64: dts: renesas: r8a7796{0,1}: Add RPC device node
 9a877c77ee41 arm64: dts: renesas: r8a77951: Add RPC device node
-5673615f84fe arm64: dts: r8a77961: Add CAN-FD support
 0f79f5ba32f1 arm64: dts: renesas: eagle: Add x1 clock
 5beefb300ae6 arm64: dts: renesas: r8a779x: add IMP nodes
 61bb4e544211 arm64: dts: renesas: r8a77950-ulcb: disable eMMC
@@ -648,7 +647,6 @@ b3f9840865d8 media: vsp1: Add VSP device for Gen4
 7b6b37a751b1 drm: rcar-du: Add setting to PnALPHAR register on Gen3
 580a8138882b drm: rcar-du: lvds: Seperate the disable process of LVDS
 11a5640d342c drm: rcar-du: Add check for member of rstate in rcar_du_crtc_state structure
-8229f6f5aab8 drm: rcar-du: lvds: Add support for R8A77961 SoC
 3be1a176425a drm/bridge: adv7511: Add frequency and vrefresh limitation option
 fe0832b798a5 drm: adv7511: Enable HPD interrupts to support hotplug
 03e014a0b927 drm: rcar-du: Add drm_atomic_helper_shutdown()
@@ -840,7 +838,6 @@ db0c38eeebe9 dt-bindings: serial: sh-sci: Document r8a779f0 bindings
 42e7333e6f58 dt-bindings: serial: sh-sci: Document r8a779g0 bindings
 f8a597ec6b6c sched/core: Add EXPORT_SYMBOL_GPL to sched_setaffinity
 f1331e5f180d dt-bindings: serial: sh-sci: Document r8a779a0 bindings
-757224c9e1f5 serial: sh-sci: Add R-Car Gen4 support
 4dd7bb85d2ee serial: sh-sci: remove obsolete latency workaround
 dac54422c0d0 serial: sh-sci: Use pm_runtime_get/put when resume
 4ad9b3444ded serial: sh-sci: Use pm_runtime_get/put when suspend
@@ -932,7 +929,6 @@ d72d7b3f9b4e ravb: Fix ravb_ptp_interrupt clear interrupt all status
 286ee3cf3bad ravb: Add ravb_multi_interrupt to IRQF_SHARED
 51a77f0e7660 ravb: Fix register define for Gen3
 c9192124a557 ravb: Add register define for Gen3
-18fe3fe7bf9c clocksource: sh_cmt: Add R-Car Gen4 support
 17c8fda8ce3b dt-bindings: timer: renesas, tmu: Document r8a779a0 TMU support
 ad58f44acd44 dt-bindings: timer: renesas, tmu: Document r8a779g0 TMU support
 dfd1133c7ab7 dt-bindings: timer: renesas, cmt: Document r8a779g0 CMT support
@@ -1015,7 +1011,6 @@ a232d9186d2b clk: renesas: r8a779{70, 80}: Add ISP clock
 75feb58b222d clk: renesas: r8a779{70, 80}: Add IMR clocks
 60d4d536778e clk: renesas: r8a77980: Add VIN clocks
 dc644df9f22b clk: renesas: r8a779{5, 6, 70, 80}: add IMP clock
-d4262de12dd4 clk: renesas: r8a779{5, 6, 65}: Add mlp clock
 3a0afce3d903 clk: renesas: r8a779{70, 80}: Add POST clock
 755a56e7c796 clk: renesas: r8a77{95, 96, 965, 990, 980}: Add RT-DMAC clocks
 43ca51590fa0 clk: renesas: r8a779{70, 80}: Add CPU operation points.
@@ -1134,7 +1129,6 @@ ed7948f00a4b arm64: dts: renesas: Add reserved memory regions for Gen3 devices
 3b8f3cc5f237 arm64: dts: renesas: Add lvds node for du
 71c7a4be6298 arm64: dts: renesas: salvator-common: Add lvds driver relation node
 b4940e51861a arm64: dts: renesas: r8a779{90-ebisu, 95-draak}: Add no use ddc option for VGA connector
-b12308ccc150 arm64: dts: renesas: r8a77961: Add LVDS node support
 7269d13f8f2c arm64: dts: renesas: salvator-common: Add no use ddc option for VGA connector
 e6ef0f7489da arm64: dts: renesas: r8a77951: Add spi aliases
 f11a47f78621 arm64: dts: renesas: r8a779{51, 60, 61, 65, 90}: Add MSIOF parent clock frequency settings support
