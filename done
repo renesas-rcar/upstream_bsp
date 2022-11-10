@@ -12,3 +12,5 @@ Pseudo-automatic
 	- Cherry-picked from upstream
 	- Identical patch-id in upstream
 	- Identical one-line summary in upstream
+	- Identical patch-id in bsp41x/51x with upstream alternative from
+	  periject non-target

@@ -400,7 +400,6 @@ d26ecf8dae1b arm64: dts: renesas: r8a77995: Detach IPMMU-MP from AUDIO-DMAC0
 d66c36ce47e5 arm64: dts: renesas: r8a77995: Detach IPMMU-DS0 from Ethernet-AVB
 70db35c3bbf4 arm64: dts: renesas: r8a77995: Change IPMMU-MM and IPMMU-caches order in DT for R-Car D3
 0ed94ce71f04 arm64: dts: renesas: r8a77995: Change default of all IPMMU devices to disable
-24d8db322117 arm64: dts: salvator-common: Enable IPMMU of SDHI2
 78ab046f9b98 arm64: dts: renesas: r8a779{51, 60, 65, 90}: Detach IPMMU-DS1 from SDHI
 36bed5ebf563 arm64: dts: renesas: r8a779{50,51,60,65,m1}: Move nodes of du and lvds
 0b7a348463a1 arm64: dts: renesas: r8a779{65,90}: Add iVDP1C device nodes
@@ -410,21 +409,16 @@ d7b4df160b5b arm64: dts: r8a77990: Add IMR UIO device
 97afa57fc170 arm64: dts: r8a77965: Add IMR UIO devices
 e5e228465448 arm64: dts: r8a7796{0,1}: Add IMR UIO devices
 d79001539f78 arm64: dts: r8a77951: Add IMR UIO devices
-1b7a947c49b2 arm64: dts: renesas: r8a77961: Fix intc_ex node
 7e2ffb68ad2f arm64: dts: renesas: r8a77995-draak: Set HDMI mode as defaul mode for VIN driver
 c72f32a75e51 arm64: dts: renesas: r8a77995-draak: Add Media Clock Recovery Handler device node
 7e4b34b1d60e arm64: dts: r8a77995: Add RT-DMAC nodes
 b0aa94d65efb arm64: dts: renesas: Fix compatible name for MFIS node
-8db2c4f67ab1 arm64: dts: renesas: falcon: Enabled IPMMU MMC
 b8391f96ea13 arm64: dts: renesas: r8a77980-v3hsk: Disable MMC
-3f7272a84567 arm64: dts: renesas: Support R8A779M{1, 3, 5} board
-ec9897cc47e6 arm64: dts: renesas: r8a779m{1, 3, 5}: Support 2GHZ for R8A779M{1, 3, 5}
 30bf84ba2e1e arm64: dts: renesas: r8a77961: Add i2c aliases
 ded7fcd78c96 arm64: dts: renesas: r8a77995-draak: Remove endpoint of LVDS1
 3799f1e161c6 arm64: dts: Add MFISLock driver support
 688910e4b240 arm64: dts: r8a77995-draak: Add reserved memory region
 948df237125b arm64: dts: Makefile: Comment out compiling of dtbo
-c7e90b32f7d5 arm64: dts: renesas: r8a77990: ebisu-es10: Add mmc aliases
 2de601c39008 arm64: dts: r8a77980: Add RT-DMAC nodes
 95c4344384df arm64: dts: r8a77990: Add RT-DMAC nodes
 dc61c068a644 arm64: dts: r8a77965: Add RT-DMAC nodes
@@ -464,18 +458,15 @@ dbf5d3835a46 arm64: boot: dts: renesas: ulcb-kf: Enable extra sound cards
 9a877c77ee41 arm64: dts: renesas: r8a77951: Add RPC device node
 5beefb300ae6 arm64: dts: renesas: r8a779x: add IMP nodes
 61bb4e544211 arm64: dts: renesas: r8a77950-ulcb: disable eMMC
-04fd595f6ce0 arm64: dts: renesas: v3hsk: Add GEther PHY GPIO reset pin support
 931e8525ade1 arm64: dts: r8a77980-v3hsk: Enable onboard eMMC
 99247afdb8a6 arm64: dts: renesas: v3x: Set thc63lvd1024 dual link mode
 81a0161ddc6a arm64: dts: renesas: r8a77970 and r8a77980: Add CPU operation points
 cf93f08ba389 arm64: dts: renesas: r8a77980: add max9286
 51126e27d005 arm64: dts: renesas: ulcb-kf: deselect GP5_9 interrupt
 d80707e0e447 arm64: dts: renesas: ulcb-kf: update for kernel v5.10
-57175070bf76 arm64: dts: renesas: r8a779x: add mlp nodes
 2479c7da8049 arm64: dts: renesas: Update IMP LDMA device
 f7c6a43a94f6 arm64: dts: renesas: Comment out status ok in rpc node
 186bea4e863b arm64: dts: renesas: Updated dts for renesas generic-uio
-f37207294e14 arm64: dts: renesas: r8a779a0: Enable IPMMU support for eMMC by default on R-Car V3U
 ec2576686dc7 arm64: dts: renesas: Update Power Domain for VSPX devices
 89068d303247 arm64: dts: renesas: Update IPMMU ID for VIN devices
 b758a30100a0 arm64: dts: renesas: Update IPMMU ID for FBA devices
@@ -524,27 +515,21 @@ b32e25935db5 arm64: dts: renesas: r8a779a0: Add TPU node
 ae2a16c066dc arm64: dts: r8a779a0-falcon: Add reserved memory for CMA
 720d92e1190b arm64: dts: renesas: falcon: Enable CMT
 6f2420134582 arm64: dts: renesas: r8a779a0: Add ISP devices for generic-uio
-11ccb59c815c arm64: dts: renesas: r8a779a0-falcon: Add memory nodes
 4e48cad53dfb arm64: dts: renesas: falcon: Add QSPI flash support
 537c439adce2 arm64: dts: renesas: r8a779a0: Add RPC-IF node
 932aeb37621c arm64: dts: renesas: r8a779a0: Add IMP nodes
 fae4aeaf8b56 arm64: dts: r8a779a0-falcon: Enable fakra connector
-11567a0363e8 arm64: dts: r8a779a0-falcon: Enable capture module
 13987fbb56ce arm64: dts: r8a779a0: Add capture module
 6118a2612b96 arm64: dts: renesas: r8a779a0: Add IMR nodes
 49c28ee5dd26 arm64: dts: r8a779a0-falcon: Enable Display Module (DU)
-88a6ca4f83a4 arm64: dts: r8a779a0-falcon: Add DSI's connector and bridge for Falcon board
-e07aaa9f66c7 arm64: dts: r8a779a0: Add DU and DSI Modules
 419560a14df4 arm64: dts: r8a779a0: Add SYSC PM Domains
 5d4c3888e0d3 arm64: dts: renesas: r8a779a0: Add PWM nodes
 dd621acea624 arm64: dts: renesas: falcon: Enable PCIe
 34da8764ad92 arm64: dts: renesas: r8a779a0: Add PCIe device node
 ccb1316bf6d0 arm64: dts: renesas: r8a779a0-falcon: Enable TMU
 d45ea26fde42 arm64: dts: renesas: r8a779a0: Add RT-DMAC support
-6fb1728980cc arm64: dts: renesas: r8a779a0-falcon: Add SCIF0 support
 667534413db9 arm64: dts: renesas: r8a779a0-falcon: Add missing Ethernet-AVB in Falcon board
 e10bdcf232ff arm64: dts: renesas: r8a7799a0: Add MSIOF parent clock frequency settings support
-48782d8153c3 arm64: dts: renesas: r8a779a0-falcon: Add I2C support for falcon board
 1ab838e03cc5 arm64: dts: renesas: r8a779{51, 60, 61, 65, 90}: Add the emergency node in thermal-zones
 346e96545b78 arm64: dts: renesas: r8a779{51, 60, 61, 65, 90}: Create thermal zone to support IPA
 2952a9503e49 arm64: dts: renesas: r8a779{51, 60, 61, 65}: Enable interrupt mode for THS by default
@@ -712,7 +697,6 @@ b1615da5261d i2c: rcar: Add support for r8a779f0 (R-Car S4)
 3607e145db47 i2c: rcar: Add fast mode plus support
 8e15be80c04c i2c: rcar: Add support for r8a779g0 (R-Car V4H)
 85d885d970d1 i2c: rcar: Add support for r8a77961 (R-Car M3-W+)
-ada892809b0e i2c: rcar: Support the suspend/resume
 c9a37c38aa90 i2c: rcar: Tidy up the register order for hardware specification ver1.00.
 2a1f07d0e722 net: phy: mv88q2110: Initial PHY Marvel 88Q2110 support
 78e51462682c dt-bindings: net: renesas,ethertsn: Add binding document for new Ethernet-TSN driver
@@ -756,7 +740,6 @@ fad51de34b7f dt-bindings: spi: renesas,sh-msiof: Add support for S4
 6e6cf158bb82 spi: spi-sh-msiof: Add generic compatible string for R-Car Gen4
 739f54df7d2f thermal: rcar_gen3_thermal: fix warning: symbol 'rcar_gen3_ths_tj_1' shadows an earlier one
 78a2fa569e6c dt-bindings: thermal: Add yaml bindings for EMS in thermal zones
-a6068a4c64ee thermal: rcar_gen3_thermal: Correct the order of checking THSCP
 4b6f17f1dd49 thermal: rcar_gen3_thermal: PIO-INT can be selected for each TSC separately
 210d647a385f thermal: rcar_gen3_thermal: Enable selection between polling/interrupt mode
 545622ffaa80 thermal: rcar_gen3_thermal: Use FUSE values if they are available
@@ -771,18 +754,14 @@ ef7f2c0a8ccd can: rcar_canfd: Add support for r8a779g0 SoC
 1b212c753d0c memory: renesas-rpc-if: Use burst read operation
 d7c67c1567d0 dt-bindings: gpio: rcar: Document r8a779f0 support
 5e7eaa64ca2b dt-bindings: gpio: rcar: Add r8a779g0 support
-da10d39812f8 gpio: rcar: Add DT binding for R-Car V3U
 2dc3fee75d7f gpio: rcar: Modify compatible string and add support for r8a779f0
 284c6cb7ca6f gpio: gpio-rcar: Add compatible string for r8a779g0
 ccc3f240c183 gpio: gpio-rcar: Add compatible string for r8a77961
-2881543b339f gpio: gpio-rcar: Add support for R-Car V3U
 db0c38eeebe9 dt-bindings: serial: sh-sci: Document r8a779f0 bindings
 42e7333e6f58 dt-bindings: serial: sh-sci: Document r8a779g0 bindings
 f8a597ec6b6c sched/core: Add EXPORT_SYMBOL_GPL to sched_setaffinity
-f1331e5f180d dt-bindings: serial: sh-sci: Document r8a779a0 bindings
 dac54422c0d0 serial: sh-sci: Use pm_runtime_get/put when resume
 4ad9b3444ded serial: sh-sci: Use pm_runtime_get/put when suspend
-01dca5edf230 PCI: pcie-rcar: Add the initialization of PCIe link in resume_noirq
 4a1d0851e182 PCI: pcie-rcar: Support runtime PM, link state L1 handling
 06c478c650ae dt-bindings: PCI: rcar: Add yaml bindings for PCI on R-Car S4
 57ecd61e47c1 dt-bindings: PCI: rcar: Add yaml bindings for PCI Endpoint and R-Car V4H
@@ -790,7 +769,6 @@ dac54422c0d0 serial: sh-sci: Use pm_runtime_get/put when resume
 a16e01aa6cc9 misc: pci_endpoint_test: Add Device ID for R-Car S4 PCIe controller
 9cd016cfabf2 misc: pci_endpoint_test: Add Device ID for R-Car V4H PCIe controller
 0453069bec94 nvme: Workaround Samsung 970 Pro power state issues
-fe9312af0aea PCI: Avoid PCI device removing/rescanning through sysfs triggers a deadlock
 417cd8ce5abb PCI: Replace PCIe registers not defined in HW UM
 85725add311b pci: dwc: pcie-renesas-ep: Add align to pci_epc_features
 46f9972b4c4d pci: dwc: renesas: Add R-Car S4 PCIe support
@@ -855,7 +833,6 @@ a11d168c6464 uio: Add PMA IOCTL to compat list
 6668f1736f72 uio: Add new ioctl for power management
 eb9d8f7f183f dt-bindings: net: renesas,etheravb: Add support for r8a779g0 SoC
 bdafe4d861f6 net: ethernet: ravb: Support AVB1/AVB2
-59ede30612bf ravb: Avoid unsupported internal delay mode for R-Car E3/D3
 469ff9d9ba21 ravb: Fix ptp does not work after suspend and resume
 cb386bc52e9b ravb: fix ravb_ptp_interrupt result value overwrite
 872aa8d44400 ravb: Fix interrupt cause bit overwrite in ravb_ptp_interrupt
@@ -937,7 +914,6 @@ a4894d9c44bf clk: renesas: rcar-gen3: Use max_rate as maximum rate for normal cl
 5343772b5063 clk: renesas: r8a77995: Add ADG clock for R8A77995
 cf32acf13d9f clk: renesas: r8a77990: Add IMR clock
 67c712ca4318 clk: renesas: r8a77995: Add RT-DMAC clocks
-2e4411a93d7c clk: renesas: r8a779a0: Support RPC clock for R8A779A0
 65b50fc476f6 clk: renesas: r8a779a0: Support missing module clocks for R8A779A0
 6e430a6a2fb1 clk: renesas: r8a77980: Add VIP clocks
 a232d9186d2b clk: renesas: r8a779{70, 80}: Add ISP clock
@@ -978,7 +954,6 @@ e5253817f3bc arm64: defconfig: Enable R-Car PWM-TPU by default
 3425791f4264 arm64: defconfig: Change R-Car PWM to built-in
 a5758a3a06cd arm64: defconfig: Enable Renesas R-Car PCIe v4.0 host controller driver
 12f55f40cee1 arm64: defconfig: Enable UIO support
-5eaf12fcfc3c arm64: defconfig: Enable SN65DSI86 configuration
 e5f699b37daf arm64: defconfig: Enable VIN driver related configuraiton
 34d8807b3abc arm64: defconfig: Enable Display driver related configuration
 b566f76315fc arm64: defconfig: Enable DEVFREQ configuration
@@ -1018,8 +993,6 @@ def8ddb3ce26 arm64: dts: renesas: r8a77990-ebisu-4d: Add lossy phandle to MMNGR 
 f215e41739a5 arm64: dts: renesas: r8a779{51, 60, 61}: Add AVS device node
 983c00ba9120 arm64: dts: renesas: Add DEVFREQ support for GSX in Gen3
 870144dfc576 arm64: dts: renesas: r8a77990-ebisu{,-es10}: Enable IPMMU of SDHI3
-b736043cdc2e arm64: dts: renesas: r8a77990: Enable IPMMU-DS1 and IPMMU-MM
-e28d09e4d927 arm64: dts: renesas: r8a77965: Enable IPMMU-DS1 and IPMMU-MM
 4f96fa23c03c arm64: dts: renesas: r8a7796{0,1}: Enable IPMMU-DS1 and IPMMU-MM
 9e42169db8a0 arm64: dts: renesas: r8a7795{0,1}: Enable IPMMU-DS1 and IPMMU-MM
 6789a9fd36e1 arm64: dts: renesas: r8a779{51, 60, 65, 90, 95}: Detach IPMMU-DS from SYS-DMAC
@@ -1064,7 +1037,6 @@ b4940e51861a arm64: dts: renesas: r8a779{90-ebisu, 95-draak}: Add no use ddc opt
 7269d13f8f2c arm64: dts: renesas: salvator-common: Add no use ddc option for VGA connector
 e6ef0f7489da arm64: dts: renesas: r8a77951: Add spi aliases
 f11a47f78621 arm64: dts: renesas: r8a779{51, 60, 61, 65, 90}: Add MSIOF parent clock frequency settings support
-cd69fda70f0a arm64: dts: renesas: r8a77990: Add I2C-DVFS device node
 c91831a4d06a arm64: dts: renesas: salvator-common: Enable PWM2
 b8fac174f786 arm64: dts: renesas: r8a77951: Unsupport DMA transfer for SCIF2
 87b9b3057086 arm64: dts: renesas: r8a779{51, 60, 61}: Add OPPs table-{1-7} for cpu devices
