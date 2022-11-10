@@ -14,9 +14,7 @@ b5bccf1fc37c arm64: dts: renesas: r8a779f0: Disable CDM check
 ce3936b34bc3 dt-bindings: mmc: renesas,sdhi: Add r8a779g0 support
 f2453ad38abd dt-bindings: mmc: renesas,sdhi: Add r8a779f0 support
 d10133565b53 mmc: core: mmc_ops: Enable stop command
-f92bba5328ea mmc: renesas_sdhi: Disable HS400 for r8a77995
 de9461ece1fa mmc: renesas_sdhi: scc_ctl is always set in after R-Car Gen3
-7f7098a479d6 mmc: renesas_sdhi: Fix SDnCKCR setting in 4TAP SoC
 bc75d8c5907a mmc: core: Issue power off notification in mmc_remove()
 f04e295cd388 mmc: renesas_sdhi: reset calibration register
 2ec314c9451c mmc: renesas_sdhi: fix selection of manual correction
@@ -414,7 +412,6 @@ c72f32a75e51 arm64: dts: renesas: r8a77995-draak: Add Media Clock Recovery Handl
 7e4b34b1d60e arm64: dts: r8a77995: Add RT-DMAC nodes
 b0aa94d65efb arm64: dts: renesas: Fix compatible name for MFIS node
 b8391f96ea13 arm64: dts: renesas: r8a77980-v3hsk: Disable MMC
-30bf84ba2e1e arm64: dts: renesas: r8a77961: Add i2c aliases
 ded7fcd78c96 arm64: dts: renesas: r8a77995-draak: Remove endpoint of LVDS1
 3799f1e161c6 arm64: dts: Add MFISLock driver support
 688910e4b240 arm64: dts: r8a77995-draak: Add reserved memory region
@@ -453,15 +450,11 @@ a432a1010378 arm64: dts: r8a77970, r8a77980: Enable TMU and CMT
 36324cadce25 arm64: boot: dts: renesas: ulcb-kf: Set radio and BT sound masters
 dbf5d3835a46 arm64: boot: dts: renesas: ulcb-kf: Enable extra sound cards
 2a460a4e95a3 arm64: dts: renesas: ulcb: Make AK4613 sound device name consistent
-33a9d7f9f32d arm64: dts: renesas: r8a77965: Add RPC device node
-9d936304232b arm64: dts: renesas: r8a7796{0,1}: Add RPC device node
-9a877c77ee41 arm64: dts: renesas: r8a77951: Add RPC device node
 5beefb300ae6 arm64: dts: renesas: r8a779x: add IMP nodes
 61bb4e544211 arm64: dts: renesas: r8a77950-ulcb: disable eMMC
 931e8525ade1 arm64: dts: r8a77980-v3hsk: Enable onboard eMMC
 99247afdb8a6 arm64: dts: renesas: v3x: Set thc63lvd1024 dual link mode
 81a0161ddc6a arm64: dts: renesas: r8a77970 and r8a77980: Add CPU operation points
-cf93f08ba389 arm64: dts: renesas: r8a77980: add max9286
 51126e27d005 arm64: dts: renesas: ulcb-kf: deselect GP5_9 interrupt
 d80707e0e447 arm64: dts: renesas: ulcb-kf: update for kernel v5.10
 2479c7da8049 arm64: dts: renesas: Update IMP LDMA device
@@ -494,8 +487,6 @@ aa2552bb7c2e arm64: dts: renesas: r8a779a0-falcon: Reserve u-boot secure area
 6df2f31dfd82 arm64: dts: renesas: falcon: Add pfc node for PCIe
 84a6123fe4a3 arm64: dts: renesas: ebisu: Add endpoint for dual-link in Ebisu board
 bd790e0bfe8e arm64: dts: renesas: falcon: Add HSCIF0 support
-73e2a441cb8a arm64: dts: r8a779a0-falcon: Add CANFD support
-2ea3656818d1 arm64: dts: r8a779a0: Add CANFD device node
 7c7915afac5d arm64: dts: renesas: r8a779a0: Add generic-uio support in IPMMU devices
 66add0581fa7 arm64: dts: renesas: r8a779a0: Add IPMMU info for UIO devices
 8fe9a8829854 arm64: dts: renesas: r8a779a0: Add H264 encoder devices
@@ -509,19 +500,13 @@ c2833b47268e arm64: dts: renesas: r8a779a0: Update start address of IMPSPM
 1e9e5dcbd2b6 arm64: dts: renesas: r8a779a0: Update IMP device name to follow OSAL naming convention
 cc6a080ec6d3 arm64: dts: renesas: r8a779a0: Update IMR device name to follow OSAL naming convention
 e4dbb4e98674 arm64: dts: renesas: r8a779a0: Separate memory and control regs of IMP SPM devices
-30871f36af94 arm64: dts: renesas: r8a779a0: Add refclk for SN65DSI86
-b32e25935db5 arm64: dts: renesas: r8a779a0: Add TPU node
 949b1c6698c0 arm64: dts: renesas: r8a779a0: Describe custom name for generic-uio devices
 ae2a16c066dc arm64: dts: r8a779a0-falcon: Add reserved memory for CMA
 720d92e1190b arm64: dts: renesas: falcon: Enable CMT
 6f2420134582 arm64: dts: renesas: r8a779a0: Add ISP devices for generic-uio
-4e48cad53dfb arm64: dts: renesas: falcon: Add QSPI flash support
-537c439adce2 arm64: dts: renesas: r8a779a0: Add RPC-IF node
 932aeb37621c arm64: dts: renesas: r8a779a0: Add IMP nodes
 fae4aeaf8b56 arm64: dts: r8a779a0-falcon: Enable fakra connector
-13987fbb56ce arm64: dts: r8a779a0: Add capture module
 6118a2612b96 arm64: dts: renesas: r8a779a0: Add IMR nodes
-49c28ee5dd26 arm64: dts: r8a779a0-falcon: Enable Display Module (DU)
 419560a14df4 arm64: dts: r8a779a0: Add SYSC PM Domains
 5d4c3888e0d3 arm64: dts: renesas: r8a779a0: Add PWM nodes
 dd621acea624 arm64: dts: renesas: falcon: Enable PCIe
@@ -583,7 +568,6 @@ b3f9840865d8 media: vsp1: Add VSP device for Gen4
 11a5640d342c drm: rcar-du: Add check for member of rstate in rcar_du_crtc_state structure
 3be1a176425a drm/bridge: adv7511: Add frequency and vrefresh limitation option
 fe0832b798a5 drm: adv7511: Enable HPD interrupts to support hotplug
-03e014a0b927 drm: rcar-du: Add drm_atomic_helper_shutdown()
 4d326eb16e9b drm: rcar-du: Change supporting format of DU in R8A779A0
 4409f463dc6c drm: rcar-du: Add setting for PnMR for R8A779A0
 59c814ff03fc drm: rcar-du: Add new pixel formats support for R8A779A0
@@ -592,13 +576,11 @@ fe0832b798a5 drm: adv7511: Enable HPD interrupts to support hotplug
 8a2a3897a430 media: videodev2.h: Add new pixel format for vsp1 on R8A779A0
 0b29b25ab439 drm: bridge: ti-sn65dsi86: Add setting options for SN65DSI86
 e7782857c017 drm: rcar-du: Add enable/disable dot clock to DU in R8A779A0
-bbb85787be4c drm: rcar-du: Add R-Car DSI registers in V3U
 cb3df6f55863 drm: rcar-du: Disable TV synchronized mode in V3U
 de5241d52cc6 drm: rcar-du: Add DIDSRO register setting for V3U
 c7b9de4f7b6a drm: rcar-du: Accessing to reserved registers at V3U is prohibited
 8e452962e251 drm: rcar-du: Add output checking in encoder for DSI port.
 d84aeb65f366 drm: rcar-du: Add DU device information for V3U
-26f7cb8065cb v4l: vsp1: Add support for new VSPD device in V3U
 bda8cf6a5bdc v4l: vsp1: Add new registers which are introduced in V3U
 395bb469c811 vsp1: rcar-fcp: Add FCPVD reset sequence for VSPD
 c63b0054608b drm: rcar-du: Add dev_type for dw-hdmi driver
@@ -608,7 +590,6 @@ c63b0054608b drm: rcar-du: Add dev_type for dw-hdmi driver
 f33dbb8090bd drm: rcar-du: Add HDMI control clock when S2RAM
 df0fc9790b0b drm: bridge: hw-hdmi: Control clock of bridge during S2RAM
 4287f91b1fb9 drm: rcar-du: Add hot plug event function at resume
-ab801d38ba3d drm: rcar-du: Add shutdown callback function in platform_driver
 441c24bfdab0 vsp1: Add display interrupt wait after setting STRCMD bit
 24940f87e199 drm: rcar-du: Add register access check
 3e69390afef7 drm: rcar-du: Fix possible crtcs for plane when using VSPDL
@@ -616,12 +597,10 @@ ab801d38ba3d drm: rcar-du: Add shutdown callback function in platform_driver
 b4427db080d7 drm: bridge: simple-bridge: Add dot clock valid check
 2f9195e22ba2 drm: rcar-du: Skip EPROBE_DEFER in case of disabling LVDS and HDMI
 e42ca15fced1 drm: bridge: simple-bridge: Add preferred resolution option
-8d608285551f drm: rcar-du: Add routing set for digital RGB previously
 ff86df8f2aa2 drm: rcar-du: Add support for colorkey alpha blending
 dffa26bbdf08 v4l: vsp1: Add support for colorkey alpha blending
 84efcbedf26a Revert "drm/rcar-du: Convert to the new generic alpha property"
 217af79ae9a9 drm: rcar-du: Fix DPLL clock divider judgement
-e88f4e52ad53 v4l: vsp1: Add write back support
 56b96a3db3e8 v4l: vsp1: Add Vmute function support
 3860e36d582d v4l: vsp1: Add underrun debug messege option
 4c4575ecad64 v4l: vsp1: Add underrun hung-up workaround
@@ -630,7 +609,6 @@ b05fb3de9b65 drm/bridge: adv7511: Add function of suspend and resume
 c3c1e53601fc drm: rcar-du: Fix LVDS stop sequence
 cd96a090fa07 drm: rcar-du: Add overlay layer size check
 ae6af8c6bfff drm: rcar-du: Add CPG reset and release
-fb2b37640a52 v4l: vsp1: Disable vsp1 interrupt when startup
 75008adaa5f2 drm: rcar-du: Fix PHY configure registers
 8605b0f29f33 drm: bridge: simple-bridge: Add connector status setting option
 0a1de0131e5c media: i2c: max9286: Delay initialize timing in launching driver
@@ -652,9 +630,6 @@ d7a7a58860cc media: i2c: Add C-PHY setting for MAX96712
 c8b353b49501 media: i2c: dummy-camera: Add dummy camera support
 0d5cbd0b87a9 media: rcar-vin: Add R-Car ISP support for R8A779G0
 a817ffeb4eda media: rcar-vin: Add support for R-Car R8A779G0 SoC
-63ab9a2be304 media: platform: rcar-vin: add G/S_PARM ioctl
-e9db2930e2f2 media: platform: rcar-vin: fix parallel notifier fail
-03bc70b9a68b media: rcar-csi2: Remove v4l2_async_notifier_cleanup in remove fucntion
 e10a3eba74e3 media: rcar-vin: Add RAW10 format support
 70cde46e18b9 media: rcar-vin: Add processing for operating ISP
 3234bf7ce3fc media: rcar-vin: Add support for R-Car R8A779A0 SoC
@@ -667,7 +642,6 @@ a87e91416bb0 media: rcar-vin: Fix checking format condition
 9ac2538217cc media: rcar-vin: Disable media-ctl on R8A77995
 8d3a28734eb3 media: rcar-vin: Add scaling mode to R8A77990
 d615491f9e09 media: rcar-vin: Fix the cropping function
-aded52cd2026 media: rcar-vin: clean-up workqueue
 6443ce0811cb media: rcar-vin: remove reset in stop stream
 5f4680c68d32 media: rcar-vin: Add NV12 pixel format checking
 e22c6bae0ea6 media: rcar-vin: Fix clock control flow
@@ -677,14 +651,10 @@ a30ce8ca61d4 media: i2c: adv7604: Fix set_fmt function
 da5448ccfeac media: i2c: adv7604: Add default EDID information
 c58d45a70ae9 media: i2c: adv7604: Enable decoder control register
 03e94938a142 media: rcar-vin: Add callback function for cropcap
-c2f5455df83d media: rcar-vin: Add FIS bit check before reading VnMS register
 0af0553ccce3 media: rcar-vin: Add INF bit check for R-Car Gen3
-83780cb3f1c9 media: rcar-vin: Add streaming count check when streming off
 2561701185a7 media: rcar-vin: do not allow changing scaling and composing while streaming
 df288c1c00fe rcar-vin: add support for UDS (Up Down Scaler)
-f2dde0d10699 media: rcar-vin: Add power management support
 2058a7e8eddc media: rcar-vin: Add overflow debug message option
-7a4ac2748d8e media: i2c: adv748x: Add power management
 c5a2d5fe615e media: i2c: adv748x: Fix video standard selection register setting
 9bbdcef12e3f media: i2c: adv748x: Add virtual channel option
 ac793f9c1bfa media: i2c: adv748x: Set default EDID value
@@ -762,7 +732,6 @@ db0c38eeebe9 dt-bindings: serial: sh-sci: Document r8a779f0 bindings
 f8a597ec6b6c sched/core: Add EXPORT_SYMBOL_GPL to sched_setaffinity
 dac54422c0d0 serial: sh-sci: Use pm_runtime_get/put when resume
 4ad9b3444ded serial: sh-sci: Use pm_runtime_get/put when suspend
-4a1d0851e182 PCI: pcie-rcar: Support runtime PM, link state L1 handling
 06c478c650ae dt-bindings: PCI: rcar: Add yaml bindings for PCI on R-Car S4
 57ecd61e47c1 dt-bindings: PCI: rcar: Add yaml bindings for PCI Endpoint and R-Car V4H
 1195a49b6ca3 dt-bindings: PCI: rcar: Add yaml bindings for R-Car V3U
@@ -869,7 +838,6 @@ f6bc667ad282 pinctrl: renesas: r8a779g0: Add I2C pins, groups and functions
 2226ef28e0fc pinctrl: renesas: r8a77990: Add driver-strength for R8A77990
 82fbba6554b7 pinctrl: renesas:r8a779{50, 51, 6, 65}: add mlb pinmux
 6c161137ceeb pinctrl: renesas: r8a77950: Add VIN pins, groups and functions
-5b474753618c pinctrl: renesas: r8a77990: Remove pullup/pulldown for USB30_OVC pin
 13b497a2f518 clk: renesas: r8a779g0: Update parent clk for (H)SCIF
 1a136874a612 clk: renesas: r8a779g0: Fix the (H)SCIF parents clk
 cfb5b66b2dab clk: renesas: r8a779g0-cpg-mssr: Add module critical clocks
@@ -923,8 +891,6 @@ dc644df9f22b clk: renesas: r8a779{5, 6, 70, 80}: add IMP clock
 3a0afce3d903 clk: renesas: r8a779{70, 80}: Add POST clock
 755a56e7c796 clk: renesas: r8a77{95, 96, 965, 990, 980}: Add RT-DMAC clocks
 43ca51590fa0 clk: renesas: r8a779{70, 80}: Add CPU operation points.
-455093f0ebb9 clk: Add support parent clock in set_phase
-048681d4b0af clk: renesas: rcar-gen3: Add set_phase to set SDnCKCR in HS400
 280b7c5cc56b clk: renesas: rcar-gen3: Fix revision of R8A7796 for applying SD_SKIP_FIRST
 eebc4189c612 clk: renesas: r8a779a0: Extend number of supported module clocks
 ee208b708745 clk: renesas: r8a779{5,6}: Add AVS clock
@@ -940,17 +906,13 @@ d7c9cc6e1a2a clk: renesas: r8a7795: Add iVDP1C clocks to ES1.x
 1d7bc686acb9 clk: renesas: r8a7795: Add VCP4 clock
 f75384dbb2de clk: renesas: r8a77990: Add FDP1 clock
 128981aa3601 clk: renesas: rcar-gen3: Add support ZG clock divider for R8A77990
-a263743fd33c clk: renesas: rcar-gen3: Add support when frequency does not propagate to parent in z clock divider
 d64955dcde0b clk: renesas: rcar-gen3: Add rounding for Z-clock frequency
-c0ce50b16e41 clk: renesas: rcar-gen3: Add PLL clock and update z-clock for propagating frequency to parent
 35eb4ba8bd88 clk: renesas: r8a77{95, 96, 965, 990}: Add ZG clock
 fbf991b5bd28 clk: renesas: r8a77{95, 96, 965}: Replace PLL3 multiplication setting
 23fcabf79226 clk: renesas: r8a77{95, 96, 965, 990}: Remove INTC-AP and INTC-EX clocks
 d4f31e1a412c arm64: defconfig: Select power allocator as default governor
 7ed8cce11f67 arm64: defconfig: Enable cpufreq configs for rcar
-5a635dcb4468 arm64: defconfig: Enable R-Car DSI Driver in defconfigs
 4a778de7829e arm64: defconfig: Enable rcar sound support
-e5253817f3bc arm64: defconfig: Enable R-Car PWM-TPU by default
 3425791f4264 arm64: defconfig: Change R-Car PWM to built-in
 a5758a3a06cd arm64: defconfig: Enable Renesas R-Car PCIe v4.0 host controller driver
 12f55f40cee1 arm64: defconfig: Enable UIO support
@@ -1012,7 +974,6 @@ cf44aee9dfea arm64: dts: renesas: r8a779{51, 60, 61}-ulcb: Fix souce clock for D
 a7afdde5f202 arm64: dts: renesas: r8a77960-ulcb: Disable CPUIdle support for CA53
 dadbd6f5b9f4 arm64: dts: renesas: ulcb: Add Media Clock Recovery Handler device node
 fc6bda37d4fe arm64: dts: renesas: r8a77951-ulcb: Add reserved memory regions
-49f80d538c58 arm64: dts: renesas: h3ulcb: Add cpu-supply property in a57_0 node
 9948cf8925ee arm64: dts: renesas: r8a77950-ulcb: Disable HS400 of SDHI2
 34a1d67768fd arm64: dts: renesas: Enable ADSP module in Gen3
 82e80a25d15a arm64: dts: renesas: Add ADSP node for Gen3 devices
