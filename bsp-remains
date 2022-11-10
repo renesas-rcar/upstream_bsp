@@ -428,7 +428,6 @@ d0ae50ec421f arm64: dts: r8a779a0: Delete ipmmu in mmc node
 ceaebe58dff5 arm64: dts: r8a77980: Update name and reg size of IMP nodes
 f5b16e76077b arm64: dts: r8a77980-condor: Add reserved memory regions
 f75fe1361167 arm64: dts: r8a779[78]0: Add WWDT generic UIO nodes
-f2925a4291f4 arm64: dts: renesas: r8a77980: Fix ipmmu_vc0 address
 e20364911781 arm64: dts: renesas: Set TISP UIO memory region according to datasheet
 d026e4feb89c arm64: dts: renesas: Set FBC UIO memory region to minimal possible
 050a3d8c39ea arm64: dts: renesas: UIO device naming per Renesas request
@@ -685,7 +684,6 @@ f60132c67c6e soc: renesas: Identify R-Car M3-W ES1.2
 258a86b3435a net: ethernet: renesas: rswitch: Add support for parallel mode
 5010c78c0c24 net: ethernet: renesas: rswitch: Add Renesas Ethernet Switch
 c9776655c1ea arm64: defconfig: Enable loadable EMS/IPA module.
-97f37cd0ccff dt-bindings: watchdog: renesas-wdt: Add support for the R8A779A0 WDT
 713a071a3248 arm64: defconfig: Enable EMS/IPA support
 a56aaa7a7313 dt-bindings: watchdog: renesas-wdt: Add support for the R8A779G0 WDT
 4c76d373092f arm64: defconfig: Enable PCIe Endpoint
@@ -708,11 +706,9 @@ f180287ca73b ravb: Support ravb driver for R-Car Gen4
 fad51de34b7f dt-bindings: spi: renesas,sh-msiof: Add support for S4
 61ce14e6e0f0 dt-binding: spi: renesas,sh-msiof: Add support for V4H
 6e6cf158bb82 spi: spi-sh-msiof: Add generic compatible string for R-Car Gen4
-739f54df7d2f thermal: rcar_gen3_thermal: fix warning: symbol 'rcar_gen3_ths_tj_1' shadows an earlier one
 78a2fa569e6c dt-bindings: thermal: Add yaml bindings for EMS in thermal zones
 4b6f17f1dd49 thermal: rcar_gen3_thermal: PIO-INT can be selected for each TSC separately
 210d647a385f thermal: rcar_gen3_thermal: Enable selection between polling/interrupt mode
-545622ffaa80 thermal: rcar_gen3_thermal: Use FUSE values if they are available
 b904fa8a336b can: rcar_canfd: Correct the value of tseg1
 e3e5bccc9244 can: rcar_canfd: rcar_canfd_configure_afl_rules(): Fix Rx FIFO entry setting
 ef7f2c0a8ccd can: rcar_canfd: Add support for r8a779g0 SoC
