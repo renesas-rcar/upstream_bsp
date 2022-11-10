@@ -5,7 +5,6 @@ cd0513b0a8be thermal: rcar_gen3_thermal: Fix rcar_gen3_thermal_mcelsius_to_temp(
 debcaf2c0296 thermal: rcar_gen3_thermal: Add support ECM
 6a7cc61fed35 thermal: rcar_gen3_thermal: Read calibration from hardware on R-Car S4
 c726edac6887 thermal: rcar_gen3_thermal: Use generic name for resources
-34133348ec61 thermal: rcar_gen3_thermal: Add r8a779f0 support
 af51d5309f8c arm64: dts: renesas: r8a779g0: Add compatible string for R-Car V4H
 b5bccf1fc37c arm64: dts: renesas: r8a779f0: Disable CDM check
 9fd7d9ee7993 arm64: dts: renesas: r8a779g0: Disable CDM check
@@ -46,7 +45,6 @@ a2d17d3b1576 soc: renesas: rcar-topology: Add missing device for rcar topology
 0846e66813ab soc: renesas: rcar-topology: Add support for R-Car capacity awareness
 5ef05786fe20 soc: renesas: rcar-sysc: Fix up areas to handle PDMODE
 5cb18d629db5 soc: renesas: rcar-sysc: Fix A3IR power on sequence for R8A77980
-973fbc34bf5d soc: renesas: rcar-sysc: Remove power domains always on for M3N v1.0
 7e9c8bd37798 soc: renesas: rcar-sysc: Include 3DG as always-on power domains
 ad70433f1eda soc: renesas: rcar-sysc: Support S2RAM
 e07b497cf41e soc: renesas: rcar-sysc: Improve power domains always on implementation
@@ -541,7 +539,6 @@ f2a8944238bd dt-bindings: cpufreq: add AVS bindings for R-Car V4H
 821a6a852c44 drm: rcar-du: lvds: Auto select RESET_CONTROLLER
 2fcd37700629 drm: bridge: ti-sn65dsi86: Add checking Horizontal Back Porch value
 f8264257f175 drm: rcar-du: Add setting for DSI on R8A779A0
-6986787cd321 drm: rcar-du: Allow importing non-contiguous dma-buf with VSP
 9485f372f4cc drm: rcar-du: Support YCbCr 10 bit pixel format
 ffb24cc21c56 media: vsp1: Add YCbCr 10 bit format setting
 00e6c30c493c media: v4l2: Add YCbCr 10 bit format which support on vsp1
@@ -614,11 +611,9 @@ ae6af8c6bfff drm: rcar-du: Add CPG reset and release
 17da051cfc67 media: i2c: ov5647: Add test pattern control
 092fce881478 media: i2c: ov5647: Add V4L2_CID_PIXEL_RATE control
 c541b27e85d7 media: ov5647: Fix return codes from ov5647_write/ov5647_read functions.
-f032fbe8e10b media: platform: rcar-vin: add GREY format
 1e15a520d473 media: i2c: add camera lvds support
 5213db1803d3 media: i2c: add ov5642 sensor driver
 53d4b314148b media: rcar-vin: rcar-csi2: fix r8a77980 SoC setup
-99749e8ce944 media: rcar-csi2: add R8A779A0 support
 cad649943834 media: rcar-vin: Auto select RESET_CONTROLLER
 b73a682b50b9 drm: rcar-du: lvds: Auto select RESET_CONTROLLER
 5232944262ff media: rcar-vin: Add interrupt for V4L2_FIELD_ALTERNATE format
@@ -630,10 +625,7 @@ c8b353b49501 media: i2c: dummy-camera: Add dummy camera support
 0d5cbd0b87a9 media: rcar-vin: Add R-Car ISP support for R8A779G0
 a817ffeb4eda media: rcar-vin: Add support for R-Car R8A779G0 SoC
 e10a3eba74e3 media: rcar-vin: Add RAW10 format support
-70cde46e18b9 media: rcar-vin: Add processing for operating ISP
-3234bf7ce3fc media: rcar-vin: Add support for R-Car R8A779A0 SoC
 905d9bcf6296 media: rcar-vin: Fix reset and release procedure
-c8fed47bd883 media: rcar-vin: Add R-Car ISP support
 15c84e6a1c2d media: i2c: Add max96712 driver prototype
 93a9b850bf1f media: rcar-vin: Remove checking format condition
 a87e91416bb0 media: rcar-vin: Fix checking format condition
@@ -643,7 +635,6 @@ a87e91416bb0 media: rcar-vin: Fix checking format condition
 d615491f9e09 media: rcar-vin: Fix the cropping function
 6443ce0811cb media: rcar-vin: remove reset in stop stream
 5f4680c68d32 media: rcar-vin: Add NV12 pixel format checking
-e22c6bae0ea6 media: rcar-vin: Fix clock control flow
 dde33d1d22bd media: i2c: adv7180: Add std update when getting format
 9dd88d126877 media: i2c: adv7604: Add suspend and resume support
 a30ce8ca61d4 media: i2c: adv7604: Fix set_fmt function
@@ -712,7 +703,6 @@ fad51de34b7f dt-bindings: spi: renesas,sh-msiof: Add support for S4
 b904fa8a336b can: rcar_canfd: Correct the value of tseg1
 e3e5bccc9244 can: rcar_canfd: rcar_canfd_configure_afl_rules(): Fix Rx FIFO entry setting
 ef7f2c0a8ccd can: rcar_canfd: Add support for r8a779g0 SoC
-44c2e464e680 can: rcar_canfd: Add support for r8a779a0 SoC
 316c5e8f6e85 memory: renesas-rpc-if: Remove redundant division of dummy
 996adb9c6368 memory: renesas-rpc-if: Clear HS bit during hardware initialization
 05a365ce230e memory: renesas-rpc-if: Add R-Car Gen4 support
@@ -805,10 +795,8 @@ d72d7b3f9b4e ravb: Fix ravb_ptp_interrupt clear interrupt all status
 286ee3cf3bad ravb: Add ravb_multi_interrupt to IRQF_SHARED
 51a77f0e7660 ravb: Fix register define for Gen3
 c9192124a557 ravb: Add register define for Gen3
-17c8fda8ce3b dt-bindings: timer: renesas, tmu: Document r8a779a0 TMU support
 ad58f44acd44 dt-bindings: timer: renesas, tmu: Document r8a779g0 TMU support
 dfd1133c7ab7 dt-bindings: timer: renesas, cmt: Document r8a779g0 CMT support
-fdb0c4d1753e dt-bindings: timer: renesas, cmt: Document r8a779a0 support
 5428d5087db2 pinctrl: renesas: r8a779g0: Fix the pins macro of PUEN5
 cb3f047933e3 pinctrl: renesas: r8a779a0: Remove redundant AVB{0,1} pinmux configuration
 c51e84c0c4bc pinctrl: renesas: r8a779a0: Add PCIe pins, groups and functions
@@ -831,7 +819,6 @@ bc546fe72bd8 pinctrl: renesas: r8a779g0: Add EthernetAVB pins, groups and functi
 f6bc667ad282 pinctrl: renesas: r8a779g0: Add I2C pins, groups and functions
 58c380911a43 pinctrl: renesas: r8a779g0: Add SCIF pins, groups and functions
 102fb238c55f pinctrl: renesas: Initial R8A779G0 (V4H) PFC support
-2226ef28e0fc pinctrl: renesas: r8a77990: Add driver-strength for R8A77990
 82fbba6554b7 pinctrl: renesas:r8a779{50, 51, 6, 65}: add mlb pinmux
 6c161137ceeb pinctrl: renesas: r8a77950: Add VIN pins, groups and functions
 13b497a2f518 clk: renesas: r8a779g0: Update parent clk for (H)SCIF
