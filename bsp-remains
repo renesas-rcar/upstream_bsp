@@ -93,9 +93,7 @@ f945fad8745d arm64: dts: renesas: v3hsk: Add clock-skew for GEther's Micrel PHY
 4692813404f0 arm64: dts: renesas: r8a779f0: Update power_state parameter for psci suspend call
 4f1b9a37b774 arm64: dts: renesas: r8a77970-eagle: Add input-justification options to adv7511
 9821d51a2ce5 arm64: dts: renesas: r8a779a0: Fix the clk definition on DSI node
-05f37160a35d Revert "arm64: dts: renesas: r8a779g0: whitehawk: add R-Car Sound"
 55dee8f01bfc arm64: dts: renesas: r8a779g0-whitehawk: Disable rtsn0
-f54c85a35ee8 Revert "arm64: dts: renesas: r8a779g0: add R-Car Sound support"
 c42b7504bd74 arm64: dts: renesas: r8a779f0/r8a779g0: Add QOS devices for S4/V4H Ver1.0
 10258e21e1ed arm64: dts: renesas: r8a779g0: Update power domain for IMP device
 67ff30ffa71a arm64: dts: renesas: r8a779f0: Add ICUMFW (icumx_cmd) devices for UIO
@@ -314,8 +312,6 @@ dde6e18b6b15 arm64: dts: renesas: Fix syntax error for Timer(CMT/TMU) node
 729325dc38f7 arm64: dts: renesas: Fix syntax error for RWDT node
 17ff7e7405e9 arm64: dts: renesas: r8a779g0: Update FieldBIST UIO compatible
 00244fb8f94a arm64: dts: renesas: r8a779g0: Add Ethernet-TSN support
-104c15e6ff51 arm64: dts: renesas: r8a779g0: whitehawk: add R-Car Sound
-0d65a95455d3 arm64: dts: renesas: r8a779g0: add R-Car Sound support
 6c93b7630864 arm64: dts: renesas: r8a779g0: Add OSAL (systemram) UIO devices
 5622f2a06d00 arm64: dts: renesas: r8a779g0: Add PAP UIO devices
 1c27c7d3a754 arm64: dts: renesas: r8a779g0: Add VideoOutput/Input UIO devices
