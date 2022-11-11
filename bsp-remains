@@ -443,10 +443,6 @@ a432a1010378 arm64: dts: r8a77970, r8a77980: Enable TMU and CMT
 8a3097afe858 arm64: dts: renesas: Add ulcb-kf-imx219 overlay
 499956c799e7 arm64: dts: renesas: ulcb-kf: Add ov5647 support
 54eaa9cd5aae arm64: boot: dts: rcar-gen3: Fix MLP IRQ order
-6f38af88e475 arm64: boot: dts: renesas: ulcb-kf: pcm3168a add TDM mode
-36324cadce25 arm64: boot: dts: renesas: ulcb-kf: Set radio and BT sound masters
-dbf5d3835a46 arm64: boot: dts: renesas: ulcb-kf: Enable extra sound cards
-2a460a4e95a3 arm64: dts: renesas: ulcb: Make AK4613 sound device name consistent
 5beefb300ae6 arm64: dts: renesas: r8a779x: add IMP nodes
 61bb4e544211 arm64: dts: renesas: r8a77950-ulcb: disable eMMC
 931e8525ade1 arm64: dts: r8a77980-v3hsk: Enable onboard eMMC
@@ -985,3 +981,8 @@ c91831a4d06a arm64: dts: renesas: salvator-common: Enable PWM2
 b8fac174f786 arm64: dts: renesas: r8a77951: Unsupport DMA transfer for SCIF2
 87b9b3057086 arm64: dts: renesas: r8a779{51, 60, 61}: Add OPPs table-{1-7} for cpu devices
 18c90aaa519d arm64: dts: renesas: r8a779{50, 51, 60, 61, 65, 90}: Remove clocks properties in gic and irqc node
+
+--- decided to be not apply ---
+36324cadce25 arm64: boot: dts: renesas: ulcb-kf: Set radio and BT sound masters
+dbf5d3835a46 arm64: boot: dts: renesas: ulcb-kf: Enable extra sound cards
+2a460a4e95a3 arm64: dts: renesas: ulcb: Make AK4613 sound device name consistent

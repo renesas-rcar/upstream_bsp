@@ -47,4 +47,16 @@ Media
 	- explanation for others
 
 Sound
-	- All BSP local patches are included in native v6.1
+	- All BSP local driver patches are included in native v6.1
+	- DT
+		- Upstream is already supporting TDM on ulcb-kf pcm3168a.
+		  BSP is assuming that pcm3168a can handle Playback/Capture on same DAI,
+		  but it is wrong. pcm3168a is not symmetric device (playback 8ch vs capture 6ch).
+		- BSP is naming Sound Card as "ak4613", but it is wrong (2a460a4e95a3).
+		  It should be total "sound card name", not "codec name".
+		- BSP is using si468x/wl18xx for Sound, but these are not cared,
+		  because we don't have these.
+		  - BSP try to use si468x/wl18xx on extra Sound card, it is wrong.
+		    These should be handled on the existing Card.
+		    There is no guarantee on current ALSA SoC to use one driver (CPU)
+		    with different Sound Cards.
