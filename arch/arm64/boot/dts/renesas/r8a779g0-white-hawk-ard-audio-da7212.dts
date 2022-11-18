@@ -1,0 +1,196 @@
+// SPDX-License-Identifier: GPL-2.0
+/*
+ * Device Tree Source for the White Hawk boards with R-Car V4H + ARD-AUDIO-DA7212 Board
+ *
+ * You can find and buy "ARD-AUDIO-DA7212" at Digi-Key
+ *
+ *	https://www.digikey.jp/en/products/detail/ARD-AUDIO-DA7212/1564-1021-ND/5456357?curr=usd&utm_campaign=buynow&utm_medium=aggregator&utm_source=octopart
+ *
+ * [Connection]
+ *
+ * White Hawk				ARD-AUDIO-DA7212
+ * +-------------------------+
+ * | CPU board		     |
+ * |			     |
+ * |CN40 (IO PIN HEADER)     |
+ * |	AUDIO_CLKIN_V	pin1 |<--\	+---------------+
+ * | (*)GP1_25/SL_SW2_V	pin2 |<--/	|J2		|
+ * |	AUDIO_CLKOUT_V	pin5 |<-------->|pin7  MCLK	|
+ * |	SSI_SCK_V	pin9 |<-------->|pin1  BCLK	|
+ * |	SSI_WS_V	pin13|<-------->|pin3  WCLK	|
+ * |	SSI_SD_V	pin15|<-------->|pin5  DATIN	| (@)
+ * |			     |       -->|pin15 DATOUT	| see [CAPTURE]
+ * +-------------------------+		+---------------+
+ * (*) GP1_25/SL_SW2_V is used as TPU
+ *
+ * +-------------------------+
+ * |Breakout board	     |
+ * |			     |		+---------------+
+ * |CN34 (I2C CN)	     |		|J1		|
+ * |	I2C0_SCL	pin3 |<-------->|pin20 SCL	|
+ * |	I2C0_SDA	pin5 |<-------->|pin18 SDA	|
+ * +-------------------------+	+------>|pin14 GND	|
+ *				|	+---------------+
+ * +-------------------------+	|
+ * |Switch Board	     |	|
+ * |			     |	|	+---------------+
+ * |CN5			 GND |<-+	|J7		|
+ * |			 3v3 |<-------->|pin8  (+3.3v)	|
+ * +-------------------------+		+---------------+
+ *
+ *
+ * [How to use]
+ *
+ * You need to setting TPU from user space.
+ * Let's use duty_cycle = 50% here.
+ * see also [(C) clock]
+ *
+ * For 44.1kHz (= 11289600 Hz) (= audio_clkin)
+ *	1000000000 / 11289600 = 88.577 = period
+ *
+ *	echo 0   > /sys/class/pwm/pwmchip0/export
+ *	echo 88  > /sys/class/pwm/pwmchip0/pwm0/period
+ *	echo 44  > /sys/class/pwm/pwmchip0/pwm0/duty_cycle
+ *	echo 1   > /sys/class/pwm/pwmchip0/pwm0/enable
+ *
+ * For 48kHz (= 12288000 Hz) (= audio_clkin)
+ *	1000000000 / 11289600 = 81.380 = period
+ *
+ *	echo 0   > /sys/class/pwm/pwmchip0/export
+ *	echo 80  > /sys/class/pwm/pwmchip0/pwm0/period
+ *	echo 40  > /sys/class/pwm/pwmchip0/pwm0/duty_cycle
+ *	echo 1   > /sys/class/pwm/pwmchip0/pwm0/enable
+ *
+ *
+ * You need to setup Headphone
+ *
+ *	> amixer set "Headphone" 40%
+ *	> amixer set "Headphone" on
+ *	> amixer set "Mixout Left DAC Left" on
+ *	> amixer set "Mixout Right DAC Right" on
+ *
+ *
+ * [NOTE]
+ *
+ * On current setting,
+ * you can use playback 44.1kHz group rate only.
+ *	       ^^^^^^^^ ^^^^^^^^^^^^^
+ *
+ *	OK			NG
+ *	> aplay 22050.wav	> aplay 24000.wav
+ *	> aplay 44100.wav	> aplay 48000.wav
+ *	> aplay 88200.wav	> aplay 95000.wav
+ *
+ * You can use capture (see [CAPTURE]), and 48kHz group if you modify
+ * the board and settings.
+ * see
+ *	(@) pin5 DATIN
+ *	(C) clock
+ *
+ * Copyright (C) 2022 Renesas Electronics Corp.
+ */
+
+/dts-v1/;
+#include "r8a779g0-white-hawk.dts"
+
+/ {
+	sound_card: sound {
+		compatible = "audio-graph-card";
+		label = "rcar-sound";
+
+		dais = <&rsnd_port0>;	/* DA7212 Audio Codec */
+	};
+};
+
+&pfc {
+	sound_pins: sound {
+		groups = "ssi_ctrl", "ssi_data";
+		function = "ssi";
+	};
+
+	sound_clk_pins: sound_clk {
+		groups = "audio_clkin", "audio_clkout";
+		function = "audio_clk";
+	};
+
+	tpu0_pins: tpu0 {
+		groups = "tpu_to0_a";
+		function = "tpu";
+	};
+};
+
+&tpu {
+	pinctrl-0 = <&tpu0_pins>;
+	pinctrl-names = "default";
+
+	status = "okay";
+};
+
+&i2c0 {
+	da7212: codec@1a {
+		compatible = "dlg,da7212";
+
+		#sound-dai-cells = <0>;
+		#address-cells = <1>;
+		#size-cells = <0>;
+
+		reg = <0x1a>;
+
+		clocks = <&rcar_sound>;
+		clock-names = "mclk";
+
+		dlg,micbias1-lvl = <2500>;
+		dlg,micbias2-lvl = <2500>;
+		dlg,dmic-data-sel = "lrise_rfall";
+		dlg,dmic-samplephase = "between_clkedge";
+		dlg,dmic-clkrate = <3000000>;
+
+		VDDA-supply   = <&reg_1p8v>;
+		VDDSP-supply  = <&reg_5p0v>;
+		VDDMIC-supply = <&reg_3p3v>;
+		VDDIO-supply  = <&reg_3p3v>;
+
+		port@0 {
+			da7212_endpoint: endpoint {
+				remote-endpoint = <&rsnd_endpoint>;
+			};
+		};
+	};
+};
+
+&audio_clkin {
+	clock-frequency = <11289600>; /* 44.1kHz groups [(C) clock] */
+/*	clock-frequency = <12288000>; /* 48  kHz groups [(C) clock] */
+};
+
+&rcar_sound {
+	pinctrl-0 = <&sound_clk_pins>, <&sound_pins>;
+	pinctrl-names = "default";
+
+	/* Single DAI */
+	#sound-dai-cells = <0>;
+
+	/* audio_clkout */
+	#clock-cells = <0>;
+	clock-frequency = <5644800>; /* 44.1kHz groups [(C) clock] */
+/*	clock-frequency = <6144000>;    48  kHz groups [(C) clock] */
+
+	status = "okay";
+
+	ports {
+		rsnd_port0: port@0 {
+			rsnd_endpoint: endpoint {
+				remote-endpoint = <&da7212_endpoint>;
+
+				dai-format = "i2s";
+				bitclock-master = <&rsnd_endpoint>;
+				frame-master = <&rsnd_endpoint>;
+
+				/* Please use exclusively to the 'capture' */
+				playback = <&ssi0>;
+				/* [CAPTURE] */
+				/* capture = <&ssi0>; */
+			};
+		};
+	};
+};
