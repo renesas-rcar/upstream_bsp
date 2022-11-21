@@ -777,7 +777,6 @@ d72d7b3f9b4e ravb: Fix ravb_ptp_interrupt clear interrupt all status
 c9192124a557 ravb: Add register define for Gen3
 ad58f44acd44 dt-bindings: timer: renesas, tmu: Document r8a779g0 TMU support
 dfd1133c7ab7 dt-bindings: timer: renesas, cmt: Document r8a779g0 CMT support
-5428d5087db2 pinctrl: renesas: r8a779g0: Fix the pins macro of PUEN5
 cb3f047933e3 pinctrl: renesas: r8a779a0: Remove redundant AVB{0,1} pinmux configuration
 c51e84c0c4bc pinctrl: renesas: r8a779a0: Add PCIe pins, groups and functions
 bf17a2d986b7 pinctrl: renesas: r8a779f0: Fix typo mistake of tsn1 pin
@@ -786,18 +785,6 @@ bf17a2d986b7 pinctrl: renesas: r8a779f0: Fix typo mistake of tsn1 pin
 751ac8024a13 pinctrl: renesas: r8a779f0: Fix pfc addresses of Control domain
 17e03cf7176a pinctrl: renesas: Initial R8A779F0 (S4) PFC support
 dfb55df8b6b7 dt-bindings: pinctrl: renesas,pfc: Document r8a779f0 PFC support
-55b3036ae18c pinctrl: renesas: r8a779g0: Add PCIe pins, groups, and functions
-03f539a71f39 pinctrl: renesas: r8a779g0: Add Ethernet-TSN support
-331bbf288595 pinctrl: renesas: r8a779g0: Add CAN-FD pins, groups and functions
-80311c828cea pinctrl: renesas: r8a779g0: Add PWM pins, groups and functions
-0401099ced52 pinctrl: renesas: r8a779g0: Add MSIOF pins, groups and functions
-71e6b16a3df1 pinctrl: renesas: r8a779g0: Fix MODSEL8 value when using I2C
-52adf55a5798 pinctrl: renesas: r8a779g0: Add QSPI pins, groups, and functions
-33e3bd0fb850 pinctrl: renesas: r8a779g0: Add MMC pins, groups and functions
-0c093ecfcfef pinctrl: renesas: r8a779g0: Add HSCIF pins, groups and functions
-bc546fe72bd8 pinctrl: renesas: r8a779g0: Add EthernetAVB pins, groups and functions
-f6bc667ad282 pinctrl: renesas: r8a779g0: Add I2C pins, groups and functions
-58c380911a43 pinctrl: renesas: r8a779g0: Add SCIF pins, groups and functions
 102fb238c55f pinctrl: renesas: Initial R8A779G0 (V4H) PFC support
 82fbba6554b7 pinctrl: renesas:r8a779{50, 51, 6, 65}: add mlb pinmux
 6c161137ceeb pinctrl: renesas: r8a77950: Add VIN pins, groups and functions
