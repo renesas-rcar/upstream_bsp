@@ -673,17 +673,12 @@ a56aaa7a7313 dt-bindings: watchdog: renesas-wdt: Add support for the R8A779G0 WD
 b83963a2b477 arm64: defconfig: Enable DSC driver
 e5540b8157bc arm64: defconfig: Enable Marvell PHY 88Q2110
 dce559decaec arm64: defconfig: enable max96789 on defconfig
-d431cc52fd60 arm64: defconfig: add UFS Config.
 0e5d0c8ae529 arm64: defconfig: Enable cpufreq support
 32030bf07d39 arm64: defconfig: Enable MAX9286 and GMSL camera by default
-4e6ee9d90812 arm64: defconfig: Enable DMA Test client as module
 92eb018eead1 arm64: defconfig: Enable R-Car PWM-TAU by default
-c4d35f8eb2bd arm64: defconfig: Enable Marvell 10G PHY
 a85c238a5134 arm64: defconfig: Enable Renesas Ethernet Switch
-cf66de64a0ed arm64: defconfig: enable R8A779F0 SoC
 60db06c0df93 arm64: defconfig: Enable Renesas Ethernet-TSN
 1687c19f731c arm64: defconfig: VIDEO_MAX96712_STAGING and VIDEO_DUMMY_CAMERA
-089534842fe7 arm64: defconfig: Add CANFD enable in defconfig
 f180287ca73b ravb: Support ravb driver for R-Car Gen4
 817c301889ac ravb: Add a compatible string for r8a77960/r8a77961
 fad51de34b7f dt-bindings: spi: renesas,sh-msiof: Add support for S4
@@ -757,13 +752,6 @@ fdfe96d831f0 dmaengine: rcar-dmac: Add bus rate control support for R-Car V3U/V4
 30948f03327b dmaengine: rcar-dmac: Add support for R-Car V4H
 3baf2c4e8881 dmaengine: rcar-dmac: Add fixed address mode support
 6baf8b33ed9d dmaengine: rcar-dmac: Fix array-bounds warning refer chcr_ts[]
-76b327e38b6e arm64: defconfig: Disable 4K Sector size by default
-3c5c1d95969d arm64: defconfig: Enable JFFS2 support by default
-77fce7defe0f arm64: defconfig: Enable RPC-IF SPI driver by default
-fd74885341cd arm64: defconfig: Enable Renesas VMSA-compatible IPMMU support
-d32569da6b22 arm64: defconfig: Add USB3.0 phy driver
-337235fcb63b arm64: defconfig: Enable usb-dmac driver
-016c1442bece arm64: defconfig: Enable USBHS configs
 ad701408b101 dt-bindings: ipmmu: Add definition IPMMU info for UIO devices
 492cdd5c9cff dt-bindings: ipmmu: Add IPMMU info for UIO devices
 6d96e6755a60 uio: uio_pdrv_genirq: Add parameter to check device no clock
@@ -885,15 +873,8 @@ d64955dcde0b clk: renesas: rcar-gen3: Add rounding for Z-clock frequency
 35eb4ba8bd88 clk: renesas: r8a77{95, 96, 965, 990}: Add ZG clock
 fbf991b5bd28 clk: renesas: r8a77{95, 96, 965}: Replace PLL3 multiplication setting
 23fcabf79226 clk: renesas: r8a77{95, 96, 965, 990}: Remove INTC-AP and INTC-EX clocks
-d4f31e1a412c arm64: defconfig: Select power allocator as default governor
 7ed8cce11f67 arm64: defconfig: Enable cpufreq configs for rcar
-4a778de7829e arm64: defconfig: Enable rcar sound support
-3425791f4264 arm64: defconfig: Change R-Car PWM to built-in
 a5758a3a06cd arm64: defconfig: Enable Renesas R-Car PCIe v4.0 host controller driver
-12f55f40cee1 arm64: defconfig: Enable UIO support
-e5f699b37daf arm64: defconfig: Enable VIN driver related configuraiton
-34d8807b3abc arm64: defconfig: Enable Display driver related configuration
-b566f76315fc arm64: defconfig: Enable DEVFREQ configuration
 3f707c202de4 arm64: dts: renesas: r8a77990-es10-ebisu: Enable ADSP
 d9f0265c8846 arm64: dts: renesas: r8a77990-es10-ebisu: Add vspb and vspi0 for VSP Manager
 0ab7708d3656 arm64: dts: renesas: r8a77990-ebisu: Add vspb and vspi0 for VSP Manager
