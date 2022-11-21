@@ -1,8 +1,50 @@
-DT
-	- sample
+ARM/SoC/DT
+	- A lot of BSP patches were included in native v6.1
+	- explanation for others
 
-ARM
-	- sample
+Clock
+	- A lot of BSP patches were included in native v6.1
+	- explanation for others
+
+PinControl/GPIO
+	- A lot of BSP patches were included in native v6.1
+	- explanation for others
+
+DMA-Engine
+	- A lot of BSP patches were included in native v6.1
+	- explanation
+
+IOMMU
+	- A lot of BSP patches were included in native v6.1
+	- explanation for others
+
+SD/MMC
+	- A lot of BSP patches were included in native v6.1
+	- explanation for others
+
+PCI
+	- A lot of BSP patches were included in native v6.1
+	- explanation for others
+
+CAN
+	- explanation
+
+Serial
+	- explanation
+
+Thermal
+	- A lot of BSP patches were included in native v6.1
+	- explanation for others
+
+Regulator
+	- All BSP local patches are included in native v6.1
+
+MFD
+	- All BSP local patches are included in native v6.1
+
+Media
+	- A lot of BSP patches were included in native v6.1
+	- explanation for others
 
 Sound
 	- All BSP local patches are included in native v6.1
