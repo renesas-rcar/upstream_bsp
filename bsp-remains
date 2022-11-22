@@ -112,9 +112,6 @@ d4000c3929ec arm64: dts: renesas: r8a77980-v3hsk: Adjust reserved memory layout
 d24350a21160 arm64: dts: renesas: r8a779a0: Disable legacy IPMMU driver
 0e352ad91a7f arm64: dts: renesas: r8a779a0: Add IMP SPMI/SPMC mem devices
 a621bba38a19 arm64: dts: r8a779{70,80}-v3{m,h}sk: Add reserved mem for CMEM
-9089907b6f1c arm64: dts: renesas: r8a779a0: Add POSTCLK devices
-3b01aad15052 arm64: dts: renesas: r8a77970: Add POSTCLK devices
-9b1b84da0995 arm64: dts: renesas: r8a77980: Add POSTCLK devices
 8151b263602c arm64: dts: r8a77980-es2: Add resets property for IMP DMA SLIM device
 8cdc7a6137d9 arm64: dts: renesas: r8a779a0: add CA76_[2..7] core
 13967f271d7e arm64: dts: renesas: r8a779a0: Correspond to interrupt-cells description changes
@@ -579,10 +576,8 @@ b5f956bd812c clk: renesas: r8a779a0: Fix the parent clk for SD
 8c99198a7a03 clk: renesas: r8a779f0: Add AESACC clock
 ee1148fe57c3 clk: renesas: r8a779a0: Add PLL4 clk configuration
 7b3567dc796e clk: renesas: r8a779a0: Add IPMMU clocks
-e0d1e277d50d clk: renesas: r8a779a0: Add SMD-PS clocks and SMD-POST clocks
 a0739e93709f clk: renesas: r8a779a0: Add AESACC (wcrc_caiplite) clocks
 732a034e6d37 clk: renesas: r8a779a0: Add AESACC (caiplite) clocks
-3c2e05a83da0 clk: renesas: r8a779a0: Add definition for POST clk
 a8a852b85e90 clk: renesas: r8a779g0: Fix TPU clk source of RCar V4H
 7e49a8b70a7d clk: renesas: r8a779f0: Remove RPC clock
 1b75a84a7686 clk: renesas: r8a779f0: Add SHIPS clock
@@ -617,7 +612,6 @@ a232d9186d2b clk: renesas: r8a779{70, 80}: Add ISP clock
 75feb58b222d clk: renesas: r8a779{70, 80}: Add IMR clocks
 60d4d536778e clk: renesas: r8a77980: Add VIN clocks
 dc644df9f22b clk: renesas: r8a779{5, 6, 70, 80}: add IMP clock
-3a0afce3d903 clk: renesas: r8a779{70, 80}: Add POST clock
 43ca51590fa0 clk: renesas: r8a779{70, 80}: Add CPU operation points.
 280b7c5cc56b clk: renesas: rcar-gen3: Fix revision of R8A7796 for applying SD_SKIP_FIRST
 eebc4189c612 clk: renesas: r8a779a0: Extend number of supported module clocks
@@ -696,7 +690,6 @@ fb7522eabbe2 arm64: dts: renesas: r8a779a0: Update VIN UIO devices
 7592170fdd6a arm64: dts: r8a779a0: Update IPMMU UIO devices
 4950a660c915 arm64: dts: renesas: r8a779a0: Update naming of WWDT UIO devices
 55cc6e95045f arm64: dts: renesas: r8a779a0: Update naming of FBA UIO devices
-f371dfb0c1a9 arm64: dts: renesas: r8a779a0: Add SMD-PS and SMP-POST UIO devices
 3e33856b953d arm64: dts: renesas: r8a77980-es2: Update naming of FBA unsupported UIO devices
 9ba1906c7c93 arm64: dts: renesas: r8a77980: Update naming of FBA UIO devices
 ee2195015391 arm64: dts: renesas: r8a77970: Update naming of FBA UIO devices
@@ -749,7 +742,6 @@ a8808023acc0 arm64: dts: renesas: r8a779f0: Add AESACC UIO devices
 9c5882e7997f Revert "arm64: dts: renesas: r8a779g0: Update IO/range AESACC UIO devices"
 c780393648d9 arm64: dts: renesas: r8a779g0: Update pm/reset for PAP UIO devices
 3b38ad9eadd4 arm64: dts: renesas: r8a779g0: Add AESACC (caiplite_wrapper) UIO devices
-e4f03b4c6915 arm64: dts: renesas: r8a779g0: Update pm/POST FieldBIST UIO devices
 4d62e27495b1 arm64: dts: renesas: r8a779g0: Update pm/cpg system_ram UIO devices
 81f16ca7d480 arm64: dts: renesas: r8a779g0: Update PAP UIO devices
 84c221dda6f5 arm64: dts: renesas: r8a779g0: Update IO/range AESACC UIO devices
@@ -950,3 +942,11 @@ add6f2323ec3 arm64: dts: renesas: r8a77980: Update FCPR UIO devices
 1c6e58602374 arm64: dts: renesas: r8a77990: Detach IPMMU-VI0/1 from FCPVD
 e9e9f5ec040f arm64: dts: renesas: r8a7796{0,1}: Detach IPMMU-VI0 from FCPF
 cc177bcb7dea arm64: dts: renesas: r8a779{51, 65}: Add brs option
+9089907b6f1c arm64: dts: renesas: r8a779a0: Add POSTCLK devices
+3b01aad15052 arm64: dts: renesas: r8a77970: Add POSTCLK devices
+9b1b84da0995 arm64: dts: renesas: r8a77980: Add POSTCLK devices
+e0d1e277d50d clk: renesas: r8a779a0: Add SMD-PS clocks and SMD-POST clocks
+3c2e05a83da0 clk: renesas: r8a779a0: Add definition for POST clk
+3a0afce3d903 clk: renesas: r8a779{70, 80}: Add POST clock
+f371dfb0c1a9 arm64: dts: renesas: r8a779a0: Add SMD-PS and SMP-POST UIO devices
+e4f03b4c6915 arm64: dts: renesas: r8a779g0: Update pm/POST FieldBIST UIO devices
