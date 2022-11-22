@@ -21,18 +21,6 @@ f04e295cd388 mmc: renesas_sdhi: reset calibration register
 ce747db93e14 mmc: tmio: Add internal DMA transfer end
 e6e4182857b4 mmc: renesas_sdhi: Add PIO mode support
 32cdac51bf55 Revert "cpufreq: Remove CPUFREQ_ADJUST and CPUFREQ_NOTIFY policy notifier events"
-4d2f56a1c57b soc: renesas: rcar_ems_ctrl: Fix using cpu_up/down()
-87451a341603 dt-bindings: thermal: Add yaml bindings for EMS in thermal zones
-9c5a4543f59b soc: renesas: rcar_ems_ctrl: Fix "Using plain integer as NULL pointer"
-88dca0a1985e soc: renesas: rcar_ems_ctrl: Enable EMS for CA53
-a068a9ea0528 soc: renesas: rcar_ems_ctrl: Enable loadable
-b7aed40a0b20 soc: renesas: rcar_ems_ctrl: Update for code cleanup
-472fc2f9da34 soc: renesas: rcar_ems_ctrl: Fix build error with disabling CONFIG_CPU_FREQ
-b6d6f18fff02 soc: renesas: rcar_ems_ctrl: Exclude A53 out of targeted frequency scaled CPU
-2fa31ccfafb9 soc: renesas: rcar_ems_ctrl: Fix cpu weight for platform with one targeted CPU
-023e7888f326 soc: renesas: rcar_ems_ctrl: Fetch targeted shutdown cpu from DT
-6e7cec9a6cf5 soc: renesas: rcar_ems_ctrl: Fix coding error when initializing static var to false
-abfa058da577 soc: renesas: rcar_ems_ctrl: Move Emergency shutdown to platform driver
 57ccb1c20a4a soc: renesas: rcar-sysc: Add CR7 domain for r8a77980 in quirks_match
 6c2fe82cca83 soc: renesas: rcar-sysc: Support to handle PDMODE for R-Car V3H ES2.x
 a2aa91369836 dt-bindings: power: rcar-sysc: Document r8a779f0 SYSC binding
@@ -458,8 +446,6 @@ f60132c67c6e soc: renesas: Identify R-Car M3-W ES1.2
 8776884f313c net: phy: marvell10g: Add mode configuration and MAC type setting for 88E2110
 258a86b3435a net: ethernet: renesas: rswitch: Add support for parallel mode
 5010c78c0c24 net: ethernet: renesas: rswitch: Add Renesas Ethernet Switch
-c9776655c1ea arm64: defconfig: Enable loadable EMS/IPA module.
-713a071a3248 arm64: defconfig: Enable EMS/IPA support
 a56aaa7a7313 dt-bindings: watchdog: renesas-wdt: Add support for the R8A779G0 WDT
 4c76d373092f arm64: defconfig: Enable PCIe Endpoint
 b83963a2b477 arm64: defconfig: Enable DSC driver
@@ -476,7 +462,6 @@ f180287ca73b ravb: Support ravb driver for R-Car Gen4
 fad51de34b7f dt-bindings: spi: renesas,sh-msiof: Add support for S4
 61ce14e6e0f0 dt-binding: spi: renesas,sh-msiof: Add support for V4H
 6e6cf158bb82 spi: spi-sh-msiof: Add generic compatible string for R-Car Gen4
-78a2fa569e6c dt-bindings: thermal: Add yaml bindings for EMS in thermal zones
 4b6f17f1dd49 thermal: rcar_gen3_thermal: PIO-INT can be selected for each TSC separately
 210d647a385f thermal: rcar_gen3_thermal: Enable selection between polling/interrupt mode
 b904fa8a336b can: rcar_canfd: Correct the value of tseg1
@@ -950,3 +935,18 @@ e0d1e277d50d clk: renesas: r8a779a0: Add SMD-PS clocks and SMD-POST clocks
 3a0afce3d903 clk: renesas: r8a779{70, 80}: Add POST clock
 f371dfb0c1a9 arm64: dts: renesas: r8a779a0: Add SMD-PS and SMP-POST UIO devices
 e4f03b4c6915 arm64: dts: renesas: r8a779g0: Update pm/POST FieldBIST UIO devices
+4d2f56a1c57b soc: renesas: rcar_ems_ctrl: Fix using cpu_up/down()
+87451a341603 dt-bindings: thermal: Add yaml bindings for EMS in thermal zones
+9c5a4543f59b soc: renesas: rcar_ems_ctrl: Fix "Using plain integer as NULL pointer"
+88dca0a1985e soc: renesas: rcar_ems_ctrl: Enable EMS for CA53
+a068a9ea0528 soc: renesas: rcar_ems_ctrl: Enable loadable
+b7aed40a0b20 soc: renesas: rcar_ems_ctrl: Update for code cleanup
+472fc2f9da34 soc: renesas: rcar_ems_ctrl: Fix build error with disabling CONFIG_CPU_FREQ
+b6d6f18fff02 soc: renesas: rcar_ems_ctrl: Exclude A53 out of targeted frequency scaled CPU
+2fa31ccfafb9 soc: renesas: rcar_ems_ctrl: Fix cpu weight for platform with one targeted CPU
+023e7888f326 soc: renesas: rcar_ems_ctrl: Fetch targeted shutdown cpu from DT
+6e7cec9a6cf5 soc: renesas: rcar_ems_ctrl: Fix coding error when initializing static var to false
+abfa058da577 soc: renesas: rcar_ems_ctrl: Move Emergency shutdown to platform driver
+c9776655c1ea arm64: defconfig: Enable loadable EMS/IPA module.
+713a071a3248 arm64: defconfig: Enable EMS/IPA support
+78a2fa569e6c dt-bindings: thermal: Add yaml bindings for EMS in thermal zones
