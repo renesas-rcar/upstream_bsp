@@ -1,0 +1,80 @@
+============== -*- outline -*- ==============
+
+                BSP rebase work
+
+2022/11/24	Kuninori Morimoto <kuninori.morimoto.gx@renesas.com>
+=============================================
+
+* Git
+	Morimoto
+		https://github.com/morimoto/linux.git  topic/renesas-bsp-rebase-v6.1
+	Wolfram
+		git://git.kernel.org/pub/scm/linux/kernel/git/wsa/linux.git
+
+* Task
+	1) Backport/Handle each bsp-remains patches on latest renesas-bsp-rebase-v6.1
+	2) Update done/bsp-remain files accordingly
+	3) Push it to your git repository, and indicate it. Morimoto will merge it.
+	4) back to 1)
+
+* Todo
+	Morimoto
+		- Add "bsp-only" file for *real* local patch (next week).
+		- Create "renesas-dir" dir, and move each files to there (next week).
+		- Create "summary" file
+		- How to handle V3U patches ?
+
+	Core
+		- BSP is using many "ebisu-xxx" dts, but upstream has only "ebisu".
+		  We can remove these from "bsp-remains", and explain about it on "done"
+		- Let's accept "defconfig" update patch even though it was local patch.
+
+* About "cherry-pick"
+
+	Let's use it to *reduce* bsp-remains for now,
+	not for aggressive backport.
+
+* How to handle *upportable* patch ?
+
+	If the patch can be upstreamed, but is now trying to,
+	let's apply the patch, and remove it from bsp-remains.
+	The patch can be replaced if the patch was accepted on upstream.
+
+* How to handle *real* local patch ?
+
+	Keep it on "bsp-remains" (will be "bsp-only" file next week),
+	and explain about it on "done" file.
+
+	Please find and use last part of "bsp-remains" for now.
+
+	A lot of UIO patches will be *real* local patch, I guess.
+
+* Schedule
+
+	I could connect to BSP team. The time limit is "End of Feb".
+	So we have *3* month.
+
+	~ Nov/E
+		- focus "backportable" patches
+			- From linus or linux-next branches
+		- focus "defconfig update" patches
+			- let's accept defconfig update patch even though
+			  it was local patch
+		- pickup *real* local patch
+			- and move it to "end of bsp-remains" file
+			  (for now. We will use "bsp-only" file from next week).
+
+	~ Jan/E
+		- focus "upportable" patches
+			- This means, it is still local patch, but can be upported.
+			  Please apply such patch, and remove it from remain file.
+			  And try to upport it. We can replace it if upport has done.
+
+	~ Feb/E
+		- aggressive backport (if needed)
+		- finalize
+
+	Every Friday
+		I will ask latest git every Friday, and merge it at next Monday.
+		But please don't hesitate to say "did nothing, because of SoW",
+		we never complain about it. We don't know when you are working for Renesas.
