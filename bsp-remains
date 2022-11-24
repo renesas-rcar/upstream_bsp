@@ -493,7 +493,6 @@ e9a1a432aeef clk: renesas: r8a779{f0, g0}: Add Z clks definition
 8b64c578e9f0 clk: renesas: r8a779a0: Add DSIEXT clk for DSI module
 8f75527b8a68 clk: renesas: r8a779f0: Add PLL4 clk configuration
 8c99198a7a03 clk: renesas: r8a779f0: Add AESACC clock
-ee1148fe57c3 clk: renesas: r8a779a0: Add PLL4 clk configuration
 7b3567dc796e clk: renesas: r8a779a0: Add IPMMU clocks
 a0739e93709f clk: renesas: r8a779a0: Add AESACC (wcrc_caiplite) clocks
 732a034e6d37 clk: renesas: r8a779a0: Add AESACC (caiplite) clocks
