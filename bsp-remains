@@ -485,10 +485,7 @@ dfb55df8b6b7 dt-bindings: pinctrl: renesas,pfc: Document r8a779f0 PFC support
 102fb238c55f pinctrl: renesas: Initial R8A779G0 (V4H) PFC support
 82fbba6554b7 pinctrl: renesas:r8a779{50, 51, 6, 65}: add mlb pinmux
 6c161137ceeb pinctrl: renesas: r8a77950: Add VIN pins, groups and functions
-13b497a2f518 clk: renesas: r8a779g0: Update parent clk for (H)SCIF
-1a136874a612 clk: renesas: r8a779g0: Fix the (H)SCIF parents clk
 cfb5b66b2dab clk: renesas: r8a779g0-cpg-mssr: Add module critical clocks
-be3c39c1fd2e clk: renesas: r8a779g0: Remove unused clks
 e9a1a432aeef clk: renesas: r8a779{f0, g0}: Add Z clks definition
 8b64c578e9f0 clk: renesas: r8a779a0: Add DSIEXT clk for DSI module
 8c99198a7a03 clk: renesas: r8a779f0: Add AESACC clock
@@ -505,11 +502,9 @@ edac17a3ab1e clk: renesas: r8a779g0: Fix the clk rate for gfx module
 3e7260353184 clk: renesas: r8a779g0: Fix DSI clock on R8A779G0
 4641d43df376 clk: renesas: r8a779g0-cpg-mssr: Add clk for AESACC caiplite wrapper
 5bf539a8f79d clk: renesas: r8a779g0: Add system_ram clock
-f15fdd3bf3a7 clk: renesas: r8a779g0: Fix timers clocks rate
 ea04e66f3980 clk: renesas: r8a779g0: Add PAP clock
 5146266215b3 clk: renesas: r8a779g0: Fix CSI2 clock
 efb133748ebb clk: renesas: r8a779g0: Fix SecureROM clock
-201e6eaba67b clk: renesas: r8a779g0: Fix DSC clock
 1e5210313d52 clk: renesas: cpg-mssr: Fix MSSR register range for V4H
 ef1be53f4623 clk: renesas: r8a779g0: Fix can-fd clock
 f858706da84c clk: renesas: r8a779g0: Fix DSI0 clocks
