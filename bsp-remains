@@ -51,7 +51,6 @@ e401848fb50d arm64: dts: renesas: r8a779g0: Fix (H)SCIF brg_int clock
 eb90932e37cf arm64: dts: r8a779g0-whitehawk: Disable display native driver
 46aa3d2a438d arm64: dts: renesas: r8a779g0: Add max96789 node
 7309f5b2eab1 arm64: dts: renesas: r8a779g0: Fix psci-suspend-param
-261c8a8138c3 arm64: dts: renesas: Disable UFS dirver
 5de8de0a2b6d arm64: dts: renesas: r8a779g0: Add DSC node
 1fdee68f8554 arm64: dts: renesas: r8a779g0: Enable DSI1
 056ab0e1c413 arm64: dts: renesas: r8a779g0: Add OPPs table for cpu devices
@@ -133,7 +132,6 @@ ec8756367336 arch: arm64: dts: renesas: r8a779f0-spider: Fix rswitch node
 12a1dfe69a9e arm64: dts: renesas: r8a779f0: Disable legacy AESACC (rtdmactrol)
 6837fb1fe161 arm64: dts: renesas: r8a779f0: Update IPMMU assignment/ID
 96cea6157e17 arm64: dts: renesas: r8a779f0: spider-cpu: Enable UFS controller
-263922789924 arm64: dts: renesas: r8a779f0: Add UFS nodes
 a53eea43579c arm64: dts: renesas: r8aff79f0: Add interrupts into rswitch node
 92e6619c6bdd arm64: dts: renesas: spider-cpu: Disable SPI flash via RPC
 fdb43f25a23c arm64: dts: renesas: spider-cpu: Add SPI flash via RPC

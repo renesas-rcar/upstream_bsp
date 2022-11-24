@@ -60,6 +60,11 @@ Sound
 		- BSP is using si468x/wl18xx for Sound, but these are not cared,
 		  because upstream team don't have these.
 
+UFS:
+	- commit 263922789924 in BSP is included in native v6.1.
+	- commit 96cea6157e17 in BSP is upportable, but as mentioned commit
+	  261c8a8138c3 in BSP, it needs "many I2C commaands". (RC21012 driver.)
+
 Not for upporting
 	UIO: UIO and OSAL are not intended for upstream.
 	OSAL: UIO and OSAL are not intended for upstream.
