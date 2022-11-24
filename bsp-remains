@@ -491,7 +491,6 @@ cfb5b66b2dab clk: renesas: r8a779g0-cpg-mssr: Add module critical clocks
 be3c39c1fd2e clk: renesas: r8a779g0: Remove unused clks
 e9a1a432aeef clk: renesas: r8a779{f0, g0}: Add Z clks definition
 8b64c578e9f0 clk: renesas: r8a779a0: Add DSIEXT clk for DSI module
-8f75527b8a68 clk: renesas: r8a779f0: Add PLL4 clk configuration
 8c99198a7a03 clk: renesas: r8a779f0: Add AESACC clock
 7b3567dc796e clk: renesas: r8a779a0: Add IPMMU clocks
 a0739e93709f clk: renesas: r8a779a0: Add AESACC (wcrc_caiplite) clocks
@@ -500,8 +499,6 @@ a8a852b85e90 clk: renesas: r8a779g0: Fix TPU clk source of RCar V4H
 7e49a8b70a7d clk: renesas: r8a779f0: Remove RPC clock
 1b75a84a7686 clk: renesas: r8a779f0: Add SHIPS clock
 4af7d31c9c23 clk: renesas: r8a779f0: Add AESACC clock
-f6a73ed7fae0 clk: renesas: r8a779f0-cpg-mssr: Fix CLk for WDT
-5d55dcdab4b7 clk: renesas: r8a779f0: Add THS/TSC clock
 3caae5ada709 clk: renesas: cpg-mssr: Add support for R-Car S4
 92a8158c76ce clk: renesas: r8a779g0-cpg-mssr: Fix clk for PWM
 edac17a3ab1e clk: renesas: r8a779g0: Fix the clk rate for gfx module
