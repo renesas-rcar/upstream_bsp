@@ -90,7 +90,6 @@ c03568d2468f arm64: dts: renesas: r8a779a0: Describe GICv3 PPI affinity
 dc7bf3a6181e arm64: dts: renesas: r8a779a0: add CA76_1 core
 e827b02ea457 arm64: dts: r8a779a0-falcon: Enable QSPI flash support
 85575996cebf arm64: dts: r8a779g0-whitehawk: Disable DU native driver
-e9e1d736571b arm64: dts: renesas: r8a779f0: Remove gpio4 node
 903cb8238415 arm64: dts: r8a779f0: Support Thermal interrupt mode
 cb1263abb7a2 arm64: dts: renesas: r8a779g0: Add use_extal_clk option
 2daefde67813 arm64: dts: renesas: r8a779g0: Add C-PHY option to gsml node
@@ -113,9 +112,7 @@ f3fa3a1fa88b arm64: dts: renesas: r8a779f0: Update secondary CA55 CPU cores
 0b8c7dc0e512 arm64: dts: renesas: r8a779f0: Fix power domain for CA55 CPU cores
 0ae68e26bc14 arm64: dts: renesas: r8a779f0: Add optee node
 66ff4667dacb arm64: dts: renesas: spider: Add SD support
-66e3cbf61c47 arm64: dts: renesas: r8a779f0: spider: Disable GPIO4 and TAUD0-PWM
 a9c6cce1bf08 arm64: dts: renesas: r8a779f0: spider: Enable TAUD0-PWM1/2
-171a5e03f42d arm64: dts: renesas: r8a779f0: Add GPIO4 device node
 e028d91dadf4 arm64: dts: renesas: r8a779f0: Fix pfc addresses of Control domain
 54e33653cf8d dts: renesas: r8a779f0: Fix TAU1 register address
 9ce764f07715 dts: renesas: r8a779f0: Add channel information
@@ -415,11 +412,6 @@ ef7f2c0a8ccd can: rcar_canfd: Add support for r8a779g0 SoC
 05a365ce230e memory: renesas-rpc-if: Add R-Car Gen4 support
 814ea1728520 memory: renesas-rpc-if: Fix PHYCNT.STRTIM setting
 1b212c753d0c memory: renesas-rpc-if: Use burst read operation
-d7c67c1567d0 dt-bindings: gpio: rcar: Document r8a779f0 support
-5e7eaa64ca2b dt-bindings: gpio: rcar: Add r8a779g0 support
-2dc3fee75d7f gpio: rcar: Modify compatible string and add support for r8a779f0
-284c6cb7ca6f gpio: gpio-rcar: Add compatible string for r8a779g0
-ccc3f240c183 gpio: gpio-rcar: Add compatible string for r8a77961
 db0c38eeebe9 dt-bindings: serial: sh-sci: Document r8a779f0 bindings
 42e7333e6f58 dt-bindings: serial: sh-sci: Document r8a779g0 bindings
 f8a597ec6b6c sched/core: Add EXPORT_SYMBOL_GPL to sched_setaffinity
@@ -874,7 +866,6 @@ be9f0127deeb arm64: dts: renesas: r8a779g0: Remove bus name and uTLB assignment 
 b9469a988e7e arm64: dts: renesas: r8a779f0: Disable legacy DMAE driver
 7d7021176446 arm64: dts: renesas: r8a779f0: Update for AESACC (rtdmac_descriptorx_00)
 08c75b1bf550 arm64: dts: renesas: r8a779f0: Update for AESACC (rtdmac_controlx_yy)
-77bf48c7a895 arm64: dts: renesas: r8a779a0: Enable GPIO nodes by default
 e2b1f66f49ce arm64: dts: renesas: r8a779a0: Fix IO range of ICCOM
 465e978c9580 arm64: dts: renesas: r8a779a0: Remove clock definition of WWDT node
 e4d381728c0b arm64: dts: renesas: r8a779a0: Disable legacy devices
