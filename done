@@ -46,6 +46,11 @@ Media
 	- A lot of BSP patches were included in native v6.1
 	- explanation for others
 
+RAVB
+	- R-Car V4H BSP patches are included in native 6.1.
+	- commit 469ff9d9ba21 in BSP should be upported.
+	- Other BSP patches are rejected for upstream.
+
 Sound
 	- All BSP local driver patches are included in native v6.1
 	- DT

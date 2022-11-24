@@ -455,8 +455,6 @@ dce559decaec arm64: defconfig: enable max96789 on defconfig
 a85c238a5134 arm64: defconfig: Enable Renesas Ethernet Switch
 60db06c0df93 arm64: defconfig: Enable Renesas Ethernet-TSN
 1687c19f731c arm64: defconfig: VIDEO_MAX96712_STAGING and VIDEO_DUMMY_CAMERA
-f180287ca73b ravb: Support ravb driver for R-Car Gen4
-817c301889ac ravb: Add a compatible string for r8a77960/r8a77961
 fad51de34b7f dt-bindings: spi: renesas,sh-msiof: Add support for S4
 61ce14e6e0f0 dt-binding: spi: renesas,sh-msiof: Add support for V4H
 6e6cf158bb82 spi: spi-sh-msiof: Add generic compatible string for R-Car Gen4
@@ -526,15 +524,7 @@ fdfe96d831f0 dmaengine: rcar-dmac: Add bus rate control support for R-Car V3U/V4
 30948f03327b dmaengine: rcar-dmac: Add support for R-Car V4H
 3baf2c4e8881 dmaengine: rcar-dmac: Add fixed address mode support
 6baf8b33ed9d dmaengine: rcar-dmac: Fix array-bounds warning refer chcr_ts[]
-eb9d8f7f183f dt-bindings: net: renesas,etheravb: Add support for r8a779g0 SoC
-bdafe4d861f6 net: ethernet: ravb: Support AVB1/AVB2
 469ff9d9ba21 ravb: Fix ptp does not work after suspend and resume
-cb386bc52e9b ravb: fix ravb_ptp_interrupt result value overwrite
-872aa8d44400 ravb: Fix interrupt cause bit overwrite in ravb_ptp_interrupt
-d72d7b3f9b4e ravb: Fix ravb_ptp_interrupt clear interrupt all status
-286ee3cf3bad ravb: Add ravb_multi_interrupt to IRQF_SHARED
-51a77f0e7660 ravb: Fix register define for Gen3
-c9192124a557 ravb: Add register define for Gen3
 ad58f44acd44 dt-bindings: timer: renesas, tmu: Document r8a779g0 TMU support
 dfd1133c7ab7 dt-bindings: timer: renesas, cmt: Document r8a779g0 CMT support
 cb3f047933e3 pinctrl: renesas: r8a779a0: Remove redundant AVB{0,1} pinmux configuration
