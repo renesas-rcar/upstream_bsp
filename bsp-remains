@@ -530,7 +530,6 @@ a232d9186d2b clk: renesas: r8a779{70, 80}: Add ISP clock
 60d4d536778e clk: renesas: r8a77980: Add VIN clocks
 dc644df9f22b clk: renesas: r8a779{5, 6, 70, 80}: add IMP clock
 43ca51590fa0 clk: renesas: r8a779{70, 80}: Add CPU operation points.
-280b7c5cc56b clk: renesas: rcar-gen3: Fix revision of R8A7796 for applying SD_SKIP_FIRST
 eebc4189c612 clk: renesas: r8a779a0: Extend number of supported module clocks
 151f27fccd60 clk: renesas: cpg-mssr: Fix Realtime Module Stop Control Register offsets
 22fcdce314a2 clk: renesas: r8a77{96, 965, 990}: Add ADG clock
