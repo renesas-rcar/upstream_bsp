@@ -48,7 +48,6 @@ d387cc45dbbd arm64: dts: renesas: r8a779g0: Update Ethernet-TSN0 device node
 481d8ea8c95e Revert "arm64: dts: renesas: r8a77980-v3hsk: Disable MMC"
 e401848fb50d arm64: dts: renesas: r8a779g0: Fix (H)SCIF brg_int clock
 220b531ea081 arm64: dts: renesas: r8a779f0: Fix (H)SCIF brg_int clock
-eb90932e37cf arm64: dts: r8a779g0-whitehawk: Disable display native driver
 46aa3d2a438d arm64: dts: renesas: r8a779g0: Add max96789 node
 7309f5b2eab1 arm64: dts: renesas: r8a779g0: Fix psci-suspend-param
 5de8de0a2b6d arm64: dts: renesas: r8a779g0: Add DSC node
@@ -65,39 +64,23 @@ c8f409e10d56 arm64: dts: renesas: r8a779g0: Add DMA support for (H)SCIF
 d6e71fb0de65 arm64: dts: renesas: r8a779g0: Support DMA function for MSIOF
 fb425148fd4d arm64: dts: renesas: r8a779f0: Support DMA function for MSIOF
 26b45354f3f2 arm64: dts: renesas: r8a77980: Support HS400 on R8A77980 Ver 2.0
-7de2796423ab arm64: dts: renesas: r8a779g0: Fix naming for IMP VDSP
-be9f0127deeb arm64: dts: renesas: r8a779g0: Remove bus name and uTLB assignment IMP VDSP
 f945fad8745d arm64: dts: renesas: v3hsk: Add clock-skew for GEther's Micrel PHY
 747fd84b11fb arm64: dts: renesas: r8a779a0: Add psci node for R8A779A0
 4692813404f0 arm64: dts: renesas: r8a779f0: Update power_state parameter for psci suspend call
 4f1b9a37b774 arm64: dts: renesas: r8a77970-eagle: Add input-justification options to adv7511
 9821d51a2ce5 arm64: dts: renesas: r8a779a0: Fix the clk definition on DSI node
 55dee8f01bfc arm64: dts: renesas: r8a779g0-whitehawk: Disable rtsn0
-10258e21e1ed arm64: dts: renesas: r8a779g0: Update power domain for IMP device
-b9469a988e7e arm64: dts: renesas: r8a779f0: Disable legacy DMAE driver
-7d7021176446 arm64: dts: renesas: r8a779f0: Update for AESACC (rtdmac_descriptorx_00)
-08c75b1bf550 arm64: dts: renesas: r8a779f0: Update for AESACC (rtdmac_controlx_yy)
-77bf48c7a895 arm64: dts: renesas: r8a779a0: Enable GPIO nodes by default
 54e208342c47 arm64: dts: renesas: Define module clock for V3H
 38da54fcac2c arm64: dts: renesas: Define module clock for V3M 2.0
 ebce499244e9 arm64: dts: renesas: r8a779f0: Fix naming to SYS-DMAC0 and SYS-DMAC1.
 fa2f9bc11e10 arm64: dts: renesas: r8a779g0: Fix naming to SYS-DMAC0 and SYS-DMAC1.
-e2b1f66f49ce arm64: dts: renesas: r8a779a0: Fix IO range of ICCOM
-465e978c9580 arm64: dts: renesas: r8a779a0: Remove clock definition of WWDT node
-e4d381728c0b arm64: dts: renesas: r8a779a0: Disable legacy devices
 c993d2cbdbae arm64: dts: r8a77980-es2-v3hsk-vbm: Create device tree for v3hsk vbm board
 06675f73a479 arm64: dts: r8a77980-v3hsk-vbm: Create device tree for v3hsk vbm board
-2eb80a152fe2 arm64: dts: renesas: r8a779a0: Add IPMMU assignments for IMP/ISP drivers
 19648fbc0572 arm64: renesas: r8a77970: Fix the model series for R8A77970
-c3383c67f3d6 arm64: dts: renesas: r8a77980: Disable legacy IPMMU driver
-626100fa9b86 arm64: dts: renesas: r8a77970: Disable legacy IPMMU driver
 9350ec47f53a arm64: dts: renesas: r8a77970-eagle: Remove lossy decompress
 2edd7396c028 arm64: dts: renesas: r8a77980-condor: Remove lossy decompress
 e52c00d6ee49 arm64: dts: renesas: r8a77970-v3msk: Adjust reserved memory layout
 d4000c3929ec arm64: dts: renesas: r8a77980-v3hsk: Adjust reserved memory layout
-0b6a6b83e36b arm64: dts: renesas: r8a779a0: Fixed clock assignment for FBC device
-d24350a21160 arm64: dts: renesas: r8a779a0: Disable legacy IPMMU driver
-0e352ad91a7f arm64: dts: renesas: r8a779a0: Add IMP SPMI/SPMC mem devices
 a621bba38a19 arm64: dts: r8a779{70,80}-v3{m,h}sk: Add reserved mem for CMEM
 8151b263602c arm64: dts: r8a77980-es2: Add resets property for IMP DMA SLIM device
 8cdc7a6137d9 arm64: dts: renesas: r8a779a0: add CA76_[2..7] core
@@ -105,20 +88,10 @@ a621bba38a19 arm64: dts: r8a779{70,80}-v3{m,h}sk: Add reserved mem for CMEM
 c03568d2468f arm64: dts: renesas: r8a779a0: Describe GICv3 PPI affinity
 78dcdc429354 arm64: dts: renesas: r8a779a0: fix unit address and reg value in cpu1 node
 dc7bf3a6181e arm64: dts: renesas: r8a779a0: add CA76_1 core
-3a1ea775b877 arm64: dts: renesas: r8a779a0: Add FBA CA76D/CA76 devices
-261740113b98 arm64: dts: renesas: r8a779a0: Add FBA SMPS/SMES/SMPO devices
-7abb5f69ebec arm64: dts: renesas: r8a77980: Add RFSO devices
 e827b02ea457 arm64: dts: r8a779a0-falcon: Enable QSPI flash support
-c465499cb613 arm64: dts: renesas: r8a779g0: Update bus name and uTLB assignment for DSI0
-4b1792f0d60f arm64: dts: renesas: r8a779g0: Add power domain property for system ram
-6c8555357227 arm64: dts: renesas: r8a779g0: Remove cpg and reset value of system ram node
-a77c411866ad arm64: dts: renesas: r8a779g0: Update for AESACC (rtdmac_descriptorx_00)
-1a7b54012ccc arm64: dts: renesas: r8a779g0: Update for AESACC (rtdmac_controlx_yy)
 85575996cebf arm64: dts: r8a779g0-whitehawk: Disable DU native driver
 e9e1d736571b arm64: dts: renesas: r8a779f0: Remove gpio4 node
 903cb8238415 arm64: dts: r8a779f0: Support Thermal interrupt mode
-c21e62b519aa arm64: dts: renesas: r8a779g0-whitehawk: Disable DU native drivers
-92d33fbdaa43 arm64: dts: renesas: r8a779g0: Add status to disable DMAE native driver
 cb1263abb7a2 arm64: dts: renesas: r8a779g0: Add use_extal_clk option
 2daefde67813 arm64: dts: renesas: r8a779g0: Add C-PHY option to gsml node
 f7fa27a0d403 arm64: dts: renesas: r8a779g0: Remove unused clk on DSI node
@@ -129,8 +102,6 @@ ec8756367336 arch: arm64: dts: renesas: r8a779f0-spider: Fix rswitch node
 86ed3e15856f arm64: dts: renesas: r8a779f0: Fix PCIe clock and support PCIe1 endpoint
 6fc92da1434b arm64: dts: renesas: r8a779f0: Update property for IPMMU_RT1
 7fe8cbe925d4 arm64: dts: renesas: r8a779f0: Add ipmmu_rt1 node of IPMMU module
-12a1dfe69a9e arm64: dts: renesas: r8a779f0: Disable legacy AESACC (rtdmactrol)
-6837fb1fe161 arm64: dts: renesas: r8a779f0: Update IPMMU assignment/ID
 96cea6157e17 arm64: dts: renesas: r8a779f0: spider-cpu: Enable UFS controller
 a53eea43579c arm64: dts: renesas: r8aff79f0: Add interrupts into rswitch node
 92e6619c6bdd arm64: dts: renesas: spider-cpu: Disable SPI flash via RPC
@@ -155,34 +126,17 @@ ab16060d9483 arm64: dts: renesas: r8a779f0: Add power-domains and resets propert
 69b3227f5ec5 arm64: dts: renesas: spider-cpu: Enable TCA9554PWR on I2C0
 3e3b7c8bfbca dts: renesas: r8a779f0: Add PCIe endpoint node
 19691e74613e arm64: dts: renesas: r8a779f0: Fix the PCIe node
-1e22dee4d13c arm64: dts: r8a779f0: Add MFIS devices
 7f9c406a3507 arm64: dts: renesas: r8a779f0: Enable IPMMU for SYS-DMAC1/2
 b0af5d2217fc arm64: dts: renesas: r8a779f0: Add PCIe device nodes for Renesas R8A779F0 (R-Car S4)
 ede97b61cdd1 arm64: dts: renesas: r8a779f0: Add IPMMU main and caches nodes for Renesas R8A779F0 (R-Car S4)
 176ffc5b19b0 arm64: dts: renesas: Add Renesas R8A779F0 SoC support
 b5674d878b5f arm64: dts: renesas: r8a779g0: Fix power domains GFX
-ddad10ced526 arm64: dts: renesas: r8a779g0: Disable duplicate reset propertie PAP
-7589a80058cd arm64: dts: renesas: r8a779g0: Update compatible and power domains GFX
 ebf0cf8420a8 arm64: dts: renesas: r8a779g0: Update IO/range for CSI devices
-4a434275c9f1 arm64: dts: renesas: r8a779g0: Update IMP devices
 81acd11e094b Revert "arch: arm64: dts: renesas: r8a779g0: Add gPTP support for RTSN"
 7490f1bb3ec1 arch: arm64: dts: renesas: r8a779g0: Add gPTP support for RTSN
 cdcf900a8087 arm64: dts: renesas: r8a779g0: Add CPUIdle for R-Car V4H
 a1ee889b1718 arm64: dts: renesas:  Add PCIe1 endpoint node
-2ac2a78e7f6a arm64: dts: renesas: r8a779g0: Fix naming for sdmac
-d253673437c9 arm64: dts: renesas: r8a779g0: Update IPMMU assignment/ID for PAP
 d334909f25f8 arm64: dts: renesas: r8a779g0: Update IPMMU assignment/ID VideoInput/Output
-249d36755c88 arm64: dts: renesas: r8a779g0: Fix naming for sdmac
-7c2dbb38af94 arm64: dts: renesas: r8a779g0: Update IPMMU assignment/ID for RTDMAC
-d64701852ef6 arm64: dts: renesas: r8a779g0: Disable legacy AESACC (rtdmactrol)
-72d81e5f59eb arm64: dts: renesas: r8a779g0: Disabled legacy DU device
-2d519715c019 arm64: dts: renesas: r8a779g0: Update information for FBC0 device
-ee51498b28f5 arm64: dts: renesas: r8a779g0: Update IPMMU assignment/ID for ISP
-c076f1a57a58 arm64: dts: renesas: r8a779g0: Update IPMMU assignment/ID for ivcp1e
-8abc211d707b arm64: dts: renesas: r8a779g0: Update IPMMU assignment/ID for GFX
-164fd159a5ea arm64: dts: renesas: r8a779g0: Update IPMMU assignment/ID for VISIONIP
-14ae89d14b43 arm64: dts: renesas: r8a779g0: Add IPMMU assignment/ID for IMP devices
-f1c23e9d2be8 arm64: dts: renesas: r8a779g0: Update IPMMU assignment/ID for IMR devices
 97120fd32aa9 Revert "[WIP] arm64: dts: renesas: r8a779g0: Disable cluster1 CPU cores"
 dde6e18b6b15 arm64: dts: renesas: Fix syntax error for Timer(CMT/TMU) node
 729325dc38f7 arm64: dts: renesas: Fix syntax error for RWDT node
@@ -280,9 +234,7 @@ c2833b47268e arm64: dts: renesas: r8a779a0: Update start address of IMPSPM
 e4dbb4e98674 arm64: dts: renesas: r8a779a0: Separate memory and control regs of IMP SPM devices
 ae2a16c066dc arm64: dts: r8a779a0-falcon: Add reserved memory for CMA
 720d92e1190b arm64: dts: renesas: falcon: Enable CMT
-932aeb37621c arm64: dts: renesas: r8a779a0: Add IMP nodes
 fae4aeaf8b56 arm64: dts: r8a779a0-falcon: Enable fakra connector
-6118a2612b96 arm64: dts: renesas: r8a779a0: Add IMR nodes
 419560a14df4 arm64: dts: r8a779a0: Add SYSC PM Domains
 5d4c3888e0d3 arm64: dts: renesas: r8a779a0: Add PWM nodes
 dd621acea624 arm64: dts: renesas: falcon: Enable PCIe
@@ -938,3 +890,51 @@ abfa058da577 soc: renesas: rcar_ems_ctrl: Move Emergency shutdown to platform dr
 c9776655c1ea arm64: defconfig: Enable loadable EMS/IPA module.
 713a071a3248 arm64: defconfig: Enable EMS/IPA support
 78a2fa569e6c dt-bindings: thermal: Add yaml bindings for EMS in thermal zones
+eb90932e37cf arm64: dts: r8a779g0-whitehawk: Disable display native driver
+7de2796423ab arm64: dts: renesas: r8a779g0: Fix naming for IMP VDSP
+be9f0127deeb arm64: dts: renesas: r8a779g0: Remove bus name and uTLB assignment IMP VDSP
+10258e21e1ed arm64: dts: renesas: r8a779g0: Update power domain for IMP device
+b9469a988e7e arm64: dts: renesas: r8a779f0: Disable legacy DMAE driver
+7d7021176446 arm64: dts: renesas: r8a779f0: Update for AESACC (rtdmac_descriptorx_00)
+08c75b1bf550 arm64: dts: renesas: r8a779f0: Update for AESACC (rtdmac_controlx_yy)
+77bf48c7a895 arm64: dts: renesas: r8a779a0: Enable GPIO nodes by default
+e2b1f66f49ce arm64: dts: renesas: r8a779a0: Fix IO range of ICCOM
+465e978c9580 arm64: dts: renesas: r8a779a0: Remove clock definition of WWDT node
+e4d381728c0b arm64: dts: renesas: r8a779a0: Disable legacy devices
+2eb80a152fe2 arm64: dts: renesas: r8a779a0: Add IPMMU assignments for IMP/ISP drivers
+c3383c67f3d6 arm64: dts: renesas: r8a77980: Disable legacy IPMMU driver
+626100fa9b86 arm64: dts: renesas: r8a77970: Disable legacy IPMMU driver
+0b6a6b83e36b arm64: dts: renesas: r8a779a0: Fixed clock assignment for FBC device
+d24350a21160 arm64: dts: renesas: r8a779a0: Disable legacy IPMMU driver
+0e352ad91a7f arm64: dts: renesas: r8a779a0: Add IMP SPMI/SPMC mem devices
+3a1ea775b877 arm64: dts: renesas: r8a779a0: Add FBA CA76D/CA76 devices
+261740113b98 arm64: dts: renesas: r8a779a0: Add FBA SMPS/SMES/SMPO devices
+7abb5f69ebec arm64: dts: renesas: r8a77980: Add RFSO devices
+c465499cb613 arm64: dts: renesas: r8a779g0: Update bus name and uTLB assignment for DSI0
+4b1792f0d60f arm64: dts: renesas: r8a779g0: Add power domain property for system ram
+6c8555357227 arm64: dts: renesas: r8a779g0: Remove cpg and reset value of system ram node
+a77c411866ad arm64: dts: renesas: r8a779g0: Update for AESACC (rtdmac_descriptorx_00)
+1a7b54012ccc arm64: dts: renesas: r8a779g0: Update for AESACC (rtdmac_controlx_yy)
+c21e62b519aa arm64: dts: renesas: r8a779g0-whitehawk: Disable DU native drivers
+92d33fbdaa43 arm64: dts: renesas: r8a779g0: Add status to disable DMAE native driver
+12a1dfe69a9e arm64: dts: renesas: r8a779f0: Disable legacy AESACC (rtdmactrol)
+6837fb1fe161 arm64: dts: renesas: r8a779f0: Update IPMMU assignment/ID
+1e22dee4d13c arm64: dts: r8a779f0: Add MFIS devices
+ddad10ced526 arm64: dts: renesas: r8a779g0: Disable duplicate reset propertie PAP
+7589a80058cd arm64: dts: renesas: r8a779g0: Update compatible and power domains GFX
+4a434275c9f1 arm64: dts: renesas: r8a779g0: Update IMP devices
+2ac2a78e7f6a arm64: dts: renesas: r8a779g0: Fix naming for sdmac
+d253673437c9 arm64: dts: renesas: r8a779g0: Update IPMMU assignment/ID for PAP
+249d36755c88 arm64: dts: renesas: r8a779g0: Fix naming for sdmac
+7c2dbb38af94 arm64: dts: renesas: r8a779g0: Update IPMMU assignment/ID for RTDMAC
+d64701852ef6 arm64: dts: renesas: r8a779g0: Disable legacy AESACC (rtdmactrol)
+72d81e5f59eb arm64: dts: renesas: r8a779g0: Disabled legacy DU device
+2d519715c019 arm64: dts: renesas: r8a779g0: Update information for FBC0 device
+ee51498b28f5 arm64: dts: renesas: r8a779g0: Update IPMMU assignment/ID for ISP
+c076f1a57a58 arm64: dts: renesas: r8a779g0: Update IPMMU assignment/ID for ivcp1e
+8abc211d707b arm64: dts: renesas: r8a779g0: Update IPMMU assignment/ID for GFX
+164fd159a5ea arm64: dts: renesas: r8a779g0: Update IPMMU assignment/ID for VISIONIP
+14ae89d14b43 arm64: dts: renesas: r8a779g0: Add IPMMU assignment/ID for IMP devices
+f1c23e9d2be8 arm64: dts: renesas: r8a779g0: Update IPMMU assignment/ID for IMR devices
+932aeb37621c arm64: dts: renesas: r8a779a0: Add IMP nodes
+6118a2612b96 arm64: dts: renesas: r8a779a0: Add IMR nodes
