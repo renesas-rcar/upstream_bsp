@@ -477,11 +477,9 @@ dfd1133c7ab7 dt-bindings: timer: renesas, cmt: Document r8a779g0 CMT support
 cb3f047933e3 pinctrl: renesas: r8a779a0: Remove redundant AVB{0,1} pinmux configuration
 c51e84c0c4bc pinctrl: renesas: r8a779a0: Add PCIe pins, groups and functions
 bf17a2d986b7 pinctrl: renesas: r8a779f0: Fix typo mistake of tsn1 pin
-49e272ab839d pinctrl: renesas: r8a779f0: Support HSCIF1 pins function
 432dd5733f8e pinctrl: renesas: r8a779f0: Add TAUD0/1-PWM support
 751ac8024a13 pinctrl: renesas: r8a779f0: Fix pfc addresses of Control domain
 17e03cf7176a pinctrl: renesas: Initial R8A779F0 (S4) PFC support
-dfb55df8b6b7 dt-bindings: pinctrl: renesas,pfc: Document r8a779f0 PFC support
 102fb238c55f pinctrl: renesas: Initial R8A779G0 (V4H) PFC support
 6c161137ceeb pinctrl: renesas: r8a77950: Add VIN pins, groups and functions
 cfb5b66b2dab clk: renesas: r8a779g0-cpg-mssr: Add module critical clocks
