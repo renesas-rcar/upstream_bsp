@@ -11,7 +11,6 @@ b5bccf1fc37c arm64: dts: renesas: r8a779f0: Disable CDM check
 22bb1052fb49 mmc: renesas_sdhi: Handle V3H ES2.0
 158be613d0e5 mmc: renesas_sdhi_internal_dmac: Add support R-Car Gen4
 ce3936b34bc3 dt-bindings: mmc: renesas,sdhi: Add r8a779g0 support
-f2453ad38abd dt-bindings: mmc: renesas,sdhi: Add r8a779f0 support
 d10133565b53 mmc: core: mmc_ops: Enable stop command
 de9461ece1fa mmc: renesas_sdhi: scc_ctl is always set in after R-Car Gen3
 bc75d8c5907a mmc: core: Issue power off notification in mmc_remove()
@@ -23,7 +22,6 @@ e6e4182857b4 mmc: renesas_sdhi: Add PIO mode support
 32cdac51bf55 Revert "cpufreq: Remove CPUFREQ_ADJUST and CPUFREQ_NOTIFY policy notifier events"
 57ccb1c20a4a soc: renesas: rcar-sysc: Add CR7 domain for r8a77980 in quirks_match
 6c2fe82cca83 soc: renesas: rcar-sysc: Support to handle PDMODE for R-Car V3H ES2.x
-a2aa91369836 dt-bindings: power: rcar-sysc: Document r8a779f0 SYSC binding
 cf48489076a2 dt-bindings: power: Add SYSC power domain definitions
 feff376e38cf soc: renesas: r8a779g0-sysc: Add power domain A3DUL support
 5a4e2771e30d soc: renesas: rcar-rst: Allow WDT reset on R-Car Gen4
@@ -365,8 +363,6 @@ ac793f9c1bfa media: i2c: adv748x: Set default EDID value
 cccf6860b944 media: i2c: adv748x: Fix get_format function
 9a473723caaf rcar-vin: rcar-csi2: Don't bail out from probe on no ep
 00b81e15e5f7 media: rcar-vin: Add memory type of VB_USERPTR support
-4063c23427e6 dt-bindings: i2c: rcar: Document r8a779f0 support
-df55f34d3f0c dt-bindings: i2c: rcar: Document r8a779g0 support
 b1615da5261d i2c: rcar: Add support for r8a779f0 (R-Car S4)
 3607e145db47 i2c: rcar: Add fast mode plus support
 8e15be80c04c i2c: rcar: Add support for r8a779g0 (R-Car V4H)
@@ -388,7 +384,6 @@ f60132c67c6e soc: renesas: Identify R-Car M3-W ES1.2
 8776884f313c net: phy: marvell10g: Add mode configuration and MAC type setting for 88E2110
 258a86b3435a net: ethernet: renesas: rswitch: Add support for parallel mode
 5010c78c0c24 net: ethernet: renesas: rswitch: Add Renesas Ethernet Switch
-a56aaa7a7313 dt-bindings: watchdog: renesas-wdt: Add support for the R8A779G0 WDT
 4c76d373092f arm64: defconfig: Enable PCIe Endpoint
 b83963a2b477 arm64: defconfig: Enable DSC driver
 e5540b8157bc arm64: defconfig: Enable Marvell PHY 88Q2110
@@ -399,7 +394,6 @@ dce559decaec arm64: defconfig: enable max96789 on defconfig
 a85c238a5134 arm64: defconfig: Enable Renesas Ethernet Switch
 60db06c0df93 arm64: defconfig: Enable Renesas Ethernet-TSN
 1687c19f731c arm64: defconfig: VIDEO_MAX96712_STAGING and VIDEO_DUMMY_CAMERA
-fad51de34b7f dt-bindings: spi: renesas,sh-msiof: Add support for S4
 61ce14e6e0f0 dt-binding: spi: renesas,sh-msiof: Add support for V4H
 6e6cf158bb82 spi: spi-sh-msiof: Add generic compatible string for R-Car Gen4
 4b6f17f1dd49 thermal: rcar_gen3_thermal: PIO-INT can be selected for each TSC separately
@@ -412,7 +406,6 @@ ef7f2c0a8ccd can: rcar_canfd: Add support for r8a779g0 SoC
 05a365ce230e memory: renesas-rpc-if: Add R-Car Gen4 support
 814ea1728520 memory: renesas-rpc-if: Fix PHYCNT.STRTIM setting
 1b212c753d0c memory: renesas-rpc-if: Use burst read operation
-db0c38eeebe9 dt-bindings: serial: sh-sci: Document r8a779f0 bindings
 42e7333e6f58 dt-bindings: serial: sh-sci: Document r8a779g0 bindings
 f8a597ec6b6c sched/core: Add EXPORT_SYMBOL_GPL to sched_setaffinity
 dac54422c0d0 serial: sh-sci: Use pm_runtime_get/put when resume
