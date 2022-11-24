@@ -174,11 +174,6 @@ b00576ea6bf3 arm64: dts: renesas: r8a779m{1, 3, 5}: Do not support boost mode fo
 333acb9e9209 arm64: dts: renesas: r8a779m1: Remove hdmi0 setting for H3e
 37f639d10d8f arm64: dts: r8a77995: Add optee node
 5a9cc958e435 arm64: dts: renesas: Configure the MSIOF parent clock for R-Car Gen3
-16fd272df215 Revert "arm64: dts: renesas: r8a77951: Add RPC device node"
-0e2eec819cc1 Revert "arm64: dts: renesas: r8a7796{0,1}: Add RPC device node"
-e4b92ad17739 Revert "arm64: dts: renesas: r8a77965: Add RPC device node"
-ec887e9beca3 Revert "arm64: dts: renesas: ulcb: Add RPC HyperFlash device node"
-df1b70b902a1 Revert "arm64: dts: renesas: salvator-common: Add RPC HyperFlash device node"
 2b6d44cc2ba6 arm64: dts: renesas: ulcb: Enable IPMMU of SDHI2
 7c17cf98a2b7 arm64: dts: renesas: r8a77995-draak: Enable IPMMU of SDHI2
 d0389b66d30a arm64: dts: renesas: r8a77995: Enable IPMMU-DS1 and IPMMU-MM
@@ -510,9 +505,6 @@ a8a852b85e90 clk: renesas: r8a779g0: Fix TPU clk source of RCar V4H
 f6a73ed7fae0 clk: renesas: r8a779f0-cpg-mssr: Fix CLk for WDT
 5d55dcdab4b7 clk: renesas: r8a779f0: Add THS/TSC clock
 3caae5ada709 clk: renesas: cpg-mssr: Add support for R-Car S4
-9503d2d4527f Revert "clk: renesas: r8a77965: Add RPC clocks"
-de43f83ae4ba Revert "clk: renesas: r8a7796: Add RPC clocks"
-ac2fdfd95d0c Revert "clk: renesas: r8a7795: Add RPC clocks"
 92a8158c76ce clk: renesas: r8a779g0-cpg-mssr: Fix clk for PWM
 edac17a3ab1e clk: renesas: r8a779g0: Fix the clk rate for gfx module
 3e7260353184 clk: renesas: r8a779g0: Fix DSI clock on R8A779G0
@@ -938,3 +930,11 @@ c076f1a57a58 arm64: dts: renesas: r8a779g0: Update IPMMU assignment/ID for ivcp1
 f1c23e9d2be8 arm64: dts: renesas: r8a779g0: Update IPMMU assignment/ID for IMR devices
 932aeb37621c arm64: dts: renesas: r8a779a0: Add IMP nodes
 6118a2612b96 arm64: dts: renesas: r8a779a0: Add IMR nodes
+16fd272df215 Revert "arm64: dts: renesas: r8a77951: Add RPC device node"
+0e2eec819cc1 Revert "arm64: dts: renesas: r8a7796{0,1}: Add RPC device node"
+e4b92ad17739 Revert "arm64: dts: renesas: r8a77965: Add RPC device node"
+ec887e9beca3 Revert "arm64: dts: renesas: ulcb: Add RPC HyperFlash device node"
+df1b70b902a1 Revert "arm64: dts: renesas: salvator-common: Add RPC HyperFlash device node"
+9503d2d4527f Revert "clk: renesas: r8a77965: Add RPC clocks"
+de43f83ae4ba Revert "clk: renesas: r8a7796: Add RPC clocks"
+ac2fdfd95d0c Revert "clk: renesas: r8a7795: Add RPC clocks"
