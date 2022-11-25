@@ -35,7 +35,6 @@ ad70433f1eda soc: renesas: rcar-sysc: Support S2RAM
 e07b497cf41e soc: renesas: rcar-sysc: Improve power domains always on implementation
 ea52a14c9748 soc: renesas: rcar-sysc: Add wait 1us before turning off power domain
 118bfc69fe4d soc: renesas: rcar-sysc: Adjust the waiting time to cover the worst case
-d0de744e890b arm64: dts: renesas: r8a779g0: Update R-Car Gen4 compatible values
 f9f089f44976 arm64: dts: renesas: whitehawk: Disable on board chips of native display driver
 c0cbae905c8a arm64: dts: renesas: whitehawk: Add AVB1/AVB2 support
 1eb0d4a0a9d7 arm64: dts: renesas: r8a779g0: Fix AVB registers range
@@ -118,18 +117,15 @@ a1ee889b1718 arm64: dts: renesas:  Add PCIe1 endpoint node
 d334909f25f8 arm64: dts: renesas: r8a779g0: Update IPMMU assignment/ID VideoInput/Output
 97120fd32aa9 Revert "[WIP] arm64: dts: renesas: r8a779g0: Disable cluster1 CPU cores"
 dde6e18b6b15 arm64: dts: renesas: Fix syntax error for Timer(CMT/TMU) node
-729325dc38f7 arm64: dts: renesas: Fix syntax error for RWDT node
 00244fb8f94a arm64: dts: renesas: r8a779g0: Add Ethernet-TSN support
 6f8cda84269d arm64: dts: renesas: r8a779g0: Fix power-domains at node TMU1 for V4H
 861e23f8aba4 arm64: dts: renesas: whitehawk: Add TMU support
 4ff04deb0f72 arm64: dts: renesas: r8a779g0: Add TMU node
 346d3d20d480 arm64: dts: renesas: whitehawk: Add CMT support
 316ba3b2d54c arm64: dts: renesas: r8a779g0: Add CMT node
-835e5e83608d arm64: dts: renesas: whitehawk: Add RWDT support
 230ccbc7de13 arm64: dts: renesas: whitehawk: Add PCIe support
 7d00a3d901ac arm64: dts: renesas: r8a779g0: Add PCIe node
 760f61867499 [WIP] arm64: dts: renesas: r8a779g0: Disable cluster1 CPU cores
-55f4e10004fd arm64: dts: renesas: r8a779g0: whitehawk-cpu: Fix memory region
 c44b8d43097b arm64: dts: renesas: r8a779g0: Add VIN driver nodes for R8A779G0
 bc6069c7dd7a arm64: dts: renesas: whitehawk-cpu: Enable eMMC
 eb3c520d12ed arm64: dts: renesas: r8a779g0: Add MMC node
@@ -144,10 +140,6 @@ ccddcd6cef07 arm64: dts: renesas: r8a779g0: Add MSIOF device node
 6d2224b4f404 arm64: dts: renesas: r8a779g0: Add PWM device node
 69226cd0ddba arm64: dts: renesas: r8a779g0-whitehawk: Add setting for Display
 52ff24aad042 arm64: dts: renesas: r8a779g0: Add Display nodes for R8A779G0
-b57022883f08 arm64: dts: renesas: r8a779g0: Fix I2C2 reg and interrupts properties
-417cc0b496dd arm64: dts: renesas: r8a779g0: whitehawk-cpu: Change memory region
-b140daa43785 arm64: dts: renesas: r8a779g0: whitehawk-cpu: Use HSCIF0 for the default debug serial.
-ea05ba1a2c0d arm64: dts: renesas: Add Renesas WhiteHawk boards support
 446a8869c567 arm64: dts: renesas: Add Renesas R8A779G0 SoC support
 b00576ea6bf3 arm64: dts: renesas: r8a779m{1, 3, 5}: Do not support boost mode for R8A779M{1, 3, 5}
 333acb9e9209 arm64: dts: renesas: r8a779m1: Remove hdmi0 setting for H3e
