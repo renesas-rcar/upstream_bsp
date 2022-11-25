@@ -483,7 +483,6 @@ bf17a2d986b7 pinctrl: renesas: r8a779f0: Fix typo mistake of tsn1 pin
 17e03cf7176a pinctrl: renesas: Initial R8A779F0 (S4) PFC support
 dfb55df8b6b7 dt-bindings: pinctrl: renesas,pfc: Document r8a779f0 PFC support
 102fb238c55f pinctrl: renesas: Initial R8A779G0 (V4H) PFC support
-82fbba6554b7 pinctrl: renesas:r8a779{50, 51, 6, 65}: add mlb pinmux
 6c161137ceeb pinctrl: renesas: r8a77950: Add VIN pins, groups and functions
 cfb5b66b2dab clk: renesas: r8a779g0-cpg-mssr: Add module critical clocks
 e9a1a432aeef clk: renesas: r8a779{f0, g0}: Add Z clks definition
