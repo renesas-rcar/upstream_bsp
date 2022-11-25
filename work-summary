@@ -10,6 +10,12 @@
 		https://github.com/morimoto/linux.git  topic/renesas-bsp-rebase-v6.1
 	Wolfram
 		git://git.kernel.org/pub/scm/linux/kernel/git/wsa/linux.git
+	Shimoda
+		https://github.com/shimoday/linux.git
+	Geert
+		git://git.kernel.org/pub/scm/linux/kernel/git/geert/renesas-drivers.git
+		https://git.kernel.org/pub/scm/linux/kernel/git/geert/renesas-drivers.git
+		https://kernel.googlesource.com/pub/scm/linux/kernel/git/geert/renesas-drivers.git
 
 * Task
 	1) Backport/Handle each bsp-remains patches on latest renesas-bsp-rebase-v6.1
@@ -29,6 +35,9 @@
 		  We can remove these from "bsp-remains", and explain about it on "done"
 		- Let's accept "defconfig" update patch even though it was local patch.
 
+	Shimoda
+		- fix done file comment
+
 * About "cherry-pick"
 
 	Let's use it to *reduce* bsp-remains for now,
@@ -47,7 +56,7 @@
 
 	Please find and use last part of "bsp-remains" for now.
 
-	A lot of UIO patches will be *real* local patch, I guess.
+	These non-upstreamable commits will be handled by BSP team.
 
 * Schedule
 
