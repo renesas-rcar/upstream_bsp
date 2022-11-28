@@ -1,3 +1,38 @@
+d7be742075b0 arm64: dts: renesas: r8a779g0: Disable CDM check in PCIe ch1
+5232175003e2 arch: arm64: dts: renesas: r8a779g0: Add shared address ranges and shared clock for pcie node
+9466ee8f1e32 arch: arm64: dts: renesas: r8a779g0-whitehawk: Restore pinctrl for PCIe
+ec206e203c31 arch: arm64: dts: renesas: r8a779g0-whitehawk: Change clkreq control to GPIO
+1b61c02117c4 pci: dwc: pcie-renesas-ep: Mode change for different channels
+4b2d830c3b44 pci: dwc: renesas: Mode change for different channels
+fd2dd33a26b3 arch: arm64: dts: renesas: r8a779g0-whitehawk: Change Bifurcation mode of PCIE0 when using PCIE1
+79a1f3c60434 pci: dwc: pcie-renesas-ep: Add clkreq control with GPIO
+b5c9347995fe pci: dwc: renesas: Add clkreq control with GPIO
+299233f4d6d0 arm64: dts: renesas: r8a779g0: Define PCI gen4 for link capability
+c72ddef65de4 pci: dwc: renesas: Add check speed function for PCIe 4.0
+d2c2d568e963 pci: dwc: renesas: Fix retrain link function for PCIe 4.0
+baea6069075f pci: dwc: renesas: Add retrain link function for PCIe 4.0
+9ab08d1fc0a1 pci: dwc: renesas: Implement source code based on board TP for V4H Endpoint
+f481c68a26f4 pci: dwc: renesas: Implement source code based on board TP for V4H RootComplex
+61d5400cf3cf ravb: Disable Link Signal Change Interrupt for AVB1/AVB2
+77c0859b5328 arm64: dts: renesas: r8a779g0: whitehawk: Add R-Car Sound support
+fc60c20649e9 arm64: dts: renesas: r8a779g0: Audio R-Car Sound support
+21c8766ab233 dt-bindings: rsnd: Add r8a779g0 support
+1df4ef95143b ASoC: renesas: Add R-Car V4H to R-Car Sound Driver
+f07854ecac12 arm64: defconfig: Enable DA7213 Codec
+393244153d30 pinctrl: renesas: r8a779g0: Add Audio support
+f549e5744db6 Revert "arm64: dts: renesas: r8a779g0: Fix AVB registers range"
+8be32e61e150 uio: uio_pdrv_genirq: Add parameter error in case not define property in node
+20dbf63e6809 Revert "net: phy: consider that suspend2ram may cut off PHY power"
+3dbea0aef38a net: ethernet: renesas: rcar_gen4_ptp: Fix build error of R-Car Gen4 PTP
+241d44845b90 ravb: Clear RIS2_QFF1 flag in ravb_error_interrupt()
+e37c8d37dd3c ravb: Remove TX internal delay setting
+d276493fd6c2 ravb: Issue gpio reset to AVB1/AVB2 PHYs
+4fd5ebc98e12 clk: renesas: r8a779g0: Update parent clk for HSCIF
+5552ca0ce47c clk: renesas: r8a779f0: Update parent clk for HSCIF
+68c8cf248f51 arm64: dts: renesas: whitehawk: Add phy-reset-gpios to reset PHYs before initialization
+95c2da4f8d1e arm64: dts: renesas: r8a779g0: Disable QoS and Busmoni to default enable UIO side
+3d87a405c67d arm64: dts: renesas: r8a779g0: Add UIO support of QoS and Busmoni
+51cb5f1f83b6 net: ethernet: renesas: rcar_gen4_ptp: Revise R-Car V4H gPTP's clock frequency
 6cdb77edda1a drm: rcar-du: Fix the DIV bit of VCLKSET register
 976c1ecbf72b drm: rcar-du: Update information based on HW 0.53
 9dc8bba15574 drm: rcar-du: Change the phtw function
