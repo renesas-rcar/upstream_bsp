@@ -27,7 +27,6 @@ f549e5744db6 Revert "arm64: dts: renesas: r8a779g0: Fix AVB registers range"
 241d44845b90 ravb: Clear RIS2_QFF1 flag in ravb_error_interrupt()
 e37c8d37dd3c ravb: Remove TX internal delay setting
 d276493fd6c2 ravb: Issue gpio reset to AVB1/AVB2 PHYs
-4fd5ebc98e12 clk: renesas: r8a779g0: Update parent clk for HSCIF
 5552ca0ce47c clk: renesas: r8a779f0: Update parent clk for HSCIF
 68c8cf248f51 arm64: dts: renesas: whitehawk: Add phy-reset-gpios to reset PHYs before initialization
 95c2da4f8d1e arm64: dts: renesas: r8a779g0: Disable QoS and Busmoni to default enable UIO side
