@@ -43,14 +43,11 @@ c726edac6887 thermal: rcar_gen3_thermal: Use generic name for resources
 af51d5309f8c arm64: dts: renesas: r8a779g0: Add compatible string for R-Car V4H
 b5bccf1fc37c arm64: dts: renesas: r8a779f0: Disable CDM check
 9fd7d9ee7993 arm64: dts: renesas: r8a779g0: Disable CDM check
-22bb1052fb49 mmc: renesas_sdhi: Handle V3H ES2.0
-158be613d0e5 mmc: renesas_sdhi_internal_dmac: Add support R-Car Gen4
 ce3936b34bc3 dt-bindings: mmc: renesas,sdhi: Add r8a779g0 support
 d10133565b53 mmc: core: mmc_ops: Enable stop command
 de9461ece1fa mmc: renesas_sdhi: scc_ctl is always set in after R-Car Gen3
 bc75d8c5907a mmc: core: Issue power off notification in mmc_remove()
 f04e295cd388 mmc: renesas_sdhi: reset calibration register
-2ec314c9451c mmc: renesas_sdhi: fix selection of manual correction
 755f55eac38a mmc: renesas_sdhi: Add internal DMA transfer end
 ce747db93e14 mmc: tmio: Add internal DMA transfer end
 e6e4182857b4 mmc: renesas_sdhi: Add PIO mode support
@@ -180,8 +177,6 @@ b00576ea6bf3 arm64: dts: renesas: r8a779m{1, 3, 5}: Do not support boost mode fo
 333acb9e9209 arm64: dts: renesas: r8a779m1: Remove hdmi0 setting for H3e
 37f639d10d8f arm64: dts: r8a77995: Add optee node
 5a9cc958e435 arm64: dts: renesas: Configure the MSIOF parent clock for R-Car Gen3
-2b6d44cc2ba6 arm64: dts: renesas: ulcb: Enable IPMMU of SDHI2
-7c17cf98a2b7 arm64: dts: renesas: r8a77995-draak: Enable IPMMU of SDHI2
 d0389b66d30a arm64: dts: renesas: r8a77995: Enable IPMMU-DS1 and IPMMU-MM
 70db35c3bbf4 arm64: dts: renesas: r8a77995: Change IPMMU-MM and IPMMU-caches order in DT for R-Car D3
 0ed94ce71f04 arm64: dts: renesas: r8a77995: Change default of all IPMMU devices to disable
@@ -193,7 +188,6 @@ b8391f96ea13 arm64: dts: renesas: r8a77980-v3hsk: Disable MMC
 ded7fcd78c96 arm64: dts: renesas: r8a77995-draak: Remove endpoint of LVDS1
 3799f1e161c6 arm64: dts: Add MFISLock driver support
 948df237125b arm64: dts: Makefile: Comment out compiling of dtbo
-d0ae50ec421f arm64: dts: r8a779a0: Delete ipmmu in mmc node
 ceaebe58dff5 arm64: dts: r8a77980: Update name and reg size of IMP nodes
 403876f7ff9a arm64: dts: renesas: Add missed ipmmu-id tags
 6ddabb5d936d arm64: dts: renesas: extend 'ipmmu-id' with micro-TLB index
@@ -525,7 +519,6 @@ fbf991b5bd28 clk: renesas: r8a77{95, 96, 965}: Replace PLL3 multiplication setti
 a5758a3a06cd arm64: defconfig: Enable Renesas R-Car PCIe v4.0 host controller driver
 3df554353f04 arm64: dts: renesas: r8a77965-ulcb: Fix source clock for DU
 98ea5401ab70 arm64: dts: renesas: r8a77951-ulcb: Fix source clock for DU2
-870144dfc576 arm64: dts: renesas: r8a77990-ebisu{,-es10}: Enable IPMMU of SDHI3
 4f96fa23c03c arm64: dts: renesas: r8a7796{0,1}: Enable IPMMU-DS1 and IPMMU-MM
 9e42169db8a0 arm64: dts: renesas: r8a7795{0,1}: Enable IPMMU-DS1 and IPMMU-MM
 6b6933f7f35c arm64: dts: renesas: Support IPMMU(MMU mode) for IPMMU-VP0/1 and IPMMU VC0/1
@@ -536,7 +529,6 @@ eebb64a81da5 arm64: dts: renesas: r8a77965: Change default of all IPMMU devices 
 5024c4ce1d24 arm64: dts: renesas: r8a7796{0,1}: Disable IPMMU devices
 cf44aee9dfea arm64: dts: renesas: r8a779{51, 60, 61}-ulcb: Fix souce clock for DU
 a7afdde5f202 arm64: dts: renesas: r8a77960-ulcb: Disable CPUIdle support for CA53
-9948cf8925ee arm64: dts: renesas: r8a77950-ulcb: Disable HS400 of SDHI2
 eff7c317af2e arm64: dts: renesas: Add optee node for Gen3 devices
 c4ce249bb021 arm64: dts: renesas: Add MFIS Lock and MFIS devices node for gen3 devices
 76cab2933b26 arm64: dts: renesas: r8a77990-ebisu{,-4D}: Add support for R-Car E3 ES1.0
@@ -769,10 +761,8 @@ baaf58183c59 arm64: dts: r8a77951: Add RT-DMAC nodes
 d45ea26fde42 arm64: dts: renesas: r8a779a0: Add RT-DMAC support
 67c712ca4318 clk: renesas: r8a77995: Add RT-DMAC clocks
 755a56e7c796 clk: renesas: r8a77{95, 96, 965, 990, 980}: Add RT-DMAC clocks
-42a071058dc9 arm64: dts: renesas: r8a77995: Detach IPMMU-DS1 from SDHI
 d26ecf8dae1b arm64: dts: renesas: r8a77995: Detach IPMMU-MP from AUDIO-DMAC0
 d66c36ce47e5 arm64: dts: renesas: r8a77995: Detach IPMMU-DS0 from Ethernet-AVB
-78ab046f9b98 arm64: dts: renesas: r8a779{51, 60, 65, 90}: Detach IPMMU-DS1 from SDHI
 8963a175d2c4 arm64: dts: renesas: r8a779{65, 90}: Detach IPMMU-DS0 from Ethernet-AVB
 eae3c2d59f3d arm64: dts: renesas: r8a779{50, 51}: Detach IPMMU-VI from FCDVD
 6789a9fd36e1 arm64: dts: renesas: r8a779{51, 60, 65, 90, 95}: Detach IPMMU-DS from SYS-DMAC
