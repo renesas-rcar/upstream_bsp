@@ -1,3 +1,6 @@
+64068d1ecb5a arm64: dts: renesas: r8a779g0: Avoid memory region for other system
+e980b9d27372 arm64: dts: renesas: whitehawk: Fix cma region for FCPR driver
+e14a7b50a2ef arm64: dts: renesas: r8a779g0: Disable R-Car Sound on r8a779g0-whitehawk.dtb
 d7be742075b0 arm64: dts: renesas: r8a779g0: Disable CDM check in PCIe ch1
 5232175003e2 arch: arm64: dts: renesas: r8a779g0: Add shared address ranges and shared clock for pcie node
 9466ee8f1e32 arch: arm64: dts: renesas: r8a779g0-whitehawk: Restore pinctrl for PCIe
@@ -27,6 +30,7 @@ f549e5744db6 Revert "arm64: dts: renesas: r8a779g0: Fix AVB registers range"
 241d44845b90 ravb: Clear RIS2_QFF1 flag in ravb_error_interrupt()
 e37c8d37dd3c ravb: Remove TX internal delay setting
 d276493fd6c2 ravb: Issue gpio reset to AVB1/AVB2 PHYs
+4fd5ebc98e12 clk: renesas: r8a779g0: Update parent clk for HSCIF
 5552ca0ce47c clk: renesas: r8a779f0: Update parent clk for HSCIF
 68c8cf248f51 arm64: dts: renesas: whitehawk: Add phy-reset-gpios to reset PHYs before initialization
 95c2da4f8d1e arm64: dts: renesas: r8a779g0: Disable QoS and Busmoni to default enable UIO side
