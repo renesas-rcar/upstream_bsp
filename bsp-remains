@@ -23,7 +23,6 @@ fc60c20649e9 arm64: dts: renesas: r8a779g0: Audio R-Car Sound support
 1df4ef95143b ASoC: renesas: Add R-Car V4H to R-Car Sound Driver
 f07854ecac12 arm64: defconfig: Enable DA7213 Codec
 393244153d30 pinctrl: renesas: r8a779g0: Add Audio support
-f549e5744db6 Revert "arm64: dts: renesas: r8a779g0: Fix AVB registers range"
 8be32e61e150 uio: uio_pdrv_genirq: Add parameter error in case not define property in node
 20dbf63e6809 Revert "net: phy: consider that suspend2ram may cut off PHY power"
 3dbea0aef38a net: ethernet: renesas: rcar_gen4_ptp: Fix build error of R-Car Gen4 PTP
@@ -71,10 +70,8 @@ ea52a14c9748 soc: renesas: rcar-sysc: Add wait 1us before turning off power doma
 118bfc69fe4d soc: renesas: rcar-sysc: Adjust the waiting time to cover the worst case
 f9f089f44976 arm64: dts: renesas: whitehawk: Disable on board chips of native display driver
 c0cbae905c8a arm64: dts: renesas: whitehawk: Add AVB1/AVB2 support
-1eb0d4a0a9d7 arm64: dts: renesas: r8a779g0: Fix AVB registers range
 d387cc45dbbd arm64: dts: renesas: r8a779g0: Update Ethernet-TSN0 device node
 9739f3d62ad6 arm64: dts: renesas: r8a779g0: Change the memory region on V4H
-481d8ea8c95e Revert "arm64: dts: renesas: r8a77980-v3hsk: Disable MMC"
 e401848fb50d arm64: dts: renesas: r8a779g0: Fix (H)SCIF brg_int clock
 220b531ea081 arm64: dts: renesas: r8a779f0: Fix (H)SCIF brg_int clock
 46aa3d2a438d arm64: dts: renesas: r8a779g0: Add max96789 node
@@ -144,12 +141,9 @@ b0af5d2217fc arm64: dts: renesas: r8a779f0: Add PCIe device nodes for Renesas R8
 176ffc5b19b0 arm64: dts: renesas: Add Renesas R8A779F0 SoC support
 b5674d878b5f arm64: dts: renesas: r8a779g0: Fix power domains GFX
 ebf0cf8420a8 arm64: dts: renesas: r8a779g0: Update IO/range for CSI devices
-81acd11e094b Revert "arch: arm64: dts: renesas: r8a779g0: Add gPTP support for RTSN"
-7490f1bb3ec1 arch: arm64: dts: renesas: r8a779g0: Add gPTP support for RTSN
 cdcf900a8087 arm64: dts: renesas: r8a779g0: Add CPUIdle for R-Car V4H
 a1ee889b1718 arm64: dts: renesas:  Add PCIe1 endpoint node
 d334909f25f8 arm64: dts: renesas: r8a779g0: Update IPMMU assignment/ID VideoInput/Output
-97120fd32aa9 Revert "[WIP] arm64: dts: renesas: r8a779g0: Disable cluster1 CPU cores"
 dde6e18b6b15 arm64: dts: renesas: Fix syntax error for Timer(CMT/TMU) node
 00244fb8f94a arm64: dts: renesas: r8a779g0: Add Ethernet-TSN support
 6f8cda84269d arm64: dts: renesas: r8a779g0: Fix power-domains at node TMU1 for V4H
@@ -159,7 +153,6 @@ dde6e18b6b15 arm64: dts: renesas: Fix syntax error for Timer(CMT/TMU) node
 316ba3b2d54c arm64: dts: renesas: r8a779g0: Add CMT node
 230ccbc7de13 arm64: dts: renesas: whitehawk: Add PCIe support
 7d00a3d901ac arm64: dts: renesas: r8a779g0: Add PCIe node
-760f61867499 [WIP] arm64: dts: renesas: r8a779g0: Disable cluster1 CPU cores
 c44b8d43097b arm64: dts: renesas: r8a779g0: Add VIN driver nodes for R8A779G0
 bc6069c7dd7a arm64: dts: renesas: whitehawk-cpu: Enable eMMC
 eb3c520d12ed arm64: dts: renesas: r8a779g0: Add MMC node
@@ -186,7 +179,6 @@ d0389b66d30a arm64: dts: renesas: r8a77995: Enable IPMMU-DS1 and IPMMU-MM
 e047235afc80 arm64: dts: r8a77995-draak: Move option definition of vin node
 7e2ffb68ad2f arm64: dts: renesas: r8a77995-draak: Set HDMI mode as defaul mode for VIN driver
 b0aa94d65efb arm64: dts: renesas: Fix compatible name for MFIS node
-b8391f96ea13 arm64: dts: renesas: r8a77980-v3hsk: Disable MMC
 ded7fcd78c96 arm64: dts: renesas: r8a77995-draak: Remove endpoint of LVDS1
 3799f1e161c6 arm64: dts: Add MFISLock driver support
 948df237125b arm64: dts: Makefile: Comment out compiling of dtbo
@@ -266,17 +258,9 @@ c8cafec03b80 drm: rcar-du: Add DSI device for R8A779G0
 72050da8baf1 media: vsp1: Add setting for Gen4 devices
 4acbf7bb875e media: vsp1: Add IP VERSION for R8A779G0
 68a3629f587a Revert "[WIP] media: vsp1: Add YCbCr422 10bit color space"
-7953f3734ab6 Revert "drm: rcar-du: Add DSI device for R8A779G0"
-1901df3c4c65 Revert "media: vsp1: Add setting for Gen4 devices"
-2ec9efee9d42 Revert "media: vsp1: Add VSP device for Gen4"
-40255fb5556e Revert "media: vsp1: Add IP VERSION for R8A779G0"
 64998928e911 media: vsp1: Add YCbCr422 10bit color space
-a33105b7c977 drm: rcar-du: Add DSI device for R8A779G0
 62ad796fd2cb drm: rcar-du: Adapt the code to gen4 device
 b784dfae50ee drm: rcar-du: Introduce R8A779G0 device
-8dc9d32cbc55 media: vsp1: Add setting for Gen4 devices
-b3f9840865d8 media: vsp1: Add VSP device for Gen4
-4578bfcd7e78 media: vsp1: Add IP VERSION for R8A779G0
 133000971f79 drm: rcar-du: Fix the warning error of MIPI DSI encoder of V3U
 7b6b37a751b1 drm: rcar-du: Add setting to PnALPHAR register on Gen3
 580a8138882b drm: rcar-du: lvds: Seperate the disable process of LVDS
@@ -559,10 +543,8 @@ a818c9583130 arm64: dts: renesas: r8a779g0: Fix name of uTLB assignment of UIO d
 02a9da328c21 arm64: dts: renesas: r8a779f0: Add device for AESACC UIO
 e1f92db9945c arm64: dts: renesas: r8a779a0: Add SYSTEMRAM UIO devices
 6e4dc9e87398 arm64: dts: renesas: r8a77980-es2: Add SYSTEMRAM UIO devices
-2c74bc876dc5 Revert "arm64: dts: renesas: r8a77980: Add SYSTEMRAM UIO devices"
 232bd7abc6dd arm64: dts: renesas: r8a779a0: Fix IPMMU bus name for UIO
 3d61e26b0870 arm64: dts: renesas: r8a77970: Add SYSTEMRAM UIO devices
-fff5cb4a5bdd arm64: dts: renesas: r8a77980: Add SYSTEMRAM UIO devices
 305eadd2defa arm64: dts: renesas: r8a779a0: Update naming of DU UIO devices
 d4d4b4a98621 arm64: dts: renesas: r8a77980: Remove support FBC UIO devices
 abe8dd787d57 arm64: dts: renesas: r8a77970: Remove support FBC UIO devices
@@ -626,12 +608,10 @@ e3822af53b22 arm64: dts: renesas: r8a779f0: Update ICCOM UIO devices
 a8808023acc0 arm64: dts: renesas: r8a779f0: Add AESACC UIO devices
 04fd55a3b80f arm64: dts: renesas: r8a779f0: Fix register range of ICCOM UIO
 3d19686376f8 arm64: dts: renesas: r8a779g0: Fix IO/address AESACC UIO devices
-9c5882e7997f Revert "arm64: dts: renesas: r8a779g0: Update IO/range AESACC UIO devices"
 c780393648d9 arm64: dts: renesas: r8a779g0: Update pm/reset for PAP UIO devices
 3b38ad9eadd4 arm64: dts: renesas: r8a779g0: Add AESACC (caiplite_wrapper) UIO devices
 4d62e27495b1 arm64: dts: renesas: r8a779g0: Update pm/cpg system_ram UIO devices
 81f16ca7d480 arm64: dts: renesas: r8a779g0: Update PAP UIO devices
-84c221dda6f5 arm64: dts: renesas: r8a779g0: Update IO/range AESACC UIO devices
 230df4f9bf5b arm64: dts: renesas: r8a779g0: Update naming IPMMU UIO devices
 d6c28f34b1ea arm64: dts: renesas: r8a779g0: Update ENCODER UIO devices
 c1816a3a25e0 arm64: dts: renesas: r8a779g0: Update VISION UIO devices
@@ -658,12 +638,6 @@ d089bc400ef9 arm64: dts: renesas: r8a779g0: Add VISIONIP UIO devices
 38dc6716748f arm64: dts: renesas: r8a779g0: Add IMP UIO devices
 a31589ea1b62 arm64: dts: renesas: r8a779g0: Add IMR UIO devices
 c8cf167a577a arm64: dts: renesas: r8a779g0: Remove IMR UIO devices
-f2f24d7608d5 Revert "arm64: dts: renesas: r8a779g0: Add IMP UIO devices"
-0abd50f7454a Revert "arm64: dts: renesas: r8a779g0: Add VISIONIP UIO devices"
-537151a5cd31 Revert "arm64: dts: renesas: r8a779g0: Add ISP UIO devices"
-6011271294ef arm64: dts: renesas: r8a779g0: Add ISP UIO devices
-4015e5fbe9aa arm64: dts: renesas: r8a779g0: Add VISIONIP UIO devices
-606a7845dff1 arm64: dts: renesas: r8a779g0: Add IMP UIO devices
 aea8b09fc946 arm64: dts: renesas: r8a779g0: Add IMR UIO devices
 fd7193f6d965 arm64: dts: r8a77995: Add IMR UIO device
 d7b4df160b5b arm64: dts: r8a77990: Add IMR UIO device
