@@ -252,8 +252,6 @@ ffb24cc21c56 media: vsp1: Add YCbCr 10 bit format setting
 c8cafec03b80 drm: rcar-du: Add DSI device for R8A779G0
 72050da8baf1 media: vsp1: Add setting for Gen4 devices
 4acbf7bb875e media: vsp1: Add IP VERSION for R8A779G0
-68a3629f587a Revert "[WIP] media: vsp1: Add YCbCr422 10bit color space"
-64998928e911 media: vsp1: Add YCbCr422 10bit color space
 62ad796fd2cb drm: rcar-du: Adapt the code to gen4 device
 b784dfae50ee drm: rcar-du: Introduce R8A779G0 device
 580a8138882b drm: rcar-du: lvds: Seperate the disable process of LVDS
