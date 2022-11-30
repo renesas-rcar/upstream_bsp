@@ -249,7 +249,6 @@ cc177bcb7dea arm64: dts: renesas: r8a779{51, 65}: Add brs option
 9485f372f4cc drm: rcar-du: Support YCbCr 10 bit pixel format
 ffb24cc21c56 media: vsp1: Add YCbCr 10 bit format setting
 00e6c30c493c media: v4l2: Add YCbCr 10 bit format which support on vsp1
-f526433a23a7 drm: rcar-du: Add W/A setting for WhiteHawk board
 c8cafec03b80 drm: rcar-du: Add DSI device for R8A779G0
 72050da8baf1 media: vsp1: Add setting for Gen4 devices
 4acbf7bb875e media: vsp1: Add IP VERSION for R8A779G0
@@ -870,3 +869,4 @@ df0fc9790b0b drm: bridge: hw-hdmi: Control clock of bridge during S2RAM
 75008adaa5f2 drm: rcar-du: Fix PHY configure registers
 e42ca15fced1 drm: bridge: simple-bridge: Add preferred resolution option
 8605b0f29f33 drm: bridge: simple-bridge: Add connector status setting option
+f526433a23a7 drm: rcar-du: Add W/A setting for WhiteHawk board
