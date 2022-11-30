@@ -247,7 +247,6 @@ f579310d2ed3 arm64: dts: renesas: r8a77995-draak: Set max dot clock for vga
 1e03a491706f drm: rcar-du: Fix the enable process for DSI module
 84cd63a1f9df drm: rcar-du: Add DSC driver
 0f285fa677d2 drm: rcar-du: Fix the setting for MIPI on R8A779A0
-821a6a852c44 drm: rcar-du: lvds: Auto select RESET_CONTROLLER
 2fcd37700629 drm: bridge: ti-sn65dsi86: Add checking Horizontal Back Porch value
 f8264257f175 drm: rcar-du: Add setting for DSI on R8A779A0
 9485f372f4cc drm: rcar-du: Support YCbCr 10 bit pixel format
