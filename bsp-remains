@@ -244,11 +244,7 @@ f579310d2ed3 arm64: dts: renesas: r8a77995-draak: Set max dot clock for vga
 692182da7049 arm64: dts: renesas: salvator-common: Set max dot clock for vga
 9138f2baa207 drm: bridge: max96789: Add basic function for max96789
 72058c09a66e drm: rcar-du: Fix DU setting for V4H
-1e03a491706f drm: rcar-du: Fix the enable process for DSI module
 84cd63a1f9df drm: rcar-du: Add DSC driver
-0f285fa677d2 drm: rcar-du: Fix the setting for MIPI on R8A779A0
-2fcd37700629 drm: bridge: ti-sn65dsi86: Add checking Horizontal Back Porch value
-f8264257f175 drm: rcar-du: Add setting for DSI on R8A779A0
 9485f372f4cc drm: rcar-du: Support YCbCr 10 bit pixel format
 ffb24cc21c56 media: vsp1: Add YCbCr 10 bit format setting
 00e6c30c493c media: v4l2: Add YCbCr 10 bit format which support on vsp1
@@ -260,8 +256,6 @@ c8cafec03b80 drm: rcar-du: Add DSI device for R8A779G0
 64998928e911 media: vsp1: Add YCbCr422 10bit color space
 62ad796fd2cb drm: rcar-du: Adapt the code to gen4 device
 b784dfae50ee drm: rcar-du: Introduce R8A779G0 device
-133000971f79 drm: rcar-du: Fix the warning error of MIPI DSI encoder of V3U
-7b6b37a751b1 drm: rcar-du: Add setting to PnALPHAR register on Gen3
 580a8138882b drm: rcar-du: lvds: Seperate the disable process of LVDS
 11a5640d342c drm: rcar-du: Add check for member of rstate in rcar_du_crtc_state structure
 3be1a176425a drm/bridge: adv7511: Add frequency and vrefresh limitation option
@@ -273,12 +267,10 @@ fe0832b798a5 drm: adv7511: Enable HPD interrupts to support hotplug
 4c4f100f8bb0 media: vsp1: Add support for new pixel formats in R8A779A0
 8a2a3897a430 media: videodev2.h: Add new pixel format for vsp1 on R8A779A0
 0b29b25ab439 drm: bridge: ti-sn65dsi86: Add setting options for SN65DSI86
-e7782857c017 drm: rcar-du: Add enable/disable dot clock to DU in R8A779A0
 cb3df6f55863 drm: rcar-du: Disable TV synchronized mode in V3U
 de5241d52cc6 drm: rcar-du: Add DIDSRO register setting for V3U
 c7b9de4f7b6a drm: rcar-du: Accessing to reserved registers at V3U is prohibited
 8e452962e251 drm: rcar-du: Add output checking in encoder for DSI port.
-d84aeb65f366 drm: rcar-du: Add DU device information for V3U
 bda8cf6a5bdc v4l: vsp1: Add new registers which are introduced in V3U
 c63b0054608b drm: rcar-du: Add dev_type for dw-hdmi driver
 2ab3707b5051 drm: bridge/dw-hdmi: Fix offset address of register for R-Car
