@@ -242,6 +242,7 @@ f579310d2ed3 arm64: dts: renesas: r8a77995-draak: Set max dot clock for vga
 6558a1c38cbe arm64: dts: renesas: r8a77990-ebisu: Set max dot clock for vga
 3088c796acfa arm64: dts: renesas: r8a77990-ebisu: Set preferred resolution
 692182da7049 arm64: dts: renesas: salvator-common: Set max dot clock for vga
+cc177bcb7dea arm64: dts: renesas: r8a779{51, 65}: Add brs option
 9138f2baa207 drm: bridge: max96789: Add basic function for max96789
 72058c09a66e drm: rcar-du: Fix DU setting for V4H
 84cd63a1f9df drm: rcar-du: Add DSC driver
@@ -784,7 +785,6 @@ add6f2323ec3 arm64: dts: renesas: r8a77980: Update FCPR UIO devices
 8e8b53933370 arm64: dts: renesas: r8a77995: Detach IPMMU-VI0 from FCPVD
 1c6e58602374 arm64: dts: renesas: r8a77990: Detach IPMMU-VI0/1 from FCPVD
 e9e9f5ec040f arm64: dts: renesas: r8a7796{0,1}: Detach IPMMU-VI0 from FCPF
-cc177bcb7dea arm64: dts: renesas: r8a779{51, 65}: Add brs option
 9089907b6f1c arm64: dts: renesas: r8a779a0: Add POSTCLK devices
 3b01aad15052 arm64: dts: renesas: r8a77970: Add POSTCLK devices
 9b1b84da0995 arm64: dts: renesas: r8a77980: Add POSTCLK devices
