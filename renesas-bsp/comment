@@ -1,0 +1,10 @@
+Sound
+	- Upstream is already supporting TDM on ulcb-kf pcm3168a.
+	  BSP is assuming that pcm3168a can handle Playback/Capture on same DAI,
+	  but it is wrong. pcm3168a is not symmetric device (playback 8ch vs capture 6ch).
+
+	- BSP is tring to use each codecs as different Sound Card (ak4613/pcm3168a/si468x/wl18xx),
+	  but it is wrong. These should be handled on the same Card.
+	  Otherwise it will get error, like below
+		[    2.533890] rcar_sound ec500000.sound: Trying to bind component to card "pcm3168a" but is already bound to card "ak4613"
+		[    2.544950] asoc-audio-graph-card sound@1: ASoC: failed to instantiate card -19

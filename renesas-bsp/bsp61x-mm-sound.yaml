@@ -1,0 +1,14 @@
+title: "BSP v6.1: Sound"
+team: MM
+status: New
+
+bsp61x:
+ - 77c0859b5328 # arm64: dts: renesas: r8a779g0: whitehawk: Add R-Car Sound support
+ - fc60c20649e9 # arm64: dts: renesas: r8a779g0: Audio R-Car Sound support
+ - 21c8766ab233 # dt-bindings: rsnd: Add r8a779g0 support
+ - 1df4ef95143b # ASoC: renesas: Add R-Car V4H to R-Car Sound Driver
+ - f07854ecac12 # arm64: defconfig: Enable DA7213 Codec
+ - 393244153d30 # pinctrl: renesas: r8a779g0: Add Audio support
+ - 6d2224b4f404 # arm64: dts: renesas: r8a779g0: Add PWM device node
+ - fa2f9bc11e10 # arm64: dts: renesas: r8a779g0: Fix naming to SYS-DMAC0 and SYS-DMAC1.
+ - 0d65a95455d3 # arm64: dts: renesas: r8a779g0: add R-Car Sound support

@@ -1,9 +1,68 @@
 ============== -*- outline -*- ==============
 
-                BSP rebase work
+                BSP rebase README
 
 2022/11/24	Kuninori Morimoto <kuninori.morimoto.gx@renesas.com>
 =============================================
+
+* Before commit
+
+	Let's run sanity-check before commit.
+	No report is required
+
+		> renesas-bsp/script/sanity-check.sh
+
+* Todo
+	Core
+		- BSP is using many "ebisu-xxx" dts, but upstream has only "ebisu".
+		  We can remove these from "bsp-remains", and explain about it on "done"
+		- Let's accept "defconfig" update patch even though it was local patch.
+
+	Geert
+		- Please check "ignored" file's top of "Revert" comment,
+		  and handle these.
+
+	Shimoda
+		- fix done file comment
+
+* Files
+
+	full
+		BSP full commits created by
+
+			> git log --oneline --no-merges 014862eecf03..renesas-bsp/v5.10.147/rcar-5.2.0.rcX
+
+	remains
+		not yet handled commits
+
+		remains = full - handled - ignored
+
+	handled
+		handled commits
+			- included on v6.1
+			- the issue doesn't happen on v6.1
+			- etc
+
+		Remove target commit from "remains", and add it to "handled"
+
+	ignored
+		BSP real local patches.
+		Remove target commit from "remains", and add it to "ignored"
+		with comment why the it was ignored.
+
+		You can use below script to get raw commits
+
+			> renesas-bsp/script/commit-ignored.sh
+
+	bsp61x-*.yaml
+		PeriJect format todo file for upporting.
+		You can use below script to get raw commits
+
+			> renesas-bsp/script/commit-bsp61x.sh renesas-bsp/bsp61x-*
+
+	comment
+		Some comment to BSP team.
+		ex) XXXX is handled, but BSP solution and upstream solution are different
 
 * Git
 	Morimoto
@@ -16,6 +75,8 @@
 		git://git.kernel.org/pub/scm/linux/kernel/git/geert/renesas-drivers.git
 		https://git.kernel.org/pub/scm/linux/kernel/git/geert/renesas-drivers.git
 		https://kernel.googlesource.com/pub/scm/linux/kernel/git/geert/renesas-drivers.git
+	Laurent
+		git://linuxtv.org/pinchartl/media.git topic/renesas-bsp-rebase-v6.1
 
 * Task
 	1) Backport/Handle each bsp-remains patches on latest renesas-bsp-rebase-v6.1
@@ -23,31 +84,17 @@
 	3) Push it to your git repository, and indicate it. Morimoto will merge it.
 	4) back to 1)
 
-* Todo
-	Morimoto
-		- Add "bsp-only" file for *real* local patch (next week).
-		- Create "renesas-dir" dir, and move each files to there (next week).
-		- Create "summary" file
-		- How to handle V3U patches ?
+* How to handle V3U patch ?
 
-	Core
-		- BSP is using many "ebisu-xxx" dts, but upstream has only "ebisu".
-		  We can remove these from "bsp-remains", and explain about it on "done"
-		- Let's accept "defconfig" update patch even though it was local patch.
-
-	Shimoda
-		- fix done file comment
-
-* About "cherry-pick"
-
-	Let's use it to *reduce* bsp-remains for now,
-	not for aggressive backport.
+	BSP team is still using V3U, let's keep it.
 
 * How to handle *upportable* patch ?
 
 	If the patch can be upstreamed, but is now trying to,
 	let's apply the patch, and remove it from bsp-remains.
 	The patch can be replaced if the patch was accepted on upstream.
+
+	Let's add it to bsp61x-*.yaml
 
 * How to handle *real* local patch ?
 
@@ -61,23 +108,20 @@
 * Schedule
 
 	I could connect to BSP team. The time limit is "End of Feb".
-	So we have *3* month.
 
-	~ Nov/E
+	~ Jan/E
 		- focus "backportable" patches
 			- From linus or linux-next branches
 		- focus "defconfig update" patches
 			- let's accept defconfig update patch even though
 			  it was local patch
-		- pickup *real* local patch
-			- and move it to "end of bsp-remains" file
-			  (for now. We will use "bsp-only" file from next week).
-
-	~ Jan/E
 		- focus "upportable" patches
 			- This means, it is still local patch, but can be upported.
 			  Please apply such patch, and remove it from remain file.
 			  And try to upport it. We can replace it if upport has done.
+		- pickup *real* local patch
+			- and move it to "end of bsp-remains" file
+			  (for now. We will use "bsp-only" file from next week).
 
 	~ Feb/E
 		- aggressive backport (if needed)
