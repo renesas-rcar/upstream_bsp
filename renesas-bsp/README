@@ -15,7 +15,7 @@
 * Todo
 	Core
 		- BSP is using many "ebisu-xxx" dts, but upstream has only "ebisu".
-		  We can remove these from "bsp-remains", and explain about it on "done"
+		  We can remove these from "remains", and explain about it on "comment"
 		- Let's accept "defconfig" update patch even though it was local patch.
 
 	Geert
@@ -23,7 +23,7 @@
 		  and handle these.
 
 	Shimoda
-		- fix done file comment
+		- fix "comment" file
 
 * Files
 
@@ -79,8 +79,8 @@
 		git://linuxtv.org/pinchartl/media.git topic/renesas-bsp-rebase-v6.1
 
 * Task
-	1) Backport/Handle each bsp-remains patches on latest renesas-bsp-rebase-v6.1
-	2) Update done/bsp-remain files accordingly
+	1) Backport/Handle each "remains" patches on latest renesas-bsp-rebase-v6.1
+	2) Update comment/handled/ignored/remains files accordingly
 	3) Push it to your git repository, and indicate it. Morimoto will merge it.
 	4) back to 1)
 
@@ -91,17 +91,17 @@
 * How to handle *upportable* patch ?
 
 	If the patch can be upstreamed, but is now trying to,
-	let's apply the patch, and remove it from bsp-remains.
+	let's apply the patch, and remove it from "remains".
 	The patch can be replaced if the patch was accepted on upstream.
 
 	Let's add it to bsp61x-*.yaml
 
 * How to handle *real* local patch ?
 
-	Keep it on "bsp-remains" (will be "bsp-only" file next week),
-	and explain about it on "done" file.
+	Remove it from "remains" file, and add it on "ignored" file
+	with reason.
 
-	Please find and use last part of "bsp-remains" for now.
+	Please find and use last part of "remains" for now.
 
 	These non-upstreamable commits will be handled by BSP team.
 
@@ -120,8 +120,7 @@
 			  Please apply such patch, and remove it from remain file.
 			  And try to upport it. We can replace it if upport has done.
 		- pickup *real* local patch
-			- and move it to "end of bsp-remains" file
-			  (for now. We will use "bsp-only" file from next week).
+			- and move it to "ignored" file.
 
 	~ Feb/E
 		- aggressive backport (if needed)
