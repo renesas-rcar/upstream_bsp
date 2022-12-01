@@ -508,3 +508,11 @@ a6068a4c64ee thermal: rcar_gen3_thermal: Correct the order of checking THSCP
 e88f4e52ad53 v4l: vsp1: Add write back support
 fb2b37640a52 v4l: vsp1: Disable vsp1 interrupt when startup
 c57da8895800 watchdog: renesas_wdt: Add R-Car Gen4 support
+16fd272df215 Revert "arm64: dts: renesas: r8a77951: Add RPC device node"
+0e2eec819cc1 Revert "arm64: dts: renesas: r8a7796{0,1}: Add RPC device node"
+e4b92ad17739 Revert "arm64: dts: renesas: r8a77965: Add RPC device node"
+ec887e9beca3 Revert "arm64: dts: renesas: ulcb: Add RPC HyperFlash device node"
+df1b70b902a1 Revert "arm64: dts: renesas: salvator-common: Add RPC HyperFlash device node"
+9503d2d4527f Revert "clk: renesas: r8a77965: Add RPC clocks"
+de43f83ae4ba Revert "clk: renesas: r8a7796: Add RPC clocks"
+ac2fdfd95d0c Revert "clk: renesas: r8a7795: Add RPC clocks"
