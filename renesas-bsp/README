@@ -30,7 +30,7 @@
 	full
 		BSP full commits created by
 
-			> git log --oneline --no-merges 014862eecf03..renesas-bsp/v5.10.147/rcar-5.2.0.rcX
+			> git log --oneline --no-merges v5.10.147..renesas-bsp/v5.10.147/rcar-5.2.0.rcX
 
 	remains
 		not yet handled commits
