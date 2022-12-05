@@ -14,6 +14,10 @@ AVS
 	OPPs table-{1-7} are related to AVS
 		87b9b3057086 arm64: dts: renesas: r8a779{51, 60, 61}: Add OPPs table-{1-7} for cpu devices
 
+Defconfig
+	Modular as per upstream policy, CONFIG_CPU_FREQ_STAT_DETAILS was removed in v4.11
+		7ed8cce11f67 arm64: defconfig: Enable cpufreq configs for rcar
+
 DMA-Engine
 	Has been rejected upstream
 		6baf8b33ed9d dmaengine: rcar-dmac: Fix array-bounds warning refer chcr_ts[]
