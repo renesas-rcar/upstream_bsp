@@ -242,6 +242,17 @@ RT-DMAC
 		67c712ca4318 clk: renesas: r8a77995: Add RT-DMAC clocks
 		755a56e7c796 clk: renesas: r8a77{95, 96, 965, 990, 980}: Add RT-DMAC clocks
 
+Serial
+	According to our research tty-core activates clocks. Testcase needed.
+		4ad9b3444ded serial: sh-sci: Use pm_runtime_get/put when suspend
+		dac54422c0d0 serial: sh-sci: Use pm_runtime_get/put when resume
+
+	SCIF2 DMA is documented in Hardware User's Manual rev1.50 onwards
+		b8fac174f786 arm64: dts: renesas: r8a77951: Unsupport DMA transfer for SCIF2
+
+	We only support SCIF upstream. Users can always change DT as they want.
+		bd790e0bfe8e arm64: dts: renesas: falcon: Add HSCIF0 support
+
 Sound
 	BSP is using si468x/wl18xx for Sound, but upstream team don't have these.
 
