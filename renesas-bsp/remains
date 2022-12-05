@@ -206,7 +206,6 @@ fae4aeaf8b56 arm64: dts: r8a779a0-falcon: Enable fakra connector
 419560a14df4 arm64: dts: r8a779a0: Add SYSC PM Domains
 5d4c3888e0d3 arm64: dts: renesas: r8a779a0: Add PWM nodes
 ccb1316bf6d0 arm64: dts: renesas: r8a779a0-falcon: Enable TMU
-667534413db9 arm64: dts: renesas: r8a779a0-falcon: Add missing Ethernet-AVB in Falcon board
 e10bdcf232ff arm64: dts: renesas: r8a7799a0: Add MSIOF parent clock frequency settings support
 346e96545b78 arm64: dts: renesas: r8a779{51, 60, 61, 65, 90}: Create thermal zone to support IPA
 2952a9503e49 arm64: dts: renesas: r8a779{51, 60, 61, 65}: Enable interrupt mode for THS by default
