@@ -423,3 +423,19 @@ UIO/OSAL
 		f4abd09012a2 uio: Fix SPDX identifier
 		a11d168c6464 uio: Add PMA IOCTL to compat list
 		6668f1736f72 uio: Add new ioctl for power management
+		e4dbb4e98674 arm64: dts: renesas: r8a779a0: Separate memory and control regs of IMP SPM devices
+		25665edddaa5 arm64: dts: renesas: Add resets property to IMP devices
+		3dad8bc4bc0f arm64: dts: renesas: r8a779a0: Fix clock and software reset of ISP nodes
+		c2833b47268e arm64: dts: renesas: r8a779a0: Update start address of IMPSPM
+		8fe9a8829854 arm64: dts: renesas: r8a779a0: Add H264 encoder devices
+		26c27860764c arm64: dts: renesas: r8a779a0: Add RFSO devices
+		512ba8ad3bd5 arm64: dts: renesas: r8a779a0: Add VCPL4 devices
+		2c0506853cc2 arm64: dts: renesas: r8a779a0: Add remained IMP devices
+		c5901c556c2d arm64: dts: renesas: r8a779a0: Add FBC devices
+		e257b37728a2 arm64: dts: renesas: r8a779a0: Add FBA devices
+		605f94a22dc9 arm64: dts: renesas: r8a779a0: Add WWDT devices
+		2479c7da8049 arm64: dts: renesas: Update IMP LDMA device
+		6ddabb5d936d arm64: dts: renesas: extend 'ipmmu-id' with micro-TLB index
+		403876f7ff9a arm64: dts: renesas: Add missed ipmmu-id tags
+		ceaebe58dff5 arm64: dts: r8a77980: Update name and reg size of IMP nodes
+		854069bcb2eb arm64: dts: renesas: r8a779a0: Add MFIS devices

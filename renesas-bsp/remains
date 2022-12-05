@@ -182,9 +182,6 @@ b0aa94d65efb arm64: dts: renesas: Fix compatible name for MFIS node
 ded7fcd78c96 arm64: dts: renesas: r8a77995-draak: Remove endpoint of LVDS1
 3799f1e161c6 arm64: dts: Add MFISLock driver support
 948df237125b arm64: dts: Makefile: Comment out compiling of dtbo
-ceaebe58dff5 arm64: dts: r8a77980: Update name and reg size of IMP nodes
-403876f7ff9a arm64: dts: renesas: Add missed ipmmu-id tags
-6ddabb5d936d arm64: dts: renesas: extend 'ipmmu-id' with micro-TLB index
 cf51e0adbe4a arm64: dts: renesas: r8a77980-es2: Add videobox boards support
 e5e89c4837f7 arm64: dts: renesas: v3x: update videoboxes for Yocto4.1.0
 205cd02cfe01 arm64: dts: renesas: r8a77980: Add ES2 boards
@@ -199,27 +196,14 @@ a432a1010378 arm64: dts: r8a77970, r8a77980: Enable TMU and CMT
 81a0161ddc6a arm64: dts: renesas: r8a77970 and r8a77980: Add CPU operation points
 51126e27d005 arm64: dts: renesas: ulcb-kf: deselect GP5_9 interrupt
 d80707e0e447 arm64: dts: renesas: ulcb-kf: update for kernel v5.10
-2479c7da8049 arm64: dts: renesas: Update IMP LDMA device
 f7c6a43a94f6 arm64: dts: renesas: Comment out status ok in rpc node
-605f94a22dc9 arm64: dts: renesas: r8a779a0: Add WWDT devices
-854069bcb2eb arm64: dts: renesas: r8a779a0: Add MFIS devices
 ecf7e4693ae4 arm64: dts: r8a779a0-falcon: Add TPU support
 2be47417cee9 arm64: dts: renesas: r8a77990-es10-ebisu: add full-pwr-cycle-in-suspend into eMMC nodes
-e257b37728a2 arm64: dts: renesas: r8a779a0: Add FBA devices
-c5901c556c2d arm64: dts: renesas: r8a779a0: Add FBC devices
-2c0506853cc2 arm64: dts: renesas: r8a779a0: Add remained IMP devices
-512ba8ad3bd5 arm64: dts: renesas: r8a779a0: Add VCPL4 devices
-26c27860764c arm64: dts: renesas: r8a779a0: Add RFSO devices
 aa2552bb7c2e arm64: dts: renesas: r8a779a0-falcon: Reserve u-boot secure area
 23c7e7f33c3d arm64: dts: renesas: r8a77990: Add VGA connector to DU
 6df2f31dfd82 arm64: dts: renesas: falcon: Add pfc node for PCIe
 84a6123fe4a3 arm64: dts: renesas: ebisu: Add endpoint for dual-link in Ebisu board
 bd790e0bfe8e arm64: dts: renesas: falcon: Add HSCIF0 support
-8fe9a8829854 arm64: dts: renesas: r8a779a0: Add H264 encoder devices
-c2833b47268e arm64: dts: renesas: r8a779a0: Update start address of IMPSPM
-3dad8bc4bc0f arm64: dts: renesas: r8a779a0: Fix clock and software reset of ISP nodes
-25665edddaa5 arm64: dts: renesas: Add resets property to IMP devices
-e4dbb4e98674 arm64: dts: renesas: r8a779a0: Separate memory and control regs of IMP SPM devices
 ae2a16c066dc arm64: dts: r8a779a0-falcon: Add reserved memory for CMA
 720d92e1190b arm64: dts: renesas: falcon: Enable CMT
 fae4aeaf8b56 arm64: dts: r8a779a0-falcon: Enable fakra connector
