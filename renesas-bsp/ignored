@@ -274,6 +274,10 @@ RT-DMAC
 		67c712ca4318 clk: renesas: r8a77995: Add RT-DMAC clocks
 		755a56e7c796 clk: renesas: r8a77{95, 96, 965, 990, 980}: Add RT-DMAC clocks
 
+SD/MMC
+	No usecase for upstream. Looks like a workaround for DMA problems of very early Gen3
+		e6e4182857b4 mmc: renesas_sdhi: Add PIO mode support
+
 Serial
 	According to our research tty-core activates clocks. Testcase needed.
 		4ad9b3444ded serial: sh-sci: Use pm_runtime_get/put when suspend
