@@ -331,8 +331,6 @@ a85c238a5134 arm64: defconfig: Enable Renesas Ethernet Switch
 1687c19f731c arm64: defconfig: VIDEO_MAX96712_STAGING and VIDEO_DUMMY_CAMERA
 61ce14e6e0f0 dt-binding: spi: renesas,sh-msiof: Add support for V4H
 6e6cf158bb82 spi: spi-sh-msiof: Add generic compatible string for R-Car Gen4
-4b6f17f1dd49 thermal: rcar_gen3_thermal: PIO-INT can be selected for each TSC separately
-210d647a385f thermal: rcar_gen3_thermal: Enable selection between polling/interrupt mode
 b904fa8a336b can: rcar_canfd: Correct the value of tseg1
 e3e5bccc9244 can: rcar_canfd: rcar_canfd_configure_afl_rules(): Fix Rx FIFO entry setting
 ef7f2c0a8ccd can: rcar_canfd: Add support for r8a779g0 SoC

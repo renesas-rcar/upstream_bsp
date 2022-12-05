@@ -281,6 +281,11 @@ SPI
 	SPI aliases are deprecated, also there are no spidev nodes in upstream
 		e6ef0f7489da arm64: dts: renesas: r8a77951: Add spi aliases
 
+Thermal
+	This is a workaround. Inami-san agreed to change the priority to N.
+		210d647a385f thermal: rcar_gen3_thermal: Enable selection between polling/interrupt mode
+		4b6f17f1dd49 thermal: rcar_gen3_thermal: PIO-INT can be selected for each TSC separately
+
 UIO/OSAL
 	UIO/OSAL is not intended for upstream
 
