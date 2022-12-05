@@ -116,6 +116,12 @@ IPMMU
 		10462af20dc2 arm64: dts: renesas: r8a77951: Detach IPMMU-DS0 from Ethernet-AVB
 		b806480af6d6 arm64: dts: renesas: r8a77951: Detach IPMMU-HC from SATA
 		10b608a15c26 arm64: dts: renesas: r8a77960: Detach IPMMU-DS0 from Ethernet-AVB
+		5024c4ce1d24 arm64: dts: renesas: r8a7796{0,1}: Disable IPMMU devices
+		8accde359759 arm64: dts: renesas: r8a779{50, 51}: Disable IPMMU devices
+		9e42169db8a0 arm64: dts: renesas: r8a7795{0,1}: Enable IPMMU-DS1 and IPMMU-MM
+		4f96fa23c03c arm64: dts: renesas: r8a7796{0,1}: Enable IPMMU-DS1 and IPMMU-MM
+		0ed94ce71f04 arm64: dts: renesas: r8a77995: Change default of all IPMMU devices to disable
+		d0389b66d30a arm64: dts: renesas: r8a77995: Enable IPMMU-DS1 and IPMMU-MM
 
 MMP local
 	These are not intended for upstream
