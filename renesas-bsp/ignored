@@ -211,6 +211,14 @@ POST
 		f371dfb0c1a9 arm64: dts: renesas: r8a779a0: Add SMD-PS and SMP-POST UIO devices
 		e4f03b4c6915 arm64: dts: renesas: r8a779g0: Update pm/POST FieldBIST UIO devices
 
+PWM
+	Patches exist but we couldn't find a way to test PWM on the Falcon board.
+		1c8667f8d275 dt-bindings: pwm: Add R-Car V3U device tree bindings
+		5d4c3888e0d3 arm64: dts: renesas: r8a779a0: Add PWM nodes
+
+	Not needed. We can use the generic fallback.
+		4d55226a52d6 pwm: tpu: Add a compatible string for r8a779a0
+
 QoS
 	QoS is not intended for upstream
 

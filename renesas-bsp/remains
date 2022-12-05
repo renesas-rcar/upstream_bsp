@@ -204,7 +204,6 @@ ae2a16c066dc arm64: dts: r8a779a0-falcon: Add reserved memory for CMA
 720d92e1190b arm64: dts: renesas: falcon: Enable CMT
 fae4aeaf8b56 arm64: dts: r8a779a0-falcon: Enable fakra connector
 419560a14df4 arm64: dts: r8a779a0: Add SYSC PM Domains
-5d4c3888e0d3 arm64: dts: renesas: r8a779a0: Add PWM nodes
 ccb1316bf6d0 arm64: dts: renesas: r8a779a0-falcon: Enable TMU
 e10bdcf232ff arm64: dts: renesas: r8a7799a0: Add MSIOF parent clock frequency settings support
 346e96545b78 arm64: dts: renesas: r8a779{51, 60, 61, 65, 90}: Create thermal zone to support IPA
@@ -314,11 +313,9 @@ cccf6860b944 media: i2c: adv748x: Fix get_format function
 1e34ab549764 net: ethernet: renesas: Add Renesas Ethernet-TSN driver
 123f3b7ba7ed pwm: tpu: Add compatible string for V4H
 e46f514af535 pwm: pwm-renesas-tpu: Correct the valid period and duty_cycle
-4d55226a52d6 pwm: tpu: Add a compatible string for r8a779a0
 4896707193fc pwm: rcar: Add a judgment of the period out of range
 7323f4671d55 dt-bindings: pwm: tpu: Add support for V4H
 82abbb88867f dt-bindings: pwm: Add support for V4H
-1c8667f8d275 dt-bindings: pwm: Add R-Car V3U device tree bindings
 f60132c67c6e soc: renesas: Identify R-Car M3-W ES1.2
 4e5be19e18e7 net: ethernet: renesas: rcar_gen4_ptp: Add support for parallel mode
 205f4a164e06 net: ethernet: renesas: rcar_gen4_ptp: Add R-Car Gen4 gPTP driver
