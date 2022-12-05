@@ -170,7 +170,6 @@ ccddcd6cef07 arm64: dts: renesas: r8a779g0: Add MSIOF device node
 b00576ea6bf3 arm64: dts: renesas: r8a779m{1, 3, 5}: Do not support boost mode for R8A779M{1, 3, 5}
 333acb9e9209 arm64: dts: renesas: r8a779m1: Remove hdmi0 setting for H3e
 37f639d10d8f arm64: dts: r8a77995: Add optee node
-5a9cc958e435 arm64: dts: renesas: Configure the MSIOF parent clock for R-Car Gen3
 70db35c3bbf4 arm64: dts: renesas: r8a77995: Change IPMMU-MM and IPMMU-caches order in DT for R-Car D3
 36bed5ebf563 arm64: dts: renesas: r8a779{50,51,60,65,m1}: Move nodes of du and lvds
 e047235afc80 arm64: dts: r8a77995-draak: Move option definition of vin node
@@ -204,7 +203,6 @@ ae2a16c066dc arm64: dts: r8a779a0-falcon: Add reserved memory for CMA
 fae4aeaf8b56 arm64: dts: r8a779a0-falcon: Enable fakra connector
 419560a14df4 arm64: dts: r8a779a0: Add SYSC PM Domains
 ccb1316bf6d0 arm64: dts: renesas: r8a779a0-falcon: Enable TMU
-e10bdcf232ff arm64: dts: renesas: r8a7799a0: Add MSIOF parent clock frequency settings support
 346e96545b78 arm64: dts: renesas: r8a779{51, 60, 61, 65, 90}: Create thermal zone to support IPA
 2952a9503e49 arm64: dts: renesas: r8a779{51, 60, 61, 65}: Enable interrupt mode for THS by default
 846e5bebe28c arm64: dts: renesas: r8a779{51, 60, 61, 65, 90}: Use default clock and reset property for secure public core
@@ -373,13 +371,8 @@ ca161241c4c3 iommu/ipmmu-vmsa: Adding devices allowlist for IPMMU on R-Car Gen3
 4b900652aec4 iommu/ipmmu-vmsa: Adding IPMMU support for R-Car M3 ver-1.x
 6c286c0f0b71 iommu/ipmmu-vmsa: Invalidate TLB when IPMMU translation error occurred
 8089aa35bf04 iommu/ipmmu-vmsa: Clean up unncessary micro-TLB invalidation
-eaeb661228d2 spi: sh-msiof: Add MSIOF parent clock
-04be76d59158 spi: sh-msiof: Add support for r8a77961
 4a04f1197c2b spi: sh-msiof: Set 2 clock delay for R-Car H3 Ver.3.0 only
-469c8f7e8387 spi: sh-msiof: Add MSIOF module clock changing processing for R-Car Gen3
 0fa91d04eaa7 spi: sh-msiof: Add SPI master transmission workaround
-aa5fd2cbca66 spi: sh-msiof: Add sleep before master transfer for test
-4d89de9aef8f spi: sh-msiof: Add support for r8a7795
 46cca390830d dt-bindings: renesas,rcar-dmac: Add bus rate control support for R-Car V3U/V4H
 234e0d5eb188 dt-bindings: renesas,rcar-dmac: Document optional properties
 8825ff829400 dmaengine: rcar-dmac: Add support for R-Car S4
@@ -464,7 +457,5 @@ e0911d520034 arm64: dts: renesas: r8a77990-ebisu-4d: Add lossy descompress area
 71c7a4be6298 arm64: dts: renesas: salvator-common: Add lvds driver relation node
 b4940e51861a arm64: dts: renesas: r8a779{90-ebisu, 95-draak}: Add no use ddc option for VGA connector
 7269d13f8f2c arm64: dts: renesas: salvator-common: Add no use ddc option for VGA connector
-e6ef0f7489da arm64: dts: renesas: r8a77951: Add spi aliases
-f11a47f78621 arm64: dts: renesas: r8a779{51, 60, 61, 65, 90}: Add MSIOF parent clock frequency settings support
 c91831a4d06a arm64: dts: renesas: salvator-common: Enable PWM2
 18c90aaa519d arm64: dts: renesas: r8a779{50, 51, 60, 61, 65, 90}: Remove clocks properties in gic and irqc node

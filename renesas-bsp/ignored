@@ -263,6 +263,24 @@ Sound
 
 		2a460a4e95a3 arm64: dts: renesas: ulcb: Make AK4613 sound device name consistent
 
+SPI
+	Matches already against family-specific compatible
+		4d89de9aef8f spi: sh-msiof: Add support for r8a7795
+		04be76d59158 spi: sh-msiof: Add support for r8a77961
+
+	Local debug code not suitable for upstream
+		aa5fd2cbca66 spi: sh-msiof: Add sleep before master transfer for test
+
+	Use "assigned-clocks" and "assigned-clock-rates" in board DTS file that actually uses MSIOF
+		469c8f7e8387 spi: sh-msiof: Add MSIOF module clock changing processing for R-Car Gen3
+		eaeb661228d2 spi: sh-msiof: Add MSIOF parent clock
+		f11a47f78621 arm64: dts: renesas: r8a779{51, 60, 61, 65, 90}: Add MSIOF parent clock frequency settings support
+		e10bdcf232ff arm64: dts: renesas: r8a7799a0: Add MSIOF parent clock frequency settings support
+		5a9cc958e435 arm64: dts: renesas: Configure the MSIOF parent clock for R-Car Gen3
+
+	SPI aliases are deprecated, also there are no spidev nodes in upstream
+		e6ef0f7489da arm64: dts: renesas: r8a77951: Add spi aliases
+
 UIO/OSAL
 	UIO/OSAL is not intended for upstream
 
