@@ -11,6 +11,8 @@ AVS
 		5797c9e12da5 soc: renesas: rcar-avs: Support AVS function
 		ee208b708745 clk: renesas: r8a779{5,6}: Add AVS clock
 		f215e41739a5 arm64: dts: renesas: r8a779{51, 60, 61}: Add AVS device node
+	OPPs table-{1-7} are related to AVS
+		87b9b3057086 arm64: dts: renesas: r8a779{51, 60, 61}: Add OPPs table-{1-7} for cpu devices
 
 DU
 
