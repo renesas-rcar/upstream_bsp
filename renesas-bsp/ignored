@@ -1,3 +1,27 @@
+ARM/SoC/DT
+	OPTEE nodes should be added by firmware
+		eff7c317af2e arm64: dts: renesas: Add optee node for Gen3 devices
+		37f639d10d8f arm64: dts: r8a77995: Add optee node
+
+	There were issues enabling multiple timers in board files by default
+		ccb1316bf6d0 arm64: dts: renesas: r8a779a0-falcon: Enable TMU
+		a432a1010378 arm64: dts: r8a77970, r8a77980: Enable TMU and CMT
+		720d92e1190b arm64: dts: renesas: falcon: Enable CMT
+
+	DT describes hardware, not documentation policy
+		18c90aaa519d arm64: dts: renesas: r8a779{50, 51, 60, 61, 65, 90}: Remove clocks properties in gic and irqc node
+		846e5bebe28c arm64: dts: renesas: r8a779{51, 60, 61, 65, 90}: Use default clock and reset property for secure public core
+
+	Won't be upported because there are no users on the boards
+		c91831a4d06a arm64: dts: renesas: salvator-common: Enable PWM2
+		ecf7e4693ae4 arm64: dts: r8a779a0-falcon: Add TPU support
+
+	We don't have a camera board, so we cannot test
+		fae4aeaf8b56 arm64: dts: r8a779a0-falcon: Enable fakra connector
+
+	Temporary workaround
+		948df237125b arm64: dts: Makefile: Comment out compiling of dtbo
+
 AVS
 	AVS is not intended for upstream
 

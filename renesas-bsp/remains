@@ -165,7 +165,6 @@ ccddcd6cef07 arm64: dts: renesas: r8a779g0: Add MSIOF device node
 446a8869c567 arm64: dts: renesas: Add Renesas R8A779G0 SoC support
 b00576ea6bf3 arm64: dts: renesas: r8a779m{1, 3, 5}: Do not support boost mode for R8A779M{1, 3, 5}
 333acb9e9209 arm64: dts: renesas: r8a779m1: Remove hdmi0 setting for H3e
-37f639d10d8f arm64: dts: r8a77995: Add optee node
 70db35c3bbf4 arm64: dts: renesas: r8a77995: Change IPMMU-MM and IPMMU-caches order in DT for R-Car D3
 36bed5ebf563 arm64: dts: renesas: r8a779{50,51,60,65,m1}: Move nodes of du and lvds
 e047235afc80 arm64: dts: r8a77995-draak: Move option definition of vin node
@@ -173,11 +172,9 @@ e047235afc80 arm64: dts: r8a77995-draak: Move option definition of vin node
 b0aa94d65efb arm64: dts: renesas: Fix compatible name for MFIS node
 ded7fcd78c96 arm64: dts: renesas: r8a77995-draak: Remove endpoint of LVDS1
 3799f1e161c6 arm64: dts: Add MFISLock driver support
-948df237125b arm64: dts: Makefile: Comment out compiling of dtbo
 cf51e0adbe4a arm64: dts: renesas: r8a77980-es2: Add videobox boards support
 e5e89c4837f7 arm64: dts: renesas: v3x: update videoboxes for Yocto4.1.0
 205cd02cfe01 arm64: dts: renesas: r8a77980: Add ES2 boards
-a432a1010378 arm64: dts: r8a77970, r8a77980: Enable TMU and CMT
 9b52276be392 arm64: dts: renesas: r8a77970: Add ES1 and Eagle Function boards
 8a3097afe858 arm64: dts: renesas: Add ulcb-kf-imx219 overlay
 499956c799e7 arm64: dts: renesas: ulcb-kf: Add ov5647 support
@@ -188,19 +185,14 @@ a432a1010378 arm64: dts: r8a77970, r8a77980: Enable TMU and CMT
 81a0161ddc6a arm64: dts: renesas: r8a77970 and r8a77980: Add CPU operation points
 51126e27d005 arm64: dts: renesas: ulcb-kf: deselect GP5_9 interrupt
 d80707e0e447 arm64: dts: renesas: ulcb-kf: update for kernel v5.10
-ecf7e4693ae4 arm64: dts: r8a779a0-falcon: Add TPU support
 2be47417cee9 arm64: dts: renesas: r8a77990-es10-ebisu: add full-pwr-cycle-in-suspend into eMMC nodes
 aa2552bb7c2e arm64: dts: renesas: r8a779a0-falcon: Reserve u-boot secure area
 23c7e7f33c3d arm64: dts: renesas: r8a77990: Add VGA connector to DU
 84a6123fe4a3 arm64: dts: renesas: ebisu: Add endpoint for dual-link in Ebisu board
 ae2a16c066dc arm64: dts: r8a779a0-falcon: Add reserved memory for CMA
-720d92e1190b arm64: dts: renesas: falcon: Enable CMT
-fae4aeaf8b56 arm64: dts: r8a779a0-falcon: Enable fakra connector
 419560a14df4 arm64: dts: r8a779a0: Add SYSC PM Domains
-ccb1316bf6d0 arm64: dts: renesas: r8a779a0-falcon: Enable TMU
 346e96545b78 arm64: dts: renesas: r8a779{51, 60, 61, 65, 90}: Create thermal zone to support IPA
 2952a9503e49 arm64: dts: renesas: r8a779{51, 60, 61, 65}: Enable interrupt mode for THS by default
-846e5bebe28c arm64: dts: renesas: r8a779{51, 60, 61, 65, 90}: Use default clock and reset property for secure public core
 0425608ea3b2 arm64: dts: renesas: r8a77995-draak: Enable display driver relation node
 92cd6c6087f9 arm64: dts: renesas: r8a77990-ebisu: Enable simultaneous output of VGA and HDMI
 70a541215a75 arm64: dts: renesas: r8a77990-ebisu: Add LVDS panel nodes
@@ -436,7 +428,6 @@ a5758a3a06cd arm64: defconfig: Enable Renesas R-Car PCIe v4.0 host controller dr
 eebb64a81da5 arm64: dts: renesas: r8a77965: Change default of all IPMMU devices to disable
 cf44aee9dfea arm64: dts: renesas: r8a779{51, 60, 61}-ulcb: Fix souce clock for DU
 a7afdde5f202 arm64: dts: renesas: r8a77960-ulcb: Disable CPUIdle support for CA53
-eff7c317af2e arm64: dts: renesas: Add optee node for Gen3 devices
 c4ce249bb021 arm64: dts: renesas: Add MFIS Lock and MFIS devices node for gen3 devices
 76cab2933b26 arm64: dts: renesas: r8a77990-ebisu{,-4D}: Add support for R-Car E3 ES1.0
 4dbb8c2e65e6 arm64: dts: renesas: r8a77990: Fixup power-domains of 3DGE for R-Car E3 ES1.0
@@ -448,5 +439,3 @@ e0911d520034 arm64: dts: renesas: r8a77990-ebisu-4d: Add lossy descompress area
 71c7a4be6298 arm64: dts: renesas: salvator-common: Add lvds driver relation node
 b4940e51861a arm64: dts: renesas: r8a779{90-ebisu, 95-draak}: Add no use ddc option for VGA connector
 7269d13f8f2c arm64: dts: renesas: salvator-common: Add no use ddc option for VGA connector
-c91831a4d06a arm64: dts: renesas: salvator-common: Enable PWM2
-18c90aaa519d arm64: dts: renesas: r8a779{50, 51, 60, 61, 65, 90}: Remove clocks properties in gic and irqc node
