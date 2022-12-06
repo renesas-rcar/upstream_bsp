@@ -115,13 +115,9 @@ cb1263abb7a2 arm64: dts: renesas: r8a779g0: Add use_extal_clk option
 2daefde67813 arm64: dts: renesas: r8a779g0: Add C-PHY option to gsml node
 f7fa27a0d403 arm64: dts: renesas: r8a779g0: Remove unused clk on DSI node
 ec8756367336 arch: arm64: dts: renesas: r8a779f0-spider: Fix rswitch node
-323ef405692d arm64: dts: renesas: r8a779f0: Remove rpc node on R8A779F0
 86ed3e15856f arm64: dts: renesas: r8a779f0: Fix PCIe clock and support PCIe1 endpoint
 96cea6157e17 arm64: dts: renesas: r8a779f0: spider-cpu: Enable UFS controller
 a53eea43579c arm64: dts: renesas: r8aff79f0: Add interrupts into rswitch node
-92e6619c6bdd arm64: dts: renesas: spider-cpu: Disable SPI flash via RPC
-fdb43f25a23c arm64: dts: renesas: spider-cpu: Add SPI flash via RPC
-0628e8def860 arm64: dts: renesas: r8a779f0: Add RPC node
 b1b4c3ccb14e arm64: dts: renesas: r8a779f0: spider-cpu: Enable HSCIF and set HSCIF0 as the default debug serial
 0ae68e26bc14 arm64: dts: renesas: r8a779f0: Add optee node
 66ff4667dacb arm64: dts: renesas: spider: Add SD support
