@@ -516,3 +516,9 @@ df1b70b902a1 Revert "arm64: dts: renesas: salvator-common: Add RPC HyperFlash de
 9503d2d4527f Revert "clk: renesas: r8a77965: Add RPC clocks"
 de43f83ae4ba Revert "clk: renesas: r8a7796: Add RPC clocks"
 ac2fdfd95d0c Revert "clk: renesas: r8a7795: Add RPC clocks"
+0628e8def860 arm64: dts: renesas: r8a779f0: Add RPC node
+2be47417cee9 arm64: dts: renesas: r8a77990-es10-ebisu: add full-pwr-cycle-in-suspend into eMMC nodes
+323ef405692d arm64: dts: renesas: r8a779f0: Remove rpc node on R8A779F0
+92e6619c6bdd arm64: dts: renesas: spider-cpu: Disable SPI flash via RPC
+f7c6a43a94f6 arm64: dts: renesas: Comment out status ok in rpc node
+fdb43f25a23c arm64: dts: renesas: spider-cpu: Add SPI flash via RPC
