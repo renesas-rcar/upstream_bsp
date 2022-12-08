@@ -408,7 +408,6 @@ a232d9186d2b clk: renesas: r8a779{70, 80}: Add ISP clock
 dc644df9f22b clk: renesas: r8a779{5, 6, 70, 80}: add IMP clock
 43ca51590fa0 clk: renesas: r8a779{70, 80}: Add CPU operation points.
 eebc4189c612 clk: renesas: r8a779a0: Extend number of supported module clocks
-151f27fccd60 clk: renesas: cpg-mssr: Fix Realtime Module Stop Control Register offsets
 22fcdce314a2 clk: renesas: r8a77{96, 965, 990}: Add ADG clock
 c0ba44fdd4d9 clk: renesas: r8a7795: Add ADG clock
 f75384dbb2de clk: renesas: r8a77990: Add FDP1 clock

@@ -522,3 +522,4 @@ ac2fdfd95d0c Revert "clk: renesas: r8a7795: Add RPC clocks"
 92e6619c6bdd arm64: dts: renesas: spider-cpu: Disable SPI flash via RPC
 f7c6a43a94f6 arm64: dts: renesas: Comment out status ok in rpc node
 fdb43f25a23c arm64: dts: renesas: spider-cpu: Add SPI flash via RPC
+151f27fccd60 clk: renesas: cpg-mssr: Fix Realtime Module Stop Control Register offsets
