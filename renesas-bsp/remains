@@ -57,7 +57,6 @@ cf48489076a2 dt-bindings: power: Add SYSC power domain definitions
 feff376e38cf soc: renesas: r8a779g0-sysc: Add power domain A3DUL support
 5a4e2771e30d soc: renesas: rcar-rst: Allow WDT reset on R-Car Gen4
 a2d17d3b1576 soc: renesas: rcar-topology: Add missing device for rcar topology
-7467cb8b7980 soc: renesas: Identify R-Car D3 ES1.1
 0846e66813ab soc: renesas: rcar-topology: Add support for R-Car capacity awareness
 5ef05786fe20 soc: renesas: rcar-sysc: Fix up areas to handle PDMODE
 5cb18d629db5 soc: renesas: rcar-sysc: Fix A3IR power on sequence for R8A77980
@@ -298,7 +297,6 @@ e46f514af535 pwm: pwm-renesas-tpu: Correct the valid period and duty_cycle
 4896707193fc pwm: rcar: Add a judgment of the period out of range
 7323f4671d55 dt-bindings: pwm: tpu: Add support for V4H
 82abbb88867f dt-bindings: pwm: Add support for V4H
-f60132c67c6e soc: renesas: Identify R-Car M3-W ES1.2
 4e5be19e18e7 net: ethernet: renesas: rcar_gen4_ptp: Add support for parallel mode
 205f4a164e06 net: ethernet: renesas: rcar_gen4_ptp: Add R-Car Gen4 gPTP driver
 8776884f313c net: phy: marvell10g: Add mode configuration and MAC type setting for 88E2110

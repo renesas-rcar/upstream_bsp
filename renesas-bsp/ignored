@@ -305,6 +305,11 @@ Serial
 	We only support SCIF upstream. Users can always change DT as they want.
 		bd790e0bfe8e arm64: dts: renesas: falcon: Add HSCIF0 support
 
+SoC
+	Proposing 'N': Complicates revision matching when using soc_device_match()
+		7467cb8b7980 soc: renesas: Identify R-Car D3 ES1.1
+		f60132c67c6e soc: renesas: Identify R-Car M3-W ES1.2
+
 Sound
 	BSP is using si468x/wl18xx for Sound, but upstream team don't have these.
 
