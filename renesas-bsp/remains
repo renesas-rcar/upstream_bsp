@@ -400,22 +400,17 @@ f858706da84c clk: renesas: r8a779g0: Fix DSI0 clocks
 a4894d9c44bf clk: renesas: rcar-gen3: Use max_rate as maximum rate for normal clock instead max_freq
 5343772b5063 clk: renesas: r8a77995: Add ADG clock for R8A77995
 cf32acf13d9f clk: renesas: r8a77990: Add IMR clock
-65b50fc476f6 clk: renesas: r8a779a0: Support missing module clocks for R8A779A0
 6e430a6a2fb1 clk: renesas: r8a77980: Add VIP clocks
 a232d9186d2b clk: renesas: r8a779{70, 80}: Add ISP clock
 75feb58b222d clk: renesas: r8a779{70, 80}: Add IMR clocks
 60d4d536778e clk: renesas: r8a77980: Add VIN clocks
 dc644df9f22b clk: renesas: r8a779{5, 6, 70, 80}: add IMP clock
 43ca51590fa0 clk: renesas: r8a779{70, 80}: Add CPU operation points.
-eebc4189c612 clk: renesas: r8a779a0: Extend number of supported module clocks
 22fcdce314a2 clk: renesas: r8a77{96, 965, 990}: Add ADG clock
 c0ba44fdd4d9 clk: renesas: r8a7795: Add ADG clock
 f75384dbb2de clk: renesas: r8a77990: Add FDP1 clock
 128981aa3601 clk: renesas: rcar-gen3: Add support ZG clock divider for R8A77990
-d64955dcde0b clk: renesas: rcar-gen3: Add rounding for Z-clock frequency
 35eb4ba8bd88 clk: renesas: r8a77{95, 96, 965, 990}: Add ZG clock
-fbf991b5bd28 clk: renesas: r8a77{95, 96, 965}: Replace PLL3 multiplication setting
-23fcabf79226 clk: renesas: r8a77{95, 96, 965, 990}: Remove INTC-AP and INTC-EX clocks
 a5758a3a06cd arm64: defconfig: Enable Renesas R-Car PCIe v4.0 host controller driver
 3df554353f04 arm64: dts: renesas: r8a77965-ulcb: Fix source clock for DU
 98ea5401ab70 arm64: dts: renesas: r8a77951-ulcb: Fix source clock for DU2
