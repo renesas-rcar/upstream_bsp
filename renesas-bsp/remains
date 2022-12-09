@@ -188,6 +188,7 @@ aa2552bb7c2e arm64: dts: renesas: r8a779a0-falcon: Reserve u-boot secure area
 84a6123fe4a3 arm64: dts: renesas: ebisu: Add endpoint for dual-link in Ebisu board
 ae2a16c066dc arm64: dts: r8a779a0-falcon: Add reserved memory for CMA
 419560a14df4 arm64: dts: r8a779a0: Add SYSC PM Domains
+667534413db9 arm64: dts: renesas: r8a779a0-falcon: Add missing Ethernet-AVB in Falcon board
 346e96545b78 arm64: dts: renesas: r8a779{51, 60, 61, 65, 90}: Create thermal zone to support IPA
 2952a9503e49 arm64: dts: renesas: r8a779{51, 60, 61, 65}: Enable interrupt mode for THS by default
 0425608ea3b2 arm64: dts: renesas: r8a77995-draak: Enable display driver relation node
