@@ -69,20 +69,14 @@ f9f089f44976 arm64: dts: renesas: whitehawk: Disable on board chips of native di
 c0cbae905c8a arm64: dts: renesas: whitehawk: Add AVB1/AVB2 support
 d387cc45dbbd arm64: dts: renesas: r8a779g0: Update Ethernet-TSN0 device node
 9739f3d62ad6 arm64: dts: renesas: r8a779g0: Change the memory region on V4H
-e401848fb50d arm64: dts: renesas: r8a779g0: Fix (H)SCIF brg_int clock
-220b531ea081 arm64: dts: renesas: r8a779f0: Fix (H)SCIF brg_int clock
 46aa3d2a438d arm64: dts: renesas: r8a779g0: Add max96789 node
 7309f5b2eab1 arm64: dts: renesas: r8a779g0: Fix psci-suspend-param
 5de8de0a2b6d arm64: dts: renesas: r8a779g0: Add DSC node
 1fdee68f8554 arm64: dts: renesas: r8a779g0: Enable DSI1
-056ab0e1c413 arm64: dts: renesas: r8a779g0: Add OPPs table for cpu devices
 0981c1a87c28 arm64: dts: renesas: r8a779f0: Add OPPs table for cpu devices
 c8727613ab15 arm64: dts: renesas: r8a779f0: Add reset-names for rswitch
 2a112de14474 arm64: dts: renesas: r8a779f0: spider-cpu: Reserve memory for Realtime core
-68b3981f003a arm64: dts: renesas: r8a779g0: Add DMA support for I2C
-c8f409e10d56 arm64: dts: renesas: r8a779g0: Add DMA support for (H)SCIF
 8a3aecf6def0 arm64: dts: renesas: Configure the MSIOF parent clock for R-Car S4
-d6e71fb0de65 arm64: dts: renesas: r8a779g0: Support DMA function for MSIOF
 26b45354f3f2 arm64: dts: renesas: r8a77980: Support HS400 on R8A77980 Ver 2.0
 f945fad8745d arm64: dts: renesas: v3hsk: Add clock-skew for GEther's Micrel PHY
 747fd84b11fb arm64: dts: renesas: r8a779a0: Add psci node for R8A779A0
@@ -91,7 +85,6 @@ f945fad8745d arm64: dts: renesas: v3hsk: Add clock-skew for GEther's Micrel PHY
 55dee8f01bfc arm64: dts: renesas: r8a779g0-whitehawk: Disable rtsn0
 54e208342c47 arm64: dts: renesas: Define module clock for V3H
 38da54fcac2c arm64: dts: renesas: Define module clock for V3M 2.0
-fa2f9bc11e10 arm64: dts: renesas: r8a779g0: Fix naming to SYS-DMAC0 and SYS-DMAC1.
 c993d2cbdbae arm64: dts: r8a77980-es2-v3hsk-vbm: Create device tree for v3hsk vbm board
 06675f73a479 arm64: dts: r8a77980-v3hsk-vbm: Create device tree for v3hsk vbm board
 19648fbc0572 arm64: renesas: r8a77970: Fix the model series for R8A77970
@@ -134,30 +127,18 @@ b0af5d2217fc arm64: dts: renesas: r8a779f0: Add PCIe device nodes for Renesas R8
 176ffc5b19b0 arm64: dts: renesas: Add Renesas R8A779F0 SoC support
 b5674d878b5f arm64: dts: renesas: r8a779g0: Fix power domains GFX
 ebf0cf8420a8 arm64: dts: renesas: r8a779g0: Update IO/range for CSI devices
-cdcf900a8087 arm64: dts: renesas: r8a779g0: Add CPUIdle for R-Car V4H
 a1ee889b1718 arm64: dts: renesas:  Add PCIe1 endpoint node
 d334909f25f8 arm64: dts: renesas: r8a779g0: Update IPMMU assignment/ID VideoInput/Output
-dde6e18b6b15 arm64: dts: renesas: Fix syntax error for Timer(CMT/TMU) node
 00244fb8f94a arm64: dts: renesas: r8a779g0: Add Ethernet-TSN support
-6f8cda84269d arm64: dts: renesas: r8a779g0: Fix power-domains at node TMU1 for V4H
 861e23f8aba4 arm64: dts: renesas: whitehawk: Add TMU support
-4ff04deb0f72 arm64: dts: renesas: r8a779g0: Add TMU node
 346d3d20d480 arm64: dts: renesas: whitehawk: Add CMT support
-316ba3b2d54c arm64: dts: renesas: r8a779g0: Add CMT node
 230ccbc7de13 arm64: dts: renesas: whitehawk: Add PCIe support
 7d00a3d901ac arm64: dts: renesas: r8a779g0: Add PCIe node
 c44b8d43097b arm64: dts: renesas: r8a779g0: Add VIN driver nodes for R8A779G0
-bc6069c7dd7a arm64: dts: renesas: whitehawk-cpu: Enable eMMC
-eb3c520d12ed arm64: dts: renesas: r8a779g0: Add MMC node
 ee0f12ad4427 arm64: dts: renesas: whitehawk: Add CANFD support
 76de442dfab1 arm64: dts: renesas: r8a779g0: Add CAN-FD node
-03be4bdef3d3 arm64: dts: renesas: r8a779g0: Add secondary CA76 CPU cores
-60d2ca1b2284 arm64: dts: renesas: whitehawk-cpu: Add SPI flash via RPC
-147ebbfee80e arm64: dts: renesas: r8a779g0: Add RPC node
 08a14c13c737 arm64: dts: renesas: r8a779g0: Add IPMMU for SYS-DMAC
 61b117c4d2c8 arm64: dts: renesas: r8a779g0: Add IPMMU nodes
-ccddcd6cef07 arm64: dts: renesas: r8a779g0: Add MSIOF device node
-6d2224b4f404 arm64: dts: renesas: r8a779g0: Add PWM device node
 69226cd0ddba arm64: dts: renesas: r8a779g0-whitehawk: Add setting for Display
 52ff24aad042 arm64: dts: renesas: r8a779g0: Add Display nodes for R8A779G0
 446a8869c567 arm64: dts: renesas: Add Renesas R8A779G0 SoC support

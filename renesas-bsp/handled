@@ -524,3 +524,22 @@ f7c6a43a94f6 arm64: dts: renesas: Comment out status ok in rpc node
 fdb43f25a23c arm64: dts: renesas: spider-cpu: Add SPI flash via RPC
 151f27fccd60 clk: renesas: cpg-mssr: Fix Realtime Module Stop Control Register offsets
 a85c238a5134 arm64: defconfig: Enable Renesas Ethernet Switch
+e401848fb50d arm64: dts: renesas: r8a779g0: Fix (H)SCIF brg_int clock
+220b531ea081 arm64: dts: renesas: r8a779f0: Fix (H)SCIF brg_int clock
+056ab0e1c413 arm64: dts: renesas: r8a779g0: Add OPPs table for cpu devices
+68b3981f003a arm64: dts: renesas: r8a779g0: Add DMA support for I2C
+c8f409e10d56 arm64: dts: renesas: r8a779g0: Add DMA support for (H)SCIF
+d6e71fb0de65 arm64: dts: renesas: r8a779g0: Support DMA function for MSIOF
+fa2f9bc11e10 arm64: dts: renesas: r8a779g0: Fix naming to SYS-DMAC0 and SYS-DMAC1.
+cdcf900a8087 arm64: dts: renesas: r8a779g0: Add CPUIdle for R-Car V4H
+dde6e18b6b15 arm64: dts: renesas: Fix syntax error for Timer(CMT/TMU) node
+6f8cda84269d arm64: dts: renesas: r8a779g0: Fix power-domains at node TMU1 for V4H
+4ff04deb0f72 arm64: dts: renesas: r8a779g0: Add TMU node
+316ba3b2d54c arm64: dts: renesas: r8a779g0: Add CMT node
+bc6069c7dd7a arm64: dts: renesas: whitehawk-cpu: Enable eMMC
+eb3c520d12ed arm64: dts: renesas: r8a779g0: Add MMC node
+03be4bdef3d3 arm64: dts: renesas: r8a779g0: Add secondary CA76 CPU cores
+60d2ca1b2284 arm64: dts: renesas: whitehawk-cpu: Add SPI flash via RPC
+147ebbfee80e arm64: dts: renesas: r8a779g0: Add RPC node
+ccddcd6cef07 arm64: dts: renesas: r8a779g0: Add MSIOF device node
+6d2224b4f404 arm64: dts: renesas: r8a779g0: Add PWM device node
