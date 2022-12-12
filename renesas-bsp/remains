@@ -310,7 +310,6 @@ dce559decaec arm64: defconfig: enable max96789 on defconfig
 0e5d0c8ae529 arm64: defconfig: Enable cpufreq support
 32030bf07d39 arm64: defconfig: Enable MAX9286 and GMSL camera by default
 92eb018eead1 arm64: defconfig: Enable R-Car PWM-TAU by default
-a85c238a5134 arm64: defconfig: Enable Renesas Ethernet Switch
 60db06c0df93 arm64: defconfig: Enable Renesas Ethernet-TSN
 1687c19f731c arm64: defconfig: VIDEO_MAX96712_STAGING and VIDEO_DUMMY_CAMERA
 61ce14e6e0f0 dt-binding: spi: renesas,sh-msiof: Add support for V4H
