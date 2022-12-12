@@ -29,7 +29,6 @@ f07854ecac12 arm64: defconfig: Enable DA7213 Codec
 241d44845b90 ravb: Clear RIS2_QFF1 flag in ravb_error_interrupt()
 e37c8d37dd3c ravb: Remove TX internal delay setting
 d276493fd6c2 ravb: Issue gpio reset to AVB1/AVB2 PHYs
-5552ca0ce47c clk: renesas: r8a779f0: Update parent clk for HSCIF
 68c8cf248f51 arm64: dts: renesas: whitehawk: Add phy-reset-gpios to reset PHYs before initialization
 95c2da4f8d1e arm64: dts: renesas: r8a779g0: Disable QoS and Busmoni to default enable UIO side
 3d87a405c67d arm64: dts: renesas: r8a779g0: Add UIO support of QoS and Busmoni
@@ -352,18 +351,15 @@ bf17a2d986b7 pinctrl: renesas: r8a779f0: Fix typo mistake of tsn1 pin
 17e03cf7176a pinctrl: renesas: Initial R8A779F0 (S4) PFC support
 6c161137ceeb pinctrl: renesas: r8a77950: Add VIN pins, groups and functions
 cfb5b66b2dab clk: renesas: r8a779g0-cpg-mssr: Add module critical clocks
-e9a1a432aeef clk: renesas: r8a779{f0, g0}: Add Z clks definition
 8b64c578e9f0 clk: renesas: r8a779a0: Add DSIEXT clk for DSI module
 8c99198a7a03 clk: renesas: r8a779f0: Add AESACC clock
 7b3567dc796e clk: renesas: r8a779a0: Add IPMMU clocks
 a0739e93709f clk: renesas: r8a779a0: Add AESACC (wcrc_caiplite) clocks
 732a034e6d37 clk: renesas: r8a779a0: Add AESACC (caiplite) clocks
-a8a852b85e90 clk: renesas: r8a779g0: Fix TPU clk source of RCar V4H
 7e49a8b70a7d clk: renesas: r8a779f0: Remove RPC clock
 1b75a84a7686 clk: renesas: r8a779f0: Add SHIPS clock
 4af7d31c9c23 clk: renesas: r8a779f0: Add AESACC clock
 3caae5ada709 clk: renesas: cpg-mssr: Add support for R-Car S4
-92a8158c76ce clk: renesas: r8a779g0-cpg-mssr: Fix clk for PWM
 edac17a3ab1e clk: renesas: r8a779g0: Fix the clk rate for gfx module
 3e7260353184 clk: renesas: r8a779g0: Fix DSI clock on R8A779G0
 4641d43df376 clk: renesas: r8a779g0-cpg-mssr: Add clk for AESACC caiplite wrapper

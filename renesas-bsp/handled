@@ -543,3 +543,7 @@ eb3c520d12ed arm64: dts: renesas: r8a779g0: Add MMC node
 147ebbfee80e arm64: dts: renesas: r8a779g0: Add RPC node
 ccddcd6cef07 arm64: dts: renesas: r8a779g0: Add MSIOF device node
 6d2224b4f404 arm64: dts: renesas: r8a779g0: Add PWM device node
+5552ca0ce47c clk: renesas: r8a779f0: Update parent clk for HSCIF
+e9a1a432aeef clk: renesas: r8a779{f0, g0}: Add Z clks definition
+a8a852b85e90 clk: renesas: r8a779g0: Fix TPU clk source of RCar V4H
+92a8158c76ce clk: renesas: r8a779g0-cpg-mssr: Fix clk for PWM
