@@ -23,7 +23,6 @@ fc60c20649e9 arm64: dts: renesas: r8a779g0: Audio R-Car Sound support
 1df4ef95143b ASoC: renesas: Add R-Car V4H to R-Car Sound Driver
 f07854ecac12 arm64: defconfig: Enable DA7213 Codec
 393244153d30 pinctrl: renesas: r8a779g0: Add Audio support
-8be32e61e150 uio: uio_pdrv_genirq: Add parameter error in case not define property in node
 20dbf63e6809 Revert "net: phy: consider that suspend2ram may cut off PHY power"
 3dbea0aef38a net: ethernet: renesas: rcar_gen4_ptp: Fix build error of R-Car Gen4 PTP
 241d44845b90 ravb: Clear RIS2_QFF1 flag in ravb_error_interrupt()
@@ -98,7 +97,6 @@ a621bba38a19 arm64: dts: r8a779{70,80}-v3{m,h}sk: Add reserved mem for CMEM
 c03568d2468f arm64: dts: renesas: r8a779a0: Describe GICv3 PPI affinity
 78dcdc429354 arm64: dts: renesas: r8a779a0: fix unit address and reg value in cpu1 node
 dc7bf3a6181e arm64: dts: renesas: r8a779a0: add CA76_1 core
-e827b02ea457 arm64: dts: r8a779a0-falcon: Enable QSPI flash support
 85575996cebf arm64: dts: r8a779g0-whitehawk: Disable DU native driver
 903cb8238415 arm64: dts: r8a779f0: Support Thermal interrupt mode
 cb1263abb7a2 arm64: dts: renesas: r8a779g0: Add use_extal_clk option
@@ -179,7 +177,6 @@ f579310d2ed3 arm64: dts: renesas: r8a77995-draak: Set max dot clock for vga
 6558a1c38cbe arm64: dts: renesas: r8a77990-ebisu: Set max dot clock for vga
 3088c796acfa arm64: dts: renesas: r8a77990-ebisu: Set preferred resolution
 692182da7049 arm64: dts: renesas: salvator-common: Set max dot clock for vga
-cc177bcb7dea arm64: dts: renesas: r8a779{51, 65}: Add brs option
 9138f2baa207 drm: bridge: max96789: Add basic function for max96789
 72058c09a66e drm: rcar-du: Fix DU setting for V4H
 84cd63a1f9df drm: rcar-du: Add DSC driver
@@ -344,7 +341,6 @@ fdfe96d831f0 dmaengine: rcar-dmac: Add bus rate control support for R-Car V3U/V4
 ad58f44acd44 dt-bindings: timer: renesas, tmu: Document r8a779g0 TMU support
 dfd1133c7ab7 dt-bindings: timer: renesas, cmt: Document r8a779g0 CMT support
 cb3f047933e3 pinctrl: renesas: r8a779a0: Remove redundant AVB{0,1} pinmux configuration
-c51e84c0c4bc pinctrl: renesas: r8a779a0: Add PCIe pins, groups and functions
 bf17a2d986b7 pinctrl: renesas: r8a779f0: Fix typo mistake of tsn1 pin
 432dd5733f8e pinctrl: renesas: r8a779f0: Add TAUD0/1-PWM support
 751ac8024a13 pinctrl: renesas: r8a779f0: Fix pfc addresses of Control domain

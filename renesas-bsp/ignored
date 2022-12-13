@@ -229,6 +229,7 @@ MMP local
 		108fcd53b512 arm64: dts: renesas: Add MMNGRBUF driver node for Gen3 devices
 		8fd80032f621 arm64: dts: renesas: Add MMNGR driver support for Gen3 devices
 		e44bdceb4adc iommu/ipmmu-vmsa: Add override support for the actual number of MMU contexts
+		cc177bcb7dea arm64: dts: renesas: r8a779{51, 65}: Add brs option
 
 PCI
 	Matches already against family-specific compatible
@@ -242,6 +243,7 @@ PCI
 		34da8764ad92 arm64: dts: renesas: r8a779a0: Add PCIe device node
 		dd621acea624 arm64: dts: renesas: falcon: Enable PCIe
 		6df2f31dfd82 arm64: dts: renesas: falcon: Add pfc node for PCIe
+		c51e84c0c4bc pinctrl: renesas: r8a779a0: Add PCIe pins, groups and functions
 
 POST
 	POST is not intended for upstream
@@ -562,3 +564,4 @@ UIO/OSAL
 		403876f7ff9a arm64: dts: renesas: Add missed ipmmu-id tags
 		ceaebe58dff5 arm64: dts: r8a77980: Update name and reg size of IMP nodes
 		854069bcb2eb arm64: dts: renesas: r8a779a0: Add MFIS devices
+		8be32e61e150 uio: uio_pdrv_genirq: Add parameter error in case not define property in node

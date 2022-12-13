@@ -547,3 +547,4 @@ ccddcd6cef07 arm64: dts: renesas: r8a779g0: Add MSIOF device node
 e9a1a432aeef clk: renesas: r8a779{f0, g0}: Add Z clks definition
 a8a852b85e90 clk: renesas: r8a779g0: Fix TPU clk source of RCar V4H
 92a8158c76ce clk: renesas: r8a779g0-cpg-mssr: Fix clk for PWM
+e827b02ea457 arm64: dts: r8a779a0-falcon: Enable QSPI flash support
