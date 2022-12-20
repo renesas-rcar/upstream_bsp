@@ -29,8 +29,6 @@ f07854ecac12 arm64: defconfig: Enable DA7213 Codec
 e37c8d37dd3c ravb: Remove TX internal delay setting
 d276493fd6c2 ravb: Issue gpio reset to AVB1/AVB2 PHYs
 68c8cf248f51 arm64: dts: renesas: whitehawk: Add phy-reset-gpios to reset PHYs before initialization
-95c2da4f8d1e arm64: dts: renesas: r8a779g0: Disable QoS and Busmoni to default enable UIO side
-3d87a405c67d arm64: dts: renesas: r8a779g0: Add UIO support of QoS and Busmoni
 51cb5f1f83b6 net: ethernet: renesas: rcar_gen4_ptp: Revise R-Car V4H gPTP's clock frequency
 6cdb77edda1a drm: rcar-du: Fix the DIV bit of VCLKSET register
 976c1ecbf72b drm: rcar-du: Update information based on HW 0.53
@@ -107,14 +105,7 @@ ec8756367336 arch: arm64: dts: renesas: r8a779f0-spider: Fix rswitch node
 96cea6157e17 arm64: dts: renesas: r8a779f0: spider-cpu: Enable UFS controller
 a53eea43579c arm64: dts: renesas: r8aff79f0: Add interrupts into rswitch node
 b1b4c3ccb14e arm64: dts: renesas: r8a779f0: spider-cpu: Enable HSCIF and set HSCIF0 as the default debug serial
-0ae68e26bc14 arm64: dts: renesas: r8a779f0: Add optee node
-66ff4667dacb arm64: dts: renesas: spider: Add SD support
-a9c6cce1bf08 arm64: dts: renesas: r8a779f0: spider: Enable TAUD0-PWM1/2
-e028d91dadf4 arm64: dts: renesas: r8a779f0: Fix pfc addresses of Control domain
-54e33653cf8d dts: renesas: r8a779f0: Fix TAU1 register address
 9ce764f07715 dts: renesas: r8a779f0: Add channel information
-99b674aa4913 dts: renesas: r8a779f0: Fix CLKC register range in TAU_PWM node
-93d9de92d177 dts: renesas: r8a779f0: Add R-Car TAU PWM Timer node
 ab16060d9483 arm64: dts: renesas: r8a779f0: Add power-domains and resets properties for rswitch
 5c8853fa22ee arm64: dts: renesas: r8a779f0: Redefine R-Switch node
 69b3227f5ec5 arm64: dts: renesas: spider-cpu: Enable TCA9554PWR on I2C0
@@ -285,7 +276,6 @@ e5540b8157bc arm64: defconfig: Enable Marvell PHY 88Q2110
 dce559decaec arm64: defconfig: enable max96789 on defconfig
 0e5d0c8ae529 arm64: defconfig: Enable cpufreq support
 32030bf07d39 arm64: defconfig: Enable MAX9286 and GMSL camera by default
-92eb018eead1 arm64: defconfig: Enable R-Car PWM-TAU by default
 60db06c0df93 arm64: defconfig: Enable Renesas Ethernet-TSN
 1687c19f731c arm64: defconfig: VIDEO_MAX96712_STAGING and VIDEO_DUMMY_CAMERA
 61ce14e6e0f0 dt-binding: spi: renesas,sh-msiof: Add support for V4H
@@ -299,7 +289,6 @@ ef7f2c0a8ccd can: rcar_canfd: Add support for r8a779g0 SoC
 814ea1728520 memory: renesas-rpc-if: Fix PHYCNT.STRTIM setting
 1b212c753d0c memory: renesas-rpc-if: Use burst read operation
 42e7333e6f58 dt-bindings: serial: sh-sci: Document r8a779g0 bindings
-f8a597ec6b6c sched/core: Add EXPORT_SYMBOL_GPL to sched_setaffinity
 06c478c650ae dt-bindings: PCI: rcar: Add yaml bindings for PCI on R-Car S4
 57ecd61e47c1 dt-bindings: PCI: rcar: Add yaml bindings for PCI Endpoint and R-Car V4H
 a16e01aa6cc9 misc: pci_endpoint_test: Add Device ID for R-Car S4 PCIe controller
@@ -341,8 +330,6 @@ ad58f44acd44 dt-bindings: timer: renesas, tmu: Document r8a779g0 TMU support
 dfd1133c7ab7 dt-bindings: timer: renesas, cmt: Document r8a779g0 CMT support
 cb3f047933e3 pinctrl: renesas: r8a779a0: Remove redundant AVB{0,1} pinmux configuration
 bf17a2d986b7 pinctrl: renesas: r8a779f0: Fix typo mistake of tsn1 pin
-432dd5733f8e pinctrl: renesas: r8a779f0: Add TAUD0/1-PWM support
-751ac8024a13 pinctrl: renesas: r8a779f0: Fix pfc addresses of Control domain
 17e03cf7176a pinctrl: renesas: Initial R8A779F0 (S4) PFC support
 6c161137ceeb pinctrl: renesas: r8a77950: Add VIN pins, groups and functions
 cfb5b66b2dab clk: renesas: r8a779g0-cpg-mssr: Add module critical clocks

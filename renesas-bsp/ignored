@@ -2,6 +2,7 @@ ARM/SoC/DT
 	OPTEE nodes should be added by firmware
 		eff7c317af2e arm64: dts: renesas: Add optee node for Gen3 devices
 		37f639d10d8f arm64: dts: r8a77995: Add optee node
+		0ae68e26bc14 arm64: dts: renesas: r8a779f0: Add optee node
 
 	There were issues enabling multiple timers in board files by default
 		ccb1316bf6d0 arm64: dts: renesas: r8a779a0-falcon: Enable TMU
@@ -21,6 +22,10 @@ ARM/SoC/DT
 
 	Temporary workaround
 		948df237125b arm64: dts: Makefile: Comment out compiling of dtbo
+		f8a597ec6b6c sched/core: Add EXPORT_SYMBOL_GPL to sched_setaffinity
+
+	SD on Spider not supported upstream because DIP switches are too hard to access
+		66ff4667dacb arm64: dts: renesas: spider: Add SD support
 
 AVS
 	AVS is not intended for upstream
@@ -53,6 +58,17 @@ Clock
 
 	Removing the INTC-EX module clock breaks old DTB, INTC-AP does exist and must not be disabled
 		23fcabf79226 clk: renesas: r8a77{95, 96, 965, 990}: Remove INTC-AP and INTC-EX clocks
+
+Control Domain
+	Everything in the Control Domain is not supported by upstream Linux
+		a9c6cce1bf08 arm64: dts: renesas: r8a779f0: spider: Enable TAUD0-PWM1/2
+		54e33653cf8d dts: renesas: r8a779f0: Fix TAU1 register address
+		99b674aa4913 dts: renesas: r8a779f0: Fix CLKC register range in TAU_PWM node
+		93d9de92d177 dts: renesas: r8a779f0: Add R-Car TAU PWM Timer node
+		92eb018eead1 arm64: defconfig: Enable R-Car PWM-TAU by default
+		432dd5733f8e pinctrl: renesas: r8a779f0: Add TAUD0/1-PWM support
+		751ac8024a13 pinctrl: renesas: r8a779f0: Fix pfc addresses of Control domain
+		e028d91dadf4 arm64: dts: renesas: r8a779f0: Fix pfc addresses of Control domain
 
 Defconfig
 	Modular as per upstream policy, CONFIG_CPU_FREQ_STAT_DETAILS was removed in v4.11
@@ -565,3 +581,5 @@ UIO/OSAL
 		ceaebe58dff5 arm64: dts: r8a77980: Update name and reg size of IMP nodes
 		854069bcb2eb arm64: dts: renesas: r8a779a0: Add MFIS devices
 		8be32e61e150 uio: uio_pdrv_genirq: Add parameter error in case not define property in node
+		95c2da4f8d1e arm64: dts: renesas: r8a779g0: Disable QoS and Busmoni to default enable UIO side
+		3d87a405c67d arm64: dts: renesas: r8a779g0: Add UIO support of QoS and Busmoni
