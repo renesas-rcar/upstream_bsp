@@ -354,7 +354,6 @@ ef1be53f4623 clk: renesas: r8a779g0: Fix can-fd clock
 f858706da84c clk: renesas: r8a779g0: Fix DSI0 clocks
 096b8527e46b clk: renesas: r8a779g0: Add AESACC (caiplite) clocks
 730589c61892 clk: renesas: cpg-mssr: Add support for R-Car V4H
-a4894d9c44bf clk: renesas: rcar-gen3: Use max_rate as maximum rate for normal clock instead max_freq
 5343772b5063 clk: renesas: r8a77995: Add ADG clock for R8A77995
 cf32acf13d9f clk: renesas: r8a77990: Add IMR clock
 6e430a6a2fb1 clk: renesas: r8a77980: Add VIP clocks
