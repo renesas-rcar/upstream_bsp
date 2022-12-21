@@ -18,9 +18,6 @@
 		  We can remove these from "remains", and explain about it on "comment"
 		- Let's accept "defconfig" update patch even though it was local patch.
 
-	Shimoda
-		- fix "comment" file
-
 * Files
 
 	full
