@@ -1,3 +1,6 @@
+RISC-V
+	- This tree includes latest RISC-V support for Renesas RZ/Five.
+
 Sound
 	- Upstream is already supporting TDM on ulcb-kf pcm3168a.
 	  BSP is assuming that pcm3168a can handle Playback/Capture on same DAI,
