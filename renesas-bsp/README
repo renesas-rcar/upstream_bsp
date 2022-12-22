@@ -57,6 +57,9 @@
 		Some comment to BSP team.
 		ex) XXXX is handled, but BSP solution and upstream solution are different
 
+	cve
+		Handled CVEs
+
 * Git
 	Morimoto
 		https://github.com/morimoto/linux.git  topic/renesas-bsp-rebase-v6.1
@@ -123,3 +126,10 @@
 		I will ask latest git every Friday, and merge it at next Monday.
 		But please don't hesitate to say "did nothing, because of SoW",
 		we never complain about it. We don't know when you are working for Renesas.
+
+* CVEs
+
+	It is reported by using "Linux kernel CVE tracker" (CIP Kernel sec).
+	Handled CVE list on v6.1.1
+
+		https://gitlab.com/cip-project/cip-kernel/cip-kernel-sec.git
