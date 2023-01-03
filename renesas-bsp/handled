@@ -123,6 +123,7 @@ e8642b17dbf5 arm64: dts: renesas: falcon: Enable watchdog timer
 daed261c4689 arm64: dts: renesas: falcon: Move watchdog config to CPU board DTS
 49f80d538c58 arm64: dts: renesas: h3ulcb: Add cpu-supply property in a57_0 node
 9948cf8925ee arm64: dts: renesas: r8a77950-ulcb: Disable HS400 of SDHI2
+61bb4e544211 arm64: dts: renesas: r8a77950-ulcb: disable eMMC
 ea7ba8ce2a8b arm64: dts: renesas: r8a77951: Add PCIe EP nodes
 9a877c77ee41 arm64: dts: renesas: r8a77951: Add RPC device node
 3afe080899b9 arm64: dts: renesas: r8a77961-ulcb: add HDMI Display support
@@ -558,3 +559,9 @@ ad58f44acd44 dt-bindings: timer: renesas, tmu: Document r8a779g0 TMU support
 dfd1133c7ab7 dt-bindings: timer: renesas, cmt: Document r8a779g0 CMT support
 996adb9c6368 memory: renesas-rpc-if: Clear HS bit during hardware initialization
 05a365ce230e memory: renesas-rpc-if: Add R-Car Gen4 support
+ce3936b34bc3 dt-bindings: mmc: renesas,sdhi: Add r8a779g0 support
+755f55eac38a mmc: renesas_sdhi: Add internal DMA transfer end
+ce747db93e14 mmc: tmio: Add internal DMA transfer end
+f04e295cd388 mmc: renesas_sdhi: reset calibration register
+de9461ece1fa mmc: renesas_sdhi: scc_ctl is always set in after R-Car Gen3
+26b45354f3f2 arm64: dts: renesas: r8a77980: Support HS400 on R8A77980 Ver 2.0
