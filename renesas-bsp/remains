@@ -263,8 +263,6 @@ cccf6860b944 media: i2c: adv748x: Fix get_format function
 123f3b7ba7ed pwm: tpu: Add compatible string for V4H
 e46f514af535 pwm: pwm-renesas-tpu: Correct the valid period and duty_cycle
 4896707193fc pwm: rcar: Add a judgment of the period out of range
-7323f4671d55 dt-bindings: pwm: tpu: Add support for V4H
-82abbb88867f dt-bindings: pwm: Add support for V4H
 4e5be19e18e7 net: ethernet: renesas: rcar_gen4_ptp: Add support for parallel mode
 205f4a164e06 net: ethernet: renesas: rcar_gen4_ptp: Add R-Car Gen4 gPTP driver
 8776884f313c net: phy: marvell10g: Add mode configuration and MAC type setting for 88E2110
@@ -278,7 +276,6 @@ dce559decaec arm64: defconfig: enable max96789 on defconfig
 32030bf07d39 arm64: defconfig: Enable MAX9286 and GMSL camera by default
 60db06c0df93 arm64: defconfig: Enable Renesas Ethernet-TSN
 1687c19f731c arm64: defconfig: VIDEO_MAX96712_STAGING and VIDEO_DUMMY_CAMERA
-61ce14e6e0f0 dt-binding: spi: renesas,sh-msiof: Add support for V4H
 6e6cf158bb82 spi: spi-sh-msiof: Add generic compatible string for R-Car Gen4
 b904fa8a336b can: rcar_canfd: Correct the value of tseg1
 e3e5bccc9244 can: rcar_canfd: rcar_canfd_configure_afl_rules(): Fix Rx FIFO entry setting
@@ -288,7 +285,6 @@ ef7f2c0a8ccd can: rcar_canfd: Add support for r8a779g0 SoC
 05a365ce230e memory: renesas-rpc-if: Add R-Car Gen4 support
 814ea1728520 memory: renesas-rpc-if: Fix PHYCNT.STRTIM setting
 1b212c753d0c memory: renesas-rpc-if: Use burst read operation
-42e7333e6f58 dt-bindings: serial: sh-sci: Document r8a779g0 bindings
 06c478c650ae dt-bindings: PCI: rcar: Add yaml bindings for PCI on R-Car S4
 57ecd61e47c1 dt-bindings: PCI: rcar: Add yaml bindings for PCI Endpoint and R-Car V4H
 a16e01aa6cc9 misc: pci_endpoint_test: Add Device ID for R-Car S4 PCIe controller
@@ -326,8 +322,6 @@ fdfe96d831f0 dmaengine: rcar-dmac: Add bus rate control support for R-Car V3U/V4
 30948f03327b dmaengine: rcar-dmac: Add support for R-Car V4H
 3baf2c4e8881 dmaengine: rcar-dmac: Add fixed address mode support
 469ff9d9ba21 ravb: Fix ptp does not work after suspend and resume
-ad58f44acd44 dt-bindings: timer: renesas, tmu: Document r8a779g0 TMU support
-dfd1133c7ab7 dt-bindings: timer: renesas, cmt: Document r8a779g0 CMT support
 cb3f047933e3 pinctrl: renesas: r8a779a0: Remove redundant AVB{0,1} pinmux configuration
 bf17a2d986b7 pinctrl: renesas: r8a779f0: Fix typo mistake of tsn1 pin
 17e03cf7176a pinctrl: renesas: Initial R8A779F0 (S4) PFC support

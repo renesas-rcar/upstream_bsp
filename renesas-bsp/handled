@@ -550,3 +550,9 @@ a8a852b85e90 clk: renesas: r8a779g0: Fix TPU clk source of RCar V4H
 e827b02ea457 arm64: dts: r8a779a0-falcon: Enable QSPI flash support
 3607e145db47 i2c: rcar: Add fast mode plus support
 a4894d9c44bf clk: renesas: rcar-gen3: Use max_rate as maximum rate for normal clock instead max_freq
+7323f4671d55 dt-bindings: pwm: tpu: Add support for V4H
+82abbb88867f dt-bindings: pwm: Add support for V4H
+61ce14e6e0f0 dt-binding: spi: renesas,sh-msiof: Add support for V4H
+42e7333e6f58 dt-bindings: serial: sh-sci: Document r8a779g0 bindings
+ad58f44acd44 dt-bindings: timer: renesas, tmu: Document r8a779g0 TMU support
+dfd1133c7ab7 dt-bindings: timer: renesas, cmt: Document r8a779g0 CMT support
