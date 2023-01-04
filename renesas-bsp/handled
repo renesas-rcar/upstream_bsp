@@ -556,3 +556,5 @@ a4894d9c44bf clk: renesas: rcar-gen3: Use max_rate as maximum rate for normal cl
 42e7333e6f58 dt-bindings: serial: sh-sci: Document r8a779g0 bindings
 ad58f44acd44 dt-bindings: timer: renesas, tmu: Document r8a779g0 TMU support
 dfd1133c7ab7 dt-bindings: timer: renesas, cmt: Document r8a779g0 CMT support
+996adb9c6368 memory: renesas-rpc-if: Clear HS bit during hardware initialization
+05a365ce230e memory: renesas-rpc-if: Add R-Car Gen4 support
