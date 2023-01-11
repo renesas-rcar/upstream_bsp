@@ -573,3 +573,6 @@ bc75d8c5907a mmc: core: Issue power off notification in mmc_remove()
 e46f514af535 pwm: pwm-renesas-tpu: Correct the valid period and duty_cycle
 # Not needed. HW allows 1 cycle, it will just output HIGH only. Confirmed by Shimoda-san
 4896707193fc pwm: rcar: Add a judgment of the period out of range
+1b212c753d0c memory: renesas-rpc-if: Use burst read operation
+316c5e8f6e85 memory: renesas-rpc-if: Remove redundant division of dummy
+814ea1728520 memory: renesas-rpc-if: Fix PHYCNT.STRTIM setting
