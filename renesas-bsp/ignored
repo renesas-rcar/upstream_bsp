@@ -27,6 +27,9 @@ ARM/SoC/DT
 	SD on Spider not supported upstream because DIP switches are too hard to access
 		66ff4667dacb arm64: dts: renesas: spider: Add SD support
 
+	No hardware to test
+		931e8525ade1 arm64: dts: r8a77980-v3hsk: Enable onboard eMMC
+
 AVS
 	AVS is not intended for upstream
 

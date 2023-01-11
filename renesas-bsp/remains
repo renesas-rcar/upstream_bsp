@@ -138,7 +138,6 @@ e5e89c4837f7 arm64: dts: renesas: v3x: update videoboxes for Yocto4.1.0
 8a3097afe858 arm64: dts: renesas: Add ulcb-kf-imx219 overlay
 499956c799e7 arm64: dts: renesas: ulcb-kf: Add ov5647 support
 5beefb300ae6 arm64: dts: renesas: r8a779x: add IMP nodes
-931e8525ade1 arm64: dts: r8a77980-v3hsk: Enable onboard eMMC
 99247afdb8a6 arm64: dts: renesas: v3x: Set thc63lvd1024 dual link mode
 81a0161ddc6a arm64: dts: renesas: r8a77970 and r8a77980: Add CPU operation points
 51126e27d005 arm64: dts: renesas: ulcb-kf: deselect GP5_9 interrupt
