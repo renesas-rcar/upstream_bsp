@@ -250,9 +250,6 @@ cccf6860b944 media: i2c: adv748x: Fix get_format function
 2a1f07d0e722 net: phy: mv88q2110: Initial PHY Marvel 88Q2110 support
 78e51462682c dt-bindings: net: renesas,ethertsn: Add binding document for new Ethernet-TSN driver
 1e34ab549764 net: ethernet: renesas: Add Renesas Ethernet-TSN driver
-123f3b7ba7ed pwm: tpu: Add compatible string for V4H
-e46f514af535 pwm: pwm-renesas-tpu: Correct the valid period and duty_cycle
-4896707193fc pwm: rcar: Add a judgment of the period out of range
 4e5be19e18e7 net: ethernet: renesas: rcar_gen4_ptp: Add support for parallel mode
 205f4a164e06 net: ethernet: renesas: rcar_gen4_ptp: Add R-Car Gen4 gPTP driver
 8776884f313c net: phy: marvell10g: Add mode configuration and MAC type setting for 88E2110
