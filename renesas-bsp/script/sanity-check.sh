@@ -11,7 +11,7 @@ TMP=/tmp/sanity-check-$$
 
 ${TOP}/script/commit-ignored.sh			>  ${TMP}
 cat ${TOP}/remains				>> ${TMP}
-cat ${TOP}/handled				>> ${TMP}
+grep -v '^#' ${TOP}/handled			>> ${TMP}
 
 cat ${TMP} | sort | uniq -d
 
