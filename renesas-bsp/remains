@@ -241,6 +241,7 @@ ef7f2c0a8ccd can: rcar_canfd: Add support for r8a779g0 SoC
 1b212c753d0c memory: renesas-rpc-if: Use burst read operation
 06c478c650ae dt-bindings: PCI: rcar: Add yaml bindings for PCI on R-Car S4
 57ecd61e47c1 dt-bindings: PCI: rcar: Add yaml bindings for PCI Endpoint and R-Car V4H
+9a473723caaf rcar-vin: rcar-csi2: Don't bail out from probe on no ep
 a16e01aa6cc9 misc: pci_endpoint_test: Add Device ID for R-Car S4 PCIe controller
 9cd016cfabf2 misc: pci_endpoint_test: Add Device ID for R-Car V4H PCIe controller
 0453069bec94 nvme: Workaround Samsung 970 Pro power state issues

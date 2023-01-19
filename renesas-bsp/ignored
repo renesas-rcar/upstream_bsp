@@ -195,9 +195,6 @@ IPMMU
 		d0389b66d30a arm64: dts: renesas: r8a77995: Enable IPMMU-DS1 and IPMMU-MM
 
 Media
-	Probing a broken CSI-2 bus makes no sense. What is the usecase?
-		9a473723caaf rcar-vin: rcar-csi2: Don't bail out from probe on no ep
-
 	This is only a workaround
 		4c4575ecad64 v4l: vsp1: Add underrun hung-up workaround
 
