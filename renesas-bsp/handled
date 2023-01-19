@@ -573,3 +573,17 @@ bc75d8c5907a mmc: core: Issue power off notification in mmc_remove()
 e46f514af535 pwm: pwm-renesas-tpu: Correct the valid period and duty_cycle
 # Not needed. HW allows 1 cycle, it will just output HIGH only. Confirmed by Shimoda-san
 4896707193fc pwm: rcar: Add a judgment of the period out of range
+# Incorrect usage of DT bindings, feature already upstream
+23c7e7f33c3d arm64: dts: renesas: r8a77990: Add VGA connector to DU
+92cd6c6087f9 arm64: dts: renesas: r8a77990-ebisu: Enable simultaneous output of VGA and HDMI
+# Patch is a no-op. The bit is not changed due to use of clrset
+c5a2d5fe615e media: i2c: adv748x: Fix video standard selection register setting
+# Upstream was always correct, no need to fix
+36bed5ebf563 arm64: dts: renesas: r8a779{50,51,60,65,m1}: Move nodes of du and lvds
+333acb9e9209 arm64: dts: renesas: r8a779m1: Remove hdmi0 setting for H3e
+# Not needed since 401712e035c699d569dbd37024f4b21dc76cc870
+cd96a090fa07 drm: rcar-du: Add overlay layer size check
+# BSP patch is wrong (https://jpn01.safelinks.protection.outlook.com/?url=https%3A%2F%2Flore.kernel.org%2Fall%2FYU2d3Qlh%252FqExaRBD%40oden.dyn.berto.se%2F&data=05%7C01%7Ckuninori.morimoto.gx%40renesas.com%7C303b1a609a8943458eff08dafa28377e%7C53d82571da1947e49cb4625a166a4a2a%7C0%7C0%7C638097347889189903%7CUnknown%7CTWFpbGZsb3d8eyJWIjoiMC4wLjAwMDAiLCJQIjoiV2luMzIiLCJBTiI6Ik1haWwiLCJXVCI6Mn0%3D%7C3000%7C%7C%7C&sdata=tAuaPrfjwHUHefFT14SQ6t2ZkjTCiN08yqRBo%2FFS6Xk%3D&reserved=0)
+53d4b314148b media: rcar-vin: rcar-csi2: fix r8a77980 SoC setup
+# Has been rejected upstream as it breaks Gen2 backward compatibility
+2561701185a7 media: rcar-vin: do not allow changing scaling and composing while streaming
