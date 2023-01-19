@@ -587,3 +587,25 @@ cd96a090fa07 drm: rcar-du: Add overlay layer size check
 53d4b314148b media: rcar-vin: rcar-csi2: fix r8a77980 SoC setup
 # Has been rejected upstream as it breaks Gen2 backward compatibility
 2561701185a7 media: rcar-vin: do not allow changing scaling and composing while streaming
+# Alpha blending is already supported upstream.
+39719be28af2 v4l: vsp1: Add pixel alpha blending supoprt
+# USERPTR is considered deprecated upstream, usecase needs to switch to DMABUF.
+00b81e15e5f7 media: rcar-vin: Add memory type of VB_USERPTR support
+# Not needed. DU driver disables the display pipeline on suspend
+b05fb3de9b65 drm/bridge: adv7511: Add function of suspend and resume
+9dd88d126877 media: i2c: adv7604: Add suspend and resume support
+# All Gen3 platforms must use MC, even D3 that only has a single port.
+9ac2538217cc media: rcar-vin: Disable media-ctl on R8A77995
+# The right way to handle this is to disable the DSI encoder in DT
+8e452962e251 drm: rcar-du: Add output checking in encoder for DSI port.
+# Upstream doesn't accept default EDID in drivers
+ac793f9c1bfa media: i2c: adv748x: Set default EDID value
+da5448ccfeac media: i2c: adv7604: Add default EDID information
+# Userspace is responsible for setting the correct format based on VIDIOC_QUERYSTD or VIDIOC_QUERY_DV_TIMINGS
+cccf6860b944 media: i2c: adv748x: Fix get_format function
+a30ce8ca61d4 media: i2c: adv7604: Fix set_fmt function
+dde33d1d22bd media: i2c: adv7180: Add std update when getting format
+# The adv7511 driver isn't where to check board-specific limits
+3be1a176425a drm/bridge: adv7511: Add frequency and vrefresh limitation option
+# Userspace shouldn't move planes between active CRTCs
+3e69390afef7 drm: rcar-du: Fix possible crtcs for plane when using VSPDL

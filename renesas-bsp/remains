@@ -127,7 +127,6 @@ b00576ea6bf3 arm64: dts: renesas: r8a779m{1, 3, 5}: Do not support boost mode fo
 e047235afc80 arm64: dts: r8a77995-draak: Move option definition of vin node
 7e2ffb68ad2f arm64: dts: renesas: r8a77995-draak: Set HDMI mode as defaul mode for VIN driver
 b0aa94d65efb arm64: dts: renesas: Fix compatible name for MFIS node
-ded7fcd78c96 arm64: dts: renesas: r8a77995-draak: Remove endpoint of LVDS1
 3799f1e161c6 arm64: dts: Add MFISLock driver support
 cf51e0adbe4a arm64: dts: renesas: r8a77980-es2: Add videobox boards support
 e5e89c4837f7 arm64: dts: renesas: v3x: update videoboxes for Yocto4.1.0
@@ -136,7 +135,6 @@ e5e89c4837f7 arm64: dts: renesas: v3x: update videoboxes for Yocto4.1.0
 8a3097afe858 arm64: dts: renesas: Add ulcb-kf-imx219 overlay
 499956c799e7 arm64: dts: renesas: ulcb-kf: Add ov5647 support
 5beefb300ae6 arm64: dts: renesas: r8a779x: add IMP nodes
-99247afdb8a6 arm64: dts: renesas: v3x: Set thc63lvd1024 dual link mode
 81a0161ddc6a arm64: dts: renesas: r8a77970 and r8a77980: Add CPU operation points
 51126e27d005 arm64: dts: renesas: ulcb-kf: deselect GP5_9 interrupt
 d80707e0e447 arm64: dts: renesas: ulcb-kf: update for kernel v5.10
@@ -147,8 +145,6 @@ ae2a16c066dc arm64: dts: r8a779a0-falcon: Add reserved memory for CMA
 667534413db9 arm64: dts: renesas: r8a779a0-falcon: Add missing Ethernet-AVB in Falcon board
 346e96545b78 arm64: dts: renesas: r8a779{51, 60, 61, 65, 90}: Create thermal zone to support IPA
 2952a9503e49 arm64: dts: renesas: r8a779{51, 60, 61, 65}: Enable interrupt mode for THS by default
-0425608ea3b2 arm64: dts: renesas: r8a77995-draak: Enable display driver relation node
-70a541215a75 arm64: dts: renesas: r8a77990-ebisu: Add LVDS panel nodes
 f579310d2ed3 arm64: dts: renesas: r8a77995-draak: Set max dot clock for vga
 12843ee05946 arm64: dts: renesas: r8a77995-draak: Set preferred resolution
 6558a1c38cbe arm64: dts: renesas: r8a77990-ebisu: Set max dot clock for vga
@@ -167,8 +163,6 @@ c8cafec03b80 drm: rcar-du: Add DSI device for R8A779G0
 b784dfae50ee drm: rcar-du: Introduce R8A779G0 device
 580a8138882b drm: rcar-du: lvds: Seperate the disable process of LVDS
 11a5640d342c drm: rcar-du: Add check for member of rstate in rcar_du_crtc_state structure
-3be1a176425a drm/bridge: adv7511: Add frequency and vrefresh limitation option
-fe0832b798a5 drm: adv7511: Enable HPD interrupts to support hotplug
 4d326eb16e9b drm: rcar-du: Change supporting format of DU in R8A779A0
 4409f463dc6c drm: rcar-du: Add setting for PnMR for R8A779A0
 59c814ff03fc drm: rcar-du: Add new pixel formats support for R8A779A0
@@ -179,23 +173,15 @@ fe0832b798a5 drm: adv7511: Enable HPD interrupts to support hotplug
 cb3df6f55863 drm: rcar-du: Disable TV synchronized mode in V3U
 de5241d52cc6 drm: rcar-du: Add DIDSRO register setting for V3U
 c7b9de4f7b6a drm: rcar-du: Accessing to reserved registers at V3U is prohibited
-8e452962e251 drm: rcar-du: Add output checking in encoder for DSI port.
 bda8cf6a5bdc v4l: vsp1: Add new registers which are introduced in V3U
 4287f91b1fb9 drm: rcar-du: Add hot plug event function at resume
 441c24bfdab0 vsp1: Add display interrupt wait after setting STRCMD bit
 24940f87e199 drm: rcar-du: Add register access check
-3e69390afef7 drm: rcar-du: Fix possible crtcs for plane when using VSPDL
 352663e60e53 drm: rcar-du: Fix DPLL workaround for H3 ES1.x
 b4427db080d7 drm: bridge: simple-bridge: Add dot clock valid check
-2f9195e22ba2 drm: rcar-du: Skip EPROBE_DEFER in case of disabling LVDS and HDMI
 ff86df8f2aa2 drm: rcar-du: Add support for colorkey alpha blending
 dffa26bbdf08 v4l: vsp1: Add support for colorkey alpha blending
-217af79ae9a9 drm: rcar-du: Fix DPLL clock divider judgement
-56b96a3db3e8 v4l: vsp1: Add Vmute function support
 3860e36d582d v4l: vsp1: Add underrun debug messege option
-4c4575ecad64 v4l: vsp1: Add underrun hung-up workaround
-39719be28af2 v4l: vsp1: Add pixel alpha blending supoprt
-b05fb3de9b65 drm/bridge: adv7511: Add function of suspend and resume
 c3c1e53601fc drm: rcar-du: Fix LVDS stop sequence
 ae6af8c6bfff drm: rcar-du: Add CPG reset and release
 0a1de0131e5c media: i2c: max9286: Delay initialize timing in launching driver
@@ -220,25 +206,16 @@ e10a3eba74e3 media: rcar-vin: Add RAW10 format support
 93a9b850bf1f media: rcar-vin: Remove checking format condition
 a87e91416bb0 media: rcar-vin: Fix checking format condition
 7e0ff80abaf9 media: rcar-vin: Fix procedure of clipping and scaling
-9ac2538217cc media: rcar-vin: Disable media-ctl on R8A77995
 8d3a28734eb3 media: rcar-vin: Add scaling mode to R8A77990
 d615491f9e09 media: rcar-vin: Fix the cropping function
 6443ce0811cb media: rcar-vin: remove reset in stop stream
 5f4680c68d32 media: rcar-vin: Add NV12 pixel format checking
-dde33d1d22bd media: i2c: adv7180: Add std update when getting format
-9dd88d126877 media: i2c: adv7604: Add suspend and resume support
-a30ce8ca61d4 media: i2c: adv7604: Fix set_fmt function
-da5448ccfeac media: i2c: adv7604: Add default EDID information
 c58d45a70ae9 media: i2c: adv7604: Enable decoder control register
 03e94938a142 media: rcar-vin: Add callback function for cropcap
 0af0553ccce3 media: rcar-vin: Add INF bit check for R-Car Gen3
 df288c1c00fe rcar-vin: add support for UDS (Up Down Scaler)
 2058a7e8eddc media: rcar-vin: Add overflow debug message option
 9bbdcef12e3f media: i2c: adv748x: Add virtual channel option
-ac793f9c1bfa media: i2c: adv748x: Set default EDID value
-cccf6860b944 media: i2c: adv748x: Fix get_format function
-9a473723caaf rcar-vin: rcar-csi2: Don't bail out from probe on no ep
-00b81e15e5f7 media: rcar-vin: Add memory type of VB_USERPTR support
 2a1f07d0e722 net: phy: mv88q2110: Initial PHY Marvel 88Q2110 support
 78e51462682c dt-bindings: net: renesas,ethertsn: Add binding document for new Ethernet-TSN driver
 1e34ab549764 net: ethernet: renesas: Add Renesas Ethernet-TSN driver
@@ -354,7 +331,3 @@ e0911d520034 arm64: dts: renesas: r8a77990-ebisu-4d: Add lossy descompress area
 6f426ef6c6a6 arm64: dts: renesas: r8a77990-ebisu: Add Ebisu-4D board support
 3996d42d25db arm64: dts: renesas: r8a7796{0,1}: Add cpu capacity-dmips-mhz
 72addd5bf2ca arm64: dts: renesas: r8a77951: Add cpu capacity-dmips-mhz
-3b8f3cc5f237 arm64: dts: renesas: Add lvds node for du
-71c7a4be6298 arm64: dts: renesas: salvator-common: Add lvds driver relation node
-b4940e51861a arm64: dts: renesas: r8a779{90-ebisu, 95-draak}: Add no use ddc option for VGA connector
-7269d13f8f2c arm64: dts: renesas: salvator-common: Add no use ddc option for VGA connector
