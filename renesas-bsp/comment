@@ -5,7 +5,8 @@ RISC-V
 	- This tree includes latest RISC-V support for Renesas RZ/Five.
 
 RPC-IF
-	- enabling 'burst read' has been dropped from the BSP. The patch is incomplete and may break.
+	- enabling 'burst read' has been dropped from the BSP (1b212c753d0c memory: renesas-rpc-if: Use burst read operation).
+	  The patch is incomplete and may break.
 	  There is a task to upstream it, but it needs time for research and a more complete solution
 
 Sound
