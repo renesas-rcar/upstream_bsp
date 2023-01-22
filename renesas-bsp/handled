@@ -567,6 +567,9 @@ de9461ece1fa mmc: renesas_sdhi: scc_ctl is always set in after R-Car Gen3
 26b45354f3f2 arm64: dts: renesas: r8a77980: Support HS400 on R8A77980 Ver 2.0
 d10133565b53 mmc: core: mmc_ops: Enable stop command
 bc75d8c5907a mmc: core: Issue power off notification in mmc_remove()
+1b212c753d0c memory: renesas-rpc-if: Use burst read operation
+316c5e8f6e85 memory: renesas-rpc-if: Remove redundant division of dummy
+814ea1728520 memory: renesas-rpc-if: Fix PHYCNT.STRTIM setting
 # we use the generic compatible here
 123f3b7ba7ed pwm: tpu: Add compatible string for V4H
 # fixed by 3c173376efc4 and 615f4e84461b upstream

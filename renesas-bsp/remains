@@ -236,9 +236,6 @@ dce559decaec arm64: defconfig: enable max96789 on defconfig
 b904fa8a336b can: rcar_canfd: Correct the value of tseg1
 e3e5bccc9244 can: rcar_canfd: rcar_canfd_configure_afl_rules(): Fix Rx FIFO entry setting
 ef7f2c0a8ccd can: rcar_canfd: Add support for r8a779g0 SoC
-316c5e8f6e85 memory: renesas-rpc-if: Remove redundant division of dummy
-814ea1728520 memory: renesas-rpc-if: Fix PHYCNT.STRTIM setting
-1b212c753d0c memory: renesas-rpc-if: Use burst read operation
 06c478c650ae dt-bindings: PCI: rcar: Add yaml bindings for PCI on R-Car S4
 57ecd61e47c1 dt-bindings: PCI: rcar: Add yaml bindings for PCI Endpoint and R-Car V4H
 9a473723caaf rcar-vin: rcar-csi2: Don't bail out from probe on no ep
