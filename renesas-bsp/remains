@@ -158,7 +158,6 @@ ca161241c4c3 iommu/ipmmu-vmsa: Adding devices allowlist for IPMMU on R-Car Gen3
 6c286c0f0b71 iommu/ipmmu-vmsa: Invalidate TLB when IPMMU translation error occurred
 8089aa35bf04 iommu/ipmmu-vmsa: Clean up unncessary micro-TLB invalidation
 4a04f1197c2b spi: sh-msiof: Set 2 clock delay for R-Car H3 Ver.3.0 only
-0fa91d04eaa7 spi: sh-msiof: Add SPI master transmission workaround
 46cca390830d dt-bindings: renesas,rcar-dmac: Add bus rate control support for R-Car V3U/V4H
 234e0d5eb188 dt-bindings: renesas,rcar-dmac: Document optional properties
 8825ff829400 dmaengine: rcar-dmac: Add support for R-Car S4

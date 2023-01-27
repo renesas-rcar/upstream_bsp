@@ -712,3 +712,7 @@ ab16060d9483 arm64: dts: renesas: r8a779f0: Add power-domains and resets propert
 # reserved-memory node should be provided by firmware
 69226cd0ddba arm64: dts: renesas: r8a779g0-whitehawk: Add setting for Display
 446a8869c567 arm64: dts: renesas: Add Renesas R8A779G0 SoC support
+# H3 ES1.* is not supported anymore
+4c4575ecad64 v4l: vsp1: Add underrun hung-up workaround
+e6e4182857b4 mmc: renesas_sdhi: Add PIO mode support
+0fa91d04eaa7 spi: sh-msiof: Add SPI master transmission workaround
