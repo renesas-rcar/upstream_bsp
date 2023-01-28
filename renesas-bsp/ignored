@@ -614,3 +614,11 @@ UIO/OSAL
 		8be32e61e150 uio: uio_pdrv_genirq: Add parameter error in case not define property in node
 		95c2da4f8d1e arm64: dts: renesas: r8a779g0: Disable QoS and Busmoni to default enable UIO side
 		3d87a405c67d arm64: dts: renesas: r8a779g0: Add UIO support of QoS and Busmoni
+
+VIN
+	This patch implements incorrect behavior, if a CSI-2 node is not connected to a video source it should be disabled i DT
+		9a473723caaf rcar-vin: rcar-csi2: Don't bail out from probe on no ep
+	This patch as clearly marked as a development debug patch, its only function is to prinkt when an interrupt handles, no use upstream
+		2058a7e8eddc media: rcar-vin: Add overflow debug message option
+	This patch adds support for H3 ES1.* which is now marked as deprecated
+		6c161137ceeb pinctrl: renesas: r8a77950: Add VIN pins, groups and functions

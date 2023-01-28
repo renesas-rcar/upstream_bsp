@@ -612,3 +612,20 @@ dde33d1d22bd media: i2c: adv7180: Add std update when getting format
 3be1a176425a drm/bridge: adv7511: Add frequency and vrefresh limitation option
 # Userspace shouldn't move planes between active CRTCs
 3e69390afef7 drm: rcar-du: Fix possible crtcs for plane when using VSPDL
+# UDS support is accepted for v6.2 and backported to renesas-bsp-rebase-v6.1
+df288c1c00fe rcar-vin: add support for UDS (Up Down Scaler)
+03e94938a142 media: rcar-vin: Add callback function for cropcap
+8d3a28734eb3 media: rcar-vin: Add scaling mode to R8A77990
+d615491f9e09 media: rcar-vin: Fix the cropping function
+7e0ff80abaf9 media: rcar-vin: Fix procedure of clipping and scaling
+# Is upstream commit 8f7112630bd0c7f4 ("media: rcar-vin: Fix error paths for rvin_mc_init()") merged in v5.16
+7d98f3641087 media: rcar-vin: Fix the init process of VIN driver
+# The usage of the reset controller for VIN was never upstream and this patch removes all usage of it in the BSP, no action needed
+cad649943834 media: rcar-vin: Auto select RESET_CONTROLLER
+6443ce0811cb media: rcar-vin: remove reset in stop stream
+905d9bcf6296 media: rcar-vin: Fix reset and release procedure
+# Is upstream commit 78b3f9d75a629f66 ("media: rcar-vin: Add check that input interface and format are valid") merged in v5.19
+0af0553ccce3 media: rcar-vin: Add INF bit check for R-Car Gen3
+# The NV12 format validaiton issues have been solved upstream pre v6.1
+93a9b850bf1f media: rcar-vin: Remove checking format condition
+a87e91416bb0 media: rcar-vin: Fix checking format condition

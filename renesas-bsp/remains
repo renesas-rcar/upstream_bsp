@@ -190,10 +190,8 @@ ae6af8c6bfff drm: rcar-du: Add CPG reset and release
 c541b27e85d7 media: ov5647: Fix return codes from ov5647_write/ov5647_read functions.
 1e15a520d473 media: i2c: add camera lvds support
 5213db1803d3 media: i2c: add ov5642 sensor driver
-cad649943834 media: rcar-vin: Auto select RESET_CONTROLLER
 b73a682b50b9 drm: rcar-du: lvds: Auto select RESET_CONTROLLER
 5232944262ff media: rcar-vin: Add interrupt for V4L2_FIELD_ALTERNATE format
-7d98f3641087 media: rcar-vin: Fix the init process of VIN driver
 536c7ac9272f media: rcar-csi2: Add pin-swap option for WhiteHawk
 d7a7a58860cc media: i2c: Add C-PHY setting for MAX96712
 6473f20171e8 media: rcar-csi2: Add C-PHY setting for R8A779G0
@@ -201,20 +199,9 @@ c8b353b49501 media: i2c: dummy-camera: Add dummy camera support
 0d5cbd0b87a9 media: rcar-vin: Add R-Car ISP support for R8A779G0
 a817ffeb4eda media: rcar-vin: Add support for R-Car R8A779G0 SoC
 e10a3eba74e3 media: rcar-vin: Add RAW10 format support
-905d9bcf6296 media: rcar-vin: Fix reset and release procedure
 15c84e6a1c2d media: i2c: Add max96712 driver prototype
-93a9b850bf1f media: rcar-vin: Remove checking format condition
-a87e91416bb0 media: rcar-vin: Fix checking format condition
-7e0ff80abaf9 media: rcar-vin: Fix procedure of clipping and scaling
-8d3a28734eb3 media: rcar-vin: Add scaling mode to R8A77990
-d615491f9e09 media: rcar-vin: Fix the cropping function
-6443ce0811cb media: rcar-vin: remove reset in stop stream
 5f4680c68d32 media: rcar-vin: Add NV12 pixel format checking
 c58d45a70ae9 media: i2c: adv7604: Enable decoder control register
-03e94938a142 media: rcar-vin: Add callback function for cropcap
-0af0553ccce3 media: rcar-vin: Add INF bit check for R-Car Gen3
-df288c1c00fe rcar-vin: add support for UDS (Up Down Scaler)
-2058a7e8eddc media: rcar-vin: Add overflow debug message option
 9bbdcef12e3f media: i2c: adv748x: Add virtual channel option
 2a1f07d0e722 net: phy: mv88q2110: Initial PHY Marvel 88Q2110 support
 78e51462682c dt-bindings: net: renesas,ethertsn: Add binding document for new Ethernet-TSN driver
@@ -238,7 +225,6 @@ e3e5bccc9244 can: rcar_canfd: rcar_canfd_configure_afl_rules(): Fix Rx FIFO entr
 ef7f2c0a8ccd can: rcar_canfd: Add support for r8a779g0 SoC
 06c478c650ae dt-bindings: PCI: rcar: Add yaml bindings for PCI on R-Car S4
 57ecd61e47c1 dt-bindings: PCI: rcar: Add yaml bindings for PCI Endpoint and R-Car V4H
-9a473723caaf rcar-vin: rcar-csi2: Don't bail out from probe on no ep
 a16e01aa6cc9 misc: pci_endpoint_test: Add Device ID for R-Car S4 PCIe controller
 9cd016cfabf2 misc: pci_endpoint_test: Add Device ID for R-Car V4H PCIe controller
 0453069bec94 nvme: Workaround Samsung 970 Pro power state issues
@@ -277,7 +263,6 @@ fdfe96d831f0 dmaengine: rcar-dmac: Add bus rate control support for R-Car V3U/V4
 cb3f047933e3 pinctrl: renesas: r8a779a0: Remove redundant AVB{0,1} pinmux configuration
 bf17a2d986b7 pinctrl: renesas: r8a779f0: Fix typo mistake of tsn1 pin
 17e03cf7176a pinctrl: renesas: Initial R8A779F0 (S4) PFC support
-6c161137ceeb pinctrl: renesas: r8a77950: Add VIN pins, groups and functions
 cfb5b66b2dab clk: renesas: r8a779g0-cpg-mssr: Add module critical clocks
 8b64c578e9f0 clk: renesas: r8a779a0: Add DSIEXT clk for DSI module
 8c99198a7a03 clk: renesas: r8a779f0: Add AESACC clock
