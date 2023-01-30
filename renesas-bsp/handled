@@ -616,3 +616,4 @@ dde33d1d22bd media: i2c: adv7180: Add std update when getting format
 ef1be53f4623 clk: renesas: r8a779g0: Fix can-fd clock
 cf48489076a2 dt-bindings: power: Add SYSC power domain definitions
 feff376e38cf soc: renesas: r8a779g0-sysc: Add power domain A3DUL support
+6c161137ceeb pinctrl: renesas: r8a77950: Add VIN pins, groups and functions
