@@ -612,3 +612,5 @@ dde33d1d22bd media: i2c: adv7180: Add std update when getting format
 3be1a176425a drm/bridge: adv7511: Add frequency and vrefresh limitation option
 # Userspace shouldn't move planes between active CRTCs
 3e69390afef7 drm: rcar-du: Fix possible crtcs for plane when using VSPDL
+3e7260353184 clk: renesas: r8a779g0: Fix DSI clock on R8A779G0
+ef1be53f4623 clk: renesas: r8a779g0: Fix can-fd clock

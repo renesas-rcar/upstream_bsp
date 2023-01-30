@@ -289,14 +289,12 @@ a0739e93709f clk: renesas: r8a779a0: Add AESACC (wcrc_caiplite) clocks
 4af7d31c9c23 clk: renesas: r8a779f0: Add AESACC clock
 3caae5ada709 clk: renesas: cpg-mssr: Add support for R-Car S4
 edac17a3ab1e clk: renesas: r8a779g0: Fix the clk rate for gfx module
-3e7260353184 clk: renesas: r8a779g0: Fix DSI clock on R8A779G0
 4641d43df376 clk: renesas: r8a779g0-cpg-mssr: Add clk for AESACC caiplite wrapper
 5bf539a8f79d clk: renesas: r8a779g0: Add system_ram clock
 ea04e66f3980 clk: renesas: r8a779g0: Add PAP clock
 5146266215b3 clk: renesas: r8a779g0: Fix CSI2 clock
 efb133748ebb clk: renesas: r8a779g0: Fix SecureROM clock
 1e5210313d52 clk: renesas: cpg-mssr: Fix MSSR register range for V4H
-ef1be53f4623 clk: renesas: r8a779g0: Fix can-fd clock
 f858706da84c clk: renesas: r8a779g0: Fix DSI0 clocks
 096b8527e46b clk: renesas: r8a779g0: Add AESACC (caiplite) clocks
 730589c61892 clk: renesas: cpg-mssr: Add support for R-Car V4H
