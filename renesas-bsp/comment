@@ -10,6 +10,14 @@ RPC-IF
 	  There is a task to upstream it, but it needs time for research and a more complete solution
 
 Sound
+	- V4H White-Hawk sound dts file-name was changed.
+		before: r8a779g0-whitehawk-sound.dts
+		after:  r8a779g0-white-hawk-ard-audio-da7212.dts
+
+	- It might have aplay/arecord interface even though it doesn't have settings
+	  on DT (= playback/capture). This BSP has fixed it. Thus, ULCB+KF pcm3168a capture
+	  interface was changed (= arecord -D plughw:0,2 -> plughw:0,1)
+
 	- Upstream is already supporting TDM on ulcb-kf pcm3168a.
 	  BSP is assuming that pcm3168a can handle Playback/Capture on same DAI,
 	  but it is wrong. pcm3168a is not symmetric device (playback 8ch vs capture 6ch).

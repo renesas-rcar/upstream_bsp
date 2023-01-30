@@ -17,12 +17,6 @@ baea6069075f pci: dwc: renesas: Add retrain link function for PCIe 4.0
 9ab08d1fc0a1 pci: dwc: renesas: Implement source code based on board TP for V4H Endpoint
 f481c68a26f4 pci: dwc: renesas: Implement source code based on board TP for V4H RootComplex
 61d5400cf3cf ravb: Disable Link Signal Change Interrupt for AVB1/AVB2
-77c0859b5328 arm64: dts: renesas: r8a779g0: whitehawk: Add R-Car Sound support
-fc60c20649e9 arm64: dts: renesas: r8a779g0: Audio R-Car Sound support
-21c8766ab233 dt-bindings: rsnd: Add r8a779g0 support
-1df4ef95143b ASoC: renesas: Add R-Car V4H to R-Car Sound Driver
-f07854ecac12 arm64: defconfig: Enable DA7213 Codec
-393244153d30 pinctrl: renesas: r8a779g0: Add Audio support
 20dbf63e6809 Revert "net: phy: consider that suspend2ram may cut off PHY power"
 3dbea0aef38a net: ethernet: renesas: rcar_gen4_ptp: Fix build error of R-Car Gen4 PTP
 241d44845b90 ravb: Clear RIS2_QFF1 flag in ravb_error_interrupt()
@@ -274,7 +268,6 @@ edac17a3ab1e clk: renesas: r8a779g0: Fix the clk rate for gfx module
 ea04e66f3980 clk: renesas: r8a779g0: Add PAP clock
 5146266215b3 clk: renesas: r8a779g0: Fix CSI2 clock
 efb133748ebb clk: renesas: r8a779g0: Fix SecureROM clock
-1e5210313d52 clk: renesas: cpg-mssr: Fix MSSR register range for V4H
 f858706da84c clk: renesas: r8a779g0: Fix DSI0 clocks
 096b8527e46b clk: renesas: r8a779g0: Add AESACC (caiplite) clocks
 730589c61892 clk: renesas: cpg-mssr: Add support for R-Car V4H
