@@ -60,7 +60,6 @@ d387cc45dbbd arm64: dts: renesas: r8a779g0: Update Ethernet-TSN0 device node
 7309f5b2eab1 arm64: dts: renesas: r8a779g0: Fix psci-suspend-param
 5de8de0a2b6d arm64: dts: renesas: r8a779g0: Add DSC node
 1fdee68f8554 arm64: dts: renesas: r8a779g0: Enable DSI1
-0981c1a87c28 arm64: dts: renesas: r8a779f0: Add OPPs table for cpu devices
 c8727613ab15 arm64: dts: renesas: r8a779f0: Add reset-names for rswitch
 2a112de14474 arm64: dts: renesas: r8a779f0: spider-cpu: Reserve memory for Realtime core
 8a3aecf6def0 arm64: dts: renesas: Configure the MSIOF parent clock for R-Car S4
@@ -92,7 +91,6 @@ cb1263abb7a2 arm64: dts: renesas: r8a779g0: Add use_extal_clk option
 f7fa27a0d403 arm64: dts: renesas: r8a779g0: Remove unused clk on DSI node
 ec8756367336 arch: arm64: dts: renesas: r8a779f0-spider: Fix rswitch node
 86ed3e15856f arm64: dts: renesas: r8a779f0: Fix PCIe clock and support PCIe1 endpoint
-96cea6157e17 arm64: dts: renesas: r8a779f0: spider-cpu: Enable UFS controller
 a53eea43579c arm64: dts: renesas: r8aff79f0: Add interrupts into rswitch node
 b1b4c3ccb14e arm64: dts: renesas: r8a779f0: spider-cpu: Enable HSCIF and set HSCIF0 as the default debug serial
 9ce764f07715 dts: renesas: r8a779f0: Add channel information
@@ -118,7 +116,6 @@ ee0f12ad4427 arm64: dts: renesas: whitehawk: Add CANFD support
 08a14c13c737 arm64: dts: renesas: r8a779g0: Add IPMMU for SYS-DMAC
 61b117c4d2c8 arm64: dts: renesas: r8a779g0: Add IPMMU nodes
 69226cd0ddba arm64: dts: renesas: r8a779g0-whitehawk: Add setting for Display
-52ff24aad042 arm64: dts: renesas: r8a779g0: Add Display nodes for R8A779G0
 446a8869c567 arm64: dts: renesas: Add Renesas R8A779G0 SoC support
 b00576ea6bf3 arm64: dts: renesas: r8a779m{1, 3, 5}: Do not support boost mode for R8A779M{1, 3, 5}
 70db35c3bbf4 arm64: dts: renesas: r8a77995: Change IPMMU-MM and IPMMU-caches order in DT for R-Car D3
