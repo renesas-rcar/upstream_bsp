@@ -119,6 +119,21 @@ DU
 		df0fc9790b0b drm: bridge: hw-hdmi: Control clock of bridge during S2RAM
 		75008adaa5f2 drm: rcar-du: Fix PHY configure registers
 
+	Adds a new driver, which seems to be a skeleton driver.
+		9138f2baa207 drm: bridge: max96789: Add basic function for max96789
+
+	Adds a new driver, which seems to be a skeleton driver.
+		84cd63a1f9df drm: rcar-du: Add DSC driver
+
+	New userspace API. Requires userspace user.
+		ff86df8f2aa2 drm: rcar-du: Add support for colorkey alpha blending
+
+	Hack. Reason for the commit is unclear. No feedback from BSP team.
+		4287f91b1fb9 drm: rcar-du: Add hot plug event function at resume
+
+	Hack. Reason for the commit is unclear. No feedback from BSP team.
+		b4427db080d7 drm: bridge: simple-bridge: Add dot clock valid check
+
 EMS
 	EMS is not intended for upstream
 
@@ -219,6 +234,9 @@ Media
 
 	More information about use case is needed
 		56b96a3db3e8 v4l: vsp1: Add Vmute function support
+
+	Used by rcar-du, which adds a new userspace API, which is blocked
+		dffa26bbdf08 v4l: vsp1: Add support for colorkey alpha blending
 
 MMP local
 	These are not intended for upstream

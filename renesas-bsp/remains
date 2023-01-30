@@ -136,9 +136,7 @@ f579310d2ed3 arm64: dts: renesas: r8a77995-draak: Set max dot clock for vga
 6558a1c38cbe arm64: dts: renesas: r8a77990-ebisu: Set max dot clock for vga
 3088c796acfa arm64: dts: renesas: r8a77990-ebisu: Set preferred resolution
 692182da7049 arm64: dts: renesas: salvator-common: Set max dot clock for vga
-9138f2baa207 drm: bridge: max96789: Add basic function for max96789
 72058c09a66e drm: rcar-du: Fix DU setting for V4H
-84cd63a1f9df drm: rcar-du: Add DSC driver
 62ad796fd2cb drm: rcar-du: Adapt the code to gen4 device
 580a8138882b drm: rcar-du: lvds: Seperate the disable process of LVDS
 11a5640d342c drm: rcar-du: Add check for member of rstate in rcar_du_crtc_state structure
@@ -147,12 +145,8 @@ f579310d2ed3 arm64: dts: renesas: r8a77995-draak: Set max dot clock for vga
 0b29b25ab439 drm: bridge: ti-sn65dsi86: Add setting options for SN65DSI86
 cb3df6f55863 drm: rcar-du: Disable TV synchronized mode in V3U
 de5241d52cc6 drm: rcar-du: Add DIDSRO register setting for V3U
-4287f91b1fb9 drm: rcar-du: Add hot plug event function at resume
 441c24bfdab0 vsp1: Add display interrupt wait after setting STRCMD bit
 24940f87e199 drm: rcar-du: Add register access check
-b4427db080d7 drm: bridge: simple-bridge: Add dot clock valid check
-ff86df8f2aa2 drm: rcar-du: Add support for colorkey alpha blending
-dffa26bbdf08 v4l: vsp1: Add support for colorkey alpha blending
 3860e36d582d v4l: vsp1: Add underrun debug messege option
 0a1de0131e5c media: i2c: max9286: Delay initialize timing in launching driver
 17da051cfc67 media: i2c: ov5647: Add test pattern control
