@@ -570,6 +570,14 @@ bc75d8c5907a mmc: core: Issue power off notification in mmc_remove()
 1b212c753d0c memory: renesas-rpc-if: Use burst read operation
 316c5e8f6e85 memory: renesas-rpc-if: Remove redundant division of dummy
 814ea1728520 memory: renesas-rpc-if: Fix PHYCNT.STRTIM setting
+3e7260353184 clk: renesas: r8a779g0: Fix DSI clock on R8A779G0
+ef1be53f4623 clk: renesas: r8a779g0: Fix can-fd clock
+cf48489076a2 dt-bindings: power: Add SYSC power domain definitions
+feff376e38cf soc: renesas: r8a779g0-sysc: Add power domain A3DUL support
+6c161137ceeb pinctrl: renesas: r8a77950: Add VIN pins, groups and functions
+0981c1a87c28 arm64: dts: renesas: r8a779f0: Add OPPs table for cpu devices
+96cea6157e17 arm64: dts: renesas: r8a779f0: spider-cpu: Enable UFS controller
+52ff24aad042 arm64: dts: renesas: r8a779g0: Add Display nodes for R8A779G0
 # we use the generic compatible here
 123f3b7ba7ed pwm: tpu: Add compatible string for V4H
 # fixed by 3c173376efc4 and 615f4e84461b upstream
