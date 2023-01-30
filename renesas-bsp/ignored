@@ -620,5 +620,3 @@ VIN
 		9a473723caaf rcar-vin: rcar-csi2: Don't bail out from probe on no ep
 	This patch as clearly marked as a development debug patch, its only function is to prinkt when an interrupt handles, no use upstream
 		2058a7e8eddc media: rcar-vin: Add overflow debug message option
-	This patch adds support for H3 ES1.* which is now marked as deprecated
-		6c161137ceeb pinctrl: renesas: r8a77950: Add VIN pins, groups and functions
