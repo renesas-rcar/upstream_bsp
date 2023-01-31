@@ -102,8 +102,6 @@ d334909f25f8 arm64: dts: renesas: r8a779g0: Update IPMMU assignment/ID VideoInpu
 230ccbc7de13 arm64: dts: renesas: whitehawk: Add PCIe support
 7d00a3d901ac arm64: dts: renesas: r8a779g0: Add PCIe node
 c44b8d43097b arm64: dts: renesas: r8a779g0: Add VIN driver nodes for R8A779G0
-ee0f12ad4427 arm64: dts: renesas: whitehawk: Add CANFD support
-76de442dfab1 arm64: dts: renesas: r8a779g0: Add CAN-FD node
 08a14c13c737 arm64: dts: renesas: r8a779g0: Add IPMMU for SYS-DMAC
 61b117c4d2c8 arm64: dts: renesas: r8a779g0: Add IPMMU nodes
 69226cd0ddba arm64: dts: renesas: r8a779g0-whitehawk: Add setting for Display
@@ -179,9 +177,6 @@ dce559decaec arm64: defconfig: enable max96789 on defconfig
 60db06c0df93 arm64: defconfig: Enable Renesas Ethernet-TSN
 1687c19f731c arm64: defconfig: VIDEO_MAX96712_STAGING and VIDEO_DUMMY_CAMERA
 6e6cf158bb82 spi: spi-sh-msiof: Add generic compatible string for R-Car Gen4
-b904fa8a336b can: rcar_canfd: Correct the value of tseg1
-e3e5bccc9244 can: rcar_canfd: rcar_canfd_configure_afl_rules(): Fix Rx FIFO entry setting
-ef7f2c0a8ccd can: rcar_canfd: Add support for r8a779g0 SoC
 06c478c650ae dt-bindings: PCI: rcar: Add yaml bindings for PCI on R-Car S4
 57ecd61e47c1 dt-bindings: PCI: rcar: Add yaml bindings for PCI Endpoint and R-Car V4H
 a16e01aa6cc9 misc: pci_endpoint_test: Add Device ID for R-Car S4 PCIe controller

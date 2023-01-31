@@ -46,6 +46,20 @@ AVS
 	OPPs table-{1-7} are related to AVS
 		87b9b3057086 arm64: dts: renesas: r8a779{51, 60, 61}: Add OPPs table-{1-7} for cpu devices
 
+CAN-FD
+	The current "-1" matches the documentation.  When checking with a
+	scope, the actual bitrate is spot-on without this patch, but
+	consistently too low with this patch applied.
+	Perhaps this was a work-around for an issue in the core CAN bittiming
+	code that is no longer present (fixed by e.g. commit 39f66c9e229797a5
+	("can: bittiming: change unit of TDC parameters to clock periods") in
+	v5.16?)?
+		b904fa8a336b can: rcar_canfd: Correct the value of tseg1
+
+	Channels 3-7 are not enabled on White-Hawk, as they do not seem to
+	work.  The below patch does not fix that, why is it needed?
+		e3e5bccc9244 can: rcar_canfd: rcar_canfd_configure_afl_rules(): Fix Rx FIFO entry setting
+
 Clock
 	We only upport clocks of devices used and tested
 		65b50fc476f6 clk: renesas: r8a779a0: Support missing module clocks for R8A779A0

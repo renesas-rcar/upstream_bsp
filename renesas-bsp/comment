@@ -1,3 +1,9 @@
+CAN-FD
+	- Channel 0 on White-Hawk uses an NXP TJR1443AT CAN transceiver, which
+	  must be enabled through a GPIO.  Support for that is added through
+	  the phy-can-transceiver driver, and by adding transceiver support to
+	  the rcar-canfd driver.
+
 Media
 	- All panel DTS additions have been ignored. Panels must be supported upstream via DT overlays.
 
