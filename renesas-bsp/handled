@@ -644,3 +644,6 @@ cad649943834 media: rcar-vin: Auto select RESET_CONTROLLER
 # The NV12 format validaiton issues have been solved upstream pre v6.1
 93a9b850bf1f media: rcar-vin: Remove checking format condition
 a87e91416bb0 media: rcar-vin: Fix checking format condition
+ee0f12ad4427 arm64: dts: renesas: whitehawk: Add CANFD support
+76de442dfab1 arm64: dts: renesas: r8a779g0: Add CAN-FD node
+ef7f2c0a8ccd can: rcar_canfd: Add support for r8a779g0 SoC
