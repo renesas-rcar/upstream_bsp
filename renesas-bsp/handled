@@ -684,3 +684,11 @@ bda8cf6a5bdc v4l: vsp1: Add new registers which are introduced in V3U
 4acbf7bb875e media: vsp1: Add IP VERSION for R8A779G0
 # 0af9591c3a99 media: renesas: vsp1: Change V3U to be gen4
 72050da8baf1 media: vsp1: Add setting for Gen4 devices
+# b291fdcf5114 drm: rcar-du: Add r8a779a0 device support
+de5241d52cc6 drm: rcar-du: Add DIDSRO register setting for V3U
+# ce35299e211d drm: rcar-du: Only initialise TVM_TVSYNC mode when supported
+cb3df6f55863 drm: rcar-du: Disable TV synchronized mode in V3U
+# 6d8277cfda96 drm: rcar-du: Fix r8a779a0 color issue
+4409f463dc6c drm: rcar-du: Add setting for PnMR for R8A779A0
+# Already handled in upstream version
+62ad796fd2cb drm: rcar-du: Adapt the code to gen4 device
