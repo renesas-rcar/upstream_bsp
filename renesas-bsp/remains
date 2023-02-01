@@ -1,5 +1,4 @@
 64068d1ecb5a arm64: dts: renesas: r8a779g0: Avoid memory region for other system
-e980b9d27372 arm64: dts: renesas: whitehawk: Fix cma region for FCPR driver
 e14a7b50a2ef arm64: dts: renesas: r8a779g0: Disable R-Car Sound on r8a779g0-whitehawk.dtb
 d7be742075b0 arm64: dts: renesas: r8a779g0: Disable CDM check in PCIe ch1
 5232175003e2 arch: arm64: dts: renesas: r8a779g0: Add shared address ranges and shared clock for pcie node
@@ -61,11 +60,6 @@ f945fad8745d arm64: dts: renesas: v3hsk: Add clock-skew for GEther's Micrel PHY
 c993d2cbdbae arm64: dts: r8a77980-es2-v3hsk-vbm: Create device tree for v3hsk vbm board
 06675f73a479 arm64: dts: r8a77980-v3hsk-vbm: Create device tree for v3hsk vbm board
 19648fbc0572 arm64: renesas: r8a77970: Fix the model series for R8A77970
-9350ec47f53a arm64: dts: renesas: r8a77970-eagle: Remove lossy decompress
-2edd7396c028 arm64: dts: renesas: r8a77980-condor: Remove lossy decompress
-e52c00d6ee49 arm64: dts: renesas: r8a77970-v3msk: Adjust reserved memory layout
-d4000c3929ec arm64: dts: renesas: r8a77980-v3hsk: Adjust reserved memory layout
-a621bba38a19 arm64: dts: r8a779{70,80}-v3{m,h}sk: Add reserved mem for CMEM
 8151b263602c arm64: dts: r8a77980-es2: Add resets property for IMP DMA SLIM device
 8cdc7a6137d9 arm64: dts: renesas: r8a779a0: add CA76_[2..7] core
 13967f271d7e arm64: dts: renesas: r8a779a0: Correspond to interrupt-cells description changes
@@ -111,7 +105,6 @@ e5e89c4837f7 arm64: dts: renesas: v3x: update videoboxes for Yocto4.1.0
 d80707e0e447 arm64: dts: renesas: ulcb-kf: update for kernel v5.10
 aa2552bb7c2e arm64: dts: renesas: r8a779a0-falcon: Reserve u-boot secure area
 84a6123fe4a3 arm64: dts: renesas: ebisu: Add endpoint for dual-link in Ebisu board
-ae2a16c066dc arm64: dts: r8a779a0-falcon: Add reserved memory for CMA
 419560a14df4 arm64: dts: r8a779a0: Add SYSC PM Domains
 667534413db9 arm64: dts: renesas: r8a779a0-falcon: Add missing Ethernet-AVB in Falcon board
 346e96545b78 arm64: dts: renesas: r8a779{51, 60, 61, 65, 90}: Create thermal zone to support IPA
@@ -248,7 +241,6 @@ a7afdde5f202 arm64: dts: renesas: r8a77960-ulcb: Disable CPUIdle support for CA5
 c4ce249bb021 arm64: dts: renesas: Add MFIS Lock and MFIS devices node for gen3 devices
 76cab2933b26 arm64: dts: renesas: r8a77990-ebisu{,-4D}: Add support for R-Car E3 ES1.0
 4dbb8c2e65e6 arm64: dts: renesas: r8a77990: Fixup power-domains of 3DGE for R-Car E3 ES1.0
-e0911d520034 arm64: dts: renesas: r8a77990-ebisu-4d: Add lossy descompress area
 6f426ef6c6a6 arm64: dts: renesas: r8a77990-ebisu: Add Ebisu-4D board support
 3996d42d25db arm64: dts: renesas: r8a7796{0,1}: Add cpu capacity-dmips-mhz
 72addd5bf2ca arm64: dts: renesas: r8a77951: Add cpu capacity-dmips-mhz

@@ -309,6 +309,14 @@ MMP local
 		8fd80032f621 arm64: dts: renesas: Add MMNGR driver support for Gen3 devices
 		e44bdceb4adc iommu/ipmmu-vmsa: Add override support for the actual number of MMU contexts
 		cc177bcb7dea arm64: dts: renesas: r8a779{51, 65}: Add brs option
+		e980b9d27372 arm64: dts: renesas: whitehawk: Fix cma region for FCPR driver
+		9350ec47f53a arm64: dts: renesas: r8a77970-eagle: Remove lossy decompress
+		2edd7396c028 arm64: dts: renesas: r8a77980-condor: Remove lossy decompress
+		e52c00d6ee49 arm64: dts: renesas: r8a77970-v3msk: Adjust reserved memory layout
+		d4000c3929ec arm64: dts: renesas: r8a77980-v3hsk: Adjust reserved memory layout
+		a621bba38a19 arm64: dts: r8a779{70,80}-v3{m,h}sk: Add reserved mem for CMEM
+		ae2a16c066dc arm64: dts: r8a779a0-falcon: Add reserved memory for CMA
+		e0911d520034 arm64: dts: renesas: r8a77990-ebisu-4d: Add lossy descompress area
 
 PCI
 	Matches already against family-specific compatible
