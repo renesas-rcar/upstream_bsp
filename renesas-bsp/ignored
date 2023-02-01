@@ -187,6 +187,17 @@ FCP
 		1c6e58602374 arm64: dts: renesas: r8a77990: Detach IPMMU-VI0/1 from FCPVD
 		e9e9f5ec040f arm64: dts: renesas: r8a7796{0,1}: Detach IPMMU-VI0 from FCPF
 
+Firmware
+	Memory regions and firmware-reserved regsions should be provided by the firmware stack
+		64068d1ecb5a arm64: dts: renesas: r8a779g0: Avoid memory region for other system
+		9739f3d62ad6 arm64: dts: renesas: r8a779g0: Change the memory region on V4H
+		2a112de14474 arm64: dts: renesas: r8a779f0: spider-cpu: Reserve memory for Realtime core
+		aa2552bb7c2e arm64: dts: renesas: r8a779a0-falcon: Reserve u-boot secure area
+		6f426ef6c6a6 arm64: dts: renesas: r8a77990-ebisu: Add Ebisu-4D board support
+
+	Other workarounds for firmware bugs
+		51126e27d005 arm64: dts: renesas: ulcb-kf: deselect GP5_9 interrupt
+
 GSX
 	GSX is not intended for upstream
 

@@ -1,4 +1,3 @@
-64068d1ecb5a arm64: dts: renesas: r8a779g0: Avoid memory region for other system
 e14a7b50a2ef arm64: dts: renesas: r8a779g0: Disable R-Car Sound on r8a779g0-whitehawk.dtb
 d7be742075b0 arm64: dts: renesas: r8a779g0: Disable CDM check in PCIe ch1
 5232175003e2 arch: arm64: dts: renesas: r8a779g0: Add shared address ranges and shared clock for pcie node
@@ -44,11 +43,9 @@ ea52a14c9748 soc: renesas: rcar-sysc: Add wait 1us before turning off power doma
 f9f089f44976 arm64: dts: renesas: whitehawk: Disable on board chips of native display driver
 c0cbae905c8a arm64: dts: renesas: whitehawk: Add AVB1/AVB2 support
 d387cc45dbbd arm64: dts: renesas: r8a779g0: Update Ethernet-TSN0 device node
-9739f3d62ad6 arm64: dts: renesas: r8a779g0: Change the memory region on V4H
 46aa3d2a438d arm64: dts: renesas: r8a779g0: Add max96789 node
 5de8de0a2b6d arm64: dts: renesas: r8a779g0: Add DSC node
 1fdee68f8554 arm64: dts: renesas: r8a779g0: Enable DSI1
-2a112de14474 arm64: dts: renesas: r8a779f0: spider-cpu: Reserve memory for Realtime core
 8a3aecf6def0 arm64: dts: renesas: Configure the MSIOF parent clock for R-Car S4
 f945fad8745d arm64: dts: renesas: v3hsk: Add clock-skew for GEther's Micrel PHY
 747fd84b11fb arm64: dts: renesas: r8a779a0: Add psci node for R8A779A0
@@ -101,9 +98,7 @@ e5e89c4837f7 arm64: dts: renesas: v3x: update videoboxes for Yocto4.1.0
 499956c799e7 arm64: dts: renesas: ulcb-kf: Add ov5647 support
 5beefb300ae6 arm64: dts: renesas: r8a779x: add IMP nodes
 81a0161ddc6a arm64: dts: renesas: r8a77970 and r8a77980: Add CPU operation points
-51126e27d005 arm64: dts: renesas: ulcb-kf: deselect GP5_9 interrupt
 d80707e0e447 arm64: dts: renesas: ulcb-kf: update for kernel v5.10
-aa2552bb7c2e arm64: dts: renesas: r8a779a0-falcon: Reserve u-boot secure area
 84a6123fe4a3 arm64: dts: renesas: ebisu: Add endpoint for dual-link in Ebisu board
 419560a14df4 arm64: dts: r8a779a0: Add SYSC PM Domains
 667534413db9 arm64: dts: renesas: r8a779a0-falcon: Add missing Ethernet-AVB in Falcon board
@@ -241,6 +236,5 @@ a7afdde5f202 arm64: dts: renesas: r8a77960-ulcb: Disable CPUIdle support for CA5
 c4ce249bb021 arm64: dts: renesas: Add MFIS Lock and MFIS devices node for gen3 devices
 76cab2933b26 arm64: dts: renesas: r8a77990-ebisu{,-4D}: Add support for R-Car E3 ES1.0
 4dbb8c2e65e6 arm64: dts: renesas: r8a77990: Fixup power-domains of 3DGE for R-Car E3 ES1.0
-6f426ef6c6a6 arm64: dts: renesas: r8a77990-ebisu: Add Ebisu-4D board support
 3996d42d25db arm64: dts: renesas: r8a7796{0,1}: Add cpu capacity-dmips-mhz
 72addd5bf2ca arm64: dts: renesas: r8a77951: Add cpu capacity-dmips-mhz
