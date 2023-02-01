@@ -81,7 +81,6 @@ b0aa94d65efb arm64: dts: renesas: Fix compatible name for MFIS node
 d80707e0e447 arm64: dts: renesas: ulcb-kf: update for kernel v5.10
 84a6123fe4a3 arm64: dts: renesas: ebisu: Add endpoint for dual-link in Ebisu board
 667534413db9 arm64: dts: renesas: r8a779a0-falcon: Add missing Ethernet-AVB in Falcon board
-346e96545b78 arm64: dts: renesas: r8a779{51, 60, 61, 65, 90}: Create thermal zone to support IPA
 2952a9503e49 arm64: dts: renesas: r8a779{51, 60, 61, 65}: Enable interrupt mode for THS by default
 f579310d2ed3 arm64: dts: renesas: r8a77995-draak: Set max dot clock for vga
 12843ee05946 arm64: dts: renesas: r8a77995-draak: Set preferred resolution

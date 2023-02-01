@@ -185,6 +185,7 @@ EMS
 		78a2fa569e6c dt-bindings: thermal: Add yaml bindings for EMS in thermal zones
 		1ab838e03cc5 arm64: dts: renesas: r8a779{51, 60, 61, 65, 90}: Add the emergency node in thermal-zones
 		32cdac51bf55 Revert "cpufreq: Remove CPUFREQ_ADJUST and CPUFREQ_NOTIFY policy notifier events"
+		346e96545b78 arm64: dts: renesas: r8a779{51, 60, 61, 65, 90}: Create thermal zone to support IPA
 
 FCP
 	FCP is not intended for upstream
