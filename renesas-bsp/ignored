@@ -29,6 +29,15 @@ ARM/SoC/DT
 
 	No hardware to test
 		931e8525ade1 arm64: dts: r8a77980-v3hsk: Enable onboard eMMC
+		c993d2cbdbae arm64: dts: r8a77980-es2-v3hsk-vbm: Create device tree for v3hsk vbm board
+		06675f73a479 arm64: dts: r8a77980-v3hsk-vbm: Create device tree for v3hsk vbm board
+		19648fbc0572 arm64: renesas: r8a77970: Fix the model series for R8A77970
+		cf51e0adbe4a arm64: dts: renesas: r8a77980-es2: Add videobox boards support
+		e5e89c4837f7 arm64: dts: renesas: v3x: update videoboxes for Yocto4.1.0
+		205cd02cfe01 arm64: dts: renesas: r8a77980: Add ES2 boards
+		9b52276be392 arm64: dts: renesas: r8a77970: Add ES1 and Eagle Function boards
+		76cab2933b26 arm64: dts: renesas: r8a77990-ebisu{,-4D}: Add support for R-Car E3 ES1.0
+		4dbb8c2e65e6 arm64: dts: renesas: r8a77990: Fixup power-domains of 3DGE for R-Car E3 ES1.0
 
 AVS
 	AVS is not intended for upstream

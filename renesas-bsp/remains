@@ -49,9 +49,6 @@ f945fad8745d arm64: dts: renesas: v3hsk: Add clock-skew for GEther's Micrel PHY
 4f1b9a37b774 arm64: dts: renesas: r8a77970-eagle: Add input-justification options to adv7511
 9821d51a2ce5 arm64: dts: renesas: r8a779a0: Fix the clk definition on DSI node
 55dee8f01bfc arm64: dts: renesas: r8a779g0-whitehawk: Disable rtsn0
-c993d2cbdbae arm64: dts: r8a77980-es2-v3hsk-vbm: Create device tree for v3hsk vbm board
-06675f73a479 arm64: dts: r8a77980-v3hsk-vbm: Create device tree for v3hsk vbm board
-19648fbc0572 arm64: renesas: r8a77970: Fix the model series for R8A77970
 8cdc7a6137d9 arm64: dts: renesas: r8a779a0: add CA76_[2..7] core
 13967f271d7e arm64: dts: renesas: r8a779a0: Correspond to interrupt-cells description changes
 c03568d2468f arm64: dts: renesas: r8a779a0: Describe GICv3 PPI affinity
@@ -81,10 +78,6 @@ e047235afc80 arm64: dts: r8a77995-draak: Move option definition of vin node
 7e2ffb68ad2f arm64: dts: renesas: r8a77995-draak: Set HDMI mode as defaul mode for VIN driver
 b0aa94d65efb arm64: dts: renesas: Fix compatible name for MFIS node
 3799f1e161c6 arm64: dts: Add MFISLock driver support
-cf51e0adbe4a arm64: dts: renesas: r8a77980-es2: Add videobox boards support
-e5e89c4837f7 arm64: dts: renesas: v3x: update videoboxes for Yocto4.1.0
-205cd02cfe01 arm64: dts: renesas: r8a77980: Add ES2 boards
-9b52276be392 arm64: dts: renesas: r8a77970: Add ES1 and Eagle Function boards
 8a3097afe858 arm64: dts: renesas: Add ulcb-kf-imx219 overlay
 499956c799e7 arm64: dts: renesas: ulcb-kf: Add ov5647 support
 81a0161ddc6a arm64: dts: renesas: r8a77970 and r8a77980: Add CPU operation points
@@ -220,7 +213,5 @@ eebb64a81da5 arm64: dts: renesas: r8a77965: Change default of all IPMMU devices 
 cf44aee9dfea arm64: dts: renesas: r8a779{51, 60, 61}-ulcb: Fix souce clock for DU
 a7afdde5f202 arm64: dts: renesas: r8a77960-ulcb: Disable CPUIdle support for CA53
 c4ce249bb021 arm64: dts: renesas: Add MFIS Lock and MFIS devices node for gen3 devices
-76cab2933b26 arm64: dts: renesas: r8a77990-ebisu{,-4D}: Add support for R-Car E3 ES1.0
-4dbb8c2e65e6 arm64: dts: renesas: r8a77990: Fixup power-domains of 3DGE for R-Car E3 ES1.0
 3996d42d25db arm64: dts: renesas: r8a7796{0,1}: Add cpu capacity-dmips-mhz
 72addd5bf2ca arm64: dts: renesas: r8a77951: Add cpu capacity-dmips-mhz
