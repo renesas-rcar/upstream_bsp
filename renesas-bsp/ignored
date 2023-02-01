@@ -41,6 +41,9 @@ ARM/SoC/DT
 		76cab2933b26 arm64: dts: renesas: r8a77990-ebisu{,-4D}: Add support for R-Car E3 ES1.0
 		4dbb8c2e65e6 arm64: dts: renesas: r8a77990: Fixup power-domains of 3DGE for R-Car E3 ES1.0
 
+	Why is this needed? There are no references to sysc[123].
+		419560a14df4 arm64: dts: r8a779a0: Add SYSC PM Domains
+
 AVS
 	AVS is not intended for upstream
 
