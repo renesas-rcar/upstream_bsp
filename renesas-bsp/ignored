@@ -264,6 +264,9 @@ IPMMU
 		70db35c3bbf4 arm64: dts: renesas: r8a77995: Change IPMMU-MM and IPMMU-caches order in DT for R-Car D3
 		857def3629da arm64: dts: renesas: Change IPMMU-MM and IPMMU-caches order in DT
 
+	Not documented / no driver
+		6b6933f7f35c arm64: dts: renesas: Support IPMMU(MMU mode) for IPMMU-VP0/1 and IPMMU VC0/1
+
 Media
 	This is only a workaround
 		4c4575ecad64 v4l: vsp1: Add underrun hung-up workaround
