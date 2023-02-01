@@ -28,7 +28,6 @@ cd0513b0a8be thermal: rcar_gen3_thermal: Fix rcar_gen3_thermal_mcelsius_to_temp(
 debcaf2c0296 thermal: rcar_gen3_thermal: Add support ECM
 6a7cc61fed35 thermal: rcar_gen3_thermal: Read calibration from hardware on R-Car S4
 c726edac6887 thermal: rcar_gen3_thermal: Use generic name for resources
-af51d5309f8c arm64: dts: renesas: r8a779g0: Add compatible string for R-Car V4H
 b5bccf1fc37c arm64: dts: renesas: r8a779f0: Disable CDM check
 9fd7d9ee7993 arm64: dts: renesas: r8a779g0: Disable CDM check
 57ccb1c20a4a soc: renesas: rcar-sysc: Add CR7 domain for r8a77980 in quirks_match
@@ -48,10 +47,8 @@ c0cbae905c8a arm64: dts: renesas: whitehawk: Add AVB1/AVB2 support
 d387cc45dbbd arm64: dts: renesas: r8a779g0: Update Ethernet-TSN0 device node
 9739f3d62ad6 arm64: dts: renesas: r8a779g0: Change the memory region on V4H
 46aa3d2a438d arm64: dts: renesas: r8a779g0: Add max96789 node
-7309f5b2eab1 arm64: dts: renesas: r8a779g0: Fix psci-suspend-param
 5de8de0a2b6d arm64: dts: renesas: r8a779g0: Add DSC node
 1fdee68f8554 arm64: dts: renesas: r8a779g0: Enable DSI1
-c8727613ab15 arm64: dts: renesas: r8a779f0: Add reset-names for rswitch
 2a112de14474 arm64: dts: renesas: r8a779f0: spider-cpu: Reserve memory for Realtime core
 8a3aecf6def0 arm64: dts: renesas: Configure the MSIOF parent clock for R-Car S4
 f945fad8745d arm64: dts: renesas: v3hsk: Add clock-skew for GEther's Micrel PHY
@@ -79,19 +76,11 @@ dc7bf3a6181e arm64: dts: renesas: r8a779a0: add CA76_1 core
 903cb8238415 arm64: dts: r8a779f0: Support Thermal interrupt mode
 cb1263abb7a2 arm64: dts: renesas: r8a779g0: Add use_extal_clk option
 2daefde67813 arm64: dts: renesas: r8a779g0: Add C-PHY option to gsml node
-f7fa27a0d403 arm64: dts: renesas: r8a779g0: Remove unused clk on DSI node
-ec8756367336 arch: arm64: dts: renesas: r8a779f0-spider: Fix rswitch node
 86ed3e15856f arm64: dts: renesas: r8a779f0: Fix PCIe clock and support PCIe1 endpoint
-a53eea43579c arm64: dts: renesas: r8aff79f0: Add interrupts into rswitch node
-b1b4c3ccb14e arm64: dts: renesas: r8a779f0: spider-cpu: Enable HSCIF and set HSCIF0 as the default debug serial
 9ce764f07715 dts: renesas: r8a779f0: Add channel information
-ab16060d9483 arm64: dts: renesas: r8a779f0: Add power-domains and resets properties for rswitch
-5c8853fa22ee arm64: dts: renesas: r8a779f0: Redefine R-Switch node
-69b3227f5ec5 arm64: dts: renesas: spider-cpu: Enable TCA9554PWR on I2C0
 3e3b7c8bfbca dts: renesas: r8a779f0: Add PCIe endpoint node
 19691e74613e arm64: dts: renesas: r8a779f0: Fix the PCIe node
 b0af5d2217fc arm64: dts: renesas: r8a779f0: Add PCIe device nodes for Renesas R8A779F0 (R-Car S4)
-176ffc5b19b0 arm64: dts: renesas: Add Renesas R8A779F0 SoC support
 b5674d878b5f arm64: dts: renesas: r8a779g0: Fix power domains GFX
 ebf0cf8420a8 arm64: dts: renesas: r8a779g0: Update IO/range for CSI devices
 a1ee889b1718 arm64: dts: renesas:  Add PCIe1 endpoint node
@@ -104,8 +93,6 @@ d334909f25f8 arm64: dts: renesas: r8a779g0: Update IPMMU assignment/ID VideoInpu
 c44b8d43097b arm64: dts: renesas: r8a779g0: Add VIN driver nodes for R8A779G0
 08a14c13c737 arm64: dts: renesas: r8a779g0: Add IPMMU for SYS-DMAC
 61b117c4d2c8 arm64: dts: renesas: r8a779g0: Add IPMMU nodes
-69226cd0ddba arm64: dts: renesas: r8a779g0-whitehawk: Add setting for Display
-446a8869c567 arm64: dts: renesas: Add Renesas R8A779G0 SoC support
 b00576ea6bf3 arm64: dts: renesas: r8a779m{1, 3, 5}: Do not support boost mode for R8A779M{1, 3, 5}
 70db35c3bbf4 arm64: dts: renesas: r8a77995: Change IPMMU-MM and IPMMU-caches order in DT for R-Car D3
 e047235afc80 arm64: dts: r8a77995-draak: Move option definition of vin node

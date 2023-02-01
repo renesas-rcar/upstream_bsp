@@ -695,3 +695,20 @@ cb3df6f55863 drm: rcar-du: Disable TV synchronized mode in V3U
 4409f463dc6c drm: rcar-du: Add setting for PnMR for R8A779A0
 # Already handled in upstream version
 62ad796fd2cb drm: rcar-du: Adapt the code to gen4 device
+af51d5309f8c arm64: dts: renesas: r8a779g0: Add compatible string for R-Car V4H
+7309f5b2eab1 arm64: dts: renesas: r8a779g0: Fix psci-suspend-param
+c8727613ab15 arm64: dts: renesas: r8a779f0: Add reset-names for rswitch
+f7fa27a0d403 arm64: dts: renesas: r8a779g0: Remove unused clk on DSI node
+# TSN pin drive-strength configuration is missing
+ec8756367336 arch: arm64: dts: renesas: r8a779f0-spider: Fix rswitch node
+a53eea43579c arm64: dts: renesas: r8aff79f0: Add interrupts into rswitch node
+# Serial1 still uses SCIF0 instead of HSCIF1, as the docs and schematics say CN20 uses SCIF0
+b1b4c3ccb14e arm64: dts: renesas: r8a779f0: spider-cpu: Enable HSCIF and set HSCIF0 as the default debug serial
+ab16060d9483 arm64: dts: renesas: r8a779f0: Add power-domains and resets properties for rswitch
+5c8853fa22ee arm64: dts: renesas: r8a779f0: Redefine R-Switch node
+69b3227f5ec5 arm64: dts: renesas: spider-cpu: Enable TCA9554PWR on I2C0
+# TSN pin drive-strength configuration and i2c aliases (not needed) are missing
+176ffc5b19b0 arm64: dts: renesas: Add Renesas R8A779F0 SoC support
+# reserved-memory node should be provided by firmware
+69226cd0ddba arm64: dts: renesas: r8a779g0-whitehawk: Add setting for Display
+446a8869c567 arm64: dts: renesas: Add Renesas R8A779G0 SoC support
