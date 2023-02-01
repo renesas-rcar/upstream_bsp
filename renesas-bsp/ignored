@@ -435,12 +435,16 @@ SPI
 	Local debug code not suitable for upstream
 		aa5fd2cbca66 spi: sh-msiof: Add sleep before master transfer for test
 
-	Use "assigned-clocks" and "assigned-clock-rates" in board DTS file that actually uses MSIOF
+	Use "assigned-clocks" and "assigned-clock-rates" in board DTS file that
+	actually uses MSIOF, and drop the second clock from the msiof nodes
 		469c8f7e8387 spi: sh-msiof: Add MSIOF module clock changing processing for R-Car Gen3
 		eaeb661228d2 spi: sh-msiof: Add MSIOF parent clock
 		f11a47f78621 arm64: dts: renesas: r8a779{51, 60, 61, 65, 90}: Add MSIOF parent clock frequency settings support
 		e10bdcf232ff arm64: dts: renesas: r8a7799a0: Add MSIOF parent clock frequency settings support
 		5a9cc958e435 arm64: dts: renesas: Configure the MSIOF parent clock for R-Car Gen3
+		8a3aecf6def0 arm64: dts: renesas: Configure the MSIOF parent clock for R-Car S4
+		54e208342c47 arm64: dts: renesas: Define module clock for V3H
+		38da54fcac2c arm64: dts: renesas: Define module clock for V3M 2.0
 
 	SPI aliases are deprecated, also there are no spidev nodes in upstream
 		e6ef0f7489da arm64: dts: renesas: r8a77951: Add spi aliases

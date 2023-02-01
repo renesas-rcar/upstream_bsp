@@ -44,14 +44,11 @@ c0cbae905c8a arm64: dts: renesas: whitehawk: Add AVB1/AVB2 support
 d387cc45dbbd arm64: dts: renesas: r8a779g0: Update Ethernet-TSN0 device node
 46aa3d2a438d arm64: dts: renesas: r8a779g0: Add max96789 node
 1fdee68f8554 arm64: dts: renesas: r8a779g0: Enable DSI1
-8a3aecf6def0 arm64: dts: renesas: Configure the MSIOF parent clock for R-Car S4
 f945fad8745d arm64: dts: renesas: v3hsk: Add clock-skew for GEther's Micrel PHY
 747fd84b11fb arm64: dts: renesas: r8a779a0: Add psci node for R8A779A0
 4f1b9a37b774 arm64: dts: renesas: r8a77970-eagle: Add input-justification options to adv7511
 9821d51a2ce5 arm64: dts: renesas: r8a779a0: Fix the clk definition on DSI node
 55dee8f01bfc arm64: dts: renesas: r8a779g0-whitehawk: Disable rtsn0
-54e208342c47 arm64: dts: renesas: Define module clock for V3H
-38da54fcac2c arm64: dts: renesas: Define module clock for V3M 2.0
 c993d2cbdbae arm64: dts: r8a77980-es2-v3hsk-vbm: Create device tree for v3hsk vbm board
 06675f73a479 arm64: dts: r8a77980-v3hsk-vbm: Create device tree for v3hsk vbm board
 19648fbc0572 arm64: renesas: r8a77970: Fix the model series for R8A77970
