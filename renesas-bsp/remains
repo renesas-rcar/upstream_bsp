@@ -40,7 +40,6 @@ ad70433f1eda soc: renesas: rcar-sysc: Support S2RAM
 e07b497cf41e soc: renesas: rcar-sysc: Improve power domains always on implementation
 ea52a14c9748 soc: renesas: rcar-sysc: Add wait 1us before turning off power domain
 118bfc69fe4d soc: renesas: rcar-sysc: Adjust the waiting time to cover the worst case
-f9f089f44976 arm64: dts: renesas: whitehawk: Disable on board chips of native display driver
 c0cbae905c8a arm64: dts: renesas: whitehawk: Add AVB1/AVB2 support
 d387cc45dbbd arm64: dts: renesas: r8a779g0: Update Ethernet-TSN0 device node
 46aa3d2a438d arm64: dts: renesas: r8a779g0: Add max96789 node
@@ -57,13 +56,11 @@ f945fad8745d arm64: dts: renesas: v3hsk: Add clock-skew for GEther's Micrel PHY
 c993d2cbdbae arm64: dts: r8a77980-es2-v3hsk-vbm: Create device tree for v3hsk vbm board
 06675f73a479 arm64: dts: r8a77980-v3hsk-vbm: Create device tree for v3hsk vbm board
 19648fbc0572 arm64: renesas: r8a77970: Fix the model series for R8A77970
-8151b263602c arm64: dts: r8a77980-es2: Add resets property for IMP DMA SLIM device
 8cdc7a6137d9 arm64: dts: renesas: r8a779a0: add CA76_[2..7] core
 13967f271d7e arm64: dts: renesas: r8a779a0: Correspond to interrupt-cells description changes
 c03568d2468f arm64: dts: renesas: r8a779a0: Describe GICv3 PPI affinity
 78dcdc429354 arm64: dts: renesas: r8a779a0: fix unit address and reg value in cpu1 node
 dc7bf3a6181e arm64: dts: renesas: r8a779a0: add CA76_1 core
-85575996cebf arm64: dts: r8a779g0-whitehawk: Disable DU native driver
 903cb8238415 arm64: dts: r8a779f0: Support Thermal interrupt mode
 cb1263abb7a2 arm64: dts: renesas: r8a779g0: Add use_extal_clk option
 2daefde67813 arm64: dts: renesas: r8a779g0: Add C-PHY option to gsml node

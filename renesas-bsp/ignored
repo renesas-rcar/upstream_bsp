@@ -665,6 +665,9 @@ UIO/OSAL
 		8be32e61e150 uio: uio_pdrv_genirq: Add parameter error in case not define property in node
 		95c2da4f8d1e arm64: dts: renesas: r8a779g0: Disable QoS and Busmoni to default enable UIO side
 		3d87a405c67d arm64: dts: renesas: r8a779g0: Add UIO support of QoS and Busmoni
+		f9f089f44976 arm64: dts: renesas: whitehawk: Disable on board chips of native display driver
+		8151b263602c arm64: dts: r8a77980-es2: Add resets property for IMP DMA SLIM device
+		85575996cebf arm64: dts: r8a779g0-whitehawk: Disable DU native driver
 
 VIN
 	This patch implements incorrect behavior, if a CSI-2 node is not connected to a video source it should be disabled i DT
