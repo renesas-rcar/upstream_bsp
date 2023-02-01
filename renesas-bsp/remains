@@ -90,7 +90,6 @@ e5e89c4837f7 arm64: dts: renesas: v3x: update videoboxes for Yocto4.1.0
 9b52276be392 arm64: dts: renesas: r8a77970: Add ES1 and Eagle Function boards
 8a3097afe858 arm64: dts: renesas: Add ulcb-kf-imx219 overlay
 499956c799e7 arm64: dts: renesas: ulcb-kf: Add ov5647 support
-5beefb300ae6 arm64: dts: renesas: r8a779x: add IMP nodes
 81a0161ddc6a arm64: dts: renesas: r8a77970 and r8a77980: Add CPU operation points
 d80707e0e447 arm64: dts: renesas: ulcb-kf: update for kernel v5.10
 84a6123fe4a3 arm64: dts: renesas: ebisu: Add endpoint for dual-link in Ebisu board
@@ -210,7 +209,6 @@ cf32acf13d9f clk: renesas: r8a77990: Add IMR clock
 a232d9186d2b clk: renesas: r8a779{70, 80}: Add ISP clock
 75feb58b222d clk: renesas: r8a779{70, 80}: Add IMR clocks
 60d4d536778e clk: renesas: r8a77980: Add VIN clocks
-dc644df9f22b clk: renesas: r8a779{5, 6, 70, 80}: add IMP clock
 43ca51590fa0 clk: renesas: r8a779{70, 80}: Add CPU operation points.
 22fcdce314a2 clk: renesas: r8a77{96, 965, 990}: Add ADG clock
 c0ba44fdd4d9 clk: renesas: r8a7795: Add ADG clock

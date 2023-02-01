@@ -221,6 +221,11 @@ iVDP1C
 		d7c9cc6e1a2a clk: renesas: r8a7795: Add iVDP1C clocks to ES1.x
 		93b461eca6d1 arm64: dts: renesas: r8a7795: Fix clock, reset and power domain for iVDP1C
 
+IMP
+	IMP is not intended for upstream
+		5beefb300ae6 arm64: dts: renesas: r8a779x: add IMP nodes
+		dc644df9f22b clk: renesas: r8a779{5, 6, 70, 80}: add IMP clock
+
 IPMMU
 	used only for BSP backward compatibility
 
