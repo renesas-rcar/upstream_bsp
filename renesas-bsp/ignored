@@ -138,6 +138,8 @@ DU
 
 	Adds a new driver, which seems to be a skeleton driver.
 		84cd63a1f9df drm: rcar-du: Add DSC driver
+		5de8de0a2b6d arm64: dts: renesas: r8a779g0: Add DSC node
+		b83963a2b477 arm64: defconfig: Enable DSC driver
 
 	New userspace API. Requires userspace user.
 		ff86df8f2aa2 drm: rcar-du: Add support for colorkey alpha blending

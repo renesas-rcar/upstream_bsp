@@ -43,7 +43,6 @@ ea52a14c9748 soc: renesas: rcar-sysc: Add wait 1us before turning off power doma
 c0cbae905c8a arm64: dts: renesas: whitehawk: Add AVB1/AVB2 support
 d387cc45dbbd arm64: dts: renesas: r8a779g0: Update Ethernet-TSN0 device node
 46aa3d2a438d arm64: dts: renesas: r8a779g0: Add max96789 node
-5de8de0a2b6d arm64: dts: renesas: r8a779g0: Add DSC node
 1fdee68f8554 arm64: dts: renesas: r8a779g0: Enable DSI1
 8a3aecf6def0 arm64: dts: renesas: Configure the MSIOF parent clock for R-Car S4
 f945fad8745d arm64: dts: renesas: v3hsk: Add clock-skew for GEther's Micrel PHY
@@ -141,7 +140,6 @@ c58d45a70ae9 media: i2c: adv7604: Enable decoder control register
 258a86b3435a net: ethernet: renesas: rswitch: Add support for parallel mode
 5010c78c0c24 net: ethernet: renesas: rswitch: Add Renesas Ethernet Switch
 4c76d373092f arm64: defconfig: Enable PCIe Endpoint
-b83963a2b477 arm64: defconfig: Enable DSC driver
 e5540b8157bc arm64: defconfig: Enable Marvell PHY 88Q2110
 dce559decaec arm64: defconfig: enable max96789 on defconfig
 0e5d0c8ae529 arm64: defconfig: Enable cpufreq support
