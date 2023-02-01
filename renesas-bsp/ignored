@@ -259,6 +259,8 @@ IPMMU
 		4f96fa23c03c arm64: dts: renesas: r8a7796{0,1}: Enable IPMMU-DS1 and IPMMU-MM
 		0ed94ce71f04 arm64: dts: renesas: r8a77995: Change default of all IPMMU devices to disable
 		d0389b66d30a arm64: dts: renesas: r8a77995: Enable IPMMU-DS1 and IPMMU-MM
+		033e8e11aad6 arm64: dts: renesas: r8a77990: Change default of all IPMMU devices to disable
+		eebb64a81da5 arm64: dts: renesas: r8a77965: Change default of all IPMMU devices to disable
 
 	Should not be needed
 		70db35c3bbf4 arm64: dts: renesas: r8a77995: Change IPMMU-MM and IPMMU-caches order in DT for R-Car D3

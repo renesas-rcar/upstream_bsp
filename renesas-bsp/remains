@@ -201,8 +201,6 @@ f75384dbb2de clk: renesas: r8a77990: Add FDP1 clock
 a5758a3a06cd arm64: defconfig: Enable Renesas R-Car PCIe v4.0 host controller driver
 3df554353f04 arm64: dts: renesas: r8a77965-ulcb: Fix source clock for DU
 98ea5401ab70 arm64: dts: renesas: r8a77951-ulcb: Fix source clock for DU2
-033e8e11aad6 arm64: dts: renesas: r8a77990: Change default of all IPMMU devices to disable
-eebb64a81da5 arm64: dts: renesas: r8a77965: Change default of all IPMMU devices to disable
 cf44aee9dfea arm64: dts: renesas: r8a779{51, 60, 61}-ulcb: Fix souce clock for DU
 a7afdde5f202 arm64: dts: renesas: r8a77960-ulcb: Disable CPUIdle support for CA53
 c4ce249bb021 arm64: dts: renesas: Add MFIS Lock and MFIS devices node for gen3 devices
