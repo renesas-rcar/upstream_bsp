@@ -208,6 +208,9 @@ GSX
 		983c00ba9120 arm64: dts: renesas: Add DEVFREQ support for GSX in Gen3
 		8ebc78fdd198 arm64: dts: renesas: Add GSX device node for Gen3 devices
 		4c53ea03dbb4 arm64: dts: renesas: r8a779{51, 60, 61}: Add AVS support for GSX
+		b5674d878b5f arm64: dts: renesas: r8a779g0: Fix power domains GFX
+		128981aa3601 clk: renesas: rcar-gen3: Add support ZG clock divider for R8A77990
+		35eb4ba8bd88 clk: renesas: r8a77{95, 96, 965, 990}: Add ZG clock
 
 iVDP1C
 	iVDP1C is not intended for upstream

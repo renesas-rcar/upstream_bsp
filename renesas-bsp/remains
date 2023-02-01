@@ -67,7 +67,6 @@ cb1263abb7a2 arm64: dts: renesas: r8a779g0: Add use_extal_clk option
 3e3b7c8bfbca dts: renesas: r8a779f0: Add PCIe endpoint node
 19691e74613e arm64: dts: renesas: r8a779f0: Fix the PCIe node
 b0af5d2217fc arm64: dts: renesas: r8a779f0: Add PCIe device nodes for Renesas R8A779F0 (R-Car S4)
-b5674d878b5f arm64: dts: renesas: r8a779g0: Fix power domains GFX
 ebf0cf8420a8 arm64: dts: renesas: r8a779g0: Update IO/range for CSI devices
 a1ee889b1718 arm64: dts: renesas:  Add PCIe1 endpoint node
 d334909f25f8 arm64: dts: renesas: r8a779g0: Update IPMMU assignment/ID VideoInput/Output
@@ -216,8 +215,6 @@ dc644df9f22b clk: renesas: r8a779{5, 6, 70, 80}: add IMP clock
 22fcdce314a2 clk: renesas: r8a77{96, 965, 990}: Add ADG clock
 c0ba44fdd4d9 clk: renesas: r8a7795: Add ADG clock
 f75384dbb2de clk: renesas: r8a77990: Add FDP1 clock
-128981aa3601 clk: renesas: rcar-gen3: Add support ZG clock divider for R8A77990
-35eb4ba8bd88 clk: renesas: r8a77{95, 96, 965, 990}: Add ZG clock
 a5758a3a06cd arm64: defconfig: Enable Renesas R-Car PCIe v4.0 host controller driver
 3df554353f04 arm64: dts: renesas: r8a77965-ulcb: Fix source clock for DU
 98ea5401ab70 arm64: dts: renesas: r8a77951-ulcb: Fix source clock for DU2
