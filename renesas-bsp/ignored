@@ -86,6 +86,7 @@ Control Domain
 		432dd5733f8e pinctrl: renesas: r8a779f0: Add TAUD0/1-PWM support
 		751ac8024a13 pinctrl: renesas: r8a779f0: Fix pfc addresses of Control domain
 		e028d91dadf4 arm64: dts: renesas: r8a779f0: Fix pfc addresses of Control domain
+		9ce764f07715 dts: renesas: r8a779f0: Add channel information
 
 Defconfig
 	Modular as per upstream policy, CONFIG_CPU_FREQ_STAT_DETAILS was removed in v4.11

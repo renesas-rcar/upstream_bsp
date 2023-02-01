@@ -64,7 +64,6 @@ dc7bf3a6181e arm64: dts: renesas: r8a779a0: add CA76_1 core
 cb1263abb7a2 arm64: dts: renesas: r8a779g0: Add use_extal_clk option
 2daefde67813 arm64: dts: renesas: r8a779g0: Add C-PHY option to gsml node
 86ed3e15856f arm64: dts: renesas: r8a779f0: Fix PCIe clock and support PCIe1 endpoint
-9ce764f07715 dts: renesas: r8a779f0: Add channel information
 3e3b7c8bfbca dts: renesas: r8a779f0: Add PCIe endpoint node
 19691e74613e arm64: dts: renesas: r8a779f0: Fix the PCIe node
 b0af5d2217fc arm64: dts: renesas: r8a779f0: Add PCIe device nodes for Renesas R8A779F0 (R-Car S4)
