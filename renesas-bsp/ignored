@@ -8,6 +8,8 @@ ARM/SoC/DT
 		ccb1316bf6d0 arm64: dts: renesas: r8a779a0-falcon: Enable TMU
 		a432a1010378 arm64: dts: r8a77970, r8a77980: Enable TMU and CMT
 		720d92e1190b arm64: dts: renesas: falcon: Enable CMT
+		861e23f8aba4 arm64: dts: renesas: whitehawk: Add TMU support
+		346d3d20d480 arm64: dts: renesas: whitehawk: Add CMT support
 
 	DT describes hardware, not documentation policy
 		18c90aaa519d arm64: dts: renesas: r8a779{50, 51, 60, 61, 65, 90}: Remove clocks properties in gic and irqc node

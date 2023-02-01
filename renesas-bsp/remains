@@ -65,8 +65,6 @@ ebf0cf8420a8 arm64: dts: renesas: r8a779g0: Update IO/range for CSI devices
 a1ee889b1718 arm64: dts: renesas:  Add PCIe1 endpoint node
 d334909f25f8 arm64: dts: renesas: r8a779g0: Update IPMMU assignment/ID VideoInput/Output
 00244fb8f94a arm64: dts: renesas: r8a779g0: Add Ethernet-TSN support
-861e23f8aba4 arm64: dts: renesas: whitehawk: Add TMU support
-346d3d20d480 arm64: dts: renesas: whitehawk: Add CMT support
 230ccbc7de13 arm64: dts: renesas: whitehawk: Add PCIe support
 7d00a3d901ac arm64: dts: renesas: r8a779g0: Add PCIe node
 c44b8d43097b arm64: dts: renesas: r8a779g0: Add VIN driver nodes for R8A779G0
