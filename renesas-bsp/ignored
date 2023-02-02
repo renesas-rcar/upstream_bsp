@@ -282,9 +282,6 @@ IPMMU
 		6b6933f7f35c arm64: dts: renesas: Support IPMMU(MMU mode) for IPMMU-VP0/1 and IPMMU VC0/1
 
 Media
-	This is only a workaround
-		4c4575ecad64 v4l: vsp1: Add underrun hung-up workaround
-
 	Panels should be supported via DT overlays
 		3b8f3cc5f237 arm64: dts: renesas: Add lvds node for du
 		71c7a4be6298 arm64: dts: renesas: salvator-common: Add lvds driver relation node
@@ -432,10 +429,6 @@ RT-DMAC
 		d45ea26fde42 arm64: dts: renesas: r8a779a0: Add RT-DMAC support
 		67c712ca4318 clk: renesas: r8a77995: Add RT-DMAC clocks
 		755a56e7c796 clk: renesas: r8a77{95, 96, 965, 990, 980}: Add RT-DMAC clocks
-
-SD/MMC
-	No usecase for upstream. Looks like a workaround for DMA problems of very early Gen3
-		e6e4182857b4 mmc: renesas_sdhi: Add PIO mode support
 
 Serial
 	According to our research tty-core activates clocks. Testcase needed.
