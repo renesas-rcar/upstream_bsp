@@ -1,3 +1,9 @@
+R-Car H3 ES1.x
+	- R-Car H3 ES1.x was only available to an internal development group and
+	  needed a lot of quirks and workarounds. These become a maintenance
+	  burden now, so our development group decided to remove upstream support
+	  for this SoC.
+
 CAN-FD
 	- Channel 0 on White-Hawk uses an NXP TJR1443AT CAN transceiver, which
 	  must be enabled through a GPIO.  Support for that is added through
