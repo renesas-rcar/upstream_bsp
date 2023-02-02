@@ -145,10 +145,6 @@ ca161241c4c3 iommu/ipmmu-vmsa: Adding devices allowlist for IPMMU on R-Car Gen3
 6c286c0f0b71 iommu/ipmmu-vmsa: Invalidate TLB when IPMMU translation error occurred
 8089aa35bf04 iommu/ipmmu-vmsa: Clean up unncessary micro-TLB invalidation
 4a04f1197c2b spi: sh-msiof: Set 2 clock delay for R-Car H3 Ver.3.0 only
-46cca390830d dt-bindings: renesas,rcar-dmac: Add bus rate control support for R-Car V3U/V4H
-234e0d5eb188 dt-bindings: renesas,rcar-dmac: Document optional properties
-fdfe96d831f0 dmaengine: rcar-dmac: Add bus rate control support for R-Car V3U/V4H
-3baf2c4e8881 dmaengine: rcar-dmac: Add fixed address mode support
 469ff9d9ba21 ravb: Fix ptp does not work after suspend and resume
 cfb5b66b2dab clk: renesas: r8a779g0-cpg-mssr: Add module critical clocks
 8c99198a7a03 clk: renesas: r8a779f0: Add AESACC clock

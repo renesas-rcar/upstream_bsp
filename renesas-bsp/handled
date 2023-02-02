@@ -730,3 +730,7 @@ e6e4182857b4 mmc: renesas_sdhi: Add PIO mode support
 8b64c578e9f0 clk: renesas: r8a779a0: Add DSIEXT clk for DSI module
 8825ff829400 dmaengine: rcar-dmac: Add support for R-Car S4
 30948f03327b dmaengine: rcar-dmac: Add support for R-Car V4H
+46cca390830d dt-bindings: renesas,rcar-dmac: Add bus rate control support for R-Car V3U/V4H
+234e0d5eb188 dt-bindings: renesas,rcar-dmac: Document optional properties
+fdfe96d831f0 dmaengine: rcar-dmac: Add bus rate control support for R-Car V3U/V4H
+3baf2c4e8881 dmaengine: rcar-dmac: Add fixed address mode support
