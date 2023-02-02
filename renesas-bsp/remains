@@ -44,15 +44,9 @@ c0cbae905c8a arm64: dts: renesas: whitehawk: Add AVB1/AVB2 support
 d387cc45dbbd arm64: dts: renesas: r8a779g0: Update Ethernet-TSN0 device node
 46aa3d2a438d arm64: dts: renesas: r8a779g0: Add max96789 node
 1fdee68f8554 arm64: dts: renesas: r8a779g0: Enable DSI1
-747fd84b11fb arm64: dts: renesas: r8a779a0: Add psci node for R8A779A0
 4f1b9a37b774 arm64: dts: renesas: r8a77970-eagle: Add input-justification options to adv7511
 9821d51a2ce5 arm64: dts: renesas: r8a779a0: Fix the clk definition on DSI node
 55dee8f01bfc arm64: dts: renesas: r8a779g0-whitehawk: Disable rtsn0
-8cdc7a6137d9 arm64: dts: renesas: r8a779a0: add CA76_[2..7] core
-13967f271d7e arm64: dts: renesas: r8a779a0: Correspond to interrupt-cells description changes
-c03568d2468f arm64: dts: renesas: r8a779a0: Describe GICv3 PPI affinity
-78dcdc429354 arm64: dts: renesas: r8a779a0: fix unit address and reg value in cpu1 node
-dc7bf3a6181e arm64: dts: renesas: r8a779a0: add CA76_1 core
 903cb8238415 arm64: dts: r8a779f0: Support Thermal interrupt mode
 cb1263abb7a2 arm64: dts: renesas: r8a779g0: Add use_extal_clk option
 2daefde67813 arm64: dts: renesas: r8a779g0: Add C-PHY option to gsml node
