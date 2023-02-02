@@ -716,3 +716,5 @@ cb3f047933e3 pinctrl: renesas: r8a779a0: Remove redundant AVB{0,1} pinmux config
 bf17a2d986b7 pinctrl: renesas: r8a779f0: Fix typo mistake of tsn1 pin
 # Control Domain part not handled
 17e03cf7176a pinctrl: renesas: Initial R8A779F0 (S4) PFC support
+f945fad8745d arm64: dts: renesas: v3hsk: Add clock-skew for GEther's Micrel PHY
+b00576ea6bf3 arm64: dts: renesas: r8a779m{1, 3, 5}: Do not support boost mode for R8A779M{1, 3, 5}

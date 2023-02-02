@@ -44,7 +44,6 @@ c0cbae905c8a arm64: dts: renesas: whitehawk: Add AVB1/AVB2 support
 d387cc45dbbd arm64: dts: renesas: r8a779g0: Update Ethernet-TSN0 device node
 46aa3d2a438d arm64: dts: renesas: r8a779g0: Add max96789 node
 1fdee68f8554 arm64: dts: renesas: r8a779g0: Enable DSI1
-f945fad8745d arm64: dts: renesas: v3hsk: Add clock-skew for GEther's Micrel PHY
 747fd84b11fb arm64: dts: renesas: r8a779a0: Add psci node for R8A779A0
 4f1b9a37b774 arm64: dts: renesas: r8a77970-eagle: Add input-justification options to adv7511
 9821d51a2ce5 arm64: dts: renesas: r8a779a0: Fix the clk definition on DSI node
@@ -70,7 +69,6 @@ d334909f25f8 arm64: dts: renesas: r8a779g0: Update IPMMU assignment/ID VideoInpu
 c44b8d43097b arm64: dts: renesas: r8a779g0: Add VIN driver nodes for R8A779G0
 08a14c13c737 arm64: dts: renesas: r8a779g0: Add IPMMU for SYS-DMAC
 61b117c4d2c8 arm64: dts: renesas: r8a779g0: Add IPMMU nodes
-b00576ea6bf3 arm64: dts: renesas: r8a779m{1, 3, 5}: Do not support boost mode for R8A779M{1, 3, 5}
 e047235afc80 arm64: dts: r8a77995-draak: Move option definition of vin node
 7e2ffb68ad2f arm64: dts: renesas: r8a77995-draak: Set HDMI mode as defaul mode for VIN driver
 b0aa94d65efb arm64: dts: renesas: Fix compatible name for MFIS node
