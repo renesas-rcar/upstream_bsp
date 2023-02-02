@@ -5,10 +5,10 @@ CAN-FD
 	  the rcar-canfd driver.
 
 CPUidle
-        - Disabling CPUidle on M3ULCB was ignored:
-	    a7afdde5f202 arm64: dts: renesas: r8a77960-ulcb: Disable CPUIdle support for CA53
-          Is this needed? If yes, why not for r8a77960-salvator-x{,s}.dts?
-          Perhaps this should be handled in drivers/cpuidle/cpuidle-psci.c instead, cfr.
+	- Disabling CPUidle on M3ULCB was ignored:
+	  a7afdde5f202 arm64: dts: renesas: r8a77960-ulcb: Disable CPUIdle support for CA53
+	  Is this needed? If yes, why not for r8a77960-salvator-x{,s}.dts?
+	  Perhaps this should be handled in drivers/cpuidle/cpuidle-psci.c instead, cfr.
 	  https://lore.kernel.org/linux-renesas-soc/7369c30e5b1c0d229a72be7df380653857496e66.1657620332.git.geert+renesas@glider.be/?
 
 Media
