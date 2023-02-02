@@ -728,3 +728,5 @@ e6e4182857b4 mmc: renesas_sdhi: Add PIO mode support
 0b29b25ab439 drm: bridge: ti-sn65dsi86: Add setting options for SN65DSI86
 # c346ff5ccc8e clk: renesas: r8a779a0: Add the DSI clocks
 8b64c578e9f0 clk: renesas: r8a779a0: Add DSIEXT clk for DSI module
+8825ff829400 dmaengine: rcar-dmac: Add support for R-Car S4
+30948f03327b dmaengine: rcar-dmac: Add support for R-Car V4H
