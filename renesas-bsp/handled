@@ -722,3 +722,6 @@ b00576ea6bf3 arm64: dts: renesas: r8a779m{1, 3, 5}: Do not support boost mode fo
 4c4575ecad64 v4l: vsp1: Add underrun hung-up workaround
 e6e4182857b4 mmc: renesas_sdhi: Add PIO mode support
 0fa91d04eaa7 spi: sh-msiof: Add SPI master transmission workaround
+# c312b0df3b13 drm/bridge: ti-sn65dsi86: Implement bridge connector operations for DP
+# e43d5864f36a drm/bridge: ti-sn65dsi86: Support DisplayPort (non-eDP) mode
+0b29b25ab439 drm: bridge: ti-sn65dsi86: Add setting options for SN65DSI86

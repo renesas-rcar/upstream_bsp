@@ -82,8 +82,6 @@ f579310d2ed3 arm64: dts: renesas: r8a77995-draak: Set max dot clock for vga
 72058c09a66e drm: rcar-du: Fix DU setting for V4H
 580a8138882b drm: rcar-du: lvds: Seperate the disable process of LVDS
 11a5640d342c drm: rcar-du: Add check for member of rstate in rcar_du_crtc_state structure
-4d326eb16e9b drm: rcar-du: Change supporting format of DU in R8A779A0
-0b29b25ab439 drm: bridge: ti-sn65dsi86: Add setting options for SN65DSI86
 441c24bfdab0 vsp1: Add display interrupt wait after setting STRCMD bit
 24940f87e199 drm: rcar-du: Add register access check
 3860e36d582d v4l: vsp1: Add underrun debug messege option

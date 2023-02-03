@@ -169,6 +169,10 @@ DU
 	Hack. Reason for the commit is unclear. No feedback from BSP team.
 		b4427db080d7 drm: bridge: simple-bridge: Add dot clock valid check
 
+	Not needed. rcar_du_plane_setup_format_gen3() already clears the relevant bits
+	if RCAR_DU_FEATURE_NO_BLENDING is set.
+		4d326eb16e9b drm: rcar-du: Change supporting format of DU in R8A779A0
+
 EMS
 	EMS is not intended for upstream
 
