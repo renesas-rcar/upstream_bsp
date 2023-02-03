@@ -734,3 +734,5 @@ e6e4182857b4 mmc: renesas_sdhi: Add PIO mode support
 234e0d5eb188 dt-bindings: renesas,rcar-dmac: Document optional properties
 fdfe96d831f0 dmaengine: rcar-dmac: Add bus rate control support for R-Car V3U/V4H
 3baf2c4e8881 dmaengine: rcar-dmac: Add fixed address mode support
+81a0161ddc6a arm64: dts: renesas: r8a77970 and r8a77980: Add CPU operation points
+43ca51590fa0 clk: renesas: r8a779{70, 80}: Add CPU operation points.

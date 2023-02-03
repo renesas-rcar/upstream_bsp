@@ -1,0 +1,18 @@
+title: "arm64: dts: renesas: V3M/V3H CPU operating points"
+team: Core
+key: 11ba3890-8599-11eb-8534-f72b7e5663b5
+status: New
+
+bsp41x:
+ - 8f87b001e208aba4d137da718af05d30aa6296ac # arm64: dts: renesas: r8a77970 and r8a77980: Add CPU operation points.
+
+bsp51x:
+ - ced281cadd724087572fe317b91815690eceb20c # arm64: dts: renesas: r8a77970 and r8a77980: Add CPU operation points
+ - b7648009b748639bc729a077a0107c56c97b51b8 # clk: renesas: r8a779{70, 80}: Add CPU operation points.
+
+bsp61x:
+  - 81a0161ddc6a714b9667200450c37a583734f6de # arm64: dts: renesas: r8a77970 and r8a77980: Add CPU operation points
+  - 43ca51590fa03127959b526498d5f458728c7fbe # clk: renesas: r8a779{70, 80}: Add CPU operation points.
+
+comments:
+ - To be split/refactored.
