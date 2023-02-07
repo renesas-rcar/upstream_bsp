@@ -40,6 +40,7 @@ ARM/SoC/DT
 		9b52276be392 arm64: dts: renesas: r8a77970: Add ES1 and Eagle Function boards
 		76cab2933b26 arm64: dts: renesas: r8a77990-ebisu{,-4D}: Add support for R-Car E3 ES1.0
 		4dbb8c2e65e6 arm64: dts: renesas: r8a77990: Fixup power-domains of 3DGE for R-Car E3 ES1.0
+		1fdee68f8554 arm64: dts: renesas: r8a779g0: Enable DSI1
 
 	Why is this needed? There are no references to sysc[123].
 		419560a14df4 arm64: dts: r8a779a0: Add SYSC PM Domains
@@ -47,6 +48,10 @@ ARM/SoC/DT
 	Is this needed? If yes, why not for r8a77960-salvator-x{,s}.dts?
 	Perhaps this should be handled in drivers/cpuidle/cpuidle-psci.c instead, cfr. https://lore.kernel.org/linux-renesas-soc/7369c30e5b1c0d229a72be7df380653857496e66.1657620332.git.geert+renesas@glider.be/?
 		a7afdde5f202 arm64: dts: renesas: r8a77960-ulcb: Disable CPUIdle support for CA53
+
+	It's not clear to me what this is fixing, but considering that DSI (DSI0) works in upstream,
+	I believe this can be ignored.
+		9821d51a2ce5 arm64: dts: renesas: r8a779a0: Fix the clk definition on DSI node
 
 AVS
 	AVS is not intended for upstream
@@ -93,6 +98,10 @@ Clock
 
 	Removing the INTC-EX module clock breaks old DTB, INTC-AP does exist and must not be disabled
 		23fcabf79226 clk: renesas: r8a77{95, 96, 965, 990}: Remove INTC-AP and INTC-EX clocks
+
+	The commit says it's fixing DSI clock, but it's changing CSI clock. We don't have that clock
+	in upstream.
+		f858706da84c clk: renesas: r8a779g0: Fix DSI0 clocks
 
 Control Domain
 	Everything in the Control Domain is not supported by upstream Linux
@@ -172,6 +181,9 @@ DU
 	Not needed. rcar_du_plane_setup_format_gen3() already clears the relevant bits
 	if RCAR_DU_FEATURE_NO_BLENDING is set.
 		4d326eb16e9b drm: rcar-du: Change supporting format of DU in R8A779A0
+
+	This should work and no need to revert.
+		f6acec0867bf Revert "drm: rcar-du: Allow importing non-contiguous dma-buf with VSP"
 
 EMS
 	EMS is not intended for upstream
