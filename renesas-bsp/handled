@@ -580,6 +580,7 @@ feff376e38cf soc: renesas: r8a779g0-sysc: Add power domain A3DUL support
 52ff24aad042 arm64: dts: renesas: r8a779g0: Add Display nodes for R8A779G0
 77c0859b5328 arm64: dts: renesas: r8a779g0: whitehawk: Add R-Car Sound support
 fc60c20649e9 arm64: dts: renesas: r8a779g0: Audio R-Car Sound support
+e14a7b50a2ef arm64: dts: renesas: r8a779g0: Disable R-Car Sound on r8a779g0-whitehawk.dtb
 21c8766ab233 dt-bindings: rsnd: Add r8a779g0 support
 1df4ef95143b ASoC: renesas: Add R-Car V4H to R-Car Sound Driver
 f07854ecac12 arm64: defconfig: Enable DA7213 Codec

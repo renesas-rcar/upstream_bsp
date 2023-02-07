@@ -10,7 +10,6 @@ a465c0a94cf7 arm64: dts: renesas: r8a779g0: Remove power-domains node for UIO de
 3b91b9e053c5 arm64: dts: renesas: whitehawk: Update clkreq control for PCIE1
 0fb78e622b92 arm64: dts: renesas: r8a779g0: Disable RPC driver
 f6acec0867bf Revert "drm: rcar-du: Allow importing non-contiguous dma-buf with VSP"
-e14a7b50a2ef arm64: dts: renesas: r8a779g0: Disable R-Car Sound on r8a779g0-whitehawk.dtb
 d7be742075b0 arm64: dts: renesas: r8a779g0: Disable CDM check in PCIe ch1
 5232175003e2 arch: arm64: dts: renesas: r8a779g0: Add shared address ranges and shared clock for pcie node
 9466ee8f1e32 arch: arm64: dts: renesas: r8a779g0-whitehawk: Restore pinctrl for PCIe
