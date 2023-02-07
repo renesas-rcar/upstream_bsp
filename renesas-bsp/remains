@@ -54,7 +54,6 @@ cb1263abb7a2 arm64: dts: renesas: r8a779g0: Add use_extal_clk option
 3e3b7c8bfbca dts: renesas: r8a779f0: Add PCIe endpoint node
 19691e74613e arm64: dts: renesas: r8a779f0: Fix the PCIe node
 b0af5d2217fc arm64: dts: renesas: r8a779f0: Add PCIe device nodes for Renesas R8A779F0 (R-Car S4)
-ebf0cf8420a8 arm64: dts: renesas: r8a779g0: Update IO/range for CSI devices
 a1ee889b1718 arm64: dts: renesas:  Add PCIe1 endpoint node
 d334909f25f8 arm64: dts: renesas: r8a779g0: Update IPMMU assignment/ID VideoInput/Output
 00244fb8f94a arm64: dts: renesas: r8a779g0: Add Ethernet-TSN support
@@ -92,9 +91,7 @@ c541b27e85d7 media: ov5647: Fix return codes from ov5647_write/ov5647_read funct
 1e15a520d473 media: i2c: add camera lvds support
 5213db1803d3 media: i2c: add ov5642 sensor driver
 5232944262ff media: rcar-vin: Add interrupt for V4L2_FIELD_ALTERNATE format
-536c7ac9272f media: rcar-csi2: Add pin-swap option for WhiteHawk
 d7a7a58860cc media: i2c: Add C-PHY setting for MAX96712
-6473f20171e8 media: rcar-csi2: Add C-PHY setting for R8A779G0
 c8b353b49501 media: i2c: dummy-camera: Add dummy camera support
 0d5cbd0b87a9 media: rcar-vin: Add R-Car ISP support for R8A779G0
 a817ffeb4eda media: rcar-vin: Add support for R-Car R8A779G0 SoC
@@ -168,7 +165,6 @@ edac17a3ab1e clk: renesas: r8a779g0: Fix the clk rate for gfx module
 4641d43df376 clk: renesas: r8a779g0-cpg-mssr: Add clk for AESACC caiplite wrapper
 5bf539a8f79d clk: renesas: r8a779g0: Add system_ram clock
 ea04e66f3980 clk: renesas: r8a779g0: Add PAP clock
-5146266215b3 clk: renesas: r8a779g0: Fix CSI2 clock
 efb133748ebb clk: renesas: r8a779g0: Fix SecureROM clock
 096b8527e46b clk: renesas: r8a779g0: Add AESACC (caiplite) clocks
 730589c61892 clk: renesas: cpg-mssr: Add support for R-Car V4H
