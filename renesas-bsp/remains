@@ -1,11 +1,3 @@
-72805b07fc95 uio: uio_pdrv_genirq: Add parameter error in case not define property in node
-54d98b4c127c Revert "uio: uio_pdrv_genirq: Add parameter error in case not define property in node"
-e841dd60cb71 uio: uio_pdrv_genirq: Hotfix clock and power control for multi task
-f802ecfcf16a arm64: dts: renesas: r8a779g0: Add power-domain for irq_du_00_01 UIO device
-ebc9be84befe arm64: dts: renesas: r8a779g0: Add PAP (ecm) UIO devices
-efaf2324cebc arm64: dts: renesas: r8a779g0: Update property of ICCOM UIO devices
-c139f18ad396 arm64: dts: renesas: r8a779g0: Add IMP imp_spmc1 UIO device
-a465c0a94cf7 arm64: dts: renesas: r8a779g0: Remove power-domains node for UIO devices
 21d0e3cb90fd pci: dwc: renesas: Use platform_get_resource_byname() and devm_ioremap_resource() instead of devm_platform_ioremap_resource_byname()
 3b91b9e053c5 arm64: dts: renesas: whitehawk: Update clkreq control for PCIE1
 0fb78e622b92 arm64: dts: renesas: r8a779g0: Disable RPC driver
