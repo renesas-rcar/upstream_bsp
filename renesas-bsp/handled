@@ -736,3 +736,5 @@ fdfe96d831f0 dmaengine: rcar-dmac: Add bus rate control support for R-Car V3U/V4
 3baf2c4e8881 dmaengine: rcar-dmac: Add fixed address mode support
 81a0161ddc6a arm64: dts: renesas: r8a77970 and r8a77980: Add CPU operation points
 43ca51590fa0 clk: renesas: r8a779{70, 80}: Add CPU operation points.
+a2d17d3b1576 soc: renesas: rcar-topology: Add missing device for rcar topology
+0846e66813ab soc: renesas: rcar-topology: Add support for R-Car capacity awareness

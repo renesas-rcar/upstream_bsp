@@ -32,8 +32,6 @@ b5bccf1fc37c arm64: dts: renesas: r8a779f0: Disable CDM check
 57ccb1c20a4a soc: renesas: rcar-sysc: Add CR7 domain for r8a77980 in quirks_match
 6c2fe82cca83 soc: renesas: rcar-sysc: Support to handle PDMODE for R-Car V3H ES2.x
 5a4e2771e30d soc: renesas: rcar-rst: Allow WDT reset on R-Car Gen4
-a2d17d3b1576 soc: renesas: rcar-topology: Add missing device for rcar topology
-0846e66813ab soc: renesas: rcar-topology: Add support for R-Car capacity awareness
 5ef05786fe20 soc: renesas: rcar-sysc: Fix up areas to handle PDMODE
 5cb18d629db5 soc: renesas: rcar-sysc: Fix A3IR power on sequence for R8A77980
 7e9c8bd37798 soc: renesas: rcar-sysc: Include 3DG as always-on power domains
