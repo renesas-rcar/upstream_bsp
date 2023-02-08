@@ -145,7 +145,6 @@ ca161241c4c3 iommu/ipmmu-vmsa: Adding devices allowlist for IPMMU on R-Car Gen3
 4a04f1197c2b spi: sh-msiof: Set 2 clock delay for R-Car H3 Ver.3.0 only
 469ff9d9ba21 ravb: Fix ptp does not work after suspend and resume
 8c99198a7a03 clk: renesas: r8a779f0: Add AESACC clock
-7b3567dc796e clk: renesas: r8a779a0: Add IPMMU clocks
 a0739e93709f clk: renesas: r8a779a0: Add AESACC (wcrc_caiplite) clocks
 732a034e6d37 clk: renesas: r8a779a0: Add AESACC (caiplite) clocks
 1b75a84a7686 clk: renesas: r8a779f0: Add SHIPS clock

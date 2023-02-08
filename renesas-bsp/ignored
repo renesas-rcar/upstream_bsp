@@ -110,6 +110,11 @@ Clock
 	kept enabled) by firmware
 		cfb5b66b2dab clk: renesas: r8a779g0-cpg-mssr: Add module critical clocks
 
+	IPMMU clocks are currently only used with UIO, and not described in DT.
+	The Linux IPMMU driver does not handle clocks yet (even when described
+	in DT), so they become disabled, breaking e.g. MMC on Falcon.
+		7b3567dc796e clk: renesas: r8a779a0: Add IPMMU clocks
+
 Control Domain
 	Everything in the Control Domain is not supported by upstream Linux
 		a9c6cce1bf08 arm64: dts: renesas: r8a779f0: spider: Enable TAUD0-PWM1/2
