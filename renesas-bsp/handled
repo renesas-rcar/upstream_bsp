@@ -738,3 +738,4 @@ fdfe96d831f0 dmaengine: rcar-dmac: Add bus rate control support for R-Car V3U/V4
 43ca51590fa0 clk: renesas: r8a779{70, 80}: Add CPU operation points.
 a2d17d3b1576 soc: renesas: rcar-topology: Add missing device for rcar topology
 0846e66813ab soc: renesas: rcar-topology: Add support for R-Car capacity awareness
+5a4e2771e30d soc: renesas: rcar-rst: Allow WDT reset on R-Car Gen4
