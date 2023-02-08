@@ -106,6 +106,10 @@ Clock
 	The CSI-2 block is not documented in Hardware User's Manual
 		5146266215b3 clk: renesas: r8a779g0: Fix CSI2 clock
 
+	If a clock is needed by firmware (is it?), it should be enabled (and
+	kept enabled) by firmware
+		cfb5b66b2dab clk: renesas: r8a779g0-cpg-mssr: Add module critical clocks
+
 Control Domain
 	Everything in the Control Domain is not supported by upstream Linux
 		a9c6cce1bf08 arm64: dts: renesas: r8a779f0: spider: Enable TAUD0-PWM1/2

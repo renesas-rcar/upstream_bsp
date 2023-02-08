@@ -144,7 +144,6 @@ ca161241c4c3 iommu/ipmmu-vmsa: Adding devices allowlist for IPMMU on R-Car Gen3
 8089aa35bf04 iommu/ipmmu-vmsa: Clean up unncessary micro-TLB invalidation
 4a04f1197c2b spi: sh-msiof: Set 2 clock delay for R-Car H3 Ver.3.0 only
 469ff9d9ba21 ravb: Fix ptp does not work after suspend and resume
-cfb5b66b2dab clk: renesas: r8a779g0-cpg-mssr: Add module critical clocks
 8c99198a7a03 clk: renesas: r8a779f0: Add AESACC clock
 7b3567dc796e clk: renesas: r8a779a0: Add IPMMU clocks
 a0739e93709f clk: renesas: r8a779a0: Add AESACC (wcrc_caiplite) clocks
