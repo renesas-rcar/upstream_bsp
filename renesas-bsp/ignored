@@ -440,6 +440,15 @@ QoS
 		21ffa2421578 arm64: dts: renesas: r8a779a0: Add QoS device
 		31633efaaf13 arm64: dts: renesas: Add QoS device node for Gen3 devices
 
+RPC-IF
+	RPC-IF works on White-Hawk with current firmware.  If it must be
+	accessed only by the Cortex-R52, it should be handled like on e.g.
+	Salvator-XS.
+	Likewise for Spider?
+
+		0fb78e622b92 arm64: dts: renesas: r8a779g0: Disable RPC driver
+		7e49a8b70a7d clk: renesas: r8a779f0: Remove RPC clock
+
 RT-DMAC
 	RT-DMAC is not intended for upstream
 

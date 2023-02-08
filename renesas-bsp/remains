@@ -1,6 +1,5 @@
 21d0e3cb90fd pci: dwc: renesas: Use platform_get_resource_byname() and devm_ioremap_resource() instead of devm_platform_ioremap_resource_byname()
 3b91b9e053c5 arm64: dts: renesas: whitehawk: Update clkreq control for PCIE1
-0fb78e622b92 arm64: dts: renesas: r8a779g0: Disable RPC driver
 d7be742075b0 arm64: dts: renesas: r8a779g0: Disable CDM check in PCIe ch1
 5232175003e2 arch: arm64: dts: renesas: r8a779g0: Add shared address ranges and shared clock for pcie node
 9466ee8f1e32 arch: arm64: dts: renesas: r8a779g0-whitehawk: Restore pinctrl for PCIe
@@ -150,7 +149,6 @@ cfb5b66b2dab clk: renesas: r8a779g0-cpg-mssr: Add module critical clocks
 7b3567dc796e clk: renesas: r8a779a0: Add IPMMU clocks
 a0739e93709f clk: renesas: r8a779a0: Add AESACC (wcrc_caiplite) clocks
 732a034e6d37 clk: renesas: r8a779a0: Add AESACC (caiplite) clocks
-7e49a8b70a7d clk: renesas: r8a779f0: Remove RPC clock
 1b75a84a7686 clk: renesas: r8a779f0: Add SHIPS clock
 4af7d31c9c23 clk: renesas: r8a779f0: Add AESACC clock
 3caae5ada709 clk: renesas: cpg-mssr: Add support for R-Car S4
