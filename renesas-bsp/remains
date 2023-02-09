@@ -41,7 +41,6 @@ d334909f25f8 arm64: dts: renesas: r8a779g0: Update IPMMU assignment/ID VideoInpu
 61b117c4d2c8 arm64: dts: renesas: r8a779g0: Add IPMMU nodes
 8a3097afe858 arm64: dts: renesas: Add ulcb-kf-imx219 overlay
 d80707e0e447 arm64: dts: renesas: ulcb-kf: update for kernel v5.10
-84a6123fe4a3 arm64: dts: renesas: ebisu: Add endpoint for dual-link in Ebisu board
 667534413db9 arm64: dts: renesas: r8a779a0-falcon: Add missing Ethernet-AVB in Falcon board
 2952a9503e49 arm64: dts: renesas: r8a779{51, 60, 61, 65}: Enable interrupt mode for THS by default
 72058c09a66e drm: rcar-du: Fix DU setting for V4H
