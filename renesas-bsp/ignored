@@ -43,6 +43,8 @@ ARM/SoC/DT
 		1fdee68f8554 arm64: dts: renesas: r8a779g0: Enable DSI1
 		6c2fe82cca83 soc: renesas: rcar-sysc: Support to handle PDMODE for R-Car V3H ES2.x
 		5ef05786fe20 soc: renesas: rcar-sysc: Fix up areas to handle PDMODE
+		5213db1803d3 media: i2c: add ov5642 sensor driver
+		499956c799e7 arm64: dts: renesas: ulcb-kf: Add ov5647 support
 
 	Why is this needed? There are no references to sysc[123].
 		419560a14df4 arm64: dts: r8a779a0: Add SYSC PM Domains
