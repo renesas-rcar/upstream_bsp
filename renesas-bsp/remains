@@ -26,7 +26,6 @@ b5bccf1fc37c arm64: dts: renesas: r8a779f0: Disable CDM check
 9fd7d9ee7993 arm64: dts: renesas: r8a779g0: Disable CDM check
 c0cbae905c8a arm64: dts: renesas: whitehawk: Add AVB1/AVB2 support
 d387cc45dbbd arm64: dts: renesas: r8a779g0: Update Ethernet-TSN0 device node
-4f1b9a37b774 arm64: dts: renesas: r8a77970-eagle: Add input-justification options to adv7511
 55dee8f01bfc arm64: dts: renesas: r8a779g0-whitehawk: Disable rtsn0
 86ed3e15856f arm64: dts: renesas: r8a779f0: Fix PCIe clock and support PCIe1 endpoint
 3e3b7c8bfbca dts: renesas: r8a779f0: Add PCIe endpoint node

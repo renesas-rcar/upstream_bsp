@@ -362,6 +362,9 @@ Media
 	Change is incorrect according to the ADV7511 datasheet. More info needed
 		fe0832b798a5 drm: adv7511: Enable HPD interrupts to support hotplug
 
+	The change is a no-op, the adi,input-justification property is ignored by the driver in RGB 1x mode
+		4f1b9a37b774 arm64: dts: renesas: r8a77970-eagle: Add input-justification options to adv7511
+
 	Testing if encoder drivers are enabled isn't fail-proof, as the modules could for instance be blacklisted.
 		2f9195e22ba2 drm: rcar-du: Skip EPROBE_DEFER in case of disabling LVDS and HDMI
 
