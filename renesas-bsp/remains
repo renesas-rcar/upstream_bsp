@@ -48,7 +48,6 @@ d80707e0e447 arm64: dts: renesas: ulcb-kf: update for kernel v5.10
 441c24bfdab0 vsp1: Add display interrupt wait after setting STRCMD bit
 24940f87e199 drm: rcar-du: Add register access check
 3860e36d582d v4l: vsp1: Add underrun debug messege option
-0a1de0131e5c media: i2c: max9286: Delay initialize timing in launching driver
 17da051cfc67 media: i2c: ov5647: Add test pattern control
 092fce881478 media: i2c: ov5647: Add V4L2_CID_PIXEL_RATE control
 c541b27e85d7 media: ov5647: Fix return codes from ov5647_write/ov5647_read functions.

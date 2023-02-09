@@ -367,6 +367,7 @@ Media
 
 	More information about the exact problem is needed
 		217af79ae9a9 drm: rcar-du: Fix DPLL clock divider judgement
+		0a1de0131e5c media: i2c: max9286: Delay initialize timing in launching driver
 
 	More information about use case is needed
 		56b96a3db3e8 v4l: vsp1: Add Vmute function support
