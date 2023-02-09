@@ -9,7 +9,7 @@ bsp41x:
 bsp51x:
  - e533a0ea555e061170b4102d9085c70546fe4768 # mmc: core: Issue power off notification in mmc_remove()
 
-bsp61x:
+bsp52x:
  - bc75d8c5907a3499afea960753deffdd76bfef0b # mmc: core: Issue power off notification in mmc_remove()
 
 upstream:

@@ -10,7 +10,7 @@ bsp51x:
  - ced281cadd724087572fe317b91815690eceb20c # arm64: dts: renesas: r8a77970 and r8a77980: Add CPU operation points
  - b7648009b748639bc729a077a0107c56c97b51b8 # clk: renesas: r8a779{70, 80}: Add CPU operation points.
 
-bsp61x:
+bsp52x:
   - 81a0161ddc6a714b9667200450c37a583734f6de # arm64: dts: renesas: r8a77970 and r8a77980: Add CPU operation points
   - 43ca51590fa03127959b526498d5f458728c7fbe # clk: renesas: r8a779{70, 80}: Add CPU operation points.
 

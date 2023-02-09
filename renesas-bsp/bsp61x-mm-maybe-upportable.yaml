@@ -2,7 +2,7 @@ title: "BSP v6.1: maybe upportable commits"
 team: MM
 status: New
 
-bsp61x:
+bsp52x:
  - 84efcbedf26a # Revert "drm/rcar-du: Convert to the new generic alpha property"
  - f526433a23a7 # drm: rcar-du: Add W/A setting for WhiteHawk board
 

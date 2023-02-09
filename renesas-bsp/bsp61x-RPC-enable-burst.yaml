@@ -6,7 +6,7 @@ status: New
 bsp41x:
  - c419cfd7766efb7bbc95d964586ca3668b61cdb7 # memory: renesas-rpc-if: Use burst read operation
 
-bsp61x:
+bsp52x:
  - 1b212c753d0c3122a6b7ef358a71f28b66fd9928 # memory: renesas-rpc-if: Use burst read operation
 
 upstream:

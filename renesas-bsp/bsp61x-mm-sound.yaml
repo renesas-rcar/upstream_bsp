@@ -2,7 +2,7 @@ title: "BSP v6.1: Sound"
 team: MM
 status: New
 
-bsp61x:
+bsp52x:
  - 77c0859b5328 # arm64: dts: renesas: r8a779g0: whitehawk: Add R-Car Sound support
  - fc60c20649e9 # arm64: dts: renesas: r8a779g0: Audio R-Car Sound support
  - 21c8766ab233 # dt-bindings: rsnd: Add r8a779g0 support

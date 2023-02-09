@@ -12,7 +12,7 @@ bsp51x:
  - d983b218ec061bd217aed2919e0dd5bbbcb8b02d # dmaengine: rcar-dmac: Document optional properties
  - 08bd675abaa94d453c77c61f7bd7efb5694faad2 # dmaengine: rcar-dmac: Add fixed address mode support
 
-bsp61x:
+bsp52x:
   - 46cca390830d5275687cbfd3e2619ef1e0424b5c # dt-bindings: renesas,rcar-dmac: Add bus rate control support for R-Car V3U/V4H
   - 234e0d5eb188d60df3a847c2f87755e45c852b5f # dt-bindings: renesas,rcar-dmac: Document optional properties
   - fdfe96d831f0b31d4d62b4c8515a1ae813aa5f4d # dmaengine: rcar-dmac: Add bus rate control support for R-Car V3U/V4H

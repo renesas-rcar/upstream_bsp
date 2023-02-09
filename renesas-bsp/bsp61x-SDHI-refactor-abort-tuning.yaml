@@ -7,7 +7,7 @@ status: Active
 bsp51x:
  - 2d7c017355ce83b26ef739183f28a8e0da5ea233 # mmc: core: mmc_ops: Enable stop command
 
-bsp61x:
+bsp52x:
  - d10133565b530859e7b55c84ebdac5a49c827aee #  mmc: core: mmc_ops: Enable stop command
 
 upstream:

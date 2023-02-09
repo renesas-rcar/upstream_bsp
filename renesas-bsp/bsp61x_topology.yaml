@@ -9,7 +9,7 @@ bsp41x:
 bsp51x:
  - eb3a525bc1013c9903613253cca1459775bd703b # soc: renesas: rcar-topology: Add support for R-Car capacity awareness
 
-bsp61x:
+bsp52x:
   - 0846e66813ab6e611f262d027a03d7ca4fc64ad2 # soc: renesas: rcar-topology: Add support for R-Car capacity awareness
   - a2d17d3b15769d1e4b78c72742afe33d5b8f0c84 # soc: renesas: rcar-topology: Add missing device for rcar topology
 
