@@ -46,7 +46,6 @@ d334909f25f8 arm64: dts: renesas: r8a779g0: Update IPMMU assignment/ID VideoInpu
 00244fb8f94a arm64: dts: renesas: r8a779g0: Add Ethernet-TSN support
 230ccbc7de13 arm64: dts: renesas: whitehawk: Add PCIe support
 7d00a3d901ac arm64: dts: renesas: r8a779g0: Add PCIe node
-c44b8d43097b arm64: dts: renesas: r8a779g0: Add VIN driver nodes for R8A779G0
 08a14c13c737 arm64: dts: renesas: r8a779g0: Add IPMMU for SYS-DMAC
 61b117c4d2c8 arm64: dts: renesas: r8a779g0: Add IPMMU nodes
 e047235afc80 arm64: dts: r8a77995-draak: Move option definition of vin node
@@ -77,10 +76,7 @@ c541b27e85d7 media: ov5647: Fix return codes from ov5647_write/ov5647_read funct
 1e15a520d473 media: i2c: add camera lvds support
 5213db1803d3 media: i2c: add ov5642 sensor driver
 5232944262ff media: rcar-vin: Add interrupt for V4L2_FIELD_ALTERNATE format
-d7a7a58860cc media: i2c: Add C-PHY setting for MAX96712
 c8b353b49501 media: i2c: dummy-camera: Add dummy camera support
-0d5cbd0b87a9 media: rcar-vin: Add R-Car ISP support for R8A779G0
-a817ffeb4eda media: rcar-vin: Add support for R-Car R8A779G0 SoC
 e10a3eba74e3 media: rcar-vin: Add RAW10 format support
 15c84e6a1c2d media: i2c: Add max96712 driver prototype
 5f4680c68d32 media: rcar-vin: Add NV12 pixel format checking
