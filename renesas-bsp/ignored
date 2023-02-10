@@ -41,6 +41,8 @@ ARM/SoC/DT
 		76cab2933b26 arm64: dts: renesas: r8a77990-ebisu{,-4D}: Add support for R-Car E3 ES1.0
 		4dbb8c2e65e6 arm64: dts: renesas: r8a77990: Fixup power-domains of 3DGE for R-Car E3 ES1.0
 		1fdee68f8554 arm64: dts: renesas: r8a779g0: Enable DSI1
+		6c2fe82cca83 soc: renesas: rcar-sysc: Support to handle PDMODE for R-Car V3H ES2.x
+		5ef05786fe20 soc: renesas: rcar-sysc: Fix up areas to handle PDMODE
 
 	Why is this needed? There are no references to sysc[123].
 		419560a14df4 arm64: dts: r8a779a0: Add SYSC PM Domains
@@ -295,6 +297,7 @@ GSX
 		b5674d878b5f arm64: dts: renesas: r8a779g0: Fix power domains GFX
 		128981aa3601 clk: renesas: rcar-gen3: Add support ZG clock divider for R8A77990
 		35eb4ba8bd88 clk: renesas: r8a77{95, 96, 965, 990}: Add ZG clock
+		7e9c8bd37798 soc: renesas: rcar-sysc: Include 3DG as always-on power domains
 
 iVDP1C
 	iVDP1C is not intended for upstream
@@ -309,6 +312,7 @@ IMP
 	IMP is not intended for upstream
 		5beefb300ae6 arm64: dts: renesas: r8a779x: add IMP nodes
 		dc644df9f22b clk: renesas: r8a779{5, 6, 70, 80}: add IMP clock
+		5cb18d629db5 soc: renesas: rcar-sysc: Fix A3IR power on sequence for R8A77980
 
 IPMMU
 	used only for BSP backward compatibility

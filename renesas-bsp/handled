@@ -497,7 +497,6 @@ e0a0cc6f9968 regulator: bd9571mwv: rid of using struct bd9571mwv
 383e54cd8763 soc: renesas: r8a779g0-sysc: Add r8a779g0 support
 0565526eef81 soc: renesas: rcar-rst: Add support for R-Car S4
 f9296b520ca8 soc: renesas: rcar-rst: Add support for R-Car V4H
-973fbc34bf5d soc: renesas: rcar-sysc: Remove power domains always on for M3N v1.0
 aea13771e9d3 thermal/drivers/rcar_gen3_thermal: Add support for hardware trip points
 bda5f93b2c46 thermal/drivers/rcar_gen3_thermal: Store TSC id as unsigned int
 34133348ec61 thermal: rcar_gen3_thermal: Add r8a779f0 support
@@ -739,3 +738,9 @@ fdfe96d831f0 dmaengine: rcar-dmac: Add bus rate control support for R-Car V3U/V4
 a2d17d3b1576 soc: renesas: rcar-topology: Add missing device for rcar topology
 0846e66813ab soc: renesas: rcar-topology: Add support for R-Car capacity awareness
 5a4e2771e30d soc: renesas: rcar-rst: Allow WDT reset on R-Car Gen4
+57ccb1c20a4a soc: renesas: rcar-sysc: Add CR7 domain for r8a77980 in quirks_match
+973fbc34bf5d soc: renesas: rcar-sysc: Remove power domains always on for M3N v1.0
+ad70433f1eda soc: renesas: rcar-sysc: Support S2RAM
+e07b497cf41e soc: renesas: rcar-sysc: Improve power domains always on implementation
+ea52a14c9748 soc: renesas: rcar-sysc: Add wait 1us before turning off power domain
+118bfc69fe4d soc: renesas: rcar-sysc: Adjust the waiting time to cover the worst case
