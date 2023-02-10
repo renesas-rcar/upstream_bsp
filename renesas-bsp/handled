@@ -421,6 +421,10 @@ a9d59372cc22 mmc: tmio: do not print real IOMEM pointer
 0b48801c59e7 mmc: tmio: set max_busy_timeout
 a64e7651be15 mmc: tmio: support custom irq masks
 bdafe4d861f6 net: ethernet: ravb: Support AVB1/AVB2
+205f4a164e06 net: ethernet: renesas: rcar_gen4_ptp: Add R-Car Gen4 gPTP driver
+3dbea0aef38a net: ethernet: renesas: rcar_gen4_ptp: Fix build error of R-Car Gen4 PTP
+5010c78c0c24 net: ethernet: renesas: rswitch: Add Renesas Ethernet Switch
+8776884f313c net: phy: marvell10g: Add mode configuration and MAC type setting for 88E2110
 faeb459cc8d3 pinctrl: renesas: Add I/O voltage level flag
 12dba3eb3965 pinctrl: renesas: Add PORT_GP_CFG_{2,31} macros
 dc02de114dbb pinctrl: renesas: Factor out common R-Car Gen3 bias handling

@@ -485,6 +485,12 @@ RPC-IF
 		0fb78e622b92 arm64: dts: renesas: r8a779g0: Disable RPC driver
 		7e49a8b70a7d clk: renesas: r8a779f0: Remove RPC clock
 
+R-Switch
+	Parallel mode is not acceptable for upstream.
+
+		258a86b3435a net: ethernet: renesas: rswitch: Add support for parallel mode
+		4e5be19e18e7 net: ethernet: renesas: rcar_gen4_ptp: Add support for parallel mode
+
 RT-DMAC
 	RT-DMAC is not intended for upstream
 

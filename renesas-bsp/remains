@@ -17,7 +17,6 @@ baea6069075f pci: dwc: renesas: Add retrain link function for PCIe 4.0
 f481c68a26f4 pci: dwc: renesas: Implement source code based on board TP for V4H RootComplex
 61d5400cf3cf ravb: Disable Link Signal Change Interrupt for AVB1/AVB2
 20dbf63e6809 Revert "net: phy: consider that suspend2ram may cut off PHY power"
-3dbea0aef38a net: ethernet: renesas: rcar_gen4_ptp: Fix build error of R-Car Gen4 PTP
 241d44845b90 ravb: Clear RIS2_QFF1 flag in ravb_error_interrupt()
 e37c8d37dd3c ravb: Remove TX internal delay setting
 d276493fd6c2 ravb: Issue gpio reset to AVB1/AVB2 PHYs
@@ -89,11 +88,6 @@ c58d45a70ae9 media: i2c: adv7604: Enable decoder control register
 2a1f07d0e722 net: phy: mv88q2110: Initial PHY Marvel 88Q2110 support
 78e51462682c dt-bindings: net: renesas,ethertsn: Add binding document for new Ethernet-TSN driver
 1e34ab549764 net: ethernet: renesas: Add Renesas Ethernet-TSN driver
-4e5be19e18e7 net: ethernet: renesas: rcar_gen4_ptp: Add support for parallel mode
-205f4a164e06 net: ethernet: renesas: rcar_gen4_ptp: Add R-Car Gen4 gPTP driver
-8776884f313c net: phy: marvell10g: Add mode configuration and MAC type setting for 88E2110
-258a86b3435a net: ethernet: renesas: rswitch: Add support for parallel mode
-5010c78c0c24 net: ethernet: renesas: rswitch: Add Renesas Ethernet Switch
 4c76d373092f arm64: defconfig: Enable PCIe Endpoint
 e5540b8157bc arm64: defconfig: Enable Marvell PHY 88Q2110
 dce559decaec arm64: defconfig: enable max96789 on defconfig
