@@ -48,8 +48,6 @@ d334909f25f8 arm64: dts: renesas: r8a779g0: Update IPMMU assignment/ID VideoInpu
 7d00a3d901ac arm64: dts: renesas: r8a779g0: Add PCIe node
 08a14c13c737 arm64: dts: renesas: r8a779g0: Add IPMMU for SYS-DMAC
 61b117c4d2c8 arm64: dts: renesas: r8a779g0: Add IPMMU nodes
-e047235afc80 arm64: dts: r8a77995-draak: Move option definition of vin node
-7e2ffb68ad2f arm64: dts: renesas: r8a77995-draak: Set HDMI mode as defaul mode for VIN driver
 b0aa94d65efb arm64: dts: renesas: Fix compatible name for MFIS node
 3799f1e161c6 arm64: dts: Add MFISLock driver support
 8a3097afe858 arm64: dts: renesas: Add ulcb-kf-imx219 overlay

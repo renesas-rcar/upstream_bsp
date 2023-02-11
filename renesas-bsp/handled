@@ -756,3 +756,6 @@ c44b8d43097b arm64: dts: renesas: r8a779g0: Add VIN driver nodes for R8A779G0
 d7a7a58860cc media: i2c: Add C-PHY setting for MAX96712
 # Submitted upstream
 60d4d536778e clk: renesas: r8a77980: Add VIN clocks
+# Submitted upstream
+e047235afc80 arm64: dts: r8a77995-draak: Move option definition of vin node
+7e2ffb68ad2f arm64: dts: renesas: r8a77995-draak: Set HDMI mode as defaul mode for VIN driver
