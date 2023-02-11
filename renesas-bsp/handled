@@ -759,3 +759,9 @@ d7a7a58860cc media: i2c: Add C-PHY setting for MAX96712
 # Submitted upstream
 e047235afc80 arm64: dts: r8a77995-draak: Move option definition of vin node
 7e2ffb68ad2f arm64: dts: renesas: r8a77995-draak: Set HDMI mode as defaul mode for VIN driver
+# Submitted upstream
+5f4680c68d32 media: rcar-vin: Add NV12 pixel format checking
+# Submitted upstream
+5232944262ff media: rcar-vin: Add interrupt for V4L2_FIELD_ALTERNATE format
+# Submitted upstream
+e10a3eba74e3 media: rcar-vin: Add RAW10 format support
