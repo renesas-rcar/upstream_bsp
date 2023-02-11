@@ -107,7 +107,6 @@ Clock
 		6e430a6a2fb1 clk: renesas: r8a77980: Add VIP clocks
 		a232d9186d2b clk: renesas: r8a779{70, 80}: Add ISP clock
 		75feb58b222d clk: renesas: r8a779{70, 80}: Add IMR clocks
-		60d4d536778e clk: renesas: r8a77980: Add VIN clocks
 		22fcdce314a2 clk: renesas: r8a77{96, 965, 990}: Add ADG clock
 		c0ba44fdd4d9 clk: renesas: r8a7795: Add ADG clock
 		f75384dbb2de clk: renesas: r8a77990: Add FDP1 clock
