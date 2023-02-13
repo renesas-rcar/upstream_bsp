@@ -107,7 +107,6 @@ Clock
 		6e430a6a2fb1 clk: renesas: r8a77980: Add VIP clocks
 		a232d9186d2b clk: renesas: r8a779{70, 80}: Add ISP clock
 		75feb58b222d clk: renesas: r8a779{70, 80}: Add IMR clocks
-		60d4d536778e clk: renesas: r8a77980: Add VIN clocks
 		22fcdce314a2 clk: renesas: r8a77{96, 965, 990}: Add ADG clock
 		c0ba44fdd4d9 clk: renesas: r8a7795: Add ADG clock
 		f75384dbb2de clk: renesas: r8a77990: Add FDP1 clock
@@ -127,9 +126,6 @@ Clock
 	The commit says it's fixing DSI clock, but it's changing CSI clock. We don't have that clock
 	in upstream.
 		f858706da84c clk: renesas: r8a779g0: Fix DSI0 clocks
-
-	The CSI-2 block is not documented in Hardware User's Manual
-		5146266215b3 clk: renesas: r8a779g0: Fix CSI2 clock
 
 	If a clock is needed by firmware (is it?), it should be enabled (and
 	kept enabled) by firmware
@@ -151,12 +147,6 @@ Control Domain
 		751ac8024a13 pinctrl: renesas: r8a779f0: Fix pfc addresses of Control domain
 		e028d91dadf4 arm64: dts: renesas: r8a779f0: Fix pfc addresses of Control domain
 		9ce764f07715 dts: renesas: r8a779f0: Add channel information
-
-CSI2
-	The CSI-2 block is not documented in Hardware User's Manual
-		ebf0cf8420a8 arm64: dts: renesas: r8a779g0: Update IO/range for CSI devices
-		536c7ac9272f media: rcar-csi2: Add pin-swap option for WhiteHawk
-		6473f20171e8 media: rcar-csi2: Add C-PHY setting for R8A779G0
 
 Defconfig
 	Modular as per upstream policy, CONFIG_CPU_FREQ_STAT_DETAILS was removed in v4.11

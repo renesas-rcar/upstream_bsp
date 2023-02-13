@@ -123,7 +123,9 @@
 /* Video n Data Mode Register bits */
 #define VNDMR_A8BIT(n)		(((n) & 0xff) << 24)
 #define VNDMR_A8BIT_MASK	(0xff << 24)
+#define VNDMR_RMODE_RAW10	(2 << 19)
 #define VNDMR_YMODE_Y8		(1 << 12)
+#define VNDMR_YC_THR		(1 << 11)
 #define VNDMR_EXRGB		(1 << 8)
 #define VNDMR_BPSM		(1 << 4)
 #define VNDMR_ABIT		(1 << 2)
@@ -728,11 +730,9 @@ static int rvin_setup(struct rvin_dev *vin)
 	case V4L2_FIELD_SEQ_TB:
 	case V4L2_FIELD_SEQ_BT:
 	case V4L2_FIELD_NONE:
-		vnmc = VNMC_IM_ODD_EVEN;
-		progressive = true;
-		break;
 	case V4L2_FIELD_ALTERNATE:
 		vnmc = VNMC_IM_ODD_EVEN;
+		progressive = true;
 		break;
 	default:
 		vnmc = VNMC_IM_ODD;
@@ -781,6 +781,9 @@ static int rvin_setup(struct rvin_dev *vin)
 	case MEDIA_BUS_FMT_SRGGB8_1X8:
 	case MEDIA_BUS_FMT_Y8_1X8:
 		vnmc |= VNMC_INF_RAW8;
+		break;
+	case MEDIA_BUS_FMT_Y10_1X10:
+		vnmc |= VNMC_INF_RGB666;
 		break;
 	default:
 		break;
@@ -889,6 +892,9 @@ static int rvin_setup(struct rvin_dev *vin)
 		} else {
 			dmr = 0;
 		}
+		break;
+	case V4L2_PIX_FMT_Y10:
+		dmr = VNDMR_RMODE_RAW10 | VNDMR_YC_THR;
 		break;
 	default:
 		vin_err(vin, "Invalid pixelformat (0x%x)\n",
@@ -1272,6 +1278,10 @@ static int rvin_mc_validate_format(struct rvin_dev *vin, struct v4l2_subdev *sd,
 		if (vin->format.pixelformat != V4L2_PIX_FMT_GREY)
 			return -EPIPE;
 		break;
+	case MEDIA_BUS_FMT_Y10_1X10:
+		if (vin->format.pixelformat != V4L2_PIX_FMT_Y10)
+			return -EPIPE;
+		break;
 	default:
 		return -EPIPE;
 	}
@@ -1312,12 +1322,23 @@ static int rvin_mc_validate_format(struct rvin_dev *vin, struct v4l2_subdev *sd,
 	}
 
 	if (rvin_scaler_needed(vin)) {
+		/* Gen3 can't scale NV12 */
+		if (vin->info->model == RCAR_GEN3 &&
+		    vin->format.pixelformat == V4L2_PIX_FMT_NV12)
+			return -EPIPE;
+
 		if (!vin->scaler)
 			return -EPIPE;
 	} else {
-		if (fmt.format.width != vin->format.width ||
-		    fmt.format.height != vin->format.height)
-			return -EPIPE;
+		if (vin->format.pixelformat == V4L2_PIX_FMT_NV12) {
+			if (ALIGN(fmt.format.width, 32) != vin->format.width ||
+			    ALIGN(fmt.format.height, 32) != vin->format.height)
+				return -EPIPE;
+		} else {
+			if (fmt.format.width != vin->format.width ||
+			    fmt.format.height != vin->format.height)
+				return -EPIPE;
+		}
 	}
 
 	if (fmt.format.code != vin->mbus_code)

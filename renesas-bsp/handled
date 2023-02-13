@@ -748,3 +748,24 @@ ad70433f1eda soc: renesas: rcar-sysc: Support S2RAM
 e07b497cf41e soc: renesas: rcar-sysc: Improve power domains always on implementation
 ea52a14c9748 soc: renesas: rcar-sysc: Add wait 1us before turning off power domain
 118bfc69fe4d soc: renesas: rcar-sysc: Adjust the waiting time to cover the worst case
+# Submitted upstream
+5146266215b3 clk: renesas: r8a779g0: Fix CSI2 clock
+ebf0cf8420a8 arm64: dts: renesas: r8a779g0: Update IO/range for CSI devices
+536c7ac9272f media: rcar-csi2: Add pin-swap option for WhiteHawk
+6473f20171e8 media: rcar-csi2: Add C-PHY setting for R8A779G0
+a817ffeb4eda media: rcar-vin: Add support for R-Car R8A779G0 SoC
+c44b8d43097b arm64: dts: renesas: r8a779g0: Add VIN driver nodes for R8A779G0
+0d5cbd0b87a9 media: rcar-vin: Add R-Car ISP support for R8A779G0
+# Support for C-PHY have been added to the MAX96712 staging driver and submitted upstream
+d7a7a58860cc media: i2c: Add C-PHY setting for MAX96712
+# Submitted upstream
+60d4d536778e clk: renesas: r8a77980: Add VIN clocks
+# Submitted upstream
+e047235afc80 arm64: dts: r8a77995-draak: Move option definition of vin node
+7e2ffb68ad2f arm64: dts: renesas: r8a77995-draak: Set HDMI mode as defaul mode for VIN driver
+# Submitted upstream
+5f4680c68d32 media: rcar-vin: Add NV12 pixel format checking
+# Submitted upstream
+5232944262ff media: rcar-vin: Add interrupt for V4L2_FIELD_ALTERNATE format
+# Submitted upstream
+e10a3eba74e3 media: rcar-vin: Add RAW10 format support
