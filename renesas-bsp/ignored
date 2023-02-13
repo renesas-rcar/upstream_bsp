@@ -170,11 +170,14 @@ DU
 	without workaround not documented in the datasheet.
 
 		f526433a23a7 drm: rcar-du: Add W/A setting for WhiteHawk board
+		cb1263abb7a2 arm64: dts: renesas: r8a779g0: Add use_extal_clk option
 
 	This commit the initial preferred resolution is not a property
 	of the board and should not be reported in DTS.
 
 		e42ca15fced1 drm: bridge: simple-bridge: Add preferred resolution option
+		12843ee05946 arm64: dts: renesas: r8a77995-draak: Set preferred resolution
+		3088c796acfa arm64: dts: renesas: r8a77990-ebisu: Set preferred resolution
 
 	The kernel shouldn't cheat when it can't detect the monitor.
 	Userspace should be able to cope with connectors have an unknown state.
@@ -210,8 +213,16 @@ DU
 	Hack. Reason for the commit is unclear. No feedback from BSP team.
 		4287f91b1fb9 drm: rcar-du: Add hot plug event function at resume
 
-	Hack. Reason for the commit is unclear. No feedback from BSP team.
+	The limits in these patches do not match the AD7123's limit, and it is unclear what is
+	the piece of hardware these limits in the DT files actually come from (is is really
+	AD7123, or perhaps something else in the board?). The simple-bridge driver should pick
+	the max dot clock based on the compatible string. Also, the max-pixelclock property
+	is in a totally wrong DT node (hdmi-in), perhaps due to a failed conflict resolution.
+	No feedback from BSP team.
 		b4427db080d7 drm: bridge: simple-bridge: Add dot clock valid check
+		f579310d2ed3 arm64: dts: renesas: r8a77995-draak: Set max dot clock for vga
+		6558a1c38cbe arm64: dts: renesas: r8a77990-ebisu: Set max dot clock for vga
+		692182da7049 arm64: dts: renesas: salvator-common: Set max dot clock for vga
 
 	Not needed. rcar_du_plane_setup_format_gen3() already clears the relevant bits
 	if RCAR_DU_FEATURE_NO_BLENDING is set.

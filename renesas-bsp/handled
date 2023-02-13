@@ -634,6 +634,7 @@ dde33d1d22bd media: i2c: adv7180: Add std update when getting format
 3be1a176425a drm/bridge: adv7511: Add frequency and vrefresh limitation option
 # Userspace shouldn't move planes between active CRTCs
 3e69390afef7 drm: rcar-du: Fix possible crtcs for plane when using VSPDL
+11a5640d342c drm: rcar-du: Add check for member of rstate in rcar_du_crtc_state structure
 # UDS support is accepted for v6.2 and backported to renesas-bsp-rebase-v6.1
 df288c1c00fe rcar-vin: add support for UDS (Up Down Scaler)
 03e94938a142 media: rcar-vin: Add callback function for cropcap
