@@ -371,6 +371,12 @@ Media
 	Used by rcar-du, which adds a new userspace API, which is blocked
 		dffa26bbdf08 v4l: vsp1: Add support for colorkey alpha blending
 
+MFIS
+	There is no driver so we can't upport the DT nodes only
+		c4ce249bb021 arm64: dts: renesas: Add MFIS Lock and MFIS devices node for gen3 devices
+		3799f1e161c6 arm64: dts: Add MFISLock driver support
+		b0aa94d65efb arm64: dts: renesas: Fix compatible name for MFIS node
+
 MMP local
 	These are not intended for upstream
 

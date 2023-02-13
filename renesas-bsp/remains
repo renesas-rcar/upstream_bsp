@@ -41,8 +41,6 @@ d334909f25f8 arm64: dts: renesas: r8a779g0: Update IPMMU assignment/ID VideoInpu
 7d00a3d901ac arm64: dts: renesas: r8a779g0: Add PCIe node
 08a14c13c737 arm64: dts: renesas: r8a779g0: Add IPMMU for SYS-DMAC
 61b117c4d2c8 arm64: dts: renesas: r8a779g0: Add IPMMU nodes
-b0aa94d65efb arm64: dts: renesas: Fix compatible name for MFIS node
-3799f1e161c6 arm64: dts: Add MFISLock driver support
 8a3097afe858 arm64: dts: renesas: Add ulcb-kf-imx219 overlay
 499956c799e7 arm64: dts: renesas: ulcb-kf: Add ov5647 support
 d80707e0e447 arm64: dts: renesas: ulcb-kf: update for kernel v5.10
@@ -109,6 +107,5 @@ a5758a3a06cd arm64: defconfig: Enable Renesas R-Car PCIe v4.0 host controller dr
 3df554353f04 arm64: dts: renesas: r8a77965-ulcb: Fix source clock for DU
 98ea5401ab70 arm64: dts: renesas: r8a77951-ulcb: Fix source clock for DU2
 cf44aee9dfea arm64: dts: renesas: r8a779{51, 60, 61}-ulcb: Fix souce clock for DU
-c4ce249bb021 arm64: dts: renesas: Add MFIS Lock and MFIS devices node for gen3 devices
 3996d42d25db arm64: dts: renesas: r8a7796{0,1}: Add cpu capacity-dmips-mhz
 72addd5bf2ca arm64: dts: renesas: r8a77951: Add cpu capacity-dmips-mhz
