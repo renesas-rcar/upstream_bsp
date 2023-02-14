@@ -59,7 +59,6 @@ c58d45a70ae9 media: i2c: adv7604: Enable decoder control register
 e5540b8157bc arm64: defconfig: Enable Marvell PHY 88Q2110
 0e5d0c8ae529 arm64: defconfig: Enable cpufreq support
 60db06c0df93 arm64: defconfig: Enable Renesas Ethernet-TSN
-6e6cf158bb82 spi: spi-sh-msiof: Add generic compatible string for R-Car Gen4
 06c478c650ae dt-bindings: PCI: rcar: Add yaml bindings for PCI on R-Car S4
 57ecd61e47c1 dt-bindings: PCI: rcar: Add yaml bindings for PCI Endpoint and R-Car V4H
 a16e01aa6cc9 misc: pci_endpoint_test: Add Device ID for R-Car S4 PCIe controller
@@ -87,7 +86,6 @@ ca161241c4c3 iommu/ipmmu-vmsa: Adding devices allowlist for IPMMU on R-Car Gen3
 4b900652aec4 iommu/ipmmu-vmsa: Adding IPMMU support for R-Car M3 ver-1.x
 6c286c0f0b71 iommu/ipmmu-vmsa: Invalidate TLB when IPMMU translation error occurred
 8089aa35bf04 iommu/ipmmu-vmsa: Clean up unncessary micro-TLB invalidation
-4a04f1197c2b spi: sh-msiof: Set 2 clock delay for R-Car H3 Ver.3.0 only
 469ff9d9ba21 ravb: Fix ptp does not work after suspend and resume
 a5758a3a06cd arm64: defconfig: Enable Renesas R-Car PCIe v4.0 host controller driver
 3df554353f04 arm64: dts: renesas: r8a77965-ulcb: Fix source clock for DU
