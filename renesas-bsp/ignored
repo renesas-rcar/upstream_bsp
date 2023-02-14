@@ -43,6 +43,8 @@ ARM/SoC/DT
 		1fdee68f8554 arm64: dts: renesas: r8a779g0: Enable DSI1
 		6c2fe82cca83 soc: renesas: rcar-sysc: Support to handle PDMODE for R-Car V3H ES2.x
 		5ef05786fe20 soc: renesas: rcar-sysc: Fix up areas to handle PDMODE
+		5213db1803d3 media: i2c: add ov5642 sensor driver
+		499956c799e7 arm64: dts: renesas: ulcb-kf: Add ov5647 support
 
 	Why is this needed? There are no references to sysc[123].
 		419560a14df4 arm64: dts: r8a779a0: Add SYSC PM Domains
@@ -352,6 +354,7 @@ Media
 		70a541215a75 arm64: dts: renesas: r8a77990-ebisu: Add LVDS panel nodes
 		0425608ea3b2 arm64: dts: renesas: r8a77995-draak: Enable display driver relation node
 		ded7fcd78c96 arm64: dts: renesas: r8a77995-draak: Remove endpoint of LVDS1
+		84a6123fe4a3 arm64: dts: renesas: ebisu: Add endpoint for dual-link in Ebisu board
 
 	Not upstreamable! This is a hack to overclock the THC63LVDS1024
 		99247afdb8a6 arm64: dts: renesas: v3x: Set thc63lvd1024 dual link mode
@@ -359,17 +362,34 @@ Media
 	Change is incorrect according to the ADV7511 datasheet. More info needed
 		fe0832b798a5 drm: adv7511: Enable HPD interrupts to support hotplug
 
+	The change is a no-op, the adi,input-justification property is ignored by the driver in RGB 1x mode
+		4f1b9a37b774 arm64: dts: renesas: r8a77970-eagle: Add input-justification options to adv7511
+
 	Testing if encoder drivers are enabled isn't fail-proof, as the modules could for instance be blacklisted.
 		2f9195e22ba2 drm: rcar-du: Skip EPROBE_DEFER in case of disabling LVDS and HDMI
 
 	More information about the exact problem is needed
 		217af79ae9a9 drm: rcar-du: Fix DPLL clock divider judgement
+		0a1de0131e5c media: i2c: max9286: Delay initialize timing in launching driver
 
 	More information about use case is needed
 		56b96a3db3e8 v4l: vsp1: Add Vmute function support
 
 	Used by rcar-du, which adds a new userspace API, which is blocked
 		dffa26bbdf08 v4l: vsp1: Add support for colorkey alpha blending
+
+	GMSL2 and FPD-Link III support is a project that needs to be scheduled
+	on its own. It is now easier to do so as we we have landed the V4L2
+	streams API upstream, but the amount of work remains too large to be
+	handled within the scope of generic BSP upporting.
+		15c84e6a1c2d media: i2c: Add max96712 driver prototype
+		1e15a520d473 media: i2c: add camera lvds support
+		c8b353b49501 media: i2c: dummy-camera: Add dummy camera support
+		dce559decaec arm64: defconfig: enable max96789 on defconfig
+		1687c19f731c arm64: defconfig: VIDEO_MAX96712_STAGING and VIDEO_DUMMY_CAMERA
+		32030bf07d39 arm64: defconfig: Enable MAX9286 and GMSL camera by default
+		46aa3d2a438d arm64: dts: renesas: r8a779g0: Add max96789 node
+		2daefde67813 arm64: dts: renesas: r8a779g0: Add C-PHY option to gsml node
 
 MFIS
 	There is no driver so we can't upport the DT nodes only

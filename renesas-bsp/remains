@@ -26,10 +26,7 @@ b5bccf1fc37c arm64: dts: renesas: r8a779f0: Disable CDM check
 9fd7d9ee7993 arm64: dts: renesas: r8a779g0: Disable CDM check
 c0cbae905c8a arm64: dts: renesas: whitehawk: Add AVB1/AVB2 support
 d387cc45dbbd arm64: dts: renesas: r8a779g0: Update Ethernet-TSN0 device node
-46aa3d2a438d arm64: dts: renesas: r8a779g0: Add max96789 node
-4f1b9a37b774 arm64: dts: renesas: r8a77970-eagle: Add input-justification options to adv7511
 55dee8f01bfc arm64: dts: renesas: r8a779g0-whitehawk: Disable rtsn0
-2daefde67813 arm64: dts: renesas: r8a779g0: Add C-PHY option to gsml node
 86ed3e15856f arm64: dts: renesas: r8a779f0: Fix PCIe clock and support PCIe1 endpoint
 3e3b7c8bfbca dts: renesas: r8a779f0: Add PCIe endpoint node
 19691e74613e arm64: dts: renesas: r8a779f0: Fix the PCIe node
@@ -42,9 +39,7 @@ d334909f25f8 arm64: dts: renesas: r8a779g0: Update IPMMU assignment/ID VideoInpu
 08a14c13c737 arm64: dts: renesas: r8a779g0: Add IPMMU for SYS-DMAC
 61b117c4d2c8 arm64: dts: renesas: r8a779g0: Add IPMMU nodes
 8a3097afe858 arm64: dts: renesas: Add ulcb-kf-imx219 overlay
-499956c799e7 arm64: dts: renesas: ulcb-kf: Add ov5647 support
 d80707e0e447 arm64: dts: renesas: ulcb-kf: update for kernel v5.10
-84a6123fe4a3 arm64: dts: renesas: ebisu: Add endpoint for dual-link in Ebisu board
 667534413db9 arm64: dts: renesas: r8a779a0-falcon: Add missing Ethernet-AVB in Falcon board
 2952a9503e49 arm64: dts: renesas: r8a779{51, 60, 61, 65}: Enable interrupt mode for THS by default
 72058c09a66e drm: rcar-du: Fix DU setting for V4H
@@ -52,14 +47,9 @@ d80707e0e447 arm64: dts: renesas: ulcb-kf: update for kernel v5.10
 441c24bfdab0 vsp1: Add display interrupt wait after setting STRCMD bit
 24940f87e199 drm: rcar-du: Add register access check
 3860e36d582d v4l: vsp1: Add underrun debug messege option
-0a1de0131e5c media: i2c: max9286: Delay initialize timing in launching driver
 17da051cfc67 media: i2c: ov5647: Add test pattern control
 092fce881478 media: i2c: ov5647: Add V4L2_CID_PIXEL_RATE control
 c541b27e85d7 media: ov5647: Fix return codes from ov5647_write/ov5647_read functions.
-1e15a520d473 media: i2c: add camera lvds support
-5213db1803d3 media: i2c: add ov5642 sensor driver
-c8b353b49501 media: i2c: dummy-camera: Add dummy camera support
-15c84e6a1c2d media: i2c: Add max96712 driver prototype
 c58d45a70ae9 media: i2c: adv7604: Enable decoder control register
 9bbdcef12e3f media: i2c: adv748x: Add virtual channel option
 2a1f07d0e722 net: phy: mv88q2110: Initial PHY Marvel 88Q2110 support
@@ -67,11 +57,8 @@ c58d45a70ae9 media: i2c: adv7604: Enable decoder control register
 1e34ab549764 net: ethernet: renesas: Add Renesas Ethernet-TSN driver
 4c76d373092f arm64: defconfig: Enable PCIe Endpoint
 e5540b8157bc arm64: defconfig: Enable Marvell PHY 88Q2110
-dce559decaec arm64: defconfig: enable max96789 on defconfig
 0e5d0c8ae529 arm64: defconfig: Enable cpufreq support
-32030bf07d39 arm64: defconfig: Enable MAX9286 and GMSL camera by default
 60db06c0df93 arm64: defconfig: Enable Renesas Ethernet-TSN
-1687c19f731c arm64: defconfig: VIDEO_MAX96712_STAGING and VIDEO_DUMMY_CAMERA
 6e6cf158bb82 spi: spi-sh-msiof: Add generic compatible string for R-Car Gen4
 06c478c650ae dt-bindings: PCI: rcar: Add yaml bindings for PCI on R-Car S4
 57ecd61e47c1 dt-bindings: PCI: rcar: Add yaml bindings for PCI Endpoint and R-Car V4H
