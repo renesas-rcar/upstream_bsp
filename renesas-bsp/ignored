@@ -391,6 +391,10 @@ Media
 		46aa3d2a438d arm64: dts: renesas: r8a779g0: Add max96789 node
 		2daefde67813 arm64: dts: renesas: r8a779g0: Add C-PHY option to gsml node
 
+	With the latest rcar-csi2 driver any VC can be routed to any VIN, so
+	selecting a particular VC in DT shouldn't be needed.
+		9bbdcef12e3f media: i2c: adv748x: Add virtual channel option
+
 MFIS
 	There is no driver so we can't upport the DT nodes only
 		c4ce249bb021 arm64: dts: renesas: Add MFIS Lock and MFIS devices node for gen3 devices
