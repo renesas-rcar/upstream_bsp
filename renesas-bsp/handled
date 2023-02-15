@@ -775,6 +775,8 @@ cd0513b0a8be thermal: rcar_gen3_thermal: Fix rcar_gen3_thermal_mcelsius_to_temp(
 # lore: 20230211084728.27832-1-wsa+renesas@sang-engineering.com
 c726edac6887 thermal: rcar_gen3_thermal: Use generic name for resources
 6a7cc61fed35 thermal: rcar_gen3_thermal: Read calibration from hardware on R-Car S4
+# lore: 20230214003736.18871-1-laurent.pinchart+renesas@ideasonboard.com
+580a8138882b drm: rcar-du: lvds: Seperate the disable process of LVDS
 # Already upstream: ea9d001550abaf2f4c75cf4fcd936ea19f932b84
 6e6cf158bb82 spi: spi-sh-msiof: Add generic compatible string for R-Car Gen4
 # Sent upstream (but for all H3 according to docs)

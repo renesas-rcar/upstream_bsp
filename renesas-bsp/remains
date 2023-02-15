@@ -43,7 +43,6 @@ d80707e0e447 arm64: dts: renesas: ulcb-kf: update for kernel v5.10
 667534413db9 arm64: dts: renesas: r8a779a0-falcon: Add missing Ethernet-AVB in Falcon board
 2952a9503e49 arm64: dts: renesas: r8a779{51, 60, 61, 65}: Enable interrupt mode for THS by default
 72058c09a66e drm: rcar-du: Fix DU setting for V4H
-580a8138882b drm: rcar-du: lvds: Seperate the disable process of LVDS
 441c24bfdab0 vsp1: Add display interrupt wait after setting STRCMD bit
 24940f87e199 drm: rcar-du: Add register access check
 3860e36d582d v4l: vsp1: Add underrun debug messege option
