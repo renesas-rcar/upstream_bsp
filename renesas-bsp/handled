@@ -781,3 +781,5 @@ c58d45a70ae9 media: i2c: adv7604: Enable decoder control register
 6e6cf158bb82 spi: spi-sh-msiof: Add generic compatible string for R-Car Gen4
 # Sent upstream (but for all H3 according to docs)
 4a04f1197c2b spi: sh-msiof: Set 2 clock delay for R-Car H3 Ver.3.0 only
+# lore: cover.1676560357.git.geert+renesas@glider.be
+43ca51590fa0 clk: renesas: r8a779{70, 80}: Add CPU operation points.

@@ -73,6 +73,9 @@ AVS
 	OPPs table-{1-7} are related to AVS
 		87b9b3057086 arm64: dts: renesas: r8a779{51, 60, 61}: Add OPPs table-{1-7} for cpu devices
 
+	There is no point in providing an OPP table with a single operating point for an SoC that does not support voltage nor frequency scaling
+		81a0161ddc6a arm64: dts: renesas: r8a77970 and r8a77980: Add CPU operation points
+
 CAN-FD
 	The current "-1" matches the documentation.  When checking with a
 	scope, the actual bitrate is spot-on without this patch, but
