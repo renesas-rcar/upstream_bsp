@@ -516,6 +516,12 @@ QoS
 		21ffa2421578 arm64: dts: renesas: r8a779a0: Add QoS device
 		31633efaaf13 arm64: dts: renesas: Add QoS device node for Gen3 devices
 
+PCIe for R-Car Gen3
+
+	Cannot be tested.
+
+		56f944e99309 PCI: rcar: Add regulators support
+
 PCIe for R-Car Gen4
 	registers sharing by "shared" is not acceptable for upstream.
 
