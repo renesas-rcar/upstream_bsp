@@ -158,6 +158,7 @@ Control Domain
 Defconfig
 	Modular as per upstream policy, CONFIG_CPU_FREQ_STAT_DETAILS was removed in v4.11
 		7ed8cce11f67 arm64: defconfig: Enable cpufreq configs for rcar
+		0e5d0c8ae529 arm64: defconfig: Enable cpufreq support
 
 DMA-Engine
 	Has been rejected upstream

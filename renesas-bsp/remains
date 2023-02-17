@@ -54,7 +54,6 @@ c541b27e85d7 media: ov5647: Fix return codes from ov5647_write/ov5647_read funct
 1e34ab549764 net: ethernet: renesas: Add Renesas Ethernet-TSN driver
 4c76d373092f arm64: defconfig: Enable PCIe Endpoint
 e5540b8157bc arm64: defconfig: Enable Marvell PHY 88Q2110
-0e5d0c8ae529 arm64: defconfig: Enable cpufreq support
 60db06c0df93 arm64: defconfig: Enable Renesas Ethernet-TSN
 06c478c650ae dt-bindings: PCI: rcar: Add yaml bindings for PCI on R-Car S4
 57ecd61e47c1 dt-bindings: PCI: rcar: Add yaml bindings for PCI Endpoint and R-Car V4H
