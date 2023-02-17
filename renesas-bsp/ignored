@@ -57,6 +57,12 @@ ARM/SoC/DT
 	I believe this can be ignored.
 		9821d51a2ce5 arm64: dts: renesas: r8a779a0: Fix the clk definition on DSI node
 
+	As capacity-dmips-mhz are estimates (hints for the scheduler), and
+	changing compiler may change the number of Dhrystones by up to 20%,
+	it does not make sense to make minor updates to these values.
+		3996d42d25db arm64: dts: renesas: r8a7796{0,1}: Add cpu capacity-dmips-mhz
+		72addd5bf2ca arm64: dts: renesas: r8a77951: Add cpu capacity-dmips-mhz
+
 AVS
 	AVS is not intended for upstream
 
