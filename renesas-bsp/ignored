@@ -643,6 +643,16 @@ Thermal
 	The thermal core always pulls the driver, (optinal) interrupts are used to quickly trigger trip-points
 		2952a9503e49 arm64: dts: renesas: r8a779{51, 60, 61, 65}: Enable interrupt mode for THS by default
 
+TSN
+	EthernetTSN is not connected on V4H, we cannot test the rebase
+		60db06c0df93 arm64: defconfig: Enable Renesas Ethernet-TSN
+		1e34ab549764 net: ethernet: renesas: Add Renesas Ethernet-TSN driver
+		78e51462682c dt-bindings: net: renesas,ethertsn: Add binding document for new Ethernet-TSN driver
+		00244fb8f94a arm64: dts: renesas: r8a779g0: Add Ethernet-TSN support
+		55dee8f01bfc arm64: dts: renesas: r8a779g0-whitehawk: Disable rtsn0
+		d387cc45dbbd arm64: dts: renesas: r8a779g0: Update Ethernet-TSN0 device node
+		51cb5f1f83b6 net: ethernet: renesas: rcar_gen4_ptp: Revise R-Car V4H gPTP's clock frequency
+
 UIO/OSAL
 	UIO/OSAL is not intended for upstream
 
