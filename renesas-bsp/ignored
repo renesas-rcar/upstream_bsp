@@ -843,6 +843,7 @@ UIO/OSAL
 		efaf2324cebc arm64: dts: renesas: r8a779g0: Update property of ICCOM UIO devices
 		c139f18ad396 arm64: dts: renesas: r8a779g0: Add IMP imp_spmc1 UIO device
 		a465c0a94cf7 arm64: dts: renesas: r8a779g0: Remove power-domains node for UIO devices
+		d334909f25f8 arm64: dts: renesas: r8a779g0: Update IPMMU assignment/ID VideoInput/Output
 
 VIN
 	This patch implements incorrect behavior, if a CSI-2 node is not connected to a video source it should be disabled i DT
