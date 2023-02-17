@@ -29,9 +29,11 @@ RPC-IF
 	  There is a task to upstream it, but it needs time for research and a more complete solution
 
 Sound
-	- V4H White-Hawk sound dts file-name was changed.
-		before: r8a779g0-whitehawk-sound.dts
-		after:  r8a779g0-white-hawk-ard-audio-da7212.dts
+	- V4H White-Hawk sound is supported by DT overlay.
+	  upstream doesn't support this, but you can make the same things as before by this.
+
+		dtb-$(CONFIG_ARCH_R8A779G0) += r8a779g0-white-hawk-with-sound-da7212.dtb
+		r8a779g0-white-hawk-with-sound-da7212-dtbs = r8a779g0-white-hawk.dtb r8a779g0-white-hawk-ard-audio-da7212.dtbo
 
 	- V4H White-Hawk on BSP needed to setup PWM from user-space,
 	  but it is no longer needed.
