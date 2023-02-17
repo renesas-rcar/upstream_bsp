@@ -516,6 +516,20 @@ QoS
 		21ffa2421578 arm64: dts: renesas: r8a779a0: Add QoS device
 		31633efaaf13 arm64: dts: renesas: Add QoS device node for Gen3 devices
 
+PCIe for R-Car Gen4
+	registers sharing by "shared" is not acceptable for upstream.
+
+		19691e74613e arm64: dts: renesas: r8a779f0: Fix the PCIe node
+		1b61c02117c4 pci: dwc: pcie-renesas-ep: Mode change for different channels
+		4b2d830c3b44 pci: dwc: renesas: Mode change for different channels
+		21d0e3cb90fd pci: dwc: renesas: Use platform_get_resource_byname() and devm_ioremap_resource() instead of devm_platform_ioremap_resource_byname()
+
+	Not available channel 1 is not acceptable for upstream.
+	Adding disable node into the board is not acceptable for upstream.
+
+		86ed3e15856f arm64: dts: renesas: r8a779f0: Fix PCIe clock and support PCIe1 endpoint
+		3e3b7c8bfbca dts: renesas: r8a779f0: Add PCIe endpoint node
+
 RPC-IF
 	RPC-IF works on White-Hawk with current firmware.  If it must be
 	accessed only by the Cortex-R52, it should be handled like on e.g.

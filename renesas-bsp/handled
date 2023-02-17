@@ -184,6 +184,7 @@ aebc7cfb47e1 arm64: dts: renesas: r8a779f0: Add DMA support for I2C
 171a5e03f42d arm64: dts: renesas: r8a779f0: Add GPIO4 device node
 ede97b61cdd1 arm64: dts: renesas: r8a779f0: Add IPMMU main and caches nodes for Renesas R8A779F0 (R-Car S4)
 ab202b248468 arm64: dts: renesas: r8a779f0: Add MSIOF nodes
+b0af5d2217fc arm64: dts: renesas: r8a779f0: Add PCIe device nodes for Renesas R8A779F0 (R-Car S4)
 263922789924 arm64: dts: renesas: r8a779f0: Add UFS nodes
 7fe8cbe925d4 arm64: dts: renesas: r8a779f0: Add ipmmu_rt1 node of IPMMU module
 da6d255fb8e5 arm64: dts: renesas: r8a779f0: Add secondary CA55 CPU cores
@@ -322,6 +323,7 @@ b7f3bd645de3 dt-bindings: mfd: bd9571mwv: Document BD9574MWF
 f2453ad38abd dt-bindings: mmc: renesas,sdhi: Add r8a779f0 support
 1a4fb2f59590 dt-bindings: net: renesas,etheravb: Add r8a779a0 support
 eb9d8f7f183f dt-bindings: net: renesas,etheravb: Add support for r8a779g0 SoC
+06c478c650ae dt-bindings: PCI: rcar: Add yaml bindings for PCI on R-Car S4
 9a31169c6e60 dt-bindings: pinctrl: renesas,pfc: Document r8a779a0 PFC support
 dfb55df8b6b7 dt-bindings: pinctrl: renesas,pfc: Document r8a779f0 PFC support
 feae34c533c6 dt-bindings: power: Add r8a779f0 SYSC power domain definitions
@@ -425,6 +427,12 @@ bdafe4d861f6 net: ethernet: ravb: Support AVB1/AVB2
 3dbea0aef38a net: ethernet: renesas: rcar_gen4_ptp: Fix build error of R-Car Gen4 PTP
 5010c78c0c24 net: ethernet: renesas: rswitch: Add Renesas Ethernet Switch
 8776884f313c net: phy: marvell10g: Add mode configuration and MAC type setting for 88E2110
+de5c42ac25fe pci: renesas: Add Renesas R-Car PCIev4 endpoint controller driver
+85725add311b pci: dwc: pcie-renesas-ep: Add align to pci_epc_features
+79a1f3c60434 pci: dwc: pcie-renesas-ep: Add clkreq control with GPIO
+b5c9347995fe pci: dwc: renesas: Add clkreq control with GPIO
+46f9972b4c4d pci: dwc: renesas: Add R-Car S4 PCIe support
+a119b30ee6f6 PCI: dwc: renesas: Add Renesas R-Car PCIe v4.0 host controller driver
 faeb459cc8d3 pinctrl: renesas: Add I/O voltage level flag
 12dba3eb3965 pinctrl: renesas: Add PORT_GP_CFG_{2,31} macros
 dc02de114dbb pinctrl: renesas: Factor out common R-Car Gen3 bias handling
@@ -562,6 +570,8 @@ ad58f44acd44 dt-bindings: timer: renesas, tmu: Document r8a779g0 TMU support
 dfd1133c7ab7 dt-bindings: timer: renesas, cmt: Document r8a779g0 CMT support
 996adb9c6368 memory: renesas-rpc-if: Clear HS bit during hardware initialization
 05a365ce230e memory: renesas-rpc-if: Add R-Car Gen4 support
+a16e01aa6cc9 misc: pci_endpoint_test: Add Device ID for R-Car S4 PCIe controller
+9cd016cfabf2 misc: pci_endpoint_test: Add Device ID for R-Car V4H PCIe controller
 ce3936b34bc3 dt-bindings: mmc: renesas,sdhi: Add r8a779g0 support
 755f55eac38a mmc: renesas_sdhi: Add internal DMA transfer end
 ce747db93e14 mmc: tmio: Add internal DMA transfer end

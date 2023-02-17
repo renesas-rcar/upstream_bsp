@@ -1,14 +1,9 @@
-21d0e3cb90fd pci: dwc: renesas: Use platform_get_resource_byname() and devm_ioremap_resource() instead of devm_platform_ioremap_resource_byname()
 3b91b9e053c5 arm64: dts: renesas: whitehawk: Update clkreq control for PCIE1
 d7be742075b0 arm64: dts: renesas: r8a779g0: Disable CDM check in PCIe ch1
 5232175003e2 arch: arm64: dts: renesas: r8a779g0: Add shared address ranges and shared clock for pcie node
 9466ee8f1e32 arch: arm64: dts: renesas: r8a779g0-whitehawk: Restore pinctrl for PCIe
 ec206e203c31 arch: arm64: dts: renesas: r8a779g0-whitehawk: Change clkreq control to GPIO
-1b61c02117c4 pci: dwc: pcie-renesas-ep: Mode change for different channels
-4b2d830c3b44 pci: dwc: renesas: Mode change for different channels
 fd2dd33a26b3 arch: arm64: dts: renesas: r8a779g0-whitehawk: Change Bifurcation mode of PCIE0 when using PCIE1
-79a1f3c60434 pci: dwc: pcie-renesas-ep: Add clkreq control with GPIO
-b5c9347995fe pci: dwc: renesas: Add clkreq control with GPIO
 299233f4d6d0 arm64: dts: renesas: r8a779g0: Define PCI gen4 for link capability
 c72ddef65de4 pci: dwc: renesas: Add check speed function for PCIe 4.0
 d2c2d568e963 pci: dwc: renesas: Fix retrain link function for PCIe 4.0
@@ -27,10 +22,6 @@ b5bccf1fc37c arm64: dts: renesas: r8a779f0: Disable CDM check
 c0cbae905c8a arm64: dts: renesas: whitehawk: Add AVB1/AVB2 support
 d387cc45dbbd arm64: dts: renesas: r8a779g0: Update Ethernet-TSN0 device node
 55dee8f01bfc arm64: dts: renesas: r8a779g0-whitehawk: Disable rtsn0
-86ed3e15856f arm64: dts: renesas: r8a779f0: Fix PCIe clock and support PCIe1 endpoint
-3e3b7c8bfbca dts: renesas: r8a779f0: Add PCIe endpoint node
-19691e74613e arm64: dts: renesas: r8a779f0: Fix the PCIe node
-b0af5d2217fc arm64: dts: renesas: r8a779f0: Add PCIe device nodes for Renesas R8A779F0 (R-Car S4)
 a1ee889b1718 arm64: dts: renesas:  Add PCIe1 endpoint node
 d334909f25f8 arm64: dts: renesas: r8a779g0: Update IPMMU assignment/ID VideoInput/Output
 00244fb8f94a arm64: dts: renesas: r8a779g0: Add Ethernet-TSN support
@@ -56,17 +47,10 @@ c541b27e85d7 media: ov5647: Fix return codes from ov5647_write/ov5647_read funct
 e5540b8157bc arm64: defconfig: Enable Marvell PHY 88Q2110
 0e5d0c8ae529 arm64: defconfig: Enable cpufreq support
 60db06c0df93 arm64: defconfig: Enable Renesas Ethernet-TSN
-06c478c650ae dt-bindings: PCI: rcar: Add yaml bindings for PCI on R-Car S4
 57ecd61e47c1 dt-bindings: PCI: rcar: Add yaml bindings for PCI Endpoint and R-Car V4H
-a16e01aa6cc9 misc: pci_endpoint_test: Add Device ID for R-Car S4 PCIe controller
-9cd016cfabf2 misc: pci_endpoint_test: Add Device ID for R-Car V4H PCIe controller
 417cd8ce5abb PCI: Replace PCIe registers not defined in HW UM
-85725add311b pci: dwc: pcie-renesas-ep: Add align to pci_epc_features
-46f9972b4c4d pci: dwc: renesas: Add R-Car S4 PCIe support
 c5189c803d5b pci: dwc: pcie-renesas-ep: Support PCIe endpoint for R-Car V4H
 f0ac8f59aecd pci: dwc: renesas: Add R-Car V4H PCIe support
-de5c42ac25fe pci: renesas: Add Renesas R-Car PCIev4 endpoint controller driver
-a119b30ee6f6 PCI: dwc: renesas: Add Renesas R-Car PCIe v4.0 host controller driver
 56f944e99309 PCI: rcar: Add regulators support
 8f12704115d0 dt-bindings: iommu: renesas,ipmmu-vmsa: add r8a779g0 support
 fcc3027a09a8 iommu/ipmmu-vmsa: Add R-Car V3H/V3M/D3 to IPMMU denylist
