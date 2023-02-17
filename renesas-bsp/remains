@@ -16,7 +16,6 @@ d387cc45dbbd arm64: dts: renesas: r8a779g0: Update Ethernet-TSN0 device node
 8a3097afe858 arm64: dts: renesas: Add ulcb-kf-imx219 overlay
 d80707e0e447 arm64: dts: renesas: ulcb-kf: update for kernel v5.10
 667534413db9 arm64: dts: renesas: r8a779a0-falcon: Add missing Ethernet-AVB in Falcon board
-2952a9503e49 arm64: dts: renesas: r8a779{51, 60, 61, 65}: Enable interrupt mode for THS by default
 72058c09a66e drm: rcar-du: Fix DU setting for V4H
 441c24bfdab0 vsp1: Add display interrupt wait after setting STRCMD bit
 24940f87e199 drm: rcar-du: Add register access check

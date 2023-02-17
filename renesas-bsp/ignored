@@ -640,6 +640,8 @@ Thermal
 	This is a workaround. Inami-san agreed to change the priority to N.
 		210d647a385f thermal: rcar_gen3_thermal: Enable selection between polling/interrupt mode
 		4b6f17f1dd49 thermal: rcar_gen3_thermal: PIO-INT can be selected for each TSC separately
+	The thermal core always pulls the driver, (optinal) interrupts are used to quickly trigger trip-points
+		2952a9503e49 arm64: dts: renesas: r8a779{51, 60, 61, 65}: Enable interrupt mode for THS by default
 
 UIO/OSAL
 	UIO/OSAL is not intended for upstream
