@@ -431,7 +431,6 @@ a9d59372cc22 mmc: tmio: do not print real IOMEM pointer
 76514db793c6 mmc: tmio: restore bus width when resetting
 0b48801c59e7 mmc: tmio: set max_busy_timeout
 a64e7651be15 mmc: tmio: support custom irq masks
-bdafe4d861f6 net: ethernet: ravb: Support AVB1/AVB2
 205f4a164e06 net: ethernet: renesas: rcar_gen4_ptp: Add R-Car Gen4 gPTP driver
 3dbea0aef38a net: ethernet: renesas: rcar_gen4_ptp: Fix build error of R-Car Gen4 PTP
 5010c78c0c24 net: ethernet: renesas: rswitch: Add Renesas Ethernet Switch
