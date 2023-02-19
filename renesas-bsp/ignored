@@ -523,6 +523,41 @@ QoS
 		21ffa2421578 arm64: dts: renesas: r8a779a0: Add QoS device
 		31633efaaf13 arm64: dts: renesas: Add QoS device node for Gen3 devices
 
+PCIe for R-Car Gen3
+
+	Cannot be tested.
+
+		56f944e99309 PCI: rcar: Add regulators support
+
+PCIe for R-Car Gen4
+	registers sharing by "shared" is not acceptable for upstream.
+
+		5232175003e2 arch: arm64: dts: renesas: r8a779g0: Add shared address ranges and shared clock for pcie node
+		fd2dd33a26b3 arch: arm64: dts: renesas: r8a779g0-whitehawk: Change Bifurcation mode of PCIE0 when using PCIE1
+		19691e74613e arm64: dts: renesas: r8a779f0: Fix the PCIe node
+		1b61c02117c4 pci: dwc: pcie-renesas-ep: Mode change for different channels
+		4b2d830c3b44 pci: dwc: renesas: Mode change for different channels
+		21d0e3cb90fd pci: dwc: renesas: Use platform_get_resource_byname() and devm_ioremap_resource() instead of devm_platform_ioremap_resource_byname()
+
+	Not available channel 1 is not acceptable for upstream.
+	Adding disable node into the board is not acceptable for upstream.
+
+		a1ee889b1718 arm64: dts: renesas:  Add PCIe1 endpoint node
+		86ed3e15856f arm64: dts: renesas: r8a779f0: Fix PCIe clock and support PCIe1 endpoint
+		3e3b7c8bfbca dts: renesas: r8a779f0: Add PCIe endpoint node
+
+	This seems local implementation.
+
+		4c76d373092f arm64: defconfig: Enable PCIe Endpoint
+		a5758a3a06cd arm64: defconfig: Enable Renesas R-Car PCIe v4.0 host controller driver
+		c5189c803d5b pci: dwc: pcie-renesas-ep: Support PCIe endpoint for R-Car V4H
+		f0ac8f59aecd pci: dwc: renesas: Add R-Car V4H PCIe support
+		baea6069075f pci: dwc: renesas: Add retrain link function for PCIe 4.0
+		d2c2d568e963 pci: dwc: renesas: Fix retrain link function for PCIe 4.0
+		9ab08d1fc0a1 pci: dwc: renesas: Implement source code based on board TP for V4H Endpoint
+		f481c68a26f4 pci: dwc: renesas: Implement source code based on board TP for V4H RootComplex
+		417cd8ce5abb PCI: Replace PCIe registers not defined in HW UM
+
 RPC-IF
 	RPC-IF works on White-Hawk with current firmware.  If it must be
 	accessed only by the Cortex-R52, it should be handled like on e.g.

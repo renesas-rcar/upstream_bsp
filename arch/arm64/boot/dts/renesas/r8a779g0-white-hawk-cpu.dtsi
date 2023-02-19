@@ -195,6 +195,20 @@
 	clock-frequency = <32768>;
 };
 
+&gpio4 {
+	pci-clkreq0-hog {
+		gpio-hog;
+		gpios = <21 GPIO_ACTIVE_LOW>;
+		output-high;
+	};
+
+	pci-clkreq1-hog {
+		gpio-hog;
+		gpios = <22 GPIO_ACTIVE_LOW>;
+		output-high;
+	};
+};
+
 &hscif0 {
 	status = "okay";
 };
@@ -284,6 +298,11 @@
 	no-sdio;
 	non-removable;
 	full-pwr-cycle-in-suspend;
+	status = "okay";
+};
+
+&pciec0 {
+	reset-gpio = <&io_expander_a 0 GPIO_ACTIVE_LOW>;
 	status = "okay";
 };
 

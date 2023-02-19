@@ -39,6 +39,7 @@ e3e3670946b5 ASoC: rsnd: tidyup rsnd_parse_connect_common()
 c141f43ad077 ASoC: sh: rcar: ssi: remove redundant assignment
 091cf0a87ec7 ASoC: soc-component: Add snd_soc_pcm_component_ack
 fe9312af0aea PCI: Avoid PCI device removing/rescanning through sysfs triggers a deadlock
+c72ddef65de4 pci: dwc: renesas: Add check speed function for PCIe 4.0
 01dca5edf230 PCI: pcie-rcar: Add the initialization of PCIe link in resume_noirq
 4a1d0851e182 PCI: pcie-rcar: Support runtime PM, link state L1 handling
 97120fd32aa9 Revert "[WIP] arm64: dts: renesas: r8a779g0: Disable cluster1 CPU cores"
@@ -184,6 +185,7 @@ aebc7cfb47e1 arm64: dts: renesas: r8a779f0: Add DMA support for I2C
 171a5e03f42d arm64: dts: renesas: r8a779f0: Add GPIO4 device node
 ede97b61cdd1 arm64: dts: renesas: r8a779f0: Add IPMMU main and caches nodes for Renesas R8A779F0 (R-Car S4)
 ab202b248468 arm64: dts: renesas: r8a779f0: Add MSIOF nodes
+b0af5d2217fc arm64: dts: renesas: r8a779f0: Add PCIe device nodes for Renesas R8A779F0 (R-Car S4)
 263922789924 arm64: dts: renesas: r8a779f0: Add UFS nodes
 7fe8cbe925d4 arm64: dts: renesas: r8a779f0: Add ipmmu_rt1 node of IPMMU module
 da6d255fb8e5 arm64: dts: renesas: r8a779f0: Add secondary CA55 CPU cores
@@ -202,8 +204,11 @@ ad20a065e53f arm64: dts: renesas: r8a779f0: spider-cpu: Fix memory region
 66e3cbf61c47 arm64: dts: renesas: r8a779f0: spider: Disable GPIO4 and TAUD0-PWM
 606a7845dff1 arm64: dts: renesas: r8a779g0: Add IMP UIO devices
 6011271294ef arm64: dts: renesas: r8a779g0: Add ISP UIO devices
+7d00a3d901ac arm64: dts: renesas: r8a779g0: Add PCIe node
 71df56caa025 arm64: dts: renesas: r8a779g0: Add RWDT node
 4015e5fbe9aa arm64: dts: renesas: r8a779g0: Add VISIONIP UIO devices
+299233f4d6d0 arm64: dts: renesas: r8a779g0: Define PCI gen4 for link capability
+d7be742075b0 arm64: dts: renesas: r8a779g0: Disable CDM check in PCIe ch1
 1eb0d4a0a9d7 arm64: dts: renesas: r8a779g0: Fix AVB registers range
 b57022883f08 arm64: dts: renesas: r8a779g0: Fix I2C2 reg and interrupts properties
 84c221dda6f5 arm64: dts: renesas: r8a779g0: Update IO/range AESACC UIO devices
@@ -213,6 +218,9 @@ d0de744e890b arm64: dts: renesas: r8a779g0: Update R-Car Gen4 compatible values
 55f4e10004fd arm64: dts: renesas: r8a779g0: whitehawk-cpu: Fix memory region
 b140daa43785 arm64: dts: renesas: r8a779g0: whitehawk-cpu: Use HSCIF0 for the default debug serial.
 104c15e6ff51 arm64: dts: renesas: r8a779g0: whitehawk: add R-Car Sound
+230ccbc7de13 arm64: dts: renesas: whitehawk: Add PCIe support
+9466ee8f1e32 arch: arm64: dts: renesas: r8a779g0-whitehawk: Restore pinctrl for PCIe
+ec206e203c31 arch: arm64: dts: renesas: r8a779g0-whitehawk: Change clkreq control to GPIO
 ec9897cc47e6 arm64: dts: renesas: r8a779m{1, 3, 5}: Support 2GHZ for R8A779M{1, 3, 5}
 57175070bf76 arm64: dts: renesas: r8a779x: add mlp nodes
 78ab046f9b98 arm64: dts: renesas: r8a779{51, 60, 65, 90}: Detach IPMMU-DS1 from SDHI
@@ -225,6 +233,7 @@ f36cf66c0aab arm64: dts: renesas: salvator-common: Add cpu-supply property to a5
 2b6d44cc2ba6 arm64: dts: renesas: ulcb: Enable IPMMU of SDHI2
 04fd595f6ce0 arm64: dts: renesas: v3hsk: Add GEther PHY GPIO reset pin support
 835e5e83608d arm64: dts: renesas: whitehawk: Add RWDT support
+3b91b9e053c5 arm64: dts: renesas: whitehawk: Update clkreq control for PCIE1
 24d8db322117 arm64: dts: salvator-common: Enable IPMMU of SDHI2
 44c2e464e680 can: rcar_canfd: Add support for r8a779a0 SoC
 455093f0ebb9 clk: Add support parent clock in set_phase
@@ -322,6 +331,8 @@ b7f3bd645de3 dt-bindings: mfd: bd9571mwv: Document BD9574MWF
 f2453ad38abd dt-bindings: mmc: renesas,sdhi: Add r8a779f0 support
 1a4fb2f59590 dt-bindings: net: renesas,etheravb: Add r8a779a0 support
 eb9d8f7f183f dt-bindings: net: renesas,etheravb: Add support for r8a779g0 SoC
+06c478c650ae dt-bindings: PCI: rcar: Add yaml bindings for PCI on R-Car S4
+57ecd61e47c1 dt-bindings: PCI: rcar: Add yaml bindings for PCI Endpoint and R-Car V4H
 9a31169c6e60 dt-bindings: pinctrl: renesas,pfc: Document r8a779a0 PFC support
 dfb55df8b6b7 dt-bindings: pinctrl: renesas,pfc: Document r8a779f0 PFC support
 feae34c533c6 dt-bindings: power: Add r8a779f0 SYSC power domain definitions
@@ -425,6 +436,12 @@ bdafe4d861f6 net: ethernet: ravb: Support AVB1/AVB2
 3dbea0aef38a net: ethernet: renesas: rcar_gen4_ptp: Fix build error of R-Car Gen4 PTP
 5010c78c0c24 net: ethernet: renesas: rswitch: Add Renesas Ethernet Switch
 8776884f313c net: phy: marvell10g: Add mode configuration and MAC type setting for 88E2110
+de5c42ac25fe pci: renesas: Add Renesas R-Car PCIev4 endpoint controller driver
+85725add311b pci: dwc: pcie-renesas-ep: Add align to pci_epc_features
+79a1f3c60434 pci: dwc: pcie-renesas-ep: Add clkreq control with GPIO
+b5c9347995fe pci: dwc: renesas: Add clkreq control with GPIO
+46f9972b4c4d pci: dwc: renesas: Add R-Car S4 PCIe support
+a119b30ee6f6 PCI: dwc: renesas: Add Renesas R-Car PCIe v4.0 host controller driver
 faeb459cc8d3 pinctrl: renesas: Add I/O voltage level flag
 12dba3eb3965 pinctrl: renesas: Add PORT_GP_CFG_{2,31} macros
 dc02de114dbb pinctrl: renesas: Factor out common R-Car Gen3 bias handling
@@ -562,6 +579,8 @@ ad58f44acd44 dt-bindings: timer: renesas, tmu: Document r8a779g0 TMU support
 dfd1133c7ab7 dt-bindings: timer: renesas, cmt: Document r8a779g0 CMT support
 996adb9c6368 memory: renesas-rpc-if: Clear HS bit during hardware initialization
 05a365ce230e memory: renesas-rpc-if: Add R-Car Gen4 support
+a16e01aa6cc9 misc: pci_endpoint_test: Add Device ID for R-Car S4 PCIe controller
+9cd016cfabf2 misc: pci_endpoint_test: Add Device ID for R-Car V4H PCIe controller
 ce3936b34bc3 dt-bindings: mmc: renesas,sdhi: Add r8a779g0 support
 755f55eac38a mmc: renesas_sdhi: Add internal DMA transfer end
 ce747db93e14 mmc: tmio: Add internal DMA transfer end
