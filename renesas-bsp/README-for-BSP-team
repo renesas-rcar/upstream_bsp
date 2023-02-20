@@ -10,7 +10,7 @@
 	Upstream team rebased BSP v5.2.0-rcX (Linux Kernel v5.10.147 base)
 	to Linux Kernel v6.1.X. Rebased BSP structure is like below.
 
-		(C) xxxxx BSP rebase work to for v6.1.10
+		(C) xxxxx BSP rebase work on v6.1.X
 		 ^  xxxxx ...
 		 |  xxxxx local patches which is/will posted to upstream ML
 		(B) xxxxx local patches from previous BSP
@@ -18,7 +18,8 @@
 		 v
 		(A) xxxxx v6.1.X
 
-	(A) is base kernel (= LTS v6.1.X), (B) are BSP additional patches,
+	(A) is base kernel (= LTS v6.1.X)
+	(B) are BSP additional patches (backport, etc)
 	(C) is information from Upstream team.
 
 	(C) is for BSP team, but not for customer.
@@ -31,7 +32,7 @@
 
 * Original BSP commits
 
-	Rebased BSP has list of target BSP commits since v5.10.147 kernel.
+	It has list of target BSP commits since v5.10.147 kernel.
 	BSP team need to handle the commits by themself which was added on top
 	of it *after* Upstream's rebase work if exist.
 	Please see below
