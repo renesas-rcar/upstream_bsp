@@ -328,6 +328,7 @@ IMP
 		5beefb300ae6 arm64: dts: renesas: r8a779x: add IMP nodes
 		dc644df9f22b clk: renesas: r8a779{5, 6, 70, 80}: add IMP clock
 		5cb18d629db5 soc: renesas: rcar-sysc: Fix A3IR power on sequence for R8A77980
+		3e7eb9450a5d iommu/ipmmu-vmsa: Adding ISP/IMP devices to IPMMU devices allowlist
 
 IPMMU
 	used only for BSP backward compatibility
@@ -356,6 +357,16 @@ IPMMU
 
 	Not documented / no driver
 		6b6933f7f35c arm64: dts: renesas: Support IPMMU(MMU mode) for IPMMU-VP0/1 and IPMMU VC0/1
+
+	Why is this needed?
+		fcc3027a09a8 iommu/ipmmu-vmsa: Add R-Car V3H/V3M/D3 to IPMMU denylist
+
+	Not needed. We can use the generic fallback.
+		2ddd7cb2c54e iommu/ipmmu-vmsa: Add Renesas R8A779F0 (R-Car S4) support
+		4ccc89c603cd iommu/ipmmu-vmsa: Update support status for R-Car Gen4
+
+	Why it it suddenly OK to use the IPMMU on R-Car M3-W ES1.x?
+		4b900652aec4 iommu/ipmmu-vmsa: Adding IPMMU support for R-Car M3 ver-1.x
 
 Media
 	Panels should be supported via DT overlays

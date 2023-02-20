@@ -13,17 +13,12 @@ d80707e0e447 arm64: dts: renesas: ulcb-kf: update for kernel v5.10
 092fce881478 media: i2c: ov5647: Add V4L2_CID_PIXEL_RATE control
 c541b27e85d7 media: ov5647: Fix return codes from ov5647_write/ov5647_read functions.
 8f12704115d0 dt-bindings: iommu: renesas,ipmmu-vmsa: add r8a779g0 support
-fcc3027a09a8 iommu/ipmmu-vmsa: Add R-Car V3H/V3M/D3 to IPMMU denylist
 eac56fb51d70 iommu/ipmmu-vmsa: Adding DMAC1/2 devices to IPMMU devices allowlist
-3e7eb9450a5d iommu/ipmmu-vmsa: Adding ISP/IMP devices to IPMMU devices allowlist
-2ddd7cb2c54e iommu/ipmmu-vmsa: Add Renesas R8A779F0 (R-Car S4) support
 81363d213337 iommu/ipmmu-vmsa: Update IMSCTLR register offset address for R-Car Gen4
-4ccc89c603cd iommu/ipmmu-vmsa: Update support status for R-Car Gen4
 20c3cede7fcb iommu/ipmmu-vmsa: Set IPMMU bit IMSCTLR_USE_SECGRP to 0
 4ce9d6f94661 iommu/ipmmu-vmsa: Handle reserved bits correctly
 967a199ed386 iommu/ipmmu-vmsa: Allow PCI Host controller to be a proxy for all connected PCI devices
 ca161241c4c3 iommu/ipmmu-vmsa: Adding devices allowlist for IPMMU on R-Car Gen3
-4b900652aec4 iommu/ipmmu-vmsa: Adding IPMMU support for R-Car M3 ver-1.x
 6c286c0f0b71 iommu/ipmmu-vmsa: Invalidate TLB when IPMMU translation error occurred
 8089aa35bf04 iommu/ipmmu-vmsa: Clean up unncessary micro-TLB invalidation
 3df554353f04 arm64: dts: renesas: r8a77965-ulcb: Fix source clock for DU
