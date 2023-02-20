@@ -805,3 +805,5 @@ c58d45a70ae9 media: i2c: adv7604: Enable decoder control register
 241d44845b90 ravb: Clear RIS2_QFF1 flag in ravb_error_interrupt()
 # torvalds: c2b6cdee1d13ffbb24baca3c9b8a572d6b541e4e # net: ravb: Fix lack of register setting after system resumed for Gen3
 469ff9d9ba21 ravb: Fix ptp does not work after suspend and resume
+# torvalds: c13dbc1e2485 ("iommu: Always register bus notifiers")
+5b402deae7c6 iommu/ipmmu-vmsa: Set up ipmmu_ops for pci bus

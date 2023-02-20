@@ -21,7 +21,6 @@ eac56fb51d70 iommu/ipmmu-vmsa: Adding DMAC1/2 devices to IPMMU devices allowlist
 4ccc89c603cd iommu/ipmmu-vmsa: Update support status for R-Car Gen4
 20c3cede7fcb iommu/ipmmu-vmsa: Set IPMMU bit IMSCTLR_USE_SECGRP to 0
 4ce9d6f94661 iommu/ipmmu-vmsa: Handle reserved bits correctly
-5b402deae7c6 iommu/ipmmu-vmsa: Set up ipmmu_ops for pci bus
 967a199ed386 iommu/ipmmu-vmsa: Allow PCI Host controller to be a proxy for all connected PCI devices
 ca161241c4c3 iommu/ipmmu-vmsa: Adding devices allowlist for IPMMU on R-Car Gen3
 4b900652aec4 iommu/ipmmu-vmsa: Adding IPMMU support for R-Car M3 ver-1.x
