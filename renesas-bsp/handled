@@ -810,3 +810,5 @@ c58d45a70ae9 media: i2c: adv7604: Enable decoder control register
 469ff9d9ba21 ravb: Fix ptp does not work after suspend and resume
 # torvalds: c13dbc1e2485 ("iommu: Always register bus notifiers")
 5b402deae7c6 iommu/ipmmu-vmsa: Set up ipmmu_ops for pci bus
+# Workaround added to BSP. Task created for further investigation
+20dbf63e6809 Revert "net: phy: consider that suspend2ram may cut off PHY power"

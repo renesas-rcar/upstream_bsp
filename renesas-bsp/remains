@@ -1,4 +1,3 @@
-20dbf63e6809 Revert "net: phy: consider that suspend2ram may cut off PHY power"
 b5bccf1fc37c arm64: dts: renesas: r8a779f0: Disable CDM check
 9fd7d9ee7993 arm64: dts: renesas: r8a779g0: Disable CDM check
 8a3097afe858 arm64: dts: renesas: Add ulcb-kf-imx219 overlay
