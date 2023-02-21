@@ -1,21 +1,10 @@
-61d5400cf3cf ravb: Disable Link Signal Change Interrupt for AVB1/AVB2
 20dbf63e6809 Revert "net: phy: consider that suspend2ram may cut off PHY power"
-241d44845b90 ravb: Clear RIS2_QFF1 flag in ravb_error_interrupt()
-e37c8d37dd3c ravb: Remove TX internal delay setting
-d276493fd6c2 ravb: Issue gpio reset to AVB1/AVB2 PHYs
-68c8cf248f51 arm64: dts: renesas: whitehawk: Add phy-reset-gpios to reset PHYs before initialization
-51cb5f1f83b6 net: ethernet: renesas: rcar_gen4_ptp: Revise R-Car V4H gPTP's clock frequency
 b5bccf1fc37c arm64: dts: renesas: r8a779f0: Disable CDM check
 9fd7d9ee7993 arm64: dts: renesas: r8a779g0: Disable CDM check
-c0cbae905c8a arm64: dts: renesas: whitehawk: Add AVB1/AVB2 support
-d387cc45dbbd arm64: dts: renesas: r8a779g0: Update Ethernet-TSN0 device node
-55dee8f01bfc arm64: dts: renesas: r8a779g0-whitehawk: Disable rtsn0
-00244fb8f94a arm64: dts: renesas: r8a779g0: Add Ethernet-TSN support
 08a14c13c737 arm64: dts: renesas: r8a779g0: Add IPMMU for SYS-DMAC
 61b117c4d2c8 arm64: dts: renesas: r8a779g0: Add IPMMU nodes
 8a3097afe858 arm64: dts: renesas: Add ulcb-kf-imx219 overlay
 d80707e0e447 arm64: dts: renesas: ulcb-kf: update for kernel v5.10
-667534413db9 arm64: dts: renesas: r8a779a0-falcon: Add missing Ethernet-AVB in Falcon board
 72058c09a66e drm: rcar-du: Fix DU setting for V4H
 441c24bfdab0 vsp1: Add display interrupt wait after setting STRCMD bit
 24940f87e199 drm: rcar-du: Add register access check
@@ -23,11 +12,6 @@ d80707e0e447 arm64: dts: renesas: ulcb-kf: update for kernel v5.10
 17da051cfc67 media: i2c: ov5647: Add test pattern control
 092fce881478 media: i2c: ov5647: Add V4L2_CID_PIXEL_RATE control
 c541b27e85d7 media: ov5647: Fix return codes from ov5647_write/ov5647_read functions.
-2a1f07d0e722 net: phy: mv88q2110: Initial PHY Marvel 88Q2110 support
-78e51462682c dt-bindings: net: renesas,ethertsn: Add binding document for new Ethernet-TSN driver
-1e34ab549764 net: ethernet: renesas: Add Renesas Ethernet-TSN driver
-e5540b8157bc arm64: defconfig: Enable Marvell PHY 88Q2110
-60db06c0df93 arm64: defconfig: Enable Renesas Ethernet-TSN
 8f12704115d0 dt-bindings: iommu: renesas,ipmmu-vmsa: add r8a779g0 support
 fcc3027a09a8 iommu/ipmmu-vmsa: Add R-Car V3H/V3M/D3 to IPMMU denylist
 eac56fb51d70 iommu/ipmmu-vmsa: Adding DMAC1/2 devices to IPMMU devices allowlist
@@ -43,7 +27,6 @@ ca161241c4c3 iommu/ipmmu-vmsa: Adding devices allowlist for IPMMU on R-Car Gen3
 4b900652aec4 iommu/ipmmu-vmsa: Adding IPMMU support for R-Car M3 ver-1.x
 6c286c0f0b71 iommu/ipmmu-vmsa: Invalidate TLB when IPMMU translation error occurred
 8089aa35bf04 iommu/ipmmu-vmsa: Clean up unncessary micro-TLB invalidation
-469ff9d9ba21 ravb: Fix ptp does not work after suspend and resume
 3df554353f04 arm64: dts: renesas: r8a77965-ulcb: Fix source clock for DU
 98ea5401ab70 arm64: dts: renesas: r8a77951-ulcb: Fix source clock for DU2
 cf44aee9dfea arm64: dts: renesas: r8a779{51, 60, 61}-ulcb: Fix souce clock for DU

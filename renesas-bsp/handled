@@ -431,7 +431,6 @@ a9d59372cc22 mmc: tmio: do not print real IOMEM pointer
 76514db793c6 mmc: tmio: restore bus width when resetting
 0b48801c59e7 mmc: tmio: set max_busy_timeout
 a64e7651be15 mmc: tmio: support custom irq masks
-bdafe4d861f6 net: ethernet: ravb: Support AVB1/AVB2
 205f4a164e06 net: ethernet: renesas: rcar_gen4_ptp: Add R-Car Gen4 gPTP driver
 3dbea0aef38a net: ethernet: renesas: rcar_gen4_ptp: Fix build error of R-Car Gen4 PTP
 5010c78c0c24 net: ethernet: renesas: rswitch: Add Renesas Ethernet Switch
@@ -802,3 +801,7 @@ c58d45a70ae9 media: i2c: adv7604: Enable decoder control register
 4a04f1197c2b spi: sh-msiof: Set 2 clock delay for R-Car H3 Ver.3.0 only
 # lore: cover.1676560357.git.geert+renesas@glider.be
 43ca51590fa0 clk: renesas: r8a779{70, 80}: Add CPU operation points.
+# torvalds: f3c07758c9007a6bfff5290d9e19d3c41930c897 # net: ravb: Fix possible hang if RIS2_QFF1 happen
+241d44845b90 ravb: Clear RIS2_QFF1 flag in ravb_error_interrupt()
+# torvalds: c2b6cdee1d13ffbb24baca3c9b8a572d6b541e4e # net: ravb: Fix lack of register setting after system resumed for Gen3
+469ff9d9ba21 ravb: Fix ptp does not work after suspend and resume

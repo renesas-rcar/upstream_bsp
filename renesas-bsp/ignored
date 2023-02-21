@@ -558,6 +558,18 @@ PCIe for R-Car Gen4
 		f481c68a26f4 pci: dwc: renesas: Implement source code based on board TP for V4H RootComplex
 		417cd8ce5abb PCI: Replace PCIe registers not defined in HW UM
 
+RAVB
+	Needs proper 88Q2110 PHY driver but we don't have documentation
+		2a1f07d0e722 net: phy: mv88q2110: Initial PHY Marvel 88Q2110 support
+		e5540b8157bc arm64: defconfig: Enable Marvell PHY 88Q2110
+		d276493fd6c2 ravb: Issue gpio reset to AVB1/AVB2 PHYs
+		61d5400cf3cf ravb: Disable Link Signal Change Interrupt for AVB1/AVB2
+		c0cbae905c8a arm64: dts: renesas: whitehawk: Add AVB1/AVB2 support
+		68c8cf248f51 arm64: dts: renesas: whitehawk: Add phy-reset-gpios to reset PHYs before initialization
+		667534413db9 arm64: dts: renesas: r8a779a0-falcon: Add missing Ethernet-AVB in Falcon board
+		bdafe4d861f6 net: ethernet: ravb: Support AVB1/AVB2
+		e37c8d37dd3c ravb: Remove TX internal delay setting
+
 RPC-IF
 	RPC-IF works on White-Hawk with current firmware.  If it must be
 	accessed only by the Cortex-R52, it should be handled like on e.g.
@@ -642,6 +654,16 @@ Thermal
 		4b6f17f1dd49 thermal: rcar_gen3_thermal: PIO-INT can be selected for each TSC separately
 	The thermal core always pulls the driver, (optinal) interrupts are used to quickly trigger trip-points
 		2952a9503e49 arm64: dts: renesas: r8a779{51, 60, 61, 65}: Enable interrupt mode for THS by default
+
+TSN
+	EthernetTSN is not connected on V4H, we cannot test the rebase
+		60db06c0df93 arm64: defconfig: Enable Renesas Ethernet-TSN
+		1e34ab549764 net: ethernet: renesas: Add Renesas Ethernet-TSN driver
+		78e51462682c dt-bindings: net: renesas,ethertsn: Add binding document for new Ethernet-TSN driver
+		00244fb8f94a arm64: dts: renesas: r8a779g0: Add Ethernet-TSN support
+		55dee8f01bfc arm64: dts: renesas: r8a779g0-whitehawk: Disable rtsn0
+		d387cc45dbbd arm64: dts: renesas: r8a779g0: Update Ethernet-TSN0 device node
+		51cb5f1f83b6 net: ethernet: renesas: rcar_gen4_ptp: Revise R-Car V4H gPTP's clock frequency
 
 UIO/OSAL
 	UIO/OSAL is not intended for upstream
