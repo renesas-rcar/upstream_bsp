@@ -10,14 +10,6 @@ d80707e0e447 arm64: dts: renesas: ulcb-kf: update for kernel v5.10
 17da051cfc67 media: i2c: ov5647: Add test pattern control
 092fce881478 media: i2c: ov5647: Add V4L2_CID_PIXEL_RATE control
 c541b27e85d7 media: ov5647: Fix return codes from ov5647_write/ov5647_read functions.
-eac56fb51d70 iommu/ipmmu-vmsa: Adding DMAC1/2 devices to IPMMU devices allowlist
-81363d213337 iommu/ipmmu-vmsa: Update IMSCTLR register offset address for R-Car Gen4
-20c3cede7fcb iommu/ipmmu-vmsa: Set IPMMU bit IMSCTLR_USE_SECGRP to 0
-4ce9d6f94661 iommu/ipmmu-vmsa: Handle reserved bits correctly
-967a199ed386 iommu/ipmmu-vmsa: Allow PCI Host controller to be a proxy for all connected PCI devices
-ca161241c4c3 iommu/ipmmu-vmsa: Adding devices allowlist for IPMMU on R-Car Gen3
-6c286c0f0b71 iommu/ipmmu-vmsa: Invalidate TLB when IPMMU translation error occurred
-8089aa35bf04 iommu/ipmmu-vmsa: Clean up unncessary micro-TLB invalidation
 3df554353f04 arm64: dts: renesas: r8a77965-ulcb: Fix source clock for DU
 98ea5401ab70 arm64: dts: renesas: r8a77951-ulcb: Fix source clock for DU2
 cf44aee9dfea arm64: dts: renesas: r8a779{51, 60, 61}-ulcb: Fix souce clock for DU
