@@ -203,6 +203,8 @@ f3fa3a1fa88b arm64: dts: renesas: r8a779f0: Update secondary CA55 CPU cores
 ad20a065e53f arm64: dts: renesas: r8a779f0: spider-cpu: Fix memory region
 66e3cbf61c47 arm64: dts: renesas: r8a779f0: spider: Disable GPIO4 and TAUD0-PWM
 606a7845dff1 arm64: dts: renesas: r8a779g0: Add IMP UIO devices
+08a14c13c737 arm64: dts: renesas: r8a779g0: Add IPMMU for SYS-DMAC
+61b117c4d2c8 arm64: dts: renesas: r8a779g0: Add IPMMU nodes
 6011271294ef arm64: dts: renesas: r8a779g0: Add ISP UIO devices
 7d00a3d901ac arm64: dts: renesas: r8a779g0: Add PCIe node
 71df56caa025 arm64: dts: renesas: r8a779g0: Add RWDT node
@@ -327,6 +329,7 @@ d7c67c1567d0 dt-bindings: gpio: rcar: Document r8a779f0 support
 df55f34d3f0c dt-bindings: i2c: rcar: Document r8a779g0 support
 ba9a08ea8904 dt-bindings: iommu: renesas,ipmmu-vmsa: add r8a779a0 support
 e98465549d6b dt-bindings: iommu: renesas,ipmmu-vmsa: add r8a779f0 support
+8f12704115d0 dt-bindings: iommu: renesas,ipmmu-vmsa: add r8a779g0 support
 b7f3bd645de3 dt-bindings: mfd: bd9571mwv: Document BD9574MWF
 f2453ad38abd dt-bindings: mmc: renesas,sdhi: Add r8a779f0 support
 1a4fb2f59590 dt-bindings: net: renesas,etheravb: Add r8a779a0 support

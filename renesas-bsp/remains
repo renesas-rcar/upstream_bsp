@@ -1,8 +1,6 @@
 20dbf63e6809 Revert "net: phy: consider that suspend2ram may cut off PHY power"
 b5bccf1fc37c arm64: dts: renesas: r8a779f0: Disable CDM check
 9fd7d9ee7993 arm64: dts: renesas: r8a779g0: Disable CDM check
-08a14c13c737 arm64: dts: renesas: r8a779g0: Add IPMMU for SYS-DMAC
-61b117c4d2c8 arm64: dts: renesas: r8a779g0: Add IPMMU nodes
 8a3097afe858 arm64: dts: renesas: Add ulcb-kf-imx219 overlay
 d80707e0e447 arm64: dts: renesas: ulcb-kf: update for kernel v5.10
 72058c09a66e drm: rcar-du: Fix DU setting for V4H
@@ -12,7 +10,6 @@ d80707e0e447 arm64: dts: renesas: ulcb-kf: update for kernel v5.10
 17da051cfc67 media: i2c: ov5647: Add test pattern control
 092fce881478 media: i2c: ov5647: Add V4L2_CID_PIXEL_RATE control
 c541b27e85d7 media: ov5647: Fix return codes from ov5647_write/ov5647_read functions.
-8f12704115d0 dt-bindings: iommu: renesas,ipmmu-vmsa: add r8a779g0 support
 eac56fb51d70 iommu/ipmmu-vmsa: Adding DMAC1/2 devices to IPMMU devices allowlist
 81363d213337 iommu/ipmmu-vmsa: Update IMSCTLR register offset address for R-Car Gen4
 20c3cede7fcb iommu/ipmmu-vmsa: Set IPMMU bit IMSCTLR_USE_SECGRP to 0
