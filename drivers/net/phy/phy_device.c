@@ -326,9 +326,14 @@ static __maybe_unused int mdio_bus_phy_resume(struct device *dev)
 	WARN_ON(phydev->state != PHY_HALTED && phydev->state != PHY_READY &&
 		phydev->state != PHY_UP);
 
+/* WORKAROUND:	- to enable resume on Renesas Ebisu board
+ * 		- to avoid "*-skew-ps values should be used only with RGMII PHY modes"
+ *		  messages on all Gen3 boards with Micrel KSZ9031 PHY
+
 	ret = phy_init_hw(phydev);
 	if (ret < 0)
 		return ret;
+*/
 
 	ret = phy_resume(phydev);
 	if (ret < 0)
