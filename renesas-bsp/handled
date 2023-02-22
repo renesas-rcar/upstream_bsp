@@ -820,3 +820,7 @@ c58d45a70ae9 media: i2c: adv7604: Enable decoder control register
 092fce881478 media: i2c: ov5647: Add V4L2_CID_PIXEL_RATE control
 # lore: Y/VTwBOSTX9WrJMz@pendragon.ideasonboard.com
 c541b27e85d7 media: ov5647: Fix return codes from ov5647_write/ov5647_read functions.
+# ported to BSP, not needed upstream
+b5bccf1fc37c arm64: dts: renesas: r8a779f0: Disable CDM check
+# not needed upstream, DTS file in BSP was always correct
+9fd7d9ee7993 arm64: dts: renesas: r8a779g0: Disable CDM check
