@@ -5,9 +5,6 @@ d80707e0e447 arm64: dts: renesas: ulcb-kf: update for kernel v5.10
 72058c09a66e drm: rcar-du: Fix DU setting for V4H
 441c24bfdab0 vsp1: Add display interrupt wait after setting STRCMD bit
 24940f87e199 drm: rcar-du: Add register access check
-17da051cfc67 media: i2c: ov5647: Add test pattern control
-092fce881478 media: i2c: ov5647: Add V4L2_CID_PIXEL_RATE control
-c541b27e85d7 media: ov5647: Fix return codes from ov5647_write/ov5647_read functions.
 3df554353f04 arm64: dts: renesas: r8a77965-ulcb: Fix source clock for DU
 98ea5401ab70 arm64: dts: renesas: r8a77951-ulcb: Fix source clock for DU2
 cf44aee9dfea arm64: dts: renesas: r8a779{51, 60, 61}-ulcb: Fix souce clock for DU
