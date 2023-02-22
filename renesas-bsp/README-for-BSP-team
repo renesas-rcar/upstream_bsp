@@ -75,7 +75,7 @@
 		${LINUX}/renesas-bsp/handled : (1)/(2)/(3)
 		${LINUX}/renesas-bsp/ignored : (4)
 
-* About supported CVE
+* About handled CVE
 
 	Upstream team knows that sometimes BSP team is asked about supported CVE from
 	customer. Rebase BSP has support CVE list to support BSP team.
