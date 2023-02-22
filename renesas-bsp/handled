@@ -824,3 +824,9 @@ c541b27e85d7 media: ov5647: Fix return codes from ov5647_write/ov5647_read funct
 b5bccf1fc37c arm64: dts: renesas: r8a779f0: Disable CDM check
 # not needed upstream, DTS file in BSP was always correct
 9fd7d9ee7993 arm64: dts: renesas: r8a779g0: Disable CDM check
+# lore: 20230222050623.29080-2-laurent.pinchart+renesas@ideasonboard.com
+# lore: 20230222050623.29080-3-laurent.pinchart+renesas@ideasonboard.com
+# lore: 20230222234212.5461-2-laurent.pinchart+renesas@ideasonboard.com
+# lore: 20230222234212.5461-3-laurent.pinchart+renesas@ideasonboard.com
+72058c09a66e drm: rcar-du: Fix DU setting for V4H
+24940f87e199 drm: rcar-du: Add register access check
