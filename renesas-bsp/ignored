@@ -429,6 +429,14 @@ Media
 	selecting a particular VC in DT shouldn't be needed.
 		9bbdcef12e3f media: i2c: adv748x: Add virtual channel option
 
+	Test hardware is lacking, as our only ULCB & KingFisher setup is
+	bricked. There may be a chance to fix it later and address these
+	commits.
+		8a3097afe858 arm64: dts: renesas: Add ulcb-kf-imx219 overlay
+		3df554353f04 arm64: dts: renesas: r8a77965-ulcb: Fix source clock for DU
+		98ea5401ab70 arm64: dts: renesas: r8a77951-ulcb: Fix source clock for DU2
+		cf44aee9dfea arm64: dts: renesas: r8a779{51, 60, 61}-ulcb: Fix souce clock for DU
+
 MFIS
 	There is no driver so we can't upport the DT nodes only
 		c4ce249bb021 arm64: dts: renesas: Add MFIS Lock and MFIS devices node for gen3 devices

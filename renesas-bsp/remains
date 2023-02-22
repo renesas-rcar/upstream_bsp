@@ -1,9 +1,5 @@
 b5bccf1fc37c arm64: dts: renesas: r8a779f0: Disable CDM check
 9fd7d9ee7993 arm64: dts: renesas: r8a779g0: Disable CDM check
-8a3097afe858 arm64: dts: renesas: Add ulcb-kf-imx219 overlay
 72058c09a66e drm: rcar-du: Fix DU setting for V4H
 441c24bfdab0 vsp1: Add display interrupt wait after setting STRCMD bit
 24940f87e199 drm: rcar-du: Add register access check
-3df554353f04 arm64: dts: renesas: r8a77965-ulcb: Fix source clock for DU
-98ea5401ab70 arm64: dts: renesas: r8a77951-ulcb: Fix source clock for DU2
-cf44aee9dfea arm64: dts: renesas: r8a779{51, 60, 61}-ulcb: Fix souce clock for DU
