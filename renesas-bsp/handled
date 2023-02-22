@@ -812,3 +812,5 @@ c58d45a70ae9 media: i2c: adv7604: Enable decoder control register
 5b402deae7c6 iommu/ipmmu-vmsa: Set up ipmmu_ops for pci bus
 # Workaround added to BSP. Task created for further investigation
 20dbf63e6809 Revert "net: phy: consider that suspend2ram may cut off PHY power"
+# lore: 20230216094115.151189-1-tomi.valkeinen+renesas@ideasonboard.com
+3860e36d582d v4l: vsp1: Add underrun debug messege option
