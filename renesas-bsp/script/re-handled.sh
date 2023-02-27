@@ -12,7 +12,7 @@
 
 # You need to use this script at ${LINUX}/renesas-bsp
 
-: > handles2
+: > handled2
 for commit in `cut -d " " -f 1 full`
 do
 	grep ${commit} handled >> handled2
