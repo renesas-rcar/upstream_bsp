@@ -165,8 +165,8 @@ static const struct mssr_mod_clk r8a779g0_mod_clks[] __initconst = {
 	DEF_MOD("avb0",		211,	R8A779G0_CLK_S0D4_HSC),
 	DEF_MOD("avb1",		212,	R8A779G0_CLK_S0D4_HSC),
 	DEF_MOD("avb2",		213,	R8A779G0_CLK_S0D4_HSC),
-	DEF_MOD("csi40",	331,	R8A779G0_CLK_CSI),
 	DEF_MOD("canfd0",	328,	R8A779G0_CLK_SASYNCPERD2),
+	DEF_MOD("csi40",	331,	R8A779G0_CLK_CSI),
 	DEF_MOD("csi41",	400,	R8A779G0_CLK_CSI),
 	DEF_MOD("dis0",		411,	R8A779G0_CLK_VIOBUSD2),
 	DEF_MOD("dsitxlink0",	415,	R8A779G0_CLK_VIOBUSD2),
@@ -234,6 +234,7 @@ static const struct mssr_mod_clk r8a779g0_mod_clks[] __initconst = {
 	DEF_MOD("pfc1",		916,	R8A779G0_CLK_CL16M),
 	DEF_MOD("pfc2",		917,	R8A779G0_CLK_CL16M),
 	DEF_MOD("pfc3",		918,	R8A779G0_CLK_CL16M),
+	DEF_MOD("tsc",		919,	R8A779G0_CLK_CL16M),
 	DEF_MOD("ssiu",		2926,	R8A779G0_CLK_S0D6_PER),
 	DEF_MOD("ssi",		2927,	R8A779G0_CLK_S0D6_PER),
 };

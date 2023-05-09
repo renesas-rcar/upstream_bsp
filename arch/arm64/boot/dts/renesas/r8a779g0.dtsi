@@ -14,6 +14,13 @@
 	#address-cells = <2>;
 	#size-cells = <2>;
 
+	/* External Audio clock - to be overridden by boards that provide it */
+	audio_clkin: audio_clkin {
+		compatible = "fixed-clock";
+		#clock-cells = <0>;
+		clock-frequency = <0>;
+	};
+
 	/* External CAN clock - to be overridden by boards that provide it */
 	can_clk: can {
 		compatible = "fixed-clock";
@@ -180,15 +187,6 @@
 
 	/* External SCIF clock - to be overridden by boards that provide it */
 	scif_clk: scif {
-		compatible = "fixed-clock";
-		#clock-cells = <0>;
-		clock-frequency = <0>;
-	};
-
-	/*
-	 * The clock from AUDIO_CLKIN pin are configured as 0 Hz fixed frequency
-	 */
-	audio_clkin: audio_clkin {
 		compatible = "fixed-clock";
 		#clock-cells = <0>;
 		clock-frequency = <0>;
@@ -1812,7 +1810,7 @@
 				 <&ipmmu_ds0 30>, <&ipmmu_ds0 31>;
 		};
 
-		rcar_sound: sound@ec540000 {
+		rcar_sound: sound@ec5a0000 {
 			/*
 			 * #sound-dai-cells is required
 			 *
@@ -1826,10 +1824,10 @@
 			 * audio_clkout0/1/2/3	: #clock-cells = <1>;	<&rcar_sound N>;
 			 */
 			compatible = "renesas,rcar_sound-r8a779g0", "renesas,rcar_sound-gen4";
-			reg =	<0 0xec5a0000 0 0x020>,		/* ADG  */
-				<0 0xec540000 0 0x1000>,	/* SSIU */
-				<0 0xec541000 0 0x050>,		/* SSI  */
-				<0 0xec400000 0 0x40000>;	/* SDMC */
+			reg = <0 0xec5a0000 0 0x020>,
+			      <0 0xec540000 0 0x1000>,
+			      <0 0xec541000 0 0x050>,
+			      <0 0xec400000 0 0x40000>;
 			reg-names = "adg", "ssiu", "ssi", "sdmc";
 
 			clocks = <&cpg CPG_MOD 2926>, <&cpg CPG_MOD 2927>, <&audio_clkin>;
@@ -1922,7 +1920,7 @@
 				     "renesas,rcar-gen4-ipmmu-vmsa";
 			reg = <0 0xeed80000 0 0x20000>;
 			renesas,ipmmu-main = <&ipmmu_mm>;
-			power-domains = <&sysc R8A779G0_PD_ALWAYS_ON>;
+			power-domains = <&sysc R8A779G0_PD_A3IR>;
 			#iommu-cells = <1>;
 		};
 
@@ -2028,46 +2026,7 @@
 			interrupt-controller;
 			reg = <0x0 0xf1000000 0 0x20000>,
 			      <0x0 0xf1060000 0 0x110000>;
-			interrupts = <GIC_PPI 9
-				      (GIC_CPU_MASK_SIMPLE(4) | IRQ_TYPE_LEVEL_HIGH)>;
-		};
-
-		fcpvd0: fcp@fea10000 {
-			compatible = "renesas,fcpv";
-			reg = <0 0xfea10000 0 0x200>;
-			clocks = <&cpg CPG_MOD 508>;
-			power-domains = <&sysc R8A779G0_PD_ALWAYS_ON>;
-			resets = <&cpg 508>;
-		};
-
-		fcpvd1: fcp@fea11000 {
-			compatible = "renesas,fcpv";
-			reg = <0 0xfea11000 0 0x200>;
-			clocks = <&cpg CPG_MOD 509>;
-			power-domains = <&sysc R8A779G0_PD_ALWAYS_ON>;
-			resets = <&cpg 509>;
-		};
-
-		vspd0: vsp@fea20000 {
-			compatible = "renesas,vsp2";
-			reg = <0 0xfea20000 0 0x7000>;
-			interrupts = <GIC_SPI 546 IRQ_TYPE_LEVEL_HIGH>;
-			clocks = <&cpg CPG_MOD 830>;
-			power-domains = <&sysc R8A779G0_PD_ALWAYS_ON>;
-			resets = <&cpg 830>;
-
-			renesas,fcp = <&fcpvd0>;
-		};
-
-		vspd1: vsp@fea28000 {
-			compatible = "renesas,vsp2";
-			reg = <0 0xfea28000 0 0x7000>;
-			interrupts = <GIC_SPI 551 IRQ_TYPE_LEVEL_HIGH>;
-			clocks = <&cpg CPG_MOD 831>;
-			power-domains = <&sysc R8A779G0_PD_ALWAYS_ON>;
-			resets = <&cpg 831>;
-
-			renesas,fcp = <&fcpvd1>;
+			interrupts = <GIC_PPI 9 IRQ_TYPE_LEVEL_HIGH>;
 		};
 
 		csi40: csi2@fe500000 {
@@ -2120,6 +2079,44 @@
 					};
 				};
 			};
+		};
+
+		fcpvd0: fcp@fea10000 {
+			compatible = "renesas,fcpv";
+			reg = <0 0xfea10000 0 0x200>;
+			clocks = <&cpg CPG_MOD 508>;
+			power-domains = <&sysc R8A779G0_PD_ALWAYS_ON>;
+			resets = <&cpg 508>;
+		};
+
+		fcpvd1: fcp@fea11000 {
+			compatible = "renesas,fcpv";
+			reg = <0 0xfea11000 0 0x200>;
+			clocks = <&cpg CPG_MOD 509>;
+			power-domains = <&sysc R8A779G0_PD_ALWAYS_ON>;
+			resets = <&cpg 509>;
+		};
+
+		vspd0: vsp@fea20000 {
+			compatible = "renesas,vsp2";
+			reg = <0 0xfea20000 0 0x7000>;
+			interrupts = <GIC_SPI 546 IRQ_TYPE_LEVEL_HIGH>;
+			clocks = <&cpg CPG_MOD 830>;
+			power-domains = <&sysc R8A779G0_PD_ALWAYS_ON>;
+			resets = <&cpg 830>;
+
+			renesas,fcp = <&fcpvd0>;
+		};
+
+		vspd1: vsp@fea28000 {
+			compatible = "renesas,vsp2";
+			reg = <0 0xfea28000 0 0x7000>;
+			interrupts = <GIC_SPI 551 IRQ_TYPE_LEVEL_HIGH>;
+			clocks = <&cpg CPG_MOD 831>;
+			power-domains = <&sysc R8A779G0_PD_ALWAYS_ON>;
+			resets = <&cpg 831>;
+
+			renesas,fcp = <&fcpvd1>;
 		};
 
 		du: display@feb00000 {
@@ -2446,9 +2443,9 @@
 
 	timer {
 		compatible = "arm,armv8-timer";
-		interrupts-extended = <&gic GIC_PPI 13 (GIC_CPU_MASK_SIMPLE(4) | IRQ_TYPE_LEVEL_LOW)>,
-				      <&gic GIC_PPI 14 (GIC_CPU_MASK_SIMPLE(4) | IRQ_TYPE_LEVEL_LOW)>,
-				      <&gic GIC_PPI 11 (GIC_CPU_MASK_SIMPLE(4) | IRQ_TYPE_LEVEL_LOW)>,
-				      <&gic GIC_PPI 10 (GIC_CPU_MASK_SIMPLE(4) | IRQ_TYPE_LEVEL_LOW)>;
+		interrupts-extended = <&gic GIC_PPI 13 IRQ_TYPE_LEVEL_LOW>,
+				      <&gic GIC_PPI 14 IRQ_TYPE_LEVEL_LOW>,
+				      <&gic GIC_PPI 11 IRQ_TYPE_LEVEL_LOW>,
+				      <&gic GIC_PPI 10 IRQ_TYPE_LEVEL_LOW>;
 	};
 };
