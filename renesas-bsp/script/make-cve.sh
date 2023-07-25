@@ -30,4 +30,4 @@ cat ${TMP}-orig | sed -e "s/ /\n/g" | sed 1d				> ${TMP}-affected
 	cd issues
 	ls -1 CVE-*.yml | sed -e "s/\.yml$//g" 				> ${TMP}-all
 )
-cat ${TMP}-all ${TMP}-affected | sort | uniq -u | tac			> ${TMP}-cve
+cat ${TMP}-all ${TMP}-affected | sort -t"-" -k 2,2r -k 3nr | uniq -u	> ${TMP}-cve
