@@ -1,7 +1,7 @@
 title: BSP v6.1 Sound
 team: MM
 key: f2ce3749-0360-4359-9489-ce3f055f5db9
-status: New
+status: Done
 assignee: Morimoto
 
 bsp52x:
@@ -16,8 +16,29 @@ bsp52x:
  - 0d65a95455d3 # arm64: dts: renesas: r8a779g0: add R-Car Sound support
 
 upstream:
+ - torvalds: e0d1619f1230 # arm64: dts: renesas: white-hawk: Add R-Car Sound support
+ - torvalds: 6cf8e3d73ebe # arm64: dts: renesas: r8a779g0: R-Car Sound support
  - torvalds: c2bc65274a30 # ASoC: rsnd: add R-Car Gen4 Sound support
+ - torvalds: beab0aad7276 # ASoC: rsnd: dma.c: tidyup rsnd_dma_probe()
+ - torvalds: c20bc7c9ce3a # ASoC: rsnd: tidyup rsnd_dma_addr()
+ - torvalds: 662721ece4f0 # ASoC: rsnd: use array for 44.1kHz/48kHz rate handling
+ - torvalds: efaab61588c4 # ASoC: rsnd: use clkin/out_size
+ - torvalds: da2f9e859413 # ASoC: rsnd: moves clkout_name to top of the file
+ - torvalds: 4bbff16d26e8 # ASoC: rsnd: rename clk to clkin
+ - torvalds: 184d82e142ee # ASoC: rsnd: remove unnecessary ADG flags
+ - torvalds: 3e262e9592bb # ASoC: rsnd: use same debug message format on clkout
+ - torvalds: 6d612f67a8d4 # ASoC: rsnd: indicate warning once if it can't handle requested rule
+ - torvalds: c12dc0f6655b # ASoC: rsnd: indicate necessary error when clock start failed
+ - torvalds: e5a3c491e194 # ASoC: rsnd: Remove unnecessary rsnd_dbg_dai_call()
+ - torvalds: 68a410aff971 # ASoC: rsnd: check whether playback/capture property exists
+ - torvalds: 1ad059a15707 # ASoC: rsnd: core.c: indicate warning if strange TDM width was set
  - torvalds: f76fec606d07 # ASoC: dt-bindings: renesas: add R8A779G0 V4H
+ - torvalds: 47df94faa5e3 # ASoC: dt-bindings: renesas: rsnd: correct comments syntax
+ - torvalds: 7f8b5b24bbb4 # ASoC: dt-bindings: renesas,rsnd.yaml: add R-Car Gen4 support
+ - torvalds: 0438499a7f09 # ASoC: dt-bindings: renesas,rsnd.yaml: drop "dmas/dma-names" from "rcar_sound,ssi"
+ - torvalds: 60cc61a68c98 # ASoC: dt-bindings: renesas,rsnd: #sound-dai-cells is not mandatory
+ - torvalds: f292f4d36744 # ASoC: dt-bindings: renesas,rsnd: tidyup rcar_sound,src
+ - torvalds: fcedf6547e65 # ASoC: dt-bindings: renesas,rsnd: add missing playback/capture
  - torvalds: 55194032620a # ASoC: dt-bindings: renesas,rsnd.yaml: tidyup reg/reg-name
 
 ignored:
