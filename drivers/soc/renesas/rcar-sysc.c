@@ -8,7 +8,6 @@
 
 #include <dt-bindings/power/r8a7795-sysc.h>
 #include <dt-bindings/power/r8a7796-sysc.h>
-#include <dt-bindings/power/r8a77980-sysc.h>
 #include <linux/clk/renesas.h>
 #include <linux/delay.h>
 #include <linux/err.h>
@@ -80,10 +79,6 @@ const struct soc_device_attribute rcar_sysc_quirks_match[] __initconst = {
 		.data = (void *)(BIT(R8A7796_PD_CR7) | BIT(R8A7796_PD_A3VC)
 			| BIT(R8A7796_PD_A2VC0) | BIT(R8A7796_PD_A2VC1)
 			| BIT(R8A7796_PD_A3IR)),
-	},
-	{
-		.soc_id = "r8a77980",
-		.data = (void *)(BIT(R8A77980_PD_CR7)),
 	},
 	{ /* sentinel */ }
 };
