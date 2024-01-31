@@ -98,9 +98,6 @@ a2d17d3b1576 soc: renesas: rcar-topology: Add missing device for rcar topology
 2fc8766fbab8 soc: renesas: Identify R-Car V4H
 0846e66813ab soc: renesas: rcar-topology: Add support for R-Car capacity awareness
 a95438bf38b3 dt-bindings: power: Add r8a779g0 SYSC power domain definitions
-973fbc34bf5d soc: renesas: rcar-sysc: Remove power domains always on for M3N v1.0
-ad70433f1eda soc: renesas: rcar-sysc: Support S2RAM
-e07b497cf41e soc: renesas: rcar-sysc: Improve power domains always on implementation
 ea52a14c9748 soc: renesas: rcar-sysc: Add wait 1us before turning off power domain
 118bfc69fe4d soc: renesas: rcar-sysc: Adjust the waiting time to cover the worst case
 d0de744e890b arm64: dts: renesas: r8a779g0: Update R-Car Gen4 compatible values
@@ -589,17 +586,13 @@ dd52a8bd24dd iommu/ipmmu-vmsa: Refactor ipmmu_of_xlate()
 4a04f1197c2b spi: sh-msiof: Set 2 clock delay for R-Car H3 Ver.3.0 only
 0fa91d04eaa7 spi: sh-msiof: Add SPI master transmission workaround
 a06a84aaa7b0 dt-bindings: renesas,rcar-dmac: Add r8a779f0 support
-46cca390830d dt-bindings: renesas,rcar-dmac: Add bus rate control support for R-Car V3U/V4H
 344fdaca6787 dt-bindings: renesas,rcar-dmac: Add r8a779g0 support
 d96174d12876 dt-bindings: renesas,rcar-dmac: Add r8a779a0 support
-234e0d5eb188 dt-bindings: renesas,rcar-dmac: Document optional properties
 8825ff829400 dmaengine: rcar-dmac: Add support for R-Car S4
-fdfe96d831f0 dmaengine: rcar-dmac: Add bus rate control support for R-Car V3U/V4H
 30948f03327b dmaengine: rcar-dmac: Add support for R-Car V4H
 5555fd988018 dmaengine: rcar-dmac: Add support for R-Car V3U
 df768960f873 dmaengine: rcar-dmac: Add helpers for clearing DMA channel status
 76a9a47e4f03 dmaengine: rcar-dmac: Add for_each_rcar_dmac_chan() helper
-3baf2c4e8881 dmaengine: rcar-dmac: Add fixed address mode support
 fc3669707bf2 arm64: defconfig: Enable R8A779G0 SoC
 76b327e38b6e arm64: defconfig: Disable 4K Sector size by default
 3c5c1d95969d arm64: defconfig: Enable JFFS2 support by default
