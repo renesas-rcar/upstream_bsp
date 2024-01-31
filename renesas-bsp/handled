@@ -92,11 +92,9 @@ feff376e38cf soc: renesas: r8a779g0-sysc: Add power domain A3DUL support
 5a4e2771e30d soc: renesas: rcar-rst: Allow WDT reset on R-Car Gen4
 0565526eef81 soc: renesas: rcar-rst: Add support for R-Car S4
 f9296b520ca8 soc: renesas: rcar-rst: Add support for R-Car V4H
-a2d17d3b1576 soc: renesas: rcar-topology: Add missing device for rcar topology
 1bc9d535d05f soc: renesas: Identify R-Car S4
 9c9e283f8dfc soc: renesas: Fix r8a779g0 Product ID
 2fc8766fbab8 soc: renesas: Identify R-Car V4H
-0846e66813ab soc: renesas: rcar-topology: Add support for R-Car capacity awareness
 a95438bf38b3 dt-bindings: power: Add r8a779g0 SYSC power domain definitions
 ea52a14c9748 soc: renesas: rcar-sysc: Add wait 1us before turning off power domain
 118bfc69fe4d soc: renesas: rcar-sysc: Adjust the waiting time to cover the worst case

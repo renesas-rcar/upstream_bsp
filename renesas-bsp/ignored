@@ -72,6 +72,10 @@ ARM/SoC/DT
 		fdfe96d831f0 dmaengine: rcar-dmac: Add bus rate control support for R-Car V3U/V4H
 		3baf2c4e8881 dmaengine: rcar-dmac: Add fixed address mode support
 
+	It can be replaced by c744dc4 ("sched/topology: Rework CPU capacity asymmetry detection")
+		a2d17d3b1576 soc: renesas: rcar-topology: Add missing device for rcar topology
+		0846e66813ab soc: renesas: rcar-topology: Add support for R-Car capacity awareness
+
 AVS
 	AVS is not intended for upstream
 
