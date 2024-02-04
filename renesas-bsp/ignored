@@ -67,6 +67,8 @@ ARM/SoC/DT
 		973fbc34bf5d soc: renesas: rcar-sysc: Remove power domains always on for M3N v1.0
 		ad70433f1eda soc: renesas: rcar-sysc: Support S2RAM
 		e07b497cf41e soc: renesas: rcar-sysc: Improve power domains always on implementation
+
+	Prototype code / Proof of concept code
 		46cca390830d dt-bindings: renesas,rcar-dmac: Add bus rate control support for R-Car V3U/V4H
 		234e0d5eb188 dt-bindings: renesas,rcar-dmac: Document optional properties
 		fdfe96d831f0 dmaengine: rcar-dmac: Add bus rate control support for R-Car V3U/V4H
