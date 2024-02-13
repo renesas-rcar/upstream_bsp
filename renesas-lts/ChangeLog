@@ -1,0 +1,142 @@
+v6.6.89-2025-05-07
+
+	* Merge/Rebase v6.6.89
+
+	* update CVE
+
+v6.6.88-2025-05-07
+
+	* Merge/Rebase v6.6.88
+
+	* update CVE
+
+v6.6.87-2025-04-11
+
+	* Merge/Rebase v6.6.87
+
+	* update CVE
+
+v6.6.86-2025-04-08
+
+	* Merge/Rebase v6.6.86
+
+	* update CVE
+
+v6.6.85-2025-03-31
+
+	* Merge/Rebase v6.6.85
+
+	* update list
+
+* v6.6.84-2025-03-24
+
+	* Merge/Rebase v6.6.84
+
+	* update CVE
+
+	* Below patches were backported
+
+		commit 1dba0a37644ed3022558165bbb5cb9bda540eaf7
+		("can: rcar_canfd: Fix page entries in the AFL list")
+
+		commit f9a83965d40ef162bab1e3af338523b8da69cb82
+		("can: rcar_canfd: Remove superfluous parentheses in address calculations")
+
+		commit 0c1d0a69c5e7314f3787bc4272e286d800dbfc56
+		("can: rcar_canfd: Improve printing of global operational state")
+
+		commit dd20d16dae83733d7c98c167b8d935e7b63db7c7
+		("can: rcar_canfd: Simplify clock handling")
+
+* v6.6.83-2025-03-21
+
+	* Merge/Rebase v6.6.83
+
+	* update CVE
+
+	* update list
+
+		tidyup patch order
+
+	* Below patches were backported
+
+		commit d43c077cb88d800d0c2a372d70d5af75c6a16356
+		("arm64: dts: renesas: Factor out White Hawk Single board support")
+
+		commit ba4d843a2ac646abc034b013c0722630f6ea1c90
+		("arm64: dts: renesas: Use interrupts-extended for Ethernet PHYs")
+
+		commit 3d8e475bd7a724a97cffebcaae7230abae2ca170
+		("arm64: dts: renesas: white-hawk-single: Wire-up Ethernet TSN")
+
+		commit 93e09fdceed1aefd3546fda927805b8306d49e0b
+		("arm64: dts: renesas: eagle: Add capture overlay for Function expansion board")
+
+		commit a09c3e105a208580b9d9c868bac630c9263ff564
+		("arm64: dts: renesas: Apply overlays to base dtbs")
+
+		commit 55cda67bf3121c7cdf9aa65ed2a5d1927027c5b0
+		("arm64: dts: renesas: r8a779g2: Add White Hawk Single support")
+
+		commit 932ff0c802c678bb6c7a98740eff930dad41fece
+		("arm64: dts: renesas: rzg3s-smarc-som: Enable the Ethernet interfaces")
+
+		commit 447765986dbfc321e37b13d7c276b106a469ec0b
+		("arm64: dts: renesas: rzg3s-smarc-som: Use switches' names to select on-board functionalities")
+
+		commit 00cbba479142a3c962a44b127db4ab6cdc2b2b70
+		("arm64: dts: renesas: rzg3s-smarc-som: Enable SDHI2")
+
+		commit aca0f89bad145c4f1c4d4d60a957de1e4f4522a4
+		("arm64: dts: renesas: rzg3s-smarc-som: Spelling s/device-type/device_type/")
+
+		commit adb4f0c5699c45d0034abde786e748250705a3b6
+		("arm64: dts: renesas: Add initial support for RZ/G3S SMARC SoM")
+
+		commit f7cd4b412020e71ab4c248c908558c67248a8392
+		("arm64: dts: renesas: Add R8A779G3 SoC support")
+
+		commit 7605e7e90b6a5c87e05d031018a8e6d024b73953
+		("arm64: dts: renesas: Add Renesas R8A779G2 SoC support")
+
+		commit c7b4d6e7fa837e70f463c6e83a0d0e5e201f85db
+		("arm64: dts: renesas: r8a779g0: R-Car Ethernet TSN support")
+
+		commit b0cf8110843ad2ee4c9665e1f590069108fe1881
+		("arm64: dts: renesas: white-hawk-single: Add R-Car Sound support")
+
+		commit b72dc7b9e388e1a5997c1ab3239947ff23fe3f72
+		("arm64: dts: renesas: white-hawk-ard-audio: Drop SoC part")
+
+		commit bf6b3ccda3e6797c6b7b774726fe29a1c4602e95
+		("arm64: dts: renesas: r8a779g3: Add White Hawk Single support")
+
+		commit f7cd4b412020e71ab4c248c908558c67248a8392
+		("arm64: dts: renesas: Add R8A779G3 SoC support")
+
+		commit 93e09fdceed1aefd3546fda927805b8306d49e0b
+		("arm64: dts: renesas: eagle: Add capture overlay for Function expansion board")
+
+		commit 55cda67bf3121c7cdf9aa65ed2a5d1927027c5b0
+		("arm64: dts: renesas: r8a779g2: Add White Hawk Single support")
+
+		commit a09c3e105a208580b9d9c868bac630c9263ff564
+		("arm64: dts: renesas: Apply overlays to base dtbs")
+
+* v6.6.82-2025-03-14
+
+	* Merge/Rebase v6.6.82
+
+	* update CVE
+
+* v6.6.81-2025-03-10
+
+	* Merge/Rebase v6.6.81
+
+	* update CVE
+
+* v6.6.80-2025-03-03
+
+	* Merge/Rebase v6.6.80
+
+	* update CVE
