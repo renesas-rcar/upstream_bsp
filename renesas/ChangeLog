@@ -1,0 +1,14 @@
+* v6.6.16-2024-02-13
+
+	* Enable status = "reserved"
+
+	Linux side don't want to touch some specified clocks if it boots with
+	other OS, otherwise, Linux will kill to clock which is not used on Linux
+	but is used on other OS. To avoid such situation, below patches are added.
+
+	- clk: renesas: cpg-mssr: Ignore all clocks assigned to non-Linux system
+	- of: Add for_each_reserved_child_of_node()
+	- of: Add of_get_next_status_child() and makes more generic of_get_next
+	- of: Add __of_device_is_status() and makes more generic status check
+
+
