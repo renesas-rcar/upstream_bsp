@@ -1,0 +1,391 @@
+v6.12.40-2025-07-25
+
+	* Merge/Rebase v6.12.40
+
+	* update CVE
+
+v6.12.39-2025-07-18
+
+	* Merge/Rebase v6.12.39
+
+	* update CVE
+
+v6.12.38-2025-07-15
+
+	* Merge/Rebase v6.12.37
+
+	* update CVE
+
+v6.12.37-2025-07-11
+
+	* Merge/Rebase v6.12.37
+
+	* update CVE
+
+	* update list
+
+	* update README
+
+v6.12.36-2025-07-07
+
+	* Merge/Rebase v6.12.36
+
+	* update CVE
+
+v6.12.35-2025-06-30
+
+	* Merge/Rebase v6.12.35
+
+	* update CVE
+
+	* Below patches were backported
+
+		commit bccdbba51a946fdfa08e972f14526a081c6f8bf7
+		("thermal: rcar_gen3: Reuse logic to read fuses on Gen3 and Gen4")
+
+		commit b744af1180dbadcfd994a48d613b4431373da70d
+		("thermal: rcar_gen3: Use lowercase hex constants")
+
+		commit c699b6c7c857baba1375a1ed090bf71f695e2971
+		("media: i2c: imx290: Add configuration for IMX462")
+
+		commit ec75fd952b0b5cdab7b606cdacba237c57c1fdda
+		("media: i2c: imx290: Limit analogue gain according to module")
+
+		commit 9755343cb27ef0b0a82e196e2e4d2d3c3a275163
+		("media: i2c: imx290: Check for availability in probe()")
+
+		commit a92651b8e288db2fff461c544ce9b95f6fb40ce8
+		("media: i2c: imx290: Avoid communication during probe()")
+
+		commit 856e89ff581d43b844e3b439070a3f3a65564aa4
+		("media: i2c: imx290: Remove CHIP_ID reg definition")
+
+		commit c1f22633c28f347f1933e75ffe1635adf7f4f30e
+		("arm64: dts: renesas: r8a779g0: Add ISP core function block")
+
+		commit 2f9f69188e5d1061bab9595edea8e89c7eff75ee
+		("arm64: dts: renesas: r8a779g0: Restore sort order")
+
+		commit 978a7876a1e38a3734b2ecb93874debf7463dd28
+		("arm64: dts: renesas: r8a779g0: Add VSPX instances")
+
+		commit e163f098a34cb9ce99f2b66c325caa06e00129cb
+		("arm64: dts: renesas: r8a779g0: Add FCPVX instances")
+
+		commit 5a910676b1d68a71cbb0132dfe66929224baa8e8
+		("arm64: dts: renesas: r8a779g0: Add OTP_MEM node")
+
+		commit d871a94062a3a32510b503df58ed60fd86f2b14f
+		("clk: renesas: r8a779g0: Add ISP core clocks")
+
+		commit 7088d2d7e9a58a972d8c07b4d74837f3c524f2f4
+		("clk: renesas: r8a779g0: Add VSPX clocks")
+
+		commit c5a870087827bcf83cb06758d3e3b547790a6ad8
+		("clk: renesas: r8a779g0: Add FCPVX clocks")
+
+		commit b64b134942c8cf4801ea288b3fd38b509aedec21
+		("media: renesas: vsp1: Expose color space through the DRM API")
+
+		commit 67cbb2be3ae7f21f85642d81b451bee20f687d06
+		("media: renesas: vsp1: Name nested structure in vsp1_drm")
+
+		commit e6c9597e5f320c6bc9751183450e19386be476c8
+		("media: renesas: vsp1: Allow setting encoding and quantization")
+
+		commit d5e3bc24d5ce4c256d5bbe7f2d6b9c4a3c71a401
+		("media: renesas: vsp1: Report colour space information to userspace")
+
+		commit b6e57605eff6224df4debf188eb7a02dedb7686f
+		("media: renesas: vsp1: Fix media bus code setup on RWPF source pad")
+
+		commit 687dae9eedb0fb0153ef69b35b40f738f64793d0
+		("media: renesas: vsp1: Fix HSV format enumeration")
+
+		commit a4b25ae7b24b2cdf59fa6896f6a82e030606ca51
+		("media: renesas: vsp1: Make HSI and HST modules optional")
+
+		commit 57024cd2790a25049c13528a5c3e81eb0fe7382e
+		("media: renesas: vsp1: Implement pixel format enumeration")
+
+		commit 5dc8bd50c7d8630ae520cb35f21bd1088509142c
+		("media: renesas: vsp1: Use %p4cc printk modifier to print FourCC codes")
+
+		commit 8ebd5f70c2600a499b656fc5eb4d8f0888b66a4f
+		("media: renesas: vsp1: rwpf: Support operations with IIF")
+
+		commit f4fea51415e0e82af58e930585ba8c8a4772c945
+		("media: renesas: vsp1: wpf: Propagate vsp1_rwpf_init_ctrls()")
+
+		commit 15b3c76da9e19b24a69c603ec51a965c5be91e26
+		("media: renesas: vsp1: dl: Use singleshot DL for VSPX")
+
+		commit 7305ee12b2c9a8fb615319dc96d9aed847c80117
+		("media: renesas: vsp1: Add support IIF ISP Interface")
+
+		commit 09d76b4e83e4911238f74a2ba48d92db6e04f10a
+		("media: rcar-isp: Parse named cs memory region")
+
+		commit 7281a7bd5b7b57fb6841f27e95115934ab25f4a4
+		("media: rcar-isp: Rename base register variable")
+
+		commit 9103d33f22b12f9633157d2e853594aabc377eb7
+		("media: rcar-isp: Move driver to own directory")
+
+		commit 94bf847ae5a61e0ab0b971ed186a443688eb793f
+		("media: rcar-vin: Fix RAW10")
+
+		commit 17b5496c30709d83a0ca2d11731720a4dc0ef540
+		("media: rcar-vin: Fix RAW8")
+
+		commit 21cb8227e35ec93c637a2330fc3cb2e63170e7d4
+		("media: rcar-vin: Remove unnecessary checks")
+
+		commit d6a0866750bb14e3c0c16677fc45162513f1be1f
+		("media: rcar-vin: Add RCAR_GEN4 model value")
+
+		commit 9396770c3add2142e21813ce8bc152e5e6524557
+		("media: rcar-csi2: Remove hack to detect NTSC content")
+
+		commit c1eefe88c3954390473ed092f0d4718a810bd61c
+		("media: rcar-vin: Simplify the shutdown process")
+
+		commit 25482a986e44fddd3af77458071fbbd222795917
+		("media: rcar-vin: Remove superfluous starting state")
+
+		commit 1dadd89b58108d3df701d6d9e19cd34818f97f7f
+		("media: rcar-vin: Remove superfluous suspended state")
+
+		commit f2f0cd892515eda18857f47718eb7be93f9ddaca
+		("media: rcar-vin: Remove emulated SEQ_{TB,BT}")
+
+		commit e7376745ad5c8548e31d9ea58adfb5a847e017a4
+		("media: rcar-vin: Fix stride setting for RAW8 formats")
+
+v6.12.34-2025-06-20
+
+	* Merge/Rebase v6.12.34
+
+	* update CVE
+
+v6.12.33-2025-06-16
+
+	* Merge/Rebase v6.12.33
+
+	* update CVE
+
+	* update list
+
+	* Below patches were backported
+
+		commit 29a9b3a504c0d18bcc7f0547371409e9dcbc045e
+		("drm/panel: ilitek-ili9881c: Add configuration for 7" Raspberry Pi 720x1280")
+
+		commit 2f7e4a6997362a929419fc352ad8f424143ae482
+		("drm/panel: ilitek-ili9881c: Allow configuration of the number of lanes")
+
+		commit 655b92ca60a2d3fac83e8974fd786da6aea7fca2
+		("drm/panel: ilitek-ili9881c: Report subpixel order according to rotation")
+
+		commit b64e7d59ba75b1b080a65da20ffe0bae532854b5
+		("drm/panel: ilitek-ili9881c: Explicitly set address mode, allow 180° rotation")
+
+		commit 808d26afdcbf1abe5176261afbf945825652b748
+		("dt-bindings: ili9881c: Document 7" Raspberry Pi 720x1280")
+
+		commit a4eb71ff98c4792f441f108910bd829da7a04092
+		("regulator: rpi-panel-v2: Fix missing OF dependency")
+
+		commit d6fa0ca959db8efd4462d7beef4bdc5568640fd0
+		("regulator: rpi-panel-v2: Add missing GPIOLIB dependency")
+
+		commit d49305862fdc4d9ff1b1093b4ed7d8e0cb9971b4
+		("regulator: rpi-panel-v2: Add regulator for 7" Raspberry Pi 720x1280")
+
+v6.12.32-2025-06-05
+
+	* Merge/Rebase v6.12.32
+
+	* update CVE
+
+	* update list
+
+	* Below patches were backported
+
+		commit f55f7da62166dcdd34a0661b94a43464ff7c626a
+		("mmc: rename mmc_host_uhs() to mmc_host_can_uhs()")
+
+		commit dfc29a10c43d3f2aec853c9bf8b0d9e8f0251a2f
+		("mmc: core: Add support for graceful host removal for SD")
+
+		commit 9510b38dc0ba358c93cbf5ee7c28820afb85937b
+		("mmc: Add quirk to disable DDR50 tuning")
+
+		commit 899404e1503461adde3890828f7ed18a3032ec59
+		("mmc: core: Enable SDUC")
+
+		commit a7861651943dac0006f55e0b6db28ed8e9dbe411
+		("mmc: core: Prevent HSQ from enabling for SDUC")
+
+		commit 9e654f2bf309f7ddb9ff2fb3f9b0297ae194d2cb
+		("mmc: rename mmc_boot_partition_access() to mmc_host_can_access_boot()")
+
+		commit 03b31a0638a1cb1c580de4d5054ec9f5caffdffc
+		("mmc: rename mmc_host_cmd23() to mmc_host_can_cmd23()")
+
+		commit e3df5ae4761eb8373a72349f3cdbe7838dc5c538
+		("mmc: rename mmc_can_sleep() to mmc_card_can_sleep()")
+
+		commit 07dd2b3204f5fe3010dd467c0a192d7efabc1abc
+		("mmc: rename mmc_can_reset() to mmc_card_can_reset()")
+
+		commit d872c26741b6448abc948895056157c17251a944
+		("mmc: rename mmc_can_poweroff_notify() to mmc_card_can_poweroff_notify()")
+
+		commit ceb5d3acb0c32beb3a8fbaf72f21e9eb1b58bd63
+		("mmc: rename mmc_can_ext_csd() to mmc_card_can_ext_csd()")
+
+		commit 76d62cde684ba53dcbc6923b2ec90a024ee253f9
+		("mmc: rename mmc_can_discard() to mmc_card_can_discard()")
+
+		commit 5b793522904e315c7bd3c4c9db96b1ab98cd9714
+		("mmc: core: Add support for graceful host removal for eMMC")
+
+		commit 900ef5355861aa33d712c7e7d8fcf923e762b4cd
+		("mmc: core: Convert into an enum for the poweroff-type for eMMC")
+
+		commit fa34c940e830e7af37b57f5fcdb17e2fc03dbf7f
+		("mmc: core: Further avoid re-storing power to the eMMC before a shutdown")
+
+		commit 3953e7e8c1eaab9cd96ca45d420fb4561111294f
+		("mmc: core: Convert mmc_can_poweroff_notify() into a bool")
+
+		commit 3b791214c8bc1bc0eb3153a195c342b8a98f767b
+		("mmc: core: Trim trailing whitespace from card product names")
+
+		commit ec23a899d96f9ee3389abe6c516d09cae2fde5e3
+		("spi: sh-msiof: Move register definitions to <linux/spi/sh_msiof.h>")
+
+		commit 8f836868d848a9b84c38ae1f8e7366e01927c024
+		("spi: sh-msiof: Document frame start sync pulse mode")
+
+		commit acb47aa9b1e2f47121cf2233fcaf998151ab5410
+		("spi: sh-msiof: Double maximum DMA transfer size using two groups")
+
+		commit 39d0856f4102b6b61fdc650f90a1d9231e2bab17
+		("spi: sh-msiof: Simplify BRG's Division Ratio")
+
+		commit 5b91dc7e3e371e7263b95c0d31151c645d6652a6
+		("spi: sh-msiof: Increase TX FIFO size for R-Car V4H/V4M")
+
+		commit f669c2827dd691b10fcf4e4c5546869a51d0a46e
+		("spi: sh-msiof: Correct RX FIFO size for R-Car Gen3")
+
+		commit 1ab2c8c45f5c5df6707cc848686e674f4ec5c3d9
+		("spi: sh-msiof: Correct RX FIFO size for R-Car Gen2")
+
+		commit 955f7ce6680564963765e5fc1c3e71027a39a806
+		("spi: sh-msiof: Add core support for dual-group transfers")
+
+		commit acedbff0f0de1c116a0f8d943c4cf005f61f6143
+		("spi: sh-msiof: Correct SIMDR2_GRPMASK")
+
+		commit 8f3903b382f73eb5c36d342dea838d991e4bbe08
+		("spi: sh-msiof: SIFCTR bitfield conversion")
+
+		commit bd8d6658e7084ff9e78da9623633e79c9d31ad68
+		("spi: sh-msiof: SICTR bitfield conversion")
+
+		commit c2cc4b72fc14c84fdb1bc49ec98af252ed64fbf3
+		("spi: sh-msiof: SITSCR/SIRSCR bitfield conversion")
+
+		commit 386cc5207ba2b68a4672cb68810c44412531e74e
+		("spi: sh-msiof: SITMDR2 and SIRMDR2 bitfield conversion")
+
+		commit 6bae252a9452ca8496670230a7821c34450763a2
+		("spi: sh-msiof: SITMDR1/SIRMDR1 bitfield conversion")
+
+		commit 74cb19c943ddb46f3d06323c3d0469f14282c8ca
+		("spi: sh-msiof: Make words/fs unsigned in FIFO helpers")
+
+		commit b4eec5cdf112e3a4e286fb79fe507b09e2fca66f
+		("spi: sh-msiof: Make words/bits unsigned in sh_msiof_spi_txrx_once()")
+
+		commit 3dd5ed19a2e8283f9ead5f2fd09b267a337ab86d
+		("spi: sh-msiof: Use bool for boolean flags")
+
+		commit 74df74ee83acfea4e9a6b47386c7907379c9295f
+		("spi: sh-msiof: Complete using dev in sh_msiof_spi_probe()")
+
+		commit 0941d5166629cb766000530945e54b4e49680c68
+		("spi: sh-msiof: Fix maximum DMA transfer size")
+
+		commit ee44d3fc9d8b882cbc98acf2d3c773aba971aa67
+		("spi: sh-msiof: Remove unneeded compatible values")
+
+		commit 0e1c7d0591ac4054c67529e200a9edfaf5344f4a
+		("spi: sh-msiof: Drop comma after OF match table sentinel")
+
+		commit d33e65dc3c4c9963b95b182f526480aaab9ce4a9
+		("arm64: dts: renesas: gray-hawk-single: Restore sort order")
+
+		commit d04079e0cadbfd95d1c108c8e60d71f15ff1a1f3
+		("arm64: dts: renesas: gray-hawk-single: Describe AVB1 and AVB2")
+
+		commit 51786c8b47edfce3cee6eef9c8a62a035f9fbead
+		("arm64: dts: renesas: r8a779h0: Remove #address- and #size-cells from AVB[0-2]")
+
+		commit be53aa052008538d67d9ad23f6f8160df390e1d6
+		("can: rcar_canfd: Add RZ/G3E support")
+
+		commit 0853b7e479a69d1e335665ceec9898c5b9ecc810
+		("can: rcar_canfd: Enhance multi_channel_irqs handling")
+
+		commit e5258b337de26c97cf210858407e0fc881bc0e3d
+		("can: rcar_canfd: Add external_clk variable to struct rcar_canfd_hw_info")
+
+		commit c5670c23d67dd81e71262bb7c5942502cd9df62e
+		("can: rcar_canfd: Add sh variable to struct rcar_canfd_hw_info")
+
+		commit 5026d2acaefab81857390c00c771ee6a2fa65461
+		("can: rcar_canfd: Add struct rcanfd_regs variable to struct rcar_canfd_hw_info")
+
+		commit 836cc711fc18747fc936ac62abd61a64465f00cc
+		("can: rcar_canfd: Add shared_can_regs variable to struct rcar_canfd_hw_info")
+
+		commit c10e5510101112932fc2955a5ff97ecf8448a9d1
+		("can: rcar_canfd: Add ch_interface_mode variable to struct rcar_canfd_hw_info")
+
+		commit b5a9f2ec427cbdfe915c377fdd61812636b2cdc2
+		("can: rcar_canfd: Add {nom,data}_bittiming variables to struct rcar_canfd_hw_info")
+
+		commit 04d7a3a4660fb94b1398027a9089af95014115f1
+		("can: rcar_canfd: Add max_cftml variable to struct rcar_canfd_hw_info")
+
+		commit 2d6cb8ff94166f3965b3fc3637faecf295a8c708
+		("can: rcar_canfd: Add max_aflpn variable to struct rcar_canfd_hw_info")
+
+		commit e9ffa12e02e193395e594df8977157121b107c21
+		("can: rcar_canfd: Add rnc_field_width variable to struct rcar_canfd_hw_info")
+
+		commit a2427e44942bb772cf4e416df45b569a0e35b1cb
+		("can: rcar_canfd: Update RCANFD_GAFLCFG macro")
+
+		commit 6b9f8b53a1f3ad8e7880e3ad0e08074f5d7fd404
+		("can: rcar_canfd: Add rcar_canfd_setrnc()")
+
+		commit c9e17c91f1656f90b06e5cd2f39dfaab08de9611
+		("can: rcar_canfd: Drop the mask operation in RCANFD_GAFLCFG_SETRNC macro")
+
+		commit b75fcf2af2dbbc5f913cf1b9194ed01ce9c068b6
+		("can: rcar_canfd: Update RCANFD_GERFL_ERR macro")
+
+		commit 05e7f5a90c306dd1b94d3f15ab084755c03f1202
+		("can: rcar_canfd: Drop RCANFD_GAFLCFG_GETRNC macro")
+
+v6.12.31-2025-05-30
+
+	* Merge/Rebase v6.12.31
+
+	* update CVE
