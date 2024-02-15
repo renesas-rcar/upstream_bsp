@@ -51,3 +51,19 @@ Sound
 	  Otherwise it will get error, like below
 		[    2.533890] rcar_sound ec500000.sound: Trying to bind component to card "pcm3168a" but is already bound to card "ak4613"
 		[    2.544950] asoc-audio-graph-card sound@1: ASoC: failed to instantiate card -19
+
+Linux with other OS
+
+	- If Linux is worked with other OS, Linux might kill device power which is used on other OS.
+	  Linux will ignore such device if DT has status = "reserved".
+
+	"reserved"
+		Indicates that the device is operational, but should not be
+		used. Typically this is used for devices that are controlled
+		by another software component, such as platform firmware.
+
+	ex)
+		devicce@xxxx {
+			...
+			status = "reserved";
+		};
