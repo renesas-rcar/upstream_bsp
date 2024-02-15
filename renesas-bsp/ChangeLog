@@ -1,3 +1,10 @@
+* v6.1.77-2024-02-15
+
+	* Replace to upstream patch
+
+	commit 6609c4103c763df07ca31f2e65e649345afe6cfb
+	("pmdomain: renesas: Adjust the waiting time to cover the worst case")
+
 * v6.1.77-2024-02-13
 
 	* Enable status = "reserved"
