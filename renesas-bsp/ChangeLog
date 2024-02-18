@@ -1,3 +1,11 @@
+* v6.6.17-2024-02-19
+
+	* Merge/Rebase v6.6.17
+
+	* Add CVE file
+
+	renesas-bsp/cve indicates supported CVE
+
 * v6.6.16-2024-02-15
 
 	* Backport from upstream
