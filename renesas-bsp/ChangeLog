@@ -1,3 +1,14 @@
+* v6.1.81-2024-03-07
+
+	* Merge/Rebase v6.1.81
+
+	* update CVE
+
+	* Backport from upstream next
+
+	commit cbae1a350e3ceff38242a4905805c80ccbcfbba5
+	("ASoC: rcar: adg: correct TIMSEL setting for SSI9")
+
 * v6.1.80-2024-03-04
 
 	* Merge/Rebase v6.1.80
