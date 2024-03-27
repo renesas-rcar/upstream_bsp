@@ -1,3 +1,14 @@
+* v6.6.23-2024-03-27
+
+	* Merge/Rebase v6.6.23
+
+	* update CVE
+
+	* Backport from upstream
+
+	commit e8d1b41e69d72c62865bebe8f441163ec00b3d44
+	("mmc: tmio: avoid concurrent runs of mmc_request_done()")
+
 * v6.6.22-2024-03-18
 
 	* Merge/Rebase v6.6.22
