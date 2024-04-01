@@ -14,10 +14,9 @@
 #
 # 4) call this script
 #
-# 5) see /tmp/cve-xx-cve
-#
 # 2023/02/22 Kuninori Morimoto <kuninori.morimoto.gx@renesas.com>
 #===============================
+BSP=`readlink -f "$0" | xargs dirname | xargs dirname`
 V1=`head ../kernel/Makefile | grep "^VERSION"    | cut -d " " -f 3`
 V2=`head ../kernel/Makefile | grep "^PATCHLEVEL" | cut -d " " -f 3`
 V3=`head ../kernel/Makefile | grep "^SUBLEVEL"   | cut -d " " -f 3`
@@ -31,3 +30,6 @@ cat ${TMP}-orig | sed -e "s/ /\n/g" | sed 1d				> ${TMP}-affected
 	ls -1 CVE-*.yml | sed -e "s/\.yml$//g" 				> ${TMP}-all
 )
 cat ${TMP}-all ${TMP}-affected | sort -t"-" -k 2,2r -k 3nr | uniq -u	> ${TMP}-cve
+
+mv ${TMP}-cve ${BSP}/cve
+rm -f ${TMP}-*
