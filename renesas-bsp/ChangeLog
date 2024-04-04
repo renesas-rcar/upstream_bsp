@@ -1,3 +1,11 @@
+* v6.6.24-2024-04-04
+
+	* Merge/Rebase v6.6.24
+
+	* update CVE
+
+	* update script/make-cve.sh
+
 * v6.6.23-2024-03-27
 
 	* Merge/Rebase v6.6.23
