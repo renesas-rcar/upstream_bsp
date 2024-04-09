@@ -1,3 +1,16 @@
+* v6.1.84-2024-04-10
+
+	Below patches are backported
+
+		commit d0520eb3ed54df89eb5961ec3b88634f313123f2
+		("i2c: rcar: add FastMode+ support for Gen4")
+
+		commit 2b523c46e81ebd621515ab47117f95de197dfcbf
+		("i2c: rcar: introduce Gen4 devices")
+
+		commit 37a672be3ae357a0f87fbc00897fa7fcb3d7d782
+		("i2c: rcar: fix error code in probe()")
+
 * v6.1.84-2024-04-09
 
 	"i2c: rcar: Add fast mode plus support" patch was replaced with
