@@ -1,3 +1,35 @@
+* v6.6.25-2024-04-09
+
+	* Merge/Rebase v6.6.25
+
+	* update CVE
+
+	* Below patches are cherry-picked to sync BSP
+
+		54c76ed33008d0b342daa52a45ac304e5e3ab312
+		("i2c: rcar: improve accuracy for R-Car Gen3+")
+
+		0e864b552b2302e40b2277629ebac79544a5c433
+		("i2c: rcar: reset controller is mandatory for Gen3+")
+
+		3c417c947c13f22e60a4c3e68a7219a134219925
+		("i2c: rcar: remove open coded DIV_ROUND_CLOSEST")
+
+		47280af872367ead8202b8503083b0b4016b667b
+		("i2c: rcar: calculate divider instead of brute-forcing it")
+
+		d72857907af04f47e6844544160be42b0ad56edd
+		("i2c: rcar: properly format a debug output")
+
+		be944ceb6761a6198f5df51c36fd91eb9e112704
+		("i2c: rcar: avoid non-standard use of goto")
+
+		941b99ac57facbc6bed99c06592d5471a9bf61cb
+		("i2c: rcar: Remove #ifdef guards for PM related functions")
+
+		7ccd37fbecf31d610adf9aa01667632a418e06d6
+		("arm64: dts: renesas: draak: Make HDMI the default video input")
+
 * v6.6.24-2024-04-04
 
 	* Merge/Rebase v6.6.24
