@@ -1,3 +1,58 @@
+* v6.6.25-2024-04-10
+
+	* Below patches are picked to sync BSP
+	  These are not yet upstreamed
+
+		arm64: renesas: defconfig: add R-Car Gen4 PCIe
+		arm64: Add renesas_defconfig
+		arm64: defconfig: Enable Renesas BSP
+		net: phy: workaround 'resume' regression with Micrel PHYs
+		arm64: dts: renesas: r8a779g0: white-hawk: Enable PCIe Host ch0
+		arm64: dts: renesas: r8a779g0: Add PCIe Host and Endpoint nodes
+		dt-bindings: PCI: renesas: Document R-Car V4H PCIe Endpoint
+		dt-bindings: PCI: renesas: Document R-Car V4H PCIe Host
+		arm64: dts: renesas: r8a779f0: spider: Enable PCIe Host ch0
+		misc: pci_endpoint_test: Add Device ID for R-Car V4H PCIe controller
+		media: rcar-vin: Add support for RAW10 on V3U
+		soc: renesas: rcar-sysc: Add wait 1us before turning off power domain
+		mmc: core: mmc_ops: Enable stop command
+		mmc: core: Issue power off notification in mmc_remove()
+
+	* Below patches are cherry-picked to sync BSP
+
+		commit 9197bf4bb93238ee23ab7fc84db57d9c474d61cf
+		("dt-bindings: PCI: dwc: Update maxItems of reg and reg-names")
+
+		commit e311b3834dfa73e1f3b5ae2dad0346c37692a9b2
+		("PCI: rcar-gen4: Add endpoint mode support")
+
+		commit 0d0c551011df4519c232f7114cdace9000e86c51
+		("PCI: rcar-gen4: Add R-Car Gen4 PCIe controller support for host mode")
+
+		commit 9baa8a18e31b7167885c11c38841ce92bbe20f4f
+		("PCI: dwc: endpoint: Introduce .pre_init() and .deinit()")
+
+		commit 303e845351f5d2b4ff349bb3e59aba2b554d8229
+		("PCI: dwc: Expose dw_pcie_write_dbi2() to module")
+
+		commit 1896d17f916819b8b5d145b4feef77109e78c435
+		("PCI: dwc: Add EDMA_UNROLL capability flag")
+
+		commit 7873b49b41b92edb3395bff9a528eaf89da5e41c
+		("PCI: dwc: endpoint: Add multiple PFs support for dbi2")
+
+		commit 164f66be0c2523e65df41b755c41b7c9ff58035a
+		("PCI: Add T_PVPERL macro")
+
+		commit d0520eb3ed54df89eb5961ec3b88634f313123f2
+		("i2c: rcar: add FastMode+ support for Gen4")
+
+		commit 2b523c46e81ebd621515ab47117f95de197dfcbf
+		("i2c: rcar: introduce Gen4 devices")
+
+		commit 37a672be3ae357a0f87fbc00897fa7fcb3d7d782
+		("i2c: rcar: fix error code in probe()")
+
 * v6.6.25-2024-04-09
 
 	* Merge/Rebase v6.6.25
