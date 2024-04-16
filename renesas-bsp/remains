@@ -205,7 +205,6 @@ ccde61707b3d dt-bindings: power: Add R8A779H0 V4M SYSC power domain definitions
 e1d847bfd3ca dmaengine: rcar-dmac: Add repeat mode support
 94b086621568 can: rcar_canfd: rcar_canfd_handle_global_receive(): fix IRQ storm on global FIFO receive
 f3bcc8bb7815 dt-bindings: thermal: rcar-gen3-thermal: Add r8a779g0 support
-5b931f432f39 arm64: dts: renesas: r8a779g0: Add thermal support
 918fab2d8d90 thermal: rcar_gen3_thermal: Add R-Car V4H support
 98721f4180de PCI: dwc: rcar-gen4: Add support for Resizable BAR
 7495f2cb37fb PCI: dwc: rcar-gen4: Set up BAR to work with 64-bit

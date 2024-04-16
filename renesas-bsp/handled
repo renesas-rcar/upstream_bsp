@@ -1,3 +1,4 @@
+5b931f432f39 arm64: dts: renesas: r8a779g0: Add thermal support
 1bc7249482bd clk: renesas: r8a779g0: Add Thermal module clock
 02edbde2edfc dt-binding: net: renesas,etheravb: Add support for R-Car V4M
 123acb278767 soc: renesas: rcar-rst: Add support for R-Car V4M
