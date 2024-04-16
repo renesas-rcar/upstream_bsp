@@ -1,3 +1,4 @@
+364e7fe99f18 ASoC: da7213.c: add missing pm_runtime_disable()
 3b91b9e053c5 arm64: dts: renesas: whitehawk: Update clkreq control for PCIE1
 e14a7b50a2ef arm64: dts: renesas: r8a779g0: Disable R-Car Sound on r8a779g0-whitehawk.dtb
 d7be742075b0 arm64: dts: renesas: r8a779g0: Disable CDM check in PCIe ch1

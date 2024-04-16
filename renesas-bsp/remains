@@ -219,7 +219,6 @@ c92b08f78a4f PCI: dwc: rcar-gen4: Change the power operation method for 4lane.
 5f1909e07a3f arm64: dts: renesas: r8a779g0: Add PCIe1 clock to PCIe0 node for 4lane
 578a79fb7d1d arm64: dts: renesas: r8a779g0: PCIE channels and lanes are selectable.
 e821b0fa8382 arm64: dts: renesas: r8a779g0: Add PCIe-ch1 phy access.
-364e7fe99f18 ASoC: da7213.c: add missing pm_runtime_disable()
 bd5e927aa7eb media: i2c: Fix timeout GMSL2 link establish issue of MAX96712
 6346917cdaa4 media: rcar-csi2: Add interface for C-PHY Analog pin swap on R-Car V4H
 51f0028e4e9c media: rcar-csi2: Add interface for HS Receiver Specific on R-CarV4H
