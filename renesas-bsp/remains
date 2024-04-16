@@ -182,7 +182,6 @@ f029d531a39d dt-bindings: serial: sh-sci: Document r8a779h0 bindings
 02edbde2edfc dt-binding: net: renesas,etheravb: Add support for R-Car V4M
 8471c5bb3f14 dt-bindings: media: rcar-vin: Document R8A779H0 bindings
 48b89c702c78 media: dt-bindings: media: Add macros for video interface bus types
-123acb278767 soc: renesas: rcar-rst: Add support for R-Car V4M
 28f76220f249 dt-bindings: power: renesas,rcar-sysc: Document r8a779h0 SYSC bindings
 5316857106d3 arm64: dts: renesas: r8a779h0: Add GPIO nodes
 9d58e081d114 arm64: dts: renesas: gray-hawk: Add Ethernet sub-board
