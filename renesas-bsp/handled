@@ -1,3 +1,4 @@
+aacff91aa3fc soc: renesas: Identify R-Car V4M
 364e7fe99f18 ASoC: da7213.c: add missing pm_runtime_disable()
 3b91b9e053c5 arm64: dts: renesas: whitehawk: Update clkreq control for PCIE1
 e14a7b50a2ef arm64: dts: renesas: r8a779g0: Disable R-Car Sound on r8a779g0-whitehawk.dtb
