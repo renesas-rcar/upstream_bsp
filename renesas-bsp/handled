@@ -1,3 +1,4 @@
+89366fe8fa58 clk: renesas: r8a779g0: Fix ISPCS clocks
 f3bcc8bb7815 dt-bindings: thermal: rcar-gen3-thermal: Add r8a779g0 support
 5b931f432f39 arm64: dts: renesas: r8a779g0: Add thermal support
 1bc7249482bd clk: renesas: r8a779g0: Add Thermal module clock

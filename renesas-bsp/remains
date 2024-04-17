@@ -14,7 +14,6 @@ e5c8088e2751 clk: renesas: r8a779g0: Fix ISPCS clocks
 ab289abbf294 clk: renesas: r8a779g0: Fix ISP clocks
 c9f097ef9ba0 clk: renesas: r8a779g0: Fix IMP clocks
 1465bd4ef933 clk: renesas: cpg-mssr: Add VCBUS support for R-Car V4H
-89366fe8fa58 clk: renesas: r8a779g0: Fix ISPCS clocks
 3b8c9abef484 arm64: dts: renesas: r8a779g0-gray-hawk: Rename PAP region
 c4e59dfb3a02 arm64: dts: renesas: r8a779g0-gray-hawk: Allocate a 40-bit reserved memory region for multiple IPs
 4f8977e36928 arm64: dts: renesas: r8a779g0-whitehawk: add an 40-bit reserved memory region for multiple IPs
