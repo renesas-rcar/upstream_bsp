@@ -1,3 +1,21 @@
+* v6.6.28-2024-04-18
+
+	* Merge/Rebase v6.6.28
+
+	* update CVE
+
+	* add prefix "BSP: " on "defconfig" / "renesas_defconfig" commits
+
+	* Merge "BSP: renesas_defconfig" patches into one
+
+	* Below patches are backported
+
+	f284b23809bf54f8189f82f822f099e43d6a0a35
+	("ASoC: dt-bindings: renesas,rsnd: add missing renesas,rcar_sound-gen4")
+
+	d6e792ed7dd022a16a637ade224da070b60f4f3b
+	("ASoC: dt-bindings: renesas: add R8A779H0 V4M")
+
 * v6.6.27-2024-04-16
 
 	* sync to renesas-bsp/v6.1.86-2024-04-16
