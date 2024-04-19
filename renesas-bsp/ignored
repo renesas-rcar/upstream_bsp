@@ -329,15 +329,6 @@ GSX
 		35eb4ba8bd88 clk: renesas: r8a77{95, 96, 965, 990}: Add ZG clock
 		7e9c8bd37798 soc: renesas: rcar-sysc: Include 3DG as always-on power domains
 
-iVDP1C
-	iVDP1C is not intended for upstream
-
-		0b7a348463a1 arm64: dts: renesas: r8a779{65,90}: Add iVDP1C device nodes
-		7be570957b5f clk: renesas: r8a7796: Remove iVDP1C clock on ES3.0 or later
-		0b1537a0251b clk: renesas: r8a7796: Add iVDP1C clock
-		d7c9cc6e1a2a clk: renesas: r8a7795: Add iVDP1C clocks to ES1.x
-		93b461eca6d1 arm64: dts: renesas: r8a7795: Fix clock, reset and power domain for iVDP1C
-
 IMP
 	IMP is not intended for upstream
 		5beefb300ae6 arm64: dts: renesas: r8a779x: add IMP nodes
@@ -394,6 +385,15 @@ IPMMU
 	Cannot be tested.
 		967a199ed386 iommu/ipmmu-vmsa: Allow PCI Host controller to be a proxy for all connected PCI devices
 		6c286c0f0b71 iommu/ipmmu-vmsa: Invalidate TLB when IPMMU translation error occurred
+
+iVDP1C
+	iVDP1C is not intended for upstream
+
+		0b7a348463a1 arm64: dts: renesas: r8a779{65,90}: Add iVDP1C device nodes
+		7be570957b5f clk: renesas: r8a7796: Remove iVDP1C clock on ES3.0 or later
+		0b1537a0251b clk: renesas: r8a7796: Add iVDP1C clock
+		d7c9cc6e1a2a clk: renesas: r8a7795: Add iVDP1C clocks to ES1.x
+		93b461eca6d1 arm64: dts: renesas: r8a7795: Fix clock, reset and power domain for iVDP1C
 
 Media
 	Panels should be supported via DT overlays
@@ -531,6 +531,41 @@ NVME
 	Only a workaround and we have no HW to test a proper solution
 		0453069bec94 nvme: Workaround Samsung 970 Pro power state issues
 
+PCIe for R-Car Gen3
+
+	Cannot be tested.
+
+		56f944e99309 PCI: rcar: Add regulators support
+
+PCIe for R-Car Gen4
+	registers sharing by "shared" is not acceptable for upstream.
+
+		5232175003e2 arch: arm64: dts: renesas: r8a779g0: Add shared address ranges and shared clock for pcie node
+		fd2dd33a26b3 arch: arm64: dts: renesas: r8a779g0-whitehawk: Change Bifurcation mode of PCIE0 when using PCIE1
+		19691e74613e arm64: dts: renesas: r8a779f0: Fix the PCIe node
+		1b61c02117c4 pci: dwc: pcie-renesas-ep: Mode change for different channels
+		4b2d830c3b44 pci: dwc: renesas: Mode change for different channels
+		21d0e3cb90fd pci: dwc: renesas: Use platform_get_resource_byname() and devm_ioremap_resource() instead of devm_platform_ioremap_resource_byname()
+
+	Not available channel 1 is not acceptable for upstream.
+	Adding disable node into the board is not acceptable for upstream.
+
+		a1ee889b1718 arm64: dts: renesas:  Add PCIe1 endpoint node
+		86ed3e15856f arm64: dts: renesas: r8a779f0: Fix PCIe clock and support PCIe1 endpoint
+		3e3b7c8bfbca dts: renesas: r8a779f0: Add PCIe endpoint node
+
+	This seems local implementation.
+
+		4c76d373092f arm64: defconfig: Enable PCIe Endpoint
+		a5758a3a06cd arm64: defconfig: Enable Renesas R-Car PCIe v4.0 host controller driver
+		c5189c803d5b pci: dwc: pcie-renesas-ep: Support PCIe endpoint for R-Car V4H
+		f0ac8f59aecd pci: dwc: renesas: Add R-Car V4H PCIe support
+		baea6069075f pci: dwc: renesas: Add retrain link function for PCIe 4.0
+		d2c2d568e963 pci: dwc: renesas: Fix retrain link function for PCIe 4.0
+		9ab08d1fc0a1 pci: dwc: renesas: Implement source code based on board TP for V4H Endpoint
+		f481c68a26f4 pci: dwc: renesas: Implement source code based on board TP for V4H RootComplex
+		417cd8ce5abb PCI: Replace PCIe registers not defined in HW UM
+
 PCI
 	Matches already against family-specific compatible
 		331fb5074e3b PCI: rcar: Add a compatible string for r8a77961
@@ -572,41 +607,6 @@ QoS
 		c42b7504bd74 arm64: dts: renesas: r8a779f0/r8a779g0: Add QOS devices for S4/V4H Ver1.0
 		21ffa2421578 arm64: dts: renesas: r8a779a0: Add QoS device
 		31633efaaf13 arm64: dts: renesas: Add QoS device node for Gen3 devices
-
-PCIe for R-Car Gen3
-
-	Cannot be tested.
-
-		56f944e99309 PCI: rcar: Add regulators support
-
-PCIe for R-Car Gen4
-	registers sharing by "shared" is not acceptable for upstream.
-
-		5232175003e2 arch: arm64: dts: renesas: r8a779g0: Add shared address ranges and shared clock for pcie node
-		fd2dd33a26b3 arch: arm64: dts: renesas: r8a779g0-whitehawk: Change Bifurcation mode of PCIE0 when using PCIE1
-		19691e74613e arm64: dts: renesas: r8a779f0: Fix the PCIe node
-		1b61c02117c4 pci: dwc: pcie-renesas-ep: Mode change for different channels
-		4b2d830c3b44 pci: dwc: renesas: Mode change for different channels
-		21d0e3cb90fd pci: dwc: renesas: Use platform_get_resource_byname() and devm_ioremap_resource() instead of devm_platform_ioremap_resource_byname()
-
-	Not available channel 1 is not acceptable for upstream.
-	Adding disable node into the board is not acceptable for upstream.
-
-		a1ee889b1718 arm64: dts: renesas:  Add PCIe1 endpoint node
-		86ed3e15856f arm64: dts: renesas: r8a779f0: Fix PCIe clock and support PCIe1 endpoint
-		3e3b7c8bfbca dts: renesas: r8a779f0: Add PCIe endpoint node
-
-	This seems local implementation.
-
-		4c76d373092f arm64: defconfig: Enable PCIe Endpoint
-		a5758a3a06cd arm64: defconfig: Enable Renesas R-Car PCIe v4.0 host controller driver
-		c5189c803d5b pci: dwc: pcie-renesas-ep: Support PCIe endpoint for R-Car V4H
-		f0ac8f59aecd pci: dwc: renesas: Add R-Car V4H PCIe support
-		baea6069075f pci: dwc: renesas: Add retrain link function for PCIe 4.0
-		d2c2d568e963 pci: dwc: renesas: Fix retrain link function for PCIe 4.0
-		9ab08d1fc0a1 pci: dwc: renesas: Implement source code based on board TP for V4H Endpoint
-		f481c68a26f4 pci: dwc: renesas: Implement source code based on board TP for V4H RootComplex
-		417cd8ce5abb PCI: Replace PCIe registers not defined in HW UM
 
 RAVB
 	Needs proper 88Q2110 PHY driver but we don't have documentation
@@ -959,3 +959,4 @@ VIN
 		9a473723caaf rcar-vin: rcar-csi2: Don't bail out from probe on no ep
 	This patch as clearly marked as a development debug patch, its only function is to prinkt when an interrupt handles, no use upstream
 		2058a7e8eddc media: rcar-vin: Add overflow debug message option
+
