@@ -325,6 +325,7 @@ Firmware
 GSX
 	GSX is not intended for upstream
 
+		aab26071cf68 arm64: dts: r8a779h0: Add GSX device node
 		6b6059699a47 arm64: dts: renesas: r8a779g0: Update compatible name for gsx device
 		983c00ba9120 arm64: dts: renesas: Add DEVFREQ support for GSX in Gen3
 		8ebc78fdd198 arm64: dts: renesas: Add GSX device node for Gen3 devices
