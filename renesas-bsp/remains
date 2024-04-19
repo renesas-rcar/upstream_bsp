@@ -11,10 +11,8 @@ a570945a144e clk: renesas: r8a779g0-cpg-mssr: Update clock source of VISIONIP mo
 8fb9f82e224b drm: bridge: ti-sn65dsi86: Add checking to detect bridge device connection failure
 e5c8088e2751 clk: renesas: r8a779g0: Fix ISPCS clocks
 1465bd4ef933 clk: renesas: cpg-mssr: Add VCBUS support for R-Car V4H
-3b8c9abef484 arm64: dts: renesas: r8a779g0-gray-hawk: Rename PAP region
 c4e59dfb3a02 arm64: dts: renesas: r8a779g0-gray-hawk: Allocate a 40-bit reserved memory region for multiple IPs
 4f8977e36928 arm64: dts: renesas: r8a779g0-whitehawk: add an 40-bit reserved memory region for multiple IPs
-0deac6146b51 arm64: dts: renesas: r8a779g0-gray-hawk: Rename PAP region
 1eb3fdaa1ffc arm64: dts: renesas: r8a779g0-gray-hawk: Allocate a 40-bit reserved memory region for multiple IPs
 c25a89e05e84 arm64: dts: renesas: r8a779g0-whitehawk: add an 40-bit reserved memory region for multiple IPs
 da47c8b69492 media: rcar-vin: rcar-csi2: Fix timeout issue on R-Car V3H
@@ -62,10 +60,7 @@ e43badd592ed arm64: dts: renesas: Disable DMAE-RT Native devices on UIO
 ab5fb7a33bda pinctrl: renesas: r8a779h0: Add missing IP2SR5 setting
 b0cfb2f3bf96 arm64: dts: renesas: Disable CSI native driver
 92231fae0c88 arm64: dts: renesas: Remove device not include UIO devices
-6b5dccb3318c arm64: dts: renesas: r8a779h0-gray-hawk: add reserved memory region for PAP
-159005d705de arm64: dts: renesas: r8a779h0-gray-hawk: add reserved memory region for Vision DSP{0..3}
 988d48e78931 arm64: dts: renesas: Disable PRR UIO device
-069ead18e7a2 arm64: dts: renesas: Update PAP UIO device
 6286799c11e1 arm64: dts: renesas: Update power-domains property TISP UIO devices
 f6bed07fbeac arm64: dts: renesas: Update FCPC UIO device
 69fcef99c970 arm64: dts: renesas: Update FBA UIO devices
@@ -212,7 +207,6 @@ b879ce6ca34a arm64: dts: renesas: r8a779g0-whitehawk: Add specific CSI-2 informa
 fbeeac1cc8ca arm64: dts: renesas: r8a779g0: Fix PCIe node interrupt settings
 850f6f7ae044 arm64: dts: renesas: r8a779g0: white-hawk: Enable PCIe Host ch0
 e150973fa985 arm64: dts: renesas: r8a779g0: Add PCIe Host and Endpoint nodes
-c76937ee4e4e arm64: dts: renesas: r8a779g0-whitehawk: Change the reserved memory address for Vision DSP{0..3} and PAP regions
 ac051eb7e36f pinctrl: renesas: r8a779g0: Add POC4-7 definition and setting
 3df1d5f023b1 soc: renesas: r8a779g0-sysc: Always-on A3IR, A2CN0, A1CNN0
 efd1efab854c PCI: dwc: rcar-gen4: Update the initial setting for PCIe
@@ -255,10 +249,7 @@ d3613e142614 arm64: dts: r8a77980: Update AXI uTLB ID for ACF devices
 657fdfaacb6f arm64: dts: r8a77980: Update AXI uTLB assignment for UIO devices
 d785d96b2961 net: ethernet: renesas: ravb: Fix missing MDIO bus with channel 1/2
 3d02eb8547f1 arm64: dts: renesas: r8a779g0-whitehawk: Change 'no-map' to 'reusable' property
-64aeab9599f3 arm64: dts: renesas: r8a779g0-whitehawk: Increase reverved memory size for Vision DSP{0..3}, PAP
 9cfa746081c7 arm64: dts: renesas: r8a779g0-whitehawk: Adding compatible for DMA API
-bcdeece0e371 arm64: dts: renesas: r8a779g0-whitehawk: add reserved memory region for PAP
-ac4899e37283 arm64: dts: renesas: r8a779g0-whitehawk: add reserved memory region for Vision DSP{0..3}
 3d545d5e0463 net: ethernet: renesas: ravb: Disable Link Signal Change Interrupt for AVB0
 eae72e77117c net: ethernet: renesas: ravb: Add gPTP support on R-Car V4H
 baade5656c1d arm64: dts: renesas: r8a77980: Update AXI bus and uTLB for VISIONIP UIO

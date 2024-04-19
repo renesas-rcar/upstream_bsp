@@ -984,3 +984,15 @@ VIN
 	This patch as clearly marked as a development debug patch, its only function is to prinkt when an interrupt handles, no use upstream
 		2058a7e8eddc media: rcar-vin: Add overflow debug message option
 
+VisionDSP+PAP
+	VisionDSP+PAP is not intended for upstream.
+		3b8c9abef484 arm64: dts: renesas: r8a779g0-gray-hawk: Rename PAP region
+		0deac6146b51 arm64: dts: renesas: r8a779g0-gray-hawk: Rename PAP region
+		6b5dccb3318c arm64: dts: renesas: r8a779h0-gray-hawk: add reserved memory region for PAP
+		159005d705de arm64: dts: renesas: r8a779h0-gray-hawk: add reserved memory region for Vision DSP{0..3}
+		069ead18e7a2 arm64: dts: renesas: Update PAP UIO device
+		c76937ee4e4e arm64: dts: renesas: r8a779g0-whitehawk: Change the reserved memory address for Vision DSP{0..3} and PAP regions
+		64aeab9599f3 arm64: dts: renesas: r8a779g0-whitehawk: Increase reverved memory size for Vision DSP{0..3}, PAP
+		bcdeece0e371 arm64: dts: renesas: r8a779g0-whitehawk: add reserved memory region for PAP
+		ac4899e37283 arm64: dts: renesas: r8a779g0-whitehawk: add reserved memory region for Vision DSP{0..3}
+
