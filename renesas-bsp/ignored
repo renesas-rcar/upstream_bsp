@@ -280,6 +280,11 @@ EMS
 		32cdac51bf55 Revert "cpufreq: Remove CPUFREQ_ADJUST and CPUFREQ_NOTIFY policy notifier events"
 		346e96545b78 arm64: dts: renesas: r8a779{51, 60, 61, 65, 90}: Create thermal zone to support IPA
 
+FBC
+	FBC is not intended for upstream.
+		3c87ac93f334 arm64: dts: renesas: Update FBC for FieldBIST devices
+		e39e4c618a8d arm64: dts: renesas: Update FBC for FieldBIST devices
+
 FCP
 	FCP is not intended for upstream
 

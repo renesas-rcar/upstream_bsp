@@ -51,7 +51,6 @@ e24abd13781d clk: renesas: r8a779h0: Add CMT/TMU clocks
 cbee4f577a1e arm64: boot: dts: renesas: r8a779h0-gray-hawk-uio: Disable DSI0 Native device
 c4427579e253 media: rcar-vin: rcar-csi2: Add compatible string for R8A779H0 SoC
 36a34468fc43 media: max96712: Add compatible string for Max96724 Deserializer
-3c87ac93f334 arm64: dts: renesas: Update FBC for FieldBIST devices
 ee7a653d13e3 arm64: dts: renesas: Disable DMAE-RT Native devices on UIO
 100377ab7d0c arm64: dts: renesas: r8a779h0: Update VIN driver nodes
 3bdc50fa6840 arm64: dts: renesas: gray-hawk-csi-dsi: Change support to Max96724 Deserializer
@@ -66,7 +65,6 @@ e7941f29016d drm: rcar-du: rcar_mipi_dsi: fix VCLKSET set erroneously with OR to
 aa6f30405fe8 pinctrl: renesas: r8a779h0: Add missing MSIOF5
 260abc4da05b arm64: boot: dts: renesas: r8a779h0-uio: Update power domain for TSI UIO devices
 5fed936874d8 ASoC: Add ak4619 codec support
-e39e4c618a8d arm64: dts: renesas: Update FBC for FieldBIST devices
 e43badd592ed arm64: dts: renesas: Disable DMAE-RT Native devices on UIO
 47e1a870dd58 arm64: dts: renesas: Add node to support AVB1/2
 ab5fb7a33bda pinctrl: renesas: r8a779h0: Add missing IP2SR5 setting
