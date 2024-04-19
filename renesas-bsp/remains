@@ -12,7 +12,6 @@ a570945a144e clk: renesas: r8a779g0-cpg-mssr: Update clock source of VISIONIP mo
 8fb9f82e224b drm: bridge: ti-sn65dsi86: Add checking to detect bridge device connection failure
 e5c8088e2751 clk: renesas: r8a779g0: Fix ISPCS clocks
 ab289abbf294 clk: renesas: r8a779g0: Fix ISP clocks
-c9f097ef9ba0 clk: renesas: r8a779g0: Fix IMP clocks
 1465bd4ef933 clk: renesas: cpg-mssr: Add VCBUS support for R-Car V4H
 3b8c9abef484 arm64: dts: renesas: r8a779g0-gray-hawk: Rename PAP region
 c4e59dfb3a02 arm64: dts: renesas: r8a779g0-gray-hawk: Allocate a 40-bit reserved memory region for multiple IPs
@@ -33,8 +32,6 @@ eb9fd742b012 i2c: rcar: Add fast mode plus support for r8a779h0 (R-Car V4M)
 86ff25559c5a i2c: rcar: Add support for r8a779h0 (R-Car V4M)
 03c58f3acc28 arm64: dts: renesas: r8a779h0-gray-hawk-uio: Disable native devices
 eedea8792447 arm64: dts: renesas: r8a779h0-uio: Add GFX UIO device
-4600b00624b0 arm64: dts: renesas: r8a779h0-uio: Add VDSP UIO devices (IMP)
-539830e1b2ad arm64: dts: renesas: r8a779h0-uio: Update power domain for IMP UIO
 6de7c10c2b7a pwm: tpu: Add compatible string for V4M
 fd446b2b77ff arm64: dts: renesas: Add node to support PWM on R-Car V4M
 f14b9cf51ca5 dt-bindings: watchdog: renesas-wdt: Add support for R-Car V4M
@@ -78,14 +75,11 @@ b0cfb2f3bf96 arm64: dts: renesas: Disable CSI native driver
 6286799c11e1 arm64: dts: renesas: Update power-domains property TISP UIO devices
 f6bed07fbeac arm64: dts: renesas: Update FCPC UIO device
 69fcef99c970 arm64: dts: renesas: Update FBA UIO devices
-f4ed1755789b arm64: dts: renesas: Update for IMP UIO devices
 dfe3be47fc87 arm64: dts: renesas: Update power domains for IMR UIO devices
 33d0948c322f arm64: dts: renesas: r8a779h0: Add DMAC node support for R8A779H0 V4M
 68b6cf5b254f dt-bindings: renesas,rcar-dmac: Add r8a779h0 support
 e81eaa900756 dmaengine: rcar-dmac: Add support for R-Car V4M
 35db8eade3b5 arm64: dts: renesas: r8a779h0: Fix clock assignment for GPIO
-7fd6806b2985 clk: renesas: r8a779h0-cpg-mssr: Add define for IMP Slim UIO device
-5e48f5c0c4dc arm64: dts: renesas: Add IMP Slim DMA UIO devices
 5f1d86cc2a8d arm64: dts: renesas: Update power domain for iVCP1E UIO devices
 5469d592fc58 arm64: dts: renesas: Update ISP UIO module to avoid conflict for UIO devices
 36bd9047a0e1 arm64: dts: renesas: Update power domain for UIO devices
@@ -227,12 +221,10 @@ fbeeac1cc8ca arm64: dts: renesas: r8a779g0: Fix PCIe node interrupt settings
 e150973fa985 arm64: dts: renesas: r8a779g0: Add PCIe Host and Endpoint nodes
 c76937ee4e4e arm64: dts: renesas: r8a779g0-whitehawk: Change the reserved memory address for Vision DSP{0..3} and PAP regions
 ac051eb7e36f pinctrl: renesas: r8a779g0: Add POC4-7 definition and setting
-9c63a61e8dc6 drm: bridge: ti-sn65dsi86: Improve get_connector timing
 3df1d5f023b1 soc: renesas: r8a779g0-sysc: Always-on A3IR, A2CN0, A1CNN0
 efd1efab854c PCI: dwc: rcar-gen4: Update the initial setting for PCIe
 cda3dd982572 arm64: defconfig: Updated for RCAR_GEN4 PCIe driver
 46fef5911f11 arm64: defconfig: Enable RCAR_GEN4 PCIe driver
-f21055c5aad7 PCI: dwc: rcar-gen4: Implement source code for PCIe 4.0 based on the old Renesas PCIe driver
 cf5e32902f26 PCI: dwc: renesas: Remove the old PCIe driver
 8284a168c63c PCI: dwc: rcar-gen4-host: Fix kernel panic when PCIe link is downgraded
 fb78012bdc47 PCI: dwc: rcar-gen4-host: Assign MAX_MSI_IRQS to num_vectors
