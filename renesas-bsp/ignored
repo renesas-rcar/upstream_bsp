@@ -746,6 +746,31 @@ TSN
 UIO/OSAL
 	UIO/OSAL is not intended for upstream
 
+		5b328d015d20 arm64: dts: renesas: r8a77980: Add UIO system_ram device on V3H1
+		03c58f3acc28 arm64: dts: renesas: r8a779h0-gray-hawk-uio: Disable native devices
+		eedea8792447 arm64: dts: renesas: r8a779h0-uio: Add GFX UIO device
+		78747ae2a389 arm64: boot: dts: renesas: r8a779h0-gray-hawk-uio: Disable display native devices
+		cbee4f577a1e arm64: boot: dts: renesas: r8a779h0-gray-hawk-uio: Disable DSI0 Native device
+		ee7a653d13e3 arm64: dts: renesas: Disable DMAE-RT Native devices on UIO
+		260abc4da05b arm64: boot: dts: renesas: r8a779h0-uio: Update power domain for TSI UIO devices
+		e43badd592ed arm64: dts: renesas: Disable DMAE-RT Native devices on UIO
+		92231fae0c88 arm64: dts: renesas: Remove device not include UIO devices
+		988d48e78931 arm64: dts: renesas: Disable PRR UIO device
+		6286799c11e1 arm64: dts: renesas: Update power-domains property TISP UIO devices
+		f6bed07fbeac arm64: dts: renesas: Update FCPC UIO device
+		69fcef99c970 arm64: dts: renesas: Update FBA UIO devices
+		dfe3be47fc87 arm64: dts: renesas: Update power domains for IMR UIO devices
+		5f1d86cc2a8d arm64: dts: renesas: Update power domain for iVCP1E UIO devices
+		36bd9047a0e1 arm64: dts: renesas: Update power domain for UIO devices
+		20ce13dce3e4 arm64: dts: renesas: Add UIO devices support for R8A779H0 V4M
+		f717557e9947 clk: renesas: r8a779h0: Add UIO devices clock
+		657fdfaacb6f arm64: dts: r8a77980: Update AXI uTLB assignment for UIO devices
+		baade5656c1d arm64: dts: renesas: r8a77980: Update AXI bus and uTLB for VISIONIP UIO
+		69d815d4b305 arm64: dts: renesas: r8a779g0: Remove power-domains property for vdsp0x_0y UIO devices
+		dff57226e020 arm64: dts: renesas: r8a779g0: Remove unnecessary property for irq_xxx_yyy UIO devices
+		9333e3d9f2c1 arm64: dts: renesas: r8a779g0: Add power-domains for ECM UIO
+		bec782904a9f arm64: dts: renesas: r8a77970: Update ICCOM UIO devices
+		5649fdc18f0a arm64: dts: renesas: r8a77980: Update ICCOM UIO devices
 		89068d303247 arm64: dts: renesas: Update IPMMU ID for VIN devices
 		b758a30100a0 arm64: dts: renesas: Update IPMMU ID for FBA devices
 		254db82a8ba6 arm64: dts: renesas: Update IPMMU ID for IVCP1E device
