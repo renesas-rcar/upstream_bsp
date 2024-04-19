@@ -400,6 +400,14 @@ IPMMU
 		967a199ed386 iommu/ipmmu-vmsa: Allow PCI Host controller to be a proxy for all connected PCI devices
 		6c286c0f0b71 iommu/ipmmu-vmsa: Invalidate TLB when IPMMU translation error occurred
 
+ISP
+	ISP is not intended for upstream.
+		f6d5db3d5736 clk: renesas: r8a779h0-cpg-mssr: Update clock source of ISP device
+		ab289abbf294 clk: renesas: r8a779g0: Fix ISP clocks
+		56ea83addba9 arm64: dts: renesas: Enable interrupts ISP devices
+		3d505e7e548f arm64: dts: renesas: Update ISP UIO devices
+		5469d592fc58 arm64: dts: renesas: Update ISP UIO module to avoid conflict for UIO devices
+
 iVDP1C
 	iVDP1C is not intended for upstream
 

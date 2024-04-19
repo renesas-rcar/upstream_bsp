@@ -6,12 +6,10 @@ e6fc262fa0e3 ASoC: ak4619: Fix bit clock polarity setting
 89ac4358ab25 ASoC: ak4619: Correct the setting for SND_SOC_DAIFMT_DSP_B
 4ba8444c28a3 ASoC: ak4619: Separate playback and capture formats
 b0aa2c59d513 ASoC: ak4619: Add some missing supported sampling rates
-f6d5db3d5736 clk: renesas: r8a779h0-cpg-mssr: Update clock source of ISP device
 a570945a144e clk: renesas: r8a779g0-cpg-mssr: Update clock source of VISIONIP module
 5b328d015d20 arm64: dts: renesas: r8a77980: Add UIO system_ram device on V3H1
 8fb9f82e224b drm: bridge: ti-sn65dsi86: Add checking to detect bridge device connection failure
 e5c8088e2751 clk: renesas: r8a779g0: Fix ISPCS clocks
-ab289abbf294 clk: renesas: r8a779g0: Fix ISP clocks
 1465bd4ef933 clk: renesas: cpg-mssr: Add VCBUS support for R-Car V4H
 3b8c9abef484 arm64: dts: renesas: r8a779g0-gray-hawk: Rename PAP region
 c4e59dfb3a02 arm64: dts: renesas: r8a779g0-gray-hawk: Allocate a 40-bit reserved memory region for multiple IPs
@@ -66,8 +64,6 @@ e43badd592ed arm64: dts: renesas: Disable DMAE-RT Native devices on UIO
 ab5fb7a33bda pinctrl: renesas: r8a779h0: Add missing IP2SR5 setting
 b0cfb2f3bf96 arm64: dts: renesas: Disable CSI native driver
 92231fae0c88 arm64: dts: renesas: Remove device not include UIO devices
-56ea83addba9 arm64: dts: renesas: Enable interrupts ISP devices
-3d505e7e548f arm64: dts: renesas: Update ISP UIO devices
 6b5dccb3318c arm64: dts: renesas: r8a779h0-gray-hawk: add reserved memory region for PAP
 159005d705de arm64: dts: renesas: r8a779h0-gray-hawk: add reserved memory region for Vision DSP{0..3}
 988d48e78931 arm64: dts: renesas: Disable PRR UIO device
@@ -81,7 +77,6 @@ dfe3be47fc87 arm64: dts: renesas: Update power domains for IMR UIO devices
 e81eaa900756 dmaengine: rcar-dmac: Add support for R-Car V4M
 35db8eade3b5 arm64: dts: renesas: r8a779h0: Fix clock assignment for GPIO
 5f1d86cc2a8d arm64: dts: renesas: Update power domain for iVCP1E UIO devices
-5469d592fc58 arm64: dts: renesas: Update ISP UIO module to avoid conflict for UIO devices
 36bd9047a0e1 arm64: dts: renesas: Update power domain for UIO devices
 20ce13dce3e4 arm64: dts: renesas: Add UIO devices support for R8A779H0 V4M
 f717557e9947 clk: renesas: r8a779h0: Add UIO devices clock
