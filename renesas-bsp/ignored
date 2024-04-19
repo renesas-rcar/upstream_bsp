@@ -625,6 +625,8 @@ PWM
 QoS
 	QoS is not intended for upstream
 
+		e7fbf9a716ff arm64: dts: renesas: r8a779h0-gray-hawk-uio: Disable QoS Native device
+		6b52170d409b arm64: dts: renesas: r8a779h0: Add QOS devices for V4M Ver1.0
 		88c41a61fe24 arm64: dts: renesas: Update QoS node for R-Car S4 and V4H
 		c42b7504bd74 arm64: dts: renesas: r8a779f0/r8a779g0: Add QOS devices for S4/V4H Ver1.0
 		21ffa2421578 arm64: dts: renesas: r8a779a0: Add QoS device

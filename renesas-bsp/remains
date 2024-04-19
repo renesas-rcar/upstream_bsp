@@ -19,9 +19,7 @@ c4e59dfb3a02 arm64: dts: renesas: r8a779g0-gray-hawk: Allocate a 40-bit reserved
 c25a89e05e84 arm64: dts: renesas: r8a779g0-whitehawk: add an 40-bit reserved memory region for multiple IPs
 da47c8b69492 media: rcar-vin: rcar-csi2: Fix timeout issue on R-Car V3H
 1054b8f6dd40 clk: renesas: r8a779h0: Add ZG clock
-e7fbf9a716ff arm64: dts: renesas: r8a779h0-gray-hawk-uio: Disable QoS Native device
 caff53d84cb9 arm64: dts: renesas: r8a779h0: Correct compatible string for Audio on R-Car V4M
-6b52170d409b arm64: dts: renesas: r8a779h0: Add QOS devices for V4M Ver1.0
 9fdeed193dce arm64: dts: renesas: r8a779h0: Add PCIe support
 b8ec226fcba2 clk: renesas: r8a779h0: Add PCIe clock
 157f14a1041f arm64: dts: renesas: Add alias for I2C on R-Car V4M SoC.
