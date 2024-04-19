@@ -11,10 +11,6 @@ a570945a144e clk: renesas: r8a779g0-cpg-mssr: Update clock source of VISIONIP mo
 8fb9f82e224b drm: bridge: ti-sn65dsi86: Add checking to detect bridge device connection failure
 e5c8088e2751 clk: renesas: r8a779g0: Fix ISPCS clocks
 1465bd4ef933 clk: renesas: cpg-mssr: Add VCBUS support for R-Car V4H
-c4e59dfb3a02 arm64: dts: renesas: r8a779g0-gray-hawk: Allocate a 40-bit reserved memory region for multiple IPs
-4f8977e36928 arm64: dts: renesas: r8a779g0-whitehawk: add an 40-bit reserved memory region for multiple IPs
-1eb3fdaa1ffc arm64: dts: renesas: r8a779g0-gray-hawk: Allocate a 40-bit reserved memory region for multiple IPs
-c25a89e05e84 arm64: dts: renesas: r8a779g0-whitehawk: add an 40-bit reserved memory region for multiple IPs
 da47c8b69492 media: rcar-vin: rcar-csi2: Fix timeout issue on R-Car V3H
 1054b8f6dd40 clk: renesas: r8a779h0: Add ZG clock
 caff53d84cb9 arm64: dts: renesas: r8a779h0: Correct compatible string for Audio on R-Car V4M
