@@ -311,9 +311,6 @@ Firmware
 		aa2552bb7c2e arm64: dts: renesas: r8a779a0-falcon: Reserve u-boot secure area
 		6f426ef6c6a6 arm64: dts: renesas: r8a77990-ebisu: Add Ebisu-4D board support
 
-	Other workarounds for firmware bugs
-		51126e27d005 arm64: dts: renesas: ulcb-kf: deselect GP5_9 interrupt
-
 	R-Car V3U PSCI and SMP need a new firmware. Where do we get it?
 		747fd84b11fb arm64: dts: renesas: r8a779a0: Add psci node for R8A779A0
 		8cdc7a6137d9 arm64: dts: renesas: r8a779a0: add CA76_[2..7] core
