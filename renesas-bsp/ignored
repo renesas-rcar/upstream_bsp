@@ -344,7 +344,6 @@ IMP
 		7fd6806b2985 clk: renesas: r8a779h0-cpg-mssr: Add define for IMP Slim UIO device
 		5e48f5c0c4dc arm64: dts: renesas: Add IMP Slim DMA UIO devices
 		9c63a61e8dc6 drm: bridge: ti-sn65dsi86: Improve get_connector timing
-		f21055c5aad7 PCI: dwc: rcar-gen4: Implement source code for PCIe 4.0 based on the old Renesas PCIe driver
 		5beefb300ae6 arm64: dts: renesas: r8a779x: add IMP nodes
 		dc644df9f22b clk: renesas: r8a779{5, 6, 70, 80}: add IMP clock
 		5cb18d629db5 soc: renesas: rcar-sysc: Fix A3IR power on sequence for R8A77980

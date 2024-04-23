@@ -190,6 +190,7 @@ ac051eb7e36f pinctrl: renesas: r8a779g0: Add POC4-7 definition and setting
 efd1efab854c PCI: dwc: rcar-gen4: Update the initial setting for PCIe
 cda3dd982572 arm64: defconfig: Updated for RCAR_GEN4 PCIe driver
 46fef5911f11 arm64: defconfig: Enable RCAR_GEN4 PCIe driver
+f21055c5aad7 PCI: dwc: rcar-gen4: Implement source code for PCIe 4.0 based on the old Renesas PCIe driver
 cf5e32902f26 PCI: dwc: renesas: Remove the old PCIe driver
 8284a168c63c PCI: dwc: rcar-gen4-host: Fix kernel panic when PCIe link is downgraded
 fb78012bdc47 PCI: dwc: rcar-gen4-host: Assign MAX_MSI_IRQS to num_vectors

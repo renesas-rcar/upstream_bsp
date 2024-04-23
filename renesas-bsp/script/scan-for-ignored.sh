@@ -32,12 +32,12 @@ done <<-"EOF"
 	ADSP				ADSP		This is a local patch file for MMP. So we don't need to upport.
 	AVS				AVS		AVS code now is just in-house code.
 	BRS				BRS		This is a local patch file for MMP. So we don't need to upport.
-	EMS				EMS		This is just internal code.
+	\\<EMS\\>			EMS		This is just internal code.
 	FBC				FBC		FBC is not intended for upstream.
 # FCP is supported meanwhile
 	GSX				GSX		This is a local patch file for MMP. So we don't need to upport.
 	iVDP1C				iVDP1C		This is a local patch file for MMP. So we don't need to upport.
-	IMP				IMP		IMP is not intended for upstream.
+	\\<IMP\\>				IMP		IMP is not intended for upstream.
 # ISP is not supported but ISPCS is (belongs to VIN)
 	\\<ISP[^C]			ISP		ISP is not intended for upstream.
 	MMNGR				MMNGR		This is a local patch file for MMP. So we don't need to upport.
@@ -45,7 +45,7 @@ done <<-"EOF"
 	QOS				QOS		This is a local patch file for MMP. So we don't need to upport.
 	RT-DMAC				RT-DMAC		not used by BSP DTs.
 	VCP4				VCP4		This is a local patch file for MMP. So we don't need to upport.
-	Vision.DSP\\|PAP		VisionDSP+PAP	VisionDSP+PAP is not intended for upstream.
+	Vision.DSP\\|\\<PAP\\>		VisionDSP+PAP	VisionDSP+PAP is not intended for upstream.
 	VSP[XBSA2M]			VSP		This is a local patch file for MMP. So we don't need to upport.
 	reserved.memory.region		MMP		Reserved memory regions are not intended for upstream.
 	UIO\\|OSAL			UIO		UIO and OSAL are not intended for upstream.
