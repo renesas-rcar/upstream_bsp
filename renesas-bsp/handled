@@ -1,3 +1,17 @@
+# cherry-picked from f7eeb00845934851b580b188f079545ab176fa5c
+48b89c702c78 media: dt-bindings: media: Add macros for video interface bus types
+# cherry-picked from 702de2c21eed04c67cefaaedc248ef16e5f6b293
+94b086621568 can: rcar_canfd: rcar_canfd_handle_global_receive(): fix IRQ storm on global FIFO receive
+# cherry-picked from 8353813c88ef2186abf96715b5f29b191c9a7732
+bbc6b81890e1 PCI: endpoint: Enable DMA tests for endpoints with DMA capabilities
+# cherry-picked from a57f68ddc8865d59a19783080cc52fb4a11dc209
+718f245f523a reset: Fix devm bulk optional exclusive control getter
+# cherry-picked from 48d71395896d54eec989179dd265e569fcecb15a
+513c0f88985a reset: Add reset_control_bulk API
+# cherry-picked from ac9b7554afeb455a74bd69dc4a8eecf49886ff48
+ad2a1ed888f4 reset: core: fix a kernel-doc markup
+# cherry-picked from 557acb3d2cd9c82de19f944f6cc967a347735385
+c72af5303abb reset: make shared pulsed reset controls re-triggerable
 89366fe8fa58 clk: renesas: r8a779g0: Fix ISPCS clocks
 f3bcc8bb7815 dt-bindings: thermal: rcar-gen3-thermal: Add r8a779g0 support
 5b931f432f39 arm64: dts: renesas: r8a779g0: Add thermal support

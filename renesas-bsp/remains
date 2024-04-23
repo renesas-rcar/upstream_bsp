@@ -136,7 +136,6 @@ a2a06db37e6b iommu/ipmmu-vmsa: Add Renesas R8A779H0 (R-Car V4M) support
 6592b33cb795 dt-bindings: iommu: renesas,ipmmu-vmsa: add r8a779h0 support
 f029d531a39d dt-bindings: serial: sh-sci: Document r8a779h0 bindings
 8471c5bb3f14 dt-bindings: media: rcar-vin: Document R8A779H0 bindings
-48b89c702c78 media: dt-bindings: media: Add macros for video interface bus types
 28f76220f249 dt-bindings: power: renesas,rcar-sysc: Document r8a779h0 SYSC bindings
 5316857106d3 arm64: dts: renesas: r8a779h0: Add GPIO nodes
 9d58e081d114 arm64: dts: renesas: gray-hawk: Add Ethernet sub-board
@@ -159,7 +158,6 @@ c02a5e045e06 PCI: dwc: rcar-gen4: Change the power operation method for 4lane.
 f7a5c39b20d8 dt-bindings: clock: Add R8A779H0 V4M CPG Core Clock Definitions
 ccde61707b3d dt-bindings: power: Add R8A779H0 V4M SYSC power domain definitions
 e1d847bfd3ca dmaengine: rcar-dmac: Add repeat mode support
-94b086621568 can: rcar_canfd: rcar_canfd_handle_global_receive(): fix IRQ storm on global FIFO receive
 918fab2d8d90 thermal: rcar_gen3_thermal: Add R-Car V4H support
 98721f4180de PCI: dwc: rcar-gen4: Add support for Resizable BAR
 7495f2cb37fb PCI: dwc: rcar-gen4: Set up BAR to work with 64-bit
@@ -202,7 +200,6 @@ d45f0099b501 tools: PCI: Add 't' command line option to support expired timer
 25c2de2a9d4d misc: pci-endpoint-test: Add PCITEST_FLAGS_USE_TIMER flag
 9cc98db499af PCI: dwc: rcar-gen4: Add workaround for V4H
 b0414cb9ac6a PCI: endpoint: functions/pci-epf-test: Fix dma_chan direction
-bbc6b81890e1 PCI: endpoint: Enable DMA tests for endpoints with DMA capabilities
 488918782d16 MAINTAINERS: Update PCI DRIVER FOR RENESAS R-CAR for R-Car Gen4
 b05edf1787e1 PCI: dwc: endpoint: Logical revert about struct pci_epc_ops
 38d3aa73c9cc PCI: dwc: rcar-gen4: Add R-Car Gen4 PCIe Endpoint support
@@ -215,10 +212,6 @@ f43a3ab927ec dt-bindings: PCI: renesas: Add R-Car Gen4 PCIe Host
 ccedc91c42ac PCI: dwc: logical revert about in dw_handle_msi_irq()
 2656c026b479 PCI: use kernel.h instead of align.h for v5.10.xx
 c8310257b88e PCI and dma: backport from upstream kernel to v5.10.147 for PCIe eDMA
-718f245f523a reset: Fix devm bulk optional exclusive control getter
-513c0f88985a reset: Add reset_control_bulk API
-ad2a1ed888f4 reset: core: fix a kernel-doc markup
-c72af5303abb reset: make shared pulsed reset controls re-triggerable
 611328f8fc4a net: ethernet: renesas: ravb: Fix initialization failed in module state on channel 1/2
 cd6678e10496 net: ethernet: renesas: ravb: Fix Deadlock warning related to EthernetAVB
 b4da13817cb8 net: ethernet: renesas: rtsn: Fix the lack of unregistering PTP device
