@@ -1,3 +1,81 @@
+# upstream: 588b82546d585e8b6ab9c2af06a8ac1d4e5731ab
+f14b9cf51ca5 dt-bindings: watchdog: renesas-wdt: Add support for R-Car V4M
+# upstream: 35b78e2eef2d75c8722bf39d6bd1d89a8e21479e
+68b6cf5b254f dt-bindings: renesas,rcar-dmac: Add r8a779h0 support
+# upstream: 81a7a88a98062ffcd8d7d5ac3b540a96dbff5490
+08d67c3021ba clk: renesas: r8a779h0: Add RPC-IF clock
+# upstream: ce772318637261525ee868ccfeb17b1927fcd812
+c0bdd7bfcbf6 clk: renesas: r8a779h0: Add SYS-DMAC clocks
+# upstream: 6796c1b68fa92c303923812a0658f3afe8366db2
+08b45fb10b1b dt-bindings: thermal: rcar-gen3-thermal: Add r8a779h0 support
+# upstream: b88e733ac5170efe5f26c62606ff97901dad9248
+09d316980e2e pinctrl: renesas: Add support for 1.8V/2.5V I/O voltage levels
+# upstream: 97191e536c37359d17d6d32bc29acb911f731e60
+2ca2fb4f23b5 pinctrl: renesas: r8a779h0: Add Audio pins, groups, functions
+# upstream: 1604b9788ee334e3aa2b0aa465d39d41878ad2c9
+7fd4fd580f6e pinctrl: renesas: r8a779h0: Add PCIe pins, groups, functions
+# upstream: 2acf13cec939c084c70a2b7e99af2f5554ca3f17
+609f50361230 pinctrl: renesas: r8a779h0: Add CANFD pins, groups, functions
+# upstream: 4759b702d07601e17050636a909966902d3bdd91
+3ff2c00df1e4 pinctrl: renesas: r8a779h0: Add PWM/TPU pins, groups, functions
+# upstream: b33c4b4b84813fadddbd8c10e87f78de3fb10e87
+723fc666517e pinctrl: renesas: r8a779h0: Add MSIOF pins, groups, functions
+# upstream: 2a9d0273d1303b74ebac669b7637053b8b8180c6
+a9e85bd230ae pinctrl: renesas: r8a779h0: Add I2C pins, groups, functions
+# upstream: a0974d843d0be7780eafa87a8e4b63f32fef5766
+f26cfa8de4a2 pinctrl: renesas: r8a779h0: Add HSCIF pins, groups, functions
+# upstream: bc56b11cd734a7c640a6e434cb40cd0c52da9376
+866f96d51597 pinctrl: renesas: r8a779h0: Add SCIF pins, groups, functions
+# upstream: 4ab1ee6f4f05e3b184e7a2d62b0be6bcf424107c
+fd296ffd2d35 pinctrl: renesas: r8a779h0: Add SD/MMC pins, groups, functions
+# upstream: 73f35ebbf4b7783e241740418c9e962cc746bb8a
+15f50e84307a pinctrl: renesas: r8a779h0: Add Ethernet AVB pins, groups, functions
+# upstream: 291f7856fc451cbe6697a5b2d0ed849c4252b60a
+26c5d6a2ee57 pinctrl: renesas: Initial R8A779H0 (R-Car V4M) PFC support
+# upstream: 93189f33fcb4e678c9494cddeff96b123ef5674f
+27bec61984ae arm64: defconfig: Enable R8A779H0 SoC
+# upstream: 6bd8b0bc444eae5655dba1ec7de4e8b0e0822c5c
+23b30a5e112b arm64: dts: renesas: r8a779h0: Add CA76 operating points
+# upstream: 4c1fd23a220dccaf4b8192d863997213af6e2c31
+05671a26cda5 arm64: dts: renesas: r8a779h0: Add CPU core clocks
+# upstream: ad761924be2b33555e7d6b99a0b3b0c8384f549b
+d216905a87bf arm64: dts: renesas: r8a779h0: Add CPUIdle support
+# upstream: 5db13ece46d6948d5c26429c2827a78ed3a5afc5
+e9d9ac4ff97f arm64: dts: renesas: r8a779h0: Add secondary CA76 CPU cores
+# upstream: 20a942d60b34719df8a145e0364e90981380aefb
+06b3cba25fbd arm64: dts: renesas: r8a779h0: Add L3 cache controller
+# upstream: 4cd9289b70e54a9740680ed7f15e30d9aecb9bc8
+b2465b6d0efc arm64: dts: renesas: r8a779h0: Add RPC node
+# upstream: a0ac5b9d980a0a5accc641ed1a1aa1a3332d14a7
+28967c2a80c3 arm64: dts: renesas: r8a779h0: Add SD/MMC node
+# upstream: 243066ecc0f114fa54a44765ac1c6f900ab97660
+e4e2c486b883 arm64: dts: renesas: r8a779h0: Add Ethernet-AVB support
+# upstream: e89ea92f533b3f4d52c8778ca544a06078d0d6f0
+916f9cb5b400 clk: renesas: r8a779h0: Add EtherAVB clocks
+# upstream: 62527c9d46a151163525482301cf79fecd5402ef
+804088707850 clk: renesas: r8a779h0: Add PFC/GPIO clocks
+# upstream: 5aaa139b9a03e1a43484a73248c6353a9c4d95c6
+d4155db1296c clk: renesas: r8a779h0: Add I2C clocks
+# upstream: 6e8b1dcb0956668e77cc9177b810b7c1f15c6d8d
+d7afbb162f77 clk: renesas: r8a779h0: Add watchdog clock
+# upstream: f077cab34df3010df6f4996e648dba5f43fd6b85
+351e37ace124 clk: renesas: cpg-mssr: Add support for R-Car V4M
+# upstream: 93e28f88710b2cbe51d6fe760cdf53fc9621f33c
+5316857106d3 arm64: dts: renesas: r8a779h0: Add GPIO nodes
+# upstream: e3e7a865c4c7aa342feeec8782e97ff5a143e79e
+9e6933be498e arm64: dts: renesas: r8a779h0: Add I2C nodes
+# upstream: 9a1442efd1f2711656723c4f54a2ddb3972e1b96
+48fb71f00a32 arm64: dts: renesas: r8a779h0: Add pinctrl device node
+# upstream: 3bbdf8c3d32103e21d9a826e40340fa59fc579ea
+f7a5c39b20d8 dt-bindings: clock: Add R8A779H0 V4M CPG Core Clock Definitions
+# upstream: 880d51c729a3fa944794feb19f605eefe55916fc
+b0414cb9ac6a PCI: endpoint: functions/pci-epf-test: Fix dma_chan direction
+# upstream: 6a87c0931b21074d2dc21809f01862493048a5cb
+488918782d16 MAINTAINERS: Update PCI DRIVER FOR RENESAS R-CAR for R-Car Gen4
+# upstream: bad659dfd2f6bd342ca319ef8f99928b378f487f
+04da9301d1fe dt-bindings: PCI: renesas: Add R-Car Gen4 PCIe Endpoint
+# upstream: 220cb6bef93031ee2fc795a7782e86fe65b7044b
+f43a3ab927ec dt-bindings: PCI: renesas: Add R-Car Gen4 PCIe Host
 # cherry-picked from f7eeb00845934851b580b188f079545ab176fa5c
 48b89c702c78 media: dt-bindings: media: Add macros for video interface bus types
 # cherry-picked from 702de2c21eed04c67cefaaedc248ef16e5f6b293
