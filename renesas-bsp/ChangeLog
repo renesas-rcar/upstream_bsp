@@ -2,6 +2,27 @@
 
 	* Below patches are backported
 
+		commit 2f0c4b118377e24242dfcad912d8a6a3a3f19e05
+		("PCI: rcar-host: Add support for optional regulators")
+
+		commit 4cd647bf73f98454b555a8a4ae7cd01e58b75892
+		("PCI: rcar: Use correct product family name for Renesas R-Car")
+
+		commit 1dcdf3ea0b33adc5b46eb8682bc47a8c6db63bc1
+		("PCI: rcar-host: Remove unused static pcie_base and pcie_dev")
+
+		commit ab71b80b07adae17c27a441e72e7a906453406ed
+		("PCI: rcar: Avoid defines prefixed with CONFIG")
+
+		commit 28555388ffc8b2bfe7e77974f613557985be2ab3
+		("BSP rebase: move KingFisher firmware patch to handled")
+
+		commit ec4f0f174c343670f66e772ec8e527739983091f
+		("BSP rebase: move V3U PWM patches from ignored to handled")
+
+		commit 5ee1b781c980eb408fd3343b178c9e294d948341
+		("dt-bindings: pwm: Add R-Car V3U device tree bindings")
+
 		commit eed9e6bf7ba9850d8d76c2d855f910b30e2308e4
 		("BSP rebase: move upstream commits with identical subject to 'handled'")
 
