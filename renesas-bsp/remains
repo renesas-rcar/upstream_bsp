@@ -16,12 +16,10 @@ caff53d84cb9 arm64: dts: renesas: r8a779h0: Correct compatible string for Audio 
 9fdeed193dce arm64: dts: renesas: r8a779h0: Add PCIe support
 b8ec226fcba2 clk: renesas: r8a779h0: Add PCIe clock
 157f14a1041f arm64: dts: renesas: Add alias for I2C on R-Car V4M SoC.
-8f17f2f5a6e1 arm64: dts: renesas: Add DMA support for I2C on R-Car V4M.
 eb9fd742b012 i2c: rcar: Add fast mode plus support for r8a779h0 (R-Car V4M)
 86ff25559c5a i2c: rcar: Add support for r8a779h0 (R-Car V4M)
 6de7c10c2b7a pwm: tpu: Add compatible string for V4M
 fd446b2b77ff arm64: dts: renesas: Add node to support PWM on R-Car V4M
-85e57ecb1303 arm64: dts: renesas: Add node to support RWDT on R-Car V4M
 f7f0636f4392 spi: spi-sh-msiof: Add generic structural data for MSIOF on R-Car Gen4.
 cf638184c8e5 arm64: dts: renesas: Add node to support MSIOF on R-Car V4M
 a6fc1fd71314 arm64: dts: renesas: gray-hawk-cpu: Add QSPI FLASH support
@@ -46,7 +44,6 @@ aa6f30405fe8 pinctrl: renesas: r8a779h0: Add missing MSIOF5
 47e1a870dd58 arm64: dts: renesas: Add node to support AVB1/2
 ab5fb7a33bda pinctrl: renesas: r8a779h0: Add missing IP2SR5 setting
 b0cfb2f3bf96 arm64: dts: renesas: Disable CSI native driver
-33d0948c322f arm64: dts: renesas: r8a779h0: Add DMAC node support for R8A779H0 V4M
 e81eaa900756 dmaengine: rcar-dmac: Add support for R-Car V4M
 35db8eade3b5 arm64: dts: renesas: r8a779h0: Fix clock assignment for GPIO
 0cf550f4b998 PCI: pci-epf-test: Added WQ_UNBOUND flag to alloc_workqueue()
@@ -57,7 +54,6 @@ e81eaa900756 dmaengine: rcar-dmac: Add support for R-Car V4M
 66a73d1a3c16 clk: renesas: r8a779h0: Add VIN clocks
 32397139103a clk: renesas: r8a779h0: Add TPU clock
 9800531f0188 clk: renesas: r8a779h0: Add PWM clock
-ef0e0b4e6165 clk: renesas: r8a779h0: Add SDHI clocks
 d10e0e0da51a clk: renesas: r8a779h0: Add INTC-EX clock
 eec9ded4943b clk: renesas: r8a779h0: Add MSIOF clocks
 41ae06c7f963 clk: renesas: r8a779h0: Add ISPCS clocks
@@ -76,7 +72,6 @@ e9ee03a5a60e misc: pci-endpoint-test: A transfer size of 4 Mbytes or more can be
 6854fc735147 pinctrl: renesas: r8a779h0: Use full description of reserved fields
 273c7cbc83fc pinctrl: renesas: Add generic support for resizable buses
 02c3ddcac3df pinctrl: renesas: Add generic support for pin group subsets
-e4b8eaeee97e pinctrl: renesas: r8a779h0: Add RPC pins, groups, functions
 144e51aa3296 pinctrl: renesas: Add R8A779H0 (R-Car V4M) config
 42c6d5d52539 arm64: dts: renesas: r8a779h0: Sort IPMMU driver nodes
 dbba32eebda4 arm64: dts: renesas: r8a779h0: Add IPMMU driver nodes
@@ -111,7 +106,6 @@ f029d531a39d dt-bindings: serial: sh-sci: Document r8a779h0 bindings
 3fe02e884ee8 arm64: dts: renesas: gray-hawk: Add I2C0 and EEPROMs
 ededd9a075c9 arm64: dts: renesas: gray-hawk-cpu: Add serial port pin control
 8cf75d108247 arm64: dts: renesas: Add Renesas Gray Hawk boards support
-6e69371c6a21 arm64: dts: renesas: Add Renesas R8A779H0 V4M SoC support
 e0c20b948e7f arm64: dts: renesas: r8a779g0: Add a new property for Resizable BAR of PCIe
 c13f066be2f6 arm64: dts: renesas: r8a779g0: Add PCIe1 clock to PCIe0 node for 4lane
 773bcf1b7574 arm64: dts: renesas: r8a779g0: PCIE channels and lanes are selectable.

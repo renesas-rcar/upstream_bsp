@@ -1,3 +1,23 @@
+# upstream: 6797e4da2dd1e2c8dc8cec73447c77abe2a7655b PCI: rcar-host: Add support for optional regulators
+56f944e99309 PCI: rcar: Add regulators support
+# Not needed. Newer firmware fixed the issue
+51126e27d005 arm64: dts: renesas: ulcb-kf: deselect GP5_9 interrupt
+# upstream: 5442c33f218b1aabbe699db978e407317a231d10
+1c8667f8d275 dt-bindings: pwm: Add R-Car V3U device tree bindings
+# upstream: 18cbbdd846c5d74bd56fd1f229d074e1f7068fc8
+5d4c3888e0d3 arm64: dts: renesas: r8a779a0: Add PWM nodes
+# upstream: e79da260fcb1d8eb91ccf946cef63f971b22964b
+e4b8eaeee97e pinctrl: renesas: r8a779h0: Add RPC pins, groups, functions
+# upstream: 9c579c36e94a37d0b7b639dfe7e26051efce1168
+ef0e0b4e6165 clk: renesas: r8a779h0: Add SDHI clocks
+# upstream: 7a7db3d1d7942a29c81fd5a8fe520c7ff6953b8b
+8f17f2f5a6e1 arm64: dts: renesas: Add DMA support for I2C on R-Car V4M.
+# upstream: 7a7db3d1d7942a29c81fd5a8fe520c7ff6953b8b
+33d0948c322f arm64: dts: renesas: r8a779h0: Add DMAC node support for R8A779H0 V4M
+# upstream: 10c353c7a289a54e19b69d775698bf25ddeac5b8
+85e57ecb1303 arm64: dts: renesas: Add node to support RWDT on R-Car V4M
+# upstream: 227ec979581047bad97ec6ac8307fc1e85befff8
+6e69371c6a21 arm64: dts: renesas: Add Renesas R8A779H0 V4M SoC support
 # upstream: 588b82546d585e8b6ab9c2af06a8ac1d4e5731ab
 f14b9cf51ca5 dt-bindings: watchdog: renesas-wdt: Add support for R-Car V4M
 # upstream: 35b78e2eef2d75c8722bf39d6bd1d89a8e21479e
