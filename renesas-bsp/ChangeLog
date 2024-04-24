@@ -2,6 +2,9 @@
 
 	* Below patches are backported
 
+		commit b952f96a57e6fb4528c1d6be19e941c3322f9905)
+		("dt-bindings: PCI: rcar-pci-host: Add optional regulators")
+
 		commit 2f0c4b118377e24242dfcad912d8a6a3a3f19e05
 		("PCI: rcar-host: Add support for optional regulators")
 
