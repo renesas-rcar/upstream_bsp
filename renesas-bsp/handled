@@ -1,3 +1,5 @@
+# upstream: a650b821fa57989deab9f7274a33af6ffab28e7e media: rcar-vin: Add support for R-Car V4H
+91efc4734636 media: rcar-vin: Correct the name of R8A779G0 product to R-Car V4H
 # upstream: 82bc596df84daa5ff6b3e706a8473801de49e2ee media: rcar-csi2: Add support for C-PHY on R-Car V4H
 da47c8b69492 media: rcar-vin: rcar-csi2: Fix timeout issue on R-Car V3H
 # upstream: 82bc596df84daa5ff6b3e706a8473801de49e2ee media: rcar-csi2: Add support for C-PHY on R-Car V4H
