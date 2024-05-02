@@ -732,6 +732,7 @@ TSN
 UIO/OSAL
 	UIO/OSAL is not intended for upstream
 
+		b0cfb2f3bf96 arm64: dts: renesas: Disable CSI native driver
 		5b328d015d20 arm64: dts: renesas: r8a77980: Add UIO system_ram device on V3H1
 		03c58f3acc28 arm64: dts: renesas: r8a779h0-gray-hawk-uio: Disable native devices
 		eedea8792447 arm64: dts: renesas: r8a779h0-uio: Add GFX UIO device
