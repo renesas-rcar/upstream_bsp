@@ -93,7 +93,6 @@ a24cc039144d soc: renesas: rcar-gen4-sysc: Introduce R-Car Gen4 SYSC driver
 2a031845abb3 media: rcar-vin: rcar-csi2: Add D-PHY setting for R8A779H0 SoC
 a2d284f9c799 media: rcar-vin: rcar-isp: Add support for R8A779H0 SoC
 df19a197a11a media: rcar-vin: Add support for R-Car R8A779H0 SoC
-91efc4734636 media: rcar-vin: Correct the name of R8A779G0 product to R-Car V4H
 a2a06db37e6b iommu/ipmmu-vmsa: Add Renesas R8A779H0 (R-Car V4M) support
 6592b33cb795 dt-bindings: iommu: renesas,ipmmu-vmsa: add r8a779h0 support
 f029d531a39d dt-bindings: serial: sh-sci: Document r8a779h0 bindings
