@@ -43,7 +43,6 @@ aa6f30405fe8 pinctrl: renesas: r8a779h0: Add missing MSIOF5
 5fed936874d8 ASoC: Add ak4619 codec support
 47e1a870dd58 arm64: dts: renesas: Add node to support AVB1/2
 ab5fb7a33bda pinctrl: renesas: r8a779h0: Add missing IP2SR5 setting
-b0cfb2f3bf96 arm64: dts: renesas: Disable CSI native driver
 e81eaa900756 dmaengine: rcar-dmac: Add support for R-Car V4M
 35db8eade3b5 arm64: dts: renesas: r8a779h0: Fix clock assignment for GPIO
 0cf550f4b998 PCI: pci-epf-test: Added WQ_UNBOUND flag to alloc_workqueue()
