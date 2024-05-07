@@ -10,7 +10,6 @@ a570945a144e clk: renesas: r8a779g0-cpg-mssr: Update clock source of VISIONIP mo
 8fb9f82e224b drm: bridge: ti-sn65dsi86: Add checking to detect bridge device connection failure
 e5c8088e2751 clk: renesas: r8a779g0: Fix ISPCS clocks
 1465bd4ef933 clk: renesas: cpg-mssr: Add VCBUS support for R-Car V4H
-da47c8b69492 media: rcar-vin: rcar-csi2: Fix timeout issue on R-Car V3H
 1054b8f6dd40 clk: renesas: r8a779h0: Add ZG clock
 caff53d84cb9 arm64: dts: renesas: r8a779h0: Correct compatible string for Audio on R-Car V4M
 9fdeed193dce arm64: dts: renesas: r8a779h0: Add PCIe support
@@ -127,9 +126,6 @@ c92b08f78a4f PCI: dwc: rcar-gen4: Change the power operation method for 4lane.
 e821b0fa8382 arm64: dts: renesas: r8a779g0: Add PCIe-ch1 phy access.
 bd5e927aa7eb media: i2c: Fix timeout GMSL2 link establish issue of MAX96712
 6346917cdaa4 media: rcar-csi2: Add interface for C-PHY Analog pin swap on R-Car V4H
-51f0028e4e9c media: rcar-csi2: Add interface for HS Receiver Specific on R-CarV4H
-923c4962b355 media: rcar-csi2: Update C-PHY start-up sequence for R-Car V4H
-96f790ecae56 media: rcar-csi2: Add register modifying helpers
 73be8101dbbe dt-bindings: media: Add specific CSI-2 information for R-Car V4H
 c86f32e3457c dt-bindings: media: Add r8a779g0 support
 11567ce00b4f arm64: defconfig: Update config for other SoCs PCIe driver
