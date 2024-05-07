@@ -1,3 +1,11 @@
+# upstream: 82bc596df84daa5ff6b3e706a8473801de49e2ee media: rcar-csi2: Add support for C-PHY on R-Car V4H
+da47c8b69492 media: rcar-vin: rcar-csi2: Fix timeout issue on R-Car V3H
+# upstream: 82bc596df84daa5ff6b3e706a8473801de49e2ee media: rcar-csi2: Add support for C-PHY on R-Car V4H
+51f0028e4e9c media: rcar-csi2: Add interface for HS Receiver Specific on R-CarV4H
+# upstream: 82bc596df84daa5ff6b3e706a8473801de49e2ee media: rcar-csi2: Add support for C-PHY on R-Car V4H
+923c4962b355 media: rcar-csi2: Update C-PHY start-up sequence for R-Car V4H
+# upstream: 82bc596df84daa5ff6b3e706a8473801de49e2ee media: rcar-csi2: Add support for C-PHY on R-Car V4H
+96f790ecae56 media: rcar-csi2: Add register modifying helpers
 # upstream: 6797e4da2dd1e2c8dc8cec73447c77abe2a7655b PCI: rcar-host: Add support for optional regulators
 56f944e99309 PCI: rcar: Add regulators support
 # Not needed. Newer firmware fixed the issue
