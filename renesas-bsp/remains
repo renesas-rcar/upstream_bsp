@@ -176,3 +176,7 @@ eae72e77117c net: ethernet: renesas: ravb: Add gPTP support on R-Car V4H
 e9ba9ac6fe77 can: rcar_canfd: Configure receive rules
 86ce48264beb can: rcar_canfd: Correct the controller
 41b2f735ef9c Revert "can: rcar_canfd: Correct the value of tseg1"
+60db06c0df93 arm64: defconfig: Enable Renesas Ethernet-TSN
+1e34ab549764 net: ethernet: renesas: Add Renesas Ethernet-TSN driver
+00244fb8f94a arm64: dts: renesas: r8a779g0: Add Ethernet-TSN support
+d387cc45dbbd arm64: dts: renesas: r8a779g0: Update Ethernet-TSN0 device node

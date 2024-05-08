@@ -1,3 +1,7 @@
+# upstream: c5b9f4792ea6b9abfcfb9486ba256f55e296aaa7 dt-bindings: net: renesas,ethertsn: Add Ethernet TSN
+78e51462682c dt-bindings: net: renesas,ethertsn: Add binding document for new Ethernet-TSN driver
+# upstream: be5f81d37f7971abbad8547624453a1d4f033457 net: ethernet: renesas: rcar_gen4_ptp: Get clock increment from clock rate
+51cb5f1f83b6 net: ethernet: renesas: rcar_gen4_ptp: Revise R-Car V4H gPTP's clock frequency
 # upstream: a650b821fa57989deab9f7274a33af6ffab28e7e media: rcar-vin: Add support for R-Car V4H
 91efc4734636 media: rcar-vin: Correct the name of R8A779G0 product to R-Car V4H
 # upstream: 82bc596df84daa5ff6b3e706a8473801de49e2ee media: rcar-csi2: Add support for C-PHY on R-Car V4H
