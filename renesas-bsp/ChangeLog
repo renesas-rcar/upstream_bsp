@@ -1,3 +1,25 @@
+* v6.1.90-2024-05-09
+
+	* Below patches are backported
+
+	commit c5b9f4792ea6b9abfcfb9486ba256f55e296aaa7
+	("dt-bindings: net: renesas,ethertsn: Add Ethernet TSN")
+
+	commit 8c1c66235e0354fbe8c2159656947fad048d374d
+	("net: ethernet: renesas: rcar_gen4_ptp: Break out to module")
+
+	commit de0ad34b56de71824a8a4a4760bfc49c2bccb420
+	("net: ethernet: renesas: group entries in Makefile")
+
+	commit be5f81d37f7971abbad8547624453a1d4f033457
+	("net: ethernet: renesas: rcar_gen4_ptp: Get clock increment from clock rate")
+
+	commit 46c361a04635a9f431fec56a75076cbb5262fb93
+	("net: ethernet: renesas: rcar_gen4_ptp: Prepare for shared register layout")
+
+	commit 9f3995707e355a2f9b2da06f6dee685cca974fc4
+	("net: ethernet: renesas: rcar_gen4_ptp: Fail on unknown register layout")
+
 * v6.1.90-2024-05-07-2
 
 	* handled/ignored/remains are updated
