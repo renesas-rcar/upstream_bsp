@@ -1,3 +1,52 @@
+* v6.1.90-2024-05-13
+
+	* Below patches are backported
+
+		commit 35b78409e1c7fff0f209f0aed7297e9fca13351d
+		("rswitch: Add PM ops")
+
+		commit 1bf55630694e0a87be529801ad064daed36f25f3
+		("rswitch: Use unsigned int for port related array index")
+
+		commit 053f13f67be6d02781730c9ac71abde6e9140610
+		("rswitch: Fix imbalance phy_power_off() calling")
+
+		commit 510b18cf23b9bd8a982ef7f1fb19f3968a2bf787
+		("rswitch: Fix renesas_eth_sw_remove() implementation")
+
+		commit a0c55bba0d0d0b5591083f65f830940d8ae63f31
+		("rswitch: Fix PHY station management clock setting")
+
+		commit c4f922e86c8e0f7c5fe94e0547e9835fc9711f08
+		("net: renesas: rswitch: Add spin lock protection for irq {un}mask")
+
+		commit e7b1ef29420fe52c2c1a273a9b4b36103a522625
+		("net: renesas: rswitch: Fix unmasking irq condition")
+
+		commit 20f8be6b24da814912c09cdb5b3457f0a3ecf505
+		("net: renesas: rswitch: Add .[gs]et_link_ksettings support")
+
+		commit c009b903f8ccfce5844c91f005b0f152a5518526
+		("net: renesas: rswitch: Add runtime speed change support")
+
+		commit c87bd91e34e1593584c3b309e8fead833c985855
+		("net: renesas: rswitch: Use hardware pause features")
+
+		commit dc510c6d2ecfff1faaf95b642c5fc01c86d6fdff
+		("net: renesas: rswitch: Use napi_gro_receive() in RX")
+
+		commit 0ad4982c520ed87ea7ebfc9381ea1f617ed75364
+		("net: renesas: rswitch: Fix timestamp feature after all descriptors are used")
+
+		commit a60caf039e96d806b1ced893242bae82ba3ccf0d
+		("net: renesas: rswitch: Fix return value in error path of xmit")
+
+		commit 2c59e993c86ad57afde26eaf1beb35694da5fbfe
+		("net: renesas: rswitch: Fix GWTSDIE register handling")
+
+		commit e05bb97d9c9dd4ba5739a27921044c935a7fb3be
+		("net: renesas: rswitch: Fix the output value of quote from rswitch_rx()")
+
 * v6.1.90-2024-05-09
 
 	* Below patches are backported
