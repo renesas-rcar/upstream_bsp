@@ -1,3 +1,13 @@
+* v6.6.30-2024-05-13
+
+	* Below patches are backported
+
+		commit 35b78409e1c7fff0f209f0aed7297e9fca13351d
+		("rswitch: Add PM ops")
+
+		commit 1bf55630694e0a87be529801ad064daed36f25f3
+		("rswitch: Use unsigned int for port related array index")
+
 * v6.6.30-2024-05-09
 
 	* Below patches are backported
