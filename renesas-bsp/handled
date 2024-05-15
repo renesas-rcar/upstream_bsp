@@ -1,3 +1,9 @@
+# upstream: e4caa0ba29e235c00090083c8570022c40bef508 arm64: dts: renesas: r8a779h0: Add thermal nodes
+3c4ea796c75d arm64: dts: renesas: r8a779h0: Add thermal support
+# upstream: 1828c1c17bb2adf3a3f26abc69cb3fe971eac0e4 thermal/drivers/rcar_gen3: Add support for R-Car V4M
+2b326677da85 thermal: rcar_gen3_thermal: Add R-Car V4M support
+# upstream: 883d1552997bedcf6e8eca3c65aa2dc5b28d160f thermal/drivers/rcar_gen3: Add support for R-Car V4H
+918fab2d8d90 thermal: rcar_gen3_thermal: Add R-Car V4H support
 # we use family specific compatible entries in upstream
 86ff25559c5a i2c: rcar: Add support for r8a779h0 (R-Car V4M)
 eb9fd742b012 i2c: rcar: Add fast mode plus support for r8a779h0 (R-Car V4M)

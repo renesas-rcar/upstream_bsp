@@ -58,7 +58,6 @@ fa8a15271377 net: ethernet: renesas: ravb: Fix Null pointer when getting paramet
 82035924e9ca can: rcar_canfd: Add support for V4M SoC
 93a2c7aabc35 can: rcar_canfd: Use generic name for resources
 a4b78a81b5a9 dt-bindings: can: renesas,rcar-canfd: Document R-Car V4M support
-2b326677da85 thermal: rcar_gen3_thermal: Add R-Car V4M support
 f408cb16a854 arm64: dts: renesas: r8a779g0: Expand the addr_space region of PCIe Endpoint
 a1fd5deedc01 PCI: pci-epf-test: Change target code for calculating transfer performance
 e9ee03a5a60e misc: pci-endpoint-test: A transfer size of 4 Mbytes or more can be specified.
@@ -75,7 +74,6 @@ b12b57ca7e3d arm64: dts: gray hawk: Enable FAKRA connector
 56b79b145b9d arm64: dts: renesas: gray-hawk-csi-dsi: Add and connect MAX96712
 43cf6cea9838 arm64: dts: renesas: r8a779h0: Add VIN driver nodes
 32419982823d arm64: dts: renesas: gray-hawk-cpu: Add eMMC support
-3c4ea796c75d arm64: dts: renesas: r8a779h0: Add thermal support
 6c2f3189955b arm64: dts: renesas: grayhawk: Add CANFD support
 1542b2a6219a arm64: dts: renesas: r8a779h0: Add CAN-FD node
 31968a5bf2b7 ravb: Support ravb driver for R-Car V4M
@@ -110,7 +108,6 @@ c02a5e045e06 PCI: dwc: rcar-gen4: Change the power operation method for 4lane.
 1365bd5899c9 media: i2c: Fix timeout GMSL2 link establish issue of MAX96712
 ccde61707b3d dt-bindings: power: Add R8A779H0 V4M SYSC power domain definitions
 e1d847bfd3ca dmaengine: rcar-dmac: Add repeat mode support
-918fab2d8d90 thermal: rcar_gen3_thermal: Add R-Car V4H support
 98721f4180de PCI: dwc: rcar-gen4: Add support for Resizable BAR
 7495f2cb37fb PCI: dwc: rcar-gen4: Set up BAR to work with 64-bit
 c2a47910ed98 arm64: dts: renesas: r8a779g0: Add a new property for Resizable BAR of PCIe
