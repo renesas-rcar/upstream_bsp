@@ -1,3 +1,30 @@
+* v6.1.90-2024-05-16
+
+	* Below patches are backported
+
+		commit 8923149ffc77eefa16d5412e30cf0e9cf26a01ba
+		("dt-bindings: power: Add r8a779h0 SYSC power domain definitions")
+
+		commit ce816e0baceaa3a734a54f47e9423cb6c41fe8ec
+		("pmdomain: renesas: r8a779h0-sysc: Add r8a779h0 support")
+
+		commit 1fa8924a488a46b2709f1babd7176193fa077a93
+		("dt-bindings: power: renesas,rcar-sysc: Document R-Car V4M support")
+
+		commit e4caa0ba29e235c00090083c8570022c40bef508
+		("arm64: dts: renesas: r8a779h0: Add thermal nodes")
+
+		commit 63d23fb78140a882e268201ff730453cd8b4f8e8
+		("thermal/drivers/rcar_gen3: Update temperature approximation calculation")
+
+		commit 566e0ea7d02ff596d7bcd81ca547e91b5074032f
+		("thermal/drivers/rcar_gen3: Move Tj_T storage to shared private data")
+
+		commit 1828c1c17bb2adf3a3f26abc69cb3fe971eac0e4
+		("thermal/drivers/rcar_gen3: Add support for R-Car V4M")
+
+	* Enable R8A779H0 on renesas_defconfig
+
 * v6.1.90-2024-05-13
 
 	* Below patches are backported
