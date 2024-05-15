@@ -15,9 +15,6 @@ caff53d84cb9 arm64: dts: renesas: r8a779h0: Correct compatible string for Audio 
 9fdeed193dce arm64: dts: renesas: r8a779h0: Add PCIe support
 b8ec226fcba2 clk: renesas: r8a779h0: Add PCIe clock
 157f14a1041f arm64: dts: renesas: Add alias for I2C on R-Car V4M SoC.
-eb9fd742b012 i2c: rcar: Add fast mode plus support for r8a779h0 (R-Car V4M)
-86ff25559c5a i2c: rcar: Add support for r8a779h0 (R-Car V4M)
-6de7c10c2b7a pwm: tpu: Add compatible string for V4M
 fd446b2b77ff arm64: dts: renesas: Add node to support PWM on R-Car V4M
 f7f0636f4392 spi: spi-sh-msiof: Add generic structural data for MSIOF on R-Car Gen4.
 cf638184c8e5 arm64: dts: renesas: Add node to support MSIOF on R-Car V4M
@@ -42,7 +39,6 @@ aa6f30405fe8 pinctrl: renesas: r8a779h0: Add missing MSIOF5
 5fed936874d8 ASoC: Add ak4619 codec support
 47e1a870dd58 arm64: dts: renesas: Add node to support AVB1/2
 ab5fb7a33bda pinctrl: renesas: r8a779h0: Add missing IP2SR5 setting
-e81eaa900756 dmaengine: rcar-dmac: Add support for R-Car V4M
 35db8eade3b5 arm64: dts: renesas: r8a779h0: Fix clock assignment for GPIO
 0cf550f4b998 PCI: pci-epf-test: Added WQ_UNBOUND flag to alloc_workqueue()
 478beadd7760 clk: renesas: r8a779h0: Add CANFD clock
