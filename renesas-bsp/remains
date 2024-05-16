@@ -63,8 +63,6 @@ a1fd5deedc01 PCI: pci-epf-test: Change target code for calculating transfer perf
 e9ee03a5a60e misc: pci-endpoint-test: A transfer size of 4 Mbytes or more can be specified.
 6ad9d598947d PCI: pci-epf-test: A transfer size of 4 Mbytes or more can be specified
 6854fc735147 pinctrl: renesas: r8a779h0: Use full description of reserved fields
-273c7cbc83fc pinctrl: renesas: Add generic support for resizable buses
-02c3ddcac3df pinctrl: renesas: Add generic support for pin group subsets
 144e51aa3296 pinctrl: renesas: Add R8A779H0 (R-Car V4M) config
 42c6d5d52539 arm64: dts: renesas: r8a779h0: Sort IPMMU driver nodes
 dbba32eebda4 arm64: dts: renesas: r8a779h0: Add IPMMU driver nodes
@@ -81,7 +79,6 @@ f96f80b3a67a arm64: dts: renesas: r8a779g0: Add a new property for Resizable BAR
 e93070510f22 arm64: dts: renesas: r8a779g0: Add PCIe1 clock to PCIe0 node for 4lane
 31a47e8dd8b4 arm64: dts: renesas: r8a779g0: PCIE channels and lanes are selectable.
 c8b7ea3d8000 arm64: dts: renesas: r8a779g0: Add PCIe-ch1 phy access.
-a24cc039144d soc: renesas: rcar-gen4-sysc: Introduce R-Car Gen4 SYSC driver
 2a031845abb3 media: rcar-vin: rcar-csi2: Add D-PHY setting for R8A779H0 SoC
 a2d284f9c799 media: rcar-vin: rcar-isp: Add support for R8A779H0 SoC
 df19a197a11a media: rcar-vin: Add support for R-Car R8A779H0 SoC

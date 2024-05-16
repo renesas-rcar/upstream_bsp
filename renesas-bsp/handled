@@ -1,3 +1,9 @@
+# upstream: 496da1003721bdaf03f6d65c66fd3ddb7c5aad53
+273c7cbc83fc pinctrl: renesas: Add generic support for resizable buses
+# upstream: 49a7a2742580ccd6194fc2bb26e6777cba9cac58
+02c3ddcac3df pinctrl: renesas: Add generic support for pin group subsets
+# upstream: e62906d6315f652b80640df0f980086462a4953b
+a24cc039144d soc: renesas: rcar-gen4-sysc: Introduce R-Car Gen4 SYSC driver
 # upstream: 8923149ffc77eefa16d5412e30cf0e9cf26a01ba dt-bindings: power: Add r8a779h0 SYSC power domain definitions
 ccde61707b3d dt-bindings: power: Add R8A779H0 V4M SYSC power domain definitions
 # upstream: ce816e0baceaa3a734a54f47e9423cb6c41fe8ec pmdomain: renesas: r8a779h0-sysc: Add r8a779h0 support
