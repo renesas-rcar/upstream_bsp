@@ -1,3 +1,5 @@
+# not needed, upstream was always correct
+35db8eade3b5 arm64: dts: renesas: r8a779h0: Fix clock assignment for GPIO
 # not needed upstream, patch only for backwards compatibility with kernels before v5.19
 # (that lack commit 6210905586ae7f40 ("pinctrl: renesas: Add shorthand for reserved register fields")).
 6854fc735147 pinctrl: renesas: r8a779h0: Use full description of reserved fields
