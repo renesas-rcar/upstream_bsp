@@ -1005,4 +1005,6 @@ VisionDSP+PAP
 		64aeab9599f3 arm64: dts: renesas: r8a779g0-whitehawk: Increase reverved memory size for Vision DSP{0..3}, PAP
 		bcdeece0e371 arm64: dts: renesas: r8a779g0-whitehawk: add reserved memory region for PAP
 		ac4899e37283 arm64: dts: renesas: r8a779g0-whitehawk: add reserved memory region for Vision DSP{0..3}
+		d3613e142614 arm64: dts: r8a77980: Update AXI uTLB ID for ACF devices
+		a570945a144e clk: renesas: r8a779g0-cpg-mssr: Update clock source of VISIONIP module
 
