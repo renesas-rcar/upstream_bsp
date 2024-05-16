@@ -6,7 +6,6 @@ e6fc262fa0e3 ASoC: ak4619: Fix bit clock polarity setting
 89ac4358ab25 ASoC: ak4619: Correct the setting for SND_SOC_DAIFMT_DSP_B
 4ba8444c28a3 ASoC: ak4619: Separate playback and capture formats
 b0aa2c59d513 ASoC: ak4619: Add some missing supported sampling rates
-a570945a144e clk: renesas: r8a779g0-cpg-mssr: Update clock source of VISIONIP module
 8fb9f82e224b drm: bridge: ti-sn65dsi86: Add checking to detect bridge device connection failure
 e5c8088e2751 clk: renesas: r8a779g0: Fix ISPCS clocks
 1465bd4ef933 clk: renesas: cpg-mssr: Add VCBUS support for R-Car V4H
@@ -39,7 +38,6 @@ aa6f30405fe8 pinctrl: renesas: r8a779h0: Add missing MSIOF5
 5fed936874d8 ASoC: Add ak4619 codec support
 47e1a870dd58 arm64: dts: renesas: Add node to support AVB1/2
 ab5fb7a33bda pinctrl: renesas: r8a779h0: Add missing IP2SR5 setting
-35db8eade3b5 arm64: dts: renesas: r8a779h0: Fix clock assignment for GPIO
 0cf550f4b998 PCI: pci-epf-test: Added WQ_UNBOUND flag to alloc_workqueue()
 478beadd7760 clk: renesas: r8a779h0: Add CANFD clock
 6a0b9ce0d579 clk: renesas: r8a779h0: Add Thermal module clock
@@ -62,8 +60,6 @@ f408cb16a854 arm64: dts: renesas: r8a779g0: Expand the addr_space region of PCIe
 a1fd5deedc01 PCI: pci-epf-test: Change target code for calculating transfer performance
 e9ee03a5a60e misc: pci-endpoint-test: A transfer size of 4 Mbytes or more can be specified.
 6ad9d598947d PCI: pci-epf-test: A transfer size of 4 Mbytes or more can be specified
-6854fc735147 pinctrl: renesas: r8a779h0: Use full description of reserved fields
-144e51aa3296 pinctrl: renesas: Add R8A779H0 (R-Car V4M) config
 42c6d5d52539 arm64: dts: renesas: r8a779h0: Sort IPMMU driver nodes
 dbba32eebda4 arm64: dts: renesas: r8a779h0: Add IPMMU driver nodes
 ee4364f9715c arm64: dts: renesas: gray-hawk, gray-hawk-cpu: Add SCIF/HSCIF support
@@ -82,7 +78,6 @@ c8b7ea3d8000 arm64: dts: renesas: r8a779g0: Add PCIe-ch1 phy access.
 2a031845abb3 media: rcar-vin: rcar-csi2: Add D-PHY setting for R8A779H0 SoC
 a2d284f9c799 media: rcar-vin: rcar-isp: Add support for R8A779H0 SoC
 df19a197a11a media: rcar-vin: Add support for R-Car R8A779H0 SoC
-a2a06db37e6b iommu/ipmmu-vmsa: Add Renesas R8A779H0 (R-Car V4M) support
 6592b33cb795 dt-bindings: iommu: renesas,ipmmu-vmsa: add r8a779h0 support
 f029d531a39d dt-bindings: serial: sh-sci: Document r8a779h0 bindings
 8471c5bb3f14 dt-bindings: media: rcar-vin: Document R8A779H0 bindings
@@ -122,7 +117,6 @@ b879ce6ca34a arm64: dts: renesas: r8a779g0-whitehawk: Add specific CSI-2 informa
 fbeeac1cc8ca arm64: dts: renesas: r8a779g0: Fix PCIe node interrupt settings
 850f6f7ae044 arm64: dts: renesas: r8a779g0: white-hawk: Enable PCIe Host ch0
 e150973fa985 arm64: dts: renesas: r8a779g0: Add PCIe Host and Endpoint nodes
-ac051eb7e36f pinctrl: renesas: r8a779g0: Add POC4-7 definition and setting
 3df1d5f023b1 soc: renesas: r8a779g0-sysc: Always-on A3IR, A2CN0, A1CNN0
 efd1efab854c PCI: dwc: rcar-gen4: Update the initial setting for PCIe
 cda3dd982572 arm64: defconfig: Updated for RCAR_GEN4 PCIe driver
@@ -152,7 +146,6 @@ cd6678e10496 net: ethernet: renesas: ravb: Fix Deadlock warning related to Ether
 b4da13817cb8 net: ethernet: renesas: rtsn: Fix the lack of unregistering PTP device
 846d4ecfc9f9 net: ethernet: renesas: rcar_gen4_ptp: Add a function to unregister the PTP device
 bbb7fb7366c0 drm: bridge: ti-sn65dsi86: Fix memory leak at ti_sn_get_modes()
-d3613e142614 arm64: dts: r8a77980: Update AXI uTLB ID for ACF devices
 d785d96b2961 net: ethernet: renesas: ravb: Fix missing MDIO bus with channel 1/2
 3d02eb8547f1 arm64: dts: renesas: r8a779g0-whitehawk: Change 'no-map' to 'reusable' property
 9cfa746081c7 arm64: dts: renesas: r8a779g0-whitehawk: Adding compatible for DMA API
