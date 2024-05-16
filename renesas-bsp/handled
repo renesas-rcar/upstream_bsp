@@ -1,3 +1,10 @@
+# not needed upstream, patch only for backwards compatibility with kernels before v5.19
+# (that lack commit 6210905586ae7f40 ("pinctrl: renesas: Add shorthand for reserved register fields")).
+6854fc735147 pinctrl: renesas: r8a779h0: Use full description of reserved fields
+# upstream: 291f7856fc451cbe6697a5b2d0ed849c4252b60a pinctrl: renesas: Initial R8A779H0 (R-Car V4M) PFC support
+144e51aa3296 pinctrl: renesas: Add R8A779H0 (R-Car V4M) config
+# upstream: 3c2465067f32beacc61ff898af7d8add1390aa95 pinctrl: renesas: r8a779g0: Add support for AVB/TSN power-sources
+ac051eb7e36f pinctrl: renesas: r8a779g0: Add POC4-7 definition and setting
 # upstream: 496da1003721bdaf03f6d65c66fd3ddb7c5aad53
 273c7cbc83fc pinctrl: renesas: Add generic support for resizable buses
 # upstream: 49a7a2742580ccd6194fc2bb26e6777cba9cac58
