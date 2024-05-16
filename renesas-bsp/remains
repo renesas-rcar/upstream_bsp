@@ -81,8 +81,6 @@ f96f80b3a67a arm64: dts: renesas: r8a779g0: Add a new property for Resizable BAR
 e93070510f22 arm64: dts: renesas: r8a779g0: Add PCIe1 clock to PCIe0 node for 4lane
 31a47e8dd8b4 arm64: dts: renesas: r8a779g0: PCIE channels and lanes are selectable.
 c8b7ea3d8000 arm64: dts: renesas: r8a779g0: Add PCIe-ch1 phy access.
-4ff0b1b671cb soc: renesas: r8a779h0-sysc: Add r8a779h0 support
-d498e954457d soc: renesas: r8a779g0-sysc: Remove redundant code
 a24cc039144d soc: renesas: rcar-gen4-sysc: Introduce R-Car Gen4 SYSC driver
 2a031845abb3 media: rcar-vin: rcar-csi2: Add D-PHY setting for R8A779H0 SoC
 a2d284f9c799 media: rcar-vin: rcar-isp: Add support for R8A779H0 SoC
@@ -91,7 +89,6 @@ a2a06db37e6b iommu/ipmmu-vmsa: Add Renesas R8A779H0 (R-Car V4M) support
 6592b33cb795 dt-bindings: iommu: renesas,ipmmu-vmsa: add r8a779h0 support
 f029d531a39d dt-bindings: serial: sh-sci: Document r8a779h0 bindings
 8471c5bb3f14 dt-bindings: media: rcar-vin: Document R8A779H0 bindings
-28f76220f249 dt-bindings: power: renesas,rcar-sysc: Document r8a779h0 SYSC bindings
 9d58e081d114 arm64: dts: renesas: gray-hawk: Add Ethernet sub-board
 479990bf87e1 arm64: dts: renesas: gray-hawk: Add CSI/DSI sub-board
 3fe02e884ee8 arm64: dts: renesas: gray-hawk: Add I2C0 and EEPROMs
@@ -106,7 +103,6 @@ c8f625bc2254 PCI: dwc: rcar-gen4: Set up BAR to work with 64-bit
 50c884de7a00 PCI: dwc: rcar-gen4: Add pcie firmware update
 c02a5e045e06 PCI: dwc: rcar-gen4: Change the power operation method for 4lane.
 1365bd5899c9 media: i2c: Fix timeout GMSL2 link establish issue of MAX96712
-ccde61707b3d dt-bindings: power: Add R8A779H0 V4M SYSC power domain definitions
 e1d847bfd3ca dmaengine: rcar-dmac: Add repeat mode support
 98721f4180de PCI: dwc: rcar-gen4: Add support for Resizable BAR
 7495f2cb37fb PCI: dwc: rcar-gen4: Set up BAR to work with 64-bit
