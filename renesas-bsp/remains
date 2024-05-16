@@ -82,7 +82,6 @@ c8b7ea3d8000 arm64: dts: renesas: r8a779g0: Add PCIe-ch1 phy access.
 2a031845abb3 media: rcar-vin: rcar-csi2: Add D-PHY setting for R8A779H0 SoC
 a2d284f9c799 media: rcar-vin: rcar-isp: Add support for R8A779H0 SoC
 df19a197a11a media: rcar-vin: Add support for R-Car R8A779H0 SoC
-a2a06db37e6b iommu/ipmmu-vmsa: Add Renesas R8A779H0 (R-Car V4M) support
 6592b33cb795 dt-bindings: iommu: renesas,ipmmu-vmsa: add r8a779h0 support
 f029d531a39d dt-bindings: serial: sh-sci: Document r8a779h0 bindings
 8471c5bb3f14 dt-bindings: media: rcar-vin: Document R8A779H0 bindings
