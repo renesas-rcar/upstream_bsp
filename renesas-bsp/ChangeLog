@@ -1,3 +1,22 @@
+* v6.6.30-2024-05-17
+
+	* Below patches are backported
+
+		commit 3d2db954d2d922a8193654f2aa09c1bdee47818a
+		("soc: renesas: Enable TMU support on R-Car Gen2")
+
+		commit 0be9a322307994443e854efd6a05b129c26ce287
+		("soc: renesas: Add identification support for RZ/V2H SoC")
+
+		commit 0b9729cdb895a477ba3551cd2102baee2e697cbb
+		("soc: renesas: Identify RZ/G3S SoC")
+
+		commit ae286bd7e9ed889b7284aa8bdb321a9938cc89ca
+		("soc: renesas: Introduce ARCH_RCAR_GEN4")
+
+		commit 31b2daea07643d8b83d62c670c76d95acca84f06
+		("soc: renesas: Make RZ/Five depend on !DMA_DIRECT_REMAP")
+
 * v6.6.30-2024-05-16
 
 	* Below patches are backported
