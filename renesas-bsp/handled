@@ -1,3 +1,9 @@
+# upstream: c0516eb4cf04ac61b6fe1f86cc15b2f5f024ee78 clk: renesas: r8a779h0: Add timer clocks
+e24abd13781d clk: renesas: r8a779h0: Add CMT/TMU clocks
+# upstream: fdaf6a67806d14a8fd9b0f79416398b59e417861 arm64: dts: renesas: r8a779h0: Add TMU nodes
+6fc80bb1190a arm64: dts: renesas: Add node to support Timer(TMU0/1/2/3/4)
+# upstream: 1552e6ab5ee5e689efe7b35e9305c7bcf95d22f8 arm64: dts: renesas: r8a779h0: Add CMT nodes
+7ebb128dae4f arm64: dts: renesas: Add node to support Timer(CMT0/1/2/3)
 # upstream: 3cdce0b531fbf6ad1d06b52c49b191a5b18d59ea arm64: dts: renesas: r8a779h0: Add remaining HSCIF nodes
 # upstream: 0833ec2fc4b1f01a82a83967a6386a0579a85898 arm64: dts: renesas: r8a779h0: Add SCIF nodes
 989bd625484f arm64: dts: renesas: r8a779h0: Add SCIF/HSCIF node

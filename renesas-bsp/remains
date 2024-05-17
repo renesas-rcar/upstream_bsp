@@ -19,9 +19,6 @@ f7f0636f4392 spi: spi-sh-msiof: Add generic structural data for MSIOF on R-Car G
 cf638184c8e5 arm64: dts: renesas: Add node to support MSIOF on R-Car V4M
 a6fc1fd71314 arm64: dts: renesas: gray-hawk-cpu: Add QSPI FLASH support
 675bcc5d8cbb net: ethernet: renesas: ravb: Returns an error value when gPTP is not used
-e24abd13781d clk: renesas: r8a779h0: Add CMT/TMU clocks
-6fc80bb1190a arm64: dts: renesas: Add node to support Timer(TMU0/1/2/3/4)
-7ebb128dae4f arm64: dts: renesas: Add node to support Timer(CMT0/1/2/3)
 c4427579e253 media: rcar-vin: rcar-csi2: Add compatible string for R8A779H0 SoC
 36a34468fc43 media: max96712: Add compatible string for Max96724 Deserializer
 100377ab7d0c arm64: dts: renesas: r8a779h0: Update VIN driver nodes
