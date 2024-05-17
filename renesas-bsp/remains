@@ -46,8 +46,6 @@ ab5fb7a33bda pinctrl: renesas: r8a779h0: Add missing IP2SR5 setting
 66a73d1a3c16 clk: renesas: r8a779h0: Add VIN clocks
 32397139103a clk: renesas: r8a779h0: Add TPU clock
 9800531f0188 clk: renesas: r8a779h0: Add PWM clock
-d10e0e0da51a clk: renesas: r8a779h0: Add INTC-EX clock
-eec9ded4943b clk: renesas: r8a779h0: Add MSIOF clocks
 41ae06c7f963 clk: renesas: r8a779h0: Add ISPCS clocks
 7693d3749f41 clk: renesas: r8a779h0: Fix dummy issues
 3a2d955daaab net: ethernet: renesas: ravb: Remove PTP initialize in ravb_open()
@@ -78,7 +76,6 @@ c8b7ea3d8000 arm64: dts: renesas: r8a779g0: Add PCIe-ch1 phy access.
 2a031845abb3 media: rcar-vin: rcar-csi2: Add D-PHY setting for R8A779H0 SoC
 a2d284f9c799 media: rcar-vin: rcar-isp: Add support for R8A779H0 SoC
 df19a197a11a media: rcar-vin: Add support for R-Car R8A779H0 SoC
-6592b33cb795 dt-bindings: iommu: renesas,ipmmu-vmsa: add r8a779h0 support
 f029d531a39d dt-bindings: serial: sh-sci: Document r8a779h0 bindings
 8471c5bb3f14 dt-bindings: media: rcar-vin: Document R8A779H0 bindings
 9d58e081d114 arm64: dts: renesas: gray-hawk: Add Ethernet sub-board

@@ -1,3 +1,9 @@
+# upstream: ef9916d0e28297410583f89c329a8ba3940dd8fa
+d10e0e0da51a clk: renesas: r8a779h0: Add INTC-EX clock
+# upstream: 50f0cbd5cc433bf7b22633b4f37b08de64dbfba5
+eec9ded4943b clk: renesas: r8a779h0: Add MSIOF clocks
+# upstream: 209516caff7b0dd715e551b21d7236f73427a936
+6592b33cb795 dt-bindings: iommu: renesas,ipmmu-vmsa: add r8a779h0 support
 # not needed, upstream was always correct
 35db8eade3b5 arm64: dts: renesas: r8a779h0: Fix clock assignment for GPIO
 # not needed upstream, patch only for backwards compatibility with kernels before v5.19
