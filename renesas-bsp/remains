@@ -60,7 +60,6 @@ e9ee03a5a60e misc: pci-endpoint-test: A transfer size of 4 Mbytes or more can be
 42c6d5d52539 arm64: dts: renesas: r8a779h0: Sort IPMMU driver nodes
 dbba32eebda4 arm64: dts: renesas: r8a779h0: Add IPMMU driver nodes
 ee4364f9715c arm64: dts: renesas: gray-hawk, gray-hawk-cpu: Add SCIF/HSCIF support
-989bd625484f arm64: dts: renesas: r8a779h0: Add SCIF/HSCIF node
 b12b57ca7e3d arm64: dts: gray hawk: Enable FAKRA connector
 56b79b145b9d arm64: dts: renesas: gray-hawk-csi-dsi: Add and connect MAX96712
 43cf6cea9838 arm64: dts: renesas: r8a779h0: Add VIN driver nodes
@@ -75,7 +74,6 @@ c8b7ea3d8000 arm64: dts: renesas: r8a779g0: Add PCIe-ch1 phy access.
 2a031845abb3 media: rcar-vin: rcar-csi2: Add D-PHY setting for R8A779H0 SoC
 a2d284f9c799 media: rcar-vin: rcar-isp: Add support for R8A779H0 SoC
 df19a197a11a media: rcar-vin: Add support for R-Car R8A779H0 SoC
-f029d531a39d dt-bindings: serial: sh-sci: Document r8a779h0 bindings
 8471c5bb3f14 dt-bindings: media: rcar-vin: Document R8A779H0 bindings
 9d58e081d114 arm64: dts: renesas: gray-hawk: Add Ethernet sub-board
 479990bf87e1 arm64: dts: renesas: gray-hawk: Add CSI/DSI sub-board

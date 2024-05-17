@@ -1,3 +1,9 @@
+# upstream: 3cdce0b531fbf6ad1d06b52c49b191a5b18d59ea arm64: dts: renesas: r8a779h0: Add remaining HSCIF nodes
+# upstream: 0833ec2fc4b1f01a82a83967a6386a0579a85898 arm64: dts: renesas: r8a779h0: Add SCIF nodes
+989bd625484f arm64: dts: renesas: r8a779h0: Add SCIF/HSCIF node
+# upstream: d2a2a5602cfe7fed309c81135b5ecb62556ce89b dt-bindings: serial: renesas,hscif: Document r8a779h0 bindings
+# upstream: b464199eaae81f51de8c7b07605643195645c663 dt-bindings: serial: renesas,scif: Document r8a779h0 bindings
+f029d531a39d dt-bindings: serial: sh-sci: Document r8a779h0 bindings
 # upstream: c69fe2ae2e7f203bbfbd6dd1757d3b290bce8509 clk: renesas: r8a779h0: Add thermal clock
 6a0b9ce0d579 clk: renesas: r8a779h0: Add Thermal module clock
 # upstream: ef9916d0e28297410583f89c329a8ba3940dd8fa
