@@ -1,3 +1,5 @@
+# upstream: c69fe2ae2e7f203bbfbd6dd1757d3b290bce8509 clk: renesas: r8a779h0: Add thermal clock
+6a0b9ce0d579 clk: renesas: r8a779h0: Add Thermal module clock
 # upstream: ef9916d0e28297410583f89c329a8ba3940dd8fa
 d10e0e0da51a clk: renesas: r8a779h0: Add INTC-EX clock
 # upstream: 50f0cbd5cc433bf7b22633b4f37b08de64dbfba5

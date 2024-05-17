@@ -40,7 +40,6 @@ aa6f30405fe8 pinctrl: renesas: r8a779h0: Add missing MSIOF5
 ab5fb7a33bda pinctrl: renesas: r8a779h0: Add missing IP2SR5 setting
 0cf550f4b998 PCI: pci-epf-test: Added WQ_UNBOUND flag to alloc_workqueue()
 478beadd7760 clk: renesas: r8a779h0: Add CANFD clock
-6a0b9ce0d579 clk: renesas: r8a779h0: Add Thermal module clock
 9caf04f15267 clk: renesas: r8a779h0: Add Audio clocks
 384727d779a1 clk: renesas: r8a779h0: Add CSI-2 clocks
 66a73d1a3c16 clk: renesas: r8a779h0: Add VIN clocks
