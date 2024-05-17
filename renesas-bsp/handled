@@ -1,3 +1,7 @@
+# upstream: 0ab55cf1834177a2162757fee2ac3cb6730beb20 clk: renesas: cpg-mssr: Add support for R-Car V4H
+1465bd4ef933 clk: renesas: cpg-mssr: Add VCBUS support for R-Car V4H
+# not needed, upstream was always correct
+7693d3749f41 clk: renesas: r8a779h0: Fix dummy issues
 # not needed, upstream was always correct
 42c6d5d52539 arm64: dts: renesas: r8a779h0: Sort IPMMU driver nodes
 # upstream: 5bd21a0009697011ea90ccccc9ff4b90696dbca9 arm64: dts: renesas: r8a779h0: Add IPMMU nodes

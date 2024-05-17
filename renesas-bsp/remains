@@ -8,8 +8,6 @@ e6fc262fa0e3 ASoC: ak4619: Fix bit clock polarity setting
 b0aa2c59d513 ASoC: ak4619: Add some missing supported sampling rates
 8fb9f82e224b drm: bridge: ti-sn65dsi86: Add checking to detect bridge device connection failure
 e5c8088e2751 clk: renesas: r8a779g0: Fix ISPCS clocks
-1465bd4ef933 clk: renesas: cpg-mssr: Add VCBUS support for R-Car V4H
-1054b8f6dd40 clk: renesas: r8a779h0: Add ZG clock
 caff53d84cb9 arm64: dts: renesas: r8a779h0: Correct compatible string for Audio on R-Car V4M
 9fdeed193dce arm64: dts: renesas: r8a779h0: Add PCIe support
 b8ec226fcba2 clk: renesas: r8a779h0: Add PCIe clock
@@ -42,7 +40,6 @@ ab5fb7a33bda pinctrl: renesas: r8a779h0: Add missing IP2SR5 setting
 32397139103a clk: renesas: r8a779h0: Add TPU clock
 9800531f0188 clk: renesas: r8a779h0: Add PWM clock
 41ae06c7f963 clk: renesas: r8a779h0: Add ISPCS clocks
-7693d3749f41 clk: renesas: r8a779h0: Fix dummy issues
 3a2d955daaab net: ethernet: renesas: ravb: Remove PTP initialize in ravb_open()
 fa8a15271377 net: ethernet: renesas: ravb: Fix Null pointer when getting parameters with ethtool
 8c977b4d6d61 net: ethernet: renesas: rtsn: Fix setting wrong PHY address

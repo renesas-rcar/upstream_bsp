@@ -331,6 +331,7 @@ GSX
 		128981aa3601 clk: renesas: rcar-gen3: Add support ZG clock divider for R8A77990
 		35eb4ba8bd88 clk: renesas: r8a77{95, 96, 965, 990}: Add ZG clock
 		7e9c8bd37798 soc: renesas: rcar-sysc: Include 3DG as always-on power domains
+		1054b8f6dd40 clk: renesas: r8a779h0: Add ZG clock
 
 IMP
 	IMP is not intended for upstream
