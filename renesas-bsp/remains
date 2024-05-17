@@ -16,7 +16,6 @@ b8ec226fcba2 clk: renesas: r8a779h0: Add PCIe clock
 157f14a1041f arm64: dts: renesas: Add alias for I2C on R-Car V4M SoC.
 fd446b2b77ff arm64: dts: renesas: Add node to support PWM on R-Car V4M
 f7f0636f4392 spi: spi-sh-msiof: Add generic structural data for MSIOF on R-Car Gen4.
-cf638184c8e5 arm64: dts: renesas: Add node to support MSIOF on R-Car V4M
 a6fc1fd71314 arm64: dts: renesas: gray-hawk-cpu: Add QSPI FLASH support
 675bcc5d8cbb net: ethernet: renesas: ravb: Returns an error value when gPTP is not used
 c4427579e253 media: rcar-vin: rcar-csi2: Add compatible string for R8A779H0 SoC

@@ -1,3 +1,5 @@
+# upstream: a6e140f174366e1644c626c7feebfc5d6c48d6db arm64: dts: renesas: r8a779h0: Add MSIOF nodes
+cf638184c8e5 arm64: dts: renesas: Add node to support MSIOF on R-Car V4M
 # upstream: c0516eb4cf04ac61b6fe1f86cc15b2f5f024ee78 clk: renesas: r8a779h0: Add timer clocks
 e24abd13781d clk: renesas: r8a779h0: Add CMT/TMU clocks
 # upstream: fdaf6a67806d14a8fd9b0f79416398b59e417861 arm64: dts: renesas: r8a779h0: Add TMU nodes
