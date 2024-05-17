@@ -1,3 +1,7 @@
+# not needed, upstream was always correct
+42c6d5d52539 arm64: dts: renesas: r8a779h0: Sort IPMMU driver nodes
+# upstream: 5bd21a0009697011ea90ccccc9ff4b90696dbca9 arm64: dts: renesas: r8a779h0: Add IPMMU nodes
+dbba32eebda4 arm64: dts: renesas: r8a779h0: Add IPMMU driver nodes
 # upstream: a6e140f174366e1644c626c7feebfc5d6c48d6db arm64: dts: renesas: r8a779h0: Add MSIOF nodes
 cf638184c8e5 arm64: dts: renesas: Add node to support MSIOF on R-Car V4M
 # upstream: c0516eb4cf04ac61b6fe1f86cc15b2f5f024ee78 clk: renesas: r8a779h0: Add timer clocks

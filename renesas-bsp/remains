@@ -53,8 +53,6 @@ f408cb16a854 arm64: dts: renesas: r8a779g0: Expand the addr_space region of PCIe
 a1fd5deedc01 PCI: pci-epf-test: Change target code for calculating transfer performance
 e9ee03a5a60e misc: pci-endpoint-test: A transfer size of 4 Mbytes or more can be specified.
 6ad9d598947d PCI: pci-epf-test: A transfer size of 4 Mbytes or more can be specified
-42c6d5d52539 arm64: dts: renesas: r8a779h0: Sort IPMMU driver nodes
-dbba32eebda4 arm64: dts: renesas: r8a779h0: Add IPMMU driver nodes
 ee4364f9715c arm64: dts: renesas: gray-hawk, gray-hawk-cpu: Add SCIF/HSCIF support
 b12b57ca7e3d arm64: dts: gray hawk: Enable FAKRA connector
 56b79b145b9d arm64: dts: renesas: gray-hawk-csi-dsi: Add and connect MAX96712
