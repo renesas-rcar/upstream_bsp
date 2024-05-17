@@ -1007,4 +1007,6 @@ VisionDSP+PAP
 		ac4899e37283 arm64: dts: renesas: r8a779g0-whitehawk: add reserved memory region for Vision DSP{0..3}
 		d3613e142614 arm64: dts: r8a77980: Update AXI uTLB ID for ACF devices
 		a570945a144e clk: renesas: r8a779g0-cpg-mssr: Update clock source of VISIONIP module
+		3d02eb8547f1 arm64: dts: renesas: r8a779g0-whitehawk: Change 'no-map' to 'reusable' property
+		9cfa746081c7 arm64: dts: renesas: r8a779g0-whitehawk: Adding compatible for DMA API
 

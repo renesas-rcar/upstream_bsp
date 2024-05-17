@@ -135,8 +135,6 @@ b4da13817cb8 net: ethernet: renesas: rtsn: Fix the lack of unregistering PTP dev
 846d4ecfc9f9 net: ethernet: renesas: rcar_gen4_ptp: Add a function to unregister the PTP device
 bbb7fb7366c0 drm: bridge: ti-sn65dsi86: Fix memory leak at ti_sn_get_modes()
 d785d96b2961 net: ethernet: renesas: ravb: Fix missing MDIO bus with channel 1/2
-3d02eb8547f1 arm64: dts: renesas: r8a779g0-whitehawk: Change 'no-map' to 'reusable' property
-9cfa746081c7 arm64: dts: renesas: r8a779g0-whitehawk: Adding compatible for DMA API
 3d545d5e0463 net: ethernet: renesas: ravb: Disable Link Signal Change Interrupt for AVB0
 eae72e77117c net: ethernet: renesas: ravb: Add gPTP support on R-Car V4H
 905813c180f4 can: rcar_canfd: Add secondary sample point
