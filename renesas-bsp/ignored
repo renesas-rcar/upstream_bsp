@@ -331,6 +331,7 @@ GSX
 		128981aa3601 clk: renesas: rcar-gen3: Add support ZG clock divider for R8A77990
 		35eb4ba8bd88 clk: renesas: r8a77{95, 96, 965, 990}: Add ZG clock
 		7e9c8bd37798 soc: renesas: rcar-sysc: Include 3DG as always-on power domains
+		1054b8f6dd40 clk: renesas: r8a779h0: Add ZG clock
 
 IMP
 	IMP is not intended for upstream
@@ -1007,4 +1008,6 @@ VisionDSP+PAP
 		ac4899e37283 arm64: dts: renesas: r8a779g0-whitehawk: add reserved memory region for Vision DSP{0..3}
 		d3613e142614 arm64: dts: r8a77980: Update AXI uTLB ID for ACF devices
 		a570945a144e clk: renesas: r8a779g0-cpg-mssr: Update clock source of VISIONIP module
+		3d02eb8547f1 arm64: dts: renesas: r8a779g0-whitehawk: Change 'no-map' to 'reusable' property
+		9cfa746081c7 arm64: dts: renesas: r8a779g0-whitehawk: Adding compatible for DMA API
 

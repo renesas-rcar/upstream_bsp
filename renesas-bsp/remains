@@ -8,20 +8,14 @@ e6fc262fa0e3 ASoC: ak4619: Fix bit clock polarity setting
 b0aa2c59d513 ASoC: ak4619: Add some missing supported sampling rates
 8fb9f82e224b drm: bridge: ti-sn65dsi86: Add checking to detect bridge device connection failure
 e5c8088e2751 clk: renesas: r8a779g0: Fix ISPCS clocks
-1465bd4ef933 clk: renesas: cpg-mssr: Add VCBUS support for R-Car V4H
-1054b8f6dd40 clk: renesas: r8a779h0: Add ZG clock
 caff53d84cb9 arm64: dts: renesas: r8a779h0: Correct compatible string for Audio on R-Car V4M
 9fdeed193dce arm64: dts: renesas: r8a779h0: Add PCIe support
 b8ec226fcba2 clk: renesas: r8a779h0: Add PCIe clock
 157f14a1041f arm64: dts: renesas: Add alias for I2C on R-Car V4M SoC.
 fd446b2b77ff arm64: dts: renesas: Add node to support PWM on R-Car V4M
 f7f0636f4392 spi: spi-sh-msiof: Add generic structural data for MSIOF on R-Car Gen4.
-cf638184c8e5 arm64: dts: renesas: Add node to support MSIOF on R-Car V4M
 a6fc1fd71314 arm64: dts: renesas: gray-hawk-cpu: Add QSPI FLASH support
 675bcc5d8cbb net: ethernet: renesas: ravb: Returns an error value when gPTP is not used
-e24abd13781d clk: renesas: r8a779h0: Add CMT/TMU clocks
-6fc80bb1190a arm64: dts: renesas: Add node to support Timer(TMU0/1/2/3/4)
-7ebb128dae4f arm64: dts: renesas: Add node to support Timer(CMT0/1/2/3)
 c4427579e253 media: rcar-vin: rcar-csi2: Add compatible string for R8A779H0 SoC
 36a34468fc43 media: max96712: Add compatible string for Max96724 Deserializer
 100377ab7d0c arm64: dts: renesas: r8a779h0: Update VIN driver nodes
@@ -40,16 +34,12 @@ aa6f30405fe8 pinctrl: renesas: r8a779h0: Add missing MSIOF5
 ab5fb7a33bda pinctrl: renesas: r8a779h0: Add missing IP2SR5 setting
 0cf550f4b998 PCI: pci-epf-test: Added WQ_UNBOUND flag to alloc_workqueue()
 478beadd7760 clk: renesas: r8a779h0: Add CANFD clock
-6a0b9ce0d579 clk: renesas: r8a779h0: Add Thermal module clock
 9caf04f15267 clk: renesas: r8a779h0: Add Audio clocks
 384727d779a1 clk: renesas: r8a779h0: Add CSI-2 clocks
 66a73d1a3c16 clk: renesas: r8a779h0: Add VIN clocks
 32397139103a clk: renesas: r8a779h0: Add TPU clock
 9800531f0188 clk: renesas: r8a779h0: Add PWM clock
-d10e0e0da51a clk: renesas: r8a779h0: Add INTC-EX clock
-eec9ded4943b clk: renesas: r8a779h0: Add MSIOF clocks
 41ae06c7f963 clk: renesas: r8a779h0: Add ISPCS clocks
-7693d3749f41 clk: renesas: r8a779h0: Fix dummy issues
 3a2d955daaab net: ethernet: renesas: ravb: Remove PTP initialize in ravb_open()
 fa8a15271377 net: ethernet: renesas: ravb: Fix Null pointer when getting parameters with ethtool
 8c977b4d6d61 net: ethernet: renesas: rtsn: Fix setting wrong PHY address
@@ -60,10 +50,7 @@ f408cb16a854 arm64: dts: renesas: r8a779g0: Expand the addr_space region of PCIe
 a1fd5deedc01 PCI: pci-epf-test: Change target code for calculating transfer performance
 e9ee03a5a60e misc: pci-endpoint-test: A transfer size of 4 Mbytes or more can be specified.
 6ad9d598947d PCI: pci-epf-test: A transfer size of 4 Mbytes or more can be specified
-42c6d5d52539 arm64: dts: renesas: r8a779h0: Sort IPMMU driver nodes
-dbba32eebda4 arm64: dts: renesas: r8a779h0: Add IPMMU driver nodes
 ee4364f9715c arm64: dts: renesas: gray-hawk, gray-hawk-cpu: Add SCIF/HSCIF support
-989bd625484f arm64: dts: renesas: r8a779h0: Add SCIF/HSCIF node
 b12b57ca7e3d arm64: dts: gray hawk: Enable FAKRA connector
 56b79b145b9d arm64: dts: renesas: gray-hawk-csi-dsi: Add and connect MAX96712
 43cf6cea9838 arm64: dts: renesas: r8a779h0: Add VIN driver nodes
@@ -78,8 +65,6 @@ c8b7ea3d8000 arm64: dts: renesas: r8a779g0: Add PCIe-ch1 phy access.
 2a031845abb3 media: rcar-vin: rcar-csi2: Add D-PHY setting for R8A779H0 SoC
 a2d284f9c799 media: rcar-vin: rcar-isp: Add support for R8A779H0 SoC
 df19a197a11a media: rcar-vin: Add support for R-Car R8A779H0 SoC
-6592b33cb795 dt-bindings: iommu: renesas,ipmmu-vmsa: add r8a779h0 support
-f029d531a39d dt-bindings: serial: sh-sci: Document r8a779h0 bindings
 8471c5bb3f14 dt-bindings: media: rcar-vin: Document R8A779H0 bindings
 9d58e081d114 arm64: dts: renesas: gray-hawk: Add Ethernet sub-board
 479990bf87e1 arm64: dts: renesas: gray-hawk: Add CSI/DSI sub-board
@@ -147,8 +132,6 @@ b4da13817cb8 net: ethernet: renesas: rtsn: Fix the lack of unregistering PTP dev
 846d4ecfc9f9 net: ethernet: renesas: rcar_gen4_ptp: Add a function to unregister the PTP device
 bbb7fb7366c0 drm: bridge: ti-sn65dsi86: Fix memory leak at ti_sn_get_modes()
 d785d96b2961 net: ethernet: renesas: ravb: Fix missing MDIO bus with channel 1/2
-3d02eb8547f1 arm64: dts: renesas: r8a779g0-whitehawk: Change 'no-map' to 'reusable' property
-9cfa746081c7 arm64: dts: renesas: r8a779g0-whitehawk: Adding compatible for DMA API
 3d545d5e0463 net: ethernet: renesas: ravb: Disable Link Signal Change Interrupt for AVB0
 eae72e77117c net: ethernet: renesas: ravb: Add gPTP support on R-Car V4H
 905813c180f4 can: rcar_canfd: Add secondary sample point
