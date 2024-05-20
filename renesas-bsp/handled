@@ -1,3 +1,15 @@
+# upstream: b52e015aa6b62fce0d72929344afde2793b20b19 arm64: dts: renesas: gray-hawk-single: Add QSPI FLASH support
+a6fc1fd71314 arm64: dts: renesas: gray-hawk-cpu: Add QSPI FLASH support
+# upstream: 20f4b85a26a58258611dcffe81bef99ce306bbbc arm64: dts: renesas: gray-hawk-single: Add second debug serial port
+ee4364f9715c arm64: dts: renesas: gray-hawk, gray-hawk-cpu: Add SCIF/HSCIF support
+# upstream: 81f1919b4f5e3d9151e9da597d6dcf5823590583 arm64: dts: renesas: gray-hawk-single: Add eMMC support
+32419982823d arm64: dts: renesas: gray-hawk-cpu: Add eMMC support
+# upstream: 74a9d17af7db7fea0c041c536d2dc80ddc7e95ee arm64: dts: renesas: gray-hawk-single: Add I2C0 and EEPROMs
+3fe02e884ee8 arm64: dts: renesas: gray-hawk: Add I2C0 and EEPROMs
+# upstream: 4b232e29cba7c8bd3d92d337b2daeca72da6be36 arm64: dts: renesas: gray-hawk-single: Add serial console pin control
+ededd9a075c9 arm64: dts: renesas: gray-hawk-cpu: Add serial port pin control
+# upstream: 0c7a8cbbcee00631aa643b54e67f7245a98f6f8e arm64: dts: renesas: Add Gray Hawk Single board support
+8cf75d108247 arm64: dts: renesas: Add Renesas Gray Hawk boards support
 # upstream: 2066b41a2ef83937f70a84927cbbcc969528b867 PCI: dwc: Expose dw_pcie_ep_exit() to module
 dbf40e6c69f6 PCI: designware-ep: Expose dw_pcie_ep_exit() to module
 # upstream: 0d0c551011df4519c232f7114cdace9000e86c51 PCI: rcar-gen4: Add R-Car Gen4 PCIe controller support for host mode

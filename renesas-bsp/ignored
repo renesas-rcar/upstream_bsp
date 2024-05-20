@@ -21,6 +21,7 @@ ARM/SoC/DT
 
 	We don't have a camera board, so we cannot test
 		fae4aeaf8b56 arm64: dts: r8a779a0-falcon: Enable fakra connector
+		b12b57ca7e3d arm64: dts: gray hawk: Enable FAKRA connector
 
 	Temporary workaround
 		948df237125b arm64: dts: Makefile: Comment out compiling of dtbo
