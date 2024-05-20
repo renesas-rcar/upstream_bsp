@@ -574,6 +574,12 @@ PCIe for R-Car Gen4
 		f481c68a26f4 pci: dwc: renesas: Implement source code based on board TP for V4H RootComplex
 		417cd8ce5abb PCI: Replace PCIe registers not defined in HW UM
 
+	These were customer specific. We need more information about the actual test case
+
+		d45f0099b501 tools: PCI: Add 't' command line option to support expired timer
+		6e6d099110f7 PCI: pci-epf-test: Add USE_TIMER handling
+		25c2de2a9d4d misc: pci-endpoint-test: Add PCITEST_FLAGS_USE_TIMER flag
+
 PCI
 	Matches already against family-specific compatible
 		331fb5074e3b PCI: rcar: Add a compatible string for r8a77961
