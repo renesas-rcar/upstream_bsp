@@ -21,6 +21,7 @@ ARM/SoC/DT
 
 	We don't have a camera board, so we cannot test
 		fae4aeaf8b56 arm64: dts: r8a779a0-falcon: Enable fakra connector
+		b12b57ca7e3d arm64: dts: gray hawk: Enable FAKRA connector
 
 	Temporary workaround
 		948df237125b arm64: dts: Makefile: Comment out compiling of dtbo
@@ -98,15 +99,6 @@ AVS
 		81a0161ddc6a arm64: dts: renesas: r8a77970 and r8a77980: Add CPU operation points
 
 CAN-FD
-	The current "-1" matches the documentation.  When checking with a
-	scope, the actual bitrate is spot-on without this patch, but
-	consistently too low with this patch applied.
-	Perhaps this was a work-around for an issue in the core CAN bittiming
-	code that is no longer present (fixed by e.g. commit 39f66c9e229797a5
-	("can: bittiming: change unit of TDC parameters to clock periods") in
-	v5.16?)?
-		b904fa8a336b can: rcar_canfd: Correct the value of tseg1
-
 	Channels 3-7 are not enabled on White-Hawk, as they do not seem to
 	work.  The below patch does not fix that, why is it needed?
 		e3e5bccc9244 can: rcar_canfd: rcar_canfd_configure_afl_rules(): Fix Rx FIFO entry setting
@@ -583,6 +575,12 @@ PCIe for R-Car Gen4
 		f481c68a26f4 pci: dwc: renesas: Implement source code based on board TP for V4H RootComplex
 		417cd8ce5abb PCI: Replace PCIe registers not defined in HW UM
 
+	These were customer specific. We need more information about the actual test case
+
+		d45f0099b501 tools: PCI: Add 't' command line option to support expired timer
+		6e6d099110f7 PCI: pci-epf-test: Add USE_TIMER handling
+		25c2de2a9d4d misc: pci-endpoint-test: Add PCITEST_FLAGS_USE_TIMER flag
+
 PCI
 	Matches already against family-specific compatible
 		331fb5074e3b PCI: rcar: Add a compatible string for r8a77961
@@ -712,6 +710,9 @@ SPI
 
 	SPI aliases are deprecated, also there are no spidev nodes in upstream
 		e6ef0f7489da arm64: dts: renesas: r8a77951: Add spi aliases
+
+	MSIOF5A/B has been removed from datasheet v0.51
+		aa6f30405fe8 pinctrl: renesas: r8a779h0: Add missing MSIOF5
 
 Thermal
 	This is a workaround. Inami-san agreed to change the priority to N.
