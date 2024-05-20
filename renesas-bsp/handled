@@ -1,3 +1,5 @@
+# upstream: 291f7856fc451cbe6697a5b2d0ed849c4252b60a pinctrl: renesas: Initial R8A779H0 (R-Car V4M) PFC support
+ab5fb7a33bda pinctrl: renesas: r8a779h0: Add missing IP2SR5 setting
 # patch + revert = nothing left. Upstream was always correct
 41b2f735ef9c Revert "can: rcar_canfd: Correct the value of tseg1"
 b904fa8a336b can: rcar_canfd: Correct the value of tseg1

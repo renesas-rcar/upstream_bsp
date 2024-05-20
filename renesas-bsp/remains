@@ -28,10 +28,8 @@ c4427579e253 media: rcar-vin: rcar-csi2: Add compatible string for R8A779H0 SoC
 f2fc3314dab2 drm: rcar-du: Add R8A779H0 SoC support
 3396171734c8 drm: rcar-du: rcar_mipi_dsi: fix PHY lock bit mistake in CLOCKSET1
 e7941f29016d drm: rcar-du: rcar_mipi_dsi: fix VCLKSET set erroneously with OR to WRITE
-aa6f30405fe8 pinctrl: renesas: r8a779h0: Add missing MSIOF5
 5fed936874d8 ASoC: Add ak4619 codec support
 47e1a870dd58 arm64: dts: renesas: Add node to support AVB1/2
-ab5fb7a33bda pinctrl: renesas: r8a779h0: Add missing IP2SR5 setting
 0cf550f4b998 PCI: pci-epf-test: Added WQ_UNBOUND flag to alloc_workqueue()
 478beadd7760 clk: renesas: r8a779h0: Add CANFD clock
 9caf04f15267 clk: renesas: r8a779h0: Add Audio clocks
