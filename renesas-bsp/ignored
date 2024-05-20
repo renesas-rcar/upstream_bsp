@@ -98,15 +98,6 @@ AVS
 		81a0161ddc6a arm64: dts: renesas: r8a77970 and r8a77980: Add CPU operation points
 
 CAN-FD
-	The current "-1" matches the documentation.  When checking with a
-	scope, the actual bitrate is spot-on without this patch, but
-	consistently too low with this patch applied.
-	Perhaps this was a work-around for an issue in the core CAN bittiming
-	code that is no longer present (fixed by e.g. commit 39f66c9e229797a5
-	("can: bittiming: change unit of TDC parameters to clock periods") in
-	v5.16?)?
-		b904fa8a336b can: rcar_canfd: Correct the value of tseg1
-
 	Channels 3-7 are not enabled on White-Hawk, as they do not seem to
 	work.  The below patch does not fix that, why is it needed?
 		e3e5bccc9244 can: rcar_canfd: rcar_canfd_configure_afl_rules(): Fix Rx FIFO entry setting

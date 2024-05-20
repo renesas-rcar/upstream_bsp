@@ -1,3 +1,10 @@
+# patch + revert = nothing left. Upstream was always correct
+41b2f735ef9c Revert "can: rcar_canfd: Correct the value of tseg1"
+b904fa8a336b can: rcar_canfd: Correct the value of tseg1
+# upstream: 0a016639ef92b28eb74ba4fed21bee1f1328513a can: rcar_canfd: Fix R-Car V3U CAN mode selection
+86ce48264beb can: rcar_canfd: Correct the controller
+# upstream: 8716e6e79a148f58852a393340326ad72fd62a00 can: rcar_canfd: Add support for R-Car Gen4
+93a2c7aabc35 can: rcar_canfd: Use generic name for resources
 # upstream: 0ab55cf1834177a2162757fee2ac3cb6730beb20 clk: renesas: cpg-mssr: Add support for R-Car V4H
 1465bd4ef933 clk: renesas: cpg-mssr: Add VCBUS support for R-Car V4H
 # not needed, upstream was always correct

@@ -44,7 +44,6 @@ ab5fb7a33bda pinctrl: renesas: r8a779h0: Add missing IP2SR5 setting
 fa8a15271377 net: ethernet: renesas: ravb: Fix Null pointer when getting parameters with ethtool
 8c977b4d6d61 net: ethernet: renesas: rtsn: Fix setting wrong PHY address
 82035924e9ca can: rcar_canfd: Add support for V4M SoC
-93a2c7aabc35 can: rcar_canfd: Use generic name for resources
 a4b78a81b5a9 dt-bindings: can: renesas,rcar-canfd: Document R-Car V4M support
 f408cb16a854 arm64: dts: renesas: r8a779g0: Expand the addr_space region of PCIe Endpoint
 a1fd5deedc01 PCI: pci-epf-test: Change target code for calculating transfer performance
@@ -136,8 +135,6 @@ d785d96b2961 net: ethernet: renesas: ravb: Fix missing MDIO bus with channel 1/2
 eae72e77117c net: ethernet: renesas: ravb: Add gPTP support on R-Car V4H
 905813c180f4 can: rcar_canfd: Add secondary sample point
 e9ba9ac6fe77 can: rcar_canfd: Configure receive rules
-86ce48264beb can: rcar_canfd: Correct the controller
-41b2f735ef9c Revert "can: rcar_canfd: Correct the value of tseg1"
 60db06c0df93 arm64: defconfig: Enable Renesas Ethernet-TSN
 1e34ab549764 net: ethernet: renesas: Add Renesas Ethernet-TSN driver
 00244fb8f94a arm64: dts: renesas: r8a779g0: Add Ethernet-TSN support
