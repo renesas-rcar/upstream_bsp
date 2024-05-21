@@ -1,3 +1,40 @@
+* v6.1.91-2024-05-21
+
+	* Below patches are backported
+
+		commit c16f166229d2a8301b3000d99d6a08120d15696c
+		("arm64: dts: renesas: gray-hawk-single: Enable nfsroot")
+
+		commit 20f4b85a26a58258611dcffe81bef99ce306bbbc
+		("arm64: dts: renesas: gray-hawk-single: Add second debug serial port")
+
+		commit b52e015aa6b62fce0d72929344afde2793b20b19
+		("arm64: dts: renesas: gray-hawk-single: Add QSPI FLASH support")
+
+		commit 81f1919b4f5e3d9151e9da597d6dcf5823590583
+		("arm64: dts: renesas: gray-hawk-single: Add eMMC support")
+
+		commit 63275d848a6e883c6d37843cfed2504013cc6f0b
+		("arm64: dts: renesas: gray-hawk-single: Add Ethernet support")
+
+		commit 74a9d17af7db7fea0c041c536d2dc80ddc7e95ee
+		("arm64: dts: renesas: gray-hawk-single: Add I2C0 and EEPROMs")
+
+		commit 4b232e29cba7c8bd3d92d337b2daeca72da6be36
+		("arm64: dts: renesas: gray-hawk-single: Add serial console pin control")
+
+		commit 785b3c25761a828c5e22b3361541c50fd3b92fde
+		("arm64: dts: renesas: gray-hawk-single: Enable watchdog timer")
+
+		commit 0c7a8cbbcee00631aa643b54e67f7245a98f6f8e
+		("arm64: dts: renesas: Add Gray Hawk Single board support")
+
+		commit 8e85d550c127d8c559d94c8a2bb7b48e1d75432d
+		("can: rcar_canfd: rcar_canfd_probe(): fix plain integer in transceivers[] init")
+
+		commit 33eced402b184b5f2127f45531099c265d34e269
+		("can: rcar_canfd: Improve error messages")
+
 * v6.1.91-2024-05-20
 
 	* Merge/Rebase v6.1.91
