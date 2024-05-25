@@ -995,6 +995,8 @@ VIN
 		9a473723caaf rcar-vin: rcar-csi2: Don't bail out from probe on no ep
 	This patch as clearly marked as a development debug patch, its only function is to prinkt when an interrupt handles, no use upstream
 		2058a7e8eddc media: rcar-vin: Add overflow debug message option
+	This patch hacks DT to work with BSP version of CSISP driver, not needed for upstream CSISP driver
+		100377ab7d0c arm64: dts: renesas: r8a779h0: Update VIN driver nodes
 
 VisionDSP+PAP
 	VisionDSP+PAP is not intended for upstream.
