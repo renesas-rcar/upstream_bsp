@@ -7,7 +7,6 @@ e6fc262fa0e3 ASoC: ak4619: Fix bit clock polarity setting
 4ba8444c28a3 ASoC: ak4619: Separate playback and capture formats
 b0aa2c59d513 ASoC: ak4619: Add some missing supported sampling rates
 8fb9f82e224b drm: bridge: ti-sn65dsi86: Add checking to detect bridge device connection failure
-e5c8088e2751 clk: renesas: r8a779g0: Fix ISPCS clocks
 caff53d84cb9 arm64: dts: renesas: r8a779h0: Correct compatible string for Audio on R-Car V4M
 9fdeed193dce arm64: dts: renesas: r8a779h0: Add PCIe support
 b8ec226fcba2 clk: renesas: r8a779h0: Add PCIe clock
