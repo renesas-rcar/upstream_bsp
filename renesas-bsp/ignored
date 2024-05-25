@@ -459,6 +459,8 @@ Media
 		46aa3d2a438d arm64: dts: renesas: r8a779g0: Add max96789 node
 		2daefde67813 arm64: dts: renesas: r8a779g0: Add C-PHY option to gsml node
 		d80707e0e447 arm64: dts: renesas: ulcb-kf: update for kernel v5.10
+		1365bd5899c9 media: i2c: Fix timeout GMSL2 link establish issue of MAX96712
+		bd5e927aa7eb media: i2c: Fix timeout GMSL2 link establish issue of MAX96712
 
 	With the latest rcar-csi2 driver any VC can be routed to any VIN, so
 	selecting a particular VC in DT shouldn't be needed.

@@ -67,7 +67,6 @@ d66e491f398a PCI: dwc: rcar-gen4: Add support for Resizable BAR
 c8f625bc2254 PCI: dwc: rcar-gen4: Set up BAR to work with 64-bit
 50c884de7a00 PCI: dwc: rcar-gen4: Add pcie firmware update
 c02a5e045e06 PCI: dwc: rcar-gen4: Change the power operation method for 4lane.
-1365bd5899c9 media: i2c: Fix timeout GMSL2 link establish issue of MAX96712
 e1d847bfd3ca dmaengine: rcar-dmac: Add repeat mode support
 98721f4180de PCI: dwc: rcar-gen4: Add support for Resizable BAR
 7495f2cb37fb PCI: dwc: rcar-gen4: Set up BAR to work with 64-bit
@@ -77,7 +76,6 @@ c92b08f78a4f PCI: dwc: rcar-gen4: Change the power operation method for 4lane.
 5f1909e07a3f arm64: dts: renesas: r8a779g0: Add PCIe1 clock to PCIe0 node for 4lane
 578a79fb7d1d arm64: dts: renesas: r8a779g0: PCIE channels and lanes are selectable.
 e821b0fa8382 arm64: dts: renesas: r8a779g0: Add PCIe-ch1 phy access.
-bd5e927aa7eb media: i2c: Fix timeout GMSL2 link establish issue of MAX96712
 6346917cdaa4 media: rcar-csi2: Add interface for C-PHY Analog pin swap on R-Car V4H
 73be8101dbbe dt-bindings: media: Add specific CSI-2 information for R-Car V4H
 c86f32e3457c dt-bindings: media: Add r8a779g0 support
