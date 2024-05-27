@@ -87,7 +87,9 @@ d785d96b2961 net: ethernet: renesas: ravb: Fix missing MDIO bus with channel 1/2
 eae72e77117c net: ethernet: renesas: ravb: Add gPTP support on R-Car V4H
 905813c180f4 can: rcar_canfd: Add secondary sample point
 e9ba9ac6fe77 can: rcar_canfd: Configure receive rules
-
+#
+# These are already tracking
+#
 # Enable video capture pipleine on V4M - In progress
 # lore: 20240527131541.1676525-2-niklas.soderlund+renesas@ragnatech.se
 66a73d1a3c16 clk: renesas: r8a779h0: Add VIN clocks
@@ -116,12 +118,12 @@ c4427579e253 media: rcar-vin: rcar-csi2: Add compatible string for R8A779H0 SoC
 # lore: 20240527132216.1681903-1-niklas.soderlund+renesas@ragnatech.se
 # lore: 20240527133410.1690169-1-niklas.soderlund+renesas@ragnatech.se
 36a34468fc43 media: max96712: Add compatible string for Max96724 Deserializer
-
+#
 # Add C-PHY pin ordering - In progress
 73be8101dbbe dt-bindings: media: Add specific CSI-2 information for R-Car V4H
 6346917cdaa4 media: rcar-csi2: Add interface for C-PHY Analog pin swap on R-Car V4H
 b879ce6ca34a arm64: dts: renesas: r8a779g0-whitehawk: Add specific CSI-2 information for R-Car V4H
-
+#
 # Add RTSN driver and wire it up - In progress
 # lore: 20240509210903.3738334-1-niklas.soderlund+renesas@ragnatech.se
 1e34ab549764 net: ethernet: renesas: Add Renesas Ethernet-TSN driver
