@@ -14,9 +14,6 @@ b8ec226fcba2 clk: renesas: r8a779h0: Add PCIe clock
 fd446b2b77ff arm64: dts: renesas: Add node to support PWM on R-Car V4M
 f7f0636f4392 spi: spi-sh-msiof: Add generic structural data for MSIOF on R-Car Gen4.
 675bcc5d8cbb net: ethernet: renesas: ravb: Returns an error value when gPTP is not used
-c4427579e253 media: rcar-vin: rcar-csi2: Add compatible string for R8A779H0 SoC
-36a34468fc43 media: max96712: Add compatible string for Max96724 Deserializer
-3bdc50fa6840 arm64: dts: renesas: gray-hawk-csi-dsi: Change support to Max96724 Deserializer
 61cf5c9632b3 arm64: dts: renesas: r8a779h0: grayhawk: Add R-Car Sound support
 4fa0d1c5fd0e arm64: dts: renesas: r8a779h0-gray-hawk: Add setting for Display
 973e01582372 arm64: defconfig: Enable AK4619 codec support
@@ -30,11 +27,8 @@ e7941f29016d drm: rcar-du: rcar_mipi_dsi: fix VCLKSET set erroneously with OR to
 0cf550f4b998 PCI: pci-epf-test: Added WQ_UNBOUND flag to alloc_workqueue()
 478beadd7760 clk: renesas: r8a779h0: Add CANFD clock
 9caf04f15267 clk: renesas: r8a779h0: Add Audio clocks
-384727d779a1 clk: renesas: r8a779h0: Add CSI-2 clocks
-66a73d1a3c16 clk: renesas: r8a779h0: Add VIN clocks
 32397139103a clk: renesas: r8a779h0: Add TPU clock
 9800531f0188 clk: renesas: r8a779h0: Add PWM clock
-41ae06c7f963 clk: renesas: r8a779h0: Add ISPCS clocks
 3a2d955daaab net: ethernet: renesas: ravb: Remove PTP initialize in ravb_open()
 fa8a15271377 net: ethernet: renesas: ravb: Fix Null pointer when getting parameters with ethtool
 8c977b4d6d61 net: ethernet: renesas: rtsn: Fix setting wrong PHY address
@@ -44,8 +38,6 @@ f408cb16a854 arm64: dts: renesas: r8a779g0: Expand the addr_space region of PCIe
 a1fd5deedc01 PCI: pci-epf-test: Change target code for calculating transfer performance
 e9ee03a5a60e misc: pci-endpoint-test: A transfer size of 4 Mbytes or more can be specified.
 6ad9d598947d PCI: pci-epf-test: A transfer size of 4 Mbytes or more can be specified
-56b79b145b9d arm64: dts: renesas: gray-hawk-csi-dsi: Add and connect MAX96712
-43cf6cea9838 arm64: dts: renesas: r8a779h0: Add VIN driver nodes
 6c2f3189955b arm64: dts: renesas: grayhawk: Add CANFD support
 1542b2a6219a arm64: dts: renesas: r8a779h0: Add CAN-FD node
 31968a5bf2b7 ravb: Support ravb driver for R-Car V4M
@@ -53,12 +45,7 @@ f96f80b3a67a arm64: dts: renesas: r8a779g0: Add a new property for Resizable BAR
 e93070510f22 arm64: dts: renesas: r8a779g0: Add PCIe1 clock to PCIe0 node for 4lane
 31a47e8dd8b4 arm64: dts: renesas: r8a779g0: PCIE channels and lanes are selectable.
 c8b7ea3d8000 arm64: dts: renesas: r8a779g0: Add PCIe-ch1 phy access.
-2a031845abb3 media: rcar-vin: rcar-csi2: Add D-PHY setting for R8A779H0 SoC
-a2d284f9c799 media: rcar-vin: rcar-isp: Add support for R8A779H0 SoC
-df19a197a11a media: rcar-vin: Add support for R-Car R8A779H0 SoC
-8471c5bb3f14 dt-bindings: media: rcar-vin: Document R8A779H0 bindings
 9d58e081d114 arm64: dts: renesas: gray-hawk: Add Ethernet sub-board
-479990bf87e1 arm64: dts: renesas: gray-hawk: Add CSI/DSI sub-board
 e0c20b948e7f arm64: dts: renesas: r8a779g0: Add a new property for Resizable BAR of PCIe
 c13f066be2f6 arm64: dts: renesas: r8a779g0: Add PCIe1 clock to PCIe0 node for 4lane
 773bcf1b7574 arm64: dts: renesas: r8a779g0: PCIE channels and lanes are selectable.
@@ -109,3 +96,32 @@ e9ba9ac6fe77 can: rcar_canfd: Configure receive rules
 1e34ab549764 net: ethernet: renesas: Add Renesas Ethernet-TSN driver
 00244fb8f94a arm64: dts: renesas: r8a779g0: Add Ethernet-TSN support
 d387cc45dbbd arm64: dts: renesas: r8a779g0: Update Ethernet-TSN0 device node
+
+# Enable video capture pipleine on V4M - In progress
+# lore: 20240527131541.1676525-2-niklas.soderlund+renesas@ragnatech.se
+66a73d1a3c16 clk: renesas: r8a779h0: Add VIN clocks
+# lore: 20240527131541.1676525-3-niklas.soderlund+renesas@ragnatech.se
+41ae06c7f963 clk: renesas: r8a779h0: Add ISPCS clocks
+# lore: 20240527131541.1676525-4-niklas.soderlund+renesas@ragnatech.se
+384727d779a1 clk: renesas: r8a779h0: Add CSI-2 clocks
+# lore: 20240527131849.1678877-1-niklas.soderlund+renesas@ragnatech.se
+8471c5bb3f14 dt-bindings: media: rcar-vin: Document R8A779H0 bindings
+# lore: 20240527132429.1683547-1-niklas.soderlund+renesas@ragnatech.se
+df19a197a11a media: rcar-vin: Add support for R-Car R8A779H0 SoC
+# lore: 20240527132513.1684232-1-niklas.soderlund+renesas@ragnatech.se
+a2d284f9c799 media: rcar-vin: rcar-isp: Add support for R8A779H0 SoC
+# lore: 20240527133221.1688830-1-niklas.soderlund+renesas@ragnatech.se
+2a031845abb3 media: rcar-vin: rcar-csi2: Add D-PHY setting for R8A779H0 SoC
+# lore: 20240527133221.1688830-1-niklas.soderlund+renesas@ragnatech.se
+c4427579e253 media: rcar-vin: rcar-csi2: Add compatible string for R8A779H0 SoC
+# lore: 20240527134129.1695450-2-niklas.soderlund+renesas@ragnatech.se
+43cf6cea9838 arm64: dts: renesas: r8a779h0: Add VIN driver nodes
+# lore: 20240527134129.1695450-3-niklas.soderlund+renesas@ragnatech.se
+479990bf87e1 arm64: dts: renesas: gray-hawk: Add CSI/DSI sub-board
+# lore:  20240527134129.1695450-4-niklas.soderlund+renesas@ragnatech.se
+56b79b145b9d arm64: dts: renesas: gray-hawk-csi-dsi: Add and connect MAX96712
+# lore: 20240527134129.1695450-4-niklas.soderlund+renesas@ragnatech.se
+3bdc50fa6840 arm64: dts: renesas: gray-hawk-csi-dsi: Change support to Max96724 Deserializer
+# lore: 20240527132216.1681903-1-niklas.soderlund+renesas@ragnatech.se
+# lore: 20240527133410.1690169-1-niklas.soderlund+renesas@ragnatech.se
+36a34468fc43 media: max96712: Add compatible string for Max96724 Deserializer
