@@ -63,12 +63,9 @@ c92b08f78a4f PCI: dwc: rcar-gen4: Change the power operation method for 4lane.
 5f1909e07a3f arm64: dts: renesas: r8a779g0: Add PCIe1 clock to PCIe0 node for 4lane
 578a79fb7d1d arm64: dts: renesas: r8a779g0: PCIE channels and lanes are selectable.
 e821b0fa8382 arm64: dts: renesas: r8a779g0: Add PCIe-ch1 phy access.
-6346917cdaa4 media: rcar-csi2: Add interface for C-PHY Analog pin swap on R-Car V4H
-73be8101dbbe dt-bindings: media: Add specific CSI-2 information for R-Car V4H
 c86f32e3457c dt-bindings: media: Add r8a779g0 support
 6fa7fc93f2b2 arm64: dts: renesas: r8a779g0: Add PCIe nodes for ch0 endpoint and ch1
 f5f257bbef94 arm64: dts: renesas: r8a779g0-whitehawk: Add power-source setting for ethernet
-b879ce6ca34a arm64: dts: renesas: r8a779g0-whitehawk: Add specific CSI-2 information for R-Car V4H
 42fe03cf3d04 arm64: dts: renesas: r8a779g0: Adding Phy ranges in PCIe node
 638b5616ce65 arm64: dts: renesas: r8a779g0: Fix PCIe node max link speed
 fbeeac1cc8ca arm64: dts: renesas: r8a779g0: Fix PCIe node interrupt settings
@@ -125,3 +122,8 @@ c4427579e253 media: rcar-vin: rcar-csi2: Add compatible string for R8A779H0 SoC
 # lore: 20240527132216.1681903-1-niklas.soderlund+renesas@ragnatech.se
 # lore: 20240527133410.1690169-1-niklas.soderlund+renesas@ragnatech.se
 36a34468fc43 media: max96712: Add compatible string for Max96724 Deserializer
+
+# Add C-PHY pin ordering - In progress
+73be8101dbbe dt-bindings: media: Add specific CSI-2 information for R-Car V4H
+6346917cdaa4 media: rcar-csi2: Add interface for C-PHY Analog pin swap on R-Car V4H
+b879ce6ca34a arm64: dts: renesas: r8a779g0-whitehawk: Add specific CSI-2 information for R-Car V4H
