@@ -1,27 +1,45 @@
+#
+# Media
+#
 8fb9f82e224b drm: bridge: ti-sn65dsi86: Add checking to detect bridge device connection failure
-9fdeed193dce arm64: dts: renesas: r8a779h0: Add PCIe support
-b8ec226fcba2 clk: renesas: r8a779h0: Add PCIe clock
-675bcc5d8cbb net: ethernet: renesas: ravb: Returns an error value when gPTP is not used
 4fa0d1c5fd0e arm64: dts: renesas: r8a779h0-gray-hawk: Add setting for Display
 8d490596fc9a clk: renesas: r8a779h0: Add FCPVD0 clock
 61b876a8fa2c drm: rcar-du: rcar_mipi_dsi: Add R8A779H0 SoC support
 f2fc3314dab2 drm: rcar-du: Add R8A779H0 SoC support
 3396171734c8 drm: rcar-du: rcar_mipi_dsi: fix PHY lock bit mistake in CLOCKSET1
 e7941f29016d drm: rcar-du: rcar_mipi_dsi: fix VCLKSET set erroneously with OR to WRITE
+c86f32e3457c dt-bindings: media: Add r8a779g0 support
+bbb7fb7366c0 drm: bridge: ti-sn65dsi86: Fix memory leak at ti_sn_get_modes()
+#
+# Network
+#
+675bcc5d8cbb net: ethernet: renesas: ravb: Returns an error value when gPTP is not used
 47e1a870dd58 arm64: dts: renesas: Add node to support AVB1/2
-0cf550f4b998 PCI: pci-epf-test: Added WQ_UNBOUND flag to alloc_workqueue()
 3a2d955daaab net: ethernet: renesas: ravb: Remove PTP initialize in ravb_open()
 fa8a15271377 net: ethernet: renesas: ravb: Fix Null pointer when getting parameters with ethtool
+31968a5bf2b7 ravb: Support ravb driver for R-Car V4M
+9d58e081d114 arm64: dts: renesas: gray-hawk: Add Ethernet sub-board
+f5f257bbef94 arm64: dts: renesas: r8a779g0-whitehawk: Add power-source setting for ethernet
+611328f8fc4a net: ethernet: renesas: ravb: Fix initialization failed in module state on channel 1/2
+cd6678e10496 net: ethernet: renesas: ravb: Fix Deadlock warning related to EthernetAVB
+846d4ecfc9f9 net: ethernet: renesas: rcar_gen4_ptp: Add a function to unregister the PTP device
+d785d96b2961 net: ethernet: renesas: ravb: Fix missing MDIO bus with channel 1/2
+3d545d5e0463 net: ethernet: renesas: ravb: Disable Link Signal Change Interrupt for AVB0
+eae72e77117c net: ethernet: renesas: ravb: Add gPTP support on R-Car V4H
+#
+# PCI
+#
+9fdeed193dce arm64: dts: renesas: r8a779h0: Add PCIe support
+b8ec226fcba2 clk: renesas: r8a779h0: Add PCIe clock
+0cf550f4b998 PCI: pci-epf-test: Added WQ_UNBOUND flag to alloc_workqueue()
 f408cb16a854 arm64: dts: renesas: r8a779g0: Expand the addr_space region of PCIe Endpoint
 a1fd5deedc01 PCI: pci-epf-test: Change target code for calculating transfer performance
 e9ee03a5a60e misc: pci-endpoint-test: A transfer size of 4 Mbytes or more can be specified.
 6ad9d598947d PCI: pci-epf-test: A transfer size of 4 Mbytes or more can be specified
-31968a5bf2b7 ravb: Support ravb driver for R-Car V4M
 f96f80b3a67a arm64: dts: renesas: r8a779g0: Add a new property for Resizable BAR of PCIe
 e93070510f22 arm64: dts: renesas: r8a779g0: Add PCIe1 clock to PCIe0 node for 4lane
 31a47e8dd8b4 arm64: dts: renesas: r8a779g0: PCIE channels and lanes are selectable.
 c8b7ea3d8000 arm64: dts: renesas: r8a779g0: Add PCIe-ch1 phy access.
-9d58e081d114 arm64: dts: renesas: gray-hawk: Add Ethernet sub-board
 e0c20b948e7f arm64: dts: renesas: r8a779g0: Add a new property for Resizable BAR of PCIe
 c13f066be2f6 arm64: dts: renesas: r8a779g0: Add PCIe1 clock to PCIe0 node for 4lane
 773bcf1b7574 arm64: dts: renesas: r8a779g0: PCIE channels and lanes are selectable.
@@ -38,9 +56,7 @@ c92b08f78a4f PCI: dwc: rcar-gen4: Change the power operation method for 4lane.
 5f1909e07a3f arm64: dts: renesas: r8a779g0: Add PCIe1 clock to PCIe0 node for 4lane
 578a79fb7d1d arm64: dts: renesas: r8a779g0: PCIE channels and lanes are selectable.
 e821b0fa8382 arm64: dts: renesas: r8a779g0: Add PCIe-ch1 phy access.
-c86f32e3457c dt-bindings: media: Add r8a779g0 support
 6fa7fc93f2b2 arm64: dts: renesas: r8a779g0: Add PCIe nodes for ch0 endpoint and ch1
-f5f257bbef94 arm64: dts: renesas: r8a779g0-whitehawk: Add power-source setting for ethernet
 42fe03cf3d04 arm64: dts: renesas: r8a779g0: Adding Phy ranges in PCIe node
 638b5616ce65 arm64: dts: renesas: r8a779g0: Fix PCIe node max link speed
 fbeeac1cc8ca arm64: dts: renesas: r8a779g0: Fix PCIe node interrupt settings
@@ -53,13 +69,6 @@ cda3dd982572 arm64: defconfig: Updated for RCAR_GEN4 PCIe driver
 9cc98db499af PCI: dwc: rcar-gen4: Add workaround for V4H
 819b9bfdf349 PCI: dwc: Add support for triggering legacy IRQs
 20ea0dc95135 PCI: Add PCI_EXP_LNKCAP_MLW macros
-611328f8fc4a net: ethernet: renesas: ravb: Fix initialization failed in module state on channel 1/2
-cd6678e10496 net: ethernet: renesas: ravb: Fix Deadlock warning related to EthernetAVB
-846d4ecfc9f9 net: ethernet: renesas: rcar_gen4_ptp: Add a function to unregister the PTP device
-bbb7fb7366c0 drm: bridge: ti-sn65dsi86: Fix memory leak at ti_sn_get_modes()
-d785d96b2961 net: ethernet: renesas: ravb: Fix missing MDIO bus with channel 1/2
-3d545d5e0463 net: ethernet: renesas: ravb: Disable Link Signal Change Interrupt for AVB0
-eae72e77117c net: ethernet: renesas: ravb: Add gPTP support on R-Car V4H
 #
 # Minor stuff
 #
