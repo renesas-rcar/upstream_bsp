@@ -24,12 +24,9 @@ e7941f29016d drm: rcar-du: rcar_mipi_dsi: fix VCLKSET set erroneously with OR to
 5fed936874d8 ASoC: Add ak4619 codec support
 47e1a870dd58 arm64: dts: renesas: Add node to support AVB1/2
 0cf550f4b998 PCI: pci-epf-test: Added WQ_UNBOUND flag to alloc_workqueue()
-478beadd7760 clk: renesas: r8a779h0: Add CANFD clock
 9caf04f15267 clk: renesas: r8a779h0: Add Audio clocks
 3a2d955daaab net: ethernet: renesas: ravb: Remove PTP initialize in ravb_open()
 fa8a15271377 net: ethernet: renesas: ravb: Fix Null pointer when getting parameters with ethtool
-82035924e9ca can: rcar_canfd: Add support for V4M SoC
-a4b78a81b5a9 dt-bindings: can: renesas,rcar-canfd: Document R-Car V4M support
 f408cb16a854 arm64: dts: renesas: r8a779g0: Expand the addr_space region of PCIe Endpoint
 a1fd5deedc01 PCI: pci-epf-test: Change target code for calculating transfer performance
 e9ee03a5a60e misc: pci-endpoint-test: A transfer size of 4 Mbytes or more can be specified.
@@ -82,6 +79,14 @@ bbb7fb7366c0 drm: bridge: ti-sn65dsi86: Fix memory leak at ti_sn_get_modes()
 d785d96b2961 net: ethernet: renesas: ravb: Fix missing MDIO bus with channel 1/2
 3d545d5e0463 net: ethernet: renesas: ravb: Disable Link Signal Change Interrupt for AVB0
 eae72e77117c net: ethernet: renesas: ravb: Add gPTP support on R-Car V4H
+#
+# CAN patches (Geert)
+#
+# V4M upstreaming in progress
+82035924e9ca can: rcar_canfd: Add support for V4M SoC
+a4b78a81b5a9 dt-bindings: can: renesas,rcar-canfd: Document R-Car V4M support
+478beadd7760 clk: renesas: r8a779h0: Add CANFD clock
+# to be investigated
 905813c180f4 can: rcar_canfd: Add secondary sample point
 e9ba9ac6fe77 can: rcar_canfd: Configure receive rules
 #
