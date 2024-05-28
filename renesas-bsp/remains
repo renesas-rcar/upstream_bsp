@@ -1,30 +1,19 @@
 bc7a3426fc67 i2c:rcar: add DMA continuous support
 9e88120780ae arm64: dts: renesas: add DMA continuous mode for I2C driver on R-Car V4H
-7c1c5987ef41 ASoC: ak4619: Fix spelling, spacing and indentation errors
-b8ca63b496f2 ASoC: ak4619: Add hw_constraint rule for Sampling Rate
-e6fc262fa0e3 ASoC: ak4619: Fix bit clock polarity setting
-89ac4358ab25 ASoC: ak4619: Correct the setting for SND_SOC_DAIFMT_DSP_B
-4ba8444c28a3 ASoC: ak4619: Separate playback and capture formats
-b0aa2c59d513 ASoC: ak4619: Add some missing supported sampling rates
 8fb9f82e224b drm: bridge: ti-sn65dsi86: Add checking to detect bridge device connection failure
-caff53d84cb9 arm64: dts: renesas: r8a779h0: Correct compatible string for Audio on R-Car V4M
 9fdeed193dce arm64: dts: renesas: r8a779h0: Add PCIe support
 b8ec226fcba2 clk: renesas: r8a779h0: Add PCIe clock
 157f14a1041f arm64: dts: renesas: Add alias for I2C on R-Car V4M SoC.
 f7f0636f4392 spi: spi-sh-msiof: Add generic structural data for MSIOF on R-Car Gen4.
 675bcc5d8cbb net: ethernet: renesas: ravb: Returns an error value when gPTP is not used
-61cf5c9632b3 arm64: dts: renesas: r8a779h0: grayhawk: Add R-Car Sound support
 4fa0d1c5fd0e arm64: dts: renesas: r8a779h0-gray-hawk: Add setting for Display
-973e01582372 arm64: defconfig: Enable AK4619 codec support
 8d490596fc9a clk: renesas: r8a779h0: Add FCPVD0 clock
 61b876a8fa2c drm: rcar-du: rcar_mipi_dsi: Add R8A779H0 SoC support
 f2fc3314dab2 drm: rcar-du: Add R8A779H0 SoC support
 3396171734c8 drm: rcar-du: rcar_mipi_dsi: fix PHY lock bit mistake in CLOCKSET1
 e7941f29016d drm: rcar-du: rcar_mipi_dsi: fix VCLKSET set erroneously with OR to WRITE
-5fed936874d8 ASoC: Add ak4619 codec support
 47e1a870dd58 arm64: dts: renesas: Add node to support AVB1/2
 0cf550f4b998 PCI: pci-epf-test: Added WQ_UNBOUND flag to alloc_workqueue()
-9caf04f15267 clk: renesas: r8a779h0: Add Audio clocks
 3a2d955daaab net: ethernet: renesas: ravb: Remove PTP initialize in ravb_open()
 fa8a15271377 net: ethernet: renesas: ravb: Fix Null pointer when getting parameters with ethtool
 f408cb16a854 arm64: dts: renesas: r8a779g0: Expand the addr_space region of PCIe Endpoint
@@ -79,6 +68,20 @@ bbb7fb7366c0 drm: bridge: ti-sn65dsi86: Fix memory leak at ti_sn_get_modes()
 d785d96b2961 net: ethernet: renesas: ravb: Fix missing MDIO bus with channel 1/2
 3d545d5e0463 net: ethernet: renesas: ravb: Disable Link Signal Change Interrupt for AVB0
 eae72e77117c net: ethernet: renesas: ravb: Add gPTP support on R-Car V4H
+#
+# Sound patches (Morimoto-san)
+#
+caff53d84cb9 arm64: dts: renesas: r8a779h0: Correct compatible string for Audio on R-Car V4M
+9caf04f15267 clk: renesas: r8a779h0: Add Audio clocks
+61cf5c9632b3 arm64: dts: renesas: r8a779h0: grayhawk: Add R-Car Sound support
+973e01582372 arm64: defconfig: Enable AK4619 codec support
+7c1c5987ef41 ASoC: ak4619: Fix spelling, spacing and indentation errors
+b8ca63b496f2 ASoC: ak4619: Add hw_constraint rule for Sampling Rate
+e6fc262fa0e3 ASoC: ak4619: Fix bit clock polarity setting
+89ac4358ab25 ASoC: ak4619: Correct the setting for SND_SOC_DAIFMT_DSP_B
+4ba8444c28a3 ASoC: ak4619: Separate playback and capture formats
+b0aa2c59d513 ASoC: ak4619: Add some missing supported sampling rates
+5fed936874d8 ASoC: Add ak4619 codec support
 #
 # CAN patches (Geert)
 #
