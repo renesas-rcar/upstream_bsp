@@ -1,9 +1,6 @@
 8fb9f82e224b drm: bridge: ti-sn65dsi86: Add checking to detect bridge device connection failure
 9fdeed193dce arm64: dts: renesas: r8a779h0: Add PCIe support
 b8ec226fcba2 clk: renesas: r8a779h0: Add PCIe clock
-# lore: 20240515091925.24353-2-wsa+renesas@sang-engineering.com
-157f14a1041f arm64: dts: renesas: Add alias for I2C on R-Car V4M SoC.
-f7f0636f4392 spi: spi-sh-msiof: Add generic structural data for MSIOF on R-Car Gen4.
 675bcc5d8cbb net: ethernet: renesas: ravb: Returns an error value when gPTP is not used
 4fa0d1c5fd0e arm64: dts: renesas: r8a779h0-gray-hawk: Add setting for Display
 8d490596fc9a clk: renesas: r8a779h0: Add FCPVD0 clock
@@ -19,8 +16,6 @@ f408cb16a854 arm64: dts: renesas: r8a779g0: Expand the addr_space region of PCIe
 a1fd5deedc01 PCI: pci-epf-test: Change target code for calculating transfer performance
 e9ee03a5a60e misc: pci-endpoint-test: A transfer size of 4 Mbytes or more can be specified.
 6ad9d598947d PCI: pci-epf-test: A transfer size of 4 Mbytes or more can be specified
-6c2f3189955b arm64: dts: renesas: grayhawk: Add CANFD support
-1542b2a6219a arm64: dts: renesas: r8a779h0: Add CAN-FD node
 31968a5bf2b7 ravb: Support ravb driver for R-Car V4M
 f96f80b3a67a arm64: dts: renesas: r8a779g0: Add a new property for Resizable BAR of PCIe
 e93070510f22 arm64: dts: renesas: r8a779g0: Add PCIe1 clock to PCIe0 node for 4lane
@@ -35,7 +30,6 @@ d66e491f398a PCI: dwc: rcar-gen4: Add support for Resizable BAR
 c8f625bc2254 PCI: dwc: rcar-gen4: Set up BAR to work with 64-bit
 50c884de7a00 PCI: dwc: rcar-gen4: Add pcie firmware update
 c02a5e045e06 PCI: dwc: rcar-gen4: Change the power operation method for 4lane.
-e1d847bfd3ca dmaengine: rcar-dmac: Add repeat mode support
 98721f4180de PCI: dwc: rcar-gen4: Add support for Resizable BAR
 7495f2cb37fb PCI: dwc: rcar-gen4: Set up BAR to work with 64-bit
 c2a47910ed98 arm64: dts: renesas: r8a779g0: Add a new property for Resizable BAR of PCIe
@@ -52,7 +46,6 @@ f5f257bbef94 arm64: dts: renesas: r8a779g0-whitehawk: Add power-source setting f
 fbeeac1cc8ca arm64: dts: renesas: r8a779g0: Fix PCIe node interrupt settings
 850f6f7ae044 arm64: dts: renesas: r8a779g0: white-hawk: Enable PCIe Host ch0
 e150973fa985 arm64: dts: renesas: r8a779g0: Add PCIe Host and Endpoint nodes
-3df1d5f023b1 soc: renesas: r8a779g0-sysc: Always-on A3IR, A2CN0, A1CNN0
 efd1efab854c PCI: dwc: rcar-gen4: Update the initial setting for PCIe
 cda3dd982572 arm64: defconfig: Updated for RCAR_GEN4 PCIe driver
 46fef5911f11 arm64: defconfig: Enable RCAR_GEN4 PCIe driver
@@ -67,6 +60,16 @@ bbb7fb7366c0 drm: bridge: ti-sn65dsi86: Fix memory leak at ti_sn_get_modes()
 d785d96b2961 net: ethernet: renesas: ravb: Fix missing MDIO bus with channel 1/2
 3d545d5e0463 net: ethernet: renesas: ravb: Disable Link Signal Change Interrupt for AVB0
 eae72e77117c net: ethernet: renesas: ravb: Add gPTP support on R-Car V4H
+#
+# Minor stuff
+#
+# lore: 20240515091925.24353-2-wsa+renesas@sang-engineering.com
+157f14a1041f arm64: dts: renesas: Add alias for I2C on R-Car V4M SoC.
+# MSIOF FIFO sizes to be investigated (Geert)
+f7f0636f4392 spi: spi-sh-msiof: Add generic structural data for MSIOF on R-Car Gen4.
+# more information needed from Renesas (Geert)
+e1d847bfd3ca dmaengine: rcar-dmac: Add repeat mode support
+3df1d5f023b1 soc: renesas: r8a779g0-sysc: Always-on A3IR, A2CN0, A1CNN0
 #
 # Sound patches (Morimoto-san)
 #
@@ -88,6 +91,8 @@ b0aa2c59d513 ASoC: ak4619: Add some missing supported sampling rates
 82035924e9ca can: rcar_canfd: Add support for V4M SoC
 a4b78a81b5a9 dt-bindings: can: renesas,rcar-canfd: Document R-Car V4M support
 478beadd7760 clk: renesas: r8a779h0: Add CANFD clock
+6c2f3189955b arm64: dts: renesas: grayhawk: Add CANFD support
+1542b2a6219a arm64: dts: renesas: r8a779h0: Add CAN-FD node
 # to be investigated
 905813c180f4 can: rcar_canfd: Add secondary sample point
 e9ba9ac6fe77 can: rcar_canfd: Configure receive rules
