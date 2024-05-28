@@ -7,9 +7,6 @@
 61b876a8fa2c drm: rcar-du: rcar_mipi_dsi: Add R8A779H0 SoC support
 f2fc3314dab2 drm: rcar-du: Add R8A779H0 SoC support
 3396171734c8 drm: rcar-du: rcar_mipi_dsi: fix PHY lock bit mistake in CLOCKSET1
-e7941f29016d drm: rcar-du: rcar_mipi_dsi: fix VCLKSET set erroneously with OR to WRITE
-c86f32e3457c dt-bindings: media: Add r8a779g0 support
-bbb7fb7366c0 drm: bridge: ti-sn65dsi86: Fix memory leak at ti_sn_get_modes()
 #
 # Network
 #
@@ -18,7 +15,6 @@ bbb7fb7366c0 drm: bridge: ti-sn65dsi86: Fix memory leak at ti_sn_get_modes()
 3a2d955daaab net: ethernet: renesas: ravb: Remove PTP initialize in ravb_open()
 fa8a15271377 net: ethernet: renesas: ravb: Fix Null pointer when getting parameters with ethtool
 31968a5bf2b7 ravb: Support ravb driver for R-Car V4M
-9d58e081d114 arm64: dts: renesas: gray-hawk: Add Ethernet sub-board
 f5f257bbef94 arm64: dts: renesas: r8a779g0-whitehawk: Add power-source setting for ethernet
 611328f8fc4a net: ethernet: renesas: ravb: Fix initialization failed in module state on channel 1/2
 cd6678e10496 net: ethernet: renesas: ravb: Fix Deadlock warning related to EthernetAVB

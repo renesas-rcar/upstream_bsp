@@ -1,3 +1,9 @@
+# upstream: 74a9d17af7db7fea0c041c536d2dc80ddc7e95ee arm64: dts: renesas: gray-hawk-single: Add I2C0 and EEPROMs
+9d58e081d114 arm64: dts: renesas: gray-hawk: Add Ethernet sub-board
+# upstream: 603c8e130d06fc70e84c9704d74c69f098975453 drm: rcar-du: dsi: Fix VCLKSET write
+e7941f29016d drm: rcar-du: rcar_mipi_dsi: fix VCLKSET set erroneously with OR to WRITE
+# upstream: 969242759296fbd52e679aad7fe5c198461ace74 media: dt-bindings: media: renesas,csi2: Add binding for V4H
+c86f32e3457c dt-bindings: media: Add r8a779g0 support
 # upstream: b52e015aa6b62fce0d72929344afde2793b20b19 arm64: dts: renesas: gray-hawk-single: Add QSPI FLASH support
 a6fc1fd71314 arm64: dts: renesas: gray-hawk-cpu: Add QSPI FLASH support
 # upstream: 20f4b85a26a58258611dcffe81bef99ce306bbbc arm64: dts: renesas: gray-hawk-single: Add second debug serial port
@@ -609,6 +615,7 @@ b3f9840865d8 media: vsp1: Add VSP device for Gen4
 8a2a3897a430 media: videodev2.h: Add new pixel format for vsp1 on R8A779A0
 # c312b0df3b13 drm/bridge: ti-sn65dsi86: Implement bridge connector operations for DP
 # e43d5864f36a drm/bridge: ti-sn65dsi86: Support DisplayPort (non-eDP) mode
+bbb7fb7366c0 drm: bridge: ti-sn65dsi86: Fix memory leak at ti_sn_get_modes()
 0b29b25ab439 drm: bridge: ti-sn65dsi86: Add setting options for SN65DSI86
 e7782857c017 drm: rcar-du: Add enable/disable dot clock to DU in R8A779A0
 33444c982e55 drm: rcar-du: Add R-Car DSI driver
