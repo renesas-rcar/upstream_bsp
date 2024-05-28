@@ -1,8 +1,7 @@
-bc7a3426fc67 i2c:rcar: add DMA continuous support
-9e88120780ae arm64: dts: renesas: add DMA continuous mode for I2C driver on R-Car V4H
 8fb9f82e224b drm: bridge: ti-sn65dsi86: Add checking to detect bridge device connection failure
 9fdeed193dce arm64: dts: renesas: r8a779h0: Add PCIe support
 b8ec226fcba2 clk: renesas: r8a779h0: Add PCIe clock
+# lore: 20240515091925.24353-2-wsa+renesas@sang-engineering.com
 157f14a1041f arm64: dts: renesas: Add alias for I2C on R-Car V4M SoC.
 f7f0636f4392 spi: spi-sh-msiof: Add generic structural data for MSIOF on R-Car Gen4.
 675bcc5d8cbb net: ethernet: renesas: ravb: Returns an error value when gPTP is not used
