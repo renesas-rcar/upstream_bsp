@@ -11,7 +11,6 @@ caff53d84cb9 arm64: dts: renesas: r8a779h0: Correct compatible string for Audio 
 9fdeed193dce arm64: dts: renesas: r8a779h0: Add PCIe support
 b8ec226fcba2 clk: renesas: r8a779h0: Add PCIe clock
 157f14a1041f arm64: dts: renesas: Add alias for I2C on R-Car V4M SoC.
-fd446b2b77ff arm64: dts: renesas: Add node to support PWM on R-Car V4M
 f7f0636f4392 spi: spi-sh-msiof: Add generic structural data for MSIOF on R-Car Gen4.
 675bcc5d8cbb net: ethernet: renesas: ravb: Returns an error value when gPTP is not used
 61cf5c9632b3 arm64: dts: renesas: r8a779h0: grayhawk: Add R-Car Sound support
@@ -27,8 +26,6 @@ e7941f29016d drm: rcar-du: rcar_mipi_dsi: fix VCLKSET set erroneously with OR to
 0cf550f4b998 PCI: pci-epf-test: Added WQ_UNBOUND flag to alloc_workqueue()
 478beadd7760 clk: renesas: r8a779h0: Add CANFD clock
 9caf04f15267 clk: renesas: r8a779h0: Add Audio clocks
-32397139103a clk: renesas: r8a779h0: Add TPU clock
-9800531f0188 clk: renesas: r8a779h0: Add PWM clock
 3a2d955daaab net: ethernet: renesas: ravb: Remove PTP initialize in ravb_open()
 fa8a15271377 net: ethernet: renesas: ravb: Fix Null pointer when getting parameters with ethtool
 82035924e9ca can: rcar_canfd: Add support for V4M SoC
@@ -87,6 +84,12 @@ d785d96b2961 net: ethernet: renesas: ravb: Fix missing MDIO bus with channel 1/2
 eae72e77117c net: ethernet: renesas: ravb: Add gPTP support on R-Car V4H
 905813c180f4 can: rcar_canfd: Add secondary sample point
 e9ba9ac6fe77 can: rcar_canfd: Configure receive rules
+#
+# PWM patches (Wolfram)
+#
+32397139103a clk: renesas: r8a779h0: Add TPU clock
+9800531f0188 clk: renesas: r8a779h0: Add PWM clock
+fd446b2b77ff arm64: dts: renesas: Add node to support PWM on R-Car V4M
 #
 # VIN related patches (Niklas)
 #
