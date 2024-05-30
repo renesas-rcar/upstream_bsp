@@ -36,22 +36,10 @@ f96f80b3a67a arm64: dts: renesas: r8a779g0: Add a new property for Resizable BAR
 e93070510f22 arm64: dts: renesas: r8a779g0: Add PCIe1 clock to PCIe0 node for 4lane
 31a47e8dd8b4 arm64: dts: renesas: r8a779g0: PCIE channels and lanes are selectable.
 c8b7ea3d8000 arm64: dts: renesas: r8a779g0: Add PCIe-ch1 phy access.
-e0c20b948e7f arm64: dts: renesas: r8a779g0: Add a new property for Resizable BAR of PCIe
-c13f066be2f6 arm64: dts: renesas: r8a779g0: Add PCIe1 clock to PCIe0 node for 4lane
-773bcf1b7574 arm64: dts: renesas: r8a779g0: PCIE channels and lanes are selectable.
-fc3d3ef7e0b8 arm64: dts: renesas: r8a779g0: Add PCIe-ch1 phy access.
 d66e491f398a PCI: dwc: rcar-gen4: Add support for Resizable BAR
 c8f625bc2254 PCI: dwc: rcar-gen4: Set up BAR to work with 64-bit
 50c884de7a00 PCI: dwc: rcar-gen4: Add pcie firmware update
 c02a5e045e06 PCI: dwc: rcar-gen4: Change the power operation method for 4lane.
-98721f4180de PCI: dwc: rcar-gen4: Add support for Resizable BAR
-7495f2cb37fb PCI: dwc: rcar-gen4: Set up BAR to work with 64-bit
-c2a47910ed98 arm64: dts: renesas: r8a779g0: Add a new property for Resizable BAR of PCIe
-6a4054c452ec PCI: dwc: rcar-gen4: Add pcie firmware update
-c92b08f78a4f PCI: dwc: rcar-gen4: Change the power operation method for 4lane.
-5f1909e07a3f arm64: dts: renesas: r8a779g0: Add PCIe1 clock to PCIe0 node for 4lane
-578a79fb7d1d arm64: dts: renesas: r8a779g0: PCIE channels and lanes are selectable.
-e821b0fa8382 arm64: dts: renesas: r8a779g0: Add PCIe-ch1 phy access.
 6fa7fc93f2b2 arm64: dts: renesas: r8a779g0: Add PCIe nodes for ch0 endpoint and ch1
 42fe03cf3d04 arm64: dts: renesas: r8a779g0: Adding Phy ranges in PCIe node
 638b5616ce65 arm64: dts: renesas: r8a779g0: Fix PCIe node max link speed
