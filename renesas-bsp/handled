@@ -1,3 +1,27 @@
+# Same as BSP commit f96f80b3a67a62346829fe21c89615d21bb27387
+e0c20b948e7f arm64: dts: renesas: r8a779g0: Add a new property for Resizable BAR of PCIe
+# Same as BSP commit e93070510f2241098990228ec7229afefefe5759
+c13f066be2f6 arm64: dts: renesas: r8a779g0: Add PCIe1 clock to PCIe0 node for 4lane
+# Same as BSP commit 31a47e8dd8b49e77123beb8e7325a5a0bd4e54c4
+773bcf1b7574 arm64: dts: renesas: r8a779g0: PCIE channels and lanes are selectable.
+# Same as BSP commit c8b7ea3d80005ec84fac269e6dbc4d01932e2d63
+fc3d3ef7e0b8 arm64: dts: renesas: r8a779g0: Add PCIe-ch1 phy access.
+# Same as BSP commit d66e491f398a7397f5781012d3631cde10522dd6
+98721f4180de PCI: dwc: rcar-gen4: Add support for Resizable BAR
+# Same as BSP commit c8f625bc2254e751bec945e82fd7a07b37fba0fd
+7495f2cb37fb PCI: dwc: rcar-gen4: Set up BAR to work with 64-bit
+# Same as BSP commit f96f80b3a67a62346829fe21c89615d21bb27387
+c2a47910ed98 arm64: dts: renesas: r8a779g0: Add a new property for Resizable BAR of PCIe
+# Same as BSP commit 50c884de7a00cf8026e10b3d327ebaf85d439862
+6a4054c452ec PCI: dwc: rcar-gen4: Add pcie firmware update
+# Same as BSP commit c02a5e045e06511236e1224641e72cd8488f7722
+c92b08f78a4f PCI: dwc: rcar-gen4: Change the power operation method for 4lane.
+# Same as BSP commit e93070510f2241098990228ec7229afefefe5759
+5f1909e07a3f arm64: dts: renesas: r8a779g0: Add PCIe1 clock to PCIe0 node for 4lane
+# Same as BSP commit 31a47e8dd8b49e77123beb8e7325a5a0bd4e54c4
+578a79fb7d1d arm64: dts: renesas: r8a779g0: PCIE channels and lanes are selectable.
+# Same as BSP commit c8b7ea3d80005ec84fac269e6dbc4d01932e2d63
+e821b0fa8382 arm64: dts: renesas: r8a779g0: Add PCIe-ch1 phy access.
 # upstream: 74a9d17af7db7fea0c041c536d2dc80ddc7e95ee arm64: dts: renesas: gray-hawk-single: Add I2C0 and EEPROMs
 9d58e081d114 arm64: dts: renesas: gray-hawk: Add Ethernet sub-board
 # upstream: 603c8e130d06fc70e84c9704d74c69f098975453 drm: rcar-du: dsi: Fix VCLKSET write
