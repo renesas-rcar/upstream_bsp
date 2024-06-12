@@ -1,3 +1,9 @@
+* v6.6.33-2024-06-13
+
+	* Merge/Rebase v6.6.33
+
+	* update CVE
+
 * v6.6.32-2024-05-28
 
 	* update defconfig / renesas_defconfig
