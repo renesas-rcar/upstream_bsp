@@ -1,3 +1,22 @@
+* v6.1.94-2024-06-18
+
+	* Below patches are backported
+
+		commit e332003bb216a9f91e08004b9e2de0745f321290
+		("iommu: Make IPMMU_VMSA dependencies more strict")
+
+		commit d286a58bc8f4d5cf3246481b4e38e4c0c65550ac
+		("iommu: Tidy up io-pgtable dependencies")
+
+		commit c037263db4ce4b63b7f56732a46da257ae27c00d
+		("dt-bindings: PCI: rcar-gen4-pci-ep: Add R-Car V4H compatible")
+
+		commit  5220b11a5beb941a0bf882e4f39b7693df093231
+		("dt-bindings: PCI: rcar-gen4-pci-host: Add R-Car V4H compatible")
+
+		commit c588e1c9846b32182fd5a0ceb637b983810e7100
+		("arm64: dts: renesas: r8a779f0: spider: Enable PCIe Host ch0")
+
 * v6.1.94-2024-06-17
 
 	* Merge/Rebase v6.1.94
