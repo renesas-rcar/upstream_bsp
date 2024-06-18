@@ -1,3 +1,13 @@
+* v6.1.94-2024-06-18
+
+	* Below patches are backported
+
+		commit e332003bb216a9f91e08004b9e2de0745f321290
+		("iommu: Make IPMMU_VMSA dependencies more strict")
+
+		commit d286a58bc8f4d5cf3246481b4e38e4c0c65550ac
+		("iommu: Tidy up io-pgtable dependencies")
+
 * v6.1.94-2024-06-17
 
 	* Merge/Rebase v6.1.94
