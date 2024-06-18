@@ -1,3 +1,16 @@
+* v6.6.34-2024-06-18
+
+	* Below patches are backported
+
+		commit 713240877a26f3cc035d6531795bd819dfaa633c
+		("pmdomain: renesas: Adjust the waiting time to cover the worst case")
+
+		commit c037263db4ce4b63b7f56732a46da257ae27c00d
+		("dt-bindings: PCI: rcar-gen4-pci-ep: Add R-Car V4H compatible")
+
+		commit  5220b11a5beb941a0bf882e4f39b7693df093231
+		("dt-bindings: PCI: rcar-gen4-pci-host: Add R-Car V4H compatible")
+
 * v6.6.34-2024-06-17
 
 	* Merge/Rebase v6.6.34
