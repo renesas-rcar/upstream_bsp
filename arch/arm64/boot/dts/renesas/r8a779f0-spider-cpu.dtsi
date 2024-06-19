@@ -86,14 +86,6 @@
 	clock-frequency = <32768>;
 };
 
-&gpio2 {
-	pci-clkreq0-hog {
-		gpio-hog;
-		gpios = <15 GPIO_ACTIVE_LOW>;
-		output-high;
-	};
-};
-
 &hscif0 {
 	pinctrl-0 = <&hscif0_pins>;
 	pinctrl-names = "default";
@@ -114,12 +106,6 @@
 		reg = <0x20>;
 		gpio-controller;
 		#gpio-cells = <2>;
-
-		rc21012-gpio2-hog {
-			gpio-hog;
-			gpios = <5 GPIO_ACTIVE_LOW>;
-			output-high;
-		};
 	};
 };
 
@@ -156,11 +142,6 @@
 	no-sdio;
 	non-removable;
 	full-pwr-cycle-in-suspend;
-	status = "okay";
-};
-
-&pciec0 {
-	reset-gpio = <&gpio_exp_20 0 GPIO_ACTIVE_LOW>;
 	status = "okay";
 };
 
