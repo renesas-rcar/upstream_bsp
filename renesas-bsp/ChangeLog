@@ -1,3 +1,25 @@
+* v6.1.94-2024-06-19
+
+	* Below patches are backported
+
+		commit fdea114ac26ce0eae4e248e6194d39e4e7536f7a
+		("pmdomain: renesas: rcar-sysc: Add R-Car M3-W power-off delay quirk")
+
+		commit c8d87704444a8ac731249ca43b6b2039c2949218
+		("pmdomain: renesas: rcar-sysc: Remove rcar_sysc_nullify() helper")
+
+		commit 43fefaea066b9522ab56a7ab095f86865ca39c2f
+		("pmdomain: renesas: rcar-sysc: Split R-Car M3-W and M3-W+ sub-drivers")
+
+		commit ce5e83925c99ff43cc0b9bebe53d9dcba8e7c08b
+		("pmdomain: renesas: rcar-sysc: Absorb rcar_sysc_ch into rcar_sysc_pd")
+
+		commit d7abac084536b6d7efcc0c1edc7d9035c34314d9
+		("dt-bindings: phy: renesas: Document Renesas Ethernet SERDES")
+
+		commit f9edd82774c0c8dde1ce26637a9e29f9bba92fef
+		("dt-bindings: net: renesas: Document Renesas Ethernet Switch")
+
 * v6.1.94-2024-06-18
 
 	* Below patches are backported
