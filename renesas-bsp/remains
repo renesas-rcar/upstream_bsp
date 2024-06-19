@@ -8,6 +8,11 @@
 f2fc3314dab2 drm: rcar-du: Add R8A779H0 SoC support
 3396171734c8 drm: rcar-du: rcar_mipi_dsi: fix PHY lock bit mistake in CLOCKSET1
 #
+# MMC (ported as is to 6.1 but need upstream solutions)
+#
+d10133565b53 mmc: core: mmc_ops: Enable stop command
+bc75d8c5907a mmc: core: Issue power off notification in mmc_remove()
+#
 # Network
 #
 675bcc5d8cbb net: ethernet: renesas: ravb: Returns an error value when gPTP is not used
@@ -22,6 +27,8 @@ cd6678e10496 net: ethernet: renesas: ravb: Fix Deadlock warning related to Ether
 d785d96b2961 net: ethernet: renesas: ravb: Fix missing MDIO bus with channel 1/2
 3d545d5e0463 net: ethernet: renesas: ravb: Disable Link Signal Change Interrupt for AVB0
 eae72e77117c net: ethernet: renesas: ravb: Add gPTP support on R-Car V4H
+# Workaround added to 6.1 (2451a288fe93). Task created for further investigation
+20dbf63e6809 Revert "net: phy: consider that suspend2ram may cut off PHY power"
 #
 # PCI
 #
