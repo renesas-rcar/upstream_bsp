@@ -1,5 +1,15 @@
 * v6.6.34-2024-06-20
 
+	* Add backport list
+
+	* update remains / handled
+
+		Below patches are goes to remains
+
+		net: phy: workaround 'resume' regression with Micrel PHYs
+		mmc: core: mmc_ops: Enable stop command
+		mmc: core: Issue power off notification in mmc_remove()
+
 	* Below patches are backported
 
 		commit d640af49b65c6d260a5154dfb822e8371b502707
