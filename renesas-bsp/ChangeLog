@@ -1,3 +1,41 @@
+* v6.1.94-2024-06-20
+
+	* Add backport list
+
+	* update remains / handled
+
+		Below patches are goes to remains
+
+		net: phy: workaround 'resume' regression with Micrel PHYs
+		mmc: core: mmc_ops: Enable stop command
+		mmc: core: Issue power off notification in mmc_remove()
+
+	* Below patches are backported
+
+		commit d640af49b65c6d260a5154dfb822e8371b502707
+		("dt-bindings: mmc: renesas,sdhi: Document RZ/G2L family compatibility")
+
+		commit 493d2b2969d477802310e8e215cf1924f95a7284
+		("dt-bindings: mmc: renesas,sdhi: Group single const value items into an enum list")
+
+		commit 4aee14527e4fd92d4a7487c430b54d099b99b4d1
+		("dt-bindings: mmc: renesas,sdhi: Document R-Car V4M support")
+
+		commit 3e3ce6314fc0eaa91d4cf7a663f6f3a793b4988c
+		("dt-bindings: mmc: renesas,sdhi: Document RZ/Five SoC")
+
+		commit 3b7eee6aae0b3212183fa63a4ae7887924218987
+		("dt-bindings: mmc: renesas,sdhi: Document RZ/G3S support")
+
+		commit 883e5ac6ee82c55b2f69099399a4d26cc456c5af
+		("dt-bindings: mmc: renesas,sdhi: Fix RZ/V2M clock description")
+
+		commit c9dc89944b66abf9aa0ad57aa45e4edf030e2441
+		("dt-bindings: mmc: renesas,sdhi: Document RZ/V2M support")
+
+		commit 466c8c46b4ba763435b2a787b7824d9f0fd3e76e
+		("ASoC: dt-bindings: renesas: Fix R-Car Gen4 SoC-specific compatibles")
+
 * v6.1.94-2024-06-19
 
 	* Below patches are backported
@@ -491,122 +529,3 @@
 * v6.1.86-2024-04-15
 
 	* Merge/Rebase v6.1.86
-
-* v6.1.85-2024-04-11
-
-	* Merge/Rebase v6.1.85
-
-	* update CVE
-
-* v6.1.84-2024-04-10
-
-	Below patches are backported
-
-		commit d0520eb3ed54df89eb5961ec3b88634f313123f2
-		("i2c: rcar: add FastMode+ support for Gen4")
-
-		commit 2b523c46e81ebd621515ab47117f95de197dfcbf
-		("i2c: rcar: introduce Gen4 devices")
-
-		commit 37a672be3ae357a0f87fbc00897fa7fcb3d7d782
-		("i2c: rcar: fix error code in probe()")
-
-* v6.1.84-2024-04-09
-
-	"i2c: rcar: Add fast mode plus support" patch was replaced with
-
-		54c76ed33008d0b342daa52a45ac304e5e3ab312
-		("i2c: rcar: improve accuracy for R-Car Gen3+")
-
-		0e864b552b2302e40b2277629ebac79544a5c433
-		("i2c: rcar: reset controller is mandatory for Gen3+")
-
-		3c417c947c13f22e60a4c3e68a7219a134219925
-		("i2c: rcar: remove open coded DIV_ROUND_CLOSEST")
-
-		47280af872367ead8202b8503083b0b4016b667b
-		("i2c: rcar: calculate divider instead of brute-forcing it")
-
-		d72857907af04f47e6844544160be42b0ad56edd
-		("i2c: rcar: properly format a debug output")
-
-		be944ceb6761a6198f5df51c36fd91eb9e112704
-		("i2c: rcar: avoid non-standard use of goto")
-
-		941b99ac57facbc6bed99c06592d5471a9bf61cb
-		("i2c: rcar: Remove #ifdef guards for PM related functions")
-
-	"arm64: dts: renesas: draak: Make HDMI the default video input" patch
-	was replaced with
-
-		7ccd37fbecf31d610adf9aa01667632a418e06d6
-		("arm64: dts: renesas: draak: Make HDMI the default video input")
-
-* v6.1.84-2024-04-04
-
-	* Merge/Rebase v6.1.84
-
-	* update CVE
-
-* v6.1.83-2024-04-01
-
-	* Merge/Rebase v6.1.83
-
-	* update CVE
-
-	* update script/make-cve.sh
-
-* v6.1.82-2024-03-18
-
-	* Merge/Rebase v6.1.82
-
-	* update CVE
-
-* v6.1.81-2024-03-07
-
-	* Merge/Rebase v6.1.81
-
-	* update CVE
-
-	* Backport from upstream next
-
-	commit cbae1a350e3ceff38242a4905805c80ccbcfbba5
-	("ASoC: rcar: adg: correct TIMSEL setting for SSI9")
-
-* v6.1.80-2024-03-04
-
-	* Merge/Rebase v6.1.80
-
-	* update CVE
-
-* v6.1.79-2024-02-26
-
-	* Merge/Rebase v6.1.79
-
-* v6.1.78-2024-02-19
-
-	* Merge/Rebase v6.1.78
-
-	* update CVE
-
-* v6.1.77-2024-02-15
-
-	* Replace to upstream patch
-
-	commit 6609c4103c763df07ca31f2e65e649345afe6cfb
-	("pmdomain: renesas: Adjust the waiting time to cover the worst case")
-
-* v6.1.77-2024-02-13
-
-	* Enable status = "reserved"
-
-	Linux side don't want to touch some specified clocks if it boots with
-	other OS, otherwise, Linux will kill to clock which is not used on Linux
-	but is used on other OS. To avoid such situation, below patches are added.
-
-	- clk: renesas: cpg-mssr: Ignore all clocks assigned to non-Linux system
-	- of: Add for_each_reserved_child_of_node()
-	- of: Add of_get_next_status_child() and makes more generic of_get_next
-	- of: Add __of_device_is_status() and makes more generic status check
-
-

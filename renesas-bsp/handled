@@ -282,8 +282,6 @@ fc60c20649e9 arm64: dts: renesas: r8a779g0: Audio R-Car Sound support
 f07854ecac12 arm64: defconfig: Enable DA7213 Codec
 393244153d30 pinctrl: renesas: r8a779g0: Add Audio support
 f549e5744db6 Revert "arm64: dts: renesas: r8a779g0: Fix AVB registers range"
-# Workaround added to BSP. Task created for further investigation
-20dbf63e6809 Revert "net: phy: consider that suspend2ram may cut off PHY power"
 3dbea0aef38a net: ethernet: renesas: rcar_gen4_ptp: Fix build error of R-Car Gen4 PTP
 # torvalds: f3c07758c9007a6bfff5290d9e19d3c41930c897 # net: ravb: Fix possible hang if RIS2_QFF1 happen
 241d44845b90 ravb: Clear RIS2_QFF1 flag in ravb_error_interrupt()
@@ -314,12 +312,10 @@ b5bccf1fc37c arm64: dts: renesas: r8a779f0: Disable CDM check
 158be613d0e5 mmc: renesas_sdhi_internal_dmac: Add support R-Car Gen4
 ce3936b34bc3 dt-bindings: mmc: renesas,sdhi: Add r8a779g0 support
 f2453ad38abd dt-bindings: mmc: renesas,sdhi: Add r8a779f0 support
-d10133565b53 mmc: core: mmc_ops: Enable stop command
 cce4753e45f8 mmc: Improve function name when aborting a tuning cmd
 f92bba5328ea mmc: renesas_sdhi: Disable HS400 for r8a77995
 de9461ece1fa mmc: renesas_sdhi: scc_ctl is always set in after R-Car Gen3
 7f7098a479d6 mmc: renesas_sdhi: Fix SDnCKCR setting in 4TAP SoC
-bc75d8c5907a mmc: core: Issue power off notification in mmc_remove()
 f04e295cd388 mmc: renesas_sdhi: reset calibration register
 2ec314c9451c mmc: renesas_sdhi: fix selection of manual correction
 755f55eac38a mmc: renesas_sdhi: Add internal DMA transfer end
