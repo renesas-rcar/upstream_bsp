@@ -1,3 +1,35 @@
+v6.3      / ASoC: dt-bindings: ti,pcm3168a: Convert to json-schema
+v6.3      / ASoC: dt-bindings: ak4613: enable Of-graph (Audio-Graph-Card) style
+Local     / dt-bindings: interrupt-controller: renesas,irqc: Add r8a779g0 support
+v6.6      / dt-bindings: interrupt-controller: renesas,irqc: Add r8a779f0 support
+Local     / spi: renesas,sh-msiof: Add r8a779h0 support
+v6.4      / spi: renesas,sh-msiof: Miscellaneous improvements
+Local     / dt-bindings: timer: renesas,cmt: Add R-Car V4M support
+v6.9      / dt-bindings: thermal: rcar-gen3-thermal: Add r8a779h0 support
+v6.9      / dt-bindings: watchdog: renesas-wdt: Add support for R-Car V4M
+v6.3      / dt-bindings: watchdog: renesas,wdt: Document RZ/Five SoC
+v6.9      / dt-bindings: memory: renesas,rpc-if: Document R-Car V4M support
+v6.9      / dt-bindings: pinctrl: renesas,pfc: Document R-Car V4M support
+v6.9      / dt-bindings: renesas,rcar-dmac: Add r8a779h0 support
+v6.9      / dt-bindings: i2c: renesas,rcar-i2c: Add r8a779h0 support
+v6.9      / dt-bindings: gpio: renesas,rcar-gpio: Add r8a779h0 support
+Local     / dt-bindings: timer: renesas,tmu: Add R-Car V4M support
+v6.9      / dt-bindings: timer: renesas,tmu: Document input capture interrupt
+v6.9      / dt-bindings: reset: renesas,rst: Document R-Car V4M support
+v6.9      / dt-bindings: clock: renesas,cpg-mssr: Document R-Car V4M support
+Local     / dt-bindings: net: renesas,etheravb: Add optional MDIO bus node
+v6.8      / dt-bindings: net: renesas,etheravb: Document RZ/G3S support
+v6.8      / dt-bindings: net: renesas,etheravb: Document RZ/Five SoC
+v6.7      / dt-bindings: net: renesas: Drop ethernet-phy node schema
+Local     / dt-bindings: soc: renesas: Document Renesas RZ/V2H(P) SoC variants
+v6.9      / dt-bindings: soc: renesas: Preserve the order of SoCs based on their part numbers
+v6.9      / dt-bindings: soc: renesas: Document R-Car V4M Gray Hawk Single
+v6.9      / dt-bindings: soc: renesas: Document R-Car V4H White Hawk Single
+v6.7      / arm64: dts: renesas: ebisu: Document Ebisu-4D support
+v6.7      / dt-bindings: soc: renesas: Document R-Car S4 Starter Kit
+v6.7      / dt-bindings: soc: renesas: Document SMARC Carrier-II EVK
+v6.7      / dt-bindings: soc: renesas: Document RZ/G3S SMARC SoM
+v6.7      / dt-bindings: soc: renesas: Document Renesas RZ/G3S SoC variants
 Local     / dt-bindings: mmc: renesas,sdhi: Document RZ/G2L family compatibility
 Local     / dt-bindings: mmc: renesas,sdhi: Group single const value items into an enum list
 v6.9      / dt-bindings: mmc: renesas,sdhi: Document R-Car V4M support
