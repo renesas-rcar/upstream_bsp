@@ -1,3 +1,35 @@
+* v6.1.96-2024-06-28
+
+	* Merge/Rebase v6.1.96
+
+	* update CVE
+
+	* Below patches are backported
+
+		commit 6328489c135b60380b9e12b4d23854433e96a8b0
+		("ASoC: rsnd: cleanup rsnd_dai_of_node()")
+
+		commit 8897a1475f278eb36d76df9684466b17b8dd4cab
+		("ASoC: rsnd: use DAI driver ID instead of DAI ID")
+
+		commit 4932b1fa61322b737dc3615a298aafdc42f97f79
+		("ASoC: rsnd: adg: Fix BRG typos")
+
+		commit 25106550f1366bec8a9adefeada5e8ff5205c828
+		("ASoC: soc-dpcm.h: remove snd_soc_dpcm::hw_param")
+
+		commit 81442e3e6c0f7de9df64addc53d49079b8045b05
+		("media: dt-bindings: media: renesas,fcp: Document RZ/{G2L,V2L} FCPVD bindings")
+
+		commit b8c41ec1fb552a5e6c851887374e32233232302e
+		("media: dt-bindings: media: renesas,vsp1: Document RZ/V2L VSPD bindings")
+
+		commit ae5a8dce3c86c1ea8e17910c3836b92a406f9ad8
+		("dt-bindings: display: bridge: renesas,rzg2l-mipi-dsi: Document RZ/V2L support")
+
+		commit b1a90f510230afa9483e38fccbf9e4274c92aa8c
+		("dt-bindings: display: bridge: Document RZ/G2L MIPI DSI TX bindings")
+
 * v6.1.95-2024-06-24
 
 	* Merge/Rebase v6.1.95
