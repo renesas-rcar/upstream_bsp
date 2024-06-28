@@ -4,6 +4,20 @@
 
 	* update CVE
 
+	* Below patches are backported
+
+		commit 6328489c135b60380b9e12b4d23854433e96a8b0
+		("ASoC: rsnd: cleanup rsnd_dai_of_node()")
+
+		commit 8897a1475f278eb36d76df9684466b17b8dd4cab
+		("ASoC: rsnd: use DAI driver ID instead of DAI ID")
+
+		commit 4932b1fa61322b737dc3615a298aafdc42f97f79
+		("ASoC: rsnd: adg: Fix BRG typos")
+
+		commit 25106550f1366bec8a9adefeada5e8ff5205c828
+		("ASoC: soc-dpcm.h: remove snd_soc_dpcm::hw_param")
+
 * v6.1.95-2024-06-24
 
 	* Merge/Rebase v6.1.95
