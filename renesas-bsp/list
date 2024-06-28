@@ -470,21 +470,7 @@ v6.3      / media: renesas: vsp1: Add V4H SoC version
 v6.3      / media: renesas: vsp1: Change V3U to be gen4
 v6.3      / media: Add Y210, Y212 and Y216 formats
 v6.3      / media: Add 2-10-10-10 RGB formats
-v6.3      / ASoC: rsnd: add R-Car Gen4 Sound support
 v6.3      / ASoC: dt-bindings: renesas: add R8A779G0 V4H
-v6.3      / ASoC: rsnd: dma.c: tidyup rsnd_dma_probe()
-v6.3      / ASoC: rsnd: tidyup rsnd_dma_addr()
-v6.3      / ASoC: rsnd: use array for 44.1kHz/48kHz rate handling
-v6.3      / ASoC: rsnd: use clkin/out_size
-v6.3      / ASoC: rsnd: moves clkout_name to top of the file
-v6.3      / ASoC: rsnd: rename clk to clkin
-v6.3      / ASoC: rsnd: remove unnecessary ADG flags
-v6.3      / ASoC: rsnd: use same debug message format on clkout
-v6.3      / ASoC: rsnd: indicate warning once if it can't handle requested rule
-v6.3      / ASoC: rsnd: indicate necessary error when clock start failed
-v6.3      / ASoC: rsnd: Remove unnecessary rsnd_dbg_dai_call()
-v6.3      / ASoC: rsnd: check whether playback/capture property exists
-v6.3      / ASoC: rsnd: core.c: indicate warning if strange TDM width was set
 v6.4      / ASoC: dt-bindings: renesas: rsnd: correct comments syntax
 v6.4      / ASoC: dt-bindings: renesas,rsnd.yaml: add R-Car Gen4 support
 v6.3      / ASoC: dt-bindings: renesas,rsnd.yaml: drop "dmas/dma-names" from "rcar_sound,ssi"
@@ -591,7 +577,25 @@ v6.2      / can: rcar_canfd: Add shared_global_irqs to struct rcar_canfd_hw_info
 v6.2      / can: rcar_canfd: Add max_channels to struct rcar_canfd_hw_info
 v6.2      / can: rcar_canfd: rcar_canfd_probe: Add struct rcar_canfd_hw_info to driver data
 v6.2      / can: rcar_canfd: Use devm_reset_control_get_optional_exclusive
+v6.6      / ASoC: rsnd: cleanup rsnd_dai_of_node()
+v6.6      / ASoC: rsnd: use DAI driver ID instead of DAI ID
+v6.3      / ASoC: rsnd: adg: Fix BRG typos
+v6.3      / ASoC: rsnd: core.c: indicate warning if strange TDM width was set
+v6.3      / ASoC: rsnd: add R-Car Gen4 Sound support
+v6.3      / ASoC: rsnd: dma.c: tidyup rsnd_dma_probe()
+v6.3      / ASoC: rsnd: tidyup rsnd_dma_addr()
+v6.3      / ASoC: rsnd: use array for 44.1kHz/48kHz rate handling
+v6.3      / ASoC: rsnd: use clkin/out_size
+v6.3      / ASoC: rsnd: moves clkout_name to top of the file
+v6.3      / ASoC: rsnd: rename clk to clkin
+v6.3      / ASoC: rsnd: remove unnecessary ADG flags
+v6.3      / ASoC: rsnd: use same debug message format on clkout
+v6.3      / ASoC: rsnd: indicate warning once if it can't handle requested rule
+v6.3      / ASoC: rsnd: indicate necessary error when clock start failed
+v6.3      / ASoC: rsnd: Remove unnecessary rsnd_dbg_dai_call()
+v6.3      / ASoC: rsnd: check whether playback/capture property exists
 v6.2      / ASoC: rsnd: adg: use __clk_get_name() instead of local clk_name[]
+v6.2      / ASoC: soc-dpcm.h: remove snd_soc_dpcm::hw_param
 v6.2      / ASoC: rsnd: Use DIV_ROUND_UP() instead of open-coding it
 v6.2      / drm: rcar-du: Fix Kconfig dependency between DRM and RZG2L_MIPI_DSI
 v6.2      / drm: rcar-du: rzg2l_mipi_dsi: Enhance device lanes check
