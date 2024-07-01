@@ -205,6 +205,10 @@ v6.5      / arm64: dts: renesas: r9a07g054: Add vspd node
 v6.5      / arm64: dts: renesas: r9a07g044: Add vspd node
 v6.5      / arm64: dts: renesas: r9a07g054: Add fcpvd node
 v6.5      / arm64: dts: renesas: r9a07g044: Add fcpvd node
+v6.3      / dt-bindings: display: bridge: renesas,rzg2l-mipi-dsi: Document RZ/V2L support
+v6.2      / dt-bindings: display: bridge: Document RZ/G2L MIPI DSI TX bindings
+v6.4      / media: dt-bindings: media: renesas,fcp: Document RZ/{G2L,V2L} FCPVD bindings
+v6.4      / media: dt-bindings: media: renesas,vsp1: Document RZ/V2L VSPD bindings
 v6.5      / soc: renesas: rmobile-sysc: Convert to readl_poll_timeout_atomic()
 v6.5      / soc: renesas: rcar-rst: Allow WDT reset on R-Car V3U
 v6.5      / iopoll: Do not use timekeeping in read_poll_timeout_atomic()
