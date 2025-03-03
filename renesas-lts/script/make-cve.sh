@@ -29,7 +29,9 @@ cat ${TMP}-orig | sed -e "s/ /\n/g" | sed 1d				> ${TMP}-affected
 	cd issues
 	ls -1 CVE-*.yml | sed -e "s/\.yml$//g" 				> ${TMP}-all
 )
-cat ${TMP}-all ${TMP}-affected | sort -t"-" -k 2,2r -k 3nr | uniq -u	> ${TMP}-cve
+cat ${TMP}-all ${TMP}-affected | sort -t"-" -k 2,2r -k 3nr | uniq -u	> ${TMP}-no-affect
 
-mv ${TMP}-cve ${BSP}/cve
+mv ${TMP}-affected	${BSP}/cve-affected
+mv ${TMP}-all		${BSP}/cve-all
+mv ${TMP}-no-affect	${BSP}/cve-no-affect
 rm -f ${TMP}-*
