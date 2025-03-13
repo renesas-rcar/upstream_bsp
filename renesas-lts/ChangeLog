@@ -1,3 +1,9 @@
+* v6.6.82-2025-03-14
+
+	* Merge/Rebase v6.6.82
+
+	* update CVE
+
 * v6.6.81-2025-03-10
 
 	* Merge/Rebase v6.6.81
@@ -148,11 +154,3 @@
 	* Disable CONFIG_PROVE_LOCKING from renesas_defconfig
 
 	* Rename "renesas-bsp" to "renesas-lts"
-
-* v6.6.72-2025-01-20
-
-	* Merge/Rebase v6.6.72
-
-	* update CVE
-
-	* update list
