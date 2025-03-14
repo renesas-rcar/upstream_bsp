@@ -45,8 +45,6 @@ f7f0636f4392 spi: spi-sh-msiof: Add generic structural data for MSIOF on R-Car G
 # more information needed from Renesas (Geert)
 e1d847bfd3ca dmaengine: rcar-dmac: Add repeat mode support
 3df1d5f023b1 soc: renesas: r8a779g0-sysc: Always-on A3IR, A2CN0, A1CNN0
-# PCI update (Shimoda-san)
-1a1becca92ff PCI: dwc: rcar-gen4: Update the initial setting to align with V4H HWUM v0.81
 #
 # CAN patches (Geert)
 #

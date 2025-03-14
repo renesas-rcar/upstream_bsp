@@ -636,6 +636,7 @@ PCIe for R-Car Gen4
 		9cc98db499af PCI: dwc: rcar-gen4: Add workaround for V4H
 		819b9bfdf349 PCI: dwc: Add support for triggering legacy IRQs
 		20ea0dc95135 PCI: Add PCI_EXP_LNKCAP_MLW macros
+		1a1becca92ff PCI: dwc: rcar-gen4: Update the initial setting to align with V4H HWUM v0.81
 
 	registers sharing by "shared" is not acceptable for upstream.
 
