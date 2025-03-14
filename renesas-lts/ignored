@@ -494,6 +494,7 @@ Media
 		d80707e0e447 arm64: dts: renesas: ulcb-kf: update for kernel v5.10
 		1365bd5899c9 media: i2c: Fix timeout GMSL2 link establish issue of MAX96712
 		bd5e927aa7eb media: i2c: Fix timeout GMSL2 link establish issue of MAX96712
+		79b45ffb90e7 media: i2c: max96712: Fix horizontal nosie issue when running 4 cameras on R-Car V4M
 
 	With the latest rcar-csi2 driver any VC can be routed to any VIN, so
 	selecting a particular VC in DT shouldn't be needed.

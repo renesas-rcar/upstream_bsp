@@ -13,7 +13,6 @@ b4264f977baa8 arm64: dts: renesas: gray-hawk: Factor out common parts
 #
 # lore: 20250318155549.19625-2-wsa+renesas@sang-engineering.com
 8fb9f82e224b drm: bridge: ti-sn65dsi86: Add checking to detect bridge device connection failure
-79b45ffb90e7 media: i2c: max96712: Fix horizontal nosie issue when running 4 cameras on R-Car V4M
 #
 # MMC (ported as is to 6.1 but need upstream solutions)
 #
