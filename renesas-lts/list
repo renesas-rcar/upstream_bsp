@@ -1,12 +1,12 @@
-Local     / arm64: dts: renesas: r8a779h0: Add display support
+Local     / arm64: dts: renesas: white-hawk-single: Add R-Car Sound support
+Local     / arm64: dts: renesas: r8a779g3: Add White Hawk Single support
+Local     / arm64: dts: renesas: Add R8A779G3 SoC support
 v6.13     / dt-bindings: fuse: Move renesas,rcar-{efuse,otp} to nvmem
 v6.13     / nvmem: Add R-Car E-FUSE driver
-v6.13     / arm64: dts: renesas: r8a779h0: Add PCIe Host and Endpoint nodes
 Local     / clk: renesas: r8a779h0: Add display clocks
 Local     / drm/rcar-du: Add support for r8a779h0
 Local     / drm/rcar-du: Write DPTSR only if the second source exists
 Local     / drm/rcar-du: dsi: Add r8a779h0 support
-Local     / drm/rcar-du: dsi: Fix PHY lock bit check
 Local     / dt-bindings: display: bridge: renesas,dsi-csi2-tx: Add r8a779h0
 Local     / dt-bindings: display: renesas,du: Add r8a779h0
 Local     / dt-bindings: display: renesas,du: Add missing constraints
