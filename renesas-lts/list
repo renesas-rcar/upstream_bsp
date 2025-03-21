@@ -1,6 +1,37 @@
+Local     / arm64: dts: renesas: white-hawk-single: Add R-Car Sound support
+Local     / arm64: dts: renesas: white-hawk-ard-audio: Drop SoC part
+Local     / arm64: dts: renesas: r8a779g3: Add White Hawk Single support
+Local     / arm64: dts: renesas: Factor out White Hawk Single board support
+v6.13     / arm64: dts: renesas: Use interrupts-extended for Ethernet PHYs
+v6.8      / arm64: dts: renesas: rzg3s-smarc-som: Enable the Ethernet interfaces
+v6.8      / arm64: dts: renesas: rzg3s-smarc-som: Use switches' names to select on-board functionalities
+v6.8      / arm64: dts: renesas: rzg3s-smarc-som: Enable SDHI2
+v6.7      / arm64: dts: renesas: rzg3s-smarc-som: Spelling s/device-type/device_type/
+v6.7      / arm64: dts: renesas: Add initial support for RZ/G3S SMARC SoM
+v6.12     / arm64: dts: renesas: white-hawk-single: Wire-up Ethernet TSN
+v6.12     / arm64: dts: renesas: r8a779g0: R-Car Ethernet TSN support
+Local     / arm64: dts: renesas: Add R8A779G3 SoC support
+v6.9      / arm64: dts: renesas: Add Renesas R8A779G2 SoC support
+v6.10     / arm64: dts: renesas: eagle: Add capture overlay for Function expansion board
+v6.7      / arm64: dts: renesas: Apply overlays to base dtbs
 Local     / arm64: dts: renesas: gray-hawk-single: Add DisplayPort support
 Local     / arm64: dts: renesas: gray-hawk-single: Fix indentation
 v6.13     / arm64: dts: renesas: r8a779h0: gray-hawk-single: Enable PCIe Host
+v6.12     / arm64: dts: renesas: gray-hawk-single: Add CAN-FD support
+v6.12     / arm64: dts: renesas: gray-hawk-single: Add GP LEDs
+v6.12     / arm64: dts: renesas: gray-hawk-single: Add push switches
+v6.12     / arm64: dts: renesas: gray-hawk-single: Add Sound support
+v6.11     / arm64: dts: renesas: gray-hawk-single: Add aliases for I2C buses
+v6.10     / arm64: dts: renesas: gray-hawk-single: Enable nfsroot
+v6.10     / arm64: dts: renesas: gray-hawk-single: Add second debug serial port
+v6.9      / arm64: dts: renesas: gray-hawk-single: Add QSPI FLASH support
+v6.9      / arm64: dts: renesas: gray-hawk-single: Add eMMC support
+v6.9      / arm64: dts: renesas: gray-hawk-single: Add Ethernet support
+v6.9      / arm64: dts: renesas: gray-hawk-single: Add I2C0 and EEPROMs
+v6.9      / arm64: dts: renesas: gray-hawk-single: Add serial console pin control
+v6.9      / arm64: dts: renesas: gray-hawk-single: Enable watchdog timer
+v6.9      / arm64: dts: renesas: Add Gray Hawk Single board support
+v6.9      / arm64: dts: renesas: r8a779g2: Add White Hawk Single support
 Local     / arm64: dts: renesas: r8a779h0: Add display support
 v6.13     / arm64: dts: renesas: r8a779h0: Add OTP_MEM node
 v6.13     / dt-bindings: fuse: Move renesas,rcar-{efuse,otp} to nvmem
@@ -15,7 +46,6 @@ Local     / drm/rcar-du: Add support for r8a779h0
 Local     / drm/rcar-du: Write DPTSR only if the second source exists
 v6.11     / drm/renesas/rcar-du: Use fbdev-dma
 Local     / drm/rcar-du: dsi: Add r8a779h0 support
-Local     / drm/rcar-du: dsi: Fix PHY lock bit check
 Local     / dt-bindings: display: bridge: renesas,dsi-csi2-tx: Add r8a779h0
 Local     / dt-bindings: display: renesas,du: Add r8a779h0
 Local     / dt-bindings: display: renesas,du: Add missing constraints
@@ -45,7 +75,6 @@ v6.8      / net: ethernet: renesas: rcar_gen4_ptp: Remove incorrect comment
 v6.11     / arm64: defconfig: Enable Marvell 88Q2XXX PHY support
 v6.11     / arm64: dts: renesas: white-hawk: ethernet: Describe AVB1 and AVB2
 v6.12     / dt-bindings: can: renesas,rcar-canfd: Document R-Car V4M support
-v6.12     / arm64: dts: renesas: r8a779h0: Add CAN-FD node
 v6.12     / arm64: dts: renesas: r8a779h0: Add PWM device nodes
 v6.12     / arm64: dts: renesas: r8a779h0: Add missing iommus properties
 v6.12     / clk: renesas: r8a779h0: Add CANFD clock
@@ -54,20 +83,20 @@ v6.12     / clk: renesas: rcar-gen4: Remove unused default PLL2/3/4/6 configs
 v6.12     / clk: renesas: r8a779a0: cpg_pll_configs should be __initconst
 v6.12     / clk: renesas: rcar-gen4: Remove unused fixed PLL clock types
 v6.12     / clk: renesas: rcar-gen4: Remove unused variable PLL2 clock type
+v6.12     / clk: renesas: rcar-gen4: Use defines for common CPG registers
+v6.12     / clk: renesas: r8a779g0: Model PLL1/3/4/6 as fractional PLLs
+v6.12     / clk: renesas: r8a779f0: Model PLL1/2/3/6 as fractional PLLs
 v6.12     / clk: renesas: rcar-gen4: Add support for fractional 9.24 PLLs
+v6.12     / clk: renesas: rcar-gen4: Use FIELD_GET()
+v6.12     / clk: renesas: r8a779a0: Use defines for PLL control registers
+v6.12     / clk: renesas: r8a779h0: Model PLL1/2/3/4/6 as fractional PLLs
 v6.12     / clk: renesas: rcar-gen4: Add support for fixed variable PLLs
 v6.12     / clk: renesas: rcar-gen4: Add support for variable fractional PLLs
-v6.12     / clk: renesas: rcar-gen4: Use defines for common CPG registers
 v6.12     / clk: renesas: rcar-gen4: Add support for fractional multiplication
-v6.12     / clk: renesas: rcar-gen4: Use FIELD_GET()
 v6.12     / clk: renesas: rcar-gen4: Clarify custom PLL clock support
 v6.12     / clk: renesas: rcar-gen4: Removed unused SSMODE_* definitions
 v6.11     / clk: renesas: cpg-lib: Use DEFINE_SPINLOCK() for global spinlock
 v6.9      / clk: renesas: rcar-gen4: Add support for FRQCRC1
-v6.12     / clk: renesas: r8a779g0: Model PLL1/3/4/6 as fractional PLLs
-v6.12     / clk: renesas: r8a779f0: Model PLL1/2/3/6 as fractional PLLs
-v6.12     / clk: renesas: r8a779a0: Use defines for PLL control registers
-v6.12     / clk: renesas: r8a779h0: Model PLL1/2/3/4/6 as fractional PLLs
 v6.12     / clk: renesas: r8a779g0: cpg_pll_configs should be __initconst
 v6.9      / clk: renesas: r8a779g0: Fix PCIe clock name
 v6.8      / clk: renesas: r8a779g0: Add PCIe clocks
@@ -76,10 +105,7 @@ v6.12     / clk: renesas: r8a779f0: cpg_pll_configs should be __initconst
 v6.12     / clk: renesas: r8a779h0: Initial clock descriptions should be __initconst
 v6.12     / dt-bindings: pwm: renesas,tpu: Add r8a779h0 support
 v6.12     / dt-bindings: pwm: renesas,pwm-rcar: Add r8a779h0 support
-v6.12     / arm64: dts: renesas: gray-hawk-single: Add CAN-FD support
-v6.12     / arm64: dts: renesas: gray-hawk-single: Add GP LEDs
-v6.12     / arm64: dts: renesas: gray-hawk-single: Add push switches
-v6.12     / arm64: dts: renesas: gray-hawk-single: Add Sound support
+v6.12     / arm64: dts: renesas: r8a779h0: Add CAN-FD node
 v6.12     / clk: renesas: r8a779h0: Add PCIe clock
 v6.11     / ASoC: Remove unneeded semicolon
 v6.11     / arm64: dts: renesas: white-hawk-cpu: Add aliases for I2C buses
@@ -168,7 +194,6 @@ v6.11     / ASoC: Add ak4619 codec support
 v6.11     / ASoC: simple-audio-mux: enable to select MUX names
 v6.11     / ASoC: audio-graph-card2: add support for aux devices
 v6.10     / dt-bindings: mmc: renesas,sdhi: Document RZ/G2L family compatibility
-v6.11     / arm64: dts: renesas: gray-hawk-single: Add aliases for I2C buses
 v6.11     / arm64: dts: renesas: rzg2l: Update fallback string for SDHI nodes
 v6.10     / arm64: dts: renesas: r9a07g043: Move interrupt-parent property to common DTSI
 v6.10     / arm64: dts: renesas: r9a07g0{43,44,54}: Update RZ/G2L family compatible
@@ -218,15 +243,6 @@ v6.10     / pmdomain: renesas: rcar-sysc: Add R-Car M3-W power-off delay quirk
 v6.10     / pmdomain: renesas: rcar-sysc: Remove rcar_sysc_nullify() helper
 v6.10     / pmdomain: renesas: rcar-sysc: Split R-Car M3-W and M3-W+ sub-drivers
 v6.10     / pmdomain: renesas: rcar-sysc: Absorb rcar_sysc_ch into rcar_sysc_pd
-v6.10     / arm64: dts: renesas: gray-hawk-single: Enable nfsroot
-v6.10     / arm64: dts: renesas: gray-hawk-single: Add second debug serial port
-v6.9      / arm64: dts: renesas: gray-hawk-single: Add QSPI FLASH support
-v6.9      / arm64: dts: renesas: gray-hawk-single: Add eMMC support
-v6.9      / arm64: dts: renesas: gray-hawk-single: Add Ethernet support
-v6.9      / arm64: dts: renesas: gray-hawk-single: Add I2C0 and EEPROMs
-v6.9      / arm64: dts: renesas: gray-hawk-single: Add serial console pin control
-v6.9      / arm64: dts: renesas: gray-hawk-single: Enable watchdog timer
-v6.9      / arm64: dts: renesas: Add Gray Hawk Single board support
 v6.10     / arm64: dts: renesas: r8a779h0: Link IOMMU consumers
 v6.10     / arm64: dts: renesas: r8a779h0: Add IPMMU nodes
 v6.10     / arm64: dts: renesas: r8a779h0: Add INTC-EX node
