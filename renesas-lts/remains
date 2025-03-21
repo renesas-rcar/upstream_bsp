@@ -50,4 +50,3 @@ e1d847bfd3ca dmaengine: rcar-dmac: Add repeat mode support
 #
 # to be investigated
 905813c180f4 can: rcar_canfd: Add secondary sample point
-e9ba9ac6fe77 can: rcar_canfd: Configure receive rules
