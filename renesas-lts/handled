@@ -1,3 +1,11 @@
+# upstream: b0cf8110843ad2ee4c9665e1f590069108fe1881 arm64: dts: renesas: white-hawk-single: Add R-Car Sound support
+099f46961bdb3 arm64: dts: renesas: r8a779g3: Add White Hawk V4H-7 sound support
+# upstream: bf6b3ccda3e6797c6b7b774726fe29a1c4602e95 arm64: dts: renesas: r8a779g3: Add White Hawk Single support
+bf946ad8ccb36 arm64: dts: renesas: r8a779g3: Add White Hawk V4H-7 support
+dcc78f472661 arm64: dts: renesas: r8a779g3: Add White Hawk support
+# upstream: f7cd4b412020e71ab4c248c908558c67248a8392 arm64: dts: renesas: Add R8A779G3 SoC support
+94447be9085b3 arm64: dts: renesas: Add Renesas R8A779G3 SoC support
+57f8fb543b7c arm64: dts: renesas: Add Renesas R8A779G3 SoC support
 # upstream: b1000645dc29701fafd12d0c6f22ab080de6ab43 arm64: dts: renesas: gray-hawk-single: Add DisplayPort support
 # upstream: c2484af44be1ee55cc9116fcde2b4dffe9bfcf5d arm64: dts: renesas: r8a779h0: Add display support
 # upstream: 4fd66d72b9d0b2b343332aec309ae8861f881181 arm64: dts: renesas: gray-hawk-single: Fix indentation
