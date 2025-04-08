@@ -1,3 +1,20 @@
+Local     / arm64: defconfig: add Renesas MSIOF sound support
+Local     / arm64: renesas: defconfig: add Renesas MSIOF sound support
+Local     / dt-bindings: timer: renesas,tpu: remove DoC
+Local     / arm64: dts: renesas: sparrow hawk: Add MSIOF Sound support
+Local     / ASoC: renesas: add MSIOF sound support
+Local     / ASoC: renesas: add MSIOF sound Documentation
+Local     / ASoC: rsnd: enable to use "adg" clock
+Local     / ASoC: rsnd: allow to use ADG only
+Local     / spi: sh-msiof: ignore driver probing if it was MSIOF Sound
+Local     / spi: renesas,sh-msiof: Living separately from MSIOF I2S Sound
+Local     / arm64: dts: renesas: r8a779g3: Add Retronix R-Car V4H Sparrow Hawk board support
+Local     / dt-bindings: soc: renesas: Document Retronix R-Car V4H Sparrow Hawk board support
+Local     / dt-bindings: vendor-prefixes: Add Retronix Technology Inc.
+Local     / dt-bindings: PCI: rcar-gen4-pci-host: Document optional aux clock
+Local     / dt-bindings: timer: Correct indentation and style in DTS example
+v6.13     / ASoC: rsnd: check rsnd_adg_clk_enable() return value
+v6.13     / ASoC: Rename "sh" to "renesas"
 v6.14     / arm64: dts: renesas: white-hawk-single: Add R-Car Sound support
 v6.14     / arm64: dts: renesas: white-hawk-ard-audio: Drop SoC part
 v6.14     / arm64: dts: renesas: r8a779g3: Add White Hawk Single support
