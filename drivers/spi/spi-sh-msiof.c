@@ -20,7 +20,6 @@
 #include <linux/kernel.h>
 #include <linux/module.h>
 #include <linux/of.h>
-#include <linux/of_graph.h>
 #include <linux/platform_device.h>
 #include <linux/pm_runtime.h>
 #include <linux/sh_dma.h>
@@ -1277,18 +1276,9 @@ static int sh_msiof_spi_probe(struct platform_device *pdev)
 	const struct sh_msiof_chipdata *chipdata;
 	struct sh_msiof_spi_info *info;
 	struct sh_msiof_spi_priv *p;
-	struct device_node *port;
 	unsigned long clksrc;
 	int i;
 	int ret;
-
-	/* Check whether MSIOF is used as I2S mode or SPI mode by checking "port" node */
-	port = of_graph_get_next_port(pdev->dev.of_node, NULL);
-	if (port) {
-		/* It was MSIOF-I2S */
-		of_node_put(port);
-		return -ENODEV;
-	}
 
 	chipdata = of_device_get_match_data(&pdev->dev);
 	if (chipdata) {
