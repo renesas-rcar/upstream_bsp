@@ -30,7 +30,6 @@ static struct rsnd_mod_ops adg_ops = {
 #define ADG_HZ_SIZE	2
 
 struct rsnd_adg {
-	struct clk *adg;
 	struct clk *clkin[CLKINMAX];
 	struct clk *clkout[CLKOUTMAX];
 	struct clk *null_clk;
@@ -381,13 +380,6 @@ int rsnd_adg_clk_control(struct rsnd_priv *priv, int enable)
 	struct clk *clk;
 	int ret = 0, i;
 
-	/* enable adg */
-	if (enable) {
-		ret = clk_prepare_enable(adg->adg);
-		if (ret < 0)
-			return ret;
-	}
-
 	for_each_rsnd_clkin(clk, adg, i) {
 		if (enable) {
 			ret = clk_prepare_enable(clk);
@@ -415,10 +407,6 @@ int rsnd_adg_clk_control(struct rsnd_priv *priv, int enable)
 	 */
 	if (ret < 0)
 		rsnd_adg_clk_disable(priv);
-
-	/* disable adg */
-	if (!enable)
-		clk_disable_unprepare(adg->adg);
 
 	return ret;
 }
@@ -476,16 +464,6 @@ static int rsnd_adg_get_clkin(struct rsnd_priv *priv)
 		clkin_size = ARRAY_SIZE(clkin_name_gen4);
 	}
 
-	/*
-	 * get adg
-	 * No "adg" is not error
-	 */
-	clk = devm_clk_get(dev, "adg");
-	if (IS_ERR_OR_NULL(clk))
-		clk = rsnd_adg_null_clk_get(priv);
-	adg->adg = clk;
-
-	/* get clkin */
 	for (i = 0; i < clkin_size; i++) {
 		clk = devm_clk_get(dev, clkin_name[i]);
 
