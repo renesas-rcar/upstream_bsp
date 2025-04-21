@@ -377,8 +377,15 @@ int rsnd_adg_ssi_clk_try_start(struct rsnd_mod *ssi_mod, unsigned int rate)
 int rsnd_adg_clk_control(struct rsnd_priv *priv, int enable)
 {
 	struct rsnd_adg *adg = rsnd_priv_to_adg(priv);
+	struct rsnd_mod *adg_mod = rsnd_mod_get(adg);
 	struct clk *clk;
 	int ret = 0, i;
+
+	if (enable) {
+		rsnd_mod_bset(adg_mod, BRGCKR, 0x80770000, adg->ckr);
+		rsnd_mod_write(adg_mod, BRRA,  adg->brga);
+		rsnd_mod_write(adg_mod, BRRB,  adg->brgb);
+	}
 
 	for_each_rsnd_clkin(clk, adg, i) {
 		if (enable) {
@@ -497,14 +504,13 @@ static void rsnd_adg_unregister_clkout(struct rsnd_priv *priv)
 		clk_unregister_fixed_rate(clk);
 }
 
-static int rsnd_adg_init_clkout(struct rsnd_priv *priv)
+static int rsnd_adg_get_clkout(struct rsnd_priv *priv)
 {
 	struct rsnd_adg *adg = priv->adg;
 	struct clk *clk;
 	struct device *dev = rsnd_priv_to_dev(priv);
 	struct device_node *np = dev->of_node;
 	struct property *prop;
-	struct rsnd_mod *adg_mod = rsnd_mod_get(adg);
 	u32 ckr, brgx, brga, brgb;
 	u32 req_rate[ADG_HZ_SIZE] = {};
 	uint32_t count = 0;
@@ -531,7 +537,7 @@ static int rsnd_adg_init_clkout(struct rsnd_priv *priv)
 	 */
 	prop = of_find_property(np, "clock-frequency", NULL);
 	if (!prop)
-		goto rsnd_adg_init_clkout_end;
+		goto rsnd_adg_get_clkout_end;
 
 	req_size = prop->length / sizeof(u32);
 	if (req_size > ADG_HZ_SIZE) {
@@ -627,7 +633,7 @@ static int rsnd_adg_init_clkout(struct rsnd_priv *priv)
 
 	if (!(adg->brg_rate[ADG_HZ_48]  && req_Hz[ADG_HZ_48]) &&
 	    !(adg->brg_rate[ADG_HZ_441] && req_Hz[ADG_HZ_441]))
-		goto rsnd_adg_init_clkout_end;
+		goto rsnd_adg_get_clkout_end;
 
 	if (approximate)
 		dev_info(dev, "It uses CLK_I as approximate rate");
@@ -676,20 +682,10 @@ static int rsnd_adg_init_clkout(struct rsnd_priv *priv)
 				    &adg->onecell);
 	}
 
-rsnd_adg_init_clkout_end:
+rsnd_adg_get_clkout_end:
 	adg->ckr = ckr;
 	adg->brga = brga;
 	adg->brgb = brgb;
-
-	/*
-	 * setup default clkout
-	 */
-	if (0 == (req_rate[0] % 8000))
-		ckr = 0x80000000; /* use BRGB output */
-
-	rsnd_mod_bset(adg_mod, BRGCKR, 0x80770000, adg->ckr | ckr);
-	rsnd_mod_write(adg_mod, BRRA,  adg->brga);
-	rsnd_mod_write(adg_mod, BRRB,  adg->brgb);
 
 	return 0;
 
@@ -768,7 +764,7 @@ int rsnd_adg_probe(struct rsnd_priv *priv)
 	if (ret)
 		return ret;
 
-	ret = rsnd_adg_init_clkout(priv);
+	ret = rsnd_adg_get_clkout(priv);
 	if (ret)
 		return ret;
 
