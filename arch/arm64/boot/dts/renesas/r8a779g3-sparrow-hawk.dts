@@ -4,29 +4,6 @@
  *
  * Copyright (C) 2025 Marek Vasut <marek.vasut+renesas@mailbox.org>
  */
-/*
- * DA7212 Codec settings
- *
- * for Playback
- *	> amixer set "Headphone" 40%
- *	> amixer set "Headphone" on
- *	> amixer set "Mixout Left DAC Left"  on
- *	> amixer set "Mixout Right DAC Right" on
- *
- * for Capture (Aux/Mic)
- *	> amixer set "Aux" on
- *	> amixer set "Aux" 80%
- *	> amixer set "Mixin PGA" on
- *	> amixer set "Mixin PGA" 50%
- *	> amixer set "ADC" on
- *	> amixer set "ADC" 80%
- *	> amixer set "Mixin Left Aux Left" on
- *	> amixer set "Mixin Right Aux Right" on
- *	> amixer set "Mic 1" on
- *	> amixer set "Mic 1" 80%
- *	> amixer set "Mixin Left Mic 1" on
- *	> amixer set "Mixin Right Mic 1" on
- */
 
 /dts-v1/;
 #include <dt-bindings/gpio/gpio.h>
@@ -172,12 +149,6 @@
 		gpios = <&gpio8 13 GPIO_ACTIVE_HIGH>;
 		gpios-states = <1>;
 		states = <3300000 0>, <1800000 1>;
-	};
-
-	/* Page 30 / Audio_Codec */
-	sound_card: sound {
-		compatible = "audio-graph-card2";
-		links = <&msiof1_snd>;
 	};
 };
 
@@ -370,37 +341,6 @@
 			reg = <1>;
 			#address-cells = <1>;
 			#size-cells = <0>;
-
-			/* Page 30 / Audio_Codec */
-			codec@1a {
-				compatible = "dlg,da7212";
-
-				#sound-dai-cells = <0>;
-				reg = <0x1a>;
-
-				clocks = <&rcar_sound>;
-				clock-names = "mclk";
-
-//				dlg,micbias1-lvl = <2500>; // maybe not need
-//				dlg,micbias2-lvl = <2500>; // maybe not need
-				dlg,micbias1-lvl = <3000>; // maybe not need
-				dlg,micbias2-lvl = <3000>; // maybe not need
-//				dlg,dmic-data-sel = "lrise_rfall";
-//				dlg,dmic-samplephase = "between_clkedge";
-				dlg,dmic-clkrate = <3000000>; // maybe not need
-
-				VDDA-supply   = <&reg_1p8v>;
-				VDDMIC-supply = <&reg_3p3v>;
-				VDDIO-supply  = <&reg_3p3v>;
-
-				port {
-					da7212_endpoint: endpoint {
-						bitclock-master;
-						frame-master;
-						remote-endpoint = <&msiof1_snd_endpoint>;
-					};
-				};
-			};
 		};
 
 		i2c0_mux2: i2c@2 {
@@ -662,52 +602,6 @@
 		groups = "mmc_data4", "mmc_ctrl";
 		function = "mmc";
 		power-source = <1800>;
-	};
-
-	/* Page 30 / Audio_Codec */
-	msiof1_pins: sound {
-		groups = "msiof1_clk", "msiof1_sync", "msiof1_txd", "msiof1_rxd";
-		function = "msiof1";
-	};
-
-	/* Page 30 / Audio_Codec */
-	sound_clk_pins: sound-clk {
-		groups = "audio_clkin", "audio_clkout";
-		function = "audio_clk";
-	};
-};
-
-&audio_clkin {
-	clock-frequency = <24576000>;
-};
-
-/* Page 30 / Audio_Codec */
-&rcar_sound {
-	pinctrl-0 = <&sound_clk_pins>;
-	pinctrl-names = "default";
-
-	/* It is used for ADG output as DA7212_MCLK */
-
-	/* audio_clkout */
-	clock-frequency = <12288000>; /* 48 kHz groups */
-
-	status = "okay";
-};
-
-&msiof1 {
-	pinctrl-0 = <&msiof1_pins>;
-	pinctrl-names = "default";
-
-	status = "okay";
-
-	/* ignore DT warning */
-	/delete-property/#address-cells;
-	/delete-property/#size-cells;
-
-	msiof1_snd: port {
-		msiof1_snd_endpoint: endpoint {
-			remote-endpoint = <&da7212_endpoint>;
-		};
 	};
 };
 
