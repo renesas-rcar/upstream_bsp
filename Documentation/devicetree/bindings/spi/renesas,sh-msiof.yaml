@@ -9,18 +9,6 @@ title: Renesas MSIOF SPI controller
 maintainers:
   - Geert Uytterhoeven <geert+renesas@glider.be>
 
-# sharing with MSIOF I2S
-# see
-# ${LINUX}/Documentation/devicetree/bindings/sound/renesas,msiof.yaml
-select:
-  properties:
-    compatible:
-      contains:
-        pattern: "^renesas,.*-msiof$"
-    port: false
-  required:
-    - compatible
-
 allOf:
   - $ref: spi-controller.yaml#
 
