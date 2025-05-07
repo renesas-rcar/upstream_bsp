@@ -1,4 +1,10 @@
-v6.1.135-2025-04-11
+v6.1.136-2025-05-07
+
+	* Merge/Rebase v6.1.136
+
+	* update CVE
+
+v6.1.135-2025-05-07
 
 	* Merge/Rebase v6.1.135
 
@@ -115,7 +121,3 @@ v6.1.133-2025-04-08
 	* Rename renesas-bsp to renesas-lts
 
 		It was confusable nameing. rename it
-
-* v6.1.126-2025-01-20
-
-	* Merge/Rebase v6.1.126
