@@ -1,3 +1,9 @@
+v6.12.25-2025-05-07
+
+	* Merge/Rebase v6.12.25
+
+	* update CVE
+
 v6.12.24-2025-04-21
 
 	* Merge/Rebase v6.12.24
@@ -190,11 +196,5 @@ v6.12.17-2025-03-03
 v6.12.16-2025-02-25
 
 	* Merge/Rebase v6.12.16
-
-	* update CVE
-
-v6.12.15-2025-02-19
-
-	* Merge/Rebase v6.12.15
 
 	* update CVE
