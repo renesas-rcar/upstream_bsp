@@ -1,3 +1,16 @@
+Local     / arm64: defconfig: Add Renesas MSIOF sound support
+Local     / arm64: dts: renesas: sparrow-hawk: Add MSIOF Sound support
+Local     / ASoC: renesas: add MSIOF sound support
+Local     / ASoC: renesas: rsnd: enable to use "adg" clock
+Local     / ASoC: renesas: rsnd: care BRGA/BRGB select in rsnd_adg_clk_enable()
+Local     / ASoC: renesas: rsnd: allow to use ADG as standalone
+Local     / ASoC: rsnd: use snd_pcm_direction_name()
+Local     / spi: sh-msiof: ignore driver probing if it was MSIOF Sound
+Local     / spi: sh-msiof: use dev in sh_msiof_spi_probe()
+Local     / dt-bindings: renesas,sh-msiof: Add MSIOF I2S Sound support
+Local     / arm64: dts: renesas: r8a779g3: Add Retronix R-Car V4H Sparrow Hawk board support
+Local     / dt-bindings: soc: renesas: Document Retronix R-Car V4H Sparrow Hawk board support
+Local     / dt-bindings: vendor-prefixes: Add Retronix Technology Inc.
 v6.14     / ASoC: audio-graph-card2: Use extra format on each DAI
 v6.14     / ASoC: soc-core: Enable to use extra format on each DAI
 v6.14     / ASoC: audio-graph-card2: use of_graph_get_port_by_id() at graph_get_next_multi_ep()
