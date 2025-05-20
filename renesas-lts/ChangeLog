@@ -1,3 +1,9 @@
+v6.12.29-2025-05-20
+
+	* Merge/Rebase v6.12.29
+
+	* update CVE
+
 v6.12.28-2025-05-12
 
 	* Merge/Rebase v6.12.28
@@ -218,28 +224,3 @@ v6.12.20-2025-03-24
 
 		commit 1dba0a37644ed3022558165bbb5cb9bda540eaf7
 		("can: rcar_canfd: Fix page entries in the AFL list")
-
-v6.12.19-2025-03-21
-
-	* Below patches were backported
-
-		commit b0cf8110843ad2ee4c9665e1f590069108fe1881
-		("arm64: dts: renesas: white-hawk-single: Add R-Car Sound support")
-
-		commit b72dc7b9e388e1a5997c1ab3239947ff23fe3f72
-		("arm64: dts: renesas: white-hawk-ard-audio: Drop SoC part")
-
-		commit bf6b3ccda3e6797c6b7b774726fe29a1c4602e95
-		("arm64: dts: renesas: r8a779g3: Add White Hawk Single support")
-
-		commit d43c077cb88d800d0c2a372d70d5af75c6a16356
-		("arm64: dts: renesas: Factor out White Hawk Single board support")
-
-		commit f7cd4b412020e71ab4c248c908558c67248a8392
-		("arm64: dts: renesas: Add R8A779G3 SoC support")
-
-v6.12.19-2025-03-14
-
-	* Merge/Rebase v6.12.19
-
-	* update CVE
