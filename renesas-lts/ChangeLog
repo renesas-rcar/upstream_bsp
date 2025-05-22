@@ -1,3 +1,9 @@
+v6.6.92-2025-05-23
+
+	* Merge/Rebase v6.6.92
+
+	* update CVE
+
 v6.6.91-2025-05-20
 
 	* Merge/Rebase v6.6.91
@@ -134,9 +140,3 @@ v6.6.85-2025-03-31
 
 		commit a09c3e105a208580b9d9c868bac630c9263ff564
 		("arm64: dts: renesas: Apply overlays to base dtbs")
-
-* v6.6.82-2025-03-14
-
-	* Merge/Rebase v6.6.82
-
-	* update CVE
