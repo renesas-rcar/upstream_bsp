@@ -1,3 +1,9 @@
+v6.12.30-2025-05-23
+
+	* Merge/Rebase v6.12.30
+
+	* update CVE
+
 v6.12.29-2025-05-20
 
 	* Merge/Rebase v6.12.29
@@ -213,14 +219,3 @@ v6.12.21-2025-03-31
 	* Merge/Rebase v6.12.21
 
 	* update list
-
-v6.12.20-2025-03-24
-
-	* Merge/Rebase v6.12.20
-
-	* update CVE
-
-	* Below patches were backported
-
-		commit 1dba0a37644ed3022558165bbb5cb9bda540eaf7
-		("can: rcar_canfd: Fix page entries in the AFL list")
