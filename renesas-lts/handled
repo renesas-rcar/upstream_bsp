@@ -1,3 +1,5 @@
+# upstream: 5b91dc7e3e371e7263b95c0d31151c645d6652a6 spi: sh-msiof: Increase TX FIFO size for R-Car V4H/V4M
+f7f0636f4392 spi: spi-sh-msiof: Add generic structural data for MSIOF on R-Car Gen4.
 # upstream: d04079e0cadbfd95d1c108c8e60d71f15ff1a1f3 arm64: dts: renesas: gray-hawk-single: Describe AVB1 and AVB2
 47e1a870dd58 arm64: dts: renesas: Add node to support AVB1/2
 # upstream: 1dba0a37644ed3022558165bbb5cb9bda540eaf7 can: rcar_canfd: Fix page entries in the AFL list
