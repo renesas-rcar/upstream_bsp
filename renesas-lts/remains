@@ -53,5 +53,5 @@ e1d847bfd3ca dmaengine: rcar-dmac: Add repeat mode support
 #
 # CAN patches (Geert)
 #
-# to be investigated
+# lore: cover.1748863848.git.geert+renesas@glider.be
 905813c180f4 can: rcar_canfd: Add secondary sample point
