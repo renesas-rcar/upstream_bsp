@@ -1,5 +1,6 @@
 # upstream: 1dba0a37644ed3022558165bbb5cb9bda540eaf7 can: rcar_canfd: Fix page entries in the AFL list
 e9ba9ac6fe77 can: rcar_canfd: Configure receive rules
+e3e5bccc9244 can: rcar_canfd: rcar_canfd_configure_afl_rules(): Fix Rx FIFO entry setting
 # upstream: b0cf8110843ad2ee4c9665e1f590069108fe1881 arm64: dts: renesas: white-hawk-single: Add R-Car Sound support
 099f46961bdb3 arm64: dts: renesas: r8a779g3: Add White Hawk V4H-7 sound support
 # upstream: bf6b3ccda3e6797c6b7b774726fe29a1c4602e95 arm64: dts: renesas: r8a779g3: Add White Hawk Single support
