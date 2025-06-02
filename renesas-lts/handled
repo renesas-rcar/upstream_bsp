@@ -1,3 +1,7 @@
+# upstream: b84bd2230a58e5c208ac3ebe75047179e7441866 arm64: dts: renesas: white-hawk-cpu: Factor out common parts
+96874b1963ed8 arm64: dts: renesas: white-hawk-cpu: Factor out common parts
+# upstream: 874dca5d211559e6124d422809687381e2534cfe arm64: dts: renesas: white-hawk: Factor out common parts
+324ac3b29faa0 arm64: dts: renesas: white-hawk: Factor out common parts
 # upstream: 5b91dc7e3e371e7263b95c0d31151c645d6652a6 spi: sh-msiof: Increase TX FIFO size for R-Car V4H/V4M
 f7f0636f4392 spi: spi-sh-msiof: Add generic structural data for MSIOF on R-Car Gen4.
 # upstream: d04079e0cadbfd95d1c108c8e60d71f15ff1a1f3 arm64: dts: renesas: gray-hawk-single: Describe AVB1 and AVB2

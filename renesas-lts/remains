@@ -6,8 +6,6 @@
 371850fbc4649 arm64: dts: renesas: gray-hawk-cpu: Factor out common parts
 b4264f977baa8 arm64: dts: renesas: gray-hawk: Factor out common parts
 3e71992bbc55f arm64: dts: renesas: white-hawk-sound: Factor out common parts
-96874b1963ed8 arm64: dts: renesas: white-hawk-cpu: Factor out common parts
-324ac3b29faa0 arm64: dts: renesas: white-hawk: Factor out common parts
 #
 # Media
 #
