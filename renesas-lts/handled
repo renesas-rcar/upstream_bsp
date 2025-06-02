@@ -1,3 +1,9 @@
+# upstream: dfc29a10c43d3f2aec853c9bf8b0d9e8f0251a2f mmc: core: Add support for graceful host removal for SD
+# upstream: 5b793522904e315c7bd3c4c9db96b1ab98cd9714 mmc: core: Add support for graceful host removal for eMMC
+# upstream: 900ef5355861aa33d712c7e7d8fcf923e762b4cd mmc: core: Convert into an enum for the poweroff-type for eMMC
+# upstream: fa34c940e830e7af37b57f5fcdb17e2fc03dbf7f mmc: core: Further avoid re-storing power to the eMMC before a shutdown
+# upstream: 3953e7e8c1eaab9cd96ca45d420fb4561111294f mmc: core: Convert mmc_can_poweroff_notify() into a bool
+bc75d8c5907a mmc: core: Issue power off notification in mmc_remove()
 # upstream: b72dc7b9e388e1a5997c1ab3239947ff23fe3f72 arm64: dts: renesas: white-hawk-ard-audio: Drop SoC part
 3e71992bbc55f arm64: dts: renesas: white-hawk-sound: Factor out common parts
 # upstream: b84bd2230a58e5c208ac3ebe75047179e7441866 arm64: dts: renesas: white-hawk-cpu: Factor out common parts

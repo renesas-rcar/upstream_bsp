@@ -15,13 +15,6 @@
 # MMC (ported as is to 6.1 but need upstream solutions)
 #
 d10133565b53 mmc: core: mmc_ops: Enable stop command
-# to be backported once 6.16-rc1 is out:
-#   next: e33e24eff20f0f8186056cbf58cb131d67f77ff4 # mmc: core: Convert mmc_can_poweroff_notify() into a bool
-#   next: 578f04210ffc5af52460fa38c9832bf5fdf277aa # mmc: core: Further avoid re-storing power to the eMMC before a shutdown
-#   next: 01ba57f9a03dbc042bdd80e7a1874c0d9f8587b5 # mmc: core: Convert into an enum for the poweroff-type for eMMC
-#   next: a21936250e1d24345cd81a2cf86827145719cf9c # mmc: core: Add support for graceful host removal for eMMC
-#   next: e4f6aa7c7f46ef8cdd87aec41f95c5be416dc0a1 # mmc: core: Add support for graceful host removal for SD
-bc75d8c5907a mmc: core: Issue power off notification in mmc_remove()
 #
 # Network
 #
