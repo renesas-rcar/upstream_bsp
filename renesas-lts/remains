@@ -3,8 +3,6 @@
 #
 124986c8255c9 arm64: dts: renesas: r8a779h2: Add Gray Hawk V4M-7 support
 9b6ca899736a0 arm64: dts: renesas: Add Renesas R8A779H2 SoC support
-371850fbc4649 arm64: dts: renesas: gray-hawk-cpu: Factor out common parts
-b4264f977baa8 arm64: dts: renesas: gray-hawk: Factor out common parts
 #
 # Media
 #

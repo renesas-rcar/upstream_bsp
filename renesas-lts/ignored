@@ -183,6 +183,10 @@ Control Domain
 		debcaf2c0296 thermal: rcar_gen3_thermal: Add support ECM
 		903cb8238415 arm64: dts: r8a779f0: Support Thermal interrupt mode
 
+	Upstream does not support Gray Hawk, only Gray Hawk Single
+		371850fbc4649 arm64: dts: renesas: gray-hawk-cpu: Factor out common parts
+		b4264f977baa8 arm64: dts: renesas: gray-hawk: Factor out common parts
+
 Defconfig
 	Modular as per upstream policy, CONFIG_CPU_FREQ_STAT_DETAILS was removed in v4.11
 		7ed8cce11f67 arm64: defconfig: Enable cpufreq configs for rcar
