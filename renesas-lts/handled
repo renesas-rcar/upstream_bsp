@@ -1,3 +1,5 @@
+# upstream: b72dc7b9e388e1a5997c1ab3239947ff23fe3f72 arm64: dts: renesas: white-hawk-ard-audio: Drop SoC part
+3e71992bbc55f arm64: dts: renesas: white-hawk-sound: Factor out common parts
 # upstream: b84bd2230a58e5c208ac3ebe75047179e7441866 arm64: dts: renesas: white-hawk-cpu: Factor out common parts
 96874b1963ed8 arm64: dts: renesas: white-hawk-cpu: Factor out common parts
 # upstream: 874dca5d211559e6124d422809687381e2534cfe arm64: dts: renesas: white-hawk: Factor out common parts
