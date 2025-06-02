@@ -1,3 +1,5 @@
+# upstream: d69362f55fba92eb4cac10fe8da618de52b49bfc drm/bridge: ti-sn65dsi86: Check bridge connection failure
+8fb9f82e224b drm: bridge: ti-sn65dsi86: Add checking to detect bridge device connection failure
 # upstream: dfc29a10c43d3f2aec853c9bf8b0d9e8f0251a2f mmc: core: Add support for graceful host removal for SD
 # upstream: 5b793522904e315c7bd3c4c9db96b1ab98cd9714 mmc: core: Add support for graceful host removal for eMMC
 # upstream: 900ef5355861aa33d712c7e7d8fcf923e762b4cd mmc: core: Convert into an enum for the poweroff-type for eMMC

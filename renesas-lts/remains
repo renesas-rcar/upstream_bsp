@@ -4,14 +4,6 @@
 124986c8255c9 arm64: dts: renesas: r8a779h2: Add Gray Hawk V4M-7 support
 9b6ca899736a0 arm64: dts: renesas: Add Renesas R8A779H2 SoC support
 #
-# Media
-#
-# to be backported once 6.16-rc1 is out:
-#   next: d69362f55fba92eb4cac10fe8da618de52b49bfc # drm/bridge: ti-sn65dsi86: Check bridge connection failure
-# might depend on:
-#   next: 1d1f7b15cb9c11974cebfd39da51dc69b8cb31ff # drm/bridge: ti-sn65dsi86: make use of debugfs_init callback
-8fb9f82e224b drm: bridge: ti-sn65dsi86: Add checking to detect bridge device connection failure
-#
 # MMC (ported as is to 6.1 but need upstream solutions)
 #
 d10133565b53 mmc: core: mmc_ops: Enable stop command
