@@ -1,3 +1,184 @@
+v6.12.32-2025-06-05
+
+	* Merge/Rebase v6.12.32
+
+	* update CVE
+
+	* update list
+
+	* Below patches were backported
+
+		commit f55f7da62166dcdd34a0661b94a43464ff7c626a
+		("mmc: rename mmc_host_uhs() to mmc_host_can_uhs()")
+
+		commit dfc29a10c43d3f2aec853c9bf8b0d9e8f0251a2f
+		("mmc: core: Add support for graceful host removal for SD")
+
+		commit 9510b38dc0ba358c93cbf5ee7c28820afb85937b
+		("mmc: Add quirk to disable DDR50 tuning")
+
+		commit 899404e1503461adde3890828f7ed18a3032ec59
+		("mmc: core: Enable SDUC")
+
+		commit a7861651943dac0006f55e0b6db28ed8e9dbe411
+		("mmc: core: Prevent HSQ from enabling for SDUC")
+
+		commit 9e654f2bf309f7ddb9ff2fb3f9b0297ae194d2cb
+		("mmc: rename mmc_boot_partition_access() to mmc_host_can_access_boot()")
+
+		commit 03b31a0638a1cb1c580de4d5054ec9f5caffdffc
+		("mmc: rename mmc_host_cmd23() to mmc_host_can_cmd23()")
+
+		commit e3df5ae4761eb8373a72349f3cdbe7838dc5c538
+		("mmc: rename mmc_can_sleep() to mmc_card_can_sleep()")
+
+		commit 07dd2b3204f5fe3010dd467c0a192d7efabc1abc
+		("mmc: rename mmc_can_reset() to mmc_card_can_reset()")
+
+		commit d872c26741b6448abc948895056157c17251a944
+		("mmc: rename mmc_can_poweroff_notify() to mmc_card_can_poweroff_notify()")
+
+		commit ceb5d3acb0c32beb3a8fbaf72f21e9eb1b58bd63
+		("mmc: rename mmc_can_ext_csd() to mmc_card_can_ext_csd()")
+
+		commit 76d62cde684ba53dcbc6923b2ec90a024ee253f9
+		("mmc: rename mmc_can_discard() to mmc_card_can_discard()")
+
+		commit 5b793522904e315c7bd3c4c9db96b1ab98cd9714
+		("mmc: core: Add support for graceful host removal for eMMC")
+
+		commit 900ef5355861aa33d712c7e7d8fcf923e762b4cd
+		("mmc: core: Convert into an enum for the poweroff-type for eMMC")
+
+		commit fa34c940e830e7af37b57f5fcdb17e2fc03dbf7f
+		("mmc: core: Further avoid re-storing power to the eMMC before a shutdown")
+
+		commit 3953e7e8c1eaab9cd96ca45d420fb4561111294f
+		("mmc: core: Convert mmc_can_poweroff_notify() into a bool")
+
+		commit 3b791214c8bc1bc0eb3153a195c342b8a98f767b
+		("mmc: core: Trim trailing whitespace from card product names")
+
+		commit ec23a899d96f9ee3389abe6c516d09cae2fde5e3
+		("spi: sh-msiof: Move register definitions to <linux/spi/sh_msiof.h>")
+
+		commit 8f836868d848a9b84c38ae1f8e7366e01927c024
+		("spi: sh-msiof: Document frame start sync pulse mode")
+
+		commit acb47aa9b1e2f47121cf2233fcaf998151ab5410
+		("spi: sh-msiof: Double maximum DMA transfer size using two groups")
+
+		commit 39d0856f4102b6b61fdc650f90a1d9231e2bab17
+		("spi: sh-msiof: Simplify BRG's Division Ratio")
+
+		commit 5b91dc7e3e371e7263b95c0d31151c645d6652a6
+		("spi: sh-msiof: Increase TX FIFO size for R-Car V4H/V4M")
+
+		commit f669c2827dd691b10fcf4e4c5546869a51d0a46e
+		("spi: sh-msiof: Correct RX FIFO size for R-Car Gen3")
+
+		commit 1ab2c8c45f5c5df6707cc848686e674f4ec5c3d9
+		("spi: sh-msiof: Correct RX FIFO size for R-Car Gen2")
+
+		commit 955f7ce6680564963765e5fc1c3e71027a39a806
+		("spi: sh-msiof: Add core support for dual-group transfers")
+
+		commit acedbff0f0de1c116a0f8d943c4cf005f61f6143
+		("spi: sh-msiof: Correct SIMDR2_GRPMASK")
+
+		commit 8f3903b382f73eb5c36d342dea838d991e4bbe08
+		("spi: sh-msiof: SIFCTR bitfield conversion")
+
+		commit bd8d6658e7084ff9e78da9623633e79c9d31ad68
+		("spi: sh-msiof: SICTR bitfield conversion")
+
+		commit c2cc4b72fc14c84fdb1bc49ec98af252ed64fbf3
+		("spi: sh-msiof: SITSCR/SIRSCR bitfield conversion")
+
+		commit 386cc5207ba2b68a4672cb68810c44412531e74e
+		("spi: sh-msiof: SITMDR2 and SIRMDR2 bitfield conversion")
+
+		commit 6bae252a9452ca8496670230a7821c34450763a2
+		("spi: sh-msiof: SITMDR1/SIRMDR1 bitfield conversion")
+
+		commit 74cb19c943ddb46f3d06323c3d0469f14282c8ca
+		("spi: sh-msiof: Make words/fs unsigned in FIFO helpers")
+
+		commit b4eec5cdf112e3a4e286fb79fe507b09e2fca66f
+		("spi: sh-msiof: Make words/bits unsigned in sh_msiof_spi_txrx_once()")
+
+		commit 3dd5ed19a2e8283f9ead5f2fd09b267a337ab86d
+		("spi: sh-msiof: Use bool for boolean flags")
+
+		commit 74df74ee83acfea4e9a6b47386c7907379c9295f
+		("spi: sh-msiof: Complete using dev in sh_msiof_spi_probe()")
+
+		commit 0941d5166629cb766000530945e54b4e49680c68
+		("spi: sh-msiof: Fix maximum DMA transfer size")
+
+		commit ee44d3fc9d8b882cbc98acf2d3c773aba971aa67
+		("spi: sh-msiof: Remove unneeded compatible values")
+
+		commit 0e1c7d0591ac4054c67529e200a9edfaf5344f4a
+		("spi: sh-msiof: Drop comma after OF match table sentinel")
+
+		commit d33e65dc3c4c9963b95b182f526480aaab9ce4a9
+		("arm64: dts: renesas: gray-hawk-single: Restore sort order")
+
+		commit d04079e0cadbfd95d1c108c8e60d71f15ff1a1f3
+		("arm64: dts: renesas: gray-hawk-single: Describe AVB1 and AVB2")
+
+		commit 51786c8b47edfce3cee6eef9c8a62a035f9fbead
+		("arm64: dts: renesas: r8a779h0: Remove #address- and #size-cells from AVB[0-2]")
+
+		commit be53aa052008538d67d9ad23f6f8160df390e1d6
+		("can: rcar_canfd: Add RZ/G3E support")
+
+		commit 0853b7e479a69d1e335665ceec9898c5b9ecc810
+		("can: rcar_canfd: Enhance multi_channel_irqs handling")
+
+		commit e5258b337de26c97cf210858407e0fc881bc0e3d
+		("can: rcar_canfd: Add external_clk variable to struct rcar_canfd_hw_info")
+
+		commit c5670c23d67dd81e71262bb7c5942502cd9df62e
+		("can: rcar_canfd: Add sh variable to struct rcar_canfd_hw_info")
+
+		commit 5026d2acaefab81857390c00c771ee6a2fa65461
+		("can: rcar_canfd: Add struct rcanfd_regs variable to struct rcar_canfd_hw_info")
+
+		commit 836cc711fc18747fc936ac62abd61a64465f00cc
+		("can: rcar_canfd: Add shared_can_regs variable to struct rcar_canfd_hw_info")
+
+		commit c10e5510101112932fc2955a5ff97ecf8448a9d1
+		("can: rcar_canfd: Add ch_interface_mode variable to struct rcar_canfd_hw_info")
+
+		commit b5a9f2ec427cbdfe915c377fdd61812636b2cdc2
+		("can: rcar_canfd: Add {nom,data}_bittiming variables to struct rcar_canfd_hw_info")
+
+		commit 04d7a3a4660fb94b1398027a9089af95014115f1
+		("can: rcar_canfd: Add max_cftml variable to struct rcar_canfd_hw_info")
+
+		commit 2d6cb8ff94166f3965b3fc3637faecf295a8c708
+		("can: rcar_canfd: Add max_aflpn variable to struct rcar_canfd_hw_info")
+
+		commit e9ffa12e02e193395e594df8977157121b107c21
+		("can: rcar_canfd: Add rnc_field_width variable to struct rcar_canfd_hw_info")
+
+		commit a2427e44942bb772cf4e416df45b569a0e35b1cb
+		("can: rcar_canfd: Update RCANFD_GAFLCFG macro")
+
+		commit 6b9f8b53a1f3ad8e7880e3ad0e08074f5d7fd404
+		("can: rcar_canfd: Add rcar_canfd_setrnc()")
+
+		commit c9e17c91f1656f90b06e5cd2f39dfaab08de9611
+		("can: rcar_canfd: Drop the mask operation in RCANFD_GAFLCFG_SETRNC macro")
+
+		commit b75fcf2af2dbbc5f913cf1b9194ed01ce9c068b6
+		("can: rcar_canfd: Update RCANFD_GERFL_ERR macro")
+
+		commit 05e7f5a90c306dd1b94d3f15ab084755c03f1202
+		("can: rcar_canfd: Drop RCANFD_GAFLCFG_GETRNC macro")
+
 v6.12.31-2025-05-30
 
 	* Merge/Rebase v6.12.31
@@ -211,11 +392,3 @@ v6.12.23-2025-04-11
 	* Merge/Rebase v6.12.23
 
 	* update CVE
-
-v6.12.22-2025-04-08
-
-	* Merge/Rebase v6.12.22
-
-	* update CVE
-
-	* update list

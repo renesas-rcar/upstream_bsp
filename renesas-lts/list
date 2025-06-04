@@ -1,3 +1,60 @@
+Local     / mmc: rename mmc_host_uhs() to mmc_host_can_uhs()
+Local     / mmc: core: Add support for graceful host removal for SD
+Local     / mmc: Add quirk to disable DDR50 tuning
+v6.13     / mmc: core: Enable SDUC
+v6.13     / mmc: core: Prevent HSQ from enabling for SDUC
+Local     / mmc: rename mmc_boot_partition_access() to mmc_host_can_access_boot()
+Local     / mmc: rename mmc_host_cmd23() to mmc_host_can_cmd23()
+Local     / mmc: rename mmc_can_sleep() to mmc_card_can_sleep()
+Local     / mmc: rename mmc_can_reset() to mmc_card_can_reset()
+Local     / mmc: rename mmc_can_poweroff_notify() to mmc_card_can_poweroff_notify()
+Local     / mmc: rename mmc_can_ext_csd() to mmc_card_can_ext_csd()
+Local     / mmc: rename mmc_can_discard() to mmc_card_can_discard()
+Local     / mmc: core: Add support for graceful host removal for eMMC
+Local     / mmc: core: Convert into an enum for the poweroff-type for eMMC
+Local     / mmc: core: Further avoid re-storing power to the eMMC before a shutdown
+Local     / mmc: core: Convert mmc_can_poweroff_notify() into a bool
+v6.15     / mmc: core: Trim trailing whitespace from card product names
+Local     / spi: sh-msiof: Move register definitions to <linux/spi/sh_msiof.h>
+Local     / spi: sh-msiof: Document frame start sync pulse mode
+Local     / spi: sh-msiof: Double maximum DMA transfer size using two groups
+Local     / spi: sh-msiof: Simplify BRG's Division Ratio
+Local     / spi: sh-msiof: Increase TX FIFO size for R-Car V4H/V4M
+Local     / spi: sh-msiof: Correct RX FIFO size for R-Car Gen3
+Local     / spi: sh-msiof: Correct RX FIFO size for R-Car Gen2
+Local     / spi: sh-msiof: Add core support for dual-group transfers
+Local     / spi: sh-msiof: Correct SIMDR2_GRPMASK
+Local     / spi: sh-msiof: SIFCTR bitfield conversion
+Local     / spi: sh-msiof: SICTR bitfield conversion
+Local     / spi: sh-msiof: SITSCR/SIRSCR bitfield conversion
+Local     / spi: sh-msiof: SITMDR2 and SIRMDR2 bitfield conversion
+Local     / spi: sh-msiof: SITMDR1/SIRMDR1 bitfield conversion
+Local     / spi: sh-msiof: Make words/fs unsigned in FIFO helpers
+Local     / spi: sh-msiof: Make words/bits unsigned in sh_msiof_spi_txrx_once()
+Local     / spi: sh-msiof: Use bool for boolean flags
+Local     / spi: sh-msiof: Complete using dev in sh_msiof_spi_probe()
+Local     / spi: sh-msiof: Fix maximum DMA transfer size
+Local     / spi: sh-msiof: Remove unneeded compatible values
+Local     / spi: sh-msiof: Drop comma after OF match table sentinel
+v6.15     / arm64: dts: renesas: gray-hawk-single: Restore sort order
+v6.15     / arm64: dts: renesas: gray-hawk-single: Describe AVB1 and AVB2
+v6.15     / arm64: dts: renesas: r8a779h0: Remove #address- and #size-cells from AVB[0-2]
+Local     / can: rcar_canfd: Add RZ/G3E support
+Local     / can: rcar_canfd: Enhance multi_channel_irqs handling
+Local     / can: rcar_canfd: Add external_clk variable to struct rcar_canfd_hw_info
+Local     / can: rcar_canfd: Add sh variable to struct rcar_canfd_hw_info
+Local     / can: rcar_canfd: Add struct rcanfd_regs variable to struct rcar_canfd_hw_info
+Local     / can: rcar_canfd: Add shared_can_regs variable to struct rcar_canfd_hw_info
+Local     / can: rcar_canfd: Add ch_interface_mode variable to struct rcar_canfd_hw_info
+Local     / can: rcar_canfd: Add {nom,data}_bittiming variables to struct rcar_canfd_hw_info
+Local     / can: rcar_canfd: Add max_cftml variable to struct rcar_canfd_hw_info
+Local     / can: rcar_canfd: Add max_aflpn variable to struct rcar_canfd_hw_info
+Local     / can: rcar_canfd: Add rnc_field_width variable to struct rcar_canfd_hw_info
+Local     / can: rcar_canfd: Update RCANFD_GAFLCFG macro
+Local     / can: rcar_canfd: Add rcar_canfd_setrnc()
+Local     / can: rcar_canfd: Drop the mask operation in RCANFD_GAFLCFG_SETRNC macro
+Local     / can: rcar_canfd: Update RCANFD_GERFL_ERR macro
+Local     / can: rcar_canfd: Drop RCANFD_GAFLCFG_GETRNC macro
 Local     / arm64: defconfig: Add Renesas MSIOF sound support
 Local     / arm64: dts: renesas: sparrow-hawk: Add MSIOF Sound support
 Local     / ASoC: renesas: add MSIOF sound support
@@ -26,15 +83,15 @@ v6.14     / ASoC: simple-card-utils: check port reg first on graph_get_dai_id()
 v6.14     / ASoC: simple-card-utils: use __free(device_node) for device node
 v6.13     / ASoC: simple-card-utils: care simple_util_dai for dummy DAI
 v6.13     / ASoC: test-component: Support continuous rates for test component
-Local     / dt-bindings: timer: renesas,tpu: remove obsolete binding
-Local     / dt-bindings: soc: renesas: Document MYIR Remi Pi board
-Local     / dt-bindings: soc: renesas: Document Yuridenki-Shokai Kakip board
-Local     / dt-bindings: soc: renesas: Document more Renesas RZ/V2H SoC variants
+v6.15     / dt-bindings: timer: renesas,tpu: remove obsolete binding
+v6.15     / dt-bindings: soc: renesas: Document MYIR Remi Pi board
+v6.15     / dt-bindings: soc: renesas: Document Yuridenki-Shokai Kakip board
+v6.15     / dt-bindings: soc: renesas: Document more Renesas RZ/V2H SoC variants
 v6.14     / dt-bindings: soc: renesas: Document RZ/G3E SMARC SoM and Carrier-II EVK
 v6.14     / dt-bindings: soc: renesas: Document Renesas RZ/G3E SoC variants
 v6.14     / dt-bindings: soc: renesas: Document R8A779G3 White Hawk Single
 v6.14     / dt-bindings: soc: renesas: Move R8A779G0 White Hawk up
-Local     / dt-bindings: timer: Correct indentation and style in DTS example
+v6.15     / dt-bindings: timer: Correct indentation and style in DTS example
 v6.13     / of: property: use new of_graph functions
 v6.13     / of: property: add of_graph_get_next_port_endpoint()
 v6.13     / of: property: add of_graph_get_next_port()
@@ -78,16 +135,16 @@ v6.13     / media: staging: max96712: Add support for MAX96724
 v6.13     / media: staging: max96712: Document the DEBUG_EXTRA register
 v6.13     / media: staging: max96712: Move link frequency setting to device struct
 v6.13     / media: staging: max96712: Remove device id check
-Local     / media: rcar-csi2: Convert to .{enable|disable}_streams
-Local     / media: rcar-isp: Convert to .{enable|disable}_streams
-Local     / media: rcar-isp: Convert to subdev state
-Local     / media: rcar-csi2: Use v4l2_subdev_{enable|disable}_streams()
-Local     / media: rcar-isp: Use v4l2_subdev_{enable|disable}_streams()
-Local     / media: rcar-vin: Use v4l2_subdev_{enable|disable}_streams()
-Local     / media: rcar-csi2: Use v4l2_get_link_freq()
-Local     / media: rcar-isp: Add RAW8, RAW10 and RAW12 formats
-Local     / media: rcar-csi2: Add RAW10 and RAW12 formats
-Local     / media: rcar-csi2: Move Y8 entry to a better place
+v6.15     / media: rcar-csi2: Convert to .{enable|disable}_streams
+v6.15     / media: rcar-isp: Convert to .{enable|disable}_streams
+v6.15     / media: rcar-isp: Convert to subdev state
+v6.15     / media: rcar-csi2: Use v4l2_subdev_{enable|disable}_streams()
+v6.15     / media: rcar-isp: Use v4l2_subdev_{enable|disable}_streams()
+v6.15     / media: rcar-vin: Use v4l2_subdev_{enable|disable}_streams()
+v6.15     / media: rcar-csi2: Use v4l2_get_link_freq()
+v6.15     / media: rcar-isp: Add RAW8, RAW10 and RAW12 formats
+v6.15     / media: rcar-csi2: Add RAW10 and RAW12 formats
+v6.15     / media: rcar-csi2: Move Y8 entry to a better place
 v6.14     / media: rcar-csi2: Update D-PHY startup on V4M
 v6.14     / media: rcar-csi2: Allow specifying C-PHY line order
 v6.13     / media: platform: drop vb2_ops_wait_prepare/finish
