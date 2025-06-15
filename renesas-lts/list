@@ -1,3 +1,11 @@
+Local     / drm/panel: ilitek-ili9881c: Add configuration for 7" Raspberry Pi 720x1280
+Local     / drm/panel: ilitek-ili9881c: Allow configuration of the number of lanes
+v6.13     / drm/panel: ilitek-ili9881c: Report subpixel order according to rotation
+v6.13     / drm/panel: ilitek-ili9881c: Explicitly set address mode, allow 180° rotation
+Local     / dt-bindings: ili9881c: Document 7" Raspberry Pi 720x1280
+Local     / regulator: rpi-panel-v2: Fix missing OF dependency
+Local     / regulator: rpi-panel-v2: Add missing GPIOLIB dependency
+Local     / regulator: rpi-panel-v2: Add regulator for 7" Raspberry Pi 720x1280
 Local     / mmc: rename mmc_host_uhs() to mmc_host_can_uhs()
 Local     / mmc: core: Add support for graceful host removal for SD
 Local     / mmc: Add quirk to disable DDR50 tuning

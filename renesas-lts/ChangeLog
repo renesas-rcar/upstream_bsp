@@ -1,3 +1,37 @@
+v6.12.33-2025-06-16
+
+	* Merge/Rebase v6.12.33
+
+	* update CVE
+
+	* update list
+
+	* Below patches were backported
+
+		commit 29a9b3a504c0d18bcc7f0547371409e9dcbc045e
+		("drm/panel: ilitek-ili9881c: Add configuration for 7" Raspberry Pi 720x1280")
+
+		commit 2f7e4a6997362a929419fc352ad8f424143ae482
+		("drm/panel: ilitek-ili9881c: Allow configuration of the number of lanes")
+
+		commit 655b92ca60a2d3fac83e8974fd786da6aea7fca2
+		("drm/panel: ilitek-ili9881c: Report subpixel order according to rotation")
+
+		commit b64e7d59ba75b1b080a65da20ffe0bae532854b5
+		("drm/panel: ilitek-ili9881c: Explicitly set address mode, allow 180° rotation")
+
+		commit 808d26afdcbf1abe5176261afbf945825652b748
+		("dt-bindings: ili9881c: Document 7" Raspberry Pi 720x1280")
+
+		commit a4eb71ff98c4792f441f108910bd829da7a04092
+		("regulator: rpi-panel-v2: Fix missing OF dependency")
+
+		commit d6fa0ca959db8efd4462d7beef4bdc5568640fd0
+		("regulator: rpi-panel-v2: Add missing GPIOLIB dependency")
+
+		commit d49305862fdc4d9ff1b1093b4ed7d8e0cb9971b4
+		("regulator: rpi-panel-v2: Add regulator for 7" Raspberry Pi 720x1280")
+
 v6.12.32-2025-06-05
 
 	* Merge/Rebase v6.12.32
@@ -386,9 +420,3 @@ v6.12.24-2025-04-21
 
 		commit 922b739445f39b31e243f517fd09630f5a406f0a
 		("media: rcar_drif.c: set lock before calling vb2_queue_init()")
-
-v6.12.23-2025-04-11
-
-	* Merge/Rebase v6.12.23
-
-	* update CVE
