@@ -1,3 +1,9 @@
+v6.6.94-2025-06-20
+
+	* Merge/Rebase v6.6.94
+
+	* update CVE
+
 v6.6.93-2025-06-05
 
 	* Merge/Rebase v6.6.93
@@ -51,23 +57,3 @@ v6.6.85-2025-03-31
 	* Merge/Rebase v6.6.85
 
 	* update list
-
-* v6.6.84-2025-03-24
-
-	* Merge/Rebase v6.6.84
-
-	* update CVE
-
-	* Below patches were backported
-
-		commit 1dba0a37644ed3022558165bbb5cb9bda540eaf7
-		("can: rcar_canfd: Fix page entries in the AFL list")
-
-		commit f9a83965d40ef162bab1e3af338523b8da69cb82
-		("can: rcar_canfd: Remove superfluous parentheses in address calculations")
-
-		commit 0c1d0a69c5e7314f3787bc4272e286d800dbfc56
-		("can: rcar_canfd: Improve printing of global operational state")
-
-		commit dd20d16dae83733d7c98c167b8d935e7b63db7c7
-		("can: rcar_canfd: Simplify clock handling")
