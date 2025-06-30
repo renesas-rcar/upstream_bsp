@@ -1,3 +1,44 @@
+v6.15     / thermal: rcar_gen3: Reuse logic to read fuses on Gen3 and Gen4
+v6.15     / thermal: rcar_gen3: Use lowercase hex constants
+v6.14     / media: i2c: imx290: Add configuration for IMX462
+v6.14     / media: i2c: imx290: Limit analogue gain according to module
+v6.13     / media: i2c: imx290: Check for availability in probe()
+v6.13     / media: i2c: imx290: Avoid communication during probe()
+v6.13     / media: i2c: imx290: Remove CHIP_ID reg definition
+Local     / arm64: dts: renesas: r8a779g0: Add ISP core function block
+v6.15     / arm64: dts: renesas: r8a779g0: Restore sort order
+v6.14     / arm64: dts: renesas: r8a779g0: Add VSPX instances
+v6.14     / arm64: dts: renesas: r8a779g0: Add FCPVX instances
+v6.13     / arm64: dts: renesas: r8a779g0: Add OTP_MEM node
+v6.15     / clk: renesas: r8a779g0: Add ISP core clocks
+v6.14     / clk: renesas: r8a779g0: Add VSPX clocks
+v6.14     / clk: renesas: r8a779g0: Add FCPVX clocks
+Local     / media: renesas: vsp1: Expose color space through the DRM API
+Local     / media: renesas: vsp1: Name nested structure in vsp1_drm
+Local     / media: renesas: vsp1: Allow setting encoding and quantization
+Local     / media: renesas: vsp1: Report colour space information to userspace
+Local     / media: renesas: vsp1: Fix media bus code setup on RWPF source pad
+Local     / media: renesas: vsp1: Fix HSV format enumeration
+Local     / media: renesas: vsp1: Make HSI and HST modules optional
+Local     / media: renesas: vsp1: Implement pixel format enumeration
+Local     / media: renesas: vsp1: Use %p4cc printk modifier to print FourCC codes
+Local     / media: renesas: vsp1: rwpf: Support operations with IIF
+Local     / media: renesas: vsp1: wpf: Propagate vsp1_rwpf_init_ctrls()
+Local     / media: renesas: vsp1: dl: Use singleshot DL for VSPX
+Local     / media: renesas: vsp1: Add support IIF ISP Interface
+Local     / media: rcar-isp: Parse named cs memory region
+Local     / media: rcar-isp: Rename base register variable
+Local     / media: rcar-isp: Move driver to own directory
+Local     / media: rcar-vin: Fix RAW10
+Local     / media: rcar-vin: Fix RAW8
+Local     / media: rcar-vin: Remove unnecessary checks
+Local     / media: rcar-vin: Add RCAR_GEN4 model value
+Local     / media: rcar-csi2: Remove hack to detect NTSC content
+Local     / media: rcar-vin: Simplify the shutdown process
+Local     / media: rcar-vin: Remove superfluous starting state
+Local     / media: rcar-vin: Remove superfluous suspended state
+Local     / media: rcar-vin: Remove emulated SEQ_{TB,BT}
+Local     / media: rcar-vin: Fix stride setting for RAW8 formats
 Local     / drm/panel: ilitek-ili9881c: Add configuration for 7" Raspberry Pi 720x1280
 Local     / drm/panel: ilitek-ili9881c: Allow configuration of the number of lanes
 v6.13     / drm/panel: ilitek-ili9881c: Report subpixel order according to rotation
@@ -8,7 +49,6 @@ Local     / regulator: rpi-panel-v2: Add missing GPIOLIB dependency
 Local     / regulator: rpi-panel-v2: Add regulator for 7" Raspberry Pi 720x1280
 Local     / mmc: rename mmc_host_uhs() to mmc_host_can_uhs()
 Local     / mmc: core: Add support for graceful host removal for SD
-Local     / mmc: Add quirk to disable DDR50 tuning
 v6.13     / mmc: core: Enable SDUC
 v6.13     / mmc: core: Prevent HSQ from enabling for SDUC
 Local     / mmc: rename mmc_boot_partition_access() to mmc_host_can_access_boot()
@@ -41,7 +81,6 @@ Local     / spi: sh-msiof: Make words/fs unsigned in FIFO helpers
 Local     / spi: sh-msiof: Make words/bits unsigned in sh_msiof_spi_txrx_once()
 Local     / spi: sh-msiof: Use bool for boolean flags
 Local     / spi: sh-msiof: Complete using dev in sh_msiof_spi_probe()
-Local     / spi: sh-msiof: Fix maximum DMA transfer size
 Local     / spi: sh-msiof: Remove unneeded compatible values
 Local     / spi: sh-msiof: Drop comma after OF match table sentinel
 v6.15     / arm64: dts: renesas: gray-hawk-single: Restore sort order
