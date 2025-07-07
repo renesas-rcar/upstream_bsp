@@ -1,98 +1,84 @@
 ============== -*- outline -*- ==============
 
-             BSP rebase by Upstream team
+             Renesas LTS Kernel
 
-2024/09		Kuninori Morimoto <kuninori.morimoto.gx@renesas.com>
+2024/12		Kuninori Morimoto <kuninori.morimoto.gx@renesas.com>
 =============================================
 
-* About BSP rebase
+* About Renesas LTS Kernel
 
-	Upstream team rebases BSP kernel to Linux Kernel v6.6.X.
-	Rebased BSP structure is like below.
+	"Renesas LTS" = "Linux LTS" + "Backport from latest Linux Kernel for Renesas".
 
-		(C) xxxxx BSP rebase work on v6.6.X
-		 ^  xxxxx ...
-		 |  xxxxx local patches which is/will posted to upstream ML
-		(B) xxxxx local patches from previous BSP
-		 |  xxxxx backported patches from latest Linux
-		 v
-		(A) xxxxx v6.6.X
+	We will try to backport Renesas related patch from latest Linux Kernel as much as
+	possible, but no guarantee, because backport will be very difficult if it depends
+	on Framework, etc.
 
-	(A) is base kernel (= LTS v6.6.X)
-	(B) are BSP additional patches (backport, etc)
-	(C) is information from Upstream team.
+* URL
 
-	(C) is for BSP team, but not for customer.
-	Please remove (C) commit when BSP team uses this rebased BSP.
-	^^^^^^^^^^^^^^^^^^^^^^^^
+	You can get Renesas LTS Kernel by
 
-	(C) is including below
+		> git clone https://github.com/renesas-rcar/upstream_bsp.git
 
-		${LINUX}/renesas-lts
+* Branch
 
-* About git repository/branch/tag
-
-	You can find BSP rebase repository at
-
-		Github
-		https://github.com/renesas-rcar/upstream_bsp
-
-	You can clone it by
-
-		git clone https://github.com/renesas-rcar/upstream_bsp.git
-
-	You can find 2 type of branch/tag
+	We have 2 type of Renesas LTS Kernels branchs
 
 	branch
-		(A) renesas-lts/v6.6-dev
-		(B) renesas-lts/v6.6.xxx-yyyy-mm-dd
-
-	tag
-		(A) renesas-dev-v6.6.xxx
-		(B) renesas-lts-v6.6.xxx
+		(A) renesas-lts/v6.12-dev
+		(B) renesas-lts/v6.12.xxx-yyyy-mm-dd
 
 	(A) is using "git merge". Pros is you can use "git merge" for it. Cons is it is difficult
 	to know what kind of patch was backported from upstream.
 
 	(B) is using "git rebase". Pros is it is easy to know what kind of patch was backported from
-	upstream. Cons is you need to use "git rebase" for it, can't use "git merge".
+	upstream. Cons is you need to use "git rebase" for it, can't use "git merge" when update.
 
+	Latest (B) and (A) will have no diff.
+
+	[Note]
+	We will keep total 10 versions for each (B).
+	Be care if you *not* update frequently. See below "Tag"
+
+* Tag
+
+	We have 2 type of Renesas LTS Kernels Tags
+
+	tag
+		(A) renesas-dev-v6.12.xxx
+		(B) renesas-lts-v6.12.xxx
+		            ^^^
+
+	The feature of (A)/(B) are same as "Branch". See above.
+	These tags are added when the last version digit was 0 or 5.
+	If you *not* update frequently, we recommend to use "Tag", instead of "Branch".
+
+	[Note]
 	You can't check/fetch above tag by normal ways.  You need to do...
 
 		> git ls-remote --tags renesas-rcar
-		> git fetch renesas-rcar refs/tags/renesas-xxx-v6.6.xxx
+		> git fetch renesas-rcar refs/tags/renesas-xxx-v6.1.xxx
 
-* files
+* renesas_defconfig
 
-	Supported CVE, by using CIP project (*)
-		${LINUX}/renesas-lts/cve
+	You can find "renesas_defconfig" for Renesas SoC/Board which removed
+	unnecessary configs from "defconfig".
 
-	Backported patch list
-		${LINUX}/renesas-lts/list
+* CVE info
 
-	Others
-		${LINUX}/renesas-lts/ChangeLog
-		${LINUX}/renesas-lts/README
+	You can find CVE info at
 
-	(*) cip-kernel-sec
+		linux/renesas-lts/cve-all
+		linux/renesas-lts/cve-affected
+		linux/renesas-lts/cve-no-affect
 
-		https://gitlab.com/cip-project/cip-kernel/cip-kernel-sec
+* Backported commit
 
-* ignored backport
+	You can find what commits were backported from latest Linux Kernel at
 
-	Below features has been ignored, because it needs new framework and
-	it difficult to backport.
+		linux/renesas-lts/list
 
-	- PCIe
-	- max96712
-	- rcar-csi2 for V4M
+* Backport request
 
-* about defconfig
+	Please let me know if you find missing backport.
 
-** renesas_defconfig
-
-	Upstream team recommend to defconfig
-
-** rcar_bsp_defconfig
-
-	BSP team handled shrink version of defconfig
+	Kuninori Morimoto <kuninori.morimoto.gx@renesas.com>
