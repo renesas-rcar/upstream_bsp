@@ -147,7 +147,6 @@ v6.13     / ASoC: Rename "sh" to "renesas"
 v6.14     / arm64: dts: renesas: white-hawk-single: Add R-Car Sound support
 v6.14     / arm64: dts: renesas: white-hawk-ard-audio: Drop SoC part
 v6.14     / arm64: dts: renesas: r8a779g3: Add White Hawk Single support
-v6.14     / arm64: dts: renesas: Factor out White Hawk Single board support
 v6.14     / arm64: dts: renesas: Add R8A779G3 SoC support
 v6.13     / dt-bindings: fuse: Move renesas,rcar-{efuse,otp} to nvmem
 v6.13     / nvmem: Add R-Car E-FUSE driver
@@ -165,7 +164,6 @@ v6.14     / arm64: dts: renesas: gray-hawk-single: Add video capture support
 v6.14     / arm64: dts: renesas: gray-hawk-single: Add DisplayPort support
 v6.14     / arm64: dts: renesas: gray-hawk-single: Fix indentation
 v6.13     / arm64: dts: renesas: Use interrupts-extended for I/O expanders
-v6.13     / arm64: dts: renesas: Use interrupts-extended for Ethernet PHYs
 v6.13     / arm64: dts: renesas: r8a779h0: gray-hawk-single: Enable PCIe Host
 v6.14     / arm64: dts: renesas: r8a779h0: Add display support
 v6.13     / arm64: dts: renesas: r8a779h0: Add OTP_MEM node

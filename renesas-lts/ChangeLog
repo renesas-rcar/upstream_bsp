@@ -1,3 +1,13 @@
+v6.12.37-2025-07-11
+
+	* Merge/Rebase v6.12.37
+
+	* update CVE
+
+	* update list
+
+	* update README
+
 v6.12.36-2025-07-07
 
 	* Merge/Rebase v6.12.36
@@ -377,56 +387,5 @@ v6.12.29-2025-05-20
 v6.12.28-2025-05-12
 
 	* Merge/Rebase v6.12.28
-
-	* update CVE
-
-v6.12.27-2025-05-08
-
-	* update list
-
-	* Below patches were backported
-
-		commit 754a11c7bbe4edae9f04c940d5cb160e74266689
-		("arm64: defconfig: Add Renesas MSIOF sound support")
-
-		commit c29748ccad8841d76feda1133cbe20f47734747f
-		("arm64: dts: renesas: sparrow-hawk: Add MSIOF Sound support")
-
-		commit c61caec22820f24bb155929f5cee8c1ccfe92f77
-		("ASoC: renesas: add MSIOF sound support")
-
-		commit 0cc88846cbfb3018c036a20390acb1e35de03e1d
-		("ASoC: renesas: rsnd: enable to use "adg" clock")
-
-		commit a714b31225bce9ce2732f6193f28f371093492f0
-		("ASoC: renesas: rsnd: care BRGA/BRGB select in rsnd_adg_clk_enable()")
-
-		commit ce6949be36997f65d70bb6496bdfa4befff5bbab
-		("ASoC: renesas: rsnd: allow to use ADG as standalone")
-
-		commit 2c6b6a3e8b9338e7ddbbd699f3cb085fbc78413a
-		("ASoC: rsnd: use snd_pcm_direction_name()")
-
-		commit cf0668184d1d2f9ad3f98dd5bbe0ed4d9d090eaa
-		("spi: sh-msiof: ignore driver probing if it was MSIOF Sound")
-
-		commit c4887bd4b35b225f4fe26d2d459c76236e27a759
-		("spi: sh-msiof: use dev in sh_msiof_spi_probe()")
-
-		commit 749027309025a3bb4785ab8f20e18bc641fae848
-		("dt-bindings: renesas,sh-msiof: Add MSIOF I2S Sound support")
-
-		commit a719915e76f2b1390fbed7d40848aaaf7823060c
-		("arm64: dts: renesas: r8a779g3: Add Retronix R-Car V4H Sparrow Hawk board support")
-
-		commit 9e3b7138c3745a91d91e7e525e4b800ea276a761
-		("dt-bindings: soc: renesas: Document Retronix R-Car V4H Sparrow Hawk board support")
-
-		commit da076d5562d2fc99138ff8ab04ff82eee7a4a3d8
-		("dt-bindings: vendor-prefixes: Add Retronix Technology Inc.")
-
-v6.12.27-2025-05-07
-
-	* Merge/Rebase v6.12.27
 
 	* update CVE
