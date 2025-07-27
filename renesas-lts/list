@@ -1,3 +1,43 @@
+Local     / dt-bindings: serial: sh-sci: Document r8a78000 bindings
+v6.14     / dt-bindings: serial: renesas: Document RZ/G3E (r9a09g047) scif
+Local     / serial: sh-sci: Convert to DEFINE_SIMPLE_DEV_PM_OPS()
+Local     / serial: sh-sci: Add support for RZ/T2H SCI
+Local     / serial: sh-sci: Use private port ID
+Local     / serial: sh-sci: Replace direct stop_rx/stop_tx calls with port ops in sci_shutdown()
+Local     / serial: sh-sci: Add R-Car Gen5 support
+v6.16     / serial: sh-sci: Introduced sci_of_data
+v6.16     / serial: sh-sci: Introduced function pointers
+v6.16     / serial: sh-sci: Fix a comment about SCIFA
+v6.14     / serial: sh-sci: Use plain struct copy in early_console_setup()
+Local     / media: vsp1: Add VSPX support
+Local     / media: vsp1: vsp1_dl: Count display lists
+Local     / media: vsp1: vsp1_dl: Detect double list release
+Local     / media: vsp1: Reset FCP after VSPD
+Local     / media: rcar-fcp: Add rcar_fcp_soft_reset()
+Local     / media: rcar-vin: Generate FRAME_SYNC events
+Local     / media: rcar-vin: Check for correct capture interrupt event
+Local     / media: rcar-vin: Fold interrupt helpers into only callers
+Local     / media: rcar-vin: Fold event notifier into only user
+Local     / media: rcar-vin: Enable media-graph on Gen2
+Local     / media: rcar-vin: Only expose VIN controls
+Local     / media: rcar-vin: Remove NTSC workaround
+Local     / media: rcar-vin: Always create a media pad
+Local     / media: rcar-vin: Merge all notifiers
+Local     / media: rcar-vin: Improve error paths for parallel devices
+Local     / media: rcar-vin: Prepare for unifying all v4l-async notifiers
+Local     / media: rcar-vin: Generate a VIN group ID for Gen2
+Local     / media: rcar-vin: Use error labels in probe
+Local     / media: rcar-vin: Change link setup argument
+Local     / media: rcar-vin: Store platform info with group structure
+Local     / media: rcar-vin: Use correct count of remote subdevices
+Local     / regulator: rpi-panel-v2: Add shutdown hook
+Local     / media: rcar-csi2: Add D-PHY support for V4H
+Local     / media: rcar-csi2: Update start procedure for V4H
+Local     / media: rcar-csi2: Rework macros to access AFE lanes
+Local     / media: rcar-csi2: Clarify usage of mbps and msps
+Local     / arm64: dts: renesas: sparrow-hawk: Describe split PCIe clock
+Local     / arm64: dts: renesas: r8a779g3-sparrow-hawk: Sort DTS
+Local     / arm64: dts: renesas: r8a779g0: Describe PCIe root ports
 v6.15     / thermal: rcar_gen3: Reuse logic to read fuses on Gen3 and Gen4
 v6.15     / thermal: rcar_gen3: Use lowercase hex constants
 v6.14     / media: i2c: imx290: Add configuration for IMX462
@@ -5,7 +45,7 @@ v6.14     / media: i2c: imx290: Limit analogue gain according to module
 v6.13     / media: i2c: imx290: Check for availability in probe()
 v6.13     / media: i2c: imx290: Avoid communication during probe()
 v6.13     / media: i2c: imx290: Remove CHIP_ID reg definition
-Local     / arm64: dts: renesas: r8a779g0: Add ISP core function block
+v6.16     / arm64: dts: renesas: r8a779g0: Add ISP core function block
 v6.15     / arm64: dts: renesas: r8a779g0: Restore sort order
 v6.14     / arm64: dts: renesas: r8a779g0: Add VSPX instances
 v6.14     / arm64: dts: renesas: r8a779g0: Add FCPVX instances
@@ -13,32 +53,32 @@ v6.13     / arm64: dts: renesas: r8a779g0: Add OTP_MEM node
 v6.15     / clk: renesas: r8a779g0: Add ISP core clocks
 v6.14     / clk: renesas: r8a779g0: Add VSPX clocks
 v6.14     / clk: renesas: r8a779g0: Add FCPVX clocks
-Local     / media: renesas: vsp1: Expose color space through the DRM API
-Local     / media: renesas: vsp1: Name nested structure in vsp1_drm
-Local     / media: renesas: vsp1: Allow setting encoding and quantization
-Local     / media: renesas: vsp1: Report colour space information to userspace
-Local     / media: renesas: vsp1: Fix media bus code setup on RWPF source pad
-Local     / media: renesas: vsp1: Fix HSV format enumeration
-Local     / media: renesas: vsp1: Make HSI and HST modules optional
-Local     / media: renesas: vsp1: Implement pixel format enumeration
-Local     / media: renesas: vsp1: Use %p4cc printk modifier to print FourCC codes
-Local     / media: renesas: vsp1: rwpf: Support operations with IIF
-Local     / media: renesas: vsp1: wpf: Propagate vsp1_rwpf_init_ctrls()
-Local     / media: renesas: vsp1: dl: Use singleshot DL for VSPX
-Local     / media: renesas: vsp1: Add support IIF ISP Interface
-Local     / media: rcar-isp: Parse named cs memory region
-Local     / media: rcar-isp: Rename base register variable
-Local     / media: rcar-isp: Move driver to own directory
-Local     / media: rcar-vin: Fix RAW10
-Local     / media: rcar-vin: Fix RAW8
-Local     / media: rcar-vin: Remove unnecessary checks
-Local     / media: rcar-vin: Add RCAR_GEN4 model value
-Local     / media: rcar-csi2: Remove hack to detect NTSC content
-Local     / media: rcar-vin: Simplify the shutdown process
-Local     / media: rcar-vin: Remove superfluous starting state
-Local     / media: rcar-vin: Remove superfluous suspended state
-Local     / media: rcar-vin: Remove emulated SEQ_{TB,BT}
-Local     / media: rcar-vin: Fix stride setting for RAW8 formats
+v6.16     / media: renesas: vsp1: Expose color space through the DRM API
+v6.16     / media: renesas: vsp1: Name nested structure in vsp1_drm
+v6.16     / media: renesas: vsp1: Allow setting encoding and quantization
+v6.16     / media: renesas: vsp1: Report colour space information to userspace
+v6.16     / media: renesas: vsp1: Fix media bus code setup on RWPF source pad
+v6.16     / media: renesas: vsp1: Fix HSV format enumeration
+v6.16     / media: renesas: vsp1: Make HSI and HST modules optional
+v6.16     / media: renesas: vsp1: Implement pixel format enumeration
+v6.16     / media: renesas: vsp1: Use %p4cc printk modifier to print FourCC codes
+v6.16     / media: renesas: vsp1: rwpf: Support operations with IIF
+v6.16     / media: renesas: vsp1: wpf: Propagate vsp1_rwpf_init_ctrls()
+v6.16     / media: renesas: vsp1: dl: Use singleshot DL for VSPX
+v6.16     / media: renesas: vsp1: Add support IIF ISP Interface
+v6.16     / media: rcar-isp: Parse named cs memory region
+v6.16     / media: rcar-isp: Rename base register variable
+v6.16     / media: rcar-isp: Move driver to own directory
+v6.16     / media: rcar-vin: Fix RAW10
+v6.16     / media: rcar-vin: Fix RAW8
+v6.16     / media: rcar-vin: Remove unnecessary checks
+v6.16     / media: rcar-vin: Add RCAR_GEN4 model value
+v6.16     / media: rcar-csi2: Remove hack to detect NTSC content
+v6.16     / media: rcar-vin: Simplify the shutdown process
+v6.16     / media: rcar-vin: Remove superfluous starting state
+v6.16     / media: rcar-vin: Remove superfluous suspended state
+v6.16     / media: rcar-vin: Remove emulated SEQ_{TB,BT}
+v6.16     / media: rcar-vin: Fix stride setting for RAW8 formats
 Local     / drm/panel: ilitek-ili9881c: Add configuration for 7" Raspberry Pi 720x1280
 Local     / drm/panel: ilitek-ili9881c: Allow configuration of the number of lanes
 v6.13     / drm/panel: ilitek-ili9881c: Report subpixel order according to rotation
@@ -47,74 +87,74 @@ Local     / dt-bindings: ili9881c: Document 7" Raspberry Pi 720x1280
 Local     / regulator: rpi-panel-v2: Fix missing OF dependency
 Local     / regulator: rpi-panel-v2: Add missing GPIOLIB dependency
 Local     / regulator: rpi-panel-v2: Add regulator for 7" Raspberry Pi 720x1280
-Local     / mmc: rename mmc_host_uhs() to mmc_host_can_uhs()
-Local     / mmc: core: Add support for graceful host removal for SD
+v6.16     / mmc: rename mmc_host_uhs() to mmc_host_can_uhs()
+v6.16     / mmc: core: Add support for graceful host removal for SD
 v6.13     / mmc: core: Enable SDUC
 v6.13     / mmc: core: Prevent HSQ from enabling for SDUC
-Local     / mmc: rename mmc_boot_partition_access() to mmc_host_can_access_boot()
-Local     / mmc: rename mmc_host_cmd23() to mmc_host_can_cmd23()
-Local     / mmc: rename mmc_can_sleep() to mmc_card_can_sleep()
-Local     / mmc: rename mmc_can_reset() to mmc_card_can_reset()
-Local     / mmc: rename mmc_can_poweroff_notify() to mmc_card_can_poweroff_notify()
-Local     / mmc: rename mmc_can_ext_csd() to mmc_card_can_ext_csd()
-Local     / mmc: rename mmc_can_discard() to mmc_card_can_discard()
-Local     / mmc: core: Add support for graceful host removal for eMMC
-Local     / mmc: core: Convert into an enum for the poweroff-type for eMMC
-Local     / mmc: core: Further avoid re-storing power to the eMMC before a shutdown
-Local     / mmc: core: Convert mmc_can_poweroff_notify() into a bool
+v6.16     / mmc: rename mmc_boot_partition_access() to mmc_host_can_access_boot()
+v6.16     / mmc: rename mmc_host_cmd23() to mmc_host_can_cmd23()
+v6.16     / mmc: rename mmc_can_sleep() to mmc_card_can_sleep()
+v6.16     / mmc: rename mmc_can_reset() to mmc_card_can_reset()
+v6.16     / mmc: rename mmc_can_poweroff_notify() to mmc_card_can_poweroff_notify()
+v6.16     / mmc: rename mmc_can_ext_csd() to mmc_card_can_ext_csd()
+v6.16     / mmc: rename mmc_can_discard() to mmc_card_can_discard()
+v6.16     / mmc: core: Add support for graceful host removal for eMMC
+v6.16     / mmc: core: Convert into an enum for the poweroff-type for eMMC
+v6.16     / mmc: core: Further avoid re-storing power to the eMMC before a shutdown
+v6.16     / mmc: core: Convert mmc_can_poweroff_notify() into a bool
 v6.15     / mmc: core: Trim trailing whitespace from card product names
-Local     / spi: sh-msiof: Move register definitions to <linux/spi/sh_msiof.h>
-Local     / spi: sh-msiof: Document frame start sync pulse mode
-Local     / spi: sh-msiof: Double maximum DMA transfer size using two groups
-Local     / spi: sh-msiof: Simplify BRG's Division Ratio
-Local     / spi: sh-msiof: Increase TX FIFO size for R-Car V4H/V4M
-Local     / spi: sh-msiof: Correct RX FIFO size for R-Car Gen3
-Local     / spi: sh-msiof: Correct RX FIFO size for R-Car Gen2
-Local     / spi: sh-msiof: Add core support for dual-group transfers
-Local     / spi: sh-msiof: Correct SIMDR2_GRPMASK
-Local     / spi: sh-msiof: SIFCTR bitfield conversion
-Local     / spi: sh-msiof: SICTR bitfield conversion
-Local     / spi: sh-msiof: SITSCR/SIRSCR bitfield conversion
-Local     / spi: sh-msiof: SITMDR2 and SIRMDR2 bitfield conversion
-Local     / spi: sh-msiof: SITMDR1/SIRMDR1 bitfield conversion
-Local     / spi: sh-msiof: Make words/fs unsigned in FIFO helpers
-Local     / spi: sh-msiof: Make words/bits unsigned in sh_msiof_spi_txrx_once()
-Local     / spi: sh-msiof: Use bool for boolean flags
-Local     / spi: sh-msiof: Complete using dev in sh_msiof_spi_probe()
-Local     / spi: sh-msiof: Remove unneeded compatible values
-Local     / spi: sh-msiof: Drop comma after OF match table sentinel
+v6.16     / spi: sh-msiof: Move register definitions to <linux/spi/sh_msiof.h>
+v6.16     / spi: sh-msiof: Document frame start sync pulse mode
+v6.16     / spi: sh-msiof: Double maximum DMA transfer size using two groups
+v6.16     / spi: sh-msiof: Simplify BRG's Division Ratio
+v6.16     / spi: sh-msiof: Increase TX FIFO size for R-Car V4H/V4M
+v6.16     / spi: sh-msiof: Correct RX FIFO size for R-Car Gen3
+v6.16     / spi: sh-msiof: Correct RX FIFO size for R-Car Gen2
+v6.16     / spi: sh-msiof: Add core support for dual-group transfers
+v6.16     / spi: sh-msiof: Correct SIMDR2_GRPMASK
+v6.16     / spi: sh-msiof: SIFCTR bitfield conversion
+v6.16     / spi: sh-msiof: SICTR bitfield conversion
+v6.16     / spi: sh-msiof: SITSCR/SIRSCR bitfield conversion
+v6.16     / spi: sh-msiof: SITMDR2 and SIRMDR2 bitfield conversion
+v6.16     / spi: sh-msiof: SITMDR1/SIRMDR1 bitfield conversion
+v6.16     / spi: sh-msiof: Make words/fs unsigned in FIFO helpers
+v6.16     / spi: sh-msiof: Make words/bits unsigned in sh_msiof_spi_txrx_once()
+v6.16     / spi: sh-msiof: Use bool for boolean flags
+v6.16     / spi: sh-msiof: Complete using dev in sh_msiof_spi_probe()
+v6.16     / spi: sh-msiof: Remove unneeded compatible values
+v6.16     / spi: sh-msiof: Drop comma after OF match table sentinel
 v6.15     / arm64: dts: renesas: gray-hawk-single: Restore sort order
 v6.15     / arm64: dts: renesas: gray-hawk-single: Describe AVB1 and AVB2
 v6.15     / arm64: dts: renesas: r8a779h0: Remove #address- and #size-cells from AVB[0-2]
-Local     / can: rcar_canfd: Add RZ/G3E support
-Local     / can: rcar_canfd: Enhance multi_channel_irqs handling
-Local     / can: rcar_canfd: Add external_clk variable to struct rcar_canfd_hw_info
-Local     / can: rcar_canfd: Add sh variable to struct rcar_canfd_hw_info
-Local     / can: rcar_canfd: Add struct rcanfd_regs variable to struct rcar_canfd_hw_info
-Local     / can: rcar_canfd: Add shared_can_regs variable to struct rcar_canfd_hw_info
-Local     / can: rcar_canfd: Add ch_interface_mode variable to struct rcar_canfd_hw_info
-Local     / can: rcar_canfd: Add {nom,data}_bittiming variables to struct rcar_canfd_hw_info
-Local     / can: rcar_canfd: Add max_cftml variable to struct rcar_canfd_hw_info
-Local     / can: rcar_canfd: Add max_aflpn variable to struct rcar_canfd_hw_info
-Local     / can: rcar_canfd: Add rnc_field_width variable to struct rcar_canfd_hw_info
-Local     / can: rcar_canfd: Update RCANFD_GAFLCFG macro
-Local     / can: rcar_canfd: Add rcar_canfd_setrnc()
-Local     / can: rcar_canfd: Drop the mask operation in RCANFD_GAFLCFG_SETRNC macro
-Local     / can: rcar_canfd: Update RCANFD_GERFL_ERR macro
-Local     / can: rcar_canfd: Drop RCANFD_GAFLCFG_GETRNC macro
-Local     / arm64: defconfig: Add Renesas MSIOF sound support
+v6.16     / can: rcar_canfd: Add RZ/G3E support
+v6.16     / can: rcar_canfd: Enhance multi_channel_irqs handling
+v6.16     / can: rcar_canfd: Add external_clk variable to struct rcar_canfd_hw_info
+v6.16     / can: rcar_canfd: Add sh variable to struct rcar_canfd_hw_info
+v6.16     / can: rcar_canfd: Add struct rcanfd_regs variable to struct rcar_canfd_hw_info
+v6.16     / can: rcar_canfd: Add shared_can_regs variable to struct rcar_canfd_hw_info
+v6.16     / can: rcar_canfd: Add ch_interface_mode variable to struct rcar_canfd_hw_info
+v6.16     / can: rcar_canfd: Add {nom,data}_bittiming variables to struct rcar_canfd_hw_info
+v6.16     / can: rcar_canfd: Add max_cftml variable to struct rcar_canfd_hw_info
+v6.16     / can: rcar_canfd: Add max_aflpn variable to struct rcar_canfd_hw_info
+v6.16     / can: rcar_canfd: Add rnc_field_width variable to struct rcar_canfd_hw_info
+v6.16     / can: rcar_canfd: Update RCANFD_GAFLCFG macro
+v6.16     / can: rcar_canfd: Add rcar_canfd_setrnc()
+v6.16     / can: rcar_canfd: Drop the mask operation in RCANFD_GAFLCFG_SETRNC macro
+v6.16     / can: rcar_canfd: Update RCANFD_GERFL_ERR macro
+v6.16     / can: rcar_canfd: Drop RCANFD_GAFLCFG_GETRNC macro
+v6.16     / arm64: defconfig: Add Renesas MSIOF sound support
 Local     / arm64: dts: renesas: sparrow-hawk: Add MSIOF Sound support
-Local     / ASoC: renesas: add MSIOF sound support
-Local     / ASoC: renesas: rsnd: enable to use "adg" clock
-Local     / ASoC: renesas: rsnd: care BRGA/BRGB select in rsnd_adg_clk_enable()
-Local     / ASoC: renesas: rsnd: allow to use ADG as standalone
-Local     / ASoC: rsnd: use snd_pcm_direction_name()
-Local     / spi: sh-msiof: ignore driver probing if it was MSIOF Sound
-Local     / spi: sh-msiof: use dev in sh_msiof_spi_probe()
-Local     / dt-bindings: renesas,sh-msiof: Add MSIOF I2S Sound support
-Local     / arm64: dts: renesas: r8a779g3: Add Retronix R-Car V4H Sparrow Hawk board support
-Local     / dt-bindings: soc: renesas: Document Retronix R-Car V4H Sparrow Hawk board support
-Local     / dt-bindings: vendor-prefixes: Add Retronix Technology Inc.
+v6.16     / ASoC: renesas: add MSIOF sound support
+v6.16     / ASoC: renesas: rsnd: enable to use "adg" clock
+v6.16     / ASoC: renesas: rsnd: care BRGA/BRGB select in rsnd_adg_clk_enable()
+v6.16     / ASoC: renesas: rsnd: allow to use ADG as standalone
+v6.16     / ASoC: rsnd: use snd_pcm_direction_name()
+v6.16     / spi: sh-msiof: ignore driver probing if it was MSIOF Sound
+v6.16     / spi: sh-msiof: use dev in sh_msiof_spi_probe()
+v6.16     / dt-bindings: renesas,sh-msiof: Add MSIOF I2S Sound support
+v6.16     / arm64: dts: renesas: r8a779g3: Add Retronix R-Car V4H Sparrow Hawk board support
+v6.16     / dt-bindings: soc: renesas: Document Retronix R-Car V4H Sparrow Hawk board support
+v6.16     / dt-bindings: vendor-prefixes: Add Retronix Technology Inc.
 v6.14     / ASoC: audio-graph-card2: Use extra format on each DAI
 v6.14     / ASoC: soc-core: Enable to use extra format on each DAI
 v6.14     / ASoC: audio-graph-card2: use of_graph_get_port_by_id() at graph_get_next_multi_ep()
