@@ -54,7 +54,6 @@
 #include <asm/platform_early.h>
 #endif
 
-#include "rsci.h"
 #include "serial_mctrl_gpio.h"
 #include "sh-sci.h"
 #include "sh-sci-common.h"
@@ -551,7 +550,6 @@ void sci_port_enable(struct sci_port *sci_port)
 	}
 	sci_port->port.uartclk = sci_port->clk_rates[SCI_FCK];
 }
-EXPORT_SYMBOL_NS_GPL(sci_port_enable, "SH_SCI");
 
 void sci_port_disable(struct sci_port *sci_port)
 {
@@ -565,7 +563,6 @@ void sci_port_disable(struct sci_port *sci_port)
 
 	pm_runtime_put_sync(sci_port->port.dev);
 }
-EXPORT_SYMBOL_NS_GPL(sci_port_disable, "SH_SCI");
 
 static inline unsigned long port_rx_irq_mask(struct uart_port *port)
 {
@@ -1832,7 +1829,7 @@ static irqreturn_t sci_tx_end_interrupt(int irq, void *ptr)
 	unsigned long flags;
 	u32 ctrl;
 
-	if (s->type != PORT_SCI && s->type != SCI_PORT_RSCI)
+	if (s->type != PORT_SCI)
 		return sci_tx_interrupt(irq, ptr);
 
 	uart_port_lock_irqsave(port, &flags);
@@ -2293,7 +2290,6 @@ int sci_startup(struct uart_port *port)
 
 	return 0;
 }
-EXPORT_SYMBOL_NS_GPL(sci_startup, "SH_SCI");
 
 void sci_shutdown(struct uart_port *port)
 {
@@ -2324,7 +2320,6 @@ void sci_shutdown(struct uart_port *port)
 	sci_free_irq(s);
 	sci_free_dma(port);
 }
-EXPORT_SYMBOL_NS_GPL(sci_shutdown, "SH_SCI");
 
 static int sci_sck_calc(struct sci_port *s, unsigned int bps,
 			unsigned int *srr)
@@ -2756,7 +2751,6 @@ void sci_pm(struct uart_port *port, unsigned int state,
 		break;
 	}
 }
-EXPORT_SYMBOL_NS_GPL(sci_pm, "SH_SCI");
 
 static const char *sci_type(struct uart_port *port)
 {
@@ -2819,7 +2813,6 @@ void sci_release_port(struct uart_port *port)
 
 	release_mem_region(port->mapbase, sport->reg_size);
 }
-EXPORT_SYMBOL_NS_GPL(sci_release_port, "SH_SCI");
 
 int sci_request_port(struct uart_port *port)
 {
@@ -2842,7 +2835,6 @@ int sci_request_port(struct uart_port *port)
 
 	return 0;
 }
-EXPORT_SYMBOL_NS_GPL(sci_request_port, "SH_SCI");
 
 void sci_config_port(struct uart_port *port, int flags)
 {
@@ -2852,7 +2844,6 @@ void sci_config_port(struct uart_port *port, int flags)
 		sci_request_port(port);
 	}
 }
-EXPORT_SYMBOL_NS_GPL(sci_config_port, "SH_SCI");
 
 int sci_verify_port(struct uart_port *port, struct serial_struct *ser)
 {
@@ -2862,7 +2853,6 @@ int sci_verify_port(struct uart_port *port, struct serial_struct *ser)
 
 	return 0;
 }
-EXPORT_SYMBOL_NS_GPL(sci_verify_port, "SH_SCI");
 
 static void sci_prepare_console_write(struct uart_port *port, u32 ctrl)
 {
@@ -2988,26 +2978,13 @@ static int sci_init_clocks(struct sci_port *sci_port, struct device *dev)
 	struct clk *clk;
 	unsigned int i;
 
-	if (sci_port->type == PORT_HSCIF) {
+	if (sci_port->type == PORT_HSCIF)
 		clk_names[SCI_SCK] = "hsck";
-	} else if (sci_port->type == SCI_PORT_RSCI) {
-		clk_names[SCI_FCK] = "operation";
-		clk_names[SCI_BRG_INT] = "bus";
-	}
 
 	for (i = 0; i < SCI_NUM_CLKS; i++) {
-		const char *name = clk_names[i];
-
-		clk = devm_clk_get_optional(dev, name);
+		clk = devm_clk_get_optional(dev, clk_names[i]);
 		if (IS_ERR(clk))
 			return PTR_ERR(clk);
-
-		if (!clk && sci_port->type == SCI_PORT_RSCI &&
-		    (i == SCI_FCK || i == SCI_BRG_INT)) {
-			return dev_err_probe(dev, -ENODEV,
-					     "failed to get %s\n",
-					     name);
-		}
 
 		if (!clk && i == SCI_FCK) {
 			/*
@@ -3019,13 +2996,13 @@ static int sci_init_clocks(struct sci_port *sci_port, struct device *dev)
 			if (IS_ERR(clk))
 				return dev_err_probe(dev, PTR_ERR(clk),
 						     "failed to get %s\n",
-						     name);
+						     clk_names[i]);
 		}
 
 		if (!clk)
-			dev_dbg(dev, "failed to get %s\n", name);
+			dev_dbg(dev, "failed to get %s\n", clk_names[i]);
 		else
-			dev_dbg(dev, "clk %s is %pC rate %lu\n", name,
+			dev_dbg(dev, "clk %s is %pC rate %lu\n", clk_names[i],
 				clk, clk_get_rate(clk));
 		sci_port->clks[i] = clk;
 	}
@@ -3109,10 +3086,10 @@ static int sci_init_single(struct platform_device *dev,
 	}
 
 	/*
-	 * The fourth interrupt on SCI and RSCI port is transmit end interrupt, so
+	 * The fourth interrupt on SCI port is transmit end interrupt, so
 	 * shuffle the interrupts.
 	 */
-	if (p->type == PORT_SCI || p->type == SCI_PORT_RSCI)
+	if (p->type == PORT_SCI)
 		swap(sci_port->irqs[SCIx_BRI_IRQ], sci_port->irqs[SCIx_TEI_IRQ]);
 
 	/* The SCI generates several interrupts. They can be muxed together or
@@ -3145,9 +3122,6 @@ static int sci_init_single(struct platform_device *dev,
 			sci_port->rx_trigger = 1;
 		else
 			sci_port->rx_trigger = 8;
-		break;
-	case SCI_PORT_RSCI:
-		sci_port->rx_trigger = 15;
 		break;
 	default:
 		sci_port->rx_trigger = 1;
@@ -3373,8 +3347,7 @@ static void sci_remove(struct platform_device *dev)
 
 	if (s->port.fifosize > 1)
 		device_remove_file(&dev->dev, &dev_attr_rx_fifo_trigger);
-	if (type == PORT_SCIFA || type == PORT_SCIFB || type == PORT_HSCIF ||
-	    type == SCI_PORT_RSCI)
+	if (type == PORT_SCIFA || type == PORT_SCIFB || type == PORT_HSCIF)
 		device_remove_file(&dev->dev, &dev_attr_rx_fifo_timeout);
 }
 
@@ -3468,12 +3441,6 @@ static const struct of_device_id of_sci_match[] __maybe_unused = {
 		.compatible = "renesas,scif-r9a09g057",
 		.data = &of_sci_scif_rzv2h,
 	},
-#ifdef CONFIG_SERIAL_RSCI
-	{
-		.compatible = "renesas,r9a09g077-rsci",
-		.data = &of_sci_rsci_data,
-	},
-#endif	/* CONFIG_SERIAL_RSCI */
 	/* Family-specific types */
 	{
 		.compatible = "renesas,rcar-gen1-scif",
@@ -3736,7 +3703,7 @@ static int sci_probe(struct platform_device *dev)
 			return ret;
 	}
 	if (sp->type == PORT_SCIFA || sp->type == PORT_SCIFB ||
-	    sp->type == PORT_HSCIF || sp->type == SCI_PORT_RSCI) {
+	    sp->type == PORT_HSCIF) {
 		ret = device_create_file(&dev->dev, &dev_attr_rx_fifo_timeout);
 		if (ret) {
 			if (sp->port.fifosize > 1) {
