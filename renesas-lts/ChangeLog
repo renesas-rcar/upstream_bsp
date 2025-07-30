@@ -10,12 +10,6 @@ v6.12.40-2025-07-30
 		commit d828c6726fe5642d1c71e9edbc4799c959b471cf
 		("dt-bindings: serial: renesas: Document RZ/G3E (r9a09g047) scif")
 
-		commit 65acd0d86f2fa104fc0a0c9d86aa1ee6b1a4763e
-		("serial: sh-sci: Convert to DEFINE_SIMPLE_DEV_PM_OPS()")
-
-		commit 0666e3fe95ab55c295984f2f51277ec27d3f190c
-		("serial: sh-sci: Add support for RZ/T2H SCI")
-
 		commit 1d26517d11de7fc9408c22429b8e75963314420d
 		("serial: sh-sci: Use private port ID")
 

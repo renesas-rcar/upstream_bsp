@@ -1,7 +1,5 @@
 Local     / dt-bindings: serial: sh-sci: Document r8a78000 bindings
 v6.14     / dt-bindings: serial: renesas: Document RZ/G3E (r9a09g047) scif
-Local     / serial: sh-sci: Convert to DEFINE_SIMPLE_DEV_PM_OPS()
-Local     / serial: sh-sci: Add support for RZ/T2H SCI
 Local     / serial: sh-sci: Use private port ID
 Local     / serial: sh-sci: Replace direct stop_rx/stop_tx calls with port ops in sci_shutdown()
 Local     / serial: sh-sci: Add R-Car Gen5 support
