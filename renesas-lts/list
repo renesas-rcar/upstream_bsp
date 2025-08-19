@@ -1,3 +1,5 @@
+Local     / usb: renesas-xhci: Fix External ROM access timeouts
+Local     / arm64: dts: renesas: sparrow-hawk: Describe generic SPI NOR support
 Local     / dt-bindings: serial: sh-sci: Document r8a78000 bindings
 v6.14     / dt-bindings: serial: renesas: Document RZ/G3E (r9a09g047) scif
 Local     / serial: sh-sci: Use private port ID
