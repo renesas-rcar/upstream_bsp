@@ -1,3 +1,15 @@
+v6.12.43-2025-08-27
+
+	* update list
+
+	* Below patches were backported
+
+		commit 80dc18a0cba8dea42614f021b20a04354b213d86
+		("PCI: dwc: Ensure that dw_pcie_wait_for_link() waits 100 ms after link up")
+
+		commit 817f989700fddefa56e5e443e7d138018ca6709d
+		("PCI: Rename PCIE_RESET_CONFIG_DEVICE_WAIT_MS to PCIE_RESET_CONFIG_WAIT_MS")
+
 v6.12.43-2025-08-25
 
 	* Merge/Rebase v6.12.43

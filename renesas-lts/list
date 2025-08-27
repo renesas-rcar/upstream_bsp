@@ -1,3 +1,5 @@
+Local     / PCI: dwc: Ensure that dw_pcie_wait_for_link() waits 100 ms after link up
+Local     / PCI: Rename PCIE_RESET_CONFIG_DEVICE_WAIT_MS to PCIE_RESET_CONFIG_WAIT_MS
 Local     / usb: renesas-xhci: Fix External ROM access timeouts
 Local     / arm64: dts: renesas: sparrow-hawk: Describe generic SPI NOR support
 Local     / dt-bindings: serial: sh-sci: Document r8a78000 bindings
