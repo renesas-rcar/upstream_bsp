@@ -1,3 +1,11 @@
+v6.12.44-2025-08-29
+
+	* Merge/Rebase v6.12.44
+
+	* update list
+
+	* update CVE
+
 v6.12.43-2025-08-27
 
 	* update list
@@ -322,9 +330,3 @@ v6.12.35-2025-06-30
 
 		commit e7376745ad5c8548e31d9ea58adfb5a847e017a4
 		("media: rcar-vin: Fix stride setting for RAW8 formats")
-
-v6.12.34-2025-06-20
-
-	* Merge/Rebase v6.12.34
-
-	* update CVE
