@@ -1,3 +1,21 @@
+v6.12.44-2025-09-02
+
+	* update list
+
+	* Below patches were backported
+
+		commit 7d1e3aa2826a22f68f1850c31ac96348272fa356
+		("arm64: dts: renesas: sparrow-hawk: Set VDDQ18_25_AVB voltage on EVTB1")
+
+		commit ae95807b00e1639b3f6ab94eb2cd887266e4f766
+		("arm64: dts: renesas: sparrow-hawk: Invert microSD voltage selector on EVTB1")
+
+		commit 9471de64c9cc15a74e11eaa0c6156fe866ec11c3
+		("arm64: dts: renesas: sparrow-hawk: Update thermal trip points")
+
+		commit 409fe0cea366ee2e239631ab14337210a5e5f7e4
+		("Input: goodix - add support for polling mode")
+
 v6.12.44-2025-08-29
 
 	* Merge/Rebase v6.12.44
