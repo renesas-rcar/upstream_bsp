@@ -1,3 +1,11 @@
+v6.12.45-2025-09-08
+
+	* Merge/Rebase v6.12.45
+
+	* update list
+
+	* update CVE
+
 v6.12.44-2025-09-02
 
 	* update list
@@ -217,134 +225,3 @@ v6.12.36-2025-07-07
 	* Merge/Rebase v6.12.36
 
 	* update CVE
-
-v6.12.35-2025-06-30
-
-	* Merge/Rebase v6.12.35
-
-	* update CVE
-
-	* Below patches were backported
-
-		commit bccdbba51a946fdfa08e972f14526a081c6f8bf7
-		("thermal: rcar_gen3: Reuse logic to read fuses on Gen3 and Gen4")
-
-		commit b744af1180dbadcfd994a48d613b4431373da70d
-		("thermal: rcar_gen3: Use lowercase hex constants")
-
-		commit c699b6c7c857baba1375a1ed090bf71f695e2971
-		("media: i2c: imx290: Add configuration for IMX462")
-
-		commit ec75fd952b0b5cdab7b606cdacba237c57c1fdda
-		("media: i2c: imx290: Limit analogue gain according to module")
-
-		commit 9755343cb27ef0b0a82e196e2e4d2d3c3a275163
-		("media: i2c: imx290: Check for availability in probe()")
-
-		commit a92651b8e288db2fff461c544ce9b95f6fb40ce8
-		("media: i2c: imx290: Avoid communication during probe()")
-
-		commit 856e89ff581d43b844e3b439070a3f3a65564aa4
-		("media: i2c: imx290: Remove CHIP_ID reg definition")
-
-		commit c1f22633c28f347f1933e75ffe1635adf7f4f30e
-		("arm64: dts: renesas: r8a779g0: Add ISP core function block")
-
-		commit 2f9f69188e5d1061bab9595edea8e89c7eff75ee
-		("arm64: dts: renesas: r8a779g0: Restore sort order")
-
-		commit 978a7876a1e38a3734b2ecb93874debf7463dd28
-		("arm64: dts: renesas: r8a779g0: Add VSPX instances")
-
-		commit e163f098a34cb9ce99f2b66c325caa06e00129cb
-		("arm64: dts: renesas: r8a779g0: Add FCPVX instances")
-
-		commit 5a910676b1d68a71cbb0132dfe66929224baa8e8
-		("arm64: dts: renesas: r8a779g0: Add OTP_MEM node")
-
-		commit d871a94062a3a32510b503df58ed60fd86f2b14f
-		("clk: renesas: r8a779g0: Add ISP core clocks")
-
-		commit 7088d2d7e9a58a972d8c07b4d74837f3c524f2f4
-		("clk: renesas: r8a779g0: Add VSPX clocks")
-
-		commit c5a870087827bcf83cb06758d3e3b547790a6ad8
-		("clk: renesas: r8a779g0: Add FCPVX clocks")
-
-		commit b64b134942c8cf4801ea288b3fd38b509aedec21
-		("media: renesas: vsp1: Expose color space through the DRM API")
-
-		commit 67cbb2be3ae7f21f85642d81b451bee20f687d06
-		("media: renesas: vsp1: Name nested structure in vsp1_drm")
-
-		commit e6c9597e5f320c6bc9751183450e19386be476c8
-		("media: renesas: vsp1: Allow setting encoding and quantization")
-
-		commit d5e3bc24d5ce4c256d5bbe7f2d6b9c4a3c71a401
-		("media: renesas: vsp1: Report colour space information to userspace")
-
-		commit b6e57605eff6224df4debf188eb7a02dedb7686f
-		("media: renesas: vsp1: Fix media bus code setup on RWPF source pad")
-
-		commit 687dae9eedb0fb0153ef69b35b40f738f64793d0
-		("media: renesas: vsp1: Fix HSV format enumeration")
-
-		commit a4b25ae7b24b2cdf59fa6896f6a82e030606ca51
-		("media: renesas: vsp1: Make HSI and HST modules optional")
-
-		commit 57024cd2790a25049c13528a5c3e81eb0fe7382e
-		("media: renesas: vsp1: Implement pixel format enumeration")
-
-		commit 5dc8bd50c7d8630ae520cb35f21bd1088509142c
-		("media: renesas: vsp1: Use %p4cc printk modifier to print FourCC codes")
-
-		commit 8ebd5f70c2600a499b656fc5eb4d8f0888b66a4f
-		("media: renesas: vsp1: rwpf: Support operations with IIF")
-
-		commit f4fea51415e0e82af58e930585ba8c8a4772c945
-		("media: renesas: vsp1: wpf: Propagate vsp1_rwpf_init_ctrls()")
-
-		commit 15b3c76da9e19b24a69c603ec51a965c5be91e26
-		("media: renesas: vsp1: dl: Use singleshot DL for VSPX")
-
-		commit 7305ee12b2c9a8fb615319dc96d9aed847c80117
-		("media: renesas: vsp1: Add support IIF ISP Interface")
-
-		commit 09d76b4e83e4911238f74a2ba48d92db6e04f10a
-		("media: rcar-isp: Parse named cs memory region")
-
-		commit 7281a7bd5b7b57fb6841f27e95115934ab25f4a4
-		("media: rcar-isp: Rename base register variable")
-
-		commit 9103d33f22b12f9633157d2e853594aabc377eb7
-		("media: rcar-isp: Move driver to own directory")
-
-		commit 94bf847ae5a61e0ab0b971ed186a443688eb793f
-		("media: rcar-vin: Fix RAW10")
-
-		commit 17b5496c30709d83a0ca2d11731720a4dc0ef540
-		("media: rcar-vin: Fix RAW8")
-
-		commit 21cb8227e35ec93c637a2330fc3cb2e63170e7d4
-		("media: rcar-vin: Remove unnecessary checks")
-
-		commit d6a0866750bb14e3c0c16677fc45162513f1be1f
-		("media: rcar-vin: Add RCAR_GEN4 model value")
-
-		commit 9396770c3add2142e21813ce8bc152e5e6524557
-		("media: rcar-csi2: Remove hack to detect NTSC content")
-
-		commit c1eefe88c3954390473ed092f0d4718a810bd61c
-		("media: rcar-vin: Simplify the shutdown process")
-
-		commit 25482a986e44fddd3af77458071fbbd222795917
-		("media: rcar-vin: Remove superfluous starting state")
-
-		commit 1dadd89b58108d3df701d6d9e19cd34818f97f7f
-		("media: rcar-vin: Remove superfluous suspended state")
-
-		commit f2f0cd892515eda18857f47718eb7be93f9ddaca
-		("media: rcar-vin: Remove emulated SEQ_{TB,BT}")
-
-		commit e7376745ad5c8548e31d9ea58adfb5a847e017a4
-		("media: rcar-vin: Fix stride setting for RAW8 formats")
