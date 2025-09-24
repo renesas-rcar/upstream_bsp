@@ -1,3 +1,69 @@
+v6.12.48-2025-09-25
+
+	* update list
+
+	* Below patches were backported
+
+		commit 16d4b44cf063e90a5495dba26ac9010bb1a77273
+		("ASoC: renesas: msiof: Use guard() for spin locks")
+
+		commit edb5c1f885207d1d74e8a1528e6937e02829ee6e
+		("ASoC: renesas: msiof: start DMAC first")
+
+		commit d092b70d7b54321ff481226fe6bc2a6aaa91519f
+		("ASoC: renesas: msiof: cleanup status clear method")
+
+		commit d3593ac41aaf31db9d6d28cacd584330c769a4a6
+		("ASoC: renesas: msiof: tidyup error message")
+
+		commit 042e57d59b3e7f44014da23e62911ae9b591953a
+		("ASoC: renesas: msiof: msiof_update_and_wait() checks whether reg was updated")
+
+		commit 6ba68e5aa9d5d15c8877a655db279fcfc0b38b04
+		("ASoC: renesas: msiof: Convert to <linux/spi/sh_msiof.h>")
+
+		commit 685e8dae19df73d5400734ee5ad9e96470f9c0b4
+		("drm/rcar-du: dsi: Implement DSI command support")
+
+		commit d83f1d19c898ac1b54ae64d1c950f5beff801982
+		("drm/rcar-du: dsi: Fix 1/2/3 lane support")
+
+		commit babab7f22da6ae04b87c0cded98622ea4a648910
+		("arm64: dts: renesas: sparrow-hawk: Add overlay for IMX462 on J2")
+
+		commit de6a859c29e6624eabac0a474562290ee49850d4
+		("arm64: dts: renesas: sparrow-hawk: Add overlay for IMX462 on J1")
+
+		commit 6e7f6aa88405bc6c1fc29d4104f9040688ca5efc
+		("arm64: dts: renesas: sparrow-hawk: Add overlay for IMX219 on J2")
+
+		commit 3ba261af4214996915970448fc308cde93cc3345
+		("arm64: dts: renesas: sparrow-hawk: Add overlay for IMX219 on J1")
+
+		commit 7e5624e231eea73a6a2c2d0b837a085267590167
+		("arm64: dts: renesas: r8a779g3-sparrow-hawk-fan-pwm: Add missing install target")
+
+		commit 424ada15dee7e9e54e04e3203e73529dce7ebe70
+		("arm64: dts: renesas: r8a779h2: Add Gray Hawk Single support")
+
+		commit 9f252558104e7e028aaa15fc1daaeedace89187e
+		("arm64: dts: renesas: Add Renesas R8A779H2 SoC support")
+
+		commit ceff7d21a1a2d9ebc14efca68fd8ec0e99c937f0
+		("arm64: dts: renesas: Factor out Gray Hawk Single board support")
+
+		commit 399f14ff6625cbfb666c4372a469714f840f7df3
+		("arm64: dts: renesas: rcar: Add boot phase tags")
+
+		commit fb30a7c5964235f674d92fd12bd68f688f366067
+		("arm64: dts: renesas: sparrow-hawk: Disable dtc spi_bus_bridge check")
+
+		commit 9e1dc0360fcf576868628a2a7cfec1abf2f4bd72
+		("thermal/drivers/rcar_gen3: Add support for R-Car V4H default trim values")
+
+		commit d4c3c533c019c58f07fdff72e4602f8a36d4fc75
+		("thermal/drivers/rcar_gen3: Add support for per-SoC default trim values")
+
 v6.12.48-2025-09-24
 
 	* Merge/Rebase v6.12.48

@@ -1,3 +1,23 @@
+Local     / ASoC: renesas: msiof: Use guard() for spin locks
+Local     / ASoC: renesas: msiof: start DMAC first
+Local     / ASoC: renesas: msiof: cleanup status clear method
+Local     / ASoC: renesas: msiof: tidyup error message
+Local     / ASoC: renesas: msiof: msiof_update_and_wait() checks whether reg was updated
+Local     / ASoC: renesas: msiof: Convert to <linux/spi/sh_msiof.h>
+Local     / drm/rcar-du: dsi: Implement DSI command support
+Local     / drm/rcar-du: dsi: Fix 1/2/3 lane support
+Local     / arm64: dts: renesas: sparrow-hawk: Add overlay for IMX462 on J2
+Local     / arm64: dts: renesas: sparrow-hawk: Add overlay for IMX462 on J1
+Local     / arm64: dts: renesas: sparrow-hawk: Add overlay for IMX219 on J2
+Local     / arm64: dts: renesas: sparrow-hawk: Add overlay for IMX219 on J1
+Local     / arm64: dts: renesas: r8a779g3-sparrow-hawk-fan-pwm: Add missing install target
+Local     / arm64: dts: renesas: r8a779h2: Add Gray Hawk Single support
+Local     / arm64: dts: renesas: Add Renesas R8A779H2 SoC support
+Local     / arm64: dts: renesas: Factor out Gray Hawk Single board support
+v6.15     / arm64: dts: renesas: rcar: Add boot phase tags
+v6.16     / arm64: dts: renesas: sparrow-hawk: Disable dtc spi_bus_bridge check
+Local     / thermal/drivers/rcar_gen3: Add support for R-Car V4H default trim values
+Local     / thermal/drivers/rcar_gen3: Add support for per-SoC default trim values
 Local     / arm64: dts: renesas: sparrow-hawk: Set VDDQ18_25_AVB voltage on EVTB1
 Local     / arm64: dts: renesas: sparrow-hawk: Invert microSD voltage selector on EVTB1
 Local     / arm64: dts: renesas: sparrow-hawk: Update thermal trip points
