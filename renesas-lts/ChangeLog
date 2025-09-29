@@ -1,3 +1,38 @@
+v6.12.49-2025-09-29
+
+	* replace patch
+
+		commit ca764d5321a2cee7c4901b981bb0be06d8d9a9d7
+		("arm64: dts: renesas: sparrow-hawk: Add MSIOF Sound support")
+
+	* Below patches were backported
+
+		commit e26387e950ee4486b4ed5728b5d3c1430c33ba67
+		("ASoC: renesas: msiof: ignore 1st FSERR")
+
+		commit 8c363f61e5bcb92d5e88ca1b47be74be2683b212
+		("ASoC: renesas: msiof: Add note for The possibility of R/L opposite Capture")
+
+		commit dc7473e6372ee36ff232af10c910ee3a8bad6447
+		("ASoC: renesas: msiof: setup both (Playback/Capture) in the same time")
+
+		commit 25aa058b5c83a3c455a2a288bb3295c0b234f093
+		("ASoC: renesas: msiof: tidyup DMAC stop timing")
+
+		commit ab77fa5533e4d1dcfdd2711b9b1e166e4ed57dab
+		("ASoC: renesas: msiof: add .symmetric_xxx on snd_soc_dai_driver")
+
+		commit 130947b4681c515a5e5a7961244b502de2de85ca
+		("ASoC: renesas: msiof: set SIFCTR register")
+
+		commit 25226abc1affd4bf4f6dd415d475b76e7a273fa8
+		("ASoC: renesas: msiof: use reset controller")
+
+		commit 030c59df83b448fc873d1caabb9ea077ae25268e
+		("ASoC: renesas: msiof: add unique NOTE name")
+
+	* update list
+
 v6.12.49-2025-09-26
 
 	* Merge/Rebase v6.12.49

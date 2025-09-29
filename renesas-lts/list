@@ -1,19 +1,27 @@
+Local     / ASoC: renesas: msiof: ignore 1st FSERR
+Local     / ASoC: renesas: msiof: Add note for The possibility of R/L opposite Capture
+Local     / ASoC: renesas: msiof: setup both (Playback/Capture) in the same time
+Local     / ASoC: renesas: msiof: tidyup DMAC stop timing
+Local     / ASoC: renesas: msiof: add .symmetric_xxx on snd_soc_dai_driver
+Local     / ASoC: renesas: msiof: set SIFCTR register
+Local     / ASoC: renesas: msiof: use reset controller
+Local     / ASoC: renesas: msiof: add unique NOTE name
 Local     / ASoC: renesas: msiof: Use guard() for spin locks
 Local     / ASoC: renesas: msiof: start DMAC first
 Local     / ASoC: renesas: msiof: cleanup status clear method
 Local     / ASoC: renesas: msiof: tidyup error message
 Local     / ASoC: renesas: msiof: msiof_update_and_wait() checks whether reg was updated
-Local     / ASoC: renesas: msiof: Convert to <linux/spi/sh_msiof.h>
+v6.17     / ASoC: renesas: msiof: Convert to <linux/spi/sh_msiof.h>
 Local     / drm/rcar-du: dsi: Implement DSI command support
 Local     / drm/rcar-du: dsi: Fix 1/2/3 lane support
 Local     / arm64: dts: renesas: sparrow-hawk: Add overlay for IMX462 on J2
 Local     / arm64: dts: renesas: sparrow-hawk: Add overlay for IMX462 on J1
 Local     / arm64: dts: renesas: sparrow-hawk: Add overlay for IMX219 on J2
 Local     / arm64: dts: renesas: sparrow-hawk: Add overlay for IMX219 on J1
-Local     / arm64: dts: renesas: r8a779g3-sparrow-hawk-fan-pwm: Add missing install target
-Local     / arm64: dts: renesas: r8a779h2: Add Gray Hawk Single support
-Local     / arm64: dts: renesas: Add Renesas R8A779H2 SoC support
-Local     / arm64: dts: renesas: Factor out Gray Hawk Single board support
+v6.17     / arm64: dts: renesas: r8a779g3-sparrow-hawk-fan-pwm: Add missing install target
+v6.17     / arm64: dts: renesas: r8a779h2: Add Gray Hawk Single support
+v6.17     / arm64: dts: renesas: Add Renesas R8A779H2 SoC support
+v6.17     / arm64: dts: renesas: Factor out Gray Hawk Single board support
 v6.15     / arm64: dts: renesas: rcar: Add boot phase tags
 v6.16     / arm64: dts: renesas: sparrow-hawk: Disable dtc spi_bus_bridge check
 Local     / thermal/drivers/rcar_gen3: Add support for R-Car V4H default trim values
@@ -21,46 +29,46 @@ Local     / thermal/drivers/rcar_gen3: Add support for per-SoC default trim valu
 Local     / arm64: dts: renesas: sparrow-hawk: Set VDDQ18_25_AVB voltage on EVTB1
 Local     / arm64: dts: renesas: sparrow-hawk: Invert microSD voltage selector on EVTB1
 Local     / arm64: dts: renesas: sparrow-hawk: Update thermal trip points
-Local     / Input: goodix - add support for polling mode
+v6.17     / Input: goodix - add support for polling mode
 Local     / arm64: dts: renesas: sparrow-hawk: Describe generic SPI NOR support
-Local     / dt-bindings: serial: sh-sci: Document r8a78000 bindings
+v6.17     / dt-bindings: serial: sh-sci: Document r8a78000 bindings
 v6.14     / dt-bindings: serial: renesas: Document RZ/G3E (r9a09g047) scif
-Local     / serial: sh-sci: Use private port ID
-Local     / serial: sh-sci: Replace direct stop_rx/stop_tx calls with port ops in sci_shutdown()
-Local     / serial: sh-sci: Add R-Car Gen5 support
+v6.17     / serial: sh-sci: Use private port ID
+v6.17     / serial: sh-sci: Replace direct stop_rx/stop_tx calls with port ops in sci_shutdown()
+v6.17     / serial: sh-sci: Add R-Car Gen5 support
 v6.16     / serial: sh-sci: Introduced sci_of_data
 v6.16     / serial: sh-sci: Introduced function pointers
 v6.16     / serial: sh-sci: Fix a comment about SCIFA
 v6.14     / serial: sh-sci: Use plain struct copy in early_console_setup()
-Local     / media: vsp1: Add VSPX support
-Local     / media: vsp1: vsp1_dl: Count display lists
-Local     / media: vsp1: vsp1_dl: Detect double list release
-Local     / media: vsp1: Reset FCP after VSPD
-Local     / media: rcar-fcp: Add rcar_fcp_soft_reset()
-Local     / media: rcar-vin: Generate FRAME_SYNC events
-Local     / media: rcar-vin: Check for correct capture interrupt event
-Local     / media: rcar-vin: Fold interrupt helpers into only callers
-Local     / media: rcar-vin: Fold event notifier into only user
-Local     / media: rcar-vin: Enable media-graph on Gen2
-Local     / media: rcar-vin: Only expose VIN controls
-Local     / media: rcar-vin: Remove NTSC workaround
-Local     / media: rcar-vin: Always create a media pad
-Local     / media: rcar-vin: Merge all notifiers
-Local     / media: rcar-vin: Improve error paths for parallel devices
-Local     / media: rcar-vin: Prepare for unifying all v4l-async notifiers
-Local     / media: rcar-vin: Generate a VIN group ID for Gen2
-Local     / media: rcar-vin: Use error labels in probe
-Local     / media: rcar-vin: Change link setup argument
-Local     / media: rcar-vin: Store platform info with group structure
-Local     / media: rcar-vin: Use correct count of remote subdevices
-Local     / regulator: rpi-panel-v2: Add shutdown hook
-Local     / media: rcar-csi2: Add D-PHY support for V4H
-Local     / media: rcar-csi2: Update start procedure for V4H
-Local     / media: rcar-csi2: Rework macros to access AFE lanes
-Local     / media: rcar-csi2: Clarify usage of mbps and msps
-Local     / arm64: dts: renesas: sparrow-hawk: Describe split PCIe clock
-Local     / arm64: dts: renesas: r8a779g3-sparrow-hawk: Sort DTS
-Local     / arm64: dts: renesas: r8a779g0: Describe PCIe root ports
+v6.17     / media: vsp1: Add VSPX support
+v6.17     / media: vsp1: vsp1_dl: Count display lists
+v6.17     / media: vsp1: vsp1_dl: Detect double list release
+v6.17     / media: vsp1: Reset FCP after VSPD
+v6.17     / media: rcar-fcp: Add rcar_fcp_soft_reset()
+v6.17     / media: rcar-vin: Generate FRAME_SYNC events
+v6.17     / media: rcar-vin: Check for correct capture interrupt event
+v6.17     / media: rcar-vin: Fold interrupt helpers into only callers
+v6.17     / media: rcar-vin: Fold event notifier into only user
+v6.17     / media: rcar-vin: Enable media-graph on Gen2
+v6.17     / media: rcar-vin: Only expose VIN controls
+v6.17     / media: rcar-vin: Remove NTSC workaround
+v6.17     / media: rcar-vin: Always create a media pad
+v6.17     / media: rcar-vin: Merge all notifiers
+v6.17     / media: rcar-vin: Improve error paths for parallel devices
+v6.17     / media: rcar-vin: Prepare for unifying all v4l-async notifiers
+v6.17     / media: rcar-vin: Generate a VIN group ID for Gen2
+v6.17     / media: rcar-vin: Use error labels in probe
+v6.17     / media: rcar-vin: Change link setup argument
+v6.17     / media: rcar-vin: Store platform info with group structure
+v6.17     / media: rcar-vin: Use correct count of remote subdevices
+v6.17     / regulator: rpi-panel-v2: Add shutdown hook
+v6.17     / media: rcar-csi2: Add D-PHY support for V4H
+v6.17     / media: rcar-csi2: Update start procedure for V4H
+v6.17     / media: rcar-csi2: Rework macros to access AFE lanes
+v6.17     / media: rcar-csi2: Clarify usage of mbps and msps
+v6.17     / arm64: dts: renesas: sparrow-hawk: Describe split PCIe clock
+v6.17     / arm64: dts: renesas: r8a779g3-sparrow-hawk: Sort DTS
+v6.17     / arm64: dts: renesas: r8a779g0: Describe PCIe root ports
 v6.15     / thermal: rcar_gen3: Reuse logic to read fuses on Gen3 and Gen4
 v6.15     / thermal: rcar_gen3: Use lowercase hex constants
 v6.14     / media: i2c: imx290: Add configuration for IMX462
@@ -102,14 +110,14 @@ v6.16     / media: rcar-vin: Remove superfluous starting state
 v6.16     / media: rcar-vin: Remove superfluous suspended state
 v6.16     / media: rcar-vin: Remove emulated SEQ_{TB,BT}
 v6.16     / media: rcar-vin: Fix stride setting for RAW8 formats
-Local     / drm/panel: ilitek-ili9881c: Add configuration for 7" Raspberry Pi 720x1280
-Local     / drm/panel: ilitek-ili9881c: Allow configuration of the number of lanes
+v6.17     / drm/panel: ilitek-ili9881c: Add configuration for 7" Raspberry Pi 720x1280
+v6.17     / drm/panel: ilitek-ili9881c: Allow configuration of the number of lanes
 v6.13     / drm/panel: ilitek-ili9881c: Report subpixel order according to rotation
 v6.13     / drm/panel: ilitek-ili9881c: Explicitly set address mode, allow 180° rotation
-Local     / dt-bindings: ili9881c: Document 7" Raspberry Pi 720x1280
-Local     / regulator: rpi-panel-v2: Fix missing OF dependency
-Local     / regulator: rpi-panel-v2: Add missing GPIOLIB dependency
-Local     / regulator: rpi-panel-v2: Add regulator for 7" Raspberry Pi 720x1280
+v6.17     / dt-bindings: ili9881c: Document 7" Raspberry Pi 720x1280
+v6.17     / regulator: rpi-panel-v2: Fix missing OF dependency
+v6.17     / regulator: rpi-panel-v2: Add missing GPIOLIB dependency
+v6.17     / regulator: rpi-panel-v2: Add regulator for 7" Raspberry Pi 720x1280
 v6.16     / mmc: rename mmc_host_uhs() to mmc_host_can_uhs()
 v6.16     / mmc: core: Add support for graceful host removal for SD
 v6.13     / mmc: core: Enable SDUC
@@ -166,7 +174,7 @@ v6.16     / can: rcar_canfd: Drop the mask operation in RCANFD_GAFLCFG_SETRNC ma
 v6.16     / can: rcar_canfd: Update RCANFD_GERFL_ERR macro
 v6.16     / can: rcar_canfd: Drop RCANFD_GAFLCFG_GETRNC macro
 v6.16     / arm64: defconfig: Add Renesas MSIOF sound support
-Local     / arm64: dts: renesas: sparrow-hawk: Add MSIOF Sound support
+v6.16     / arm64: dts: renesas: sparrow-hawk: Add MSIOF Sound support
 v6.16     / ASoC: renesas: add MSIOF sound support
 v6.16     / ASoC: renesas: rsnd: enable to use "adg" clock
 v6.16     / ASoC: renesas: rsnd: care BRGA/BRGB select in rsnd_adg_clk_enable()
