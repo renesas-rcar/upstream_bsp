@@ -7,6 +7,66 @@ v6.12.49-2025-09-29
 
 	* Below patches were backported
 
+		commit 5284d0b09d1bdc695256d7240915881d71997899
+		("soc: renesas: Identify R-Car X5H")
+
+		commit 2da2740fb9c8e26b6b5e20d74f2ed1d49824236d
+		("soc: renesas: rz-sysc: Add syscon/regmap support")
+
+		commit 2d9f884ceae80ae5ceba90990fb8d824943602d5
+		("soc: renesas: Sort Renesas Kconfig configs")
+
+		commit c7968f5e7c7c7b46cad1e92294c211417a7ba90f
+		("soc: renesas: Add RZ/N2H (R9A09G087) config option")
+
+		commit b19376dee3da29fe4ea1027ed2061b67efa15112
+		("soc: renesas: Add RZ/T2H (R9A09G077) config option")
+
+		commit 3903b4701bc03d7d805c3df378a7fc2ff72cbef5
+		("soc: renesas: rz-sysc: Add SoC identification for RZ/V2N SoC")
+
+		commit 31d358e611b7cc21349da58dd2c9118c84b0859f
+		("soc: renesas: Add config option for RZ/V2N (R9A09G056) SoC")
+
+		commit aac7d517d04ad3ea95de1f1968803bfe412bb1dd
+		("soc: renesas: Kconfig: Enable SoCs by default when ARCH_RENESAS is set")
+
+		commit 4300f38467e71ce3cde978bf14ea1e696912b918
+		("soc: renesas: rz-sysc: Move RZ/V2H SoC detection to the SYS driver")
+
+		commit d07470cff53b3cfc68a3653c36fbf8ffd1ddaf3c
+		("soc: renesas: rz-sysc: Add support for RZ/G3E family")
+
+		commit 0704de89eee60e2f968973c7b4ccd8cd219b2d97
+		("soc: renesas: rz-sysc: Move RZ/G3S SoC detection to the SYSC driver")
+
+		commit c1aca5588279fc341a2e12d61e853bb1fd4c72d5
+		("soc: renesas: Add SYSC driver for Renesas RZ family")
+
+		commit 12e0bd600e3c2f33f9db0e3b91f6b8d8d95b7dbe
+		("soc: renesas: Add RZ/G3E (R9A09G047) config option")
+
+		commit 0d7605e75ac2d8620929148f932cde54746c485f
+		("irqchip: Add RZ/V2H(P) Interrupt Control Unit (ICU) driver")
+
+		commit 3ba8d4aa42bd5dc6e2493ce4a73bb41c9cfd77ca
+		("arm64: errata: Expand speculative SSBS workaround for Cortex-A720AE")
+
+		commit f38c2c3e572ce0ce5c01de0358ed70328e0cb5af
+		("arm64: cputype: Add Cortex-A720AE definitions")
+
+		commit 0f356eb097c314710060dde9c4fae4fd516bc63a
+		("dt-bindings: arm: Add Cortex-A320/A520AE/A720AE cores and PMU")
+
+		commit 1ed2786e9ef8f16204dc3f30c46412070cb7140e
+		("dt-bindings: soc: renesas: Document R-Car X5H Ironhide")
+
+		commit f2ce1fd2d991c53d61951b3c90eda2d3b0a023ec
+		("dt-bindings: soc: renesas: Document R-Car V4M-7 Gray Hawk Single")
+
+		commit ac02e070627af24a7674334450bfd8e75488c6d2
+		("dt-bindings: soc: renesas: Document RZ/V2H EVK board part number")
+
 		commit e26387e950ee4486b4ed5728b5d3c1430c33ba67
 		("ASoC: renesas: msiof: ignore 1st FSERR")
 

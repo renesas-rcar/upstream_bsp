@@ -1,3 +1,23 @@
+Local     / soc: renesas: Identify R-Car X5H
+Local     / soc: renesas: rz-sysc: Add syscon/regmap support
+v6.17     / soc: renesas: Sort Renesas Kconfig configs
+v6.17     / soc: renesas: Add RZ/N2H (R9A09G087) config option
+v6.17     / soc: renesas: Add RZ/T2H (R9A09G077) config option
+v6.16     / soc: renesas: rz-sysc: Add SoC identification for RZ/V2N SoC
+v6.16     / soc: renesas: Add config option for RZ/V2N (R9A09G056) SoC
+v6.16     / soc: renesas: Kconfig: Enable SoCs by default when ARCH_RENESAS is set
+v6.15     / soc: renesas: rz-sysc: Move RZ/V2H SoC detection to the SYS driver
+v6.15     / soc: renesas: rz-sysc: Add support for RZ/G3E family
+v6.15     / soc: renesas: rz-sysc: Move RZ/G3S SoC detection to the SYSC driver
+v6.15     / soc: renesas: Add SYSC driver for Renesas RZ family
+v6.14     / soc: renesas: Add RZ/G3E (R9A09G047) config option
+v6.13     / irqchip: Add RZ/V2H(P) Interrupt Control Unit (ICU) driver
+Local     / arm64: errata: Expand speculative SSBS workaround for Cortex-A720AE
+Local     / arm64: cputype: Add Cortex-A720AE definitions
+Local     / dt-bindings: arm: Add Cortex-A320/A520AE/A720AE cores and PMU
+Local     / dt-bindings: soc: renesas: Document R-Car X5H Ironhide
+v6.17     / dt-bindings: soc: renesas: Document R-Car V4M-7 Gray Hawk Single
+v6.17     / dt-bindings: soc: renesas: Document RZ/V2H EVK board part number
 Local     / ASoC: renesas: msiof: ignore 1st FSERR
 Local     / ASoC: renesas: msiof: Add note for The possibility of R/L opposite Capture
 Local     / ASoC: renesas: msiof: setup both (Playback/Capture) in the same time
