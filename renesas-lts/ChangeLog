@@ -1,3 +1,9 @@
+v6.12.52-2025-10-14
+
+	* Merge/Rebase v6.12.52
+
+	* update CVE
+
 v6.12.51-2025-10-09
 
 	* Merge/Rebase v6.12.51
@@ -242,27 +248,5 @@ v6.12.43-2025-08-27
 v6.12.43-2025-08-25
 
 	* Merge/Rebase v6.12.43
-
-	* update CVE
-
-v6.12.42-2025-08-19
-
-	* Merge/Rebase v6.12.42
-
-	* update list
-
-	* update CVE
-
-	* Below patches were backported
-
-		commit f9420f4757752f056144896024d5ea89e5a611f1
-		("usb: renesas-xhci: Fix External ROM access timeouts")
-
-		commit 95319aaa3ffc680cab9abe6e7197299561e890de
-		("arm64: dts: renesas: sparrow-hawk: Describe generic SPI NOR support")
-
-v6.12.41-2025-08-05
-
-	* Merge/Rebase v6.12.41
 
 	* update CVE
