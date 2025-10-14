@@ -1,3 +1,13 @@
+v6.17     / can: rcar_canfd: Add support for Transceiver Delay Compensation
+v6.17     / can: rcar_canfd: Return early in rcar_canfd_set_bittiming() when not FD
+v6.17     / can: rcar_canfd: Share config code in rcar_canfd_set_bittiming()
+v6.17     / can: rcar_canfd: Rename rcar_canfd_setrnc() to rcar_canfd_set_rnc()
+v6.17     / can: rcar_canfd: Repurpose f_dcfg base for other registers
+v6.17     / can: rcar_canfd: Simplify data access in rcar_canfd_{ge,pu}t_data()
+v6.17     / can: rcar_canfd: Add helper variable dev to rcar_canfd_reset_controller()
+v6.17     / can: rcar_canfd: Add helper variable ndev to rcar_canfd_rx_pkt()
+v6.17     / can: rcar_canfd: Remove bittiming debug prints
+v6.17     / can: rcar_canfd: Consistently use ndev for net_device pointers
 Local     / soc: renesas: Identify R-Car X5H
 Local     / soc: renesas: rz-sysc: Add syscon/regmap support
 v6.17     / soc: renesas: Sort Renesas Kconfig configs
