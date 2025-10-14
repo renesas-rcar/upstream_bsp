@@ -1,3 +1,5 @@
+# upstream: 586d5eecdf1479b9ab861ab16438ba236fb2f383 can: rcar_canfd: Add support for Transceiver Delay Compensation
+905813c180f4 can: rcar_canfd: Add secondary sample point
 # upstream: 424ada15dee7e9e54e04e3203e73529dce7ebe70 arm64: dts: renesas: r8a779h2: Add Gray Hawk Single support
 124986c8255c9 arm64: dts: renesas: r8a779h2: Add Gray Hawk V4M-7 support
 # upstream: 9f252558104e7e028aaa15fc1daaeedace89187e arm64: dts: renesas: Add Renesas R8A779H2 SoC support
