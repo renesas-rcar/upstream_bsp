@@ -1,9 +1,4 @@
 #
-# SoC
-#
-124986c8255c9 arm64: dts: renesas: r8a779h2: Add Gray Hawk V4M-7 support
-9b6ca899736a0 arm64: dts: renesas: Add Renesas R8A779H2 SoC support
-#
 # MMC (ported as is to 6.1 but need upstream solutions)
 #
 d10133565b53 mmc: core: mmc_ops: Enable stop command
