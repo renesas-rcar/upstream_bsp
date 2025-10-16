@@ -1,3 +1,12 @@
+v6.12.52-2025-10-16
+
+	* update list
+
+	* Below patches were backported
+
+		commit c222f860910f82fad2d63d8608f922e9704866c0
+		("arm64: dts: renesas: rcar-gen3: Increase CANFD clock rates")
+
 v6.12.52-2025-10-15
 
 	* update list
