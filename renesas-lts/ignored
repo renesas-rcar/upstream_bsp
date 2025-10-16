@@ -97,6 +97,9 @@ ARM/SoC/DT
 		579779849453 arm64: dts: renesas: r8a779g4: Add White Hawk support
 		9ec935be9aba arm64: dts: renesas: Add Renesas R8A779G4 SoC support
 
+	Debug DT changes to change power settings for SW47 and GPLED1
+		f5f257bbef94 arm64: dts: renesas: r8a779g0-whitehawk: Add power-source setting for ethernet
+
 AVS
 	AVS is not intended for upstream
 
