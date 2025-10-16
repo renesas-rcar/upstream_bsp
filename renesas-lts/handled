@@ -1,3 +1,5 @@
+# upstream: d66206296176efe094b7cfae292296138637cf8f dt-bindings: net: renesas,etheravb: Add support for R-Car V4M
+31968a5bf2b7 ravb: Support ravb driver for R-Car V4M
 # upstream: 586d5eecdf1479b9ab861ab16438ba236fb2f383 can: rcar_canfd: Add support for Transceiver Delay Compensation
 905813c180f4 can: rcar_canfd: Add secondary sample point
 # upstream: 424ada15dee7e9e54e04e3203e73529dce7ebe70 arm64: dts: renesas: r8a779h2: Add Gray Hawk Single support

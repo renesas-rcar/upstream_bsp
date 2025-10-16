@@ -14,7 +14,6 @@ f5f257bbef94 arm64: dts: renesas: r8a779g0-whitehawk: Add power-source setting f
 675bcc5d8cbb net: ethernet: renesas: ravb: Returns an error value when gPTP is not used
 3a2d955daaab net: ethernet: renesas: ravb: Remove PTP initialize in ravb_open()
 fa8a15271377 net: ethernet: renesas: ravb: Fix Null pointer when getting parameters with ethtool
-31968a5bf2b7 ravb: Support ravb driver for R-Car V4M
 cd6678e10496 net: ethernet: renesas: ravb: Fix Deadlock warning related to EthernetAVB
 d785d96b2961 net: ethernet: renesas: ravb: Fix missing MDIO bus with channel 1/2
 eae72e77117c net: ethernet: renesas: ravb: Add gPTP support on R-Car V4H
