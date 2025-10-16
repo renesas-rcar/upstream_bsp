@@ -1,3 +1,9 @@
+v6.1.156-2025-10-16
+
+	* update renesas-lts files
+
+	* update CVE
+
 v6.1.155-2025-10-15
 
 	* update renesas-lts files
@@ -51,11 +57,5 @@ v6.1.148-2025-08-19
 v6.1.147-2025-07-25
 
 	* Merge/Rebase v6.1.147
-
-	* update CVE
-
-v6.1.146-2025-07-18
-
-	* Merge/Rebase v6.1.146
 
 	* update CVE
