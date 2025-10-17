@@ -730,6 +730,11 @@ RAVB
 		# upstream: 4b45a978b25da1d4de051ed8e91e669e3701d780 arm64: defconfig: Enable Marvell 88Q2XXX PHY support
 		e5540b8157bc arm64: defconfig: Enable Marvell PHY 88Q2110
 
+	This issue only appears on Ebisu with suspend2ram. A proper solution needs changes to the PHY handling
+	core, not only the PHY driver. Three approaches already have been rejected. For this BSP, the below patch
+	is accepted now as a workaround to keep efforts at a reasonable scale.
+		20dbf63e6809 Revert "net: phy: consider that suspend2ram may cut off PHY power"
+
 RPC-IF
 	RPC-IF works on White-Hawk with current firmware.  If it must be
 	accessed only by the Cortex-R52, it should be handled like on e.g.

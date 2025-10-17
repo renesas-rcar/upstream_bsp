@@ -3,11 +3,6 @@
 #
 d10133565b53 mmc: core: mmc_ops: Enable stop command
 #
-# Network
-#
-# Workaround added to 6.1 (2451a288fe93). Task created for further investigation
-20dbf63e6809 Revert "net: phy: consider that suspend2ram may cut off PHY power"
-#
 # Enable RAVB gPTP for Gen4
 #
 675bcc5d8cbb net: ethernet: renesas: ravb: Returns an error value when gPTP is not used
