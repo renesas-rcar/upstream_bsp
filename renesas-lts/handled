@@ -1,0 +1,18 @@
+# upstream: f089dc131fbe04b07ad515b645d63db3125b6030 ("arm64: dts: renesas: Add R8A78000 X5H DTs")
+8603d3dccd660 arm64: dts: renesas: Add R8A78000 X5H DTs
+# upstream: a553ab200ef456a264aa0ebb8cb55a924e406ed3 ("serial: sh-sci: Add R-Car Gen5 support")
+d22c3374b4204 serial: sh-sci: Add R-Car Gen5 support
+# upstream: 6ac1d604737279313bbd55797460204f21044327 ("dt-bindings: serial: sh-sci: Document r8a78000 bindings")
+67854cd5ea722 dt-bindings: serial: sh-sci: Document x5h bindings
+# upstream: d2a2a5602cfe7fed309c81135b5ecb62556ce89b ("dt-bindings: serial: renesas,hscif: Document r8a779h0 bindings")
+624c5b130919f dt-bindings: serial: sh-sci: Document r8a779h0 bindings
+# upstream: 85a503c9ea7d4978db5f98de941e6c04b44623f1 ("dt-bindings: serial: renesas,hscif: Document r8a779g0 bindings")
+274ab9b85f45f dt-bindings: serial: sh-sci: Document r8a779g0 bindings
+# upstream: 6469267afed4ffb9d16ce8c44a2b518b9b31c215 ("ASoC: dt-bindings: ak4619: Add initial DT binding")
+c457187f7f960 ASoC: dt-bindings: ak4619: Add initial DT binding
+# upstream: 3913ecb38833e8926467a17f1f1679ccd25a7230 ("ASoC: simple-audio-mux: enable to select MUX names")
+959800583fe2d ASoC: simple-audio-mux: enable to select MUX names
+# upstream: f7d97cb564a2ac5517ee7cc933de729e533d659a ("ASoC: simple-mux: add read function")
+eb2bb1c4cc398 ASoC: simple-mux: add read function
+# upstream: 061505a1a61169bd25dd908f95ba22f33dffdd69 ("ASoC: Remove unneeded semicolon")
+48054d538f4d7 ASoC: Remove unneeded semicolon
