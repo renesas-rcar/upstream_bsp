@@ -44,7 +44,6 @@ Local     / ASoC: renesas: msiof: tidyup error message
 Local     / ASoC: renesas: msiof: msiof_update_and_wait() checks whether reg was updated
 v6.17     / ASoC: renesas: msiof: Convert to <linux/spi/sh_msiof.h>
 Local     / drm/rcar-du: dsi: Implement DSI command support
-Local     / drm/rcar-du: dsi: Fix 1/2/3 lane support
 Local     / arm64: dts: renesas: sparrow-hawk: Add overlay for IMX462 on J2
 Local     / arm64: dts: renesas: sparrow-hawk: Add overlay for IMX462 on J1
 Local     / arm64: dts: renesas: sparrow-hawk: Add overlay for IMX219 on J2
