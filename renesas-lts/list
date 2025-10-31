@@ -1,3 +1,12 @@
+Local     / arm64: dts: renesas: sparrow-hawk: Add overlay for Argon40 fan HAT
+Local     / hwmon: (pwm-fan) Implement after shutdown fan settings
+Local     / dt-bindings: hwmon: pwm-fan: Document after shutdown fan settings
+v6.17     / pwm: argon-fan-hat: Add Argon40 Fan HAT support
+v6.16     / hwmon: (pwm-fan) disable threaded interrupts
+v6.14     / hwmon: (pwm-fan) Default to the Maximum cooling level if provided
+v6.14     / hwmon: (pwm-fan): Make use of device properties everywhere
+v6.13     / hwmon: (pwm-fan) Introduce start from stopped state handling
+v6.13     / dt-bindings: hwmon: pwm-fan: Document start from stopped state properties
 Local     / arm64: dts: renesas: rcar-gen3: Increase CANFD clock rates
 v6.17     / can: rcar_canfd: Add support for Transceiver Delay Compensation
 v6.17     / can: rcar_canfd: Return early in rcar_canfd_set_bittiming() when not FD
