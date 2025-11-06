@@ -1,3 +1,4 @@
+Local     / arm64: dts: renesas: sparrow-hawk: Add overlay for RPi Display 2
 Local     / arm64: dts: renesas: sparrow-hawk: Add overlay for Argon40 fan HAT
 Local     / hwmon: (pwm-fan) Implement after shutdown fan settings
 Local     / dt-bindings: hwmon: pwm-fan: Document after shutdown fan settings
