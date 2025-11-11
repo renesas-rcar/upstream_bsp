@@ -15,6 +15,58 @@
 #	ddddd BSP commit
 #
 
+# upstream: 2d2a3349521de1757b685b664af849b0824c205d usb: dwc3: Add workaround for host mode VBUS glitch when boot
+1c01bf5a55a26 usb: dwc3: Add workaround for host mode VBUS glitch when boot
+# upstream: dd22cc907a749ff34526e5b22a664d674f71c3de firmware: arm_scmi: Add support for system suspend in power control driver
+d636f00dd82d7 firmware: arm_scmi: Add support for system suspend in power control driver
+# upstream: 637581ce60403a27712c657453a210c8fd17cc66 memory: renesas-rpc-if: Remove redundant division of dummy
+0e99d036e8744 memory: renesas-rpc-if: Remove redundant division of dummy
+# upstream: 3d56c7364389fce14547803fef56d6f2cab5d366 memory: renesas-rpc-if: Fix PHYCNT.STRTIM setting
+7fdce051025c8 memory: renesas-rpc-if: Fix PHYCNT.STRTIM setting
+# upstream: 5284d0b09d1bdc695256d7240915881d71997899 soc: renesas: Identify R-Car X5H
+fa6cdb32dca80 soc: renesas: Identify R-Car X5H
+# upstream: 5284d0b09d1bdc695256d7240915881d71997899 soc: renesas: Identify R-Car X5H
+dba1d6fc84932 soc: renesas: Identify R-Car X5H
+# upstream: 317bacf960a4879af22d12175f47d284930b3273 i3c: master: add enable(disable) hot join in sys entry
+7351cac096ed8 i3c: master: add enable(disable) hot join in sys entry
+# upstream: b4da37db3e2cfc1c60875b0c10cfc556d5342a3a i3c: master: Fix build error
+f5edcc56bbcdf i3c: master: Fix build error
+# upstream: 2aac0bf4ebc8e09941bb2a40c0ce725437d9a82c i3c: Add fallback method for GETMXDS CCC
+763912834fbf1 i3c: Add fallback method for GETMXDS CCC
+# upstream: 9fd00df05e81a2e1080ce6e9abc35533dca99d74 i3c: master: handle IBIs in order they came
+0d84531e3a9d3 i3c: master: handle IBIs in order they came
+# upstream: 0c35691551387e060e6ae7a6652b4101270c73cf i3c: master: Inherit DMA masks and parameters from parent device
+62ed112708564 i3c: master: Inherit DMA masks and parameters from parent device
+# upstream: fa7726a4d9b91e0a8fb6fbbd819cd20f116f6c21 i3c: replace deprecated strncpy
+f28fc7223837a i3c: replace deprecated strncpy
+# upstream: c6a7550458922181bb922863d5f5feaf3c453fe5 i3c: master: Fix SETDASA process
+d741d1e3163a9 i3c: master: Fix SETDASA process
+# upstream: f195c470f2c2cf3737b2b157a5a2dbe182e374fa i3c: transfer pid from boardinfo to device info
+44bf83d87008d i3c: transfer pid from boardinfo to device info
+# upstream: 672825cd2823a0cee4687ce80fef5b702ff3caa3 i3c: export SETDASA method
+e89caa55a16c3 i3c: export SETDASA method
+# upstream: 97191e536c37359d17d6d32bc29acb911f731e60 pinctrl: renesas: r8a779h0: Add Audio pins, groups, functions
+8d6f5fc63a480 pinctrl: renesas: r8a779h0: Add Audio pins, groups, functions
+# upstream: 1604b9788ee334e3aa2b0aa465d39d41878ad2c9 pinctrl: renesas: r8a779h0: Add PCIe pins, groups, functions
+83f61a29f2a0f pinctrl: renesas: r8a779h0: Add PCIe pins, groups, functions
+# upstream: 2acf13cec939c084c70a2b7e99af2f5554ca3f17 pinctrl: renesas: r8a779h0: Add CANFD pins, groups, functions
+2f0925cc2c3d5 pinctrl: renesas: r8a779h0: Add CANFD pins, groups, functions
+# upstream: 4759b702d07601e17050636a909966902d3bdd91 pinctrl: renesas: r8a779h0: Add PWM/TPU pins, groups, functions
+0af61beda994c pinctrl: renesas: r8a779h0: Add PWM/TPU pins, groups, functions
+# upstream: b33c4b4b84813fadddbd8c10e87f78de3fb10e87 pinctrl: renesas: r8a779h0: Add MSIOF pins, groups, functions
+cf4b8d165e6b7 pinctrl: renesas: r8a779h0: Add MSIOF pins, groups, functions
+# upstream: 2a9d0273d1303b74ebac669b7637053b8b8180c6 pinctrl: renesas: r8a779h0: Add I2C pins, groups, functions
+f17f3ee56b839 pinctrl: renesas: r8a779h0: Add I2C pins, groups, functions
+# upstream: a0974d843d0be7780eafa87a8e4b63f32fef5766 pinctrl: renesas: r8a779h0: Add HSCIF pins, groups, functions
+ed3a88dad2731 pinctrl: renesas: r8a779h0: Add HSCIF pins, groups, functions
+# upstream: bc56b11cd734a7c640a6e434cb40cd0c52da9376 pinctrl: renesas: r8a779h0: Add SCIF pins, groups, functions
+9f30c19c571cd pinctrl: renesas: r8a779h0: Add SCIF pins, groups, functions
+# upstream: 4ab1ee6f4f05e3b184e7a2d62b0be6bcf424107c pinctrl: renesas: r8a779h0: Add SD/MMC pins, groups, functions
+d6e452bed2609 pinctrl: renesas: r8a779h0: Add SD/MMC pins, groups, functions
+# upstream: 73f35ebbf4b7783e241740418c9e962cc746bb8a pinctrl: renesas: r8a779h0: Add Ethernet AVB pins, groups, functions
+ff6ac2830e15f pinctrl: renesas: r8a779h0: Add Ethernet AVB pins, groups, functions
+# upstream: 5442c33f218b1aabbe699db978e407317a231d10 dt-bindings: pwm: Add R-Car V3U device tree bindings
+c132fef160498 dt-bindings: pwm: Add R-Car V3U device tree bindings
 # upstream: bc83a87759cabbf6f3366568e44bda088b315204
 3dc13b73f7ba5 dt-bindings: usb: dwc3: Add snps,host-vbus-glitches-quirk avoid vbus glitch
 # upstream: c35ba0ac48355df1d11fcce85945f76c42d250ac

@@ -12,7 +12,6 @@ e5c6d546eef64 arm64/cpuinfo: Show physical and virtual address size
 d69f85e5aa76c arm64: dts: renesas: ironhide: Update USB3.2 gen2 controller properties
 8bd281f848241 arm64: dts: renesas: ironhide: Drop unused DWC3 quirks
 4cc701a868834 usb: dwc3: dwc3-rcar-usb: Change flow call rcar_gen5_usb_setup_dwc3() earlier in init flow
-1c01bf5a55a26 usb: dwc3: Add workaround for host mode VBUS glitch when boot
 0551c0e56f67d arm64: dts: renesas: r8a78000: Add GSX node device
 7a41815cd9e9f arm64: dts: renesas: ironhide-uio: add reserved area for the ECC Data region
 c7ad42c5288ec arm64: dts: renesas: ironhide: add reserved area for the ECC Data region
@@ -286,7 +285,6 @@ a08eb7700090d arm64: defconfig: disable ARM64_SVE to avoid exceptions
 1d4eb16192e84 i2c: add workaround for DMA transfer flow
 d4c22df93424f i3c: update max length for a private transfer
 1663be778c7aa arm64: defconfig: Enable SCMI power control
-d636f00dd82d7 firmware: arm_scmi: Add support for system suspend in power control driver
 2631ba2cc3f7c remoteproc: rcar_gen5_rproc: Fix incorrect return value check
 43c877c3903f7 media: rcar-vin: Add support for crop function for Gen3 and above
 9a1a59fcb790b arm64: defconfig: Enable VirtIO Random Number Generator
@@ -328,9 +326,7 @@ ea2848f375b20 media: rcar-vin: rcar-dma: Fix error state message reports by V4L2
 a8339d4920cdf media: rcar-csi2: Add support for R-Car X5H
 900a8385c69fe media: rcar-vin: Add SW workaround to run Video Capture drivers on VDK simulation environment
 ceddc2de14db7 memory: renesas-rpc-if: Add R-Car Gen5 support
-0e99d036e8744 memory: renesas-rpc-if: Remove redundant division of dummy
 dfe81a58ff1d8 memory: renesas-rpc-if: Add R-Car Gen4 support
-7fdce051025c8 memory: renesas-rpc-if: Fix PHYCNT.STRTIM setting
 343a29931c14e i3c: rcar: enhance I3C source code
 457b6693cda1d i3c: tty: fix tty trans size to adapt with fifo buffer size
 65aef2b8a57fe drm: drm_edid: Add 3840x2160 resolution support for drm_add_modes_noedid()
@@ -340,8 +336,6 @@ a62c9e7a31fff arm64: defconfig: Enable DMA Test client as module
 808f1f713d9de arm64: defconfig: Add R-Car Gen5 I3C driver
 042d804604198 dt-bindings: PCI: renesas: Add R-Car UCIe Host and Endpoint
 a3aef2f01e97c i2c: rcar: fix error when reset before every transfer on R-Car X5H
-fa6cdb32dca80 soc: renesas: Identify R-Car X5H
-dba1d6fc84932 soc: renesas: Identify R-Car X5H
 7195d502ce087 dt-bindings: PCI: renesas: Add R-Car Gen5 PCIe 6.0 Endpoint
 6fa5550e294ec dt-bindings: PCI: renesas: Add R-Car Gen5 PCIe 6.0 Host
 9f1a45402bc26 dt-bindings: PCI: renesas: Add R-Car Gen5 PCIe 4.0 Host
@@ -397,15 +391,6 @@ b8a97e64245ae Documentation: i3c: Add I3C target mode controller and function
 fb17b2f1bca2a i3c: add target mode support
 a17d7e95bcead i3c: rcar: Fixes i3c bus driver probe failure if no I3C device
 13699149076a1 arm64: defconfig: Add I3C driver for R-Car X5H
-7351cac096ed8 i3c: master: add enable(disable) hot join in sys entry
-f5edcc56bbcdf i3c: master: Fix build error
-763912834fbf1 i3c: Add fallback method for GETMXDS CCC
-0d84531e3a9d3 i3c: master: handle IBIs in order they came
-62ed112708564 i3c: master: Inherit DMA masks and parameters from parent device
-f28fc7223837a i3c: replace deprecated strncpy
-d741d1e3163a9 i3c: master: Fix SETDASA process
-44bf83d87008d i3c: transfer pid from boardinfo to device info
-e89caa55a16c3 i3c: export SETDASA method
 333ad81a783d4 dt-bindings: i3c: Document R-Car X5H support
 c1647af9880d8 arm64: defconfig: Enable R-Car X5H PFC
 1c99c4737366d i3c: add i3cdev module to expose i3c dev in /dev
@@ -439,17 +424,7 @@ e5ac4808d2b68 pinctrl: renesas: r8a779h0: Use full description of reserved field
 186fc78d77a42 pinctrl: renesas: Add support for 1.8V/2.5V I/O voltage levels
 e4d4ab36fdfb9 pinctrl: renesas: Add generic support for resizable buses
 01adf10973692 pinctrl: renesas: Add generic support for pin group subsets
-8d6f5fc63a480 pinctrl: renesas: r8a779h0: Add Audio pins, groups, functions
-83f61a29f2a0f pinctrl: renesas: r8a779h0: Add PCIe pins, groups, functions
-2f0925cc2c3d5 pinctrl: renesas: r8a779h0: Add CANFD pins, groups, functions
-0af61beda994c pinctrl: renesas: r8a779h0: Add PWM/TPU pins, groups, functions
-cf4b8d165e6b7 pinctrl: renesas: r8a779h0: Add MSIOF pins, groups, functions
-f17f3ee56b839 pinctrl: renesas: r8a779h0: Add I2C pins, groups, functions
-ed3a88dad2731 pinctrl: renesas: r8a779h0: Add HSCIF pins, groups, functions
-9f30c19c571cd pinctrl: renesas: r8a779h0: Add SCIF pins, groups, functions
 953bcc8eeef3d pinctrl: renesas: r8a779h0: Add RPC pins, groups, functions
-d6e452bed2609 pinctrl: renesas: r8a779h0: Add SD/MMC pins, groups, functions
-ff6ac2830e15f pinctrl: renesas: r8a779h0: Add Ethernet AVB pins, groups, functions
 bda2e8cda14c3 pinctrl: renesas: Initial R8A779H0 (R-Car V4M) PFC support
 0259cf8ad66b1 pinctrl: renesas: r8a779g0: Add Audio support
 1e06e9f09b148 pinctrl: renesas: r8a779a0: Add PCIe pins, groups and functions
@@ -520,7 +495,6 @@ e8215ec8cc2c3 dt-bindings: pwm: tpu: Add support for X5H
 c7bfc780c7acb dt-bindings: pwm: tpu: Add support for V4H
 e9d434e78a229 dt-bindings: pwm: Add support for X5H
 0f0be080685ec dt-bindings: pwm: Add support for V4H
-c132fef160498 dt-bindings: pwm: Add R-Car V3U device tree bindings
 cb14300793818 pwm: tpu: Add compatible string for X5H
 c488cf9b62cfc pwm: tpu: Add compatible string for V4H
 1e4b6f39bb776 i2c: rcar: Support the suspend/resume
