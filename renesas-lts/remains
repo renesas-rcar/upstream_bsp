@@ -1,6 +1,4 @@
 # git log --oneline --no-merges --no-decorate v6.1.102..renesas-bsp/v6.1.102/rcar-6.0.0.rc5
-04f762d3a5310 arch: arm64: renesas: r8a78000-uio: Add rsipe UIO device support
-5076947c4a514 arch: arm64: renesas: r8a78000-uio: Remove unregistered devices in UIO
 f6bfd93c07b57 arm64: dts: renesas: r8a78000: Update PCIe6 link speed to gen4
 cd43c36521a73 PCI: dwc: rcar-gen5: Add HW Workaround setting for PCIe6 Endpoint
 b960f1c9d0817 PCI: dwc: rcar-gen5: Update bootload setting for PCIe6
@@ -69,7 +67,6 @@ c4f45d9789667 phy: renesas: mp-phy-rcar-gen5: Mark as __maybe_unused to avoid co
 5f1903cf816e1 arm64: dts: renesas: r8a78000: Update SCP definitions for CAN-XL
 d09ceafd8cee4 arm64: dts: renesas: r8a78000: Update SCP definitions for I3C
 43975c9c3bea5 arm64: dts: renesas: r8a78000: Update SCP definitions for timer
-b0ba0d951ef09 arm64: dts: renesas: r8a78000-uio: update definitions
 9c8742a22abd9 tee: rcar: Update NS LOG area address
 8fd278eab0a3f tee: optee: Replace START_DLOG_OUTPUT by NORMAL_WORLD_COMPLETE_INIT
 1367d56df7d0d wwdt: add bare metal clock for WWDT
@@ -120,7 +117,6 @@ c0d71983bd87a usb: dwc3: Add USB driver for R-Car X5H (R8A78000)
 78cc7019bfa62 pwm: tpu: Enable clock for TPU
 c2feed933ae61 pwm: rcar: Enable clock for PWM
 6e3205d01ead2 pinctrl: renesas: r8a78000: Fix typo CANFD
-3abce8d0dd36d arm64: dts: renesas: r8a78000: Add device tree node for VSPI and VSPB
 3516385a45c4a arm64: defconfig: Enable USB2/3 support for R-Car X5H
 872bfadb42c29 pinctrl: renesas: r8a779h0: Add USB pins, groups, functions
 40b22ea149214 pinctrl: renesas: r8a78000: Add PWM/TPU pins, groups, functions
@@ -142,9 +138,6 @@ ea071b5153cf6 arm64: dts: renesas: r8a78000: support scmi reset
 19a3d1e2b3608 dt-bindings: clock: Add R8A78000 reset definitions
 26dee9a86c190 dt-bindings: power: Update r8a78000 power domain definitions
 5e2d3fecad7be arm64: dts: renesas: r8a78000: Add gPTP address support
-9ab76b06919ee arch: arm64: renesas: r8a78000-uio: Add power domain and for isp devices
-0e7b99a0a8698 arch: arm64: renesas: r8a78000-uio: Add power domain and for imr devices
-6c077c795e373 arch: arm64: renesas: r8a78000-uio: Add power domain and for vcp5 devices
 fc8c2cc6f2b33 net: ethernet: renesas: rswitch3: Add R-Car gPTP support
 5fd6e25811cc6 PCI: dwc: rcar-gen5: Update PCIe6 RC and EP driver init settings
 e3b7d36e79e32 PCI: dwc: rcar-gen5: Disable multi-function support for PCIe6 EP
@@ -175,7 +168,6 @@ bc014a0ece5f0 phy: renesas: r8a78000-ether-pcs: Add support control multiple mpp
 b7cac758f7420 arm64: dts: r8a78000-ironhide: Update for RSW3 with multiple mp-phy channels
 332850735a651 arm64: dts: r8a78000-ironhide: Add support for 10G Ethernet port
 0611c90fb4052 arm64: dts: renesas: r8a78000: Add optee node
-84156c6926036 arm64: dts: renesas: ironhide-uio: Add UIO device support for R8A78000 (R-Car X5H)
 452a55573d133 tee: rcar: HIL-X5H: Update NS LOG area address that sames optee side
 2cf5f66ace2cb optee driver: stop log thread when module is unloaded
 3e7b71013bd8e tee: optee: rcar: invoke_fn() callback is element of smc_abi
@@ -336,8 +328,6 @@ b89a71fc2ebd2 drivers: soc: renesas: support E2E CRC mode and improve Data Throu
 a26767e135521 arm64: defconfig: Enable R-Car UCIe controller configurations
 2a5d4a68dfb9a dmaengine: rcar-dmac: Workaround for VDK environment limitation
 94b2db040c75d net: ethernet: rswitch3: Add support for parallel mode
-7e6111ff172d9 uio: uio_pdrv_genirq: Add shared interrupt support
-12336e138f742 uio: Switch to clk_hw_get_flags()
 fdb20b8e58711 net: ethernet: renesas: rswitch3: Add R-Car gPTP support
 f3a34a73c99ea tty: i3c: add TTY over I3C master support
 6c370b42ac394 net: rswitch3: Add support for "Ethernet Switch3"
