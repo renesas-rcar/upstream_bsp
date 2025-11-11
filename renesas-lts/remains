@@ -92,8 +92,6 @@ b0ba0d951ef09 arm64: dts: renesas: r8a78000-uio: update definitions
 9acc58b072c45 canxl: update source code for X5H bring up
 c431b3cb07eab arm64: dts: renesas: ironhide-uio: Update memory map and reserved area
 0d55c0be6b30b arm64: dts: renesas: ironhide: Add DWC3 quirks for USB stability
-7e97c1a11efe7 arm64: dts: renesas: ironhide: Add workaround for USB OC (Overcurrent) issue
-d6599b5d7f4a4 usb: dwc3: dwc3-rcar-usb: Enable clock for USB2 and USB3
 ac946d2b5b9ee arm64: dts: renesas: ironhide: Add USB2/3 support
 d54e9eb9ab3ed arm64: dts: renesas: r8a78000: Add USB2/3 device tree node
 4ed531152f343 arch: arm64: renesas: r8a78000: Enable PFC for USB
@@ -228,31 +226,7 @@ e698bcfd42644 tee: optee: Modify duration of spinlock for list
 d446e2acd8267 tee: optee: Change wait to interruptible
 9fa523642c145 tee: optee: Change workqueue to kthread in debug log function
 aa287a88cabd1 tee: optee: add r-car original function
-aaf7bd2313bd6 soc: renesas: crc-wrapper: Enable clock for WCRC0 to WCRC10
-6d24009b17c26 PCI: dwc: rcar-gen5: Use readl_poll_timeout() for PMD RX/TX ACK check
-ca6fc0be5e21f PCI: dwc: rcar-gen5: Remove PERST# handling from PCIe4 driver
-780a42e8d045b arm64: dts: renesas: ironhide: Drop unused reset GPIO for PCIe4
-10500d9dfa1eb arm64: dts: renesas: r8a78000: Add PHY register address for PCIe6 node
-037d12ef67211 PCI: dwc: rcar-gen5: Map PHY base address for PCIe6
-d7845e264a274 PCI: dwc: rcar-gen5: Correct license and author info in PCIe4 host driver
-7ee5325d23345 arm64: dts: renesas: r8a78000: enable clk & pwr for some modules
 3ceacd45ba422 arm64: dts: renesas: ironhide: enable mailbox
-20c4a2e16f11f arm64: dts: renesas: r8a78000: support scmi clk & pwdm
-0eb2a97936de6 arm64: defconfig: Update PCIe6 defconfig
-1dedbbae0be1d misc: pci-endpoint-test: Add Device ID for R-Car X5H PCIe controller
-83c13673adf27 arm64: dts: renesas: ironhide: Add PCIe6 device tree node
-8a1cf880a584c arm64: dts: renesas: r8a78000: Add PCIe6 device tree node
-82e50e202f3b2 PCI: dwc: rcar-gen5: Add R-Car Gen5 PCIe 6.0 Controller
-f2b1169e2fc54 arm64: dts: renesas: r8a78000: Temporarily downgrade link speed and num-lanes to Gen1 x1lane
-20ab49eab9cf0 PCIe: dwc: rcar: Add check_speed() to retrain link if speed mismatch
-fad8739b309f7 PCIe: dwc: rcar: Fix set_device_type function
-5d7cecd343d10 PCI: dwc: rcar: Integrate MP-PHY set_mode ops into PCIe4 driver
-1d42bbdc6fc8b phy: renesas: Refactoring the conditions for init protocols in the MP-PHY driver
-7a4f24b637ef9 net: ethernet: renesas: rswitch3: Fix sharing one ETHA_MII channel for multiple ports
-77f76eef7fdec phy: renesas: r8a78000-ether-pcs: Add support control multiple mpphy channels
-14d2e28f0d58c driver: net: rswitch3: Add 5G/10G Ethernet port support
-d40444d55a562 arm64: dts: r8a78000-ironhide: Update for RSW3 with multiple mp-phy channels
-1d56246194433 arm64: dts: r8a78000-ironhide: Add support for 10G Ethernet port
 8cbca4faa92bc net: phy: mvq32xx: Initial PHY Q32XX support
 15f966ea0fddd arm64: dts: r8a78000: Fix CPU cache hierarchy to enable cacheinfo detection
 1185997fd74a3 arm64: dts: renesas: ironhide: Add default CMA region
@@ -521,8 +495,6 @@ ee7929399c5c7 media: dt-bindings: media: renesas,isp: Add binding for V4H
 02a27dec6d46d media: renesas: fdp1: remove R-Car H3 ES1.* handling
 9258b6ab09319 media: rcar-vin: csi2: remove R-Car H3 ES1.* handling
 fffeb3645a442 media: rcar-vin: remove R-Car H3 ES1.* handling
-ff2c8488136e8 media: Add Y210, Y212 and Y216 formats
-86ecdf6d12e80 media: Add 2-10-10-10 RGB formats
 632adfe7a8c62 ARM: dts: renesas: Use new media bus type macros
 5bb7bcba02135 media: dt-bindings: media: Add macros for video interface bus types
 bc2763a5e510d media: rcar-vin: Add support for Gen3 UDS (Up Down Scaler)

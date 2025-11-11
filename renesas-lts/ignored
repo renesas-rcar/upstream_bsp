@@ -1,0 +1,58 @@
+# Ignored entries (please give reason why)
+
+# Same as BSP commit 1b778b7a706c6
+7e97c1a11efe7 arm64: dts: renesas: ironhide: Add workaround for USB OC (Overcurrent) issue
+# Same as BSP commit c66954bf15830
+d6599b5d7f4a4 usb: dwc3: dwc3-rcar-usb: Enable clock for USB2 and USB3
+# Same as BSP commit ca254c9302d9c
+aaf7bd2313bd6 soc: renesas: crc-wrapper: Enable clock for WCRC0 to WCRC10
+# Same as BSP commit 0d486ba7598ac
+6d24009b17c26 PCI: dwc: rcar-gen5: Use readl_poll_timeout() for PMD RX/TX ACK check
+# Same as BSP commit 2a91caa17de63
+ca6fc0be5e21f PCI: dwc: rcar-gen5: Remove PERST# handling from PCIe4 driver
+# Same as BSP commit 86c627b9724f0
+780a42e8d045b arm64: dts: renesas: ironhide: Drop unused reset GPIO for PCIe4
+# Same as BSP commit 43979959fc72f
+10500d9dfa1eb arm64: dts: renesas: r8a78000: Add PHY register address for PCIe6 node
+# Same as BSP commit 90b559e845724
+037d12ef67211 PCI: dwc: rcar-gen5: Map PHY base address for PCIe6
+# Same as BSP commit e9644cb48f56a
+d7845e264a274 PCI: dwc: rcar-gen5: Correct license and author info in PCIe4 host driver
+# Same as BSP commit e91e862a2edc6
+7ee5325d23345 arm64: dts: renesas: r8a78000: enable clk & pwr for some modules
+# Same as BSP commit fb287c739036d
+20c4a2e16f11f arm64: dts: renesas: r8a78000: support scmi clk & pwdm
+# Same as BSP commit aa5eba525d64a
+0eb2a97936de6 arm64: defconfig: Update PCIe6 defconfig
+# Same as BSP commit f5ab7a5bf0299
+1dedbbae0be1d misc: pci-endpoint-test: Add Device ID for R-Car X5H PCIe controller
+# Same as BSP commit 591459630e364
+83c13673adf27 arm64: dts: renesas: ironhide: Add PCIe6 device tree node
+# Same as BSP commit e50d03ae27622
+8a1cf880a584c arm64: dts: renesas: r8a78000: Add PCIe6 device tree node
+# Same as BSP commit dd195962c2d2d
+82e50e202f3b2 PCI: dwc: rcar-gen5: Add R-Car Gen5 PCIe 6.0 Controller
+# Same as BSP commit 2fc539f353f06
+f2b1169e2fc54 arm64: dts: renesas: r8a78000: Temporarily downgrade link speed and num-lanes to Gen1 x1lane
+# Same as BSP commit 218bf1a9d1e23
+20ab49eab9cf0 PCIe: dwc: rcar: Add check_speed() to retrain link if speed mismatch
+# Same as BSP commit 7e135b1122eec
+fad8739b309f7 PCIe: dwc: rcar: Fix set_device_type function
+# Same as BSP commit 48fb224945695
+5d7cecd343d10 PCI: dwc: rcar: Integrate MP-PHY set_mode ops into PCIe4 driver
+# Same as BSP commit 2af362e090cfa
+1d42bbdc6fc8b phy: renesas: Refactoring the conditions for init protocols in the MP-PHY driver
+# Same as BSP commit 6d6b6ff48d742
+7a4f24b637ef9 net: ethernet: renesas: rswitch3: Fix sharing one ETHA_MII channel for multiple ports
+# Same as BSP commit bc014a0ece5f0
+77f76eef7fdec phy: renesas: r8a78000-ether-pcs: Add support control multiple mpphy channels
+# Same as BSP commit 2ced938fe371f
+14d2e28f0d58c driver: net: rswitch3: Add 5G/10G Ethernet port support
+# Same as BSP commit b7cac758f7420
+d40444d55a562 arm64: dts: r8a78000-ironhide: Update for RSW3 with multiple mp-phy channels
+# Same as BSP commit 332850735a651
+1d56246194433 arm64: dts: r8a78000-ironhide: Add support for 10G Ethernet port
+# Same as BSP commit 73f1c850dd481
+ff2c8488136e8 media: Add Y210, Y212 and Y216 formats
+# Same as BSP commit 0b9ee8ed2d0ea
+86ecdf6d12e80 media: Add 2-10-10-10 RGB formats
