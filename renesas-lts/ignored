@@ -1,5 +1,130 @@
 # Ignored entries (please give reason why)
 
+# Modular as per upstream policy, CONFIG_CPU_FREQ_STAT_DETAILS was removed in v4.11
+# from old 'ignored: 0e5d0c8ae529
+c3ace7edaa275 arm64: defconfig: Enable cpufreq support
+# Modular as per upstream policy, CONFIG_CPU_FREQ_STAT_DETAILS was removed in v4.11
+# from old 'ignored: 7ed8cce11f67
+6e10b98df31a0 arm64: defconfig: Enable cpufreq configs for rcar
+# RPC-IF works on White-Hawk with current firmware.  If it must be
+# accessed only by the Cortex-R52, it should be handled like on e.g.
+# Salvator-XS.
+# Likewise for Spider?
+# from old 'ignored: 7e49a8b70a7d
+a513663713759 clk: renesas: r8a779f0: Remove RPC clock
+# EMS is not intended for upstream
+# from old 'ignored: 32cdac51bf55
+26d719256ae0c Revert "cpufreq: Remove CPUFREQ_ADJUST and CPUFREQ_NOTIFY policy notifier events"
+# UIO/OSAL is not intended for upstream
+# from old 'ignored: e21494bf0175
+b2af94d9d84dc uio: Add IPMMU info for user-space
+# Parallel mode is not acceptable for upstream.
+# from old 'ignored: 4e5be19e18e7
+ab17eaff9eff7 net: ethernet: renesas: rcar_gen4_ptp: Add support for parallel mode
+# UIO/OSAL is not intended for upstream
+# from old 'ignored: ad701408b101
+5166696803678 dt-bindings: ipmmu: Add definition IPMMU info for UIO devices
+# UIO/OSAL is not intended for upstream
+# from old 'ignored: 492cdd5c9cff
+f257f3d440493 dt-bindings: ipmmu: Add IPMMU info for UIO devices
+# UIO/OSAL is not intended for upstream
+# from old 'ignored: 8be32e61e150
+# UIO/OSAL is not intended for upstream
+# from old 'ignored: 72805b07fc95
+c5473bdff9148 uio: uio_pdrv_genirq: Add parameter error in case not define property in node
+# UIO/OSAL is not intended for upstream
+# from old 'ignored: e841dd60cb71
+01a96aa37e5e2 uio: uio_pdrv_genirq: Hotfix clock and power control for multi task
+# UIO/OSAL is not intended for upstream
+# from old 'ignored: 6d96e6755a60
+c244b5e5594fa uio: uio_pdrv_genirq: Add parameter to check device no clock
+# UIO/OSAL is not intended for upstream
+# from old 'ignored: 414afef74a51
+7fec8759cd4e4 uio:  Support error notification to upper layer
+# UIO/OSAL is not intended for upstream
+# from old 'ignored: 0f76ba844d14
+bfa91f0f3aefd uio: Use EOPNOTSUPP, not ENOTSUPP
+# UIO/OSAL is not intended for upstream
+# from old 'ignored: bf847527de9c
+b0f95e83167d9 uio: Inform UIO no-reset-line to users
+# UIO/OSAL is not intended for upstream
+# from old 'ignored: 3c6d4fd45c93
+ea0185c39e41a uio: Initialize reset struct of each UIO device
+# UIO/OSAL is not intended for upstream
+# from old 'ignored: fcb14163efe8
+2d1543cb6804a uio: Fix the logic of setting reset to UIO devices
+# UIO/OSAL is not intended for upstream
+# from old 'ignored: fa18bbf5f256
+18c112b7774e2 uio: uio_pdrv_genirq: renesas: Add clock divisor ioctl support
+# UIO/OSAL is not intended for upstream
+# from old 'ignored: a11d168c6464
+04c08ff705810 uio: Add PMA IOCTL to compat list
+# UIO/OSAL is not intended for upstream
+# from old 'ignored: 6668f1736f72
+24f3454b61dde uio: Add new ioctl for power management
+# Time out. Should be confirmed.
+# from old 'ignored: 441c24bfdab0
+a90631b27e3d9 vsp1: Add display interrupt wait after setting STRCMD bit
+# Used by rcar-du, which adds a new userspace API, which is blocked
+# from old 'ignored: dffa26bbdf08
+bbafc310d5e82 v4l: vsp1: Add support for colorkey alpha blending
+# More information about use case is needed
+# from old 'ignored: 56b96a3db3e8
+217ba4668926a v4l: vsp1: Add Vmute function support
+# We don't have a camera board, so we cannot test
+# from old 'ignored: fae4aeaf8b56
+842f2540e718c arm64: dts: r8a779a0-falcon: Enable fakra connector
+# GMSL2 and FPD-Link III support is a project that needs to be scheduled
+# on its own. It is now easier to do so as we we have landed the V4L2
+# streams API upstream, but the amount of work remains too large to be
+# handled within the scope of generic BSP upporting.
+# from old 'ignored: c8b353b49501
+01422bbab4729 media: i2c: dummy-camera: Add dummy camera support
+# This patch implements incorrect behavior, if a CSI-2 node is not connected to a video source it should be disabled i DT
+# This patch as clearly marked as a development debug patch, its only function is to prinkt when an interrupt handles, no use upstream
+# from old 'ignored: 2058a7e8eddc
+037007086b1e2 media: rcar-vin: Add overflow debug message option
+# This patch implements incorrect behavior, if a CSI-2 node is not connected to a video source it should be disabled i DT
+# from old 'ignored: 9a473723caaf
+abb90dfb65125 rcar-vin: rcar-csi2: Don't bail out from probe on no ep
+# PCIe is considered broken for V3U
+# from old 'ignored: c51e84c0c4bc
+1e06e9f09b148 pinctrl: renesas: r8a779a0: Add PCIe pins, groups and functions
+# Everything in the Control Domain is not supported by upstream Linux
+# from old 'ignored: 432dd5733f8e
+9c8ac4e685f38 pinctrl: renesas: r8a779f0: Add TAUD0/1-PWM support
+# Everything in the Control Domain is not supported by upstream Linux
+# from old 'ignored: 751ac8024a13
+73144ef1accb9 pinctrl: renesas: r8a779f0: Fix pfc addresses of Control domain
+# Use "assigned-clocks" and "assigned-clock-rates" in board DTS file that
+# actually uses MSIOF, and drop the second clock from the msiof nodes
+# from old 'ignored: eaeb661228d2
+d9f4194d070ca spi: sh-msiof: Add MSIOF parent clock
+# Use "assigned-clocks" and "assigned-clock-rates" in board DTS file that
+# actually uses MSIOF, and drop the second clock from the msiof nodes
+# from old 'ignored: 469c8f7e8387
+9f25c3f3c9492 spi: sh-msiof: Add MSIOF module clock changing processing for R-Car Gen3
+# Local debug code not suitable for upstream
+# from old 'ignored: aa5fd2cbca66
+ed869ddbeb8d7 spi: sh-msiof: Add sleep before master transfer for test
+# Prototype code / Proof of concept code
+# from old 'ignored: 234e0d5eb188
+8c96392b8f9e4 dt-bindings: renesas,rcar-dmac: Document optional properties
+# Not needed. We can use the generic fallback.
+# from old 'ignored: 4d55226a52d6
+c907d4fd0275c pwm: tpu: Add a compatible string for r8a779a0
+# Only a workaround and we have no HW to test a proper solution
+# from old 'ignored: 0453069bec94
+72d86955629b7 nvme: Workaround Samsung 970 Pro power state issues
+# Prototype code / Proof of concept code
+# from old 'ignored: 3baf2c4e8881
+0638a3ac72840 dmaengine: rcar-dmac: Add fixed address mode support
+# According to our research tty-core activates clocks. Testcase needed.
+# from old 'ignored: dac54422c0d0
+cf7daf81b491e serial: sh-sci: Use pm_runtime_get/put when resume
+# According to our research tty-core activates clocks. Testcase needed.
+# from old 'ignored: 4ad9b3444ded
+65f575b93cfcf serial: sh-sci: Use pm_runtime_get/put when suspend
 # from old 'handled': 586f4f5afcb0
 8bab47fa76d86 dt-bindings: can: rcar_canfd: Convert to json-schema
 # Has been rejected upstream as it breaks Gen2 backward compatibility
