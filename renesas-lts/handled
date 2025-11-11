@@ -15,6 +15,35 @@
 #	ddddd BSP commit
 #
 
+# upstream: 5719efcc5abb34ceb47b03e58709d99713f80db1 dt-bindings: pwm: renesas,pwm-rcar: Add r8a779g0 support
+0f0be080685ec dt-bindings: pwm: Add support for V4H
+# upstream: 50315945d178eebec4e8e2c50c265767ddb926eb dt-bindings: pwm: renesas,tpu: Add r8a779g0 support
+c7bfc780c7acb dt-bindings: pwm: tpu: Add support for V4H
+# upstream: d0520eb3ed54df89eb5961ec3b88634f313123f2 i2c: rcar: add FastMode+ support for Gen4
+df974b712e280 i2c: rcar: Add fast mode plus support
+# upstream: c330601c9c93392000c077d973b182cc0164b9ac mmc: renesas_sdhi: take DMA end interrupts into account
+b12620a5df7a7 mmc: tmio: Add internal DMA transfer end
+# upstream: c330601c9c93392000c077d973b182cc0164b9ac mmc: renesas_sdhi: take DMA end interrupts into account
+2cb48c06f20e8 mmc: renesas_sdhi: Add internal DMA transfer end
+# upstream: bb6d3fa98a418b071c5f735e75558604f5f4af66 clk: renesas: rcar-gen3: Switch to new SD clock handling
+bca9f1d114034 mmc: renesas_sdhi: Fix SDnCKCR setting in 4TAP SoC
+# upstream: 2a84708c2f2f9d134abd21d1f2fe6ce5a87dffaa dt-bindings: gpio: rcar: Add r8a779a0 support
+287599c1321f6 gpio: rcar: Add DT binding for R-Car V3U
+# upstream: ce34fb3cb4a8165a51a90d0ea437d75f34a6d031 pinctrl: renesas: r8a779[56]x: Add MediaLB pins
+ccf43c2acb963 pinctrl: renesas:r8a779{50, 51, 6, 65}: add mlb pinmux
+# upstream: 843394c61e9a71f0fb340a08b28cb42695baa929 pinctrl: renesas: r8a77990: Add drive-strength
+31330d063ee59 pinctrl: renesas: r8a77990: Add driver-strength for R8A77990
+# upstream: 59e579a6af8c3f1cc73bc30f894abbb766113456 pinctrl: renesas: r8a779g0: Add Audio Clock pins, groups, and functions
+0259cf8ad66b1 pinctrl: renesas: r8a779g0: Add Audio support
+# upstream: 6210905586ae7f40e6f581e963cbf298dd13d462  pinctrl: renesas: Add shorthand for reserved register fields
+e5ac4808d2b68 pinctrl: renesas: r8a779h0: Use full description of reserved fields
+# upstream: 1b7e7240eaf39aeebed08e09d0aae86f5f207286 media: rcar-vin: Add support for RAW10
+# upstream: 94bf847ae5a61e0ab0b971ed186a443688eb793f media: rcar-vin: Fix RAW10
+d2e511f4cde74 media: rcar-vin: Add RAW10 format support
+# upstream: 083693214f28b979b50cfcd689010725ca579eb8 media: rcar-vin: Add support for V4L2_FIELD_ALTERNATE
+e81ee5206a43b media: rcar-vin: Add interrupt for V4L2_FIELD_ALTERNATE format
+# upstream: 1de3866f6d7a53dbee0ebe7d71eac738fb90972f memory: renesas-rpc-if: Add support for R-Car Gen4
+dfe81a58ff1d8 memory: renesas-rpc-if: Add R-Car Gen4 support
 # upstream: b06ec03b7464fdf235487cb68ce0902df8c34aa6 media: rcar-csi2: Allow specifying C-PHY line order
 # from old 'handled': 6346917cdaa4
 54290ffeb63f8 media: rcar-csi2: Add interface for C-PHY Analog pin swap on R-Car V4H
