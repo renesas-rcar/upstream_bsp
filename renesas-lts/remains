@@ -1,6 +1,4 @@
 # git log --oneline --no-merges --no-decorate v6.1.102..renesas-bsp/v6.1.102/rcar-6.0.0.rc5
-8bab47fa76d86 dt-bindings: can: rcar_canfd: Convert to json-schema
-645414a115151 rcar-vin: do not allow changing scaling and composing while streaming
 04f762d3a5310 arch: arm64: renesas: r8a78000-uio: Add rsipe UIO device support
 5076947c4a514 arch: arm64: renesas: r8a78000-uio: Remove unregistered devices in UIO
 f6bfd93c07b57 arm64: dts: renesas: r8a78000: Update PCIe6 link speed to gen4
@@ -46,10 +44,6 @@ c1e57dce0a180 media: rcar-vin: Add w/a to measure capture fps in both IRQ callba
 ef9c5c5d94f32 media: rcar-vin: rcar-csi2: Add w/a to work with Gen1 datarates (<3500Mbps)
 f2cb4b5617ed2 media: rcar-csi2: Add CSI-2 C-PHY start-up sequence on Ironhide
 ae8052ca91114 arm64: defconfig: Disable simuation configurations of Video Capture driver
-54290ffeb63f8 media: rcar-csi2: Add interface for C-PHY Analog pin swap on R-Car V4H
-347062c90931a media: rcar-csi2: Add interface for HS Receiver Specific on R-CarV4H
-04b4ed16b0fa9 media: rcar-csi2: Update C-PHY start-up sequence for R-Car V4H
-040f5f5e352f9 media: rcar-csi2: Add register modifying helpers
 bb4e8d9c4d58e dt-bindings: media: Define pin-swap order macro for R-Car X5H
 f125e89d97871 media: rcar-vin: Hardcoded to enable module clock
 80419b04bc0fa media: rcar-vin: Replace local SIM_VDK macro with CONFIG_VIDEO_RCAR_VIN_VDK
@@ -196,7 +190,6 @@ b5e0195f6fd03 dt-bindings: mmc: renesas,sdhi: Document Renesas R-Car Gen5 MMC su
 9a0e8d55413f1 spi: spi-sh-msiof: Use fixed clock value for MSIOF on R-Car Gen5
 dcea299ba2811 arm64: dts: renesas: r8a78000: Add device tree node for MSIOF
 c0001ccaab1d4 arch: arm64: renesas: r8a78000: Enable PFC for MSIOF0 and MSIOF6_A
-a3746aaa20e70 pinctrl: renesas: r8a779h0: Add MSIOF pins, groups, functions
 53029ae82e114 arm64: dts: renesas: ironhide: Set max speed value for Ethernet 10G port
 efbc0e91d3da4 net: renesas: rswitch3: Fix wrong setting PHY interface of USXGMII
 352fc439589ed tee: optee: Allow to freeze while waiting for call_queue
@@ -296,13 +289,10 @@ b8991670a9f21 arm64: defconfig: Enable dmabuf heaps
 967338608be79 misc: rcar-mfis: Add R-Car Gen5 MFIS support
 0383e5a4b714b media: rcar-vin: Fixes issue cannot capture RAW10 continuously
 5eed3b26d090e can: rcar_canfd: Register each IRQ number for each channel on R-Car X5H
-9124aa0ecb843 can: rcar_canfd: Correct the controller
-be509466f2a5a can: rcar_canfd: Add secondary sample point
 fb0606297b224 can: rcar_canfd: rcar_canfd_configure_afl_rules(): Fix Rx FIFO entry setting
 a7c3fb9812898 i3c: main: remove unused function
 2a74df8b1c40f arm64: defconfig: Support CONFIG_SCMI_FULL_HW_VIRTUALIZATION
 c3ace7edaa275 arm64: defconfig: Enable cpufreq support
-4db63c11796d7 arm64: defconfig: Select power allocator as default governor
 6e10b98df31a0 arm64: defconfig: Enable cpufreq configs for rcar
 a513663713759 clk: renesas: r8a779f0: Remove RPC clock
 fdb5f8de40005 clk: renesas: r8a779f0: Fix the parametter for PLL2 clk
@@ -326,13 +316,11 @@ ea2848f375b20 media: rcar-vin: rcar-dma: Fix error state message reports by V4L2
 a8339d4920cdf media: rcar-csi2: Add support for R-Car X5H
 900a8385c69fe media: rcar-vin: Add SW workaround to run Video Capture drivers on VDK simulation environment
 ceddc2de14db7 memory: renesas-rpc-if: Add R-Car Gen5 support
-dfe81a58ff1d8 memory: renesas-rpc-if: Add R-Car Gen4 support
 343a29931c14e i3c: rcar: enhance I3C source code
 457b6693cda1d i3c: tty: fix tty trans size to adapt with fifo buffer size
 65aef2b8a57fe drm: drm_edid: Add 3840x2160 resolution support for drm_add_modes_noedid()
 3f37f0e19c81a drm: rcar-vcon: Fix error when restarting VCON
 ba5da72ef2892 drm: rcar-vcon: Add VCON support on X5H SoC
-a62c9e7a31fff arm64: defconfig: Enable DMA Test client as module
 808f1f713d9de arm64: defconfig: Add R-Car Gen5 I3C driver
 042d804604198 dt-bindings: PCI: renesas: Add R-Car UCIe Host and Endpoint
 a3aef2f01e97c i2c: rcar: fix error when reset before every transfer on R-Car X5H
@@ -377,7 +365,6 @@ f3a34a73c99ea tty: i3c: add TTY over I3C master support
 3564bed4eb30f scsi: ufs: renesas: Add initialization procedure for R-Car S4 Ver1.2
 57f5b00166088 scsi: ufs: ufs-renesas: add suspend/resume support
 9ad4e4155e5de scsi: ufs: ufs-renesas: tidyup ufs_renesas_pre_init()
-b7eac8af53b92 arm64: defconfig: add UFS Config.
 18a907d800cca arm64: defconfig: Disable ETH RSW2 config
 35c2727f68019 i3c: add API i3c_dev_gettstatus_format1() to get target device status
 181713fd964d6 i3c: add actual_len in i3c_priv_xfer
@@ -408,25 +395,14 @@ fa94fa5778447 arm64: defconfig: Enable R-Car X5H display support
 457f66da9c727 media: vsp1: Fix access to reserved registers
 a90631b27e3d9 vsp1: Add display interrupt wait after setting STRCMD bit
 bbafc310d5e82 v4l: vsp1: Add support for colorkey alpha blending
-0f8e584ef91fc v4l: vsp1: Add write back support
 217ba4668926a v4l: vsp1: Add Vmute function support
-e8eb72d9a3972 v4l: vsp1: Add pixel alpha blending supoprt
 842f2540e718c arm64: dts: r8a779a0-falcon: Enable fakra connector
-e81ee5206a43b media: rcar-vin: Add interrupt for V4L2_FIELD_ALTERNATE format
 01422bbab4729 media: i2c: dummy-camera: Add dummy camera support
 0f4474887ef3c media: rcar-csi2: Remove v4l2_async_notifier_cleanup in remove function
-d2e511f4cde74 media: rcar-vin: Add RAW10 format support
-14e4db299484a media: rcar-vin: Fix clock control flow
 037007086b1e2 media: rcar-vin: Add overflow debug message option
 abb90dfb65125 rcar-vin: rcar-csi2: Don't bail out from probe on no ep
 65395e5d34bb4 media: rcar-vin: Add memory type of VB2_USERPTR support
-e5ac4808d2b68 pinctrl: renesas: r8a779h0: Use full description of reserved fields
-186fc78d77a42 pinctrl: renesas: Add support for 1.8V/2.5V I/O voltage levels
-e4d4ab36fdfb9 pinctrl: renesas: Add generic support for resizable buses
-01adf10973692 pinctrl: renesas: Add generic support for pin group subsets
-953bcc8eeef3d pinctrl: renesas: r8a779h0: Add RPC pins, groups, functions
 bda2e8cda14c3 pinctrl: renesas: Initial R8A779H0 (R-Car V4M) PFC support
-0259cf8ad66b1 pinctrl: renesas: r8a779g0: Add Audio support
 1e06e9f09b148 pinctrl: renesas: r8a779a0: Add PCIe pins, groups and functions
 9c8ac4e685f38 pinctrl: renesas: r8a779f0: Add TAUD0/1-PWM support
 73144ef1accb9 pinctrl: renesas: r8a779f0: Fix pfc addresses of Control domain
@@ -436,14 +412,7 @@ d42811c60a32c wspinlock: rcar: Add support for R-Car Gen3 Hardware Spinlock
 d7668bac9a441 arm64: defconfig: Add PCIe 6.0 driver for R-Car X5H
 8c10dc8c0917d arm64: defconfig: Add PCIe 4.0 driver for R-Car X5H
 1a06cd49cbd56 arm64: defconfig: Add RTC driver for R-Car X5H
-dce594695d91b arm64: defconfig: Enable R-Car PWM-TPU by default
-cc6b04acf19e6 arm64: defconfig: Change R-Car PWM to built-in
-31330d063ee59 pinctrl: renesas: r8a77990: Add driver-strength for R8A77990
-ccf43c2acb963 pinctrl: renesas:r8a779{50, 51, 6, 65}: add mlb pinmux
-38802b9c9c241 pinctrl: renesas: r8a77990: Remove pullup/pulldown for USB30_OVC pin
 13b670ce15331 arm64: defconfig: add WWDT driver for R-Car X5H
-287599c1321f6 gpio: rcar: Add DT binding for R-Car V3U
-09003dfef28bd gpio: rcar: Modify compatible string and add support for r8a779f0
 0f82625bc9979 dt-bindings: rtc: rcar: Add R-Car Gen5 RTC support
 d1c3693f70c2d rtc: rcar: Add additional information for proc interface
 8212cbd5e53f9 rtc: rcar: Add support for interrupt requests generator and output pulse control
@@ -455,20 +424,12 @@ c97f8c5e5d5f1 rtc: Add Renesas R-Car RTC driver
 6666f440acdd8 watchdog: rcar: enhance Renesas WWDT driver
 daacf49ae2285 can: rcar_canfd: Register each IRQ number for each channel on R-Car X5H
 26b3d188939c8 wwdt: rcar: add window watchdog support on R-Car X5H
-9641b359c86ed memory: renesas-rpc-if: Use burst read operation
-0151f5a9d20ca arm64: defconfig: Enable RPC-IF SPI driver by default
 34aa603818cc4 dt-bindings: i2c: rcar-i2c: Document R-Car X5H support
 0bf42ef1a1aeb i2c:rcar: add interrupt sharing support on R-Car X5H SoC
 f77b8d467baab dt-bindings: can: renesas,rcar-canfd: Document R-Car X5H support
 6afa6217672d4 can: rcar_canfd: Add support for X5H SoC
-e8d4c908f6688 can: rcar_canfd: Configure receive rules
 1c33bd866fa88 mmc: renesas_sdhi: Add R-Car Gen5 support
-bca9f1d114034 mmc: renesas_sdhi: Fix SDnCKCR setting in 4TAP SoC
 504a45ad9ecdd mmc: core: Issue power off notification in mmc_remove()
-2cb48c06f20e8 mmc: renesas_sdhi: Add internal DMA transfer end
-b12620a5df7a7 mmc: tmio: Add internal DMA transfer end
-1e8fcc9cbef28 mmc: renesas_sdhi: Add PIO mode support
-a9e741507eb91 arm64: defconfig: Enable UIO support
 c3d57f00964fc arm64: defconfig: Enable Renesas R-Car Gen5 Ethernet devices
 048255b8caa9e dt-bindings: spi: renesas,sh-msiof: Add support for R-Car X5H
 95e4489ef65ad spi: spi-sh-msiof: Support shared interrupts for MSIOF on VDK
@@ -490,23 +451,15 @@ bc75048d0d82d dt-bindings: timer: renesas, cmt: Document R-Car X5H CMT support
 af25763233187 dmaengine: rcar-dmac: Enable channel 0 when using SMMU
 cbac3b33f4eec dmaengine: rcar-dmac: Add support for X5H SoC
 7dc08ecdd58e0 i2c: rcar: add compatible string to support R-Car X5H of I2C module
-df974b712e280 i2c: rcar: Add fast mode plus support
 e8215ec8cc2c3 dt-bindings: pwm: tpu: Add support for X5H
-c7bfc780c7acb dt-bindings: pwm: tpu: Add support for V4H
 e9d434e78a229 dt-bindings: pwm: Add support for X5H
-0f0be080685ec dt-bindings: pwm: Add support for V4H
 cb14300793818 pwm: tpu: Add compatible string for X5H
-c488cf9b62cfc pwm: tpu: Add compatible string for V4H
-1e4b6f39bb776 i2c: rcar: Support the suspend/resume
 c907d4fd0275c pwm: tpu: Add a compatible string for r8a779a0
-6c85fa28fee64 pwm: rcar: Add a judgment of the period out of range
-fd6cbbf560f92 i2c: rcar: Tidy up the register order for hardware specification ver1.00.
 72d86955629b7 nvme: Workaround Samsung 970 Pro power state issues
 9ae1967738c17 dmaengine: rcar-dmac: Add repeat mode support
 60edbafa35938 dmaengine: rcar-dmac: Add bus rate control support for R-Car Gen4
 0638a3ac72840 dmaengine: rcar-dmac: Add fixed address mode support
 8c01a7dd425ac dmaengine: rcar-dmac: Fix array-bounds warning refer chcr_ts[]
-09078448f75e5 arm64: defconfig: Add CANFD enable in defconfig
 9874cfbdb1b1d dt-bindings: watchdog: Document R-Car X5H support
 79bdbdb382f3d renesas: watchdog: add compatible string to support R-Car Gen5 Soc.
 82df15967b949 arm64: defconfig: Enable CAN-XL support

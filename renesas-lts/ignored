@@ -1,5 +1,83 @@
 # Ignored entries (please give reason why)
 
+# from old 'handled': 586f4f5afcb0
+8bab47fa76d86 dt-bindings: can: rcar_canfd: Convert to json-schema
+# Has been rejected upstream as it breaks Gen2 backward compatibility
+# from old 'handled': 2561701185a7
+645414a115151 rcar-vin: do not allow changing scaling and composing while streaming
+# from old 'handled': d4f31e1a412c
+4db63c11796d7 arm64: defconfig: Select power allocator as default governor
+# from old 'handled': 05a365ce230e
+dfe81a58ff1d8 memory: renesas-rpc-if: Add R-Car Gen4 support
+# from old 'handled': 4e6ee9d90812
+a62c9e7a31fff arm64: defconfig: Enable DMA Test client as module
+# from old 'handled': d431cc52fd60
+b7eac8af53b92 arm64: defconfig: add UFS Config.
+# from old 'handled': e88f4e52ad53
+0f8e584ef91fc v4l: vsp1: Add write back support
+# Alpha blending is already supported upstream.
+# from old 'handled': 39719be28af2
+e8eb72d9a3972 v4l: vsp1: Add pixel alpha blending supoprt
+# Submitted upstream
+# from old 'handled': 5232944262ff
+e81ee5206a43b media: rcar-vin: Add interrupt for V4L2_FIELD_ALTERNATE format
+# Submitted upstream
+# from old 'handled': e10a3eba74e3
+d2e511f4cde74 media: rcar-vin: Add RAW10 format support
+# from old 'handled': e22c6bae0ea6
+14e4db299484a media: rcar-vin: Fix clock control flow
+# not needed upstream, patch only for backwards compatibility with kernels before v5.19
+# (that lack commit 6210905586ae7f40 ("pinctrl: renesas: Add shorthand for reserved register fields")).
+# from old 'handled': 6854fc735147
+e5ac4808d2b68 pinctrl: renesas: r8a779h0: Use full description of reserved fields
+# from old 'handled': 393244153d30
+0259cf8ad66b1 pinctrl: renesas: r8a779g0: Add Audio support
+# from old 'handled': e5253817f3bc
+dce594695d91b arm64: defconfig: Enable R-Car PWM-TPU by default
+# from old 'handled': 3425791f4264
+cc6b04acf19e6 arm64: defconfig: Change R-Car PWM to built-in
+# from old 'handled': 2226ef28e0fc
+31330d063ee59 pinctrl: renesas: r8a77990: Add driver-strength for R8A77990
+# from old 'handled': 82fbba6554b7
+ccf43c2acb963 pinctrl: renesas:r8a779{50, 51, 6, 65}: add mlb pinmux
+# from old 'handled': 5b474753618c
+38802b9c9c241 pinctrl: renesas: r8a77990: Remove pullup/pulldown for USB30_OVC pin
+# from old 'handled': da10d39812f8
+287599c1321f6 gpio: rcar: Add DT binding for R-Car V3U
+# from old 'handled': 2dc3fee75d7f
+09003dfef28bd gpio: rcar: Modify compatible string and add support for r8a779f0
+# from old 'handled': 1b212c753d0c
+9641b359c86ed memory: renesas-rpc-if: Use burst read operation
+# from old 'handled': 77fce7defe0f
+0151f5a9d20ca arm64: defconfig: Enable RPC-IF SPI driver by default
+# from old 'handled': 7f7098a479d6
+bca9f1d114034 mmc: renesas_sdhi: Fix SDnCKCR setting in 4TAP SoC
+# from old 'handled': 755f55eac38a
+2cb48c06f20e8 mmc: renesas_sdhi: Add internal DMA transfer end
+# from old 'handled': ce747db93e14
+b12620a5df7a7 mmc: tmio: Add internal DMA transfer end
+# from old 'handled': e6e4182857b4
+1e8fcc9cbef28 mmc: renesas_sdhi: Add PIO mode support
+# from old 'handled': 12f55f40cee1
+a9e741507eb91 arm64: defconfig: Enable UIO support
+# from old 'handled': 3607e145db47
+df974b712e280 i2c: rcar: Add fast mode plus support
+# from old 'handled': 7323f4671d55
+c7bfc780c7acb dt-bindings: pwm: tpu: Add support for V4H
+# from old 'handled': 82abbb88867f
+0f0be080685ec dt-bindings: pwm: Add support for V4H
+# we use the generic compatible here
+# from old 'handled': 123f3b7ba7ed
+c488cf9b62cfc pwm: tpu: Add compatible string for V4H
+# from old 'handled': ada892809b0e
+1e4b6f39bb776 i2c: rcar: Support the suspend/resume
+# Not needed. HW allows 1 cycle, it will just output HIGH only. Confirmed by Shimoda-san
+# from old 'handled': 4896707193fc
+6c85fa28fee64 pwm: rcar: Add a judgment of the period out of range
+# from old 'handled': c9a37c38aa90
+fd6cbbf560f92 i2c: rcar: Tidy up the register order for hardware specification ver1.00.
+# from old 'handled': 089534842fe7
+09078448f75e5 arm64: defconfig: Add CANFD enable in defconfig
 # Just reverts 0a73c32f5cf97. It says 'b8833263b7f08112197391946447a762788c7c9c' though which is the same patch from an old BSP
 0e24e483a269f Revert "uio: uio_pdrv_genirq: Add parameter error in case not define property in node"
 # Gets reverted by 0e24e483a269f

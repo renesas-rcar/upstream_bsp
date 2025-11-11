@@ -15,6 +15,42 @@
 #	ddddd BSP commit
 #
 
+# upstream: b06ec03b7464fdf235487cb68ce0902df8c34aa6 media: rcar-csi2: Allow specifying C-PHY line order
+# from old 'handled': 6346917cdaa4
+54290ffeb63f8 media: rcar-csi2: Add interface for C-PHY Analog pin swap on R-Car V4H
+# upstream: 82bc596df84daa5ff6b3e706a8473801de49e2ee media: rcar-csi2: Add support for C-PHY on R-Car V4H
+# from old 'handled': 51f0028e4e9c
+347062c90931a media: rcar-csi2: Add interface for HS Receiver Specific on R-CarV4H
+# upstream: 82bc596df84daa5ff6b3e706a8473801de49e2ee media: rcar-csi2: Add support for C-PHY on R-Car V4H
+# from old 'handled': 923c4962b355
+04b4ed16b0fa9 media: rcar-csi2: Update C-PHY start-up sequence for R-Car V4H
+# upstream: 82bc596df84daa5ff6b3e706a8473801de49e2ee media: rcar-csi2: Add support for C-PHY on R-Car V4H
+# from old 'handled': 96f790ecae56
+040f5f5e352f9 media: rcar-csi2: Add register modifying helpers
+# upstream: b33c4b4b84813fadddbd8c10e87f78de3fb10e87
+# from old 'handled': 723fc666517e
+a3746aaa20e70 pinctrl: renesas: r8a779h0: Add MSIOF pins, groups, functions
+# upstream: 0a016639ef92b28eb74ba4fed21bee1f1328513a can: rcar_canfd: Fix R-Car V3U CAN mode selection
+# from old 'handled': 86ce48264beb
+9124aa0ecb843 can: rcar_canfd: Correct the controller
+# upstream: 586d5eecdf1479b9ab861ab16438ba236fb2f383 can: rcar_canfd: Add support for Transceiver Delay Compensation
+# from old 'handled': 905813c180f4
+be509466f2a5a can: rcar_canfd: Add secondary sample point
+# upstream: b88e733ac5170efe5f26c62606ff97901dad9248
+# from old 'handled': 09d316980e2e
+186fc78d77a42 pinctrl: renesas: Add support for 1.8V/2.5V I/O voltage levels
+# upstream: 496da1003721bdaf03f6d65c66fd3ddb7c5aad53
+# from old 'handled': 273c7cbc83fc
+e4d4ab36fdfb9 pinctrl: renesas: Add generic support for resizable buses
+# upstream: 49a7a2742580ccd6194fc2bb26e6777cba9cac58
+# from old 'handled': 02c3ddcac3df
+01adf10973692 pinctrl: renesas: Add generic support for pin group subsets
+# upstream: e79da260fcb1d8eb91ccf946cef63f971b22964b
+# from old 'handled': e4b8eaeee97e
+953bcc8eeef3d pinctrl: renesas: r8a779h0: Add RPC pins, groups, functions
+# upstream: 1dba0a37644ed3022558165bbb5cb9bda540eaf7 can: rcar_canfd: Fix page entries in the AFL list
+# from old 'handled': e9ba9ac6fe77
+e8d4c908f6688 can: rcar_canfd: Configure receive rules
 # upstream: 2d2a3349521de1757b685b664af849b0824c205d usb: dwc3: Add workaround for host mode VBUS glitch when boot
 1c01bf5a55a26 usb: dwc3: Add workaround for host mode VBUS glitch when boot
 # upstream: dd22cc907a749ff34526e5b22a664d674f71c3de firmware: arm_scmi: Add support for system suspend in power control driver
