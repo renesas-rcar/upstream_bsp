@@ -51,8 +51,6 @@ ba01716bed461 net: renesas: rswitch: fix possible early skb release
 838735665b138 net: renesas: rswitch: do not deinit disabled ports
 # upstream: 9a0c28efeec6383ef22e97437616b920e7320b67
 dd84ca81ca2ab rswitch_poll(). Since `skb` and `gq->skbs[gq->dirty]` are in fact the same pointer, the skb is first freed using dev_kfree_skb_any(), then the value in skb->len is used to update the interface statistics.
-# upstream: 1f08884d31dd1aa8eaf3b1cdf79fd6ba93e81d14
-645414a115151 rcar-vin: do not allow changing scaling and composing while streaming
 # upstream: 6392194470575de1ac0cb7223ff3bf30da94bbea
 fa29a88add6aa uio: add missing MODULE_DESCRIPTION() macros
 # upstream: ebbc1a4789c666846b9854ef845a37a64879e5f9
@@ -115,8 +113,6 @@ bc2763a5e510d media: rcar-vin: Add support for Gen3 UDS (Up Down Scaler)
 3aaa726bd0a20 media: rcar-vin: Store scaler in a function pointer
 # upstream: f42a323252afc930eea0c9fd839037f952baf691
 80176b3244380 media: rcar-vin: Do not cache remote rectangle
-# upstream: 8a5e7d19c8c747e3e7bfa0283a54742b103afcb5
-8bab47fa76d86 dt-bindings: can: rcar_canfd: Convert to json-schema
 # upstream: fa8eec59570923f4132253e61c45f9d70377f049
 bddcf0b3e9b1c arm64: defconfig: Enable Renesas R-Car S4-8 Spider Ethernet devices
 # upstream: 4e4aafcddbbfcdd6eed5780e190fcbfac8b4685a

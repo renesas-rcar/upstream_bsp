@@ -1,4 +1,6 @@
 # git log --oneline --no-merges --no-decorate v6.1.102..renesas-bsp/v6.1.102/rcar-6.0.0.rc5
+8bab47fa76d86 dt-bindings: can: rcar_canfd: Convert to json-schema
+645414a115151 rcar-vin: do not allow changing scaling and composing while streaming
 04f762d3a5310 arch: arm64: renesas: r8a78000-uio: Add rsipe UIO device support
 5076947c4a514 arch: arm64: renesas: r8a78000-uio: Remove unregistered devices in UIO
 f6bfd93c07b57 arm64: dts: renesas: r8a78000: Update PCIe6 link speed to gen4
