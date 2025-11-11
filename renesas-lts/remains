@@ -11,8 +11,6 @@ d69f85e5aa76c arm64: dts: renesas: ironhide: Update USB3.2 gen2 controller prope
 8bd281f848241 arm64: dts: renesas: ironhide: Drop unused DWC3 quirks
 4cc701a868834 usb: dwc3: dwc3-rcar-usb: Change flow call rcar_gen5_usb_setup_dwc3() earlier in init flow
 1c01bf5a55a26 usb: dwc3: Add workaround for host mode VBUS glitch when boot
-3dc13b73f7ba5 dt-bindings: usb: dwc3: Add snps,host-vbus-glitches-quirk avoid vbus glitch
-ba471ba3601e2 XHCI: Separate PORT and CAPs macros into dedicated file
 0551c0e56f67d arm64: dts: renesas: r8a78000: Add GSX node device
 7a41815cd9e9f arm64: dts: renesas: ironhide-uio: add reserved area for the ECC Data region
 c7ad42c5288ec arm64: dts: renesas: ironhide: add reserved area for the ECC Data region
@@ -31,10 +29,6 @@ eadedcdc11b16 misc: ti-tdp2004: Add simple driver for disabling the default test
 678fdecf31d9a gpu: drm: rcar-vcon: rcar_dw_dp: Add support for real DP-TX controller
 d0ad4f7e2ab4f drm: bridge: dw_dp: Update to support R-Car operation
 97f1cd265b2f3 The DW DP TX Controller is compliant with the DisplayPort Specification Version 1.4 with the following features:
-214f1e448e046 drm/dp: add an API to indicate if sink supports VSC SDP
-e6caaad7d6ddf drm/dp: drop the size parameter from drm_dp_vsc_sdp_pack()
-937b2e435610a drm/dp: move intel_dp_vsc_sdp_pack() to generic helper
-88c41aa758f89 drm/dp: Pull drm_dp_link_power_up/down from Tegra to common drm_dp_helper
 36aabc81f4199 phy: phy-core: Add phy_init_post functions for using in the future
 ff8153b92534e pinctrl: renesas: r8a78000: Add DP-TX pin control support
 cac037abd8347 arm64: dts: renesas: ironhide: Add node for Camera Power Protectors
@@ -202,18 +196,6 @@ b5e0195f6fd03 dt-bindings: mmc: renesas,sdhi: Document Renesas R-Car Gen5 MMC su
 dcea299ba2811 arm64: dts: renesas: r8a78000: Add device tree node for MSIOF
 c0001ccaab1d4 arch: arm64: renesas: r8a78000: Enable PFC for MSIOF0 and MSIOF6_A
 a3746aaa20e70 pinctrl: renesas: r8a779h0: Add MSIOF pins, groups, functions
-549de9f5880ab net: renesas: rswitch: use FIELD_PREP for remaining MPIC register fields
-1660826787884 net: renesas: rswitch: do not write to MPSM register at init time
-431e3ef2fcea3 net: renesas: rswitch: fix initial MPIC register setting
-9d6b779eb9f93 net: renesas: rswitch: enable only used MFWD features
-c8b129d5ff880 net: renesas: rswitch: handle stop vs interrupt race
-dfa04a0628dc6 net: renesas: rswitch: avoid use-after-put for a device tree node
-f34995d1c2a66 net: renesas: rswitch: fix leaked pointer on error path
-2cacc890855b9 net: renesas: rswitch: fix race window between tx start and complete
-ba01716bed461 net: renesas: rswitch: fix possible early skb release
-05e543781a47a net: renesas: rswitch: remove speed from gwca structure
-838735665b138 net: renesas: rswitch: do not deinit disabled ports
-dd84ca81ca2ab rswitch_poll(). Since `skb` and `gq->skbs[gq->dirty]` are in fact the same pointer, the skb is first freed using dev_kfree_skb_any(), then the value in skb->len is used to update the interface statistics.
 53029ae82e114 arm64: dts: renesas: ironhide: Set max speed value for Ethernet 10G port
 efbc0e91d3da4 net: renesas: rswitch3: Fix wrong setting PHY interface of USXGMII
 352fc439589ed tee: optee: Allow to freeze while waiting for call_queue
@@ -305,7 +287,6 @@ d4c22df93424f i3c: update max length for a private transfer
 d636f00dd82d7 firmware: arm_scmi: Add support for system suspend in power control driver
 2631ba2cc3f7c remoteproc: rcar_gen5_rproc: Fix incorrect return value check
 43c877c3903f7 media: rcar-vin: Add support for crop function for Gen3 and above
-645414a115151 rcar-vin: do not allow changing scaling and composing while streaming
 9a1a59fcb790b arm64: defconfig: Enable VirtIO Random Number Generator
 ff7d76fd26f6b dt-bindings: power: Add r8a78000 power domain definitions
 b04bdff835bc2 i2c: remove interrupt share flag
@@ -391,9 +372,6 @@ ea0185c39e41a uio: Initialize reset struct of each UIO device
 2d1543cb6804a uio: Fix the logic of setting reset to UIO devices
 18c112b7774e2 uio: uio_pdrv_genirq: renesas: Add clock divisor ioctl support
 04c08ff705810 uio: Add PMA IOCTL to compat list
-fa29a88add6aa uio: add missing MODULE_DESCRIPTION() macros
-5a42b05cea87c uio: update kerneldoc comments for interrupt functions
-7ede55abcd9fd uio: use threaded interrupts
 24f3454b61dde uio: Add new ioctl for power management
 fdb20b8e58711 net: ethernet: renesas: rswitch3: Add R-Car gPTP support
 f3a34a73c99ea tty: i3c: add TTY over I3C master support
@@ -441,12 +419,6 @@ fa94fa5778447 arm64: defconfig: Enable R-Car X5H display support
 2367ea36553af media: vsp1: Add support for VSPD (b) instance of R-Car X5H
 35b9b4e6ba4ad media: vsp1: Fix setting control register by display list
 457f66da9c727 media: vsp1: Fix access to reserved registers
-1ab5f0f808fe4 media: vsp1: Add underrun debug print
-3e5407ad56a27 media: renesas: vsp1: Add new formats (2-10-10-10 ARGB, Y210, Y212)
-73f1c850dd481 media: Add Y210, Y212 and Y216 formats
-0b9ee8ed2d0ea media: Add 2-10-10-10 RGB formats
-11a8b898f8e70 media: renesas: vsp1: Add V4H SoC version
-0ba3ef3b61260 media: renesas: vsp1: Change V3U to be gen4
 a90631b27e3d9 vsp1: Add display interrupt wait after setting STRCMD bit
 bbafc310d5e82 v4l: vsp1: Add support for colorkey alpha blending
 0f8e584ef91fc v4l: vsp1: Add write back support
@@ -461,28 +433,6 @@ d2e511f4cde74 media: rcar-vin: Add RAW10 format support
 037007086b1e2 media: rcar-vin: Add overflow debug message option
 abb90dfb65125 rcar-vin: rcar-csi2: Don't bail out from probe on no ep
 65395e5d34bb4 media: rcar-vin: Add memory type of VB2_USERPTR support
-05e608877199f media: i2c: adv7604: Fix range of hue control
-8e3590e16fcae media: i2c: adv7604: Enable video adjustment
-d51163f91aa9e media: rcar-vin: Fix NV12 size alignment
-b795e24e4bb60 media: rcar-vin: Gen3 can not scale NV12
-9e31ef0b8fd3d arm64: dts: renesas: draak: Make HDMI the default video input
-5fbd75add3c5a media: rcar-vin: Add support for R-Car V4H
-c818fa6503a82 media: rcar-isp: Add support for R-Car V4H
-30cef9bd56f68 media: rcar-csi2: Add support for C-PHY on R-Car V4H
-c78b63955ca17 media: rcar-csi2: Prepare for C-PHY support
-4e0697a054579 media: rcar-csi2: Prepare for Gen4 support
-3d36c3935a1fa media: staging: max96712: Add support for 3-lane C-PHY
-ce92500964881 media: dt-bindings: media: renesas,vin: Add binding for V4H
-3084affaa0e46 media: dt-bindings: media: renesas,csi2: Add binding for V4H
-ee7929399c5c7 media: dt-bindings: media: renesas,isp: Add binding for V4H
-02a27dec6d46d media: renesas: fdp1: remove R-Car H3 ES1.* handling
-9258b6ab09319 media: rcar-vin: csi2: remove R-Car H3 ES1.* handling
-fffeb3645a442 media: rcar-vin: remove R-Car H3 ES1.* handling
-632adfe7a8c62 ARM: dts: renesas: Use new media bus type macros
-5bb7bcba02135 media: dt-bindings: media: Add macros for video interface bus types
-bc2763a5e510d media: rcar-vin: Add support for Gen3 UDS (Up Down Scaler)
-3aaa726bd0a20 media: rcar-vin: Store scaler in a function pointer
-80176b3244380 media: rcar-vin: Do not cache remote rectangle
 e5ac4808d2b68 pinctrl: renesas: r8a779h0: Use full description of reserved fields
 186fc78d77a42 pinctrl: renesas: Add support for 1.8V/2.5V I/O voltage levels
 e4d4ab36fdfb9 pinctrl: renesas: Add generic support for resizable buses
@@ -580,7 +530,6 @@ fd6cbbf560f92 i2c: rcar: Tidy up the register order for hardware specification v
 60edbafa35938 dmaengine: rcar-dmac: Add bus rate control support for R-Car Gen4
 0638a3ac72840 dmaengine: rcar-dmac: Add fixed address mode support
 8c01a7dd425ac dmaengine: rcar-dmac: Fix array-bounds warning refer chcr_ts[]
-8bab47fa76d86 dt-bindings: can: rcar_canfd: Convert to json-schema
 09078448f75e5 arm64: defconfig: Add CANFD enable in defconfig
 9874cfbdb1b1d dt-bindings: watchdog: Document R-Car X5H support
 79bdbdb382f3d renesas: watchdog: add compatible string to support R-Car Gen5 Soc.
@@ -593,64 +542,3 @@ aafdab53a234a dt-bindings: can: renesas,rcar-canxl: Document R-Car X5H support
 0f98d9ba53368 GEN5: Temporary workaround for Receive-data-ready malfunction.
 cf7daf81b491e serial: sh-sci: Use pm_runtime_get/put when resume
 65f575b93cfcf serial: sh-sci: Use pm_runtime_get/put when suspend
-bddcf0b3e9b1c arm64: defconfig: Enable Renesas R-Car S4-8 Spider Ethernet devices
-a0dc6a3238082 net: mdio: Add dedicated C45 API to MDIO bus drivers
-4bcebb732ca88 phy: renesas: r8a779f0-ether-serdes: Add .exit() ops
-4250d2ed9fd49 phy: renesas: r8a779f0-ether-serdes: Reset in .init()
-9d6a70e67e620 phy: renesas: r8a779f0-ether-serdes: Convert to devm_platform_ioremap_resource()
-72c2999cb1944 phy: renesas: r8a779f0-ether-serdes: Convert to platform remove callback returning void
-86e630de66e90 phy: renesas: r8a779f0-eth-serdes: Remove retry code in .init()
-c83e7339111b3 phy: renesas: r8a779f0-eth-serdes: Add .power_on() into phy_ops
-dad1de0b32bf8 phy: renesas: r8a779f0-eth-serdes: Fix register setting
-d32d48ca7a22b phy: renesas: Add Renesas Ethernet SERDES driver for R-Car S4-8
-57e29d87a7ccf net: rswitch: Allow jumbo frames
-b3d9f2c04687d net: rswitch: Add jumbo frames handling for TX
-40dd468b1d58a net: rswitch: Add jumbo frames handling for RX
-0b188603d3d70 net: rswitch: Set GWMDNC register
-f6a480db64dd3 net: rswitch: Add a setting ext descriptor function
-497a030ae1d63 net: rswitch: Add unmap_addrs instead of dma address in each desc
-f020ff68b10ea net: rswitch: Use build_skb() for RX
-0137d24b42cd5 net: rswitch: Use unsigned int for desc related array index
-18e952bae28b4 net: rswitch: Drop unused argument/return value
-cf8fa5501c62b net: rswitch: Fix missing dev_kfree_skb_any() in error path
-ad54fb35ea859 net: rswitch: Fix return value in rswitch_start_xmit()
-6241760694c51 net: rswitch: Fix type of ret in rswitch_start_xmit()
-d987fc1163844 net: ethernet: renesas: rcar_gen4_ptp: Prepare for shared register layout
-fe6d708cd952a rswitch: Add PM ops
-294c3f061478a rswitch: Use unsigned int for port related array index
-58e0e63bbd0d2 rswitch: Fix imbalance phy_power_off() calling
-fa772dd88c39d rswitch: Fix renesas_eth_sw_remove() implementation
-2251666ce5c03 rswitch: Fix PHY station management clock setting
-d7ba8fa95b199 net: ethernet: renesas: Convert to platform remove callback returning void
-6e4c17fbeb497 net: renesas: rswitch: Add spin lock protection for irq {un}mask
-a7c222967b5d8 net: renesas: rswitch: Fix unmasking irq condition
-9bdd08e645e9d net: renesas: rswitch: Add .[gs]et_link_ksettings support
-900ada1336a61 net: renesas: rswitch: Add runtime speed change support
-2f0f1e202025e net: Explicitly include correct DT includes
-c69d52e3d1b82 net: renesas: rswitch: Use hardware pause features
-e8a3e131dd6e7 net: renesas: rswitch: Use napi_gro_receive() in RX
-d7d2f80913a44 net: renesas: rswitch: Fix timestamp feature after all descriptors are used
-9994af3a870d1 net: renesas: rswitch: Fix return value in error path of xmit
-a472ad6314493 ethernet: remove superfluous clearing of phydev
-127aa59690ac5 net: renesas: rswitch: Fix GWTSDIE register handling
-b98103c795205 net: renesas: rswitch: Fix the output value of quote from rswitch_rx()
-47a810be78edd net: renesas: rswitch: Improve TX timestamp accuracy
-e4520687b7911 net: renesas: rswitch: Remove gptp flag from rswitch_gwca_queue
-9beee417533d6 net: renesas: rswitch: Move linkfix variables to rswitch_gwca
-9d2b32a148848 net: renesas: rswitch: Rename rings in struct rswitch_gwca_queue
-c331c5f296043 net: renesas: rswitch: Add "max-speed" handling
-75a4671bcdd02 net: renesas: rswitch: Add phy_power_{on,off}() calling
-d9737e5ec036c net: renesas: rswitch: Add host_interfaces setting
-dae816e194d55 net: renesas: rswitch: Convert to phy_device
-135563c341a87 net: renesas: rswitch: Simplify struct phy * handling
-7365e5ee5aab5 net: ethernet: renesas: rswitch: Fix ethernet-ports handling
-06e08627ad0c0 net: ethernet: renesas: rswitch: C45 only transactions
-4f65ab6a1eaeb net: ethernet: renesas: rswitch: Fix getting mac address from device tree
-acc6b4082bb74 net: ethernet: renesas: rswitch: Fix error path in renesas_eth_sw_probe()
-e409190bdd9af net: ethernet: renesas: rswitch: Fix MAC address info
-86bb6c4c93371 net: ethernet: renesas: Fix return type in rswitch_etha_wait_link_verification()
-94b3b5e8c8231 net: ethernet: renesas: rswitch: Fix endless loop in error paths
-58159c63aecba net: remove explicit phylink_generic_validate() references
-d72ace01c4429 net: ethernet: renesas: Fix return type of rswitch_start_xmit()
-e0de441a11af7 net: ethernet: renesas: rswitch: Add R-Car Gen4 gPTP support
-3a7efe7f942f0 net: ethernet: renesas: Add support for "Ethernet Switch"
