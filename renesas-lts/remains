@@ -350,8 +350,6 @@ dfe81a58ff1d8 memory: renesas-rpc-if: Add R-Car Gen4 support
 7fdce051025c8 memory: renesas-rpc-if: Fix PHYCNT.STRTIM setting
 343a29931c14e i3c: rcar: enhance I3C source code
 457b6693cda1d i3c: tty: fix tty trans size to adapt with fifo buffer size
-fcd833b4467e4 Revert "arm64: Disable fine grained traps on boot"
-14e9594e35d1b Revert "random: schedule jitter credit for next jiffy, not in two jiffies"
 65aef2b8a57fe drm: drm_edid: Add 3840x2160 resolution support for drm_add_modes_noedid()
 3f37f0e19c81a drm: rcar-vcon: Fix error when restarting VCON
 ba5da72ef2892 drm: rcar-vcon: Add VCON support on X5H SoC
@@ -383,9 +381,7 @@ ab17eaff9eff7 net: ethernet: renesas: rcar_gen4_ptp: Add support for parallel mo
 f257f3d440493 dt-bindings: ipmmu: Add IPMMU info for UIO devices
 7e6111ff172d9 uio: uio_pdrv_genirq: Add shared interrupt support
 c5473bdff9148 uio: uio_pdrv_genirq: Add parameter error in case not define property in node
-0e24e483a269f Revert "uio: uio_pdrv_genirq: Add parameter error in case not define property in node"
 01a96aa37e5e2 uio: uio_pdrv_genirq: Hotfix clock and power control for multi task
-0a73c32f5cf97 uio: uio_pdrv_genirq: Add parameter error in case not define property in node
 c244b5e5594fa uio: uio_pdrv_genirq: Add parameter to check device no clock
 7fec8759cd4e4 uio:  Support error notification to upper layer
 12336e138f742 uio: Switch to clk_hw_get_flags()

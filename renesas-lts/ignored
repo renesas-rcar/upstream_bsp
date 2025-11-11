@@ -1,5 +1,9 @@
 # Ignored entries (please give reason why)
 
+# Just reverts 0a73c32f5cf97. It says 'b8833263b7f08112197391946447a762788c7c9c' though which is the same patch from an old BSP
+0e24e483a269f Revert "uio: uio_pdrv_genirq: Add parameter error in case not define property in node"
+# Gets reverted by 0e24e483a269f
+0a73c32f5cf97 uio: uio_pdrv_genirq: Add parameter error in case not define property in node
 # Just reverts 63548251a12ba
 9c31625870195 Revert "PCI: dwc: rcar-gen5: Workaround hardcoded REBAR capability offset"
 # Just reverts a03ba6f068acf
@@ -18,6 +22,10 @@
 7aa7c466f36bd Revert "Revert "arm64: Disable fine grained traps on boot""
 # Just reverts 14e9594e35d1b
 4d8e3ae1acba8 Revert "Revert "random: schedule jitter credit for next jiffy, not in two jiffies""
+# Gets reverted by 7aa7c466f36bd
+fcd833b4467e4 Revert "arm64: Disable fine grained traps on boot"
+# Gets reverted by 4d8e3ae1acba8
+14e9594e35d1b Revert "random: schedule jitter credit for next jiffy, not in two jiffies"
 # Gets reverted by 0420962f374b6
 87bb3d5645297 gpio: gpio-rcar: Fix and remove some functions.
 # Just reverts 36b0ed16c3178
