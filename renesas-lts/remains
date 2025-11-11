@@ -2,7 +2,6 @@
 04f762d3a5310 arch: arm64: renesas: r8a78000-uio: Add rsipe UIO device support
 5076947c4a514 arch: arm64: renesas: r8a78000-uio: Remove unregistered devices in UIO
 f6bfd93c07b57 arm64: dts: renesas: r8a78000: Update PCIe6 link speed to gen4
-9c31625870195 Revert "PCI: dwc: rcar-gen5: Workaround hardcoded REBAR capability offset"
 cd43c36521a73 PCI: dwc: rcar-gen5: Add HW Workaround setting for PCIe6 Endpoint
 b960f1c9d0817 PCI: dwc: rcar-gen5: Update bootload setting for PCIe6
 1559f16284aa0 PCI: dwc: rcar-gen5: Update new FW for PCIe6 to support Gen5 speed
@@ -28,7 +27,6 @@ d6d38b5206add arm64: configs: defconfig: Enable configuration of TI TDP2004
 25765a528b4ca gpu: drm: rcar-vcon: Add polarity settings
 ba8d27decd77d gpu: drm: rcar-vcon: Remove the workaround implementation for the VDK restriction
 5dcac7ae8c797 gpu: drm: rcar-vcon: Add hardcoded clock enable for FCPVD, VSPD, VCON and DP-TX
-9c74e6bf9cdc3 Revert "media: vsp1: Disable auto-start mode"
 eadedcdc11b16 misc: ti-tdp2004: Add simple driver for disabling the default test mode
 678fdecf31d9a gpu: drm: rcar-vcon: rcar_dw_dp: Add support for real DP-TX controller
 d0ad4f7e2ab4f drm: bridge: dw_dp: Update to support R-Car operation
@@ -161,7 +159,6 @@ ea071b5153cf6 arm64: dts: renesas: r8a78000: support scmi reset
 fc8c2cc6f2b33 net: ethernet: renesas: rswitch3: Add R-Car gPTP support
 5fd6e25811cc6 PCI: dwc: rcar-gen5: Update PCIe6 RC and EP driver init settings
 e3b7d36e79e32 PCI: dwc: rcar-gen5: Disable multi-function support for PCIe6 EP
-63548251a12ba PCI: dwc: rcar-gen5: Workaround hardcoded REBAR capability offset
 5a424c5e36576 net: ethernet: renesas: rswitch: Change PHY init until interface up
 85850357997fa net: ethernet: rswitch3: Increase value for TX ring size
 ca254c9302d9c soc: renesas: crc-wrapper: Enable clock for WCRC0 to WCRC10
@@ -260,7 +257,6 @@ b4ce42cb5fe01 PCIe: dwc: rcar: Rename clkreq to perst to reflect actual usage
 3c5ff331307b3 PCI: dwc: rcar: Add PCIe4 Host driver for R-Car Gen5
 2d36e3de920bc arm64: dts: renesas: ironhide: Add PCIe4 device tree node
 656d10d4b2092 arm64: dts: renesas: r8a78000: Add PCIe4 device tree node
-68fbb0c65aacf Revert "PCI: dwc-plat: Add R-Car Gen5 PCIe 4.0 Host and Endpoint support"
 260d92fadc0ba arm64: defconfig: Enable Ethernet 1G support for R-Car X5H
 a407ea6b6b5f6 net: renesas: rswitch3: Add support for R-Car X5H (r8a78000) SoC on evaluation board
 b840d5aeaaf53 phy: renesas: Add PCS driver for R-Car X5H (R8A78000)
@@ -286,12 +282,9 @@ cf10a08a1904d arm64: dts: renesas: r8a78000: Enable RWDT node
 ef623ccef664e gpio: gpio-rcar: Update to get registers through struct gpio_rcar_info
 a89f8ebd4373e gpio: gpio-rcar: Update get pin state
 5409013d53195 gpio: gpio-rcar: Add setting enable/disable input
-6ccb3ab6cda05 Revert "gpio: gpio-rcar: Temporarily update offset resgister for X5H"
-0420962f374b6 Revert "gpio: gpio-rcar: Fix and remove some functions."
 7d5581c17e38d pinctrl: renesas: r8a78000: Add pins, groups, functions for modules
 3e4d404bea6ff pinctrl: renesas: Initial R8A78000 (R-Car X5H) PFC support
 d8f0ec426ac86 pinctrl: renesas: Allow drive strength configuration via SoC driver
-56b6d4c358b29 Revert "pinctrl: renesas: Initial R8A78000 (R-Car X5H) PFC support"
 df2262ce8daaa ARM: renesas: Add R8A78000 Ironhide board code
 b35c1a333fee6 arm64: defconfig: disable ARM64_AMU_EXTN to avoid exceptions
 d9d3f3302e447 arm64: defconfig: disable ARM64_PTR_AUTH to avoid exceptions
@@ -314,8 +307,6 @@ d636f00dd82d7 firmware: arm_scmi: Add support for system suspend in power contro
 43c877c3903f7 media: rcar-vin: Add support for crop function for Gen3 and above
 645414a115151 rcar-vin: do not allow changing scaling and composing while streaming
 9a1a59fcb790b arm64: defconfig: Enable VirtIO Random Number Generator
-7aa7c466f36bd Revert "Revert "arm64: Disable fine grained traps on boot""
-4d8e3ae1acba8 Revert "Revert "random: schedule jitter credit for next jiffy, not in two jiffies""
 ff7d76fd26f6b dt-bindings: power: Add r8a78000 power domain definitions
 b04bdff835bc2 i2c: remove interrupt share flag
 b8991670a9f21 arm64: defconfig: Enable dmabuf heaps
@@ -368,7 +359,6 @@ a62c9e7a31fff arm64: defconfig: Enable DMA Test client as module
 808f1f713d9de arm64: defconfig: Add R-Car Gen5 I3C driver
 042d804604198 dt-bindings: PCI: renesas: Add R-Car UCIe Host and Endpoint
 a3aef2f01e97c i2c: rcar: fix error when reset before every transfer on R-Car X5H
-87bb3d5645297 gpio: gpio-rcar: Fix and remove some functions.
 fa6cdb32dca80 soc: renesas: Identify R-Car X5H
 dba1d6fc84932 soc: renesas: Identify R-Car X5H
 7195d502ce087 dt-bindings: PCI: renesas: Add R-Car Gen5 PCIe 6.0 Endpoint
@@ -387,7 +377,6 @@ b89a71fc2ebd2 drivers: soc: renesas: support E2E CRC mode and improve Data Throu
 b2af94d9d84dc uio: Add IPMMU info for user-space
 a26767e135521 arm64: defconfig: Enable R-Car UCIe controller configurations
 2a5d4a68dfb9a dmaengine: rcar-dmac: Workaround for VDK environment limitation
-9ad0e43fa757f Revert "dmaengine: rcar-dmac: Support interrupt sharing"
 ab17eaff9eff7 net: ethernet: renesas: rcar_gen4_ptp: Add support for parallel mode
 94b2db040c75d net: ethernet: rswitch3: Add support for parallel mode
 5166696803678 dt-bindings: ipmmu: Add definition IPMMU info for UIO devices
@@ -450,10 +439,8 @@ c1647af9880d8 arm64: defconfig: Enable R-Car X5H PFC
 30d3275b45a79 i3c: master: export i3c_masterdev_type
 b7237c571a077 i3c: rcar: enhances the R-Car I3C driver source code
 210780275abe1 i3c: rcar: add I3C driver support for R-Car X5H
-0398772ff35db pinctrl: renesas: Initial R8A78000 (R-Car X5H) PFC support
 26d15c90cf599 arm64: defconfig: Enable rcar-vin drivers for R-Car X5H
 fa94fa5778447 arm64: defconfig: Enable R-Car X5H display support
-a03ba6f068acf media: vsp1: Disable auto-start mode
 14544ed264fce media: vsp1: Fix probe error where reset is not supported
 2367ea36553af media: vsp1: Add support for VSPD (b) instance of R-Car X5H
 35b9b4e6ba4ad media: vsp1: Fix setting control register by display list
@@ -531,10 +518,8 @@ cc6b04acf19e6 arm64: defconfig: Change R-Car PWM to built-in
 31330d063ee59 pinctrl: renesas: r8a77990: Add driver-strength for R8A77990
 ccf43c2acb963 pinctrl: renesas:r8a779{50, 51, 6, 65}: add mlb pinmux
 38802b9c9c241 pinctrl: renesas: r8a77990: Remove pullup/pulldown for USB30_OVC pin
-720656604ff2f PCI: dwc-plat: Add R-Car Gen5 PCIe 4.0 Host and Endpoint support
 13b670ce15331 arm64: defconfig: add WWDT driver for R-Car X5H
 287599c1321f6 gpio: rcar: Add DT binding for R-Car V3U
-797eb0dd3a933 gpio: gpio-rcar: Temporarily update offset resgister for X5H
 09003dfef28bd gpio: rcar: Modify compatible string and add support for r8a779f0
 0f82625bc9979 dt-bindings: rtc: rcar: Add R-Car Gen5 RTC support
 d1c3693f70c2d rtc: rcar: Add additional information for proc interface
@@ -579,7 +564,6 @@ bc75048d0d82d dt-bindings: timer: renesas, cmt: Document R-Car X5H CMT support
 663d47943bf22 dt-bindings: renesas,rcar-dmac: Add bus rate control support for R-Car Gen4
 8c96392b8f9e4 dt-bindings: renesas,rcar-dmac: Document optional properties
 18844bd9d8335 dmaengine: rcar-dmac: Enable bit DSIEEN
-36b0ed16c3178 dmaengine: rcar-dmac: Support interrupt sharing
 af25763233187 dmaengine: rcar-dmac: Enable channel 0 when using SMMU
 cbac3b33f4eec dmaengine: rcar-dmac: Add support for X5H SoC
 7dc08ecdd58e0 i2c: rcar: add compatible string to support R-Car X5H of I2C module

@@ -1,5 +1,37 @@
 # Ignored entries (please give reason why)
 
+# Just reverts 63548251a12ba
+9c31625870195 Revert "PCI: dwc: rcar-gen5: Workaround hardcoded REBAR capability offset"
+# Just reverts a03ba6f068acf
+9c74e6bf9cdc3 Revert "media: vsp1: Disable auto-start mode"
+# Gets reverted by 9c31625870195
+63548251a12ba PCI: dwc: rcar-gen5: Workaround hardcoded REBAR capability offset
+# Just reverts 720656604ff2f
+68fbb0c65aacf Revert "PCI: dwc-plat: Add R-Car Gen5 PCIe 4.0 Host and Endpoint support"
+# Just reverts 797eb0dd3a933
+6ccb3ab6cda05 Revert "gpio: gpio-rcar: Temporarily update offset resgister for X5H"
+# Just reverts 87bb3d5645297
+0420962f374b6 Revert "gpio: gpio-rcar: Fix and remove some functions."
+# Just reverts 0398772ff35db
+56b6d4c358b29 Revert "pinctrl: renesas: Initial R8A78000 (R-Car X5H) PFC support"
+# Just reverts fcd833b4467e4
+7aa7c466f36bd Revert "Revert "arm64: Disable fine grained traps on boot""
+# Just reverts 14e9594e35d1b
+4d8e3ae1acba8 Revert "Revert "random: schedule jitter credit for next jiffy, not in two jiffies""
+# Gets reverted by 0420962f374b6
+87bb3d5645297 gpio: gpio-rcar: Fix and remove some functions.
+# Just reverts 36b0ed16c3178
+9ad0e43fa757f Revert "dmaengine: rcar-dmac: Support interrupt sharing"
+# Gets reverted by 56b6d4c358b29
+0398772ff35db pinctrl: renesas: Initial R8A78000 (R-Car X5H) PFC support
+# Gets reverted by 9c74e6bf9cdc3
+a03ba6f068acf media: vsp1: Disable auto-start mode
+# Gets reverted by 68fbb0c65aacf
+720656604ff2f PCI: dwc-plat: Add R-Car Gen5 PCIe 4.0 Host and Endpoint support
+# Gets reverted by 6ccb3ab6cda05
+797eb0dd3a933 gpio: gpio-rcar: Temporarily update offset resgister for X5H
+# Gets reverted by 9ad0e43fa757f
+36b0ed16c3178 dmaengine: rcar-dmac: Support interrupt sharing
 # Same as BSP commit 1b778b7a706c6
 7e97c1a11efe7 arm64: dts: renesas: ironhide: Add workaround for USB OC (Overcurrent) issue
 # Same as BSP commit c66954bf15830
