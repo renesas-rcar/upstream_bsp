@@ -15,6 +15,27 @@ echo "<html>"			> ${HTML}
 FULL=`grep -v \"^#\" ${TOP}/full | wc -l`
 
 #
+# lists
+#
+lists() {
+	file=$1
+	tytle=$2
+
+	num=`grep -v \"^#\" ${TOP}/${file} | wc -l`
+
+	echo "<h1>${tytle} (${num}/${FULL})</h1>"	>> ${HTML}
+	echo "<table border=\"1\">"			>> ${HTML}
+	echo "<tr><th>BSP</th></tr>"			>> ${HTML}
+
+	grep -h -v "^#" ${TOP}/${file} | cut -d " " -f 1 | while IFS= read -r commit; do
+		log=`git log -1 --format=%s $commit`
+		echo -e "<tr><td><a href=\"${BSP_URL}${commit}\">${log}</a></td></tr>"	>> ${HTML}
+
+	done
+	echo "</table>"			>> ${HTML}
+}
+
+#
 # Handled
 #
 num=`grep -v "^#" ${TOP}/handled | grep -v "^$" | wc -l`
@@ -65,37 +86,8 @@ grep -v "^$" ${TOP}/handled | while IFS= read -r line; do
 done
 echo "</table>"			>> ${HTML}
 
-#
-# Active
-#
-num=`grep -v \"^#\" ${TOP}/active | wc -l`
-
-echo "<h1>Active (${num}/${FULL})</h1>"	>> ${HTML}
-echo "<table border=\"1\">"		>> ${HTML}
-echo "<tr><th>BSP</th></tr>"		>> ${HTML}
-
-grep -v "^#" ${TOP}/active | cut -d " " -f 1 | while IFS= read -r commit; do
-	log=`git log -1 --format=%s $commit`
-	echo -e "<tr><td><a href=\"${BSP_URL}${commit}\">${log}</a></td></tr>"	>> ${HTML}
-
-done
-echo "</table>"			>> ${HTML}
-
-#
-# ramins
-#
-num=`grep -v \"^#\" ${TOP}/remains* | wc -l`
-
-echo "<h1>Remains (${num}/${FULL})</h1>"	>> ${HTML}
-echo "<table border=\"1\">"			>> ${HTML}
-echo "<tr><th>BSP</th></tr>"			>> ${HTML}
-
-grep -vh "^#" ${TOP}/remains* | cut -d " " -f 1 | while IFS= read -r commit; do
-	log=`git log -1 --format=%s $commit`
-	echo -e "<tr><td><a href=\"${BSP_URL}${commit}\">${log}</a></td></tr>"	>> ${HTML}
-
-done
-echo "</table>"			>> ${HTML}
-
+lists "active"		"Active"
+lists "ignored"		"Ignored"
+lists "remains*"	"Remains"
 
 echo "</html>"	>> ${HTML}
