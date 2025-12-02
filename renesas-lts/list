@@ -1,20 +1,20 @@
 Local     / drm/panel: ilitek-ili9881c: Add configuration for 5" Raspberry Pi 720x1280
 Local     / drm/panel: ilitek-ili9881c: Turn ILI9881C_COMMAND_INSTR() parameters lowercase
-Local     / drm/panel: ilitek-ili9881c: Add Bestar BSD1218-A101KL68 support
-Local     / drm/panel: ilitek-ili9881c: convert (un-)prepare to mipi_dsi_multi_context
-Local     / drm/panel: ilitek-ili9881c: move display_on/_off dcs calls to (un-)prepare
-Local     / drm/panel: ilitek-ili9881c: turn off power-supply when init fails
+v6.18     / drm/panel: ilitek-ili9881c: Add Bestar BSD1218-A101KL68 support
+v6.18     / drm/panel: ilitek-ili9881c: convert (un-)prepare to mipi_dsi_multi_context
+v6.18     / drm/panel: ilitek-ili9881c: move display_on/_off dcs calls to (un-)prepare
+v6.18     / drm/panel: ilitek-ili9881c: turn off power-supply when init fails
 Local     / arm64: dts: renesas: sparrow-hawk: Add overlay for RPi Display 2
 Local     / arm64: dts: renesas: sparrow-hawk: Add overlay for Argon40 fan HAT
-Local     / hwmon: (pwm-fan) Implement after shutdown fan settings
-Local     / dt-bindings: hwmon: pwm-fan: Document after shutdown fan settings
+v6.18     / hwmon: (pwm-fan) Implement after shutdown fan settings
+v6.18     / dt-bindings: hwmon: pwm-fan: Document after shutdown fan settings
 v6.17     / pwm: argon-fan-hat: Add Argon40 Fan HAT support
 v6.16     / hwmon: (pwm-fan) disable threaded interrupts
 v6.14     / hwmon: (pwm-fan) Default to the Maximum cooling level if provided
 v6.14     / hwmon: (pwm-fan): Make use of device properties everywhere
 v6.13     / hwmon: (pwm-fan) Introduce start from stopped state handling
 v6.13     / dt-bindings: hwmon: pwm-fan: Document start from stopped state properties
-Local     / arm64: dts: renesas: rcar-gen3: Increase CANFD clock rates
+v6.18     / arm64: dts: renesas: rcar-gen3: Increase CANFD clock rates
 v6.17     / can: rcar_canfd: Add support for Transceiver Delay Compensation
 v6.17     / can: rcar_canfd: Return early in rcar_canfd_set_bittiming() when not FD
 v6.17     / can: rcar_canfd: Share config code in rcar_canfd_set_bittiming()
@@ -25,8 +25,8 @@ v6.17     / can: rcar_canfd: Add helper variable dev to rcar_canfd_reset_control
 v6.17     / can: rcar_canfd: Add helper variable ndev to rcar_canfd_rx_pkt()
 v6.17     / can: rcar_canfd: Remove bittiming debug prints
 v6.17     / can: rcar_canfd: Consistently use ndev for net_device pointers
-Local     / soc: renesas: Identify R-Car X5H
-Local     / soc: renesas: rz-sysc: Add syscon/regmap support
+v6.18     / soc: renesas: Identify R-Car X5H
+v6.18     / soc: renesas: rz-sysc: Add syscon/regmap support
 v6.17     / soc: renesas: Sort Renesas Kconfig configs
 v6.17     / soc: renesas: Add RZ/N2H (R9A09G087) config option
 v6.17     / soc: renesas: Add RZ/T2H (R9A09G077) config option
@@ -39,44 +39,44 @@ v6.15     / soc: renesas: rz-sysc: Move RZ/G3S SoC detection to the SYSC driver
 v6.15     / soc: renesas: Add SYSC driver for Renesas RZ family
 v6.14     / soc: renesas: Add RZ/G3E (R9A09G047) config option
 v6.13     / irqchip: Add RZ/V2H(P) Interrupt Control Unit (ICU) driver
-Local     / arm64: errata: Expand speculative SSBS workaround for Cortex-A720AE
-Local     / arm64: cputype: Add Cortex-A720AE definitions
-Local     / dt-bindings: arm: Add Cortex-A320/A520AE/A720AE cores and PMU
-Local     / dt-bindings: soc: renesas: Document R-Car X5H Ironhide
+v6.18     / arm64: errata: Expand speculative SSBS workaround for Cortex-A720AE
+v6.18     / arm64: cputype: Add Cortex-A720AE definitions
+v6.18     / dt-bindings: arm: Add Cortex-A320/A520AE/A720AE cores and PMU
+v6.18     / dt-bindings: soc: renesas: Document R-Car X5H Ironhide
 v6.17     / dt-bindings: soc: renesas: Document R-Car V4M-7 Gray Hawk Single
 v6.17     / dt-bindings: soc: renesas: Document RZ/V2H EVK board part number
-Local     / ASoC: renesas: msiof: ignore 1st FSERR
-Local     / ASoC: renesas: msiof: Add note for The possibility of R/L opposite Capture
-Local     / ASoC: renesas: msiof: setup both (Playback/Capture) in the same time
-Local     / ASoC: renesas: msiof: tidyup DMAC stop timing
-Local     / ASoC: renesas: msiof: add .symmetric_xxx on snd_soc_dai_driver
-Local     / ASoC: renesas: msiof: set SIFCTR register
-Local     / ASoC: renesas: msiof: use reset controller
-Local     / ASoC: renesas: msiof: add unique NOTE name
-Local     / ASoC: renesas: msiof: Use guard() for spin locks
-Local     / ASoC: renesas: msiof: start DMAC first
-Local     / ASoC: renesas: msiof: cleanup status clear method
-Local     / ASoC: renesas: msiof: tidyup error message
-Local     / ASoC: renesas: msiof: msiof_update_and_wait() checks whether reg was updated
+v6.18     / ASoC: renesas: msiof: ignore 1st FSERR
+v6.18     / ASoC: renesas: msiof: Add note for The possibility of R/L opposite Capture
+v6.18     / ASoC: renesas: msiof: setup both (Playback/Capture) in the same time
+v6.18     / ASoC: renesas: msiof: tidyup DMAC stop timing
+v6.18     / ASoC: renesas: msiof: add .symmetric_xxx on snd_soc_dai_driver
+v6.18     / ASoC: renesas: msiof: set SIFCTR register
+v6.18     / ASoC: renesas: msiof: use reset controller
+v6.18     / ASoC: renesas: msiof: add unique NOTE name
+v6.18     / ASoC: renesas: msiof: Use guard() for spin locks
+v6.18     / ASoC: renesas: msiof: start DMAC first
+v6.18     / ASoC: renesas: msiof: cleanup status clear method
+v6.18     / ASoC: renesas: msiof: tidyup error message
+v6.18     / ASoC: renesas: msiof: msiof_update_and_wait() checks whether reg was updated
 v6.17     / ASoC: renesas: msiof: Convert to <linux/spi/sh_msiof.h>
-Local     / drm/rcar-du: dsi: Implement DSI command support
-Local     / arm64: dts: renesas: sparrow-hawk: Add overlay for IMX462 on J2
-Local     / arm64: dts: renesas: sparrow-hawk: Add overlay for IMX462 on J1
-Local     / arm64: dts: renesas: sparrow-hawk: Add overlay for IMX219 on J2
-Local     / arm64: dts: renesas: sparrow-hawk: Add overlay for IMX219 on J1
+v6.18     / drm/rcar-du: dsi: Implement DSI command support
+v6.18     / arm64: dts: renesas: sparrow-hawk: Add overlay for IMX462 on J2
+v6.18     / arm64: dts: renesas: sparrow-hawk: Add overlay for IMX462 on J1
+v6.18     / arm64: dts: renesas: sparrow-hawk: Add overlay for IMX219 on J2
+v6.18     / arm64: dts: renesas: sparrow-hawk: Add overlay for IMX219 on J1
 v6.17     / arm64: dts: renesas: r8a779g3-sparrow-hawk-fan-pwm: Add missing install target
 v6.17     / arm64: dts: renesas: r8a779h2: Add Gray Hawk Single support
 v6.17     / arm64: dts: renesas: Add Renesas R8A779H2 SoC support
 v6.17     / arm64: dts: renesas: Factor out Gray Hawk Single board support
 v6.15     / arm64: dts: renesas: rcar: Add boot phase tags
 v6.16     / arm64: dts: renesas: sparrow-hawk: Disable dtc spi_bus_bridge check
-Local     / thermal/drivers/rcar_gen3: Add support for R-Car V4H default trim values
-Local     / thermal/drivers/rcar_gen3: Add support for per-SoC default trim values
-Local     / arm64: dts: renesas: sparrow-hawk: Set VDDQ18_25_AVB voltage on EVTB1
-Local     / arm64: dts: renesas: sparrow-hawk: Invert microSD voltage selector on EVTB1
-Local     / arm64: dts: renesas: sparrow-hawk: Update thermal trip points
+v6.18     / thermal/drivers/rcar_gen3: Add support for R-Car V4H default trim values
+v6.18     / thermal/drivers/rcar_gen3: Add support for per-SoC default trim values
+v6.18     / arm64: dts: renesas: sparrow-hawk: Set VDDQ18_25_AVB voltage on EVTB1
+v6.18     / arm64: dts: renesas: sparrow-hawk: Invert microSD voltage selector on EVTB1
+v6.18     / arm64: dts: renesas: sparrow-hawk: Update thermal trip points
 v6.17     / Input: goodix - add support for polling mode
-Local     / arm64: dts: renesas: sparrow-hawk: Describe generic SPI NOR support
+v6.18     / arm64: dts: renesas: sparrow-hawk: Describe generic SPI NOR support
 v6.17     / dt-bindings: serial: sh-sci: Document r8a78000 bindings
 v6.14     / dt-bindings: serial: renesas: Document RZ/G3E (r9a09g047) scif
 v6.17     / serial: sh-sci: Use private port ID
