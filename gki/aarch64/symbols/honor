@@ -1,3 +1,5 @@
+  __tracepoint_android_vh_security_audit_log_setid
+  __traceiter_android_vh_security_audit_log_setid
   __traceiter_android_vh_tcp_write_timeout_estab_retrans
   __tracepoint_android_vh_tcp_write_timeout_estab_retrans
   __traceiter_android_vh_ufs_eh_timed_out
@@ -10,9 +12,17 @@
   __tracepoint_android_vh_ufs_wait_for_uic_cmd
   __traceiter_android_vh_ufs_transfer_rsp_status
   __tracepoint_android_vh_ufs_transfer_rsp_status
+  __traceiter_android_rvh_dpm_prepare
+  __tracepoint_android_rvh_dpm_prepare
   __tracepoint_ufshcd_profile_hibern8
   __traceiter_ufshcd_profile_hibern8
   __tracepoint_ufshcd_profile_clk_scaling
   __traceiter_ufshcd_profile_clk_scaling
   __tracepoint_ufshcd_profile_clk_gating
   __traceiter_ufshcd_profile_clk_gating
+  __tracepoint_scsi_dispatch_cmd_start
+  __traceiter_scsi_dispatch_cmd_start
+  __tracepoint_scsi_dispatch_cmd_done
+  __traceiter_scsi_dispatch_cmd_done
+  __tracepoint_android_vh_f2fs_printk
+  __traceiter_android_vh_f2fs_printk

@@ -102,6 +102,7 @@
 
 #include <trace/hooks/sched.h>
 #include <trace/hooks/cgroup.h>
+#include <trace/hooks/dtask.h>
 
 EXPORT_TRACEPOINT_SYMBOL_GPL(ipi_send_cpu);
 EXPORT_TRACEPOINT_SYMBOL_GPL(ipi_send_cpumask);
@@ -836,7 +837,7 @@ static void update_rq_clock_task(struct rq *rq, s64 delta)
 	if ((irq_delta + steal) && sched_feat(NONTASK_CAPACITY))
 		update_irq_load_avg(rq, irq_delta + steal);
 #endif
-	update_rq_clock_pelt(rq, delta);
+	update_rq_clock_task_mult(rq, delta);
 }
 
 void update_rq_clock(struct rq *rq)
@@ -4762,6 +4763,8 @@ late_initcall(sched_core_sysctl_init);
  */
 int sched_fork(u64 clone_flags, struct task_struct *p)
 {
+	int should_scx = 0;
+
 	trace_android_rvh_sched_fork(p);
 
 	__sched_fork(clone_flags, p);
@@ -4808,10 +4811,11 @@ int sched_fork(u64 clone_flags, struct task_struct *p)
 
 	scx_pre_fork(p);
 
-	if (rt_prio(p->prio)) {
+	trace_android_vh_task_should_scx(&should_scx, p->policy, p->prio);
+	if (rt_prio(p->prio) && !should_scx) {
 		p->sched_class = &rt_sched_class;
 #ifdef CONFIG_SCHED_CLASS_EXT
-	} else if (task_should_scx(p->policy)) {
+	} else if (task_should_scx(p->policy) || should_scx) {
 		p->sched_class = &ext_sched_class;
 #endif
 	} else {
@@ -7379,8 +7383,18 @@ EXPORT_SYMBOL(default_wake_function);
 
 const struct sched_class *__setscheduler_class(int policy, int prio)
 {
+#ifdef CONFIG_SCHED_CLASS_EXT
+	int should_scx = 0;
+#endif
+
 	if (dl_prio(prio))
 		return &dl_sched_class;
+
+#ifdef CONFIG_SCHED_CLASS_EXT
+	trace_android_vh_task_should_scx(&should_scx, policy, prio);
+	if (should_scx)
+		return &ext_sched_class;
+#endif
 
 	if (rt_prio(prio))
 		return &rt_sched_class;
@@ -8007,6 +8021,7 @@ void sched_show_task(struct task_struct *p)
 	print_worker_info(KERN_INFO, p);
 	print_stop_info(KERN_INFO, p);
 	print_scx_info(KERN_INFO, p);
+	trace_android_vh_sched_show_task(p);
 	show_stack(p, NULL, KERN_INFO);
 	put_task_stack(p);
 }
