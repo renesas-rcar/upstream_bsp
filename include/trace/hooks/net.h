@@ -18,12 +18,6 @@ enum tcp_state_change_reason {
 };
 #endif
 
-struct packet_type;
-struct list_head;
-DECLARE_HOOK(android_vh_ptype_head,
-	TP_PROTO(const struct packet_type *pt, struct list_head *vendor_pt),
-	TP_ARGS(pt, vendor_pt));
-
 struct sock;
 struct sockaddr_in6;
 struct tcp_sock;
@@ -123,8 +117,6 @@ DECLARE_RESTRICTED_HOOK(android_rvh_bpf_skb_load_bytes,
 	TP_PROTO(const struct sk_buff *skb, u32 offset, void *to, u32 len,
 		int *handled, int *err),
 	TP_ARGS(skb, offset, to, len, handled, err), 1);
-DECLARE_RESTRICTED_HOOK(android_rvh_tcp_rcv_spurious_retrans,
-	TP_PROTO(struct sock *sk), TP_ARGS(sk), 1);
 DECLARE_HOOK(android_vh_tcp_rtt_estimator,
 	TP_PROTO(struct sock *sk, long mrtt_us), TP_ARGS(sk, mrtt_us));
 DECLARE_HOOK(android_vh_udp_enqueue_schedule_skb,

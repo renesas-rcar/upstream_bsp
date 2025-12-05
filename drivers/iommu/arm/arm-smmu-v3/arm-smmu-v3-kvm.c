@@ -1255,8 +1255,8 @@ static int kvm_arm_smmu_v3_post_init(void)
 
 static int kvm_arm_smmu_v3_init_drv(void)
 {
-	int ret;
 	struct kvm_hyp_memcache atomic_mc;
+	int ret;
 
 	/*
 	 * Check whether any device owned by the host is behind an SMMU.
@@ -1291,6 +1291,8 @@ static int kvm_arm_smmu_v3_init_drv(void)
 	 */
 	kvm_hyp_arm_smmu_v3_smmus = kvm_arm_smmu_array;
 	kvm_hyp_arm_smmu_v3_count = kvm_arm_smmu_count;
+
+	init_hyp_memcache(&atomic_mc);
 
 	ret = smmu_alloc_atomic_mc(&atomic_mc);
 	if (ret)
@@ -1366,7 +1368,7 @@ static int kvm_arm_smmu_v3_device_id(struct device *dev, u32 idx,
 	return 0;
 }
 
-struct kvm_iommu_driver kvm_smmu_v3_ops = {
+static struct kvm_iommu_driver kvm_smmu_v3_ops = {
 	.init_driver = kvm_arm_smmu_v3_init_drv,
 	.remove_driver = kvm_arm_smmu_v3_remove_drv,
 	.get_iommu_id_by_of = kvm_arm_v3_id_by_of,

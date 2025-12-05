@@ -1875,6 +1875,29 @@ out:
 	return rc;
 }
 
+static int sel_make_android_policycap(struct selinux_fs_info *fsi,
+				      int policycap, const char *policycap_name)
+{
+	struct dentry *dentry;
+	struct inode *inode;
+
+	dentry = d_alloc_name(fsi->policycap_dir, policycap_name);
+	if (dentry == NULL)
+		return -ENOMEM;
+
+	inode = sel_make_inode(fsi->sb, S_IFREG | 0444);
+	if (inode == NULL) {
+		dput(dentry);
+		return -ENOMEM;
+	}
+
+	inode->i_fop = &sel_policycap_ops;
+	inode->i_ino = policycap | SEL_POLICYCAP_INO_OFFSET;
+	d_add(dentry, inode);
+
+	return 0;
+}
+
 static int sel_make_policycap(struct selinux_fs_info *fsi)
 {
 	unsigned int iter;
@@ -1902,7 +1925,9 @@ static int sel_make_policycap(struct selinux_fs_info *fsi)
 		d_add(dentry, inode);
 	}
 
-	return 0;
+	/* ANDROID: Handle the memfd_class policycap separately to preserve the KMI. */
+	return sel_make_android_policycap(fsi, POLICYDB_CAP_MEMFD_CLASS,
+					  POLICYDB_CAP_MEMFD_CLASS_NAME);
 }
 
 static struct dentry *sel_make_dir(struct dentry *dir, const char *name,

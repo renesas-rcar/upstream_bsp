@@ -164,11 +164,12 @@ int topup_hyp_memcache_gfp(struct kvm_hyp_memcache *mc, unsigned long min_pages,
 static inline void init_hyp_memcache(struct kvm_hyp_memcache *mc)
 {
 	memset(mc, 0, sizeof(*mc));
+	mc->mapping = ZERO_SIZE_PTR; /* Prevent allocation, solely useful for stage2 memcache */
 }
 
 static inline void init_hyp_stage2_memcache(struct kvm_hyp_memcache *mc)
 {
-	init_hyp_memcache(mc);
+	memset(mc, 0, sizeof(*mc));
 	mc->flags = HYP_MEMCACHE_ACCOUNT_KMEMCG | HYP_MEMCACHE_ACCOUNT_STAGE2;
 }
 
@@ -1773,8 +1774,14 @@ static inline void kvm_iommu_sg_free(struct kvm_iommu_sg *sg, unsigned int nents
 int kvm_iommu_attach_dev(pkvm_handle_t iommu_id, pkvm_handle_t domain_id,
 			 unsigned int endpoint, unsigned int pasid,
 			 unsigned int ssid_bits, unsigned long flags);
+int kvm_iommu_attach_dev_nested(pkvm_handle_t iommu_id, pkvm_handle_t domain_id,
+				unsigned int endpoint, unsigned int pasid,
+				unsigned long flags, void *s1_desc_hva,
+				size_t s1_desc_size);
 int kvm_iommu_detach_dev(pkvm_handle_t iommu_id, pkvm_handle_t domain_id,
 			 unsigned int endpoint, unsigned int pasid);
+int kvm_iommu_detach_dev_nested(pkvm_handle_t iommu_id, pkvm_handle_t domain_id,
+				unsigned int endpoint, unsigned int pasid);
 int kvm_iommu_alloc_domain(pkvm_handle_t domain_id, int type);
 int kvm_iommu_free_domain(pkvm_handle_t domain_id);
 int kvm_iommu_map_pages(pkvm_handle_t domain_id, unsigned long iova,
@@ -1783,9 +1790,13 @@ int kvm_iommu_map_pages(pkvm_handle_t domain_id, unsigned long iova,
 size_t kvm_iommu_unmap_pages(pkvm_handle_t domain_id, unsigned long iova,
 			     size_t pgsize, size_t pgcount);
 phys_addr_t kvm_iommu_iova_to_phys(pkvm_handle_t domain_id, unsigned long iova);
+int kvm_iommu_iotlb_sync_map(pkvm_handle_t domain_id, unsigned long iova, size_t size);
 size_t kvm_iommu_map_sg(pkvm_handle_t domain_id, struct kvm_iommu_sg *sg,
 			unsigned long iova, unsigned int nent,
 			unsigned int prot, gfp_t gfp);
+int kvm_iommu_iotlb_inv_nested_domain(pkvm_handle_t domain_id, unsigned long iova, size_t size,
+				      size_t granule, bool leaf);
+int kvm_iommu_nested_cfg_sync(pkvm_handle_t iommu_id, void *cmd_desc_hva, size_t cmd_desc_size);
 #endif
 
 int kvm_iommu_share_hyp_sg(struct kvm_iommu_sg *sg, unsigned int nents);
