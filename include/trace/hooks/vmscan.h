@@ -12,6 +12,23 @@
 DECLARE_RESTRICTED_HOOK(android_rvh_set_balance_anon_file_reclaim,
 			TP_PROTO(bool *balance_anon_file_reclaim),
 			TP_ARGS(balance_anon_file_reclaim), 1);
+DECLARE_HOOK(android_vh_mglru_should_abort_scan,
+	TP_PROTO(unsigned long nr_reclaimed, unsigned long nr_to_reclaim,
+	unsigned int order, bool *bypass),
+	TP_ARGS(nr_to_reclaim, nr_reclaimed, order, bypass));
+DECLARE_HOOK(android_vh_tune_swappiness,
+	TP_PROTO(int *swappiness),
+	TP_ARGS(swappiness));
+DECLARE_HOOK(android_vh_async_psi_bypass,
+	TP_PROTO(bool *bypass),
+	TP_ARGS(bypass));
+DECLARE_HOOK(android_vh_page_referenced_check_bypass,
+	TP_PROTO(struct folio *folio, unsigned long nr_to_scan, int lru, bool *bypass),
+	TP_ARGS(folio, nr_to_scan, lru, bypass));
+enum scan_balance;
+DECLARE_HOOK(android_vh_tune_scan_type,
+	TP_PROTO(enum scan_balance *scan_type),
+	TP_ARGS(scan_type));
 #endif /* _TRACE_HOOK_VMSCAN_H */
 /* This part must be outside protection */
 #include <trace/define_trace.h>

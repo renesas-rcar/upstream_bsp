@@ -47,6 +47,7 @@
 #include <linux/kprobes.h>
 #include <linux/debugfs.h>
 #include <trace/events/kmem.h>
+#include <trace/hooks/mm.h>
 
 #include "internal.h"
 
@@ -3097,6 +3098,8 @@ static inline struct slab *alloc_slab_page(gfp_t flags, int node,
 	if (folio_is_pfmemalloc(folio))
 		slab_set_pfmemalloc(slab);
 
+	trace_android_vh_slab_folio_alloced(order, flags);
+
 	return slab;
 }
 
@@ -5628,6 +5631,8 @@ static void *___kmalloc_large_node(size_t size, gfp_t flags, int node)
 		__folio_set_large_kmalloc(folio);
 	}
 
+	trace_android_vh_kmalloc_large_alloced(folio, order, flags);
+
 	ptr = kasan_kmalloc_large(ptr, size, flags);
 	/* As ptr might get tagged, call kmemleak hook after KASAN. */
 	kmemleak_alloc(ptr, size, 1, flags);
@@ -7104,6 +7109,9 @@ static gfp_t kmalloc_gfp_adjust(gfp_t flags, size_t size)
 		/* nofail semantic is implemented by the vmalloc fallback */
 		flags &= ~__GFP_NOFAIL;
 	}
+
+	if (size > 0)
+		trace_android_vh_adjust_kvmalloc_flags(get_order(size), &flags);
 
 	return flags;
 }

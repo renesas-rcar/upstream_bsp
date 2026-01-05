@@ -76,6 +76,7 @@
 #undef CREATE_TRACE_POINTS
 
 #include <trace/events/vmscan.h>
+#include <trace/hooks/mm.h>
 
 struct cgroup_subsys memory_cgrp_subsys __read_mostly;
 EXPORT_SYMBOL(memory_cgrp_subsys);
@@ -408,6 +409,7 @@ unsigned long lruvec_page_state(struct lruvec *lruvec, enum node_stat_item idx)
 #endif
 	return x;
 }
+EXPORT_SYMBOL_GPL(lruvec_page_state);
 
 unsigned long lruvec_page_state_local(struct lruvec *lruvec,
 				      enum node_stat_item idx)
@@ -3562,6 +3564,7 @@ static DEFINE_XARRAY_ALLOC1(mem_cgroup_ids);
 static void mem_cgroup_id_remove(struct mem_cgroup *memcg)
 {
 	if (memcg->id.id > 0) {
+		trace_android_vh_mem_cgroup_id_remove(memcg);
 		xa_erase(&mem_cgroup_ids, memcg->id.id);
 		memcg->id.id = 0;
 	}
@@ -3684,6 +3687,7 @@ static void __mem_cgroup_free(struct mem_cgroup *memcg)
 {
 	int node;
 
+	trace_android_vh_mem_cgroup_free(memcg);
 	obj_cgroup_put(memcg->orig_objcg);
 
 	for_each_node(node)
@@ -3772,6 +3776,7 @@ static struct mem_cgroup *mem_cgroup_alloc(struct mem_cgroup *parent)
 	memcg->deferred_split_queue.split_queue_len = 0;
 #endif
 	lru_gen_init_memcg(memcg);
+	trace_android_vh_mem_cgroup_alloc(memcg);
 	return memcg;
 fail:
 	mem_cgroup_id_remove(memcg);
@@ -3867,6 +3872,7 @@ static int mem_cgroup_css_online(struct cgroup_subsys_state *css)
 	 * regular ID destruction during offlining.
 	 */
 	xa_store(&mem_cgroup_ids, memcg->id.id, memcg, GFP_KERNEL);
+	trace_android_vh_mem_cgroup_css_online(css, memcg);
 
 	return 0;
 offline_kmem:
@@ -3880,6 +3886,7 @@ static void mem_cgroup_css_offline(struct cgroup_subsys_state *css)
 {
 	struct mem_cgroup *memcg = mem_cgroup_from_css(css);
 
+	trace_android_vh_mem_cgroup_css_offline(css, memcg);
 	memcg1_css_offline(memcg);
 
 	page_counter_set_min(&memcg->memory, 0);

@@ -74,9 +74,11 @@
 
 #undef CREATE_TRACE_POINTS
 #include <trace/hooks/vmscan.h>
+#include <trace/hooks/mm.h>
 
 EXPORT_TRACEPOINT_SYMBOL_GPL(mm_vmscan_direct_reclaim_begin);
 EXPORT_TRACEPOINT_SYMBOL_GPL(mm_vmscan_direct_reclaim_end);
+EXPORT_TRACEPOINT_SYMBOL_GPL(mm_vmscan_kswapd_wake);
 
 struct scan_control {
 	/* How many pages shrink_list() should reclaim */
@@ -914,6 +916,12 @@ static enum folio_references folio_check_references(struct folio *folio,
 {
 	int referenced_ptes, referenced_folio;
 	vm_flags_t vm_flags;
+	int ret = 0;
+
+	trace_android_vh_page_should_be_protected(folio, sc->nr_scanned,
+		sc->priority, &ret);
+	if (ret)
+		return ret;
 
 	referenced_ptes = folio_referenced(folio, 1, sc->target_mem_cgroup,
 					   &vm_flags);
@@ -2144,6 +2152,8 @@ static void shrink_active_list(unsigned long nr_to_scan,
 	unsigned nr_rotated = 0;
 	bool file = is_file_lru(lru);
 	struct pglist_data *pgdat = lruvec_pgdat(lruvec);
+	int should_protect = 0;
+	bool bypass = false;
 
 	lru_add_drain();
 
@@ -2180,6 +2190,19 @@ static void shrink_active_list(unsigned long nr_to_scan,
 			}
 		}
 
+		trace_android_vh_page_should_be_protected(folio, sc->nr_scanned,
+			sc->priority, &should_protect);
+
+		if (unlikely(should_protect)) {
+			nr_rotated += folio_nr_pages(folio);
+			list_add(&folio->lru, &l_active);
+			continue;
+		}
+
+		trace_android_vh_page_referenced_check_bypass(folio, nr_to_scan, lru, &bypass);
+		if (bypass)
+			goto skip_folio_referenced;
+
 		/* Referenced or rmap lock contention: rotate */
 		if (folio_referenced(folio, 0, sc->target_mem_cgroup,
 				     &vm_flags) != 0) {
@@ -2199,6 +2222,7 @@ static void shrink_active_list(unsigned long nr_to_scan,
 			}
 		}
 
+skip_folio_referenced:
 		folio_clear_active(folio);	/* we are de-activating */
 		folio_set_workingset(folio);
 		list_add(&folio->lru, &l_inactive);
@@ -2279,6 +2303,7 @@ unsigned long reclaim_pages(struct list_head *folio_list)
 
 	return nr_reclaimed;
 }
+EXPORT_SYMBOL_GPL(reclaim_pages);
 
 static unsigned long shrink_list(enum lru_list lru, unsigned long nr_to_scan,
 				 struct lruvec *lruvec, struct scan_control *sc)
@@ -2577,6 +2602,7 @@ static void get_scan_count(struct lruvec *lruvec, struct scan_control *sc,
 		goto out;
 	}
 
+        trace_android_vh_tune_swappiness(&swappiness);
 	/*
 	 * Global reclaim will swap to prevent OOM even with no
 	 * swappiness, but memcg users want to use this knob to
@@ -2630,6 +2656,7 @@ static void get_scan_count(struct lruvec *lruvec, struct scan_control *sc,
 	calculate_pressure_balance(sc, swappiness, fraction, &denominator);
 
 out:
+	trace_android_vh_tune_scan_type(&scan_balance);
 	for_each_evictable_lru(lru) {
 		bool file = is_file_lru(lru);
 		unsigned long lruvec_size;
@@ -2767,6 +2794,7 @@ static struct lruvec *get_lruvec(struct mem_cgroup *memcg, int nid)
 
 static int get_swappiness(struct lruvec *lruvec, struct scan_control *sc)
 {
+	int swappiness;
 	struct mem_cgroup *memcg = lruvec_memcg(lruvec);
 	struct pglist_data *pgdat = lruvec_pgdat(lruvec);
 
@@ -2777,7 +2805,10 @@ static int get_swappiness(struct lruvec *lruvec, struct scan_control *sc)
 	    mem_cgroup_get_nr_swap_pages(memcg) < MIN_LRU_BATCH)
 		return 0;
 
-	return sc_swappiness(sc, memcg);
+	swappiness = sc_swappiness(sc, memcg);
+	trace_android_vh_tune_swappiness(&swappiness);
+
+	return swappiness;
 }
 
 static int get_nr_gens(struct lruvec *lruvec, int type)
@@ -4874,16 +4905,19 @@ static bool should_abort_scan(struct lruvec *lruvec, struct scan_control *sc)
 {
 	int i;
 	enum zone_watermarks mark;
+	bool bypass = false;
 
+	trace_android_vh_mglru_should_abort_scan(sc->nr_reclaimed,
+		sc->nr_to_reclaim, sc->order, &bypass);
 	/* don't abort memcg reclaim to ensure fairness */
-	if (!root_reclaim(sc))
+	if (!root_reclaim(sc) && !bypass)
 		return false;
 
 	if (sc->nr_reclaimed >= max(sc->nr_to_reclaim, compact_gap(sc->order)))
 		return true;
 
 	/* check the order to exclude compaction-induced reclaim */
-	if (!current_is_kswapd() || sc->order)
+	if ((!current_is_kswapd() || sc->order) && !bypass)
 		return false;
 
 	mark = sysctl_numa_balancing_mode & NUMA_BALANCING_MEMORY_TIERING ?
@@ -7018,9 +7052,12 @@ static int balance_pgdat(pg_data_t *pgdat, int order, int highest_zoneidx)
 		.order = order,
 		.may_unmap = 1,
 	};
+	bool bypass = false;
 
 	set_task_reclaim_state(current, &sc.reclaim_state);
-	psi_memstall_enter(&pflags);
+	trace_android_vh_async_psi_bypass(&bypass);
+	if (!bypass)
+		psi_memstall_enter(&pflags);
 	__fs_reclaim_acquire(_THIS_IP_);
 
 	count_vm_event(PAGEOUTRUN);
@@ -7208,7 +7245,8 @@ out:
 
 	snapshot_refaults(NULL, pgdat);
 	__fs_reclaim_release(_THIS_IP_);
-	psi_memstall_leave(&pflags);
+	if (!bypass)
+		psi_memstall_leave(&pflags);
 	set_task_reclaim_state(current, NULL);
 
 	/*

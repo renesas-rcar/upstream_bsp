@@ -68,6 +68,10 @@ DECLARE_RESTRICTED_HOOK(android_rvh_get_nohz_timer_target,
 	TP_PROTO(int *cpu, bool *done),
 	TP_ARGS(cpu, done), 1);
 
+DECLARE_RESTRICTED_HOOK(android_rvh_set_user_nice,
+	TP_PROTO(struct task_struct *p, long *nice),
+	TP_ARGS(p, nice), 1);
+
 DECLARE_RESTRICTED_HOOK(android_rvh_set_user_nice_locked,
 	TP_PROTO(struct task_struct *p, long *nice, bool *allowed),
 	TP_ARGS(p, nice, allowed), 1);
@@ -399,8 +403,19 @@ DECLARE_HOOK(android_vh_sched_pelt_multiplier,
 DECLARE_RESTRICTED_HOOK(android_rvh_post_init_entity_util_avg,
 	TP_PROTO(struct sched_entity *se),
 	TP_ARGS(se), 1);
+DECLARE_HOOK(android_vh_task_cmdline_prio_inherit,
+	TP_PROTO(struct task_struct *p, int *saved_prio, bool *prio_inherited),
+	TP_ARGS(p, saved_prio, prio_inherited));
+DECLARE_HOOK(android_vh_mmput,
+	TP_PROTO(struct mm_struct *mm),
+	TP_ARGS(mm));
 /* macro versions of hooks are no longer required */
 
+DECLARE_HOOK(android_vh_task_cmdline_prio_restore,
+	TP_PROTO(int saved_prio),
+	TP_ARGS(saved_prio));
+
+/* macro versions of hooks are no longer required */
 #endif /* _TRACE_HOOK_SCHED_H */
 /* This part must be outside protection */
 #include <trace/define_trace.h>
