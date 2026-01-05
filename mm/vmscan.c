@@ -920,6 +920,8 @@ static enum folio_references folio_check_references(struct folio *folio,
 
 	trace_android_vh_page_should_be_protected(folio, sc->nr_scanned,
 		sc->priority, &ret);
+
+	trace_android_vh_check_folio_look_around_ref(folio, &ret);
 	if (ret)
 		return ret;
 
@@ -5024,6 +5026,7 @@ static void shrink_many(struct pglist_data *pgdat, struct scan_control *sc)
 	struct lru_gen_folio *lrugen;
 	struct mem_cgroup *memcg;
 	struct hlist_nulls_node *pos;
+	bool bypass = false;
 
 	gen = get_memcg_gen(READ_ONCE(pgdat->memcg_lru.seq));
 	bin = first_bin = get_random_u32_below(MEMCG_NR_BINS);
@@ -5053,6 +5056,10 @@ restart:
 			memcg = NULL;
 			continue;
 		}
+
+		trace_android_vh_should_memcg_bypass(memcg, sc->priority, &bypass);
+		if (bypass)
+			continue;
 
 		rcu_read_unlock();
 
@@ -6787,6 +6794,7 @@ unsigned long try_to_free_mem_cgroup_pages(struct mem_cgroup *memcg,
 	return 0;
 }
 #endif
+EXPORT_SYMBOL_GPL(try_to_free_mem_cgroup_pages);
 
 static void kswapd_age_node(struct pglist_data *pgdat, struct scan_control *sc)
 {

@@ -55,6 +55,7 @@
 #include <linux/delayacct.h>
 #include <linux/cacheinfo.h>
 #include <linux/pgalloc_tag.h>
+#include <trace/hooks/vmscan.h>
 #include <trace/hooks/mm.h>
 
 #include <asm/div64.h>
@@ -1576,11 +1577,26 @@ static void free_one_page(struct zone *zone, struct page *page,
 static void __free_pages_ok(struct page *page, unsigned int order,
 			    fpi_t fpi_flags)
 {
+	int migratetype;
 	unsigned long pfn = page_to_pfn(page);
 	struct zone *zone = page_zone(page);
+	bool skip_free_unref_page = false;
 
-	if (free_pages_prepare(page, order))
+	if (free_pages_prepare(page, order)) {
+		/*
+		 * Calling get_pfnblock_migratetype() without spin_lock_irqsave() here
+		 * is used to avoid calling get_pfnblock_migratetype() under the lock.
+		 * This will reduce the lock holding time.
+		 * If a page is being freed, its migratetype won’t change, so no lock is needed.
+		 */
+		migratetype = get_pfnblock_migratetype(page, pfn);
+		trace_android_vh_free_unref_page_bypass(page, order, migratetype,
+			&skip_free_unref_page);
+		if (skip_free_unref_page)
+			return;
+
 		free_one_page(zone, page, pfn, order, fpi_flags);
+	}
 }
 
 void __meminit __free_pages_core(struct page *page, unsigned int order,
@@ -1877,6 +1893,7 @@ static void prep_new_page(struct page *page, unsigned int order, gfp_t gfp_flags
 		set_page_pfmemalloc(page);
 	else
 		clear_page_pfmemalloc(page);
+	trace_android_vh_test_clear_look_around_ref(page);
 }
 
 /*
@@ -2908,6 +2925,7 @@ static void __free_frozen_pages(struct page *page, unsigned int order,
 	struct zone *zone;
 	unsigned long pfn = page_to_pfn(page);
 	int migratetype;
+	bool skip_free_unref_page = false;
 
 	if (!pcp_allowed_order(order)) {
 		__free_pages_ok(page, order, fpi_flags);
@@ -2926,6 +2944,9 @@ static void __free_frozen_pages(struct page *page, unsigned int order,
 	 */
 	zone = page_zone(page);
 	migratetype = get_pfnblock_migratetype(page, pfn);
+	trace_android_vh_free_unref_page_bypass(page, order, migratetype, &skip_free_unref_page);
+	if (skip_free_unref_page)
+		return;
 	if (unlikely(migratetype >= MIGRATE_PCPTYPES)) {
 		if (unlikely(is_migrate_isolate(migratetype))) {
 			free_one_page(zone, page, pfn, order, fpi_flags);
@@ -3275,6 +3296,9 @@ struct page *__rmqueue_pcplist(struct zone *zone, unsigned int order,
 			int batch = nr_pcp_alloc(pcp, zone, order);
 			int alloced;
 
+			trace_android_vh_rmqueue_bulk_bypass(order, pcp, migratetype, list);
+			if (!list_empty(list))
+				goto get_list;
 			alloced = rmqueue_bulk(zone, order,
 					batch, list,
 					migratetype, alloc_flags);
@@ -3284,6 +3308,7 @@ struct page *__rmqueue_pcplist(struct zone *zone, unsigned int order,
 				return NULL;
 		}
 
+get_list:
 		page = list_first_entry(list, struct page, pcp_list);
 		list_del(&page->pcp_list);
 		pcp->count -= 1 << order;
@@ -3440,6 +3465,7 @@ static bool unreserve_highatomic_pageblock(const struct alloc_context *ac,
 	struct page *page;
 	int order;
 	int ret;
+	bool skip_unreserve_highatomic = false;
 
 	for_each_zone_zonelist_nodemask(zone, z, zonelist, ac->highest_zoneidx,
 								ac->nodemask) {
@@ -3449,6 +3475,11 @@ static bool unreserve_highatomic_pageblock(const struct alloc_context *ac,
 		 */
 		if (!force && zone->nr_reserved_highatomic <=
 					pageblock_nr_pages)
+			continue;
+
+		trace_android_vh_unreserve_highatomic_bypass(force, zone,
+				&skip_unreserve_highatomic);
+		if (skip_unreserve_highatomic)
 			continue;
 
 		spin_lock_irqsave(&zone->lock, flags);
@@ -3854,6 +3885,7 @@ retry:
 
 check_alloc_wmark:
 		mark = wmark_pages(zone, alloc_flags & ALLOC_WMARK_MASK);
+		trace_android_vh_get_page_wmark(alloc_flags, &mark);
 		if (!zone_watermark_fast(zone, order, mark,
 				       ac->highest_zoneidx, alloc_flags,
 				       gfp_mask)) {
@@ -4669,6 +4701,7 @@ __alloc_pages_slowpath(gfp_t gfp_mask, unsigned int order,
 	unsigned long pages_reclaimed = 0;
 	int retry_loop_count = 0;
 	u64 stime = 0;
+	bool should_alloc_retry = false;
 
 	if (unlikely(nofail)) {
 		/*
@@ -4843,6 +4876,11 @@ retry:
 
 	if (page)
 		goto got_pg;
+
+	trace_android_vh_should_alloc_pages_retry(gfp_mask, order, &alloc_flags,
+		ac->migratetype, ac->preferred_zoneref->zone, &page, &should_alloc_retry);
+	if (should_alloc_retry)
+		goto retry;
 
 	/* Try direct reclaim and then allocating */
 	page = __alloc_pages_direct_reclaim(gfp_mask, order, alloc_flags, ac,

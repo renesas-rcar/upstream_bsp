@@ -848,6 +848,10 @@ static void verity_status(struct dm_target *ti, status_type_t type,
 	switch (type) {
 	case STATUSTYPE_INFO:
 		DMEMIT("%c", v->hash_failed ? 'C' : 'V');
+		if (verity_fec_is_enabled(v))
+			DMEMIT(" %lld", atomic64_read(&v->fec->corrected));
+		else
+			DMEMIT(" -");
 		break;
 	case STATUSTYPE_TABLE:
 		DMEMIT("%u %s %s %u %u %llu %llu %s ",
@@ -1785,7 +1789,7 @@ static struct target_type verity_target = {
 	.name		= "verity",
 /* Note: the LSMs depend on the singleton and immutable features */
 	.features	= DM_TARGET_SINGLETON | DM_TARGET_IMMUTABLE,
-	.version	= {1, 12, 0},
+	.version	= {1, 13, 0},
 	.module		= THIS_MODULE,
 	.ctr		= verity_ctr,
 	.dtr		= verity_dtr,
