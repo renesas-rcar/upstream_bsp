@@ -25,12 +25,21 @@ DECLARE_HOOK(android_vh_udp_v4_connect,
 	TP_ARGS(sk, daddr, dport, family));
 DECLARE_HOOK(android_vh_udp_v6_connect,
 	TP_PROTO(struct sock *sk, struct sockaddr_in6 *sin6), TP_ARGS(sk, sin6));
+DECLARE_HOOK(android_vh_udp_unicast_rcv_skb,
+	TP_PROTO(struct sk_buff *skb, struct sock *sk),
+	TP_ARGS(skb, sk));
+DECLARE_HOOK(android_vh_udp6_unicast_rcv_skb,
+	TP_PROTO(struct sk_buff *skb, struct sock *sk),
+	TP_ARGS(skb, sk));
 DECLARE_HOOK(android_vh_sk_alloc,
 	TP_PROTO(struct sock *sk), TP_ARGS(sk));
 DECLARE_HOOK(android_vh_sk_free,
 	TP_PROTO(struct sock *sk), TP_ARGS(sk));
 DECLARE_HOOK(android_vh_tcp_write_timeout_estab_retrans,
 	TP_PROTO(struct sock *sk), TP_ARGS(sk));
+struct request_sock;
+DECLARE_HOOK(android_vh_inet_csk_clone_lock,
+	TP_PROTO(struct sock *newsk, const struct request_sock *req), TP_ARGS(newsk, req));
 /* macro versions of hooks are no longer required */
 
 #endif /* _TRACE_HOOK_NET_VH_H */

@@ -56,6 +56,7 @@
 #include <trace/hooks/traps.h>
 #include <trace/hooks/blk.h>
 #include <trace/hooks/bug.h>
+#include <trace/hooks/regmap.h>
 
 /*
  * Export tracepoints that act as a bare tracehook (ie: have no trace event
@@ -134,6 +135,7 @@ EXPORT_TRACEPOINT_SYMBOL_GPL(android_vh_f2fs_set_bio_flag);
 EXPORT_TRACEPOINT_SYMBOL_GPL(android_vh_cgroup_attach);
 EXPORT_TRACEPOINT_SYMBOL_GPL(android_rvh_iommu_setup_dma_ops);
 EXPORT_TRACEPOINT_SYMBOL_GPL(android_rvh_iommu_alloc_insert_iova);
+EXPORT_TRACEPOINT_SYMBOL_GPL(android_rvh_iommu_dma_info_to_prot);
 EXPORT_TRACEPOINT_SYMBOL_GPL(android_vh_iommu_iovad_alloc_iova);
 EXPORT_TRACEPOINT_SYMBOL_GPL(android_vh_iommu_iovad_free_iova);
 EXPORT_TRACEPOINT_SYMBOL_GPL(android_rvh_iommu_iovad_init_alloc_algo);
@@ -182,9 +184,12 @@ EXPORT_TRACEPOINT_SYMBOL_GPL(android_vh_tcp_v4_connect);
 EXPORT_TRACEPOINT_SYMBOL_GPL(android_vh_tcp_v6_connect);
 EXPORT_TRACEPOINT_SYMBOL_GPL(android_vh_udp_v4_connect);
 EXPORT_TRACEPOINT_SYMBOL_GPL(android_vh_udp_v6_connect);
+EXPORT_TRACEPOINT_SYMBOL_GPL(android_vh_udp_unicast_rcv_skb);
+EXPORT_TRACEPOINT_SYMBOL_GPL(android_vh_udp6_unicast_rcv_skb);
 EXPORT_TRACEPOINT_SYMBOL_GPL(android_vh_sk_alloc);
 EXPORT_TRACEPOINT_SYMBOL_GPL(android_vh_sk_free);
 EXPORT_TRACEPOINT_SYMBOL_GPL(android_vh_tcp_write_timeout_estab_retrans);
+EXPORT_TRACEPOINT_SYMBOL_GPL(android_vh_inet_csk_clone_lock);
 EXPORT_TRACEPOINT_SYMBOL_GPL(android_vh_ftrace_oops_enter);
 EXPORT_TRACEPOINT_SYMBOL_GPL(android_vh_ftrace_oops_exit);
 EXPORT_TRACEPOINT_SYMBOL_GPL(android_vh_ftrace_format_check);
@@ -252,6 +257,7 @@ EXPORT_TRACEPOINT_SYMBOL_GPL(android_vh_alter_rwsem_list_add);
 EXPORT_TRACEPOINT_SYMBOL_GPL(android_vh_alter_futex_plist_add);
 EXPORT_TRACEPOINT_SYMBOL_GPL(android_vh_set_tsk_need_resched_lazy);
 EXPORT_TRACEPOINT_SYMBOL_GPL(android_vh_logbuf);
+EXPORT_TRACEPOINT_SYMBOL_GPL(android_vh_cpufreq_acct_update_power);
 EXPORT_TRACEPOINT_SYMBOL_GPL(android_vh_logbuf_pr_cont);
 EXPORT_TRACEPOINT_SYMBOL_GPL(android_rvh_arm64_serror_panic);
 EXPORT_TRACEPOINT_SYMBOL_GPL(android_rvh_do_el1_undef);
@@ -281,3 +287,4 @@ EXPORT_TRACEPOINT_SYMBOL_GPL(android_vh_filemap_fault_end);
 EXPORT_TRACEPOINT_SYMBOL_GPL(android_vh_exit_signal_whether_wake);
 EXPORT_TRACEPOINT_SYMBOL_GPL(android_vh_exit_check);
 EXPORT_TRACEPOINT_SYMBOL_GPL(android_vh_freeze_whether_wake);
+EXPORT_TRACEPOINT_SYMBOL_GPL(android_vh_regmap_update);

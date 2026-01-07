@@ -76,6 +76,8 @@
 #include <trace/events/power.h>
 #include <trace/events/sched.h>
 
+#include <trace/hooks/sched.h>
+
 #include "../workqueue_internal.h"
 
 struct rq;
@@ -1330,6 +1332,8 @@ struct rq {
 	call_single_data_t	cfsb_csd;
 	struct list_head	cfsb_csd_list;
 #endif
+
+	ANDROID_OEM_DATA_ARRAY(1, 16);
 };
 
 #ifdef CONFIG_FAIR_GROUP_SCHED
@@ -2217,6 +2221,9 @@ static inline struct task_group *task_group(struct task_struct *p)
 
 static inline void __set_task_cpu(struct task_struct *p, unsigned int cpu)
 {
+	if (task_cpu(p) != cpu)
+		trace_android_rvh___set_task_cpu(p, cpu);
+
 	set_task_rq(p, cpu);
 #ifdef CONFIG_SMP
 	/*
