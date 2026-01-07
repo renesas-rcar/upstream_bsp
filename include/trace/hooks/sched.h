@@ -26,10 +26,20 @@ DECLARE_RESTRICTED_HOOK(android_rvh_select_fallback_rq,
 	TP_PROTO(int cpu, struct task_struct *p, int *new_cpu),
 	TP_ARGS(cpu, p, new_cpu), 1);
 
+DECLARE_RESTRICTED_HOOK(android_rvh___set_task_cpu,
+	TP_PROTO(struct task_struct *p, unsigned int new_cpu),
+	TP_ARGS(p, new_cpu), 1);
+
 struct rq;
 DECLARE_HOOK(android_vh_scheduler_tick,
 	TP_PROTO(struct rq *rq),
 	TP_ARGS(rq));
+
+struct sched_class;
+DECLARE_HOOK(android_vh_setscheduler_class,
+	TP_PROTO(const struct sched_class **class, int *should_scx,
+		 struct task_struct *p, int policy, int prio),
+	TP_ARGS(class, should_scx, p, policy, prio));
 
 DECLARE_RESTRICTED_HOOK(android_rvh_enqueue_task,
 	TP_PROTO(struct rq *rq, struct task_struct *p, int flags),
@@ -546,6 +556,11 @@ DECLARE_HOOK(android_vh_chk_task,
 DECLARE_HOOK(android_vh_put_task,
 	TP_PROTO(struct task_struct *p),
 	TP_ARGS(p));
+
+DECLARE_RESTRICTED_HOOK(android_rvh_task_fits_cpu,
+	TP_PROTO(struct task_struct *tsk, unsigned long util, unsigned long uclamp_min,
+		 unsigned long uclamp_max, int cpu, bool *fits, bool *done),
+	TP_ARGS(tsk, util, uclamp_min, uclamp_max, cpu, fits, done), 1);
 
 /* macro versions of hooks are no longer required */
 
