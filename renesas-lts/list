@@ -697,7 +697,6 @@ v6.3      / clk: renesas: r8a779g0: Tidy up DMAC name on SYS-DMAC
 v6.3      / clk: renesas: r8a779a0: Tidy up DMAC name on SYS-DMAC
 v6.3      / clk: renesas: r8a779g0: Add custom clock for PLL2
 v6.3      / clk: renesas: cpg-mssr: Remove superfluous check in resume code
-v6.3      / clk: renesas: r9a06g032: Handle h2mode setting based on USBF presence
 v6.3      / clk: renesas: cpg-mssr: Fix use after free if cpg_mssr_common_init() failed
 v6.3      / clk: renesas: r9a07g044: Add clock and reset entries for CRU
 v6.3      / clk: renesas: r9a09g011: Add SDHI/eMMC clock and reset entries
