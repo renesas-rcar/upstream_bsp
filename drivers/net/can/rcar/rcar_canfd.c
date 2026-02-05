@@ -768,6 +768,11 @@ static const struct rcar_canfd_hw_info r9a09g047_hw_info = {
 };
 
 /* Helper functions */
+static inline bool is_gen4(struct rcar_canfd_global *gpriv)
+{
+	return gpriv->info == &rcar_gen4_hw_info;
+}
+
 static inline void rcar_canfd_update(u32 mask, u32 val, u32 __iomem *reg)
 {
 	u32 data = readl(reg);

@@ -13,6 +13,7 @@
 #include <linux/delay.h>
 #include <linux/device.h>
 #include <linux/dma-mapping.h>
+#include <linux/export.h>
 #include <linux/list.h>
 #include <linux/slab.h>
 #include <linux/spinlock.h>
@@ -285,6 +286,7 @@ void vsp1_isp_free_buffer(struct device *dev,
 	dma_free_coherent(bus_master, buffer_desc->size, buffer_desc->cpu_addr,
 			  buffer_desc->dma_addr);
 }
+EXPORT_SYMBOL_GPL(vsp1_isp_free_buffer);
 
 /**
  * vsp1_isp_start_streaming - Start processing VSPX jobs
