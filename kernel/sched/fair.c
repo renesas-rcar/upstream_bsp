@@ -56,6 +56,7 @@
 #include "autogroup.h"
 
 #include <trace/hooks/sched.h>
+#include <trace/hooks/dtask.h>
 
 EXPORT_TRACEPOINT_SYMBOL_GPL(sched_stat_runtime);
 
@@ -1277,6 +1278,7 @@ static void update_curr(struct cfs_rq *cfs_rq)
 	struct rq *rq = rq_of(cfs_rq);
 	s64 delta_exec;
 	bool resched;
+	bool skip_preempt = false;
 
 	if (unlikely(!curr))
 		return;
@@ -1310,6 +1312,11 @@ static void update_curr(struct cfs_rq *cfs_rq)
 		return;
 
 	if (resched || !protect_slice(curr)) {
+		trace_android_vh_resched_curr_lazy(rq_of(cfs_rq), &skip_preempt);
+
+		if (skip_preempt)
+			return;
+
 		resched_curr(rq);
 		clear_buddies(cfs_rq, curr);
 	}
@@ -4138,6 +4145,9 @@ static inline bool cfs_rq_is_decayed(struct cfs_rq *cfs_rq)
 	if (child_cfs_rq_on_list(cfs_rq))
 		return false;
 
+	if (cfs_rq->tg_load_avg_contrib)
+		return false;
+
 	return true;
 }
 
@@ -5725,11 +5735,17 @@ entity_tick(struct cfs_rq *cfs_rq, struct sched_entity *curr, int queued)
 	update_cfs_group(curr);
 
 #ifdef CONFIG_SCHED_HRTICK
+	bool skip_preempt = false;
 	/*
 	 * queued ticks are scheduled to match the slice, so don't bother
 	 * validating it and just reschedule.
 	 */
 	if (queued) {
+		trace_android_vh_resched_curr_lazy(rq_of(cfs_rq), &skip_preempt);
+
+		if (skip_preempt)
+			return;
+
 		resched_curr(rq_of(cfs_rq));
 		return;
 	}
@@ -8989,6 +9005,11 @@ preempt:
 	if (do_preempt_short)
 		cancel_protect_slice(se);
 
+	trace_android_vh_resched_curr_lazy(rq_of(cfs_rq), &ignore);
+
+	if (ignore)
+		return;
+
 	resched_curr(rq);
 }
 
@@ -9177,7 +9198,19 @@ static void yield_task_fair(struct rq *rq)
 	 */
 	rq_clock_skip_update(rq);
 
-	se->deadline += calc_delta_fair(se->slice, se);
+	/*
+	 * Forfeit the remaining vruntime, only if the entity is eligible. This
+	 * condition is necessary because in core scheduling we prefer to run
+	 * ineligible tasks rather than force idling. If this happens we may
+	 * end up in a loop where the core scheduler picks the yielding task,
+	 * which yields immediately again; without the condition the vruntime
+	 * ends up quickly running away.
+	 */
+	if (entity_eligible(cfs_rq, se)) {
+		se->vruntime = se->deadline;
+		se->deadline += calc_delta_fair(se->slice, se);
+		update_min_vruntime(cfs_rq);
+	}
 }
 
 static bool yield_to_task_fair(struct rq *rq, struct task_struct *p)
@@ -11838,7 +11871,7 @@ static int need_active_balance(struct lb_env *env)
 	return 0;
 }
 
-static int active_load_balance_cpu_stop(void *data);
+int active_load_balance_cpu_stop(void *data);
 
 static int should_we_balance(struct lb_env *env)
 {
@@ -12229,7 +12262,7 @@ update_next_balance(struct sched_domain *sd, unsigned long *next_balance)
  * least 1 task to be running on each physical CPU where possible, and
  * avoids physical / logical imbalances.
  */
-static int active_load_balance_cpu_stop(void *data)
+int active_load_balance_cpu_stop(void *data)
 {
 	struct rq *busiest_rq = data;
 	int busiest_cpu = cpu_of(busiest_rq);
@@ -12307,6 +12340,7 @@ out_unlock:
 
 	return 0;
 }
+EXPORT_SYMBOL_GPL(active_load_balance_cpu_stop);
 
 /*
  * This flag serializes load-balancing passes over large domains
@@ -12338,14 +12372,8 @@ static inline bool update_newidle_cost(struct sched_domain *sd, u64 cost)
 		/*
 		 * Track max cost of a domain to make sure to not delay the
 		 * next wakeup on the CPU.
-		 *
-		 * sched_balance_newidle() bumps the cost whenever newidle
-		 * balance fails, and we don't want things to grow out of
-		 * control.  Use the sysctl_sched_migration_cost as the upper
-		 * limit, plus a litle extra to avoid off by ones.
 		 */
-		sd->max_newidle_lb_cost =
-			min(cost, sysctl_sched_migration_cost + 200);
+		sd->max_newidle_lb_cost = cost;
 		sd->last_decay_max_lb_cost = jiffies;
 	} else if (time_after(jiffies, sd->last_decay_max_lb_cost + HZ)) {
 		/*
@@ -13069,17 +13097,10 @@ static int sched_balance_newidle(struct rq *this_rq, struct rq_flags *rf)
 
 			t1 = sched_clock_cpu(this_cpu);
 			domain_cost = t1 - t0;
+			update_newidle_cost(sd, domain_cost);
+
 			curr_cost += domain_cost;
 			t0 = t1;
-
-			/*
-			 * Failing newidle means it is not effective;
-			 * bump the cost so we end up doing less of it.
-			 */
-			if (!pulled_task)
-				domain_cost = (3 * sd->max_newidle_lb_cost) / 2;
-
-			update_newidle_cost(sd, domain_cost);
 		}
 
 		/*

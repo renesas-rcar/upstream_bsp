@@ -4733,6 +4733,7 @@ int try_to_wake_up(struct task_struct *p, unsigned int state, int wake_flags)
 
 	wake_flags |= WF_TTWU;
 
+	trace_android_rvh_try_to_wake_up_begin(p, state, &wake_flags);
 	if (p == current) {
 		/*
 		 * We're waking current, this means 'p->on_rq' and 'task_cpu(p)
@@ -6656,8 +6657,6 @@ __pick_next_task(struct rq *rq, struct task_struct *prev, struct rq_flags *rf)
 		if (unlikely(p == RETRY_TASK))
 			goto restart;
 
-		trace_android_vh_chk_task(&p, rq);
-
 		/* Assume the next prioritized class is idle_sched_class */
 		if (!p) {
 			p = pick_task_idle(rq);
@@ -6673,12 +6672,10 @@ restart:
 	for_each_active_class(class) {
 		if (class->pick_next_task) {
 			p = class->pick_next_task(rq, prev);
-			trace_android_vh_chk_task(&p, rq);
 			if (p)
 				return p;
 		} else {
 			p = class->pick_task(rq);
-			trace_android_vh_chk_task(&p, rq);
 			if (p) {
 				put_prev_set_next_task(rq, prev, p);
 				return p;
@@ -7783,6 +7780,7 @@ pick_again:
 picked:
 	clear_tsk_need_resched(prev);
 	clear_preempt_need_resched();
+	trace_android_vh_clear_curr_lazy(prev);
 keep_resched:
 #ifdef CONFIG_SCHED_DEBUG
 	rq->last_seen_need_resched_ns = 0;

@@ -162,6 +162,10 @@ DECLARE_RESTRICTED_HOOK(android_rvh_try_to_wake_up,
 	TP_PROTO(struct task_struct *p),
 	TP_ARGS(p), 1);
 
+DECLARE_RESTRICTED_HOOK(android_rvh_try_to_wake_up_begin,
+	TP_PROTO(struct task_struct *p, unsigned int state, int *wake_flags),
+	TP_ARGS(p, state, wake_flags), 1);
+
 DECLARE_RESTRICTED_HOOK(android_rvh_try_to_wake_up_success,
 	TP_PROTO(struct task_struct *p),
 	TP_ARGS(p), 1);
@@ -284,6 +288,14 @@ DECLARE_RESTRICTED_HOOK(android_rvh_before_do_sched_yield,
 DECLARE_HOOK(android_vh_free_task,
 	TP_PROTO(struct task_struct *p),
 	TP_ARGS(p));
+
+DECLARE_HOOK(android_vh_mmap_lock_init,
+	TP_PROTO(struct rw_semaphore *sem),
+	TP_ARGS(sem));
+
+DECLARE_HOOK(android_vh_mmap_lock_free,
+	TP_PROTO(struct rw_semaphore *sem),
+	TP_ARGS(sem));
 
 DECLARE_HOOK(android_vh_irqtime_account_process_tick,
 	TP_PROTO(struct task_struct *p, struct rq *rq, int user_tick, int ticks),
@@ -427,6 +439,16 @@ DECLARE_HOOK(android_vh_scx_restore_flags,
 		 const struct sched_class *next_class,
 		 int *flags),
 	TP_ARGS(prev_class, next_class, flags));
+
+struct scx_dispatch_q;
+DECLARE_HOOK(android_vh_enq_to_priq,
+	TP_PROTO(struct rq *rq, struct scx_dispatch_q *dsq, struct task_struct *p, bool *enq_priq),
+	TP_ARGS(rq, dsq, p, enq_priq));
+
+DECLARE_HOOK(android_vh_scx_switch_repeat_skip,
+	TP_PROTO(struct task_struct *p, bool *skip, int *repeat),
+	TP_ARGS(p, skip, repeat));
+
 DECLARE_HOOK(android_vh_task_should_scx,
 	TP_PROTO(int *should_scx, int policy, int prio),
 	TP_ARGS(should_scx, policy, prio));
@@ -448,6 +470,14 @@ DECLARE_HOOK(android_vh_scx_set_cpus_allowed,
 DECLARE_HOOK(android_vh_scx_task_switch_finish,
 	TP_PROTO(struct task_struct *p, int enable),
 	TP_ARGS(p, enable));
+DECLARE_HOOK(android_vh_scx_task_can_run_on,
+	TP_PROTO(bool *disallow, struct task_struct *p, struct rq *rq),
+	TP_ARGS(disallow, p, rq));
+
+struct scx_exit_info;
+DECLARE_HOOK(android_vh_scx_exit_on_abnormal,
+	TP_PROTO(struct scx_exit_info *ei),
+	TP_ARGS(ei));
 
 DECLARE_HOOK(android_vh_switching_to_scx,
 	TP_PROTO(struct rq *rq, struct task_struct *p),

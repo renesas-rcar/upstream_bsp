@@ -1,5 +1,6 @@
 [abi_symbol_list]
   activate_task
+  active_load_balance_cpu_stop
   add_cpu
   add_timer
   add_timer_on
@@ -659,6 +660,7 @@
   do_SAK
   do_send_sig_info
   do_trace_netlink_extack
+  double_rq_lock
   do_wait_intr_irq
   down
   downgrade_write
@@ -959,6 +961,7 @@
   drop_reasons_register_subsys
   drop_reasons_unregister_subsys
   dump_backtrace
+  dump_page
   dump_stack
   dump_tasks
   dw_handle_msi_irq
@@ -1425,6 +1428,7 @@
   klist_iter_exit
   klist_iter_init
   klist_next
+  klist_node_attached
   klist_remove
   __kmalloc_cache_node_noprof
   __kmalloc_cache_noprof
@@ -1522,12 +1526,16 @@
   __kvmalloc_node_noprof
   kvm_iommu_alloc_domain
   kvm_iommu_attach_dev
+  kvm_iommu_attach_dev_nested
   kvm_iommu_detach_dev
+  kvm_iommu_detach_dev_nested
   kvm_iommu_free_domain
   kvm_iommu_init_hyp
+  kvm_iommu_iotlb_inv_nested_domain
   kvm_iommu_iova_to_phys
   kvm_iommu_map_pages
   kvm_iommu_map_sg
+  kvm_iommu_nested_cfg_sync
   kvm_iommu_register_driver
   kvm_iommu_share_hyp_sg
   kvm_iommu_unmap_pages
@@ -1989,6 +1997,8 @@
   platform_irq_count
   __platform_register_drivers
   platform_unregister_drivers
+  plist_add
+  plist_del
   pm_genpd_add_subdomain
   pm_genpd_init
   pm_genpd_remove
@@ -2265,6 +2275,7 @@
   runqueues
   sbitmap_weight
   sched_clock
+  sched_energy_present
   sched_feat_keys
   sched_prio_to_weight
   sched_prio_to_wmult

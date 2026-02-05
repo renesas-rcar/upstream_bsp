@@ -513,7 +513,7 @@ static bool bio_should_be_requeued(struct mapped_device *md, struct bio *bio)
 	 * can send the flush with data directly to it.
 	 */
 	return bio->bi_opf & REQ_PREFLUSH && bio->bi_iter.bi_size &&
-		map->flush_bypasses_map && dm_table_has_one_device(map);
+		!(map->flush_bypasses_map && dm_table_has_one_device(map));
 }
 
 static inline unsigned int dm_io_sectors(struct dm_io *io, struct bio *bio)
@@ -2028,12 +2028,15 @@ static void dm_split_and_process_bio(struct mapped_device *md,
 	}
 	init_clone_info(&ci, io, map, bio, is_abnormal);
 
-	if (bio_should_be_requeued(md, bio)) {
+	if (unlikely((bio->bi_opf & REQ_PREFLUSH) != 0)) {
+		if (map->flush_bypasses_map && dm_table_has_one_device(map))
+			goto send_preflush_with_data;
 		__send_empty_flush(&ci);
 		/* dm_io_complete submits any data associated with flush */
 		goto out;
 	}
 
+send_preflush_with_data:
 	if (static_branch_unlikely(&zoned_enabled) &&
 	    (bio_op(bio) == REQ_OP_ZONE_RESET_ALL)) {
 		error = __send_zone_reset_all(&ci);
