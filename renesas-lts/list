@@ -1,3 +1,4 @@
+Local     / mailbox: remove unneeded double quotation
 v6.19     / media: i2c: imx219: Replace exposure magic value with named constant
 v6.19     / media: i2c: imx219: Propagate errors from control range updates
 v6.19     / media: i2c: imx219: Simplify imx219_get_binning() function
