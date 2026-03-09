@@ -1,9 +1,11 @@
+v6.13     / pwm: Provide new consumer API functions for waveforms
+v6.13     / pwm: New abstraction for PWM waveforms
+v6.13     / pwm: Add more locking
 v6.18     / media: vsp1: Export missing vsp1_isp_free_buffer symbol
 v6.17     / media: vsp1: Add missing export.h
-Local     / media: i2c: imx219: Replace exposure magic value with named constant
-Local     / media: i2c: imx219: Propagate errors from control range updates
-Local     / media: i2c: imx219: Simplify imx219_get_binning() function
-Local     / media: i2c: imx219: Fix 1920x1080 mode to use 1:1 pixel aspect ratio
+v6.19     / media: i2c: imx219: Replace exposure magic value with named constant
+v6.19     / media: i2c: imx219: Propagate errors from control range updates
+v6.19     / media: i2c: imx219: Simplify imx219_get_binning() function
 v6.18     / media: i2c: imx: Add note to prevent buggy code re-use
 v6.17     / media: Remove redundant pm_runtime_mark_last_busy() calls
 v6.16     / media: i2c: imx219: media: i2c: imx219: Enable runtime PM autosuspend
@@ -16,14 +18,14 @@ v6.15     / media: i2c: imx219: Scale the pixel rate for analog binning
 v6.15     / media: i2c: imx219: Increase minimum LLP to fix blocky artefacts
 v6.15     / media: i2c: imx219: make HBLANK r/w to allow longer exposures
 v6.15     / media: i2c: imx219: Rename VTS to FRM_LENGTH
-Local     / drm/panel: ilitek-ili9881c: Add configuration for 5" Raspberry Pi 720x1280
-Local     / drm/panel: ilitek-ili9881c: Turn ILI9881C_COMMAND_INSTR() parameters lowercase
+v6.19     / drm/panel: ilitek-ili9881c: Add configuration for 5" Raspberry Pi 720x1280
+v6.19     / drm/panel: ilitek-ili9881c: Turn ILI9881C_COMMAND_INSTR() parameters lowercase
 v6.18     / drm/panel: ilitek-ili9881c: Add Bestar BSD1218-A101KL68 support
 v6.18     / drm/panel: ilitek-ili9881c: convert (un-)prepare to mipi_dsi_multi_context
 v6.18     / drm/panel: ilitek-ili9881c: move display_on/_off dcs calls to (un-)prepare
 v6.18     / drm/panel: ilitek-ili9881c: turn off power-supply when init fails
-Local     / arm64: dts: renesas: sparrow-hawk: Add overlay for RPi Display 2
-Local     / arm64: dts: renesas: sparrow-hawk: Add overlay for Argon40 fan HAT
+v6.19     / arm64: dts: renesas: sparrow-hawk: Add overlay for RPi Display 2
+v6.19     / arm64: dts: renesas: sparrow-hawk: Add overlay for Argon40 fan HAT
 v6.18     / hwmon: (pwm-fan) Implement after shutdown fan settings
 v6.18     / dt-bindings: hwmon: pwm-fan: Document after shutdown fan settings
 v6.17     / pwm: argon-fan-hat: Add Argon40 Fan HAT support
