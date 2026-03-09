@@ -3316,7 +3316,7 @@ static void binder_transaction(struct binder_proc *proc,
 	t->start_time = t_start_time;
 	t->from_pid = proc->pid;
 	t->from_tid = thread->pid;
-	t->sender_euid = task_euid(proc->tsk);
+	t->sender_euid = current_euid();
 	t->code = tr->code;
 	t->flags = tr->flags;
 	t->work.type = BINDER_WORK_TRANSACTION;
@@ -7469,6 +7469,7 @@ static int binder_loaded;
 
 static DEFINE_MUTEX(binder_use_rust_lock);
 
+#ifdef CONFIG_EVENT_TRACING
 // Declared in kernel/trace/trace.h, so can't be included from here.
 extern struct list_head ftrace_events;
 extern struct rw_semaphore trace_event_sem;
@@ -7498,6 +7499,9 @@ void binder_remove_trace_events(struct module *module)
 	mutex_unlock(&event_mutex);
 }
 EXPORT_SYMBOL_GPL(binder_remove_trace_events);
+#else
+static inline void binder_remove_trace_events(struct module *module) { }
+#endif
 
 /*
  * Called by Rust Binder to unload the C Binder driver.
