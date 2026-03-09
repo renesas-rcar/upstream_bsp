@@ -1943,7 +1943,7 @@ inline void post_alloc_hook(struct page *page, unsigned int order,
 	pgalloc_tag_add(page, current, 1 << order);
 }
 
-static void prep_new_page(struct page *page, unsigned int order, gfp_t gfp_flags,
+void prep_new_page(struct page *page, unsigned int order, gfp_t gfp_flags,
 							unsigned int alloc_flags)
 {
 	post_alloc_hook(page, order, gfp_flags);
@@ -1963,6 +1963,7 @@ static void prep_new_page(struct page *page, unsigned int order, gfp_t gfp_flags
 		clear_page_pfmemalloc(page);
 	trace_android_vh_test_clear_look_around_ref(page);
 }
+EXPORT_SYMBOL_GPL(prep_new_page);
 
 #ifdef CONFIG_TRANSPARENT_HUGEPAGE
 void prep_new_hpage(struct page *page, gfp_t gfp_flags, unsigned int alloc_flags)
@@ -3386,6 +3387,9 @@ struct page *__rmqueue_pcplist(struct zone *zone, unsigned int order,
 			trace_android_vh_rmqueue_bulk_bypass(order, pcp, migratetype, list);
 			if (!list_empty(list))
 				goto get_list;
+
+			trace_android_vh_rmqueue_pcplist_override_batch(&batch);
+
 			alloced = rmqueue_bulk(zone, order,
 					batch, list,
 					migratetype, alloc_flags);
@@ -3854,6 +3858,12 @@ static inline unsigned int gfp_to_alloc_flags_cma(gfp_t gfp_mask,
 						  unsigned int alloc_flags)
 {
 #ifdef CONFIG_CMA
+	bool bypass = false;
+
+	trace_android_vh_calc_alloc_flags(gfp_mask, &alloc_flags, &bypass);
+	if (bypass)
+		return alloc_flags;
+
 	if (gfp_migratetype(gfp_mask) == MIGRATE_MOVABLE)
 		alloc_flags |= ALLOC_CMA;
 #endif
@@ -4478,6 +4488,7 @@ __perform_reclaim(gfp_t gfp_mask, unsigned int order,
 {
 	unsigned int noreclaim_flag;
 	unsigned long progress;
+	bool skip = false;
 
 	cond_resched();
 
@@ -4486,9 +4497,14 @@ __perform_reclaim(gfp_t gfp_mask, unsigned int order,
 	fs_reclaim_acquire(gfp_mask);
 	noreclaim_flag = memalloc_noreclaim_save();
 
+	trace_android_rvh_perform_reclaim(order, gfp_mask, ac->nodemask,
+					  &progress, &skip);
+	if (skip)
+		goto out;
+
 	progress = try_to_free_pages(ac->zonelist, order, gfp_mask,
 								ac->nodemask);
-
+out:
 	memalloc_noreclaim_restore(noreclaim_flag);
 	fs_reclaim_release(gfp_mask);
 

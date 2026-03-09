@@ -7,6 +7,7 @@
 #include <linux/kvm_types.h>
 #include <linux/mm.h>
 #include <vdso/limits.h>
+#include <asm/kvm_pkvm.h>
 #include <asm/page.h>
 #include "mem_protect.h"
 
@@ -18,10 +19,14 @@ struct pkvm_page {
 	u8 order;
 
 	/* Store host memory page state. */
-	enum pkvm_page_state host_state: 8;
+	enum pkvm_page_state host_state: 4;
+	/* Store page owner id. */
+	enum pkvm_owner_id owner: 4;
 
 	/* Tracks how many times the page is shared with pKVM. */
 	u16 host_share_hyp_count;
+	/* Tracks how many times the page is shared with a guest VM. */
+	u16 host_share_guest_count;
 };
 
 /*
@@ -85,6 +90,18 @@ static inline void pkvm_set_page_refcounted(struct pkvm_page *p)
 	p->refcount = 1;
 }
 
+static inline bool is_pvmfw(unsigned long phys)
+{
+	return pvmfw_present && (phys >= pvmfw_base) &&
+				(phys < pvmfw_base + pvmfw_size);
+}
+
+static inline bool overlaps_pvmfw(unsigned long phys, unsigned long size)
+{
+	return pvmfw_present && (phys < pvmfw_base + pvmfw_size) &&
+				(phys + size > pvmfw_base);
+}
+
 bool pkvm_find_addr_range(unsigned long phys, struct range *range);
 
 static inline bool is_memory_range(unsigned long phys, unsigned long size)
@@ -113,6 +130,13 @@ static inline bool is_mmio_range(unsigned long phys, unsigned long size)
 	};
 	struct range range;
 
+	/*
+	 * pvmfw is reserved in e820 so it is not "normal" memory.
+	 * However it shouldn't be treated as MMIO either.
+	 */
+	if (overlaps_pvmfw(phys, size))
+		return false;
+
 	if (pkvm_find_addr_range(phys, &range))
 		return false;
 
@@ -128,7 +152,7 @@ static inline void *kern_pkvm_va(void *va)
 	return va;
 }
 
-void pkvm_clflush_cache_range(void *vaddr, unsigned int size);
+void clflush_cache_range(void *vaddr, unsigned int size);
 
 static inline void pkvm_clear_memory(void *va, size_t size)
 {
@@ -137,7 +161,17 @@ static inline void pkvm_clear_memory(void *va, size_t size)
 	 * Flush CPU cache to ensure clearing the memory range in RAM, so that
 	 * the previous contents cannot be read via non-coherent DMA.
 	 */
-	pkvm_clflush_cache_range(va, size);
+	clflush_cache_range(va, size);
+}
+
+static inline void *pkvm_phys_to_virt(phys_addr_t phys)
+{
+	return __pkvm_va(phys);
+}
+
+static inline phys_addr_t pkvm_virt_to_phys(void *addr)
+{
+	return __pkvm_pa(addr);
 }
 
 static inline phys_addr_t pkvm_host_gpa_to_phys(gpa_t gpa)

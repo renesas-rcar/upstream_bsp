@@ -226,6 +226,7 @@
   cancel_work
   cancel_work_sync
   capable
+  cc_mkdec
   cdc_ncm_bind_common
   cdc_ncm_change_mtu
   cdc_ncm_fill_tx_frame
@@ -1513,6 +1514,7 @@
   intel_scu_ipc_dev_command_with_size
   intel_scu_ipc_dev_simple_command
   intel_tcc_get_offset
+  intel_tcc_get_offset_mask
   intel_tcc_get_temp
   intel_tcc_get_tjmax
   intel_tcc_set_offset
@@ -1699,6 +1701,7 @@
   __kvmalloc_node_noprof
   kvmemdup
   kvrealloc_node_align_noprof
+  lcm
   led_add_lookup
   led_classdev_register_ext
   led_classdev_unregister

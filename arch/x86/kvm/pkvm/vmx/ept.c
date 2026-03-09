@@ -11,6 +11,7 @@
 #include "gfp.h"
 #include "pkvm/mmu.h"
 #include "pkvm.h"
+#include "pkvm_iommu.h"
 
 /* The ignored bit56 ~ bit52 in EPT present leaf are used to store page state */
 #define EPT_PAGE_STATE_SHIFT			52
@@ -21,7 +22,19 @@
 static struct pkvm_pgtable *host_ept;
 static struct pkvm_pool host_ept_pool;
 
-static void *host_ept_zalloc_page(void)
+u64 pkvm_host_ept_root(void)
+{
+	BUG_ON(!host_ept);
+	return host_ept->root_pa;
+}
+
+int pkvm_host_ept_level(void)
+{
+	BUG_ON(!host_ept);
+	return host_ept->cap.level;
+}
+
+static void *host_ept_zalloc_page(struct pkvm_memcache *mc)
 {
 	return pkvm_alloc_pages(&host_ept_pool, 0);
 }
@@ -68,6 +81,18 @@ static bool ept_pte_huge(void *ptep)
 static void ept_pte_mkhuge(void *ptep)
 {
 	*(u64 *)ptep |= PT_PAGE_SIZE_MASK;
+}
+
+static bool ept_pte_young(void *ptep)
+{
+	u64 val = READ_ONCE(*(u64 *)ptep);
+
+	return !!(val & VMX_EPT_ACCESS_BIT);
+}
+
+static void ept_pte_mkold(void *ptep)
+{
+	*(u64 *)ptep &= ~VMX_EPT_ACCESS_BIT;
 }
 
 static unsigned long ept_pte_to_phys(void *ptep)
@@ -137,6 +162,24 @@ static void ept_pte_set(void *ptep, u64 spte)
 	WRITE_ONCE(*(u64 *)ptep, spte);
 }
 
+static void host_ept_pte_set(void *ptep, u64 spte)
+{
+	ept_pte_set(ptep, spte);
+
+	/*
+	 * TODO: no need to flush cache if none of the
+	 * devices behind non-coherent IOMMUs are configured
+	 * for passthrough mode.
+	 */
+	if (!pkvm_iommu_paging_structure_coherency())
+		clflush_cache_range(ptep, sizeof(u64));
+}
+
+static void guest_ept_pte_set(void *ptep, u64 spte)
+{
+	ept_pte_set(ptep, spte);
+}
+
 static u64 ept_pte_get(void *ptep)
 {
 	return READ_ONCE(*(u64 *)ptep);
@@ -153,6 +196,33 @@ static void host_ept_flush_tlb(struct pkvm_pgtable *pgt,
 		kvm_make_request(KVM_REQ_TLB_FLUSH_CURRENT, vcpu);
 		pkvm_kick_vcpu(vcpu);
 	}
+
+	pkvm_iommu_pt_flush(vaddr, size);
+}
+
+static void guest_ept_flush_tlb(struct pkvm_pgtable *pgt,
+				unsigned long vaddr, unsigned long size)
+{
+	struct pkvm_vm *pkvm_vm = pgt_to_pkvm(pgt);
+	int i;
+
+	pkvm_spin_lock(&pkvm_vm->lock);
+
+	for (i = 0; i < pkvm_vm->kvm.created_vcpus; i++) {
+		struct pkvm_vcpu *pkvm_vcpu;
+		struct kvm_vcpu *vcpu;
+
+		pkvm_vcpu = pkvm_vm->vcpus[i];
+		if (WARN_ON_ONCE(!pkvm_vcpu))
+			continue;
+
+		vcpu = &pkvm_vcpu->vcpu;
+
+		kvm_make_request(KVM_REQ_TLB_FLUSH_CURRENT, vcpu);
+		pkvm_kick_vcpu(vcpu);
+	}
+
+	pkvm_spin_unlock(&pkvm_vm->lock);
 }
 
 static u64 ept_pgstate_mask(void)
@@ -193,9 +263,34 @@ static const struct pkvm_pgtable_ops host_ept_pgt_ops = {
 	.pte_is_leaf = ept_pte_is_leaf,
 	.pte_size = ept_pte_size,
 	.pte_count = ept_pte_count,
-	.pte_set = ept_pte_set,
+	.pte_set = host_ept_pte_set,
 	.pte_get = ept_pte_get,
 	.flush_tlb = host_ept_flush_tlb,
+	.pte_mk_pgstate = ept_pte_mk_pgstate,
+	.pte_pgstate = ept_pte_pgstate,
+	.pgstate_mask = ept_pgstate_mask,
+};
+
+static const struct pkvm_pgtable_ops guest_ept_pgt_ops = {
+	.pte_present = ept_pte_present,
+	.pte_annotated = ept_pte_annotated,
+	.pte_huge = ept_pte_huge,
+	.pte_mkhuge = ept_pte_mkhuge,
+	.pte_young = ept_pte_young,
+	.pte_mkold = ept_pte_mkold,
+	.pte_to_phys = ept_pte_to_phys,
+	.pte_to_prot = ept_pte_to_prot,
+	.calc_pte_perm = ept_calc_pte_perm,
+	.calc_pte_memtype = ept_calc_pte_memtype,
+	.vaddr_to_index = ept_pte_to_index,
+	.level_to_size = ept_level_to_size,
+	.level_to_mask = ept_level_to_mask,
+	.pte_is_leaf = ept_pte_is_leaf,
+	.pte_size = ept_pte_size,
+	.pte_count = ept_pte_count,
+	.pte_set = guest_ept_pte_set,
+	.pte_get = ept_pte_get,
+	.flush_tlb = guest_ept_flush_tlb,
 	.pte_mk_pgstate = ept_pte_mk_pgstate,
 	.pte_pgstate = ept_pte_pgstate,
 	.pgstate_mask = ept_pgstate_mask,
@@ -215,7 +310,7 @@ int pkvm_host_ept_init(struct pkvm_pgtable *pgt, void *pool_base,
 {
 	unsigned long pfn = __pkvm_pa(pool_base) >> PAGE_SHIFT;
 	struct pkvm_pgtable_cap cap = {
-		.level = cpu_has_vmx_ept_5levels() ? 5 : 4,
+		.level = 4,
 		.allowed_pgsz = 1 << PG_LEVEL_4K,
 		.table_prot = VMX_EPT_RWX_MASK,
 		.flush_tlb_lazy = true,
@@ -231,10 +326,13 @@ int pkvm_host_ept_init(struct pkvm_pgtable *pgt, void *pool_base,
 	if (ret)
 		return ret;
 
-	if (cpu_has_vmx_ept_2m_page())
+	if (cpu_has_vmx_ept_2m_page() && iommu_supports_2m_page())
 		cap.allowed_pgsz |=  1 << PG_LEVEL_2M;
-	if (cpu_has_vmx_ept_1g_page())
+	if (cpu_has_vmx_ept_1g_page() && iommu_supports_1g_page())
 		cap.allowed_pgsz |=  1 << PG_LEVEL_1G;
+
+	if (cpu_has_vmx_ept_5levels() && iommu_supports_5levels())
+		cap.level = 5;
 
 	ret = pkvm_pgtable_init(pgt, cap, &host_ept_mm_ops, &host_ept_pgt_ops);
 	if (ret)
@@ -303,7 +401,8 @@ int pkvm_handle_host_ept_violation(void)
 	 * EPT when initialize, except for the MMIO in the high-end address.
 	 * Handle the MMIO only.
 	 */
-	if (pkvm_find_addr_range(gpa, &range)) {
+	if (pkvm_find_addr_range(gpa, &range) || is_pvmfw(gpa) ||
+	    is_iommu_mmio(gpa)) {
 		pkvm_err("Host access to protected memory at 0x%lx\n", gpa);
 		return ret;
 	}
@@ -336,7 +435,8 @@ int pkvm_handle_host_ept_violation(void)
 		cur.start = ALIGN_DOWN(gpa, size);
 		cur.end = cur.start + size - 1;
 
-		if (range_contains(&range, &cur)) {
+		if (range_contains(&range, &cur) && !overlaps_pvmfw(cur.start, size) &&
+		    !overlaps_iommu_mmio(cur.start, size)) {
 			/*
 			 * TODO: In case the host mmu free pages are not
 			 * enough, -ENOMEM will be returned. This could be
@@ -363,4 +463,21 @@ void pkvm_flush_host_ept(void)
 		return;
 
 	ept_sync_context(construct_host_eptp(host_ept));
+}
+
+void pkvm_guest_ept_setup(void)
+{
+	struct pkvm_pgtable_cap cap = {
+		.level = cpu_has_vmx_ept_5levels() ? 5 : 4,
+		.allowed_pgsz = 1 << PG_LEVEL_4K,
+		.table_prot = VMX_EPT_RWX_MASK,
+		.flush_tlb_lazy = true,
+	};
+
+	if (cpu_has_vmx_ept_2m_page())
+		cap.allowed_pgsz |= 1 << PG_LEVEL_2M;
+	if (cpu_has_vmx_ept_1g_page())
+		cap.allowed_pgsz |= 1 << PG_LEVEL_1G;
+
+	pkvm_guest_mmu_setup(&guest_ept_pgt_ops, cap);
 }

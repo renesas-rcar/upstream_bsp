@@ -125,6 +125,18 @@ config CRYPTO_LIB_POLY1305_RSIZE
 	default 9 if ARM || ARM64
 	default 1
 
+config CRYPTO_LIB_POLYVAL
+	tristate
+	help
+	  The POLYVAL library functions.  Select this if your module uses any of
+	  the functions from <crypto/polyval.h>.
+
+config CRYPTO_LIB_POLYVAL_ARCH
+	bool
+	depends on CRYPTO_LIB_POLYVAL && !UML
+	default y if ARM64 && KERNEL_MODE_NEON
+	default y if X86_64
+
 config CRYPTO_LIB_CHACHA20POLY1305
 	tristate
 	select CRYPTO_LIB_CHACHA
@@ -150,6 +162,7 @@ config CRYPTO_LIB_SHA1_ARCH
 
 config CRYPTO_LIB_SHA256
 	tristate
+	select CRYPTO_LIB_UTILS
 	help
 	  The SHA-224, SHA-256, HMAC-SHA224, and HMAC-SHA256 library functions.
 	  Select this if your module uses any of these functions from

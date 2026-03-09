@@ -490,12 +490,14 @@ void __vunmap_range_noflush(unsigned long start, unsigned long end)
 	if (mask & ARCH_PAGE_TABLE_SYNC_MASK)
 		arch_sync_kernel_mappings(start, end);
 }
+EXPORT_SYMBOL_GPL(__vunmap_range_noflush);
 
 void vunmap_range_noflush(unsigned long start, unsigned long end)
 {
 	kmsan_vunmap_range_noflush(start, end);
 	__vunmap_range_noflush(start, end);
 }
+EXPORT_SYMBOL_GPL(vunmap_range_noflush);
 
 /**
  * vunmap_range - unmap kernel virtual addresses
@@ -672,6 +674,7 @@ int __vmap_pages_range_noflush(unsigned long addr, unsigned long end,
 
 	return 0;
 }
+EXPORT_SYMBOL_GPL(__vmap_pages_range_noflush);
 
 int vmap_pages_range_noflush(unsigned long addr, unsigned long end,
 		pgprot_t prot, struct page **pages, unsigned int page_shift)
@@ -683,6 +686,7 @@ int vmap_pages_range_noflush(unsigned long addr, unsigned long end,
 		return ret;
 	return __vmap_pages_range_noflush(addr, end, prot, pages, page_shift);
 }
+EXPORT_SYMBOL_GPL(vmap_pages_range_noflush);
 
 /**
  * vmap_pages_range - map pages to a kernel virtual address
@@ -2004,6 +2008,7 @@ static inline void setup_vmalloc_vm(struct vm_struct *vm,
 	vm->size = vm->requested_size = va_size(va);
 	vm->caller = caller;
 	va->vm = vm;
+	trace_android_vh_save_vmalloc_stack(flags, vm);
 }
 
 /*
@@ -2087,6 +2092,7 @@ retry:
 		vm->addr = (void *)va->va_start;
 		vm->size = va_size(va);
 		va->vm = vm;
+		trace_android_vh_save_vmalloc_stack(va_flags, vm);
 	}
 
 	vn = addr_to_node(va->va_start);
@@ -4182,7 +4188,7 @@ void *vrealloc_node_align_noprof(const void *p, size_t size, unsigned long align
 		if (want_init_on_free() || want_init_on_alloc(flags))
 			memset((void *)p + size, 0, old_size - size);
 		vm->requested_size = size;
-		kasan_poison_vmalloc(p + size, old_size - size);
+		kasan_vrealloc(p, old_size, size);
 		return (void *)p;
 	}
 
@@ -4190,16 +4196,13 @@ void *vrealloc_node_align_noprof(const void *p, size_t size, unsigned long align
 	 * We already have the bytes available in the allocation; use them.
 	 */
 	if (size <= alloced_size) {
-		kasan_unpoison_vmalloc(p + old_size, size - old_size,
-				       KASAN_VMALLOC_PROT_NORMAL |
-				       KASAN_VMALLOC_VM_ALLOC |
-				       KASAN_VMALLOC_KEEP_TAG);
 		/*
 		 * No need to zero memory here, as unused memory will have
 		 * already been zeroed at initial allocation time or during
 		 * realloc shrink time.
 		 */
 		vm->requested_size = size;
+		kasan_vrealloc(p, old_size, size);
 		return (void *)p;
 	}
 
@@ -5127,6 +5130,7 @@ static int vmalloc_info_show(struct seq_file *m, void *p)
 			if (IS_ENABLED(CONFIG_NUMA))
 				show_numa_info(m, v, counters);
 
+			trace_android_vh_show_stack_hash(m, v);
 			seq_putc(m, '\n');
 		}
 		spin_unlock(&vn->busy.lock);

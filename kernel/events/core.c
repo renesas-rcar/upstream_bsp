@@ -46,6 +46,7 @@
 #include <linux/filter.h>
 #include <linux/namei.h>
 #include <linux/parser.h>
+#include <linux/page_size_compat.h>
 #include <linux/sched/clock.h>
 #include <linux/sched/mm.h>
 #include <linux/proc_ns.h>
@@ -467,7 +468,7 @@ static struct kmem_cache *perf_event_cache;
 int sysctl_perf_event_paranoid __read_mostly = 2;
 
 /* Minimum for 512 kiB + 1 user control page. 'free' kiB per user. */
-static int sysctl_perf_event_mlock __read_mostly = 512 + (PAGE_SIZE / 1024);
+int sysctl_perf_event_mlock __read_mostly = 512 + (PAGE_SIZE / 1024);
 
 /*
  * max perf event sample rate
@@ -6519,7 +6520,7 @@ static void perf_event_init_userpage(struct perf_event *event)
 	/* Allow new userspace to detect that bit 0 is deprecated */
 	userpg->cap_bit0_is_deprecated = 1;
 	userpg->size = offsetof(struct perf_event_mmap_page, __reserved);
-	userpg->data_offset = PAGE_SIZE;
+	userpg->data_offset = __PAGE_SIZE;
 	userpg->data_size = perf_data_size(rb);
 
 unlock:
@@ -6982,7 +6983,7 @@ static int perf_mmap_rb(struct vm_area_struct *vma, struct perf_event *event,
 	struct perf_buffer *rb;
 	int rb_flags = 0;
 
-	nr_pages -= 1;
+	nr_pages -= (__PAGE_SIZE / PAGE_SIZE);
 
 	/*
 	 * If we have rb pages ensure they're a power-of-two number, so we
@@ -6996,6 +6997,15 @@ static int perf_mmap_rb(struct vm_area_struct *vma, struct perf_event *event,
 	if (event->rb) {
 		if (data_page_nr(event->rb) != nr_pages)
 			return -EINVAL;
+
+		/*
+		 * If this event doesn't have mmap_count, we're attempting to
+		 * create an alias of another event's mmap(); this would mean
+		 * both events will end up scribbling the same user_page;
+		 * which makes no sense.
+		 */
+		if (!refcount_read(&event->mmap_count))
+			return -EBUSY;
 
 		if (refcount_inc_not_zero(&event->rb->mmap_count)) {
 			/*
@@ -7436,7 +7446,7 @@ static void perf_sample_regs_user(struct perf_regs *regs_user,
 	if (user_mode(regs)) {
 		regs_user->abi = perf_reg_abi(current);
 		regs_user->regs = regs;
-	} else if (!(current->flags & (PF_KTHREAD | PF_USER_WORKER))) {
+	} else if (is_user_task(current)) {
 		perf_get_regs_user(regs_user, regs);
 	} else {
 		regs_user->abi = PERF_SAMPLE_REGS_ABI_NONE;
@@ -8076,7 +8086,7 @@ static u64 perf_virt_to_phys(u64 virt)
 		 * Try IRQ-safe get_user_page_fast_only first.
 		 * If failed, leave phys_addr as 0.
 		 */
-		if (!(current->flags & (PF_KTHREAD | PF_USER_WORKER))) {
+		if (is_user_task(current)) {
 			struct page *p;
 
 			pagefault_disable();
@@ -8189,7 +8199,7 @@ perf_callchain(struct perf_event *event, struct pt_regs *regs)
 {
 	bool kernel = !event->attr.exclude_callchain_kernel;
 	bool user   = !event->attr.exclude_callchain_user &&
-		!(current->flags & (PF_KTHREAD | PF_USER_WORKER));
+		is_user_task(current);
 	/* Disallow cross-task user callchains. */
 	bool crosstask = event->ctx->task && event->ctx->task != current;
 	const u32 max_stack = event->attr.sample_max_stack;

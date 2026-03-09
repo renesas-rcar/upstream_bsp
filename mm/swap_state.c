@@ -37,8 +37,7 @@ static const struct address_space_operations swap_aops = {
 #endif
 };
 
-/* Set swap_space as read only as swap cache is handled by swap table */
-struct address_space swap_space __ro_after_init = {
+struct address_space swap_space __read_mostly = {
 	.a_ops = &swap_aops,
 };
 
@@ -348,6 +347,7 @@ void free_pages_and_swap_cache(struct encoded_page **pages, int nr)
 
 		free_swap_cache(folio);
 		refs[folios.nr] = 1;
+		trace_android_vh_free_pages_and_swap_cache(folio);
 		if (unlikely(encoded_page_flags(pages[i]) &
 			     ENCODED_PAGE_BIT_NR_PAGES_NEXT))
 			refs[folios.nr] = encoded_nr_pages(pages[++i]);
