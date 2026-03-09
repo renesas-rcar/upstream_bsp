@@ -1,3 +1,6 @@
+Local     / arm64: dts: renesas: r8a78000: Fix out-of-range SPI interrupt numbers
+Local     / dt-bindings: firmware: arm,scmi: Document arm,no-completion-irq property
+Local     / firmware: arm_scmi: Implement arm,no-completion-irq property
 Local     / mailbox: remove unneeded double quotation
 v6.19     / media: i2c: imx219: Replace exposure magic value with named constant
 v6.19     / media: i2c: imx219: Propagate errors from control range updates
