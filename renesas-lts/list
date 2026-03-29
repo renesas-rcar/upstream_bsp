@@ -1,3 +1,5 @@
+v6.19     / media: v4l2-core: Introduce v4l2-isp.c
+v6.19     / media: uapi: Introduce V4L2 generic ISP types
 Local     / mailbox: remove unneeded double quotation
 v6.13     / pwm: Provide new consumer API functions for waveforms
 v6.13     / pwm: New abstraction for PWM waveforms
