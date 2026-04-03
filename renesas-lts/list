@@ -1,3 +1,6 @@
+Local     / mailbox: correct kdoc title for mbox_bind_client
+Local     / mailbox: test: really ignore optional memory resources
+Local     / mailbox: remove superfluous internal header
 Local     / arm64: dts: renesas: sparrow-hawk: Add overlay for Olimex MIPI-HDMI adapter
 Local     / arm64: dts: renesas: sparrow-hawk: Add overlay for WaveShare Display 13.3"
 Local     / drm/bridge: waveshare-dsi: Fix signedness bug
