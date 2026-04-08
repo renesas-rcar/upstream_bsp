@@ -17,6 +17,7 @@
 #include <hyp/adjust_pc.h>
 
 #include <nvhe/alloc.h>
+#include <nvhe/errno.h>
 #include <nvhe/ffa.h>
 #include <nvhe/mem_protect.h>
 #include <nvhe/memory.h>
@@ -187,7 +188,7 @@ static int pkvm_vcpu_init_traps(struct pkvm_hyp_vcpu *hyp_vcpu)
 	pkvm_vcpu_reset_hcr(vcpu);
 	vcpu_set_hcrx(vcpu);
 
-	if ((!pkvm_hyp_vcpu_is_protected(hyp_vcpu))) {
+	if (!pkvm_hyp_vcpu_is_protected(hyp_vcpu)) {
 		struct kvm_vcpu *host_vcpu = hyp_vcpu->host_vcpu;
 
 		memcpy(vcpu->arch.fgt, host_vcpu->arch.fgt, sizeof(vcpu->arch.fgt));
@@ -201,17 +202,18 @@ static int pkvm_vcpu_init_traps(struct pkvm_hyp_vcpu *hyp_vcpu)
 	pvm_init_traps_hcr(vcpu);
 	pvm_init_traps_mdcr(vcpu);
 
-	if (!test_bit(KVM_ARCH_FLAG_FGU_INITIALIZED, &kvm->arch.flags))
-		return 0;
+	if (!test_bit(KVM_ARCH_FLAG_FGU_INITIALIZED, &kvm->arch.flags)) {
+		compute_fgu(kvm, HFGRTR_GROUP);
+		compute_fgu(kvm, HFGITR_GROUP);
+		compute_fgu(kvm, HDFGRTR_GROUP);
+		compute_fgu(kvm, HAFGRTR_GROUP);
+		compute_fgu(kvm, HFGRTR2_GROUP);
+		compute_fgu(kvm, HFGITR2_GROUP);
+		compute_fgu(kvm, HDFGRTR2_GROUP);
+		set_bit(KVM_ARCH_FLAG_FGU_INITIALIZED, &kvm->arch.flags);
+	}
 
-	compute_fgu(kvm, HFGRTR_GROUP);
-	compute_fgu(kvm, HFGITR_GROUP);
-	compute_fgu(kvm, HDFGRTR_GROUP);
-	compute_fgu(kvm, HAFGRTR_GROUP);
-	compute_fgu(kvm, HFGRTR2_GROUP);
-	compute_fgu(kvm, HFGITR2_GROUP);
-	compute_fgu(kvm, HDFGRTR2_GROUP);
-	set_bit(KVM_ARCH_FLAG_FGU_INITIALIZED, &kvm->arch.flags);
+	kvm_vcpu_load_fgt(vcpu);
 
 	return 0;
 }
@@ -933,6 +935,7 @@ int __pkvm_init_vm(struct kvm *host_kvm, unsigned long pgd_hva)
 	void *pgd = NULL;
 	size_t pgd_size;
 	int ret;
+	int flags = 0;
 
 	ret = hyp_pin_shared_mem(host_kvm, host_kvm + 1);
 	if (ret)
@@ -967,7 +970,7 @@ int __pkvm_init_vm(struct kvm *host_kvm, unsigned long pgd_hva)
 		goto err_free_last_ran;
 	pgd = map_donated_memory_noclear(pgd_hva, pgd_size);
 	if (!pgd) {
-		ret = -EINVAL;
+		ret = -ENOMEMHOSTS2;
 		goto err_free_last_ran;
 	}
 
@@ -975,11 +978,24 @@ int __pkvm_init_vm(struct kvm *host_kvm, unsigned long pgd_hva)
 	if (ret)
 		goto err_remove_mappings;
 
-	ret = kvm_guest_prepare_stage2(hyp_vm, pgd);
-	if (ret)
-		goto err_remove_mappings;
-
 	ret = pkvm_pviommu_finalise(hyp_vm);
+	/*
+	 * With FWB, we ensure that the guest always accesses memory using
+	 * cacheable attributes, and we don't have to clean to PoC when
+	 * faulting in pages. Furthermore, FWB implies IDC, so cleaning to
+	 * PoU is not required either in this case.
+	 * With devices assigned, the VM will use NC mappings and hence
+	 * we have to disable this optimization.
+	 * If the VM has at least one device, FWB can't be used as we can't trust
+	 * the host not to reconfigure coherent devices to emit non-coherent
+	 * transactions.
+	 */
+	if (ret < 0)
+		goto err_remove_mappings;
+	else if (ret)
+		flags = KVM_PGTABLE_S2_NOFWB;
+
+	ret = kvm_guest_prepare_stage2(hyp_vm, pgd, flags);
 	if (ret)
 		goto err_remove_mappings;
 
@@ -1658,6 +1674,19 @@ static int pkvm_request_map(struct pkvm_hyp_vcpu *hyp_vcpu, u64 ipa, u64 nr_page
 	return 0;
 }
 
+static int pkvm_request_host_s2(struct pkvm_hyp_vcpu *hyp_vcpu, u64 *exit_code)
+{
+	struct kvm_hyp_req *req = pkvm_hyp_req_reserve(hyp_vcpu, KVM_HYP_REQ_TYPE_MEM_HOST_S2);
+
+	if (!req)
+		return -ENOMEM;
+
+	write_sysreg_el2(read_sysreg_el2(SYS_ELR) - 4, SYS_ELR);
+	*exit_code = ARM_EXCEPTION_HYP_REQ;
+
+	return 0;
+}
+
 static bool pkvm_memshare_call(struct pkvm_hyp_vcpu *hyp_vcpu, u64 *exit_code)
 {
 	struct pkvm_hyp_vm *hyp_vm = pkvm_hyp_vcpu_to_hyp_vm(hyp_vcpu);
@@ -1693,6 +1722,11 @@ static bool pkvm_memshare_call(struct pkvm_hyp_vcpu *hyp_vcpu, u64 *exit_code)
 			goto out_guest_err;
 
 		goto out_host;
+	case -ENOMEMHOSTS2:
+		if (pkvm_request_host_s2(hyp_vcpu, exit_code))
+			goto out_guest_err;
+
+		goto out_host;
 	}
 
 out_guest_err:
@@ -1703,7 +1737,7 @@ out_host:
 	return false;
 }
 
-static bool pkvm_memunshare_call(struct pkvm_hyp_vcpu *hyp_vcpu)
+static bool pkvm_memunshare_call(struct pkvm_hyp_vcpu *hyp_vcpu, u64 *exit_code)
 {
 	struct pkvm_hyp_vm *hyp_vm = pkvm_hyp_vcpu_to_hyp_vm(hyp_vcpu);
 	struct kvm_vcpu *vcpu = &hyp_vcpu->vcpu;
@@ -1721,13 +1755,20 @@ static bool pkvm_memunshare_call(struct pkvm_hyp_vcpu *hyp_vcpu)
 		goto out_guest_err;
 
 	err = __pkvm_guest_unshare_host(ipa >> PAGE_SHIFT, hyp_vcpu, nr_pages, &nr_unshared);
-	if (err)
-		goto out_guest_err;
+	switch (err) {
+	case 0:
+		atomic64_add(nr_unshared * PAGE_SIZE,
+			     &hyp_vm->host_kvm->stat.protected_shared_mem);
+		smccc_set_retval(vcpu, SMCCC_RET_SUCCESS, nr_unshared, 0, 0);
 
-	atomic64_add(nr_unshared * PAGE_SIZE,
-		     &hyp_vm->host_kvm->stat.protected_shared_mem);
-	smccc_set_retval(vcpu, SMCCC_RET_SUCCESS, nr_unshared, 0, 0);
-	return true;
+		return true;
+	case -ENOMEMHOSTS2:
+		if (pkvm_request_host_s2(hyp_vcpu, exit_code))
+			goto out_guest_err;
+
+		return false;
+	}
+
 
 out_guest_err:
 	smccc_set_retval(vcpu, SMCCC_RET_INVALID_PARAMETER, 0, 0, 0);
@@ -1828,12 +1869,20 @@ static bool pkvm_memrelinquish_call(struct pkvm_hyp_vcpu *hyp_vcpu, u64 *exit_co
 		goto out_guest_err;
 
 	ret = __pkvm_guest_relinquish_to_host(hyp_vcpu, ipa, flags, &pa);
-	if (ret == -E2BIG) {
+	switch (ret) {
+	case 0:
+		break;
+	case -E2BIG:
 		if (pkvm_request_split(hyp_vcpu, PAGE_ALIGN_DOWN(ipa), 1, exit_code))
 			goto out_guest_err;
 
 		return false;
-	} else if (ret) {
+	case -ENOMEMHOSTS2:
+		if (pkvm_request_host_s2(hyp_vcpu, exit_code))
+			goto out_guest_err;
+
+		return false;
+	default:
 		goto out_guest_err;
 	}
 
@@ -2001,6 +2050,15 @@ bool kvm_handle_pvm_smc64(struct kvm_vcpu *vcpu, u64 *exit_code)
 }
 
 /*
+ * Set the func bit into one of the 4 32-bit arguments for ARM_SMCCC_VENDOR_HYP_KVM_FEATURES
+ */
+#define __smccc_kvm_func_to_feature_args(args, func)			\
+do {									\
+	BUILD_BUG_ON((func) / 32 > 3);					\
+	(args)[(func) / 32] |= BIT((func) % 32);			\
+} while (0)
+
+/*
  * Handler for protected VM HVC calls.
  *
  * Returns true if the hypervisor has handled the exit, and control should go
@@ -2028,17 +2086,19 @@ bool kvm_handle_pvm_hvc64(struct kvm_vcpu *vcpu, u64 *exit_code)
 		val[3] = smccc_uuid_to_reg(&uuid, 3);
 		break;
 	case ARM_SMCCC_VENDOR_HYP_KVM_FEATURES_FUNC_ID:
-		val[0] = BIT(ARM_SMCCC_KVM_FUNC_FEATURES);
-		val[0] |= BIT(ARM_SMCCC_KVM_FUNC_HYP_MEMINFO);
-		val[0] |= BIT(ARM_SMCCC_KVM_FUNC_MEM_SHARE);
-		val[0] |= BIT(ARM_SMCCC_KVM_FUNC_MEM_UNSHARE);
-		val[0] |= BIT(ARM_SMCCC_KVM_FUNC_MMIO_GUARD_INFO);
-		val[0] |= BIT(ARM_SMCCC_KVM_FUNC_MMIO_GUARD_ENROLL);
-		val[0] |= BIT(ARM_SMCCC_KVM_FUNC_MMIO_GUARD_MAP);
-		val[0] |= BIT(ARM_SMCCC_KVM_FUNC_MMIO_GUARD_UNMAP);
-		val[0] |= BIT(ARM_SMCCC_KVM_FUNC_MMIO_RGUARD_MAP);
-		val[0] |= BIT(ARM_SMCCC_KVM_FUNC_MMIO_RGUARD_UNMAP);
-		val[0] |= BIT(ARM_SMCCC_KVM_FUNC_MEM_RELINQUISH);
+		val[0] = 0;
+		__smccc_kvm_func_to_feature_args(val, ARM_SMCCC_KVM_FUNC_FEATURES);
+		__smccc_kvm_func_to_feature_args(val, ARM_SMCCC_KVM_FUNC_HYP_MEMINFO);
+		__smccc_kvm_func_to_feature_args(val, ARM_SMCCC_KVM_FUNC_MEM_SHARE);
+		__smccc_kvm_func_to_feature_args(val, ARM_SMCCC_KVM_FUNC_MEM_UNSHARE);
+		__smccc_kvm_func_to_feature_args(val, ARM_SMCCC_KVM_FUNC_MMIO_GUARD_INFO);
+		__smccc_kvm_func_to_feature_args(val, ARM_SMCCC_KVM_FUNC_MMIO_GUARD_ENROLL);
+		__smccc_kvm_func_to_feature_args(val, ARM_SMCCC_KVM_FUNC_MMIO_GUARD_MAP);
+		__smccc_kvm_func_to_feature_args(val, ARM_SMCCC_KVM_FUNC_MMIO_GUARD_UNMAP);
+		__smccc_kvm_func_to_feature_args(val, ARM_SMCCC_KVM_FUNC_MMIO_RGUARD_MAP);
+		__smccc_kvm_func_to_feature_args(val, ARM_SMCCC_KVM_FUNC_MMIO_RGUARD_UNMAP);
+		__smccc_kvm_func_to_feature_args(val, ARM_SMCCC_KVM_FUNC_MEM_RELINQUISH);
+		__smccc_kvm_func_to_feature_args(val, ARM_SMCCC_KVM_FUNC_DEV_REQ_PWR);
 		break;
 	case ARM_SMCCC_VENDOR_HYP_KVM_MMIO_GUARD_ENROLL_FUNC_ID:
 		set_bit(KVM_ARCH_FLAG_MMIO_GUARD, &vcpu->kvm->arch.flags);
@@ -2056,7 +2116,7 @@ bool kvm_handle_pvm_hvc64(struct kvm_vcpu *vcpu, u64 *exit_code)
 	case ARM_SMCCC_VENDOR_HYP_KVM_MEM_SHARE_FUNC_ID:
 		return pkvm_memshare_call(hyp_vcpu, exit_code);
 	case ARM_SMCCC_VENDOR_HYP_KVM_MEM_UNSHARE_FUNC_ID:
-		return pkvm_memunshare_call(hyp_vcpu);
+		return pkvm_memunshare_call(hyp_vcpu, exit_code);
 	case ARM_SMCCC_VENDOR_HYP_KVM_MEM_RELINQUISH_FUNC_ID:
 		return pkvm_memrelinquish_call(hyp_vcpu, exit_code);
 	case ARM_SMCCC_TRNG_VERSION ... ARM_SMCCC_TRNG_RND32:
@@ -2072,6 +2132,8 @@ bool kvm_handle_pvm_hvc64(struct kvm_vcpu *vcpu, u64 *exit_code)
 		return pkvm_device_request_mmio(hyp_vcpu, exit_code);
 	case ARM_SMCCC_VENDOR_HYP_KVM_DEV_REQ_DMA_FUNC_ID:
 		return pkvm_device_request_dma(hyp_vcpu, exit_code);
+	case ARM_SMCCC_VENDOR_HYP_KVM_DEV_REQ_PWR_FUNC_ID:
+		return pkvm_device_request_power(hyp_vcpu, exit_code);
 	default:
 		if (is_ffa_call(fn))
 			return kvm_guest_ffa_handler(hyp_vcpu, exit_code);

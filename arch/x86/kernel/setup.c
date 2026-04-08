@@ -440,8 +440,14 @@ int __init ima_free_kexec_buffer(void)
 
 int __init ima_get_kexec_buffer(void **addr, size_t *size)
 {
+	int ret;
+
 	if (!ima_kexec_buffer_size)
 		return -ENOENT;
+
+	ret = ima_validate_range(ima_kexec_buffer_phys, ima_kexec_buffer_size);
+	if (ret)
+		return ret;
 
 	*addr = __va(ima_kexec_buffer_phys);
 	*size = ima_kexec_buffer_size;
@@ -1318,6 +1324,6 @@ __initcall(register_kernel_offset_dumper);
 #ifdef CONFIG_HOTPLUG_CPU
 bool arch_cpu_is_hotpluggable(int cpu)
 {
-	return cpu > 0;
+	return cpu > 0 && !enable_pkvm;
 }
 #endif /* CONFIG_HOTPLUG_CPU */

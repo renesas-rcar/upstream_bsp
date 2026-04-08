@@ -8,6 +8,7 @@
 #define _TRACE_HOOK_VMSCAN_H
 
 #include <trace/hooks/vendor_hooks.h>
+struct lruvec;
 
 DECLARE_RESTRICTED_HOOK(android_rvh_set_balance_anon_file_reclaim,
 			TP_PROTO(bool *balance_anon_file_reclaim),
@@ -15,6 +16,20 @@ DECLARE_RESTRICTED_HOOK(android_rvh_set_balance_anon_file_reclaim,
 DECLARE_RESTRICTED_HOOK(android_rvh_kswapd_shrink_node,
 			TP_PROTO(unsigned long *nr_reclaimed),
 			TP_ARGS(nr_reclaimed), 1);
+DECLARE_RESTRICTED_HOOK(android_rvh_kswapd_shrink_node_bypass,
+			TP_PROTO(unsigned long *nr_to_reclaim, unsigned long *nr_scanned,
+			unsigned long *nr_reclaimed, bool *bypass),
+			TP_ARGS(nr_to_reclaim, nr_scanned, nr_reclaimed, bypass), 1);
+DECLARE_HOOK(android_vh_shrink_folio_list,
+	TP_PROTO(struct folio *folio, bool dirty, bool writeback,
+		bool *activate, bool *keep),
+	TP_ARGS(folio, dirty, writeback, activate, keep));
+DECLARE_HOOK(android_vh_inode_lru_isolate,
+	TP_PROTO(struct inode *inode, bool *skip),
+	TP_ARGS(inode, skip));
+DECLARE_HOOK(android_vh_invalidate_mapping_pagevec,
+	TP_PROTO(struct address_space *mapping, bool *skip),
+	TP_ARGS(mapping, skip));
 DECLARE_HOOK(android_vh_mglru_should_abort_scan,
 	TP_PROTO(unsigned long nr_reclaimed, unsigned long nr_to_reclaim,
 	unsigned int order, bool *bypass),
@@ -22,6 +37,10 @@ DECLARE_HOOK(android_vh_mglru_should_abort_scan,
 DECLARE_HOOK(android_vh_mglru_should_abort_scan_ex,
 	TP_PROTO(u64 *ext, bool *bypass),
 	TP_ARGS(ext, bypass));
+DECLARE_HOOK(android_vh_mglru_aging_bypass,
+	TP_PROTO(struct lruvec *lruvec, unsigned long max_seq,
+	int swappiness, bool *bypass, bool *young),
+	TP_ARGS(lruvec, max_seq, swappiness, bypass, young));
 DECLARE_HOOK(android_vh_tune_swappiness,
 	TP_PROTO(int *swappiness),
 	TP_ARGS(swappiness));
@@ -69,6 +88,12 @@ DECLARE_HOOK(android_vh_rebalance_anon_lru_bypass,
 DECLARE_HOOK(android_vh_tune_scan_control,
 	TP_PROTO(bool *skip_swap),
 	TP_ARGS(skip_swap));
+DECLARE_HOOK(android_vh_folio_skip_activate,
+	TP_PROTO(struct folio *folio, bool *skip),
+	TP_ARGS(folio, skip));
+DECLARE_HOOK(android_vh_folio_trylock_clear_bypass,
+	TP_PROTO(struct folio *folio, bool *bypass),
+	TP_ARGS(folio, bypass));
 DECLARE_HOOK(android_vh_shrink_node_memcgs,
 	TP_PROTO(struct mem_cgroup *memcg, bool *skip),
 	TP_ARGS(memcg, skip));
@@ -90,6 +115,11 @@ DECLARE_HOOK(android_vh_evict_folios_bypass,
 DECLARE_HOOK(android_vh_mm_get_zone_mark,
 	TP_PROTO(struct zone *zone, unsigned long *mark),
 	TP_ARGS(zone, mark));
+DECLARE_HOOK(android_vh_mm_isolate_priv_lru,
+	TP_PROTO(unsigned long nr_to_scan, struct lruvec *lruvec, enum lru_list lru,
+		struct list_head *dst, int reclaim_idx, bool may_unmap,
+		unsigned long *nr_scanned, unsigned long *nr_taken),
+	TP_ARGS(nr_to_scan, lruvec, lru, dst, reclaim_idx, may_unmap, nr_scanned, nr_taken));
 #endif /* _TRACE_HOOK_VMSCAN_H */
 /* This part must be outside protection */
 #include <trace/define_trace.h>

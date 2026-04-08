@@ -113,6 +113,7 @@
   __alloc_skb
   alloc_workqueue_noprof
   amd_get_boost_ratio_numerator
+  android_rvh_probe_register
   anon_inode_getfd
   arc4_crypt
   arc4_setkey
@@ -243,6 +244,7 @@
   cec_allocate_adapter
   cec_delete_adapter
   cec_fill_conn_info_from_drm
+  cec_get_edid_phys_addr
   cec_notifier_cec_adap_register
   cec_notifier_cec_adap_unregister
   cec_notifier_conn_register
@@ -250,6 +252,8 @@
   cec_notifier_set_phys_addr
   cec_received_msg_ts
   cec_register_adapter
+  cec_s_conn_info
+  cec_s_phys_addr
   cec_transmit_attempt_done_ts
   cec_unregister_adapter
   __check_object_size
@@ -784,7 +788,11 @@
   drm_av_sync_delay
   drm_calc_timestamping_constants
   drm_clflush_virt_range
+  drm_client_dev_resume
+  drm_client_dev_suspend
+  drm_client_dev_unregister
   drm_color_lut_check
+  drm_colorop_set_next_property
   drm_compat_ioctl
   drm_connector_atomic_hdr_metadata_equal
   drm_connector_attach_colorspace_property
@@ -847,6 +855,7 @@
   drm_dev_register
   drm_dev_set_dma_dev
   drm_dev_unplug
+  drm_dev_unregister
   drm_dev_wedged_event
   drm_display_mode_from_cea_vic
   drm_edid_alloc
@@ -989,8 +998,12 @@
   drm_panel_unprepare
   drm_plane_add_size_hints_property
   drm_plane_cleanup
+  drm_plane_colorop_3dlut_init
+  drm_plane_colorop_ctm_3x4_init
+  drm_plane_colorop_curve_1d_lut_init
   drm_plane_create_alpha_property
   drm_plane_create_blend_mode_property
+  drm_plane_create_color_pipeline_property
   drm_plane_create_color_properties
   drm_plane_create_rotation_property
   drm_plane_create_scaling_filter_property
@@ -1118,6 +1131,7 @@
   _find_next_bit
   _find_next_or_bit
   _find_next_zero_bit
+  find_vma_intersection
   finish_open
   finish_wait
   firmware_kobj
@@ -1351,6 +1365,7 @@
   __hid_register_driver
   hid_report_raw_event
   hid_unregister_driver
+  hmm_range_fault
   hrtimer_active
   hrtimer_cancel
   hrtimer_cb_get_time
@@ -1518,6 +1533,9 @@
   intel_tcc_get_temp
   intel_tcc_get_tjmax
   intel_tcc_set_offset
+  interval_tree_insert
+  interval_tree_iter_first
+  interval_tree_remove
   intlog10
   int_pow
   int_sqrt
@@ -1617,6 +1635,7 @@
   kernel_sendmsg
   kernel_sock_shutdown
   key_put
+  keyring_alloc
   __kfifo_alloc
   __kfifo_free
   __kfifo_from_user
@@ -1761,6 +1780,29 @@
   media_entity_remote_pad_unique
   media_pad_remote_pad_first
   media_pad_remote_pad_unique
+  mei_cldev_disable
+  __mei_cldev_driver_register
+  mei_cldev_driver_unregister
+  mei_cldev_enable
+  mei_cldev_get_drvdata
+  mei_cldev_recv
+  mei_cldev_recv_timeout
+  mei_cldev_send
+  mei_cldev_send_gsc_command
+  mei_cldev_send_timeout
+  mei_cldev_set_drvdata
+  mei_deregister
+  mei_me_dev_init
+  mei_me_get_cfg
+  mei_me_irq_quick_handler
+  mei_me_irq_thread_handler
+  mei_me_polling_thread
+  mei_register
+  mei_restart
+  mei_start
+  mei_stop
+  mei_write_is_idle
+  mem_alloc_profiling_key
   memchr
   memchr_inv
   memcmp
@@ -1840,6 +1882,9 @@
   mmc_wait_for_req_done
   __mmdrop
   mmput
+  mmu_interval_notifier_insert
+  mmu_interval_notifier_remove
+  mmu_interval_read_begin
   mod_delayed_work_on
   mod_timer
   __module_get
@@ -2549,12 +2594,17 @@
   seq_release_private
   seq_write
   serial8250_clear_and_reinit_fifos
+  serial8250_clear_fifos
   serial8250_do_pm
   serial8250_do_set_ldisc
+  serial8250_do_shutdown
+  serial8250_fifo_wait_for_lsr_thre
   serial8250_get_port
   serial8250_handle_irq
+  serial8250_handle_irq_locked
   serial8250_register_8250_port
   serial8250_resume_port
+  serial8250_rx_dma_flush
   serial8250_suspend_port
   serial8250_unregister_port
   serial8250_update_uartclk
@@ -3060,12 +3110,15 @@
   touch_atime
   touchscreen_parse_properties
   touchscreen_report_pos
+  _trace_android_vh_pcpu_rwsem_lock_acquired
+  _trace_android_vh_pcpu_rwsem_lock_released
   trace_event_buffer_commit
   trace_event_buffer_reserve
   trace_event_printf
   trace_event_raw_init
   trace_event_reg
   trace_handle_return
+  __traceiter_android_rvh_iommu_limit_align_shift
   __traceiter_gpu_mem_total
   __traceiter_mmap_lock_acquire_returned
   __traceiter_mmap_lock_released
@@ -3075,6 +3128,7 @@
   __traceiter_write_msr
   __traceiter_xdp_exception
   trace_output_call
+  __tracepoint_android_rvh_iommu_limit_align_shift
   __tracepoint_gpu_mem_total
   __tracepoint_mmap_lock_acquire_returned
   __tracepoint_mmap_lock_released
@@ -3190,6 +3244,8 @@
   typec_get_drvdata
   typec_get_negotiated_svdm_version
   typec_match_altmode
+  typec_mode_selection_delete
+  typec_mode_selection_start
   typec_mux_get_drvdata
   typec_mux_put
   typec_mux_register
@@ -3286,6 +3342,8 @@
   usb_autopm_put_interface
   usb_autopm_put_interface_async
   usb_bulk_msg
+  usb_check_bulk_endpoints
+  usb_check_int_endpoints
   usb_clear_halt
   usb_composite_overwrite_options
   usb_composite_probe
@@ -3305,6 +3363,7 @@
   usb_driver_release_interface
   usb_enable_autosuspend
   usb_ep_set_maxpacket_limit
+  usb_find_common_endpoints
   usb_free_coherent
   usb_free_urb
   usb_gadget_giveback_request
@@ -3314,6 +3373,7 @@
   usb_get_from_anchor
   usb_get_function
   usb_get_function_instance
+  usb_get_intf
   usb_hcd_check_unlink_urb
   usb_hcd_giveback_urb
   usb_hcd_is_primary_hcd
@@ -3364,10 +3424,12 @@
   usb_put_function
   usb_put_function_instance
   usb_put_hcd
+  usb_put_intf
   usb_queue_reset_device
   usb_register_dev
   usb_register_driver
   usb_remove_hcd
+  usb_reset_device
   usb_role_switch_get_drvdata
   usb_role_switch_put
   usb_role_switch_register
@@ -3487,6 +3549,7 @@
   vchan_init
   vchan_tx_desc_free
   vchan_tx_submit
+  verify_pkcs7_signature
   vfree
   vfs_fsync_range
   vga_client_register

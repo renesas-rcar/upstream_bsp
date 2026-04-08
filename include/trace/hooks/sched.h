@@ -18,6 +18,10 @@ DECLARE_RESTRICTED_HOOK(android_rvh_select_task_rq_rt,
 	TP_PROTO(struct task_struct *p, int prev_cpu, int sd_flag, int wake_flags, int *new_cpu),
 	TP_ARGS(p, prev_cpu, sd_flag, wake_flags, new_cpu), 1);
 
+DECLARE_RESTRICTED_HOOK(android_rvh_should_honor_rt_sync,
+	TP_PROTO(struct rq *rq, struct task_struct *p, bool sync, bool *honor),
+	TP_ARGS(rq, p, sync, honor), 1);
+
 DECLARE_RESTRICTED_HOOK(android_rvh_select_fallback_rq,
 	TP_PROTO(int cpu, struct task_struct *p, int *new_cpu),
 	TP_ARGS(cpu, p, new_cpu), 1);
@@ -480,6 +484,11 @@ DECLARE_RESTRICTED_HOOK(android_rvh_remove_entity_load_avg,
 	TP_PROTO(struct cfs_rq *cfs_rq, struct sched_entity *se),
 	TP_ARGS(cfs_rq, se), 1);
 
+DECLARE_RESTRICTED_HOOK(android_rvh_before_pick_task_fair,
+	TP_PROTO(struct rq *rq, struct task_struct **p,
+		 struct task_struct *prev, struct rq_flags *rf),
+	TP_ARGS(rq, p, prev, rf), 1);
+
 struct affinity_context;
 DECLARE_RESTRICTED_HOOK(android_rvh_set_cpus_allowed_ptr,
 	TP_PROTO(struct task_struct *p, struct affinity_context *ctx, bool *skip_user_ptr),
@@ -537,6 +546,10 @@ DECLARE_RESTRICTED_HOOK(android_rvh_util_fits_cpu,
 	TP_PROTO(unsigned long util, unsigned long uclamp_min, unsigned long uclamp_max,
 		 int cpu, bool *fits, bool *done),
 	TP_ARGS(util, uclamp_min, uclamp_max, cpu, fits, done), 1);
+
+DECLARE_RESTRICTED_HOOK(android_rvh_dequeue_entity_delayed,
+	TP_PROTO(struct cfs_rq *cfs_rq, struct sched_entity *se, bool *delay),
+	TP_ARGS(cfs_rq, se, delay), 1);
 
 /* macro versions of hooks are no longer required */
 #endif /* _TRACE_HOOK_SCHED_H */

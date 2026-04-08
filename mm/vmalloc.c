@@ -2251,11 +2251,14 @@ decay_va_pool_node(struct vmap_node *vn, bool full_decay)
 	reclaim_list_global(&decay_list);
 }
 
+#define KASAN_RELEASE_BATCH_SIZE 32
+
 static void
 kasan_release_vmalloc_node(struct vmap_node *vn)
 {
 	struct vmap_area *va;
 	unsigned long start, end;
+	unsigned int batch_count = 0;
 
 	start = list_first_entry(&vn->purge_list, struct vmap_area, list)->va_start;
 	end = list_last_entry(&vn->purge_list, struct vmap_area, list)->va_end;
@@ -2265,6 +2268,11 @@ kasan_release_vmalloc_node(struct vmap_node *vn)
 			kasan_release_vmalloc(va->va_start, va->va_end,
 				va->va_start, va->va_end,
 				KASAN_VMALLOC_PAGE_RANGE);
+
+		if (need_resched() || (++batch_count >= KASAN_RELEASE_BATCH_SIZE)) {
+			cond_resched();
+			batch_count = 0;
+		}
 	}
 
 	kasan_release_vmalloc(start, end, start, end, KASAN_VMALLOC_TLB_FLUSH);
@@ -3842,6 +3850,8 @@ void *__vmalloc_node_range_noprof(unsigned long size, unsigned long align,
 	unsigned long original_align = align;
 	unsigned int shift = PAGE_SHIFT;
 
+	trace_android_vh_vmalloc_node_range_start(size);
+
 	if (WARN_ON_ONCE(!size))
 		return NULL;
 
@@ -3937,7 +3947,7 @@ again:
 
 	if (!(vm_flags & VM_DEFER_KMEMLEAK))
 		kmemleak_vmalloc(area, PAGE_ALIGN(size), gfp_mask);
-
+	trace_android_vh_vmalloc_node_range_end(size, area->addr);
 	return area->addr;
 
 fail:

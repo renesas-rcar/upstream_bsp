@@ -2254,6 +2254,7 @@ static enum compact_result __compact_finished(struct compact_control *cc)
 	const int migratetype = cc->migratetype;
 	int ret;
 	bool abort_compact = false;
+	bool bypass = false;
 
 	/* Compaction run completes if the migrate and free scanner meet */
 	if (compact_scanners_met(cc)) {
@@ -2293,6 +2294,10 @@ static enum compact_result __compact_finished(struct compact_control *cc)
 
 		goto out;
 	}
+
+	trace_android_vh_compact_bypass(cc, &bypass);
+	if (bypass)
+		return COMPACT_SUCCESS;
 
 	if (is_via_compact_memory(cc->order))
 		return COMPACT_CONTINUE;
@@ -2537,6 +2542,7 @@ compact_zone(struct compact_control *cc, struct capture_control *capc)
 	bool update_cached;
 	unsigned int nr_succeeded = 0, nr_migratepages;
 	int order;
+	long vendor_ret;
 
 	/*
 	 * These counters track activities during zone compaction.  Initialize
@@ -2610,6 +2616,7 @@ compact_zone(struct compact_control *cc, struct capture_control *capc)
 		cc->zone->compact_cached_migrate_pfn[0] == cc->zone->compact_cached_migrate_pfn[1];
 
 	trace_mm_compaction_begin(cc, start_pfn, end_pfn, sync);
+	trace_android_vh_mm_compaction_begin(cc, &vendor_ret);
 
 	/* lru_add_drain_all could be expensive with involving other CPUs */
 	lru_add_drain();
@@ -2758,6 +2765,7 @@ out:
 	count_compact_events(COMPACTMIGRATE_SCANNED, cc->total_migrate_scanned);
 	count_compact_events(COMPACTFREE_SCANNED, cc->total_free_scanned);
 
+	trace_android_vh_mm_compaction_end(cc, vendor_ret);
 	trace_mm_compaction_end(cc, start_pfn, end_pfn, sync, ret);
 
 	VM_BUG_ON(!list_empty(&cc->migratepages));

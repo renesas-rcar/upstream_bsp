@@ -1171,6 +1171,16 @@ struct file_ra_state {
 	loff_t prev_pos;
 };
 
+/* For GKI */
+#define DEFINE_RA_MMAP_MISS(ra)						\
+	struct file_ra_state_mmap_miss *ra_mmap_miss =			\
+		(struct file_ra_state_mmap_miss *)&(ra)->mmap_miss;
+
+struct file_ra_state_mmap_miss {
+	unsigned short order;
+	unsigned short mmap_miss;
+};
+
 /*
  * Check if @index falls in the readahead windows.
  */
@@ -1248,6 +1258,9 @@ struct file {
 	};
 	file_ref_t			f_ref;
 	/* --- cacheline 3 boundary (192 bytes) --- */
+
+	ANDROID_KABI_RESERVE(1);
+	ANDROID_KABI_RESERVE(2);
 } __randomize_layout
   __attribute__((aligned(4)));	/* lest something weird decides that 2 is OK */
 
@@ -1537,6 +1550,11 @@ struct super_block {
 	const char *s_subtype;
 
 	const struct dentry_operations *__s_d_op; /* default d_op for dentries */
+
+	/*
+	 * Saved pool identifier for cleancache (-1 means none)
+	 */
+	int cleancache_poolid;
 
 	struct shrinker *s_shrink;	/* per-sb shrinker handle */
 

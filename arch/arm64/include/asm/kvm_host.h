@@ -11,6 +11,7 @@
 #ifndef __ARM64_KVM_HOST_H__
 #define __ARM64_KVM_HOST_H__
 
+#include <linux/android_kabi.h>
 #include <linux/arm-smccc.h>
 #include <linux/bitmap.h>
 #include <linux/types.h>
@@ -133,8 +134,9 @@ static inline int __topup_hyp_memcache(struct kvm_hyp_memcache *mc,
 	while (mc->nr_pages < min_pages) {
 		phys_addr_t *p = alloc_fn(arg, order);
 
-		if (!p)
-			return -ENOMEM;
+		if (IS_ERR_OR_NULL(p))
+			return p ? PTR_ERR(p) : -ENOMEM;
+
 		push_hyp_memcache(mc, p, to_pa, order);
 	}
 
@@ -802,8 +804,10 @@ struct kvm_host_data {
 		struct kvm_guest_debug_arch regs;
 		/* Statistical profiling extension */
 		u64 pmscr_el1;
+		u64 pmblimitr_el1;
 		/* Self-hosted trace */
 		u64 trfcr_el1;
+		u64 trblimitr_el1;
 		/* Values of trap registers for the host before guest entry. */
 		u64 mdcr_el2;
 		u64 brbcr_el1;
@@ -859,6 +863,7 @@ enum {
 	KVM_HYP_REQ_TYPE_SPLIT,
 	KVM_HYP_REQ_TYPE_HYP_ALLOC,
 	KVM_HYP_REQ_TYPE_MEM_IOMMU,
+	KVM_HYP_REQ_TYPE_MEM_HOST_S2,
 	__KVM_HYP_REQ_TYPE_MAX
 };
 
@@ -911,6 +916,8 @@ static inline size_t kvm_hyp_req_arg_size(u8 type)
 	case KVM_HYP_REQ_TYPE_HYP_ALLOC:
 	case KVM_HYP_REQ_TYPE_MEM_IOMMU:
 		return sizeof(req->mem);
+	case KVM_HYP_REQ_TYPE_MEM_HOST_S2:
+		return 0;
 	default:
 		WARN_ON(1);
 	}
@@ -1727,6 +1734,11 @@ int kvm_trng_call(struct kvm_vcpu *vcpu);
 extern phys_addr_t hyp_mem_base;
 extern phys_addr_t hyp_mem_size;
 void __init kvm_hyp_reserve(void);
+#ifdef CONFIG_CMA
+int __init pkvm_host_stage2_reserve(void);
+#else
+static inline int __init pkvm_host_stage2_reserve(void) { return 0; }
+#endif
 #else
 static inline void kvm_hyp_reserve(void) { }
 #endif
@@ -1944,6 +1956,7 @@ enum hyp_alloc_mgt_id {
 	__HYP_ALLOC_MGT_HEAP_ID_START__ = 0,
 	HYP_ALLOC_MGT_HEAP_ID = __HYP_ALLOC_MGT_HEAP_ID_START__,
 	HYP_ALLOC_MGT_IOMMU_ID,
+	HYP_ALLOC_MGT_HOSTS2_ID,
 	NR_ALLOC_MGT_IDS
 };
 
@@ -1959,9 +1972,19 @@ struct kvm_iommu_driver {
 	int (*get_device_iommu_num_ids)(struct device *dev);
 	int (*get_device_iommu_id)(struct device *dev, u32 id,
 				   pkvm_handle_t *out_iommu, u32 *out_sid);
+	int (*get_iommu_endpoint)(struct of_phandle_args *iommu_spec, u64 *out_endpoint);
 
 	/* Private to core. */
 	struct list_head node;
+
+	ANDROID_KABI_RESERVE(1);
+	ANDROID_KABI_RESERVE(2);
+	ANDROID_KABI_RESERVE(3);
+	ANDROID_KABI_RESERVE(4);
+	ANDROID_KABI_RESERVE(5);
+	ANDROID_KABI_RESERVE(6);
+	ANDROID_KABI_RESERVE(7);
+	ANDROID_KABI_RESERVE(8);
 };
 
 struct kvm_iommu_ops;
@@ -1973,6 +1996,7 @@ int kvm_iommu_init_driver(void);
 int kvm_iommu_register_hyp_ops(struct kvm_iommu_ops *hyp_ops, pkvm_handle_t *drv_id);
 size_t kvm_iommu_pages(void);
 int kvm_get_iommu_id_by_of(struct device_node *np, pkvm_handle_t *out_id);
+int kvm_get_iommu_endpoint(struct of_phandle_args *iommu_spec, u64 *out_endpoint);
 #endif
 
 #ifndef __KVM_NVHE_HYPERVISOR__

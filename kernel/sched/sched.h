@@ -73,6 +73,7 @@
 #include <linux/delayacct.h>
 #include <linux/mmu_context.h>
 #include <linux/android_vendor.h>
+#include <linux/android_kabi.h>
 
 #include <trace/events/power.h>
 #include <trace/events/sched.h>
@@ -532,6 +533,10 @@ struct task_group {
 	ANDROID_VENDOR_DATA_ARRAY(1, 4);
 #endif
 
+	ANDROID_KABI_RESERVE(1);
+	ANDROID_KABI_RESERVE(2);
+	ANDROID_KABI_RESERVE(3);
+	ANDROID_KABI_RESERVE(4);
 };
 
 #ifdef CONFIG_GROUP_SCHED_WEIGHT
@@ -690,8 +695,8 @@ struct cfs_rq {
 	unsigned int		h_nr_runnable;     /* SCHED_{NORMAL,BATCH,IDLE} */
 	unsigned int		h_nr_idle; /* SCHED_IDLE */
 
-	s64			avg_vruntime;
-	u64			avg_load;
+	s64			sum_w_vruntime;
+	u64			sum_weight;
 
 	u64			zero_vruntime;
 #ifdef CONFIG_SCHED_CORE
@@ -887,6 +892,7 @@ struct dl_rq {
 
 	bool			overloaded;
 
+	struct sched_dl_entity	*curr;
 	/*
 	 * Tasks on this rq that can be pushed away. They are kept in
 	 * an rb-tree, ordered by tasks' deadlines, with caching
@@ -1054,6 +1060,11 @@ struct root_domain {
 	struct perf_domain __rcu *pd;
 
 	ANDROID_VENDOR_DATA(1);
+
+	ANDROID_KABI_RESERVE(1);
+	ANDROID_KABI_RESERVE(2);
+	ANDROID_KABI_RESERVE(3);
+	ANDROID_KABI_RESERVE(4);
 };
 
 extern void init_defrootdomain(void);
@@ -1336,6 +1347,10 @@ struct rq {
 	struct list_head	cfsb_csd_list;
 #endif
 
+	ANDROID_KABI_RESERVE(1);
+	ANDROID_KABI_RESERVE(2);
+	ANDROID_KABI_RESERVE(3);
+	ANDROID_KABI_RESERVE(4);
 	ANDROID_OEM_DATA_ARRAY(1, 16);
 };
 
@@ -2367,6 +2382,8 @@ static inline int task_on_rq_migrating(struct task_struct *p)
 #define WF_MIGRATED		0x20 /* Internal use, task got migrated */
 #define WF_CURRENT_CPU		0x40 /* Prefer to move the wakee to the current CPU. */
 #define WF_RQ_SELECTED		0x80 /* ->select_task_rq() was called */
+
+#define WF_ANDROID_VENDOR	0x1000 /* Vendor specific for Android */
 
 static_assert(WF_EXEC == SD_BALANCE_EXEC);
 static_assert(WF_FORK == SD_BALANCE_FORK);
@@ -4030,7 +4047,7 @@ void sched_enq_and_set_task(struct sched_enq_and_set_ctx *ctx);
 
 #include "ext.h"
 
-extern void set_next_entity(struct cfs_rq *cfs_rq, struct sched_entity *se);
+extern void set_next_entity(struct cfs_rq *cfs_rq, struct sched_entity *se, bool first);
 
 #ifdef CONFIG_RT_SOFTIRQ_AWARE_SCHED
 extern bool cpu_busy_with_softirqs(int cpu);

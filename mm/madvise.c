@@ -12,6 +12,7 @@
 #include <linux/mempolicy.h>
 #include <linux/page_size_compat.h>
 #include <linux/page-isolation.h>
+#include <linux/pgsize_migration.h>
 #include <linux/page_idle.h>
 #include <linux/userfaultfd_k.h>
 #include <linux/hugetlb.h>
@@ -891,6 +892,8 @@ static long madvise_dontneed_single_vma(struct madvise_behavior *madv_behavior)
 		.reclaim_pt = true,
 		.even_cows = true,
 	};
+
+	madvise_vma_pad_pages(madv_behavior->vma, range->start, range->end);
 
 	zap_page_range_single_batched(
 			madv_behavior->tlb, madv_behavior->vma, range->start,
@@ -1995,12 +1998,19 @@ int do_madvise(struct mm_struct *mm, unsigned long start, size_t len_in, int beh
 		.behavior = behavior,
 		.tlb = &tlb,
 	};
+	bool bypass = false;
 
 	if (madvise_should_skip(start, len_in, behavior, &error))
 		return error;
 	error = madvise_lock(&madv_behavior);
 	if (error)
 		return error;
+
+	trace_android_vh_mm_do_madvise_bypass(mm, start, len_in, behavior,
+					      &error, &bypass);
+	if (bypass)
+		return error;
+
 	madvise_init_tlb(&madv_behavior);
 	error = madvise_do_behavior(start, len_in, &madv_behavior);
 	madvise_finish_tlb(&madv_behavior);

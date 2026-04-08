@@ -29,6 +29,7 @@
 #include <linux/lz4.h>
 #include <linux/ctype.h>
 #include <linux/fs_parser.h>
+#include <linux/cleancache.h>
 
 #include "f2fs.h"
 #include "node.h"
@@ -4356,6 +4357,18 @@ static void init_sb_info(struct f2fs_sb_info *sbi)
 	sbi->sit_journal_entries = (sbi->sum_journal_size - 2) /
 		sizeof(struct sit_journal_entry);
 
+	sbi->sum_blocksize = f2fs_sb_has_packed_ssa(sbi) ?
+		4096 : sbi->blocksize;
+	sbi->sums_per_block = sbi->blocksize / sbi->sum_blocksize;
+	sbi->entries_in_sum = sbi->sum_blocksize / 8;
+	sbi->sum_entry_size = SUMMARY_SIZE * sbi->entries_in_sum;
+	sbi->sum_journal_size = sbi->sum_blocksize - SUM_FOOTER_SIZE -
+		sbi->sum_entry_size;
+	sbi->nat_journal_entries = (sbi->sum_journal_size - 2) /
+		sizeof(struct nat_journal_entry);
+	sbi->sit_journal_entries = (sbi->sum_journal_size - 2) /
+		sizeof(struct sit_journal_entry);
+
 	sbi->dir_level = DEF_DIR_LEVEL;
 	sbi->interval_time[CP_TIME] = DEF_CP_INTERVAL;
 	sbi->interval_time[REQ_TIME] = DEF_IDLE_INTERVAL;
@@ -5347,6 +5360,8 @@ reset_checkpoint:
 	clear_sbi_flag(sbi, SBI_CP_DISABLED_QUICK);
 
 	sbi->umount_lock_holder = NULL;
+
+	cleancache_init_fs(sb);
 	return 0;
 
 sync_free_meta:
@@ -5679,3 +5694,4 @@ module_exit(exit_f2fs_fs)
 MODULE_AUTHOR("Samsung Electronics's Praesto Team");
 MODULE_DESCRIPTION("Flash Friendly File System");
 MODULE_LICENSE("GPL");
+MODULE_IMPORT_NS("ANDROID_GKI_VFS_internal_I_am_really_a_filesystem_and_am_NOT_a_driver");

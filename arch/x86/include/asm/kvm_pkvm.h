@@ -58,7 +58,6 @@ struct clear_ce_data {
 	u8 bus;
 	u8 devfn;
 	u8 ats_qdep;
-	u8 ats_enabled: 1;
 	u8 ats_supported: 1;
 };
 
@@ -70,7 +69,6 @@ struct set_lm_ce_data {
 	u8 bus;
 	u8 devfn;
 	u8 ats_qdep;
-	u8 ats_enabled: 1;
 	u8 ats_supported: 1;
 };
 
@@ -82,7 +80,6 @@ struct set_sm_ce_data {
 	u8 bus;
 	u8 devfn;
 	u8 ats_qdep;
-	u8 ats_enabled: 1;
 	u8 ats_supported: 1;
 	u8 pasid_supported: 3;
 	u8 pasid_enabled: 1;
@@ -99,7 +96,6 @@ struct pasid_setup_fl_data {
 	u8 bus;
 	u8 devfn;
 	u8 ats_qdep;
-	u8 ats_enabled: 1;
 	u8 ats_supported: 1;
 };
 
@@ -113,7 +109,6 @@ struct pasid_setup_sl_data {
 	u8 bus;
 	u8 devfn;
 	u8 ats_qdep;
-	u8 ats_enabled: 1;
 	u8 ats_supported: 1;
 };
 
@@ -123,7 +118,6 @@ struct pasid_teardown_data {
 	u8 bus;
 	u8 devfn;
 	u8 ats_qdep;
-	u8 ats_enabled: 1;
 	u8 ats_supported: 1;
 };
 
@@ -260,6 +254,9 @@ union pkvm_hc_data {
 		struct domain_map_data out;
 	} iommu_domain_map;
 #endif
+	struct {
+		bool has_intr;
+	} protected_apic_has_interrupt;
 	struct {
 		u64 data[PKVM_HC_DATA_MAX_NUM];
 	} raw;
