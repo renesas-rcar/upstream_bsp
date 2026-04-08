@@ -1,3 +1,4 @@
+Local     / mailbox: remove unneeded double quotation
 v6.13     / pwm: Provide new consumer API functions for waveforms
 v6.13     / pwm: New abstraction for PWM waveforms
 v6.13     / pwm: Add more locking
