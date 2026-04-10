@@ -1,3 +1,4 @@
+v6.13     / arm64: dts: renesas: white-hawk-cpu-common: Add pin control for DSI-eDP IRQ
 Local     / arm64: dts: renesas: sparrow-hawk: Reserve first 128 MiB of DRAM
 Local     / arm64: dts: renesas: sparrow-hawk: Add overlay for Olimex MIPI-HDMI adapter
 Local     / arm64: dts: renesas: sparrow-hawk: Add overlay for WaveShare Display 13.3"
