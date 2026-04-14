@@ -1,3 +1,4 @@
+v6.11     / pinctrl: renesas: r8a779g0: Add INTC-EX pins, groups, and function
 v6.13     / arm64: dts: renesas: white-hawk-cpu-common: Add pin control for DSI-eDP IRQ
 v6.11     / can: rcar_canfd: Remove superfluous parentheses in address calculations
 v6.11     / can: rcar_canfd: Improve printing of global operational state
