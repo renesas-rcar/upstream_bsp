@@ -24,7 +24,8 @@ struct kvm_smmu_unmapped {
 	size_t size[KVM_SMMU_UNMAPPED_MAX];
 };
 
-static DEFINE_PER_CPU(struct kvm_smmu_unmapped, kvm_smmu_deferred_unuse);
+static struct kvm_smmu_unmapped kvm_smmu_deferred_unuse[NR_CPUS];
+#define smmu_this_cpu_ptr(arr)		(&((arr)[hyp_smp_processor_id()]))
 
 #ifdef MODULE
 void *memset(void *dst, int c, size_t count)
@@ -405,7 +406,7 @@ static void smmu_flush_deferred_unuse(struct kvm_smmu_unmapped *unmapped)
  */
 static void smmu_put_pages(void *cookie, u64 phys, size_t size, struct iommu_iotlb_gather *gather)
 {
-	struct kvm_smmu_unmapped *unmapped = this_cpu_ptr(&kvm_smmu_deferred_unuse);
+	struct kvm_smmu_unmapped *unmapped = smmu_this_cpu_ptr(kvm_smmu_deferred_unuse);
 	struct kvm_hyp_iommu_domain *domain = cookie;
 
 	if (unmapped->ptr == KVM_SMMU_UNMAPPED_MAX) {
@@ -769,7 +770,8 @@ out_unlock:
 	return ret;
 }
 
-static int smmu_set_identity(pkvm_handle_t iommu, pkvm_handle_t sid, bool on)
+static int smmu_set_identity(pkvm_handle_t iommu, pkvm_handle_t sid,
+			     bool on, unsigned long flags)
 {
 	struct hyp_arm_smmu_v3_device_pv *smmu = smmu_id_to_ptr(iommu);
 	struct arm_smmu_ste *dst;
@@ -865,7 +867,7 @@ static int smmu_dev_block_dma(pkvm_handle_t iommu, u32 sid, bool is_host2guest)
 
 				cd_table = hyp_phys_to_virt(le64_to_cpu(dst->data[0]) & STRTAB_STE_0_S1CTXPTR_MASK);
 				nr_entries = 1 << FIELD_GET(STRTAB_STE_0_S1CDMAX, le64_to_cpu(dst->data[0]));
-				cd_sz = (1 << nr_entries) * (CTXDESC_CD_DWORDS << 3);
+				cd_sz = nr_entries * (CTXDESC_CD_DWORDS << 3);
 				kvm_iommu_reclaim_pages(cd_table, get_order(cd_sz));
 			}
 
@@ -948,7 +950,7 @@ static size_t smmu_unmap_pages(struct kvm_hyp_iommu_domain *domain, unsigned lon
 		pgcount -= unmapped / pgsize;
 	}
 	hyp_spin_unlock(&smmu_domain->pgt_lock);
-	smmu_flush_deferred_unuse(this_cpu_ptr(&kvm_smmu_deferred_unuse));
+	smmu_flush_deferred_unuse(smmu_this_cpu_ptr(kvm_smmu_deferred_unuse));
 	return total_unmapped;
 }
 
@@ -976,7 +978,7 @@ static void smmu_free_domain(struct kvm_hyp_iommu_domain *domain)
 	if (smmu_domain->pgtable)
 		kvm_arm_io_pgtable_free(smmu_domain->pgtable);
 
-	smmu_flush_deferred_unuse(this_cpu_ptr(&kvm_smmu_deferred_unuse));
+	smmu_flush_deferred_unuse(smmu_this_cpu_ptr(kvm_smmu_deferred_unuse));
 	hyp_free(smmu_domain);
 }
 
@@ -1331,6 +1333,9 @@ static int smmu_host_stage2_idmap(phys_addr_t start, phys_addr_t end, int prot)
 		return 0;
 
 	if (prot) {
+		if (!(prot & IOMMU_MMIO))
+			prot |= IOMMU_CACHE;
+
 		while (size) {
 			mapped = 0;
 			pgsize = smmu_pgsize_idmap(size, start, pgtable->cfg.pgsize_bitmap);
