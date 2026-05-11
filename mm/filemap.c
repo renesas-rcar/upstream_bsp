@@ -1717,6 +1717,8 @@ void folio_end_writeback(struct folio *folio)
 	folio_get(folio);
 	if (__folio_end_writeback(folio))
 		folio_wake_bit(folio, PG_writeback);
+	else
+		trace_android_vh_folio_end_writeback(folio);
 
 	filemap_end_dropbehind_write(folio);
 	acct_reclaim_writeback(folio);
@@ -3844,6 +3846,7 @@ static vm_fault_t filemap_map_order0_folio(struct vm_fault *vmf,
 	set_pte_range(vmf, folio, page, 1, addr);
 	(*rss)++;
 	folio_ref_inc(folio);
+	trace_android_vh_map_order0_folio(vmf->vma->vm_file, vmf->pgoff, folio, ret);
 
 	return ret;
 }

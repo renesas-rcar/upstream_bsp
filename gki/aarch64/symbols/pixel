@@ -357,6 +357,7 @@
   devfreq_cooling_unregister
   devfreq_get_devfreq_by_node
   devfreq_get_devfreq_by_phandle
+  devfreq_get_freq_range
   devfreq_monitor_resume
   devfreq_monitor_start
   devfreq_monitor_stop
@@ -369,6 +370,7 @@
   devfreq_suspend_device
   devfreq_unregister_opp_notifier
   devfreq_update_interval
+  devfreq_update_target
   __dev_fwnode
   __dev_get_by_index
   dev_get_by_index
@@ -2462,6 +2464,7 @@
   skb_copy_datagram_from_iter
   skb_copy_datagram_iter
   skb_copy_expand
+  skb_copy_header
   skb_csum_hwoffload_help
   skb_dequeue
   skb_dequeue_tail
@@ -2632,6 +2635,7 @@
   static_key_slow_inc
   stop_machine
   stop_one_cpu_nowait
+  stpcpy
   strcasecmp
   strchr
   strchrnul
@@ -2800,6 +2804,7 @@
   __traceiter_android_rvh_post_init_entity_util_avg
   __traceiter_android_rvh_preempt_disable
   __traceiter_android_rvh_preempt_enable
+  __traceiter_android_rvh_read_swap_cache_async_timeout
   __traceiter_android_rvh_reclaim_folio_list
   __traceiter_android_rvh_remove_entity_load_avg
   __traceiter_android_rvh_rtmutex_prepare_setprio
@@ -2962,6 +2967,7 @@
   __tracepoint_android_rvh_post_init_entity_util_avg
   __tracepoint_android_rvh_preempt_disable
   __tracepoint_android_rvh_preempt_enable
+  __tracepoint_android_rvh_read_swap_cache_async_timeout
   __tracepoint_android_rvh_reclaim_folio_list
   __tracepoint_android_rvh_remove_entity_load_avg
   __tracepoint_android_rvh_rtmutex_prepare_setprio
@@ -3155,6 +3161,7 @@
   ufshcd_hold
   ufshcd_init_host_params
   ufshcd_mcq_poll_cqe_lock
+  ufshcd_mcq_poll_n_cqe_lock
   ufshcd_mcq_read_cqis
   ufshcd_mcq_write_cqis
   ufshcd_negotiate_pwr_params
