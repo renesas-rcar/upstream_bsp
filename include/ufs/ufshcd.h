@@ -719,6 +719,9 @@ enum ufshcd_android_quirks {
 
 	/* Initiate Cleanup (ICU) is not supported */
 	UFSHCD_ANDROID_QUIRK_MCQ_BROKEN_ICU		= 1 << 2,
+
+	/* AH8 being enabled may break DME */
+	UFSHCD_ANDROID_QUIRK_AH8_BREAKS_DME             = 1 << 31,
 };
 
 enum ufshcd_caps {
@@ -1547,6 +1550,15 @@ void ufshcd_force_error_recovery(struct ufs_hba *hba);
  * The functions below are present in ufshcd-priv.h in the upstream kernel and
  * in <ufs/ufshcd.h> in the Android kernel.
  */
+
+#define HAVE_UFSHCD_RPM_GET_SYNC
+
+static inline u8 ufshcd_wb_get_query_index(struct ufs_hba *hba)
+{
+	if (hba->dev_info.wb_buffer_type == WB_BUF_MODE_LU_DEDICATED)
+		return hba->dev_info.wb_dedicated_lu;
+	return 0;
+}
 
 static inline int ufshcd_rpm_get_sync(struct ufs_hba *hba)
 {
