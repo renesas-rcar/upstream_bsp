@@ -126,6 +126,8 @@
   __mod_lruvec_state
   mem_cgroup_update_lru_size
   folio_referenced
+  get_reclaim_params
+  set_reclaim_params
   __traceiter_android_vh_mem_cgroup_free
   __tracepoint_android_vh_mem_cgroup_free
   __traceiter_android_vh_mem_cgroup_alloc
@@ -156,6 +158,8 @@
   __tracepoint_android_rvh_vmalloc_node_bypass
   __traceiter_android_rvh_vfree_bypass
   __tracepoint_android_rvh_vfree_bypass
+  __traceiter_android_rvh_do_read_fault
+  __tracepoint_android_rvh_do_read_fault
   __traceiter_android_vh_should_fault_around
   __tracepoint_android_vh_should_fault_around
   __traceiter_android_vh_process_madvise_begin
@@ -476,3 +480,25 @@
   tty_kopen_exclusive
   tty_set_ldisc
   tty_unlock
+  __tracepoint_block_io_start
+  __traceiter_block_io_start
+  __tracepoint_block_rq_issue
+  __traceiter_block_rq_issue
+  __tracepoint_block_rq_merge
+  __traceiter_block_rq_merge
+  __tracepoint_block_rq_requeue
+  __traceiter_block_rq_requeue
+  __traceiter_android_rvh_submit_bio_pre
+  __tracepoint_android_rvh_submit_bio_pre
+  __traceiter_android_rvh_submit_bio_post
+  __tracepoint_android_rvh_submit_bio_post
+  __tracepoint_android_vh_request_issue_err
+  __traceiter_android_vh_request_issue_err
+  blk_mq_queue_inflight
+  scsi_device_from_queue
+  blk_mq_quiesce_queue_nowait
+  blk_mq_unquiesce_queue
+  blk_mq_quiesce_tagset
+  blk_mq_unquiesce_tagset
+  __percpu_counter_compare
+  __percpu_counter_sum

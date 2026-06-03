@@ -739,6 +739,7 @@ __mutex_lock_common(struct mutex *lock, unsigned int state, unsigned int subclas
 			raw_spin_lock_irqsave(&lock->wait_lock, flags);
 			raw_spin_lock(&current->blocked_lock);
 			__set_task_blocked_on(current, lock, BO_T_MUTEX);
+			set_current_state(state);
 
 			if (opt_acquired)
 				break;
@@ -990,10 +991,10 @@ static noinline void __sched __mutex_unlock_slowpath(struct mutex *lock, unsigne
 	}
 
 	raw_spin_lock_irqsave(&lock->wait_lock, flags);
+	raw_spin_lock(&current->blocked_lock);
 	debug_mutex_unlock(lock);
 
 	if (sched_proxy_exec()) {
-		raw_spin_lock(&current->blocked_lock);
 		/*
 		 * If we have a task boosting current, and that task was boosting
 		 * current through this lock, hand the lock to that task, as that
@@ -1038,8 +1039,7 @@ static noinline void __sched __mutex_unlock_slowpath(struct mutex *lock, unsigne
 		__mutex_handoff(lock, next);
 
 	trace_android_vh_mutex_unlock_slowpath(lock);
-	if (sched_proxy_exec())
-		raw_spin_unlock(&current->blocked_lock);
+	raw_spin_unlock(&current->blocked_lock);
 	raw_spin_unlock_irqrestore_wake(&lock->wait_lock, flags, &wake_q);
 }
 

@@ -282,6 +282,8 @@ const LOOPER_WAITING: u32 = 0x10;
 const LOOPER_WAITING_PROC: u32 = 0x20;
 const LOOPER_POLL: u32 = 0x40;
 
+pub(crate) const LOOPER_VH_MASK: u32 = LOOPER_REGISTERED | LOOPER_ENTERED | LOOPER_EXITED;
+
 impl InnerThread {
     fn new() -> Result<Self> {
         fn next_err_id() -> u32 {
@@ -543,6 +545,9 @@ impl Thread {
     /// Attempts to fetch a work item from the thread-local queue. The behaviour if the queue is
     /// empty depends on `wait`: if it is true, the function waits for some work to be queued (or a
     /// signal); otherwise it returns indicating that none is available.
+    // #[export_name] is a temporary workaround so that ps output does not become unreadable from
+    // mangled symbol names.
+    #[export_name = "rust_binder_waitlcl"]
     fn get_work_local(self: &Arc<Self>, wait: bool) -> Result<Option<DLArc<dyn DeliverToRead>>> {
         {
             let mut inner = self.inner.lock();
@@ -581,6 +586,9 @@ impl Thread {
     ///
     /// This must only be called when the thread is not participating in a transaction chain. If it
     /// is, the local version (`get_work_local`) should be used instead.
+    // #[export_name] is a temporary workaround so that ps output does not become unreadable from
+    // mangled symbol names.
+    #[export_name = "rust_binder_wait"]
     fn get_work(self: &Arc<Self>, wait: bool) -> Result<Option<DLArc<dyn DeliverToRead>>> {
         // Try to get work from the thread's work queue, using only a local lock.
         {
@@ -1439,6 +1447,27 @@ impl Thread {
         }
     }
 
+    fn enter_exit_looper(&self, cmd: u32) {
+        let mut inner;
+        match cmd {
+            BC_REGISTER_LOOPER => {
+                let valid = self.process.register_thread();
+                inner = self.inner.lock();
+                inner.looper_register(valid);
+            }
+            BC_ENTER_LOOPER => {
+                inner = self.inner.lock();
+                inner.looper_enter();
+            }
+            BC_EXIT_LOOPER => {
+                inner = self.inner.lock();
+                inner.looper_exit();
+            }
+            _ => unreachable!(),
+        }
+        crate::trace::vh_looper_entry(self, inner.looper_flags);
+    }
+
     fn write(self: &Arc<Self>, req: &mut BinderWriteRead) -> Result {
         let write_start = req.write_buffer.wrapping_add(req.write_consumed);
         let write_len = req.write_size.saturating_sub(req.write_consumed);
@@ -1511,12 +1540,9 @@ impl Thread {
                 BC_REQUEST_DEATH_NOTIFICATION => self.process.request_death(&mut reader, self)?,
                 BC_CLEAR_DEATH_NOTIFICATION => self.process.clear_death(&mut reader, self)?,
                 BC_DEAD_BINDER_DONE => self.process.dead_binder_done(reader.read()?, self),
-                BC_REGISTER_LOOPER => {
-                    let valid = self.process.register_thread();
-                    self.inner.lock().looper_register(valid);
+                BC_REGISTER_LOOPER | BC_ENTER_LOOPER | BC_EXIT_LOOPER => {
+                    self.enter_exit_looper(cmd)
                 }
-                BC_ENTER_LOOPER => self.inner.lock().looper_enter(),
-                BC_EXIT_LOOPER => self.inner.lock().looper_exit(),
                 BC_REQUEST_FREEZE_NOTIFICATION => self.process.request_freeze_notif(&mut reader)?,
                 BC_CLEAR_FREEZE_NOTIFICATION => self.process.clear_freeze_notif(&mut reader)?,
                 BC_FREEZE_NOTIFICATION_DONE => self.process.freeze_notif_done(&mut reader)?,
@@ -1688,7 +1714,12 @@ impl Thread {
     }
 
     pub(crate) fn release(self: &Arc<Self>) {
-        self.inner.lock().is_dead = true;
+        {
+            let mut inner = self.inner.lock();
+            inner.is_dead = true;
+            inner.looper_flags |= LOOPER_EXITED;
+            crate::trace::vh_looper_entry(self, inner.looper_flags);
+        }
 
         //self.work_condvar.clear();
         self.unwind_transaction_stack();

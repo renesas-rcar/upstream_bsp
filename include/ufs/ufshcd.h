@@ -817,11 +817,21 @@ enum ufshcd_quirks {
 	 * delay after enabling VCC to ensure it's stable.
 	 */
 	UFSHCD_QUIRK_VCC_ON_DELAY			= 1 << 27,
+
+	/*
+	 * This quirk indicates that Host supports TX Equalization Training
+	 * (EQTR) using Adapt L0L1L2L3 length which is larger than what is
+	 * allowed by M-PHY spec ver 6.0.
+	 */
+	UFSHCD_QUIRK_EXTENDED_TX_EQTR_ADAPT_LENGTH_L0L1L2L3	= 1 << 28,
 };
 
 enum ufshcd_android_quirks {
 	/* Set IID to one. */
 	UFSHCD_ANDROID_QUIRK_SET_IID_TO_ONE		= 1 << 30,
+
+	/* AH8 being enabled may break DME */
+	UFSHCD_ANDROID_QUIRK_AH8_BREAKS_DME             = 1 << 31,
 };
 
 enum ufshcd_caps {
@@ -1692,6 +1702,15 @@ void ufshcd_force_error_recovery(struct ufs_hba *hba);
  * The functions below are present in ufshcd-priv.h in the upstream kernel and
  * in <ufs/ufshcd.h> in the Android kernel.
  */
+
+#define HAVE_UFSHCD_RPM_GET_SYNC
+
+static inline u8 ufshcd_wb_get_query_index(struct ufs_hba *hba)
+{
+	if (hba->dev_info.wb_buffer_type == WB_BUF_MODE_LU_DEDICATED)
+		return hba->dev_info.wb_dedicated_lu;
+	return 0;
+}
 
 static inline int ufshcd_rpm_get_sync(struct ufs_hba *hba)
 {
