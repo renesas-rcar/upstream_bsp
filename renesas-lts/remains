@@ -192,12 +192,6 @@ ac71cf670689e arm64: dts: renesas: r8a78000: Add RPC/SPI device node
 587a12bb548ae arm64: dts: renesas: r8a78000: Add RT-DMA device tree node
 fdb177f7dde53 arm64: dts: renesas: ironhide: Enable WCRC device nodes
 2504c2101b7fc arm64: dts: renesas: r8a78000: Add WCRC device tree nodes
-be3038e9d76bd arm64: dts: renesas: ironhide: Enable RPMsg channels
-b51179f6dd238 arm64: dts: renesas: r8a78000: Add RPMsg definitions
-6be0a8734ddb7 misc: rcar-mfis: Refactor channel initialization
-50ab31cd8ce85 dt-bindings: hwlock: rcar: Add binding documentation for R-Car Gen5
-88c0d3275df20 arm64: dts: renesas: r8a78000: Add MFIS-Lock device node
-85abe4c78658b hwspinlock: rcar: Add support for R-Car X5H SoC
 41e83e1492bd0 PCIe: dwc: rcar: Temporarily remove PERST# handling from driver
 b4ce42cb5fe01 PCIe: dwc: rcar: Rename clkreq to perst to reflect actual usage
 6318449882b5c PCIe: dwc: rcar: Integrate MP-PHY into PCIe4 driver
@@ -251,7 +245,6 @@ b04bdff835bc2 i2c: remove interrupt share flag
 b8991670a9f21 arm64: defconfig: Enable dmabuf heaps
 9b0e789125b75 arm64: configs: defconfig: Enable configurations for RPMsg-VirtIO
 358d0d04c2727 remoteproc: rcar_gen5_rproc: Add R-Car Gen5 remoteproc driver
-967338608be79 misc: rcar-mfis: Add R-Car Gen5 MFIS support
 5eed3b26d090e can: rcar_canfd: Register each IRQ number for each channel on R-Car X5H
 fb0606297b224 can: rcar_canfd: rcar_canfd_configure_afl_rules(): Fix Rx FIFO entry setting
 a7c3fb9812898 i3c: main: remove unused function
@@ -319,7 +312,6 @@ b7237c571a077 i3c: rcar: enhances the R-Car I3C driver source code
 210780275abe1 i3c: rcar: add I3C driver support for R-Car X5H
 bda2e8cda14c3 pinctrl: renesas: Initial R8A779H0 (R-Car V4M) PFC support
 2eeb2775d29ab pinctrl: renesas: Initial R8A779F0 (S4) PFC support
-4b064f628dbf8 dt-bindings: hwlock: rcar: Add binding documentation for R-Car hardware spinlock
 d42811c60a32c wspinlock: rcar: Add support for R-Car Gen3 Hardware Spinlock
 d7668bac9a441 arm64: defconfig: Add PCIe 6.0 driver for R-Car X5H
 8c10dc8c0917d arm64: defconfig: Add PCIe 4.0 driver for R-Car X5H
