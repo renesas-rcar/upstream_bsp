@@ -15,6 +15,16 @@
 #	ddddd BSP commit
 #
 
+# upstream: 502dc3d349873d6a99c4b5ec7627ac1b73bb6a40 Enable SCMI via MFIS-SCP and S-TCM transport area.
+64344562fe373 arm64: dts: renesas: ironhide: enable mailbox
+# upstream: 3fea67c230dfd8d92b63b4aec3dc7754e58e582b arm64: dts: renesas: r8a78000: Add MFIS, MFIS-SCP, and transport nodes
+b51179f6dd238 arm64: dts: renesas: r8a78000: Add RPMsg definitions
+# upstream: 005fa59aeb86aa70815104d3d0c65ac0ea80513b soc: renesas: Add Renesas R-Car MFIS driver
+a5412f84b930f mailbox: renesas: Support MFIS mailbox driver
+967338608be79 misc: rcar-mfis: Add R-Car Gen5 MFIS support
+6be0a8734ddb7 misc: rcar-mfis: Refactor channel initialization
+# upstream: 0f63ba15dde8748ed3818fa6553c81b5296318f1 dt-bindings: soc: renesas: Document MFIS IP core
+694da04703436 dt-bindings: mailbox: Document renesas mailbox
 # upstream: 5719efcc5abb34ceb47b03e58709d99713f80db1 dt-bindings: pwm: renesas,pwm-rcar: Add r8a779g0 support
 0f0be080685ec dt-bindings: pwm: Add support for V4H
 # upstream: 50315945d178eebec4e8e2c50c265767ddb926eb dt-bindings: pwm: renesas,tpu: Add r8a779g0 support
