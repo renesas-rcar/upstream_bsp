@@ -13,38 +13,18 @@ d69f85e5aa76c arm64: dts: renesas: ironhide: Update USB3.2 gen2 controller prope
 c7ad42c5288ec arm64: dts: renesas: ironhide: add reserved area for the ECC Data region
 ecc09731ab5f1 arm64: dts: renesas: r8a78000: Use dummy_clk for Video Capture related nodes
 713c2ab190b41 arch: arm64: dts: add clock-name for I3C driver
-fdf96433ae17e arm64: dts: renesas: ironhide: Enable display support
-92c7897d5ad98 arm64: dts: renesas: r8a78000: Add display device nodes
 7234638597144 phy: renesas: r8a78000-ether-pcs: Remove obsolete register writes from late init
 d6d38b5206add arm64: configs: defconfig: Enable configuration of TI TDP2004
-187d9500126df gpu: drm: rcar-vcon: Validate mode against dot clock supply
-21dae0dcb88f4 gpu: drm: rcar-vcon: Fix encoder initialization
-25765a528b4ca gpu: drm: rcar-vcon: Add polarity settings
-ba8d27decd77d gpu: drm: rcar-vcon: Remove the workaround implementation for the VDK restriction
-5dcac7ae8c797 gpu: drm: rcar-vcon: Add hardcoded clock enable for FCPVD, VSPD, VCON and DP-TX
 eadedcdc11b16 misc: ti-tdp2004: Add simple driver for disabling the default test mode
-678fdecf31d9a gpu: drm: rcar-vcon: rcar_dw_dp: Add support for real DP-TX controller
-d0ad4f7e2ab4f drm: bridge: dw_dp: Update to support R-Car operation
-97f1cd265b2f3 The DW DP TX Controller is compliant with the DisplayPort Specification Version 1.4 with the following features:
 36aabc81f4199 phy: phy-core: Add phy_init_post functions for using in the future
 ff8153b92534e pinctrl: renesas: r8a78000: Add DP-TX pin control support
-cac037abd8347 arm64: dts: renesas: ironhide: Add node for Camera Power Protectors
-de5fca7a677ef arm64: dts: renesas: Hardcode I2C address for Camera IMX728
-2fd66d89634f0 arm64: dts: renesas: r8a78000-ironhide: Add CSI-2 pin swap order of R-Car X5H
-84d70b358c284 arm64: dts: renesas: Add Video Capture related DTs for R8A78000 X5H
 d388809734318 arm64: dts: renesas: r8a78000: Update PCIe6 link width to x2 and link speed to Gen3
 cd6988c950a5f PCI: dwc: rcar-gen5: Remove PCIe6 unused function declarations from header
 4c13a9228e687 PCI: dwc: rcar-gen5: Add static to PCIe6 internal functions to prevent external access
 b3415b5cfbb80 PCI: dwc: rcar-gen5: Update PCIe6 bootloader setting
 fca27ed563df6 PCI: dwc: rcar-gen5: Add update FW function for PCIe6
 8ceaf87ae0836 PCI: dwc: rcar-gen5: Re-enable speed check after link up
-c1e57dce0a180 media: rcar-vin: Add w/a to measure capture fps in both IRQ callback and V4L2 driver
-ef9c5c5d94f32 media: rcar-vin: rcar-csi2: Add w/a to work with Gen1 datarates (<3500Mbps)
-f2cb4b5617ed2 media: rcar-csi2: Add CSI-2 C-PHY start-up sequence on Ironhide
 ae8052ca91114 arm64: defconfig: Disable simuation configurations of Video Capture driver
-bb4e8d9c4d58e dt-bindings: media: Define pin-swap order macro for R-Car X5H
-f125e89d97871 media: rcar-vin: Hardcoded to enable module clock
-80419b04bc0fa media: rcar-vin: Replace local SIM_VDK macro with CONFIG_VIDEO_RCAR_VIN_VDK
 ccf8c93d97014 clocksource: sh_tmu: Remove redundant tmu_module_clk_disable_all() call
 d6f1471287353 clocksource: sh_cmt: Remove redundant cmt_module_clk_disable() call
 711c3d3e28949 clocksource: sh_cmt: Correct some information to be more suitable for R-Car Gen5
@@ -258,20 +238,13 @@ b35c1a333fee6 arm64: defconfig: disable ARM64_AMU_EXTN to avoid exceptions
 d9d3f3302e447 arm64: defconfig: disable ARM64_PTR_AUTH to avoid exceptions
 a08eb7700090d arm64: defconfig: disable ARM64_SVE to avoid exceptions
 02bea7d830d25 arm64: mm: skip reset_amuserenr_el0() call to avoid synchronous abort
-185c0d0b8f224 media: rcar-vin: Correct Endian Conversion setting for RAW20/24/28
 8a964218b610a dmaengine: rcar-dmac: Support HW descriptor 43 bits mode
 4b9c0a3d54353 dt-bindings: reset: Add R8A78000 reset definitions
 463b4b1bffb41 dmaengine: rcar-dmac: Reverse SAR/DAR/TCR
-15ec391c96535 media: rcar-vin: Support REN camera script from MBD team
-1cf192f09121c media: RAW8/10/12/14/16/20/24/28 support
-6bd8763b25ad5 media: media: Add 1X20, 1x24 and 1x28 raw bayer media bus code definitions
-56a0bdde549d1 media: v4l: Add 20/24/28-bit raw bayer pixel formats
-416bf14d1b6e7 drm: Add R14/16/20/24/28 FourCC
 1d4eb16192e84 i2c: add workaround for DMA transfer flow
 d4c22df93424f i3c: update max length for a private transfer
 1663be778c7aa arm64: defconfig: Enable SCMI power control
 2631ba2cc3f7c remoteproc: rcar_gen5_rproc: Fix incorrect return value check
-43c877c3903f7 media: rcar-vin: Add support for crop function for Gen3 and above
 9a1a59fcb790b arm64: defconfig: Enable VirtIO Random Number Generator
 ff7d76fd26f6b dt-bindings: power: Add r8a78000 power domain definitions
 b04bdff835bc2 i2c: remove interrupt share flag
@@ -279,7 +252,6 @@ b8991670a9f21 arm64: defconfig: Enable dmabuf heaps
 9b0e789125b75 arm64: configs: defconfig: Enable configurations for RPMsg-VirtIO
 358d0d04c2727 remoteproc: rcar_gen5_rproc: Add R-Car Gen5 remoteproc driver
 967338608be79 misc: rcar-mfis: Add R-Car Gen5 MFIS support
-0383e5a4b714b media: rcar-vin: Fixes issue cannot capture RAW10 continuously
 5eed3b26d090e can: rcar_canfd: Register each IRQ number for each channel on R-Car X5H
 fb0606297b224 can: rcar_canfd: rcar_canfd_configure_afl_rules(): Fix Rx FIFO entry setting
 a7c3fb9812898 i3c: main: remove unused function
@@ -293,22 +265,9 @@ bea3ead10eb49 PCI: dwc: ucie-rcar: Add support for the UCIe controller
 9195719f5e324 PCI: dwc: rcar-gen5: Add EXPORT_SYMBOL_GPL() for raise_msix_irq() function
 68c2aa0e65c61 PCI: dwc: rcar-gen5: Add get link speed function for PCIe 6.0
 6b9e94390aeb0 PCI: dwc: rcar-gen5: Add R-Car Gen5 PCIe 6.0 Host and Endpoint support
-0a72c84ce3f79 arm64: defconfig: Enable SNPS CSI-2 Camera driver
-adb5617e77ba9 media: rcar-isp: Disable all of LUT filter (frame, line, pixel)
-382ffa554b40a media: rcar-isp: Corect start up sequence follow description in HWUM
-ea2848f375b20 media: rcar-vin: rcar-dma: Fix error state message reports by V4L2 videobuf2 framework
-30082b9e05fd7 media: rcar-vin: Reduce the waiting time of the stop capturing process
-9b2aa00aec84a media: rcar-vin: Add support for SNPS CSI-2 Camera driver
-422aeaf13ae38 media: rcar-vin: Add support for R-Car X5H
-3a1253c94bcfd media: rcar-isp: Add support for R-Car X5H
-a8339d4920cdf media: rcar-csi2: Add support for R-Car X5H
-900a8385c69fe media: rcar-vin: Add SW workaround to run Video Capture drivers on VDK simulation environment
 ceddc2de14db7 memory: renesas-rpc-if: Add R-Car Gen5 support
 343a29931c14e i3c: rcar: enhance I3C source code
 457b6693cda1d i3c: tty: fix tty trans size to adapt with fifo buffer size
-65aef2b8a57fe drm: drm_edid: Add 3840x2160 resolution support for drm_add_modes_noedid()
-3f37f0e19c81a drm: rcar-vcon: Fix error when restarting VCON
-ba5da72ef2892 drm: rcar-vcon: Add VCON support on X5H SoC
 808f1f713d9de arm64: defconfig: Add R-Car Gen5 I3C driver
 042d804604198 dt-bindings: PCI: renesas: Add R-Car UCIe Host and Endpoint
 a3aef2f01e97c i2c: rcar: fix error when reset before every transfer on R-Car X5H
@@ -358,14 +317,6 @@ c1647af9880d8 arm64: defconfig: Enable R-Car X5H PFC
 30d3275b45a79 i3c: master: export i3c_masterdev_type
 b7237c571a077 i3c: rcar: enhances the R-Car I3C driver source code
 210780275abe1 i3c: rcar: add I3C driver support for R-Car X5H
-26d15c90cf599 arm64: defconfig: Enable rcar-vin drivers for R-Car X5H
-fa94fa5778447 arm64: defconfig: Enable R-Car X5H display support
-14544ed264fce media: vsp1: Fix probe error where reset is not supported
-2367ea36553af media: vsp1: Add support for VSPD (b) instance of R-Car X5H
-35b9b4e6ba4ad media: vsp1: Fix setting control register by display list
-457f66da9c727 media: vsp1: Fix access to reserved registers
-0f4474887ef3c media: rcar-csi2: Remove v4l2_async_notifier_cleanup in remove function
-65395e5d34bb4 media: rcar-vin: Add memory type of VB2_USERPTR support
 bda2e8cda14c3 pinctrl: renesas: Initial R8A779H0 (R-Car V4M) PFC support
 2eeb2775d29ab pinctrl: renesas: Initial R8A779F0 (S4) PFC support
 4b064f628dbf8 dt-bindings: hwlock: rcar: Add binding documentation for R-Car hardware spinlock
