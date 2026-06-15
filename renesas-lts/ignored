@@ -1,5 +1,29 @@
 # Ignored entries (please give reason why)
 
+# VDK support is not intended for upstream
+80419b04bc0fa media: rcar-vin: Replace local SIM_VDK macro with CONFIG_VIDEO_RCAR_VIN_VDK
+# VDK support is not intended for upstream
+900a8385c69fe media: rcar-vin: Add SW workaround to run Video Capture drivers on VDK simulation environment
+# SNPS CSI-2 dummy camera is used by VDK and is not intended for upstream
+9b2aa00aec84a media: rcar-vin: Add support for SNPS CSI-2 Camera driver
+# SNPS CSI-2 dummy and VDL are not intended for upstream
+0a72c84ce3f79 arm64: defconfig: Enable SNPS CSI-2 Camera driver
+# Workaround for VDK
+3f37f0e19c81a drm: rcar-vcon: Fix error when restarting VCON
+# Workaround for VDK
+ba8d27decd77d gpu: drm: rcar-vcon: Remove the workaround implementation for the VDK restriction
+# Workaround for VDK
+14544ed264fce media: vsp1: Fix probe error where reset is not supported
+# Workaround for VDK
+3a1253c94bcfd media: rcar-isp: Add support for R-Car X5H
+# Workaround for VDK
+a8339d4920cdf media: rcar-csi2: Add support for R-Car X5H
+# USERPTR is deprecated upstream
+65395e5d34bb4 media: rcar-vin: Add memory type of VB2_USERPTR support
+# Missing information on "REN camera"
+15ec391c96535 media: rcar-vin: Support REN camera script from MBD team
+# Development debug not intended for upstream
+c1e57dce0a180 media: rcar-vin: Add w/a to measure capture fps in both IRQ callback and V4L2 driver
 # UIO and OSAL are not intended for upstream.
 04f762d3a5310 arch: arm64: renesas: r8a78000-uio: Add rsipe UIO device support
 # UIO and OSAL are not intended for upstream.
