@@ -1,13 +1,13 @@
 v6.14     / PCI: Add enable_device() and disable_device() callbacks for bridges
 v7.0      / arm64: dts: renesas: sparrow-hawk: Reserve first 128 MiB of DRAM
-Local     / arm64: dts: renesas: sparrow-hawk: Add overlay for Olimex MIPI-HDMI adapter
-Local     / arm64: dts: renesas: sparrow-hawk: Add overlay for WaveShare Display 13.3"
-Local     / dt-bindings: display: bridge: waveshare,dsi2dpi: Document 1..4 DSI lane support
+v7.1      / arm64: dts: renesas: sparrow-hawk: Add overlay for Olimex MIPI-HDMI adapter
+v7.1      / arm64: dts: renesas: sparrow-hawk: Add overlay for WaveShare Display 13.3"
+v7.1      / dt-bindings: display: bridge: waveshare,dsi2dpi: Document 1..4 DSI lane support
 v6.18     / dt-bindings: display: bridge: Add waveshare DSI2DPI unit support
-Local     / drm/panel: simple: Add Waveshare 13.3" panel support
-Local     / drm/bridge: waveshare-dsi: Fix signedness bug
-Local     / drm/bridge: waveshare-dsi: Add support for 1..4 DSI data lanes
-Local     / drm/bridge: waveshare-dsi: Register and attach our DSI device at probe
+v7.1      / drm/panel: simple: Add Waveshare 13.3" panel support
+v7.1      / drm/bridge: waveshare-dsi: Fix signedness bug
+v7.1      / drm/bridge: waveshare-dsi: Add support for 1..4 DSI data lanes
+v7.1      / drm/bridge: waveshare-dsi: Register and attach our DSI device at probe
 v6.18     / drm/bridge: waveshare-dsi: Fix bailout for devm_drm_bridge_alloc()
 v6.18     / drm: bridge: Add waveshare DSI2DPI unit driver
 v7.0      / Input: ili210x - add support for polling mode
