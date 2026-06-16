@@ -1,3 +1,4 @@
+v6.17     / ASoC: rsnd: tidyup direction name on rsnd_dai_connect()
 v6.14     / PCI: Add enable_device() and disable_device() callbacks for bridges
 v7.0      / arm64: dts: renesas: sparrow-hawk: Reserve first 128 MiB of DRAM
 v7.1      / arm64: dts: renesas: sparrow-hawk: Add overlay for Olimex MIPI-HDMI adapter
