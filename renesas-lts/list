@@ -1,3 +1,11 @@
+v7.0      / can: rcar_canfd: Add support for FD-Only mode
+v6.19     / can: rcar_canfd: Add suspend/resume support
+v6.19     / can: rcar_canfd: Convert to DEFINE_SIMPLE_DEV_PM_OPS()
+v6.19     / can: rcar_canfd: Invert CAN clock and close_candev() order
+v6.19     / can: rcar_canfd: Extract rcar_canfd_global_{,de}init()
+v6.19     / can: rcar_canfd: Use devm_clk_get_optional() for RAM clk
+v6.19     / can: rcar_canfd: Invert global vs. channel teardown
+v6.19     / can: rcar_canfd: Invert reset assert order
 Local     / soc: renesas: rcar-mfis: Add R-Car V4H/V4M support
 Local     / dt-bindings: soc: renesas: mfis: add R-Car V4H/V4M support
 Local     / arm64: dts: renesas: ironhide: Enable to use SCMI
