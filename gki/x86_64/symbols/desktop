@@ -237,6 +237,7 @@
   cdc_ncm_unbind
   cdc_parse_cdc_header
   cdev_add
+  cdev_alloc
   cdev_del
   cdev_device_add
   cdev_device_del
@@ -332,12 +333,16 @@
   cppc_get_perf_caps
   cpu_bit_bitmap
   cpu_core_map
+  cpufreq_cpu_get
   cpufreq_cpu_get_raw
+  cpufreq_cpu_put
   cpufreq_generic_frequency_table_verify
   cpufreq_get_current_driver
   cpufreq_register_driver
+  cpufreq_register_notifier
   cpufreq_show_cpus
   cpufreq_unregister_driver
+  cpufreq_unregister_notifier
   __cpuhp_remove_state
   __cpuhp_setup_state
   cpu_info
@@ -349,6 +354,7 @@
   cpu_number
   __cpu_online_mask
   __cpu_possible_mask
+  __cpu_present_mask
   cpu_sibling_map
   cpus_read_lock
   cpus_read_unlock
@@ -902,6 +908,7 @@
   drm_gem_object_release
   drm_gem_plane_helper_prepare_fb
   drm_gem_prime_export
+  drm_gem_prime_handle_to_fd
   drm_gem_prime_mmap
   drm_gem_private_object_init
   drm_gem_reset_shadow_plane
@@ -1130,11 +1137,13 @@
   file_write_and_wait_range
   _find_first_bit
   _find_first_zero_bit
+  find_font
   find_iova
   _find_last_bit
   _find_next_bit
   _find_next_or_bit
   _find_next_zero_bit
+  find_pid_ns
   find_vma_intersection
   finish_open
   finish_wait
@@ -1155,6 +1164,7 @@
   __folio_put
   folio_unlock
   folio_wait_stable
+  for_each_kernel_tracepoint
   for_each_thermal_trip
   __fortify_panic
   fput
@@ -1262,6 +1272,7 @@
   get_random_bytes
   get_random_u16
   get_random_u32
+  __get_random_u32_below
   get_random_u64
   get_random_u8
   get_tree_bdev
@@ -1367,7 +1378,9 @@
   hid_output_report
   hid_parse_report
   __hid_register_driver
+  __hid_report_raw_event
   hid_report_raw_event
+  hid_safe_input_report
   hid_unregister_driver
   hmm_range_fault
   hrtimer_active
@@ -1473,6 +1486,7 @@
   inet_csk_get_port
   init_iova_domain
   init_net
+  init_pid_ns
   __init_rwsem
   init_special_inode
   __init_swait_queue_head
@@ -1622,6 +1636,7 @@
   irq_set_chip_and_handler_name
   irq_set_chip_data
   irq_set_irq_wake
+  irq_stat
   irq_work_queue
   irq_work_sync
   is_acpi_data_node
@@ -2239,6 +2254,7 @@
   __phy_write_mmd
   phy_write_mmd
   phy_write_paged
+  pid_task
   pinconf_generic_dt_free_map
   pinconf_generic_dt_node_to_map
   pinctrl_dev_get_drvdata
@@ -2356,8 +2372,10 @@
   ___ratelimit
   _raw_read_lock
   _raw_read_lock_bh
+  _raw_read_lock_irqsave
   _raw_read_unlock
   _raw_read_unlock_bh
+  _raw_read_unlock_irqrestore
   _raw_spin_lock
   _raw_spin_lock_bh
   _raw_spin_lock_irq
@@ -2395,6 +2413,7 @@
   read_cache_page
   refcount_dec_and_lock
   refcount_warn_saturate
+  __refrigerator
   __ref_stack_chk_guard
   regcache_cache_bypass
   regcache_cache_only
@@ -2624,6 +2643,7 @@
   setattr_prepare
   set_capacity
   set_default_d_op
+  set_freezable
   set_memory_uc
   set_memory_wb
   set_nlink
@@ -2702,6 +2722,7 @@
   skip_spaces
   sk_skb_reason_drop
   smp_call_function_any
+  smp_call_function_many
   smp_call_function_single
   smp_call_function_single_async
   snd_card_disconnect
@@ -2817,6 +2838,8 @@
   snd_soc_acpi_intel_lnl_sdw_machines
   snd_soc_acpi_intel_mtl_machines
   snd_soc_acpi_intel_mtl_sdw_machines
+  snd_soc_acpi_intel_nvl_machines
+  snd_soc_acpi_intel_nvl_sdw_machines
   snd_soc_acpi_intel_ptl_machines
   snd_soc_acpi_intel_ptl_sdw_machines
   snd_soc_acpi_intel_rpl_machines
@@ -3045,6 +3068,7 @@
   sysfs_update_group
   system_dfl_wq
   system_freezable_wq
+  system_highpri_wq
   system_long_wq
   system_percpu_wq
   system_power_efficient_wq
@@ -3486,29 +3510,53 @@
   v4l2_async_register_subdev_sensor
   v4l2_async_unregister_subdev
   v4l2_create_fwnode_links_to_pad
+  v4l2_ctrl_activate
+  v4l2_ctrl_add_handler
+  v4l2_ctrl_auto_cluster
+  v4l2_ctrl_cluster
+  v4l2_ctrl_g_ctrl
   __v4l2_ctrl_grab
   v4l2_ctrl_handler_free
   v4l2_ctrl_handler_init_class
   __v4l2_ctrl_handler_setup
+  v4l2_ctrl_handler_setup
+  v4l2_ctrl_log_status
+  __v4l2_ctrl_modify_dimensions
   __v4l2_ctrl_modify_range
   v4l2_ctrl_new_custom
   v4l2_ctrl_new_fwnode_properties
   v4l2_ctrl_new_int_menu
   v4l2_ctrl_new_std
+  v4l2_ctrl_new_std_menu
   v4l2_ctrl_new_std_menu_items
+  v4l2_ctrl_poll
+  v4l2_ctrl_request_complete
+  v4l2_ctrl_request_setup
   __v4l2_ctrl_s_ctrl
   __v4l2_ctrl_s_ctrl_int64
+  __v4l2_ctrl_s_ctrl_string
   v4l2_ctrl_subdev_log_status
   v4l2_ctrl_subdev_subscribe_event
+  v4l2_ctrl_subscribe_event
+  v4l2_detect_cvt
+  v4l2_detect_gtf
+  v4l2_device_put
   v4l2_device_register
   __v4l2_device_register_subdev
   __v4l2_device_register_subdev_nodes
   v4l2_device_unregister
   v4l2_device_unregister_subdev
+  v4l2_dv_timings_presets
+  v4l2_enum_dv_timings_cap
   v4l2_event_queue
   v4l2_event_subdev_unsubscribe
   v4l2_event_subscribe
+  v4l2_event_unsubscribe
+  v4l2_event_wake_all
+  v4l2_fh_is_singular
   v4l2_fh_open
+  v4l2_fh_release
+  v4l2_find_dv_timings_cap
   __v4l2_find_nearest_size_conditional
   v4l2_fwnode_device_parse
   v4l2_fwnode_endpoint_alloc_parse
@@ -3518,6 +3566,10 @@
   v4l2_get_link_freq
   v4l2_i2c_subdev_init
   v4l2_link_freq_to_bitmap
+  v4l2_match_dv_timings
+  v4l2_phys_addr_for_input
+  v4l2_phys_addr_validate
+  v4l2_src_change_event_subscribe
   v4l2_subdev_call_wrappers
   v4l2_subdev_cleanup
   v4l2_subdev_disable_streams
@@ -3537,28 +3589,37 @@
   __v4l2_subdev_state_get_format
   v4l2_subdev_state_get_opposite_stream_format
   v4l2_subdev_state_xlate_streams
+  v4l2_valid_dv_timings
   validate_usercopy_range
   __var_waitqueue
   vb2_buffer_done
+  vb2_dma_contig_memops
   vb2_dma_sg_memops
   vb2_fop_mmap
   vb2_fop_poll
+  vb2_fop_read
   vb2_fop_release
+  vb2_fop_write
   vb2_ioctl_create_bufs
   vb2_ioctl_dqbuf
   vb2_ioctl_expbuf
   vb2_ioctl_prepare_buf
   vb2_ioctl_qbuf
   vb2_ioctl_querybuf
+  vb2_ioctl_remove_bufs
   vb2_ioctl_reqbufs
   vb2_ioctl_streamoff
   vb2_ioctl_streamon
   vb2_plane_cookie
   vb2_plane_vaddr
   vb2_queue_change_type
+  vb2_queue_error
   vb2_queue_init
   vb2_queue_release
+  vb2_request_queue
+  vb2_request_validate
   vb2_video_unregister_device
+  vb2_vmalloc_memops
   vchan_dma_desc_free_list
   vchan_find_desc
   vchan_init

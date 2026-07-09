@@ -103,6 +103,7 @@
 #include <trace/hooks/sched.h>
 #include <trace/hooks/cgroup.h>
 #include <trace/hooks/dtask.h>
+#include <trace/hooks/blk.h>
 
 EXPORT_TRACEPOINT_SYMBOL_GPL(ipi_send_cpu);
 EXPORT_TRACEPOINT_SYMBOL_GPL(ipi_send_cpumask);
@@ -1274,6 +1275,13 @@ static __always_inline int get_lazy_tif_bit(void)
 
 void resched_curr_lazy(struct rq *rq)
 {
+	bool need_lazy = false;
+
+	trace_android_vh_preempt_lazy_mode(rq, &need_lazy);
+
+	if (need_lazy)
+		return;
+
 	__resched_curr(rq, get_lazy_tif_bit());
 }
 EXPORT_SYMBOL_GPL(resched_curr);
@@ -7659,6 +7667,7 @@ static void __sched notrace __schedule(int sched_mode)
 	struct rq_flags rf;
 	struct rq *rq;
 	int cpu;
+	bool skip_schedule = false;
 
 	/* Trace preemptions consistently with task switches */
 	trace_sched_entry_tp(sched_mode == SM_PREEMPT);
@@ -7668,6 +7677,11 @@ static void __sched notrace __schedule(int sched_mode)
 	prev = rq->curr;
 
 	schedule_debug(prev, preempt);
+
+	trace_android_vh_lock_delay_schedule(prev, sched_mode, &skip_schedule);
+
+	if (skip_schedule)
+		return;
 
 	if (sched_feat(HRTICK) || sched_feat(HRTICK_DL))
 		hrtick_clear(rq);
@@ -8738,6 +8752,7 @@ int io_schedule_prepare(void)
 	int old_iowait = current->in_iowait;
 
 	current->in_iowait = 1;
+	trace_android_rvh_io_schedule_prepare(NULL);
 	blk_flush_plug(current->plug, true);
 	return old_iowait;
 }

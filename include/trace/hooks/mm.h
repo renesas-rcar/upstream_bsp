@@ -58,6 +58,12 @@ DECLARE_RESTRICTED_HOOK(android_rvh_try_alloc_pages_gfp,
 			TP_PROTO(struct page **page, unsigned int order,
 				gfp_t gfp, enum zone_type highest_zoneidx),
 			TP_ARGS(page, order, gfp, highest_zoneidx), 1);
+DECLARE_RESTRICTED_HOOK(android_rvh_do_swap_page_relax,
+			TP_PROTO(swp_entry_t entry, bool *bypass),
+			TP_ARGS(entry, bypass), 1);
+DECLARE_RESTRICTED_HOOK(android_rvh_do_swap_page_start,
+			TP_PROTO(swp_entry_t entry),
+			TP_ARGS(entry), 1);
 DECLARE_RESTRICTED_HOOK(android_rvh_swap_bio_charge,
 			TP_PROTO(struct bio *bio),
 			TP_ARGS(bio), 1);
@@ -114,6 +120,15 @@ DECLARE_HOOK(android_vh_filemap_get_folio,
 	TP_PROTO(struct address_space *mapping, pgoff_t index,
 		int fgp_flags, gfp_t gfp_mask, struct folio *folio),
 	TP_ARGS(mapping, index, fgp_flags, gfp_mask, folio));
+DECLARE_RESTRICTED_HOOK(android_rvh_madvise_pageout_begin,
+			TP_PROTO(void **private),
+			TP_ARGS(private), 1);
+DECLARE_RESTRICTED_HOOK(android_rvh_madvise_pageout_end,
+			TP_PROTO(void *private, struct list_head *folio_list),
+			TP_ARGS(private, folio_list), 1);
+DECLARE_RESTRICTED_HOOK(android_rvh_reclaim_folio_list,
+			TP_PROTO(struct list_head *folio_list, void *private),
+			TP_ARGS(folio_list, private), 1);
 DECLARE_HOOK(android_vh_meminfo_proc_show,
 	TP_PROTO(struct seq_file *m),
 	TP_ARGS(m));
@@ -683,6 +698,9 @@ DECLARE_HOOK(android_vh_filemap_update_page,
 	TP_PROTO(struct address_space *mapping, struct folio *folio,
 		struct file *file),
 	TP_ARGS(mapping, folio, file));
+DECLARE_HOOK(android_vh_do_swap_page_done,
+	TP_PROTO(swp_entry_t entry),
+	TP_ARGS(entry));
 DECLARE_HOOK(android_vh_cma_alloc_lat_start,
 	TP_PROTO(unsigned long long *stime),
 	TP_ARGS(stime));
@@ -768,6 +786,21 @@ DECLARE_HOOK(android_vh_oom_swapmem_gather_init,
 DECLARE_HOOK(android_vh_oom_swapmem_gather_finish,
 	TP_PROTO(struct mm_struct *mm),
 	TP_ARGS(mm));
+DECLARE_HOOK(android_vh_swap_alloc_fast_bypass,
+	TP_PROTO(struct folio *folio, swp_entry_t *entry, bool *bypass),
+	TP_ARGS(folio, entry, bypass));
+DECLARE_HOOK(android_vh_pick_swap_device_bypass,
+	TP_PROTO(swp_entry_t *entry, struct swap_info_struct *si, bool *bypass),
+	TP_ARGS(entry, si, bypass));
+DECLARE_HOOK(android_vh_update_percpu_swap_cluster_bypass,
+	TP_PROTO(struct swap_info_struct *si, bool *bypass),
+	TP_ARGS(si, bypass));
+DECLARE_HOOK(android_vh_check_swap_entries_free,
+	TP_PROTO(struct swap_info_struct *si, swp_entry_t *entry, unsigned int nr_pages),
+	TP_ARGS(si, entry, nr_pages));
+DECLARE_HOOK(android_vh_folio_alloc_swap_finish,
+	TP_PROTO(struct folio *folio, swp_entry_t *entry, bool bypass_fast),
+	TP_ARGS(folio, entry, bypass_fast));
 #endif /* _TRACE_HOOK_MM_H */
 
 /* This part must be outside protection */
