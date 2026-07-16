@@ -1,3 +1,5 @@
+Local     / firmware: arm_scmi: Rename struct scmi_revision_info to scmi_base_info
+Local     / arm64: dts: renesas: r8a78000: Enable application CPU cores via PSCI
 v7.0      / can: rcar_canfd: Add support for FD-Only mode
 v6.19     / can: rcar_canfd: Add suspend/resume support
 v6.19     / can: rcar_canfd: Convert to DEFINE_SIMPLE_DEV_PM_OPS()
