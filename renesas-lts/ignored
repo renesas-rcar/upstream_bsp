@@ -1,5 +1,19 @@
 # Empty line below is needed
 
+# Development debug not intended for upstream
+cc92301e949c6 media: rcar-vin: Add w/a to measure capture fps in both IRQ callback and V4L2 driver
+# Missing information on "REN camera"
+47de3ed7d8e0f media: rcar-vin: Support REN camera script from MBD team
+# Workaround for VDK
+0a95817d8ee10 media: rcar-isp: Add support for R-Car X5H
+# Workaround for VDK
+3f3b9657a92cb media: rcar-csi2: Add support for R-Car X5H
+# SNPS CSI-2 dummy camera is used by VDK and is not intended for upstream
+b1d0c7e22b873 media: rcar-vin: Add support for SNPS CSI-2 Camera driver
+# USERPTR is deprecated upstream
+3a3cd0720493c media: rcar-vin: Add memory type of VB2_USERPTR support
+# VSP is a local patch file for MMP. So we don't need to upport.
+9cc3a06f95885 arm64: dts: renesas: r8a78000: Add device tree node for VSPI and VSPB
 # UIO and OSAL are not intended for upstream.
 38e9feb06ec01 uio: uio_pdrv_genirq: switch to the  fwnode_property_present
 # UIO and OSAL are not intended for upstream.
