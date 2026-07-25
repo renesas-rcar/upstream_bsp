@@ -1,2 +1,85 @@
 # Empty line below is needed
 
+# This patch as clearly marked as a development debug patch, its only function is to prinkt when an interrupt handles, no use upstream
+# from old 'ignored: 2058a7e8eddc
+fb71265347a65 media: rcar-vin: Add overflow debug message option
+# This patch implements incorrect behavior, if a CSI-2 node is not connected to a video source it should be disabled i DT
+# from old 'ignored: 9a473723caaf
+94746874f0b18 rcar-vin: rcar-csi2: Don't bail out from probe on no ep
+# Time out. Should be confirmed.
+# from old 'ignored: 441c24bfdab0
+6fab0f1f5b911 vsp1: Add display interrupt wait after setting STRCMD bit
+# Used by rcar-du, which adds a new userspace API, which is blocked
+# from old 'ignored: dffa26bbdf08
+ed730fb041ca1 v4l: vsp1: Add support for colorkey alpha blending
+# More information about use case is needed
+# from old 'ignored: 56b96a3db3e8
+c3342499455c2 v4l: vsp1: Add Vmute function support
+# Prototype code / Proof of concept code
+# from old 'ignored: 3baf2c4e8881
+89878b9a51749 dmaengine: rcar-dmac: Add fixed address mode support
+# Use "assigned-clocks" and "assigned-clock-rates" in board DTS file that
+# actually uses MSIOF, and drop the second clock from the msiof nodes
+# from old 'ignored: 469c8f7e8387
+ae0e82db6d633 spi: sh-msiof: Add MSIOF module clock changing processing for R-Car Gen3
+# Local debug code not suitable for upstream
+# from old 'ignored: aa5fd2cbca66
+c455abc152c42 spi: sh-msiof: Add sleep before master transfer for test
+# UIO/OSAL is not intended for upstream
+# from old 'ignored: e21494bf0175
+419622e05495b uio: Add IPMMU info for user-space
+# UIO/OSAL is not intended for upstream
+# from old 'ignored: ad701408b101
+8b10b0462b5ad dt-bindings: ipmmu: Add definition IPMMU info for UIO devices
+# UIO/OSAL is not intended for upstream
+# from old 'ignored: 8be32e61e150
+# UIO/OSAL is not intended for upstream
+# from old 'ignored: 72805b07fc95
+aa68455434759 uio: uio_pdrv_genirq: Add parameter error in case not define property in node
+# UIO/OSAL is not intended for upstream
+# from old 'ignored: 54d98b4c127c
+f128c241b530c Revert "uio: uio_pdrv_genirq: Add parameter error in case not define property in node"
+# UIO/OSAL is not intended for upstream
+# from old 'ignored: e841dd60cb71
+123640964837e uio: uio_pdrv_genirq: Hotfix clock and power control for multi task
+# UIO/OSAL is not intended for upstream
+# from old 'ignored: 8be32e61e150
+# UIO/OSAL is not intended for upstream
+# from old 'ignored: 72805b07fc95
+4d4c51d76d6af uio: uio_pdrv_genirq: Add parameter error in case not define property in node
+# UIO/OSAL is not intended for upstream
+# from old 'ignored: 6d96e6755a60
+6823d43acf09d uio: uio_pdrv_genirq: Add parameter to check device no clock
+# UIO/OSAL is not intended for upstream
+# from old 'ignored: 0f76ba844d14
+cc62deedc1a80 uio: Use EOPNOTSUPP, not ENOTSUPP
+# UIO/OSAL is not intended for upstream
+# from old 'ignored: bf847527de9c
+bebf85b52c47c uio: Inform UIO no-reset-line to users
+# UIO/OSAL is not intended for upstream
+# from old 'ignored: 3c6d4fd45c93
+5ce5292f77b37 uio: Initialize reset struct of each UIO device
+# UIO/OSAL is not intended for upstream
+# from old 'ignored: fcb14163efe8
+f33cded85b0b0 uio: Fix the logic of setting reset to UIO devices
+# UIO/OSAL is not intended for upstream
+# from old 'ignored: fa18bbf5f256
+9d910f0f1140f uio: uio_pdrv_genirq: renesas: Add clock divisor ioctl support
+# UIO/OSAL is not intended for upstream
+# from old 'ignored: a11d168c6464
+a3f4aa72b2c44 uio: Add PMA IOCTL to compat list
+# UIO/OSAL is not intended for upstream
+# from old 'ignored: 6668f1736f72
+db56c421a21fa uio: Add new ioctl for power management
+# According to our research tty-core activates clocks. Testcase needed.
+# from old 'ignored: dac54422c0d0
+18003ca339f27 serial: sh-sci: Use pm_runtime_get/put when resume
+# According to our research tty-core activates clocks. Testcase needed.
+# from old 'ignored: 4ad9b3444ded
+98418319a449d serial: sh-sci: Use pm_runtime_get/put when suspend
+# Prototype code / Proof of concept code
+# from old 'ignored: 234e0d5eb188
+7eb0cfa8b290d dt-bindings: renesas,rcar-dmac: Document optional properties
+# UIO/OSAL is not intended for upstream
+# from old 'ignored: 492cdd5c9cff
+f9007e2b86906 dt-bindings: ipmmu: Add IPMMU info for UIO devices
