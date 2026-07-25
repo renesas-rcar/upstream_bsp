@@ -175,7 +175,6 @@ dcdc482d30d4e spi: spi-sh-msiof: Update clk handling for MSIOF
 b0cb584b5a4c0 arm64: defconfig: Enable CONFIG_REMOTEPROC
 a3add0ebfc479 samples: rpmsg: Add an RPMsg performance sample
 e3033758de6ff remoteproc: rcar_gen5_rproc: Add R-Car Gen5 remoteproc driver
-4453e42e96d09 misc: rcar-mfis: Add R-Car Gen5 MFIS support
 b5f2dd2f5bf14 arm64: defconfig: Enable DWC3 USB support
 da48ba7a26174 phy: renesas: mp-phy-rcar-gen5: Reorder Module Standby sequence of MP-PHY to avoid HW limitation on R-Car Gen5
 957ce0a78c01a net: ethernet: renesas: Add R-Car Gen5 Ethernet-TSN support
@@ -291,7 +290,6 @@ d762805572188 firmware: arm_scmi: Set mailbox as atomic for r8a78000
 f70e242cda5c1 drivers: soc: renesas: Add config for SCP fixup
 505e7436449e0 firmware: arm_scmi: Change transport method for full hw virt
 59ff584f35c9f xen: Kconfig: Support CONFIG_SCMI_FULL_HW_VIRTUALIZATION
-45deb6ff51c2f mailbox: renesas: Support MFIS mailbox driver
 dc612f23ca8ea dt-bindings: gpio: renesas,rcar-gpio: Add r8a78000 support
 89e047e1512c4 gpio: gpio-rcar: Support for gen5
 2c4220f60c0c6 gpio: gpio-rcar: Update to get registers through struct gpio_rcar_info
@@ -321,7 +319,6 @@ b5548c7e32e59 dt-bindings: PCI: renesas: Update R-Car Gen5 PCIe 6.0 Endpoint doc
 9f3fc032ea0c9 dt-bindings: mmc: renesas,sdhi: Document Renesas R-Car Gen5 MMC support
 150c39122bdb5 dt-bindings: ufs: Document Renesas R-Car Gen5 UFS host controller
 a4e43d2dbfde8 dt-bindings: hwlock: rcar: Add binding documentation for R-Car Gen5
-fe89d0e595d39 dt-bindings: mailbox: Document renesas mailbox
 05dd45cf37244 dt-bindings: PCI: renesas: Add R-Car UCIe Host and Endpoint
 45cad0be756b7 dt-bindings: PCI: renesas: Add R-Car Gen5 PCIe 6.0 Endpoint
 f648f715ebf51 dt-bindings: PCI: renesas: Add R-Car Gen5 PCIe 6.0 Host
@@ -343,7 +340,6 @@ cb963104516ee dt-bindings: timer: renesas, cmt: Document R-Car X5H CMT support
 29feba9b974d6 dt-bindings: pwm: Add support for X5H
 24860955c72ec dt-bindings: watchdog: Document R-Car X5H support
 fc101563d8751 dt-bindings: can: renesas,rcar-canxl: Document R-Car X5H support
-df896b28190f2 dt-bindings: serial: sh-sci: Document x5h bindings
 86dab7bc86e8e arm64: dts: renesas: r8a78000: Update PCIe 6.0 device tree
 799f1b44d451c arm64: dts: renesas: r8a78000: Remove redundant DMAC-pp clock
 a7278b003908f arm64: dts: renesas: r8a78000: Update SCP definitions for (H)SCIF
@@ -462,7 +458,6 @@ b4cccc9021db0 arm64: dts: renesas: ironhide: Set max speed value for Ethernet 10
 38221afb54a9c arm64: dts: renesas: ironhide: Drop unused reset GPIO for PCIe4
 8058cbad7b26c arm64: dts: renesas: r8a78000: Add PHY register address for PCIe6 node
 4292d4984ba73 arm64: dts: renesas: r8a78000: enable clk & pwr for some modules
-fa94a4d4e84e9 arm64: dts: renesas: ironhide: enable mailbox
 a3806d75d4fa2 arm64: dts: renesas: r8a78000: support scmi clk & pwdm
 bced32f8c2837 arm64: dts: renesas: ironhide: Add PCIe6 device tree node
 a70f081e250f8 arm64: dts: renesas: r8a78000: Add PCIe6 device tree node
@@ -479,8 +474,6 @@ f4a5a8bd35f1f arm64: dts: renesas: ironhide: Enable HyperFlash support
 e1dc7e3c96ed4 arm64: dts: renesas: ironhide: Enable WCRC device nodes
 a7b6ad6a81dba arm64: dts: renesas: r8a78000: Add WCRC device tree nodes
 8b382e57e1526 arm64: dts: renesas: ironhide: Enable RPMsg channels
-dce8b7274be7c arm64: dts: renesas: r8a78000: Add RPMsg definitions
-ae5f8e2d83e21 arm64: dts: renesas: r8a78000: Add MFIS-Lock device node
 8aa539df196ca arm64: dts: renesas: ironhide: Add PCIe4 device tree node
 6dee003b39102 arm64: dts: renesas: r8a78000: Add PCIe4 device tree node
 2ae52c4329f5c arm64: dts: renesas: r8a78000: Correct size of secure_base register block of rswitch3 node
@@ -496,6 +489,5 @@ f1fff70b759ab arm64: dts: renesas: r8a78000: Enable RWDT node
 bc6921c34b12a arm64: dts: renesas: r8a78000: Add Reset node
 f7e334e63df9a arm64: dts: renesas: r8a78000: Add I2C EEPROM device
 04a12b959e6cd ARM: renesas: Add R8A78000 Ironhide board code
-f546734c9d4e3 arm64: dts: renesas: Add R8A78000 X5H DTs
 f92d9467fce92 dt-bindings: clock: Add R8A78000 clock definitions
 c1f21c525ecdf dt-bindings: power: Add r8a78000 power domain definitions
