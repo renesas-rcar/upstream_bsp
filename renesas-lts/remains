@@ -26,12 +26,10 @@ c44387cfc7a90 arm64: defconfig: Align R-Car X5H's DT with Linux kernel 6.12 impl
 16800ce524420 media: rcar-vin: Align with master-slave mechanism in Power Domain (PD) structure of R-Car X5H
 5dda1fd3338f5 media: rcar-csi2: Correct stop sequence
 e725eebc9546e media: rcar-vin: rcar-csi2: Add 1/2/3/4 lane support for MIPI CSI-2 C-PHY
-cc92301e949c6 media: rcar-vin: Add w/a to measure capture fps in both IRQ callback and V4L2 driver
 5ae4ef92ba96b media: rcar-vin: rcar-csi2: Add w/a to work with Gen1 datarates (<3500Mbps)
 042ca69bd9998 media: rcar-csi2: Add support for C-PHY on R-Car X5H Ironhide board
 6dca6dab6a83a media: rcar-csi2: move macro defination to top (no functional changes)
 13d42abb3659e media: rcar-vin: Hardcoded to control Module Standby
-47de3ed7d8e0f media: rcar-vin: Support REN camera script from MBD team
 03df8c0587caf media: RAW12/14/16/20/24/28 support
 fcfd63cf865f2 media: media: Add 1X20, 1x24 and 1x28 raw bayer media bus code definitions
 9cbb2e707aaa1 media: v4l: Add 20/24/28-bit raw bayer pixel formats
@@ -41,12 +39,8 @@ dc2b76c49b932 media: rcar-isp: Corect start up sequence follow description in HW
 e9411b103398b media: rcar-vin: rcar-dma: Fix error state message reports by V4L2 videobuf2 framework
 07feaa541e4bc media: rcar-vin: Reduce the waiting time of the stop capturing process
 08473e2d45b9c media: rcar-vin: Add support for R-Car X5H
-0a95817d8ee10 media: rcar-isp: Add support for R-Car X5H
-3f3b9657a92cb media: rcar-csi2: Add support for R-Car X5H
 705d972f2d026 media: rcar-vin: Add SW workaround to run Video Capture drivers on virtual platform (e.g. VDK, RFS, RFS2X)
-b1d0c7e22b873 media: rcar-vin: Add support for SNPS CSI-2 Camera driver
 8b6658813f574 media: rcar-csi2: Remove v4l2_async_notifier_cleanup in remove function
-3a3cd0720493c media: rcar-vin: Add memory type of VB2_USERPTR support
 e2f40ffbbe813 arm64: defconfig: Enable PL011 UART console support
 081598b3eb3fe arm64: defconfig: enable BLK_DEV_NVME
 4b1e5da394b2e drivers: soc: renesas: Support new modes for Renesas CRC
@@ -436,7 +430,6 @@ e50b3b05ec476 arm64: dts: renesas: r8a78000: expand PCIe6 EP addr_space region
 4956d872dbcca arm64: dts: renesas: r8a78000: Fix PCIe6 interrupt number for MSI
 11ecd1a726f71 arm64: dts: renesas: r8a78000: Update PCIe6 address mappings
 70cbc305ac30d arm64: dts: renesas: r8a78000: Update PCIe6 PHY and config space regions
-9cc3a06f95885 arm64: dts: renesas: r8a78000: Add device tree node for VSPI and VSPB
 518618b786f94 arm64: dts: renesas: ironhide: Add Timer(TMU) support for X5H ironhide board
 bafdbb15b18d3 arm64: dts: renesas: r8a78000: Add Timer(TMU) device tree node
 17d2af2e03232 arm64: dts: renesas: ironhide: Add Timer(CMT) support for X5H ironhide board
