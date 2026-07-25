@@ -48,8 +48,6 @@ b1d0c7e22b873 media: rcar-vin: Add support for SNPS CSI-2 Camera driver
 1dc845ad526f7 media: rcar-vin: Add interrupt for V4L2_FIELD_ALTERNATE format
 8b6658813f574 media: rcar-csi2: Remove v4l2_async_notifier_cleanup in remove function
 da92eda205d2a media: rcar-vin: Fix clock control flow
-fb71265347a65 media: rcar-vin: Add overflow debug message option
-94746874f0b18 rcar-vin: rcar-csi2: Don't bail out from probe on no ep
 3a3cd0720493c media: rcar-vin: Add memory type of VB2_USERPTR support
 e2f40ffbbe813 arm64: defconfig: Enable PL011 UART console support
 081598b3eb3fe arm64: defconfig: enable BLK_DEV_NVME
@@ -69,10 +67,7 @@ b281fac5f94fe drm: bridge: dw_dp: Add MST mode support
 cf52dc98b72c3 phy: phy-core: Add phy_init_post functions for using in the future
 14ecad299ac2d drm: rcar-vcon: Add VCON support on X5H SoC
 48e6289016a85 misc: ti-tdp2004: Add simple driver for disabling the default test mode
-6fab0f1f5b911 vsp1: Add display interrupt wait after setting STRCMD bit
-ed730fb041ca1 v4l: vsp1: Add support for colorkey alpha blending
 58369eab707d7 v4l: vsp1: Add write back support
-c3342499455c2 v4l: vsp1: Add Vmute function support
 ebf55eda72b8d v4l: vsp1: Add pixel alpha blending supoprt
 f53d9ae144900 media: vsp1: Add support for VSPD (b) instance of R-Car X5H
 60d3e2b33a3fb media: vsp1: Fix setting control register by display list
@@ -156,7 +151,6 @@ a8b391b6a3651 dmaengine: rcar-dmac: Support HW descriptor 43 bits mode
 6a44573397f60 dmaengine: rcar-dmac: Add support for X5H SoC
 068b6b7a4bc55 dmaengine: rcar-dmac: Add repeat mode support
 b7a9462dc6220 dmaengine: rcar-dmac: Add bus rate control support for R-Car Gen4
-89878b9a51749 dmaengine: rcar-dmac: Add fixed address mode support
 e4ea07d0e1c04 dmaengine: rcar-dmac: Fix array-bounds warning refer chcr_ts[]
 b5ebfbe9afee0 hwspinlock: rcar: Add support for R-Car X5H SoC
 c9ee6f8da9258 hwspinlock: rcar: Add support for R-Car Gen3 Hardware Spinlock
@@ -182,30 +176,14 @@ d5780e150cd5b clocksource: sh_cmt: Remove hardcoded clock rate and use dummy clk
 c31e1227e49a5 clocksource: sh_cmt: Support shared interrupts for Timer(CMT) on VDK
 2b48c21f5b725 clocksource: sh_cmt: Add R-Car Gen5 support
 dcdc482d30d4e spi: spi-sh-msiof: Update clk handling for MSIOF
-ae0e82db6d633 spi: sh-msiof: Add MSIOF module clock changing processing for R-Car Gen3
 21287925e4cf5 spi: spi-sh-msiof: Support MSIOF for R-Car X5H
-c455abc152c42 spi: sh-msiof: Add sleep before master transfer for test
 38e9feb06ec01 uio: uio_pdrv_genirq: switch to the  fwnode_property_present
 c1d2e3dd2428a uio: uio_pdrv_genirq: initialize ret in priv_set_rst()
 039a337653652 uio: uio_pdrv_genirq: decouple clk_cnt from runtime PM
 6ee9eb4f7eabc uio: uio_pdrv_genirq: Use clk_prepare_enable/clk_disable_unprepare
-419622e05495b uio: Add IPMMU info for user-space
-8b10b0462b5ad dt-bindings: ipmmu: Add definition IPMMU info for UIO devices
 9d20f18bdb83e uio: uio_pdrv_genirq: Add shared interrupt support
-aa68455434759 uio: uio_pdrv_genirq: Add parameter error in case not define property in node
-f128c241b530c Revert "uio: uio_pdrv_genirq: Add parameter error in case not define property in node"
-123640964837e uio: uio_pdrv_genirq: Hotfix clock and power control for multi task
-4d4c51d76d6af uio: uio_pdrv_genirq: Add parameter error in case not define property in node
-6823d43acf09d uio: uio_pdrv_genirq: Add parameter to check device no clock
 11835f8ba71bf uio: Support error notification to upper layer
 579983d420097 uio: Switch to clk_hw_get_flags()
-cc62deedc1a80 uio: Use EOPNOTSUPP, not ENOTSUPP
-bebf85b52c47c uio: Inform UIO no-reset-line to users
-5ce5292f77b37 uio: Initialize reset struct of each UIO device
-f33cded85b0b0 uio: Fix the logic of setting reset to UIO devices
-9d910f0f1140f uio: uio_pdrv_genirq: renesas: Add clock divisor ioctl support
-a3f4aa72b2c44 uio: Add PMA IOCTL to compat list
-db56c421a21fa uio: Add new ioctl for power management
 b0cb584b5a4c0 arm64: defconfig: Enable CONFIG_REMOTEPROC
 a3add0ebfc479 samples: rpmsg: Add an RPMsg performance sample
 e3033758de6ff remoteproc: rcar_gen5_rproc: Add R-Car Gen5 remoteproc driver
@@ -288,8 +266,6 @@ e2b9c98f44510 i2c: rcar: fallback to DT clock rate
 08edefda03318 arm64: dts: r8a78000: add scmi clock and reset for I2C
 c050a71a66d21 i2c: rcar: add compatible string to support R-Car X5H of I2C module
 04aec4b7e48b8 serial: sh-sci: Hardcode fck rate with SCP fixup for R-Car Gen5
-18003ca339f27 serial: sh-sci: Use pm_runtime_get/put when resume
-98418319a449d serial: sh-sci: Use pm_runtime_get/put when suspend
 7e8fec9315ad4 net: renesas: rswitch3: Restore PTP timer when resumming
 c78304415e503 net: ethernet: renesas: rcar_gen4_ptp: Add hardware reinit support on resume
 621a35524fbf0 net: renesas: rswitch3: Control clock when S2RAM
@@ -390,7 +366,6 @@ e01ad8b50eb2e dt-bindings: PCI: renesas: Add R-Car Gen5 PCIe 4.0 Host
 cb963104516ee dt-bindings: timer: renesas, cmt: Document R-Car X5H CMT support
 7da2c066c191c dt-bindings: renesas,rcar-dmac: Add R-Car X5H SoC support
 3349a46d762aa dt-bindings: renesas,rcar-dmac: Add bus rate control support for R-Car Gen4
-7eb0cfa8b290d dt-bindings: renesas,rcar-dmac: Document optional properties
 83da77cedc91a dt-bindings: pwm: tpu: Add support for X5H
 29feba9b974d6 dt-bindings: pwm: Add support for X5H
 24860955c72ec dt-bindings: watchdog: Document R-Car X5H support
@@ -570,4 +545,3 @@ f7e334e63df9a arm64: dts: renesas: r8a78000: Add I2C EEPROM device
 f546734c9d4e3 arm64: dts: renesas: Add R8A78000 X5H DTs
 f92d9467fce92 dt-bindings: clock: Add R8A78000 clock definitions
 c1f21c525ecdf dt-bindings: power: Add r8a78000 power domain definitions
-f9007e2b86906 dt-bindings: ipmmu: Add IPMMU info for UIO devices
