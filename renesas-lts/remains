@@ -172,13 +172,6 @@ c31e1227e49a5 clocksource: sh_cmt: Support shared interrupts for Timer(CMT) on V
 2b48c21f5b725 clocksource: sh_cmt: Add R-Car Gen5 support
 dcdc482d30d4e spi: spi-sh-msiof: Update clk handling for MSIOF
 21287925e4cf5 spi: spi-sh-msiof: Support MSIOF for R-Car X5H
-38e9feb06ec01 uio: uio_pdrv_genirq: switch to the  fwnode_property_present
-c1d2e3dd2428a uio: uio_pdrv_genirq: initialize ret in priv_set_rst()
-039a337653652 uio: uio_pdrv_genirq: decouple clk_cnt from runtime PM
-6ee9eb4f7eabc uio: uio_pdrv_genirq: Use clk_prepare_enable/clk_disable_unprepare
-9d20f18bdb83e uio: uio_pdrv_genirq: Add shared interrupt support
-11835f8ba71bf uio: Support error notification to upper layer
-579983d420097 uio: Switch to clk_hw_get_flags()
 b0cb584b5a4c0 arm64: defconfig: Enable CONFIG_REMOTEPROC
 a3add0ebfc479 samples: rpmsg: Add an RPMsg performance sample
 e3033758de6ff remoteproc: rcar_gen5_rproc: Add R-Car Gen5 remoteproc driver
@@ -352,12 +345,9 @@ cb963104516ee dt-bindings: timer: renesas, cmt: Document R-Car X5H CMT support
 fc101563d8751 dt-bindings: can: renesas,rcar-canxl: Document R-Car X5H support
 df896b28190f2 dt-bindings: serial: sh-sci: Document x5h bindings
 86dab7bc86e8e arm64: dts: renesas: r8a78000: Update PCIe 6.0 device tree
-e46ddbbb96e06 arm64: dts: renesas: r8a78000: Add UIO variant without power-domains
 799f1b44d451c arm64: dts: renesas: r8a78000: Remove redundant DMAC-pp clock
 a7278b003908f arm64: dts: renesas: r8a78000: Update SCP definitions for (H)SCIF
 457390e46abfc arm64: dts: renesas: r8a78000: Update SCP definitions for VIN
-fc7147526eacd arch: arm64: renesas: r8a78000-uio: Add reset IMR and IMS UIO devices
-1372c4456fb39 arch: arm64: renesas: r8a78000-uio: Update RFSO UIO devices
 39e1a71d83fae arm64: dts: renesas: r8a78000: Update power domain, clock and reset for PCIe4 align with SCMI
 a623c7c718af8 arm64: dts: renesas: r8a78000: Update power domain, clock and reset for PCIe6 align with SCMI
 204fbda40f135 arm64: dts: renesas: r8a78000: Add power-domains, clocks, resets definitions for display nodes
@@ -383,8 +373,6 @@ aca04a722ff81 arch: arm64: dts: Add resets property for PCIe4/6 dts node
 37e2ad90236fd arm64: renesas: r8a78000: Update to get,set clock rate from sd_clock for SDHI driver
 6042410ffe14e arm64: dts: renesas: ironhide: Enable WWDT0-19 node
 fe6f331c77dde arm64: dts: renesas: r8a78000: Add INTC for WWDT node
-edd2ded45b677 arch: arm64: renesas: r8a78000-uio: Add new RSIP UIO for ostm devices
-7f2e0accb8524 arch: arm64: renesas: r8a78000-uio: Update RSIP UIO devices
 3d4d0b8e2710b arm64: dts: renesas: ironhide: Refactor Ironhide board components.
 ed189e1a2a040 arm64: dts: renesas: r8a78000: Add SCMI clock for Audio
 cc66bafcf7c7d arm64: dts: renesas: r8a78000: Add SCMI clock for PWM and TPU drivers
@@ -392,7 +380,6 @@ cc66bafcf7c7d arm64: dts: renesas: r8a78000: Add SCMI clock for PWM and TPU driv
 465be393ba55b arm64: dts: renesas: r8a78000: Add clock to MSIOF
 8582ffd9908b1 arm64: dts: renesas: r8a78000: Add SCMI clock for RTC
 123469d61027b arm64: dts: renesas: ironhide: Correct interface property for MP-PHY
-d11d985884209 arm64: dts: renesas: ironhide-uio: Synchronize device configuration with native DT
 ad0d106311c6b dt-bindings: clock: Update R8A78000 reset definitions
 933ad116b1c37 dt-bindings: clock: Update R8A78000 clock definitions
 033a7a1284c4c arm64: dts: renesas: r8a78000: Correct Audio register range size and DMA request numbers
@@ -402,19 +389,12 @@ cbe1e3750664b arm64: dts: renesas: r8a78000: Add SCMI clock for CAN-XL
 ea9197d2fad8f arm64: dts: renesas: r8a78000: Add SCMI clock for CAN-FD
 bc103d196ad0f arm64: dts: renesas: r8a78000: add DMA support for I2C driver
 d85a4cf26d826 arm64: dts: renesas: ironhide: Update ECC reserved regions
-8e766e4a6d56d arch: arm64: renesas: r8a78000-uio: Add VIN UIO devices
-3ad3b52b9d69d arch: arm64: renesas: r8a78000-uio: Add clocks, resets, and interrupts for RSIP UIO devices
-99081e3806d25 arch: arm64: renesas: r8a78000-uio: Restore rsipe uio devices
-bd7ebe0bf825a arch: arm64: renesas: r8a78000-uio: Update name of rsip_e_stb_00
-1d994e0358b3a arch: arm64: renesas: r8a78000-uio: Add rsipe UIO device support
-c103910cb5977 arch: arm64: renesas: r8a78000-uio: Remove unregistered devices in UIO
 e9bb2e109e26d arm64: dts: renesas: r8a78000: Update PCIe6 link speed to gen4
 aac415c1644bf arm64: dts: renesas: r8a78000: Correct cache hierarchy mapping and report cache sizes
 e808a4a9633f6 dt-bindings: clock: Update R8A78000 clock definitions
 763068f266f44 arm64: dts: renesas: ironhide: Update USB3.2 gen2 controller properties
 12e0275dfde35 arm64: dts: renesas: ironhide: Drop unused DWC3 quirks
 02cd1864b5c6f arm64: dts: renesas: r8a78000: Add GSX node device
-ec5fe3df35fdf arm64: dts: renesas: ironhide-uio: add reserved area for the ECC Data region
 5098e7b4419f2 arm64: dts: renesas: ironhide: add reserved area for the ECC Data region
 659be0e538bb0 arm64: dts: renesas: r8a78000: Use dummy_clk for Video Capture related nodes
 4a782dec8e50c arch: arm64: dts: add clock-name for I3C driver
@@ -433,8 +413,6 @@ b3d0fc1f87cfd dt-bindings: power: Update r8a78000 ID_COUNT domain
 40b253f2eaa82 arm64: dts: renesas: r8a78000: Update SCP definitions for CAN-XL
 3d8bb393dd91c arm64: dts: renesas: r8a78000: Update SCP definitions for I3C
 2182d0e78e9f9 arm64: dts: renesas: r8a78000: Update SCP definitions for timer
-a3818523954ac arm64: dts: renesas: r8a78000-uio: update definitions
-2cb0890368a71 arm64: dts: renesas: ironhide-uio: Update memory map and reserved area
 018825451a63a arm64: dts: renesas: ironhide: Add DWC3 quirks for USB stability
 0befea32060a3 arm64: dts: renesas: ironhide: Add workaround for USB OC (Overcurrent) issue
 cd728a4e44e29 arm64: dts: renesas: ironhide: Add USB2/3 support
@@ -473,11 +451,7 @@ bafdbb15b18d3 arm64: dts: renesas: r8a78000: Add Timer(TMU) device tree node
 43beaf40fd5d3 dt-bindings: clock: Update R8A78000 clock definitions
 19c6d2da13331 dt-bindings: power: Update r8a78000 power domain definitions
 482f5d5e77fef arm64: dts: renesas: r8a78000: Add gPTP address support
-3d6c4d6f9d537 arch: arm64: renesas: r8a78000-uio: Add power domain and for isp devices
-ac3db7c1473c2 ach: arm64: renesas: r8a78000-uio: Add power domain and for imr devices
-c25a8ff5fc799 arch: arm64: renesas: r8a78000-uio: Add power domain and for vcp5 devices
 7035ca691cdc7 arm64: dts: renesas: r8a78000: Add optee node
-f5a50bd9d6445 arm64: dts: renesas: ironhide-uio: Add UIO device support for R8A78000 (R-Car X5H)
 8436896c25002 arm64: dts: renesas: r8a78000: Update DMAC device tree node
 876feab90ef0f arm64: dts: renesas: r8a78000: Add SMMU device tree node
 554016cd3fd25 arm64: dts: renesas: ironhide: Add eMMC support
