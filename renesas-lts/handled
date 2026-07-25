@@ -1,5 +1,21 @@
 # Empty line below is needed
 
+# upstream: 005fa59aeb86aa70815104d3d0c65ac0ea80513b soc: renesas: Add Renesas R-Car MFIS driver
+45deb6ff51c2f mailbox: renesas: Support MFIS mailbox driver
+# upstream: 005fa59aeb86aa70815104d3d0c65ac0ea80513b soc: renesas: Add Renesas R-Car MFIS driver
+4453e42e96d09 misc: rcar-mfis: Add R-Car Gen5 MFIS support
+# upstream: 0f63ba15dde8748ed3818fa6553c81b5296318f1 dt-bindings: soc: renesas: Document MFIS IP core
+fe89d0e595d39 dt-bindings: mailbox: Document renesas mailbox
+# upstream: 6ac1d604737279313bbd55797460204f21044327 dt-bindings: serial: sh-sci: Document r8a78000 bindings
+df896b28190f2 dt-bindings: serial: sh-sci: Document x5h bindings
+# upstream: 502dc3d349873d6a99c4b5ec7627ac1b73bb6a40 arm64: dts: renesas: ironhide: Enable to use SCMI
+fa94a4d4e84e9 arm64: dts: renesas: ironhide: enable mailbox
+# upstream: 3fea67c230dfd8d92b63b4aec3dc7754e58e582b arm64: dts: renesas: r8a78000: Add MFIS, MFIS-SCP, and transport nodes
+ae5f8e2d83e21 arm64: dts: renesas: r8a78000: Add MFIS-Lock device node
+# upstream: 3fea67c230dfd8d92b63b4aec3dc7754e58e582b arm64: dts: renesas: r8a78000: Add MFIS, MFIS-SCP, and transport nodes
+dce8b7274be7c arm64: dts: renesas: r8a78000: Add RPMsg definitions
+# upstream: f089dc131fbe04b07ad515b645d63db3125b6030 arm64: dts: renesas: Add R8A78000 X5H DTs
+f546734c9d4e3 arm64: dts: renesas: Add R8A78000 X5H DTs
 # upstream: 4f5f8baf73411d799f3a51b73190ebecf522eb83 dma-buf: heaps: cma: Create CMA heap for each CMA reserved region
 840eda0f852c7 dma-buf: heaps: cma: Create CMA heap for each CMA reserved region
 # upstream: 2e757f71a5ab861478204e2907bb373ccb3ca087 firmware: arm_scmi: Drop unused clock rate interfaces
