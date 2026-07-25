@@ -1,5 +1,13 @@
 # Empty line below is needed
 
+# Alpha blending is already supported upstream.
+ebf55eda72b8d v4l: vsp1: Add pixel alpha blending supoprt
+# Not needed. HW allows 1 cycle, it will just output HIGH only. Confirmed by Shimoda-san
+3515a2d8ebfe6 pwm: rcar: Add a judgment of the period out of range
+# This is already handled correctly in upstream. No need to use clk_set_phase()
+d2f90c58772ed mmc: renesas_sdhi: Fix SDnCKCR setting in 4TAP SoC
+# upstream: 083693214f28b979b50cfcd689010725ca579eb8
+1dc845ad526f7 media: rcar-vin: Add interrupt for V4L2_FIELD_ALTERNATE format
 # upstream: 1f08884d31dd1aa8eaf3b1cdf79fd6ba93e81d14
 12375c3df1ad9 rcar-vin: do not allow changing scaling and composing while streaming
 # upstream: 09cdda7a60f45784cebddf1fa2109d6279f9890b
