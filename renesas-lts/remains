@@ -37,7 +37,6 @@ fcfd63cf865f2 media: media: Add 1X20, 1x24 and 1x28 raw bayer media bus code def
 9cbb2e707aaa1 media: v4l: Add 20/24/28-bit raw bayer pixel formats
 58a1e3ea3d859 drm: Add R14/16/20/24/28 FourCC
 a48fb184cbf77 media: rcar-vin: Add support for crop function for Gen3 and above
-12375c3df1ad9 rcar-vin: do not allow changing scaling and composing while streaming
 dc2b76c49b932 media: rcar-isp: Corect start up sequence follow description in HWUM
 e9411b103398b media: rcar-vin: rcar-dma: Fix error state message reports by V4L2 videobuf2 framework
 07feaa541e4bc media: rcar-vin: Reduce the waiting time of the stop capturing process
@@ -66,7 +65,6 @@ c857b1ccac929 media: renesas: rcar-fcp: Add explicit clock control
 b281fac5f94fe drm: bridge: dw_dp: Add MST mode support
 0fb1d383ca17e drm: bridge: dw_dp: Update to support R-Car operation
 48ccfd1ab9cdc The DW DP TX Controller is compliant with the DisplayPort Specification Version 1.4 with the following features:
-378413ca94ec2 drm/dp: Pull drm_dp_link_power_up/down from Tegra to common drm_dp_helper
 615be5b64468a phy: Add phy_set_dp_format() to configure DP pixel encoding
 cf52dc98b72c3 phy: phy-core: Add phy_init_post functions for using in the future
 14ecad299ac2d drm: rcar-vcon: Add VCON support on X5H SoC
@@ -131,7 +129,6 @@ e3701a3900617 PCI: dwc: rcar-gen5: Add EXPORT_SYMBOL_GPL() for raise_msix_irq() 
 73a184c3415e1 PCI: dwc: rcar-gen5: Add get link speed function for PCIe 6.0
 102ff0d331dd0 PCI: dwc: rcar-gen5: Add R-Car Gen5 PCIe 6.0 Host and Endpoint support
 7557c399f4996 phy: renesas: Reorder Module Standby sequence of PCS to avoid HW limitation on R-Car Gen5
-66e5c9ca67e36 arm64: defconfig: Enable additional support for Renesas platforms
 6f4acf45eaf29 ASoC: ak4619: Add suspend and resume callbacks
 9dc44dbe97bf6 ASoC: rsnd: Handle module clocks dynamically for Gen5 S2R support
 22352f60b8701 ASoC: rsnd: ssiu: Add missing .quit callback for gen5
@@ -283,12 +280,7 @@ d04030e7de8b0 i3c: master: export i3c_masterdev_type
 64eec21623eab dt-bindings: i3c: Add binding for Renesas R-Car I3C master controller
 7f17b5cba2d14 can: rcar_canfd: set clock rate to match hardware specification
 cf95bd44b7149 arm64: dts: r8a78000: add fallback clockrate for CANFD driver
-f569c6d75cc4b can: rcar_canfd: Add suspend/resume support
-3a206ac474380 can: rcar_canfd: Convert to DEFINE_SIMPLE_DEV_PM_OPS()
-319c06f048ec7 can: rcar_canfd: Invert CAN clock and close_candev() order
 ca14d0ada85ac can: rcar_canfd: Register each IRQ number for each channel on R-Car X5H
-91e5360ab91ea can: rcar_canfd: Extract rcar_canfd_global_{,de}init()
-6db578303ca1b can: rcar_canfd: Use devm_clk_get_optional() for RAM clk
 6b9990f578a43 canfd: add scmi clk support and temporarily skip PM-Reset
 530d6950eaa9f can: rcar_canfd: Add support for X5H SoC
 5e2007803b669 arm64: dts: renesas: remove EEPROM device from i2c0
@@ -318,18 +310,6 @@ d6b116e814c59 net: renesas: rswitch3: remove stray early return in rsw3_gwca_que
 3ae1f9409a5c5 net: ethernet: renesas: rswitch3: Add R-Car gPTP support
 242a48b66eedf net: ethernet: renesas: rswitch: Change PHY init until interface up
 b64e7d574be3e net: ethernet: rswitch3: Increase value for TX ring size
-dfa7ad34da030 net: renesas: rswitch: use FIELD_PREP for remaining MPIC register fields
-ca9f318a4b858 net: renesas: rswitch: do not write to MPSM register at init time
-3d5273b694454 net: renesas: rswitch: fix initial MPIC register setting
-ab39e09c62d3a net: renesas: rswitch: enable only used MFWD features
-6eb6662d45e2d net: renesas: rswitch: handle stop vs interrupt race
-a8bd435a00f6b net: renesas: rswitch: avoid use-after-put for a device tree node
-7c80bb0a8b032 net: renesas: rswitch: fix leaked pointer on error path
-1e0496b6af638 net: renesas: rswitch: fix race window between tx start and complete
-0083c25d9d6ae net: renesas: rswitch: fix possible early skb release
-56add7c969a1f net: renesas: rswitch: remove speed from gwca structure
-31cd76dabeef1 net: renesas: rswitch: do not deinit disabled ports
-2b15293b0ecf0 rswitch_poll(). Since `skb` and `gq->skbs[gq->dirty]` are in fact the same pointer, the skb is first freed using dev_kfree_skb_any(), then the value in skb->len is used to update the interface statistics.
 5f54232dd6889 net: renesas: rswitch3: Fix wrong setting PHY interface of USXGMII
 fa6ee6eb0e8d2 net: ethernet: renesas: rswitch3: Fix sharing one ETHA_MII channel for multiple ports
 f7e8a7c84dee4 driver: net: rswitch3: Add 5G/10G Ethernet port support
@@ -387,7 +367,6 @@ fe609b4486456 pinctrl: renesas: Allow drive strength configuration via SoC drive
 3822bbf8df893 arm64: defconfig: Increase CONFIG_NR_CPUS to 32 for R-Car X5H
 3ab251687a0cc arm64: defconfig: Sync with in-house configuration on v6.12.80
 23e54e5d4dd1c arm64: defconfig: Use renesas_defconfig as defconfig
-157ddf77be469 dt-bindings: usb: dwc3: Add snps,host-vbus-glitches-quirk avoid vbus glitch
 91255892448f9 dt-bindings: PCI: renesas: Update R-Car Gen5 PCIe 6.0 Host documentation
 b5548c7e32e59 dt-bindings: PCI: renesas: Update R-Car Gen5 PCIe 6.0 Endpoint documentation
 9f3fc032ea0c9 dt-bindings: mmc: renesas,sdhi: Document Renesas R-Car Gen5 MMC support
