@@ -1,5 +1,57 @@
 # Empty line below is needed
 
+# UIO and OSAL are not intended for upstream.
+38e9feb06ec01 uio: uio_pdrv_genirq: switch to the  fwnode_property_present
+# UIO and OSAL are not intended for upstream.
+c1d2e3dd2428a uio: uio_pdrv_genirq: initialize ret in priv_set_rst()
+# UIO and OSAL are not intended for upstream.
+039a337653652 uio: uio_pdrv_genirq: decouple clk_cnt from runtime PM
+# UIO and OSAL are not intended for upstream.
+6ee9eb4f7eabc uio: uio_pdrv_genirq: Use clk_prepare_enable/clk_disable_unprepare
+# UIO and OSAL are not intended for upstream.
+9d20f18bdb83e uio: uio_pdrv_genirq: Add shared interrupt support
+# UIO and OSAL are not intended for upstream.
+11835f8ba71bf uio: Support error notification to upper layer
+# UIO and OSAL are not intended for upstream.
+579983d420097 uio: Switch to clk_hw_get_flags()
+# UIO and OSAL are not intended for upstream.
+e46ddbbb96e06 arm64: dts: renesas: r8a78000: Add UIO variant without power-domains
+# UIO and OSAL are not intended for upstream.
+fc7147526eacd arch: arm64: renesas: r8a78000-uio: Add reset IMR and IMS UIO devices
+# UIO and OSAL are not intended for upstream.
+1372c4456fb39 arch: arm64: renesas: r8a78000-uio: Update RFSO UIO devices
+# UIO and OSAL are not intended for upstream.
+edd2ded45b677 arch: arm64: renesas: r8a78000-uio: Add new RSIP UIO for ostm devices
+# UIO and OSAL are not intended for upstream.
+7f2e0accb8524 arch: arm64: renesas: r8a78000-uio: Update RSIP UIO devices
+# UIO and OSAL are not intended for upstream.
+d11d985884209 arm64: dts: renesas: ironhide-uio: Synchronize device configuration with native DT
+# UIO and OSAL are not intended for upstream.
+8e766e4a6d56d arch: arm64: renesas: r8a78000-uio: Add VIN UIO devices
+# UIO and OSAL are not intended for upstream.
+3ad3b52b9d69d arch: arm64: renesas: r8a78000-uio: Add clocks, resets, and interrupts for RSIP UIO devices
+# UIO and OSAL are not intended for upstream.
+99081e3806d25 arch: arm64: renesas: r8a78000-uio: Restore rsipe uio devices
+# UIO and OSAL are not intended for upstream.
+bd7ebe0bf825a arch: arm64: renesas: r8a78000-uio: Update name of rsip_e_stb_00
+# UIO and OSAL are not intended for upstream.
+1d994e0358b3a arch: arm64: renesas: r8a78000-uio: Add rsipe UIO device support
+# UIO and OSAL are not intended for upstream.
+c103910cb5977 arch: arm64: renesas: r8a78000-uio: Remove unregistered devices in UIO
+# UIO and OSAL are not intended for upstream.
+ec5fe3df35fdf arm64: dts: renesas: ironhide-uio: add reserved area for the ECC Data region
+# UIO and OSAL are not intended for upstream.
+a3818523954ac arm64: dts: renesas: r8a78000-uio: update definitions
+# UIO and OSAL are not intended for upstream.
+2cb0890368a71 arm64: dts: renesas: ironhide-uio: Update memory map and reserved area
+# UIO and OSAL are not intended for upstream.
+3d6c4d6f9d537 arch: arm64: renesas: r8a78000-uio: Add power domain and for isp devices
+# UIO and OSAL are not intended for upstream.
+ac3db7c1473c2 ach: arm64: renesas: r8a78000-uio: Add power domain and for imr devices
+# UIO and OSAL are not intended for upstream.
+c25a8ff5fc799 arch: arm64: renesas: r8a78000-uio: Add power domain and for vcp5 devices
+# UIO and OSAL are not intended for upstream.
+f5a50bd9d6445 arm64: dts: renesas: ironhide-uio: Add UIO device support for R8A78000 (R-Car X5H)
 # from old 'handled': e22c6bae0ea6
 da92eda205d2a media: rcar-vin: Fix clock control flow
 # from old 'handled': e88f4e52ad53
