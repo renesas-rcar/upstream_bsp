@@ -45,9 +45,7 @@ e9411b103398b media: rcar-vin: rcar-dma: Fix error state message reports by V4L2
 3f3b9657a92cb media: rcar-csi2: Add support for R-Car X5H
 705d972f2d026 media: rcar-vin: Add SW workaround to run Video Capture drivers on virtual platform (e.g. VDK, RFS, RFS2X)
 b1d0c7e22b873 media: rcar-vin: Add support for SNPS CSI-2 Camera driver
-1dc845ad526f7 media: rcar-vin: Add interrupt for V4L2_FIELD_ALTERNATE format
 8b6658813f574 media: rcar-csi2: Remove v4l2_async_notifier_cleanup in remove function
-da92eda205d2a media: rcar-vin: Fix clock control flow
 3a3cd0720493c media: rcar-vin: Add memory type of VB2_USERPTR support
 e2f40ffbbe813 arm64: defconfig: Enable PL011 UART console support
 081598b3eb3fe arm64: defconfig: enable BLK_DEV_NVME
@@ -67,8 +65,6 @@ b281fac5f94fe drm: bridge: dw_dp: Add MST mode support
 cf52dc98b72c3 phy: phy-core: Add phy_init_post functions for using in the future
 14ecad299ac2d drm: rcar-vcon: Add VCON support on X5H SoC
 48e6289016a85 misc: ti-tdp2004: Add simple driver for disabling the default test mode
-58369eab707d7 v4l: vsp1: Add write back support
-ebf55eda72b8d v4l: vsp1: Add pixel alpha blending supoprt
 f53d9ae144900 media: vsp1: Add support for VSPD (b) instance of R-Car X5H
 60d3e2b33a3fb media: vsp1: Fix setting control register by display list
 6614ef9805501 media: vsp1: Fix access to reserved registers
@@ -136,7 +132,6 @@ edd311e97477e ASoC: renesas: Add R-Car X5H to R-Car Sound Driver
 db39bcc236d8f pwm: tpu: Add compatible string for X5H
 88b937b757c6e pwm: rcar: Add S2R support for R-Car X5H PWM driver
 b983d47b8e8f2 pwm: rcar: Add SCMI clock support for R-Car X5H PWM driver
-3515a2d8ebfe6 pwm: rcar: Add a judgment of the period out of range
 e302251e40c3e rtc: rcar: Add SCMI clock support for R-Car X5H RTC Driver
 db17ccea5af44 rtc: rcar: Add additional information for proc interface
 f018e70966742 rtc: rcar: Add support for interrupt requests generator and output pulse control
@@ -214,12 +209,9 @@ b5060762ad0be tee: optee: Change wait to interruptible
 3c82115c22b2e memory: renesas-rpc-if: Modify DDR Timing and burst read operation
 a74fae795b069 memory: renesas-rpc-if: Add R-Car Gen5 support
 eb950a5a2f32e dt-bindings: memory-controllers: Document R-Car X5H support
-8c0da341f5d03 memory: renesas-rpc-if: Use burst read operation
 0dcad58ff9cf7 mmc: renesas_sdhi: Add R-Car Gen5 support
-d389e4f01a8e0 mmc: renesas_sdhi: Add PIO mode support
 8590e8b5b6fb2 mmc: renesas_sdhi: host: Change to get, set rate from SD clock when support clk-scmi
 3d0806643a3e9 mmc: renesas_sdhi: Enable clock via core clock
-d2f90c58772ed mmc: renesas_sdhi: Fix SDnCKCR setting in 4TAP SoC
 decb1ca915d37 firmware: arm_scmi: mailbox: increase max_msg_size for R-Car X5H
 5688a905874e6 hwmon: (scmi) Enable sensors to assure they can be read
 55caf7ed87b53 arm64: dts: renesas: r8a78000: Add thermal support

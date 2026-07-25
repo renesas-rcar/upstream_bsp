@@ -1,5 +1,13 @@
 # Empty line below is needed
 
+# from old 'handled': e22c6bae0ea6
+da92eda205d2a media: rcar-vin: Fix clock control flow
+# from old 'handled': e88f4e52ad53
+58369eab707d7 v4l: vsp1: Add write back support
+# This patch is too simple, e.g. wrap arounds not handled. Check action item in periject
+8c0da341f5d03 memory: renesas-rpc-if: Use burst read operation
+# Test and debug code
+d389e4f01a8e0 mmc: renesas_sdhi: Add PIO mode support
 # This patch as clearly marked as a development debug patch, its only function is to prinkt when an interrupt handles, no use upstream
 # from old 'ignored: 2058a7e8eddc
 fb71265347a65 media: rcar-vin: Add overflow debug message option
