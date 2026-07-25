@@ -213,13 +213,7 @@ eb950a5a2f32e dt-bindings: memory-controllers: Document R-Car X5H support
 8590e8b5b6fb2 mmc: renesas_sdhi: host: Change to get, set rate from SD clock when support clk-scmi
 3d0806643a3e9 mmc: renesas_sdhi: Enable clock via core clock
 decb1ca915d37 firmware: arm_scmi: mailbox: increase max_msg_size for R-Car X5H
-5688a905874e6 hwmon: (scmi) Enable sensors to assure they can be read
 55caf7ed87b53 arm64: dts: renesas: r8a78000: Add thermal support
-53ac868411baf dma: contiguous: Reserve default CMA heap
-e4ff3e509f69e dma: contiguous: Register reusable CMA regions at boot
-840eda0f852c7 dma-buf: heaps: cma: Create CMA heap for each CMA reserved region
-0ee91a08474ee dma-buf: heaps: Parameterize heap name in __add_cma_heap()
-9fbd838c71e10 dma-buf: heaps: cma: Register list of CMA regions at boot
 f421d2b53ef75 arm64: dts: renesas: r8a78000: Reorder USB node definitions
 41d5ef4bf3746 can: rcar_canxl: Add suspend/resume support
 0693624151171 can: rcar_canxl: Convert to DEFINE_SIMPLE_DEV_PM_OPS()
@@ -296,12 +290,6 @@ b1488555a660f Update initialization sequence for the latest material
 c25a7f594e000 phy: renesas: Add Multi-Protocol PHY driver for R-Car X5H
 b5fa04c81aa12 net: phy: dp83869: Fix STRAP_OPMODE bitmask per datasheet
 c0dadf8592bb8 firmware: arm_scmi: Move vendor protocol to vendors/renesas/ and add vendor_id
-b2ccac693b0e3 firmware: arm_scmi: Make clock rates allocation dynamic
-f88d70e1768e2 firmware: arm_scmi: Drop unused clock rate interfaces
-b84575e384a62 clk: scmi: Use new simplified per-clock rate properties
-691b6024bc642 firmware: arm_scmi: Simplify clock rates exposed interface
-1e72474600601 clk: scmi: Use new determine_rate clock operation
-ce7fb05c36545 firmware: arm_scmi: Add clock determine_rate operation
 078e21e273e57 firmware: arm_scmi: Vendor-backed reset status for R-Car X5H
 fd697e5c5c250 firmware: arm_scmi: Add vendor protocol support for R-Car X5H
 52da310ec03fa reset: scmi: Add reset status support for R-Car X5H
