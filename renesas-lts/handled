@@ -1,5 +1,29 @@
 # Empty line below is needed
 
+# upstream: 4f5f8baf73411d799f3a51b73190ebecf522eb83 dma-buf: heaps: cma: Create CMA heap for each CMA reserved region
+840eda0f852c7 dma-buf: heaps: cma: Create CMA heap for each CMA reserved region
+# upstream: 2e757f71a5ab861478204e2907bb373ccb3ca087 firmware: arm_scmi: Drop unused clock rate interfaces
+f88d70e1768e2 firmware: arm_scmi: Drop unused clock rate interfaces
+# upstream: 72804d1631b3688014e06065b9f95885ba3e08b6 hwmon: (scmi) Enable sensors to assure they can be read
+5688a905874e6 hwmon: (scmi) Enable sensors to assure they can be read
+# upstream: 8f1fc1bf1a3d5a61f7465435591a439c1e4671f2 dma: contiguous: Reserve default CMA heap
+53ac868411baf dma: contiguous: Reserve default CMA heap
+# upstream: 84a593066a85e6fdfb7b71f74400ed6bb5e0c3fa dma: contiguous: Register reusable CMA regions at boot
+e4ff3e509f69e dma: contiguous: Register reusable CMA regions at boot
+# upstream: 86e59cc5069700361041aa5bf536a8a66be6b9ec dma-buf: heaps: Parameterize heap name in __add_cma_heap()
+0ee91a08474ee dma-buf: heaps: Parameterize heap name in __add_cma_heap()
+# upstream: 8b5690d5c942a80535f095c8965028262d4ab0f7 dma-buf: heaps: cma: Register list of CMA regions at boot
+9fbd838c71e10 dma-buf: heaps: cma: Register list of CMA regions at boot
+# upstream: 62ba967595e0b2599768f886851ba5e0d4bfb55b firmware: arm_scmi: Make clock rates allocation dynamic
+b2ccac693b0e3 firmware: arm_scmi: Make clock rates allocation dynamic
+# upstream: cdcd2fc94936f78752e8e4829b1dc9962f0c2383 clk: scmi: Use new simplified per-clock rate properties
+b84575e384a62 clk: scmi: Use new simplified per-clock rate properties
+# upstream: 0d76f62613cafecb7d326a5a45619024fa7e6e8e firmware: arm_scmi: Simplify clock rates exposed interface
+691b6024bc642 firmware: arm_scmi: Simplify clock rates exposed interface
+# upstream: af86c99170b771a3c763be38b01dc519501e907b clk: scmi: Use new determine_rate clock operation
+1e72474600601 clk: scmi: Use new determine_rate clock operation
+# upstream: ecde921eb46022acbdbfff2ad4e4c6e6d0493430 firmware: arm_scmi: Add clock determine_rate operation
+ce7fb05c36545 firmware: arm_scmi: Add clock determine_rate operation
 # Alpha blending is already supported upstream.
 ebf55eda72b8d v4l: vsp1: Add pixel alpha blending supoprt
 # Not needed. HW allows 1 cycle, it will just output HIGH only. Confirmed by Shimoda-san
