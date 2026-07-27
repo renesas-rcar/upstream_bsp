@@ -234,9 +234,7 @@ ca14d0ada85ac can: rcar_canfd: Register each IRQ number for each channel on R-Ca
 6b9990f578a43 canfd: add scmi clk support and temporarily skip PM-Reset
 530d6950eaa9f can: rcar_canfd: Add support for X5H SoC
 5e2007803b669 arm64: dts: renesas: remove EEPROM device from i2c0
-e2b9c98f44510 i2c: rcar: fallback to DT clock rate
 08edefda03318 arm64: dts: r8a78000: add scmi clock and reset for I2C
-c050a71a66d21 i2c: rcar: add compatible string to support R-Car X5H of I2C module
 04aec4b7e48b8 serial: sh-sci: Hardcode fck rate with SCP fixup for R-Car Gen5
 7e8fec9315ad4 net: renesas: rswitch3: Restore PTP timer when resumming
 c78304415e503 net: ethernet: renesas: rcar_gen4_ptp: Add hardware reinit support on resume
@@ -322,7 +320,6 @@ e01ad8b50eb2e dt-bindings: PCI: renesas: Add R-Car Gen5 PCIe 4.0 Host
 742f789dd8b63 dt-bindings: hwlock: rcar: Add binding documentation for R-Car hardware spinlock
 80f31738655be dt-bindings: rtc: rcar: Add R-Car Gen5 RTC support
 064604aa92fb0 dt-bindings: window watchdog: Document R-Car X5H support
-037e9778e28e1 dt-bindings: i2c: rcar-i2c: Document R-Car X5H support
 568551619e42e dt-bindings: can: renesas,rcar-canfd: Document R-Car X5H support
 2ebeba3752c23 dt-bindings: spi: renesas,sh-msiof: Add support for R-Car X5H
 16a877ca49134 dt-bindings: spi: renesas,sh-msiof: Add description of clock handling
