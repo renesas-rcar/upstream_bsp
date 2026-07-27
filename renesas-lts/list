@@ -1,3 +1,17 @@
+v6.19     / dma-buf: heaps: cma: Create CMA heap for each CMA reserved region
+v6.19     / doc: dma-buf: List the heaps by name
+v6.19     / Documentation: dma-buf: heaps: Add naming guidelines
+v6.19     / hwmon: (scmi) Enable sensors to assure they can be read
+v6.19     / dma: contiguous: Reserve default CMA heap
+v6.19     / dma: contiguous: Register reusable CMA regions at boot
+v6.19     / dma-buf: heaps: cma: Register list of CMA regions at boot
+Local     / mmc: renesas_sdhi: Add OF entry for RZ/G2E SoC
+Local     / mmc: renesas_sdhi: Add OF entry for RZ/G2N SoC
+Local     / mmc: renesas_sdhi: add R-Car M3Le compatibility string
+v6.19     / mmc: renesas_sdhi: Add suspend/resume hooks
+v6.19     / mmc: renesas_sdhi: Switch to SYSTEM_SLEEP_PM_OPS()/RUNTIME_PM_OPS() and pm_ptr()
+v6.19     / mmc: renesas_sdhi: enable bigger data ports where available
+v6.19     / mmc: renesas_sdhi: Deassert the reset signal on probe
 Local     / firmware: arm_scmi: Rename struct scmi_revision_info to scmi_base_info
 Local     / arm64: dts: renesas: r8a78000: Enable application CPU cores via PSCI
 v7.0      / can: rcar_canfd: Add support for FD-Only mode
