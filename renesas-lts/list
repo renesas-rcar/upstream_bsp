@@ -1,3 +1,28 @@
+v6.19     / dma-buf: heaps: cma: Create CMA heap for each CMA reserved region
+v6.19     / doc: dma-buf: List the heaps by name
+v6.19     / Documentation: dma-buf: heaps: Add naming guidelines
+v6.17     / dma-buf: heaps: Give default CMA heap a fixed name
+v6.17     / Documentation: dma-buf: heaps: Fix code markup
+v6.15     / Documentation: dma-buf: heaps: Add heap name definitions
+v6.19     / hwmon: (scmi) Enable sensors to assure they can be read
+v6.19     / dma: contiguous: Reserve default CMA heap
+v6.19     / dma: contiguous: Register reusable CMA regions at boot
+v6.16     / dma-contiguous: hornor the cma address limit setup by user
+v6.17     / dma-buf: heaps: Parameterize heap name in __add_cma_heap()
+v6.13     / dma-buf/heaps: replace kmap_atomic with kmap_local_page
+v6.13     / dma-buf: heaps: Add __init to CMA and system heap module_init functions
+v6.19     / dma-buf: heaps: cma: Register list of CMA regions at boot
+v6.16     / drm/dp: Pull drm_dp_link_power_up/down from Tegra to common drm_dp_helper
+v6.16     / drm/display: dp: use new DCPD access helpers
+v6.16     / drm/display: dp: implement new access helpers
+v6.15     / drm/dp: Add helper to set LTTPRs in transparent mode
+v6.15     / drm/display/dp: Define function to setup Extended wake time
+v6.15     / drm/dp: Add the DPCD register required for Extended wake timeout
+v6.14     / drm/dp: extract drm_dp_dpcd_clear_payload()
+v6.14     / drm/dp: extract drm_dp_dpcd_write_payload()
+v6.14     / drm/dp: extract drm_dp_dpcd_poll_act_handled()
+v6.19     / dma-buf: heaps: cma: Register list of CMA regions at boot
+Local     / dt-bindings: usb: dwc3: Add snps,host-vbus-glitches-quirk avoid vbus glitch
 v7.1      / spi: sh-msiof: fix controller deregistration
 v6.17     / spi: sh-msiof: Convert to DEFINE_SIMPLE_DEV_PM_OPS()
 v7.0      / can: rcar_canfd: Add support for FD-Only mode
