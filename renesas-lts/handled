@@ -8,13 +8,13 @@
 fe89d0e595d39 dt-bindings: mailbox: Document renesas mailbox
 # upstream: 6ac1d604737279313bbd55797460204f21044327 dt-bindings: serial: sh-sci: Document r8a78000 bindings
 df896b28190f2 dt-bindings: serial: sh-sci: Document x5h bindings
-# upstream: 502dc3d349873d6a99c4b5ec7627ac1b73bb6a40 arm64: dts: renesas: ironhide: Enable to use SCMI
+# upstream: 1b6a230750ee66b9ca8cb5675cc7eca802657570 arm64: dts: renesas: ironhide: Enable to use SCMI
 fa94a4d4e84e9 arm64: dts: renesas: ironhide: enable mailbox
-# upstream: 3fea67c230dfd8d92b63b4aec3dc7754e58e582b arm64: dts: renesas: r8a78000: Add MFIS, MFIS-SCP, and transport nodes
+# upstream: a3904c5a6e59e3454c268a43da800cd46fa36523 arm64: dts: renesas: r8a78000: Add MFIS, MFIS-SCP, and transport nodes
 ae5f8e2d83e21 arm64: dts: renesas: r8a78000: Add MFIS-Lock device node
-# upstream: 3fea67c230dfd8d92b63b4aec3dc7754e58e582b arm64: dts: renesas: r8a78000: Add MFIS, MFIS-SCP, and transport nodes
+# upstream: a3904c5a6e59e3454c268a43da800cd46fa36523 arm64: dts: renesas: r8a78000: Add MFIS, MFIS-SCP, and transport nodes
 dce8b7274be7c arm64: dts: renesas: r8a78000: Add RPMsg definitions
-# upstream: f089dc131fbe04b07ad515b645d63db3125b6030 arm64: dts: renesas: Add R8A78000 X5H DTs
+# upstream: 63500d12cf76d003fe7adb396360f558c2889e50 arm64: dts: renesas: Add R8A78000 SoC support
 f546734c9d4e3 arm64: dts: renesas: Add R8A78000 X5H DTs
 # upstream: 4f5f8baf73411d799f3a51b73190ebecf522eb83 dma-buf: heaps: cma: Create CMA heap for each CMA reserved region
 840eda0f852c7 dma-buf: heaps: cma: Create CMA heap for each CMA reserved region
@@ -42,14 +42,8 @@ b84575e384a62 clk: scmi: Use new simplified per-clock rate properties
 ce7fb05c36545 firmware: arm_scmi: Add clock determine_rate operation
 # Alpha blending is already supported upstream.
 ebf55eda72b8d v4l: vsp1: Add pixel alpha blending supoprt
-# Not needed. HW allows 1 cycle, it will just output HIGH only. Confirmed by Shimoda-san
-3515a2d8ebfe6 pwm: rcar: Add a judgment of the period out of range
-# This is already handled correctly in upstream. No need to use clk_set_phase()
-d2f90c58772ed mmc: renesas_sdhi: Fix SDnCKCR setting in 4TAP SoC
 # upstream: 083693214f28b979b50cfcd689010725ca579eb8
 1dc845ad526f7 media: rcar-vin: Add interrupt for V4L2_FIELD_ALTERNATE format
-# upstream: 1f08884d31dd1aa8eaf3b1cdf79fd6ba93e81d14
-12375c3df1ad9 rcar-vin: do not allow changing scaling and composing while streaming
 # upstream: 09cdda7a60f45784cebddf1fa2109d6279f9890b
 378413ca94ec2 drm/dp: Pull drm_dp_link_power_up/down from Tegra to common drm_dp_helper
 # upstream: bf9e333ec0d54f7428d9192ad403c3cb523584c7
