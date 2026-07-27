@@ -1,5 +1,11 @@
 # Empty line below is needed
 
+# Not needed. HW allows 1 cycle, it will just output HIGH only. Confirmed by Shimoda-san
+3515a2d8ebfe6 pwm: rcar: Add a judgment of the period out of range
+# This is already handled correctly in upstream. No need to use clk_set_phase()
+d2f90c58772ed mmc: renesas_sdhi: Fix SDnCKCR setting in 4TAP SoC
+# This patch was dropped in upstream as the feature is needed for digital zoom
+12375c3df1ad9 rcar-vin: do not allow changing scaling and composing while streaming
 # Development debug not intended for upstream
 cc92301e949c6 media: rcar-vin: Add w/a to measure capture fps in both IRQ callback and V4L2 driver
 # Missing information on "REN camera"
