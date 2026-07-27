@@ -135,12 +135,6 @@ f018e70966742 rtc: rcar: Add support for interrupt requests generator and output
 d237466d40574 arm64: dts: renesas: ironhide-coresight: Add Coresight support
 35bf27d8ee50b arm64: defconfig: Enable ARM-SMMU-V3 as defconfig
 491e6f6c41851 iommu/arm-smmu-v3: Add suspend/resume support for Renesas RCar Gen5
-a8b391b6a3651 dmaengine: rcar-dmac: Support HW descriptor 43 bits mode
-6dd61b9a71617 dmaengine: rcar-dmac: Enable channel 0 when using SMMU
-6a44573397f60 dmaengine: rcar-dmac: Add support for X5H SoC
-068b6b7a4bc55 dmaengine: rcar-dmac: Add repeat mode support
-b7a9462dc6220 dmaengine: rcar-dmac: Add bus rate control support for R-Car Gen4
-e4ea07d0e1c04 dmaengine: rcar-dmac: Fix array-bounds warning refer chcr_ts[]
 b5ebfbe9afee0 hwspinlock: rcar: Add support for R-Car X5H SoC
 c9ee6f8da9258 hwspinlock: rcar: Add support for R-Car Gen3 Hardware Spinlock
 0e019db4a1c22 arm64: dts: renesas: add scmi clock for RWDT driver
@@ -325,8 +319,6 @@ e01ad8b50eb2e dt-bindings: PCI: renesas: Add R-Car Gen5 PCIe 4.0 Host
 16a877ca49134 dt-bindings: spi: renesas,sh-msiof: Add description of clock handling
 565a1ef42fe2b dt-bindings: timer: renesas, cmt: Document R-Car X5H TMU support
 cb963104516ee dt-bindings: timer: renesas, cmt: Document R-Car X5H CMT support
-7da2c066c191c dt-bindings: renesas,rcar-dmac: Add R-Car X5H SoC support
-3349a46d762aa dt-bindings: renesas,rcar-dmac: Add bus rate control support for R-Car Gen4
 83da77cedc91a dt-bindings: pwm: tpu: Add support for X5H
 29feba9b974d6 dt-bindings: pwm: Add support for X5H
 24860955c72ec dt-bindings: watchdog: Document R-Car X5H support
