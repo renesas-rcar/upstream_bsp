@@ -1,5 +1,7 @@
 # Empty line below is needed
 
+# Rejected: https://patchwork.kernel.org/project/linux-dmaengine/patch/20170728131613.122505-1-arnd@arndb.de/
+e4ea07d0e1c04 dmaengine: rcar-dmac: Fix array-bounds warning refer chcr_ts[]
 # Workaround for broken SCMI firmware? Such a fallback is not upstreamable
 e2b9c98f44510 i2c: rcar: fallback to DT clock rate
 # Not needed. HW allows 1 cycle, it will just output HIGH only. Confirmed by Shimoda-san
