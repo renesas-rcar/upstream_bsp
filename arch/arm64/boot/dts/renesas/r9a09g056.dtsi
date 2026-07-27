@@ -283,6 +283,7 @@
 			gpio-ranges = <&pinctrl 0 0 96>;
 			power-domains = <&cpg>;
 			resets = <&cpg 0xa5>, <&cpg 0xa6>;
+			reset-names = "main", "error";
 		};
 
 		cpg: clock-controller@10420000 {
@@ -296,7 +297,7 @@
 		};
 
 		sys: system-controller@10430000 {
-			compatible = "renesas,r9a09g056-sys", "syscon";
+			compatible = "renesas,r9a09g056-sys";
 			reg = <0 0x10430000 0 0x10000>;
 			clocks = <&cpg CPG_CORE R9A09G056_SYS_0_PCLK>;
 			resets = <&cpg 0x30>;
