@@ -1,3 +1,20 @@
+69e19cdfb2cd3 drivers: usb: dwc3: renesas: Reset the controller before hardware initialization
+310014c756cdc arm64: defconfig: Enable virtio-scmi and virtio-i2c
+639c7136f744f arm64: dts: renesas: perceptor: Temporarily disable some drivers in SDKv4.37.0
+b2183b68ddc8a arm64: dts: renesas: perceptor-uio: Add UIO variant without power-domains
+610254cb39547 arm64: dts: renesas: perceptor-uio: Add UIO device support for R8J78070 (R-Car X5HAIH)
+d7f9e0f6feafb arm64: dts: renesas: Add R8J78070 Perceptor board code
+54573ede44e11 arm64: dts: renesas: Add R8J78070 X5HAIH(MDP) DTs
+5df450e29a251 clk: scmi: return 0 instead of -EACCES for restricted clocks on R-Car X5H only
+58e9d9b4f85a5 arm64: defconfig: Disable unused CONFIG_RCAR_SCP_FIXUP
+c1f36d01f9924 firmware: arm_scmi: Remove SCP clock rate fixup workaround
+5cb8af836a786 serial: sh-sci: Use hardcored fck rate as fallback only
+9046028a16589 media: renesas: Update to fix style issues reported by checkpatch
+dfb7a0164bb77 arm64: defconfig: Enable NUMA support
+5aedfba433ea5 uio: uio_pdrv_genirq: Fix coding style issues
+ea9ddc30c75ee PCI: dwc: rcar-gen5: Remove rcar_gen5_pcie6_set_max_link_width() function from PCIe6 driver
+e479c887e49d8 net: ethernet: renesas: rswitch3: restart all TX queues on open
+0d57e837518ed kconfig: Enable GCC_ASM_GOTO_OUTPUT_BROKEN on GCC 15
 0bcb5baa8c908 clk: Fix clk_set_rate bail-early to respect CLK_GET_RATE_NOCACHE flag
 9bfd72f259bdb media: renesas: rcar-vin: Add VIN's parent clock
 4c7d36cb005cf arm64: dts: renesas: r8a78000: Add VIN's parent clock

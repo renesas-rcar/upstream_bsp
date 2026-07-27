@@ -14,7 +14,7 @@ fa94a4d4e84e9 arm64: dts: renesas: ironhide: enable mailbox
 ae5f8e2d83e21 arm64: dts: renesas: r8a78000: Add MFIS-Lock device node
 # upstream: a3904c5a6e59e3454c268a43da800cd46fa36523 arm64: dts: renesas: r8a78000: Add MFIS, MFIS-SCP, and transport nodes
 dce8b7274be7c arm64: dts: renesas: r8a78000: Add RPMsg definitions
-# upstream: 3d74e3fe41fdf4ceb8a454115f173aff173ea346 arm64: dts: renesas: Add R8A78000 X5H DTs
+# upstream: 63500d12cf76d003fe7adb396360f558c2889e50 arm64: dts: renesas: Add R8A78000 SoC support
 f546734c9d4e3 arm64: dts: renesas: Add R8A78000 X5H DTs
 # upstream: 4f5f8baf73411d799f3a51b73190ebecf522eb83 dma-buf: heaps: cma: Create CMA heap for each CMA reserved region
 840eda0f852c7 dma-buf: heaps: cma: Create CMA heap for each CMA reserved region
@@ -28,14 +28,8 @@ e4ff3e509f69e dma: contiguous: Register reusable CMA regions at boot
 0ee91a08474ee dma-buf: heaps: Parameterize heap name in __add_cma_heap()
 # upstream: 8b5690d5c942a80535f095c8965028262d4ab0f7 dma-buf: heaps: cma: Register list of CMA regions at boot
 9fbd838c71e10 dma-buf: heaps: cma: Register list of CMA regions at boot
-# This is already handled correctly in upstream. No need to use clk_set_phase()
-d2f90c58772ed mmc: renesas_sdhi: Fix SDnCKCR setting in 4TAP SoC
-# upstream: 083693214f28b979b50cfcd689010725ca579eb8
-1dc845ad526f7 media: rcar-vin: Add interrupt for V4L2_FIELD_ALTERNATE format
 # upstream: 09cdda7a60f45784cebddf1fa2109d6279f9890b
 378413ca94ec2 drm/dp: Pull drm_dp_link_power_up/down from Tegra to common drm_dp_helper
-# upstream: bf9e333ec0d54f7428d9192ad403c3cb523584c7
-66e5c9ca67e36 arm64: defconfig: Enable additional support for Renesas platforms
 # upstream: 3a34330f6339641b7f5b76b066385f56c114490f
 f569c6d75cc4b can: rcar_canfd: Add suspend/resume support
 # upstream: 161266c754e71d979be994967984c9fdcab74090
