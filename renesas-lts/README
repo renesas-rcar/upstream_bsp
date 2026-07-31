@@ -44,19 +44,32 @@
 	We have 2 type of Renesas LTS Kernels Tags
 
 	tag
-		(A) renesas-dev-v6.12.xxx
-		(B) renesas-lts-v6.12.xxx
-		            ^^^
+		(A) renesas-dev-v6.12.85
+		    renesas-dev-v6.12.90
+		    renesas-dev-v6.12.95
+		    ...
+		(B) renesas-lts-v6.12.85
+		    renesas-lts-v6.12.90
+		    renesas-lts-v6.12.95
+		    ...
 
 	The feature of (A)/(B) are same as "Branch". See above.
 	These tags are added when the last version digit was 0 or 5.
+	These tree are well-tested by Renesas Test team since Aug 2026
+	(The tags before that were not).
+	# You can see the tag which last version digit was not 0 or 5.
+	# These are mile stone for Android or other branch.
 	If you *not* update frequently, we recommend to use "Tag", instead of "Branch".
 
 	[Note]
 	You can't check/fetch above tag by normal ways.  You need to do...
 
-		> git ls-remote --tags renesas-rcar
+		> git ls-remote --tags ${upstream_bsp}
 		> git fetch renesas-rcar refs/tags/renesas-xxx-v6.1.xxx
+
+	or
+
+		> git fetch --tags --force ${upstream_bsp}
 
 * renesas_defconfig
 
@@ -67,15 +80,15 @@
 
 	You can find CVE info at
 
-		linux/renesas-lts/cve-all
-		linux/renesas-lts/cve-affected
-		linux/renesas-lts/cve-no-affect
+		linux/renesas-lts/cve/all
+		linux/renesas-lts/cve/affected
+		linux/renesas-lts/cve/no-affect
 
 * Backported commit
 
 	You can find what commits were backported from latest Linux Kernel at
 
-		linux/renesas-lts/list
+		linux/renesas-lts/backported
 
 * Backport request
 
