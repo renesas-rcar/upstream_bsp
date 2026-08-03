@@ -64,8 +64,12 @@
 	[Note]
 	You can't check/fetch above tag by normal ways.  You need to do...
 
-		> git ls-remote --tags renesas-rcar
+		> git ls-remote --tags ${upstream_bsp}
 		> git fetch renesas-rcar refs/tags/renesas-xxx-v6.1.xxx
+
+	or
+
+		> git fetch --tags --force ${upstream_bsp}
 
 * renesas_defconfig
 
