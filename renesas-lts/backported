@@ -11,7 +11,6 @@ v6.16     / dma-contiguous: hornor the cma address limit setup by user
 v6.17     / dma-buf: heaps: Parameterize heap name in __add_cma_heap()
 v6.13     / dma-buf/heaps: replace kmap_atomic with kmap_local_page
 v6.13     / dma-buf: heaps: Add __init to CMA and system heap module_init functions
-v6.19     / dma-buf: heaps: cma: Register list of CMA regions at boot
 v6.16     / drm/dp: Pull drm_dp_link_power_up/down from Tegra to common drm_dp_helper
 v6.16     / drm/display: dp: use new DCPD access helpers
 v6.16     / drm/display: dp: implement new access helpers
@@ -22,7 +21,6 @@ v6.14     / drm/dp: extract drm_dp_dpcd_clear_payload()
 v6.14     / drm/dp: extract drm_dp_dpcd_write_payload()
 v6.14     / drm/dp: extract drm_dp_dpcd_poll_act_handled()
 v6.19     / dma-buf: heaps: cma: Register list of CMA regions at boot
-Local     / dt-bindings: usb: dwc3: Add snps,host-vbus-glitches-quirk avoid vbus glitch
 v7.1      / spi: sh-msiof: fix controller deregistration
 v6.17     / spi: sh-msiof: Convert to DEFINE_SIMPLE_DEV_PM_OPS()
 v7.0      / can: rcar_canfd: Add support for FD-Only mode
