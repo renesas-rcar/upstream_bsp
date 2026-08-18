@@ -77,13 +77,6 @@ static struct pkvm_x86_ops pkvm_x86_ops __read_mostly;
 static int __pkvm_vcpu_free(struct pkvm_vm *pkvm_vm, int vcpu_handle,
 			    struct pkvm_memcache *mc);
 
-static int pkvm_enable_virtualization_cpu(void)
-{
-	kvm_user_return_msr_cpu_online();
-
-	return kvm_x86_call(enable_virtualization_cpu)();
-}
-
 static int allocate_pkvm_vm_handle(struct pkvm_vm *pkvm_vm)
 {
 	struct pkvm_vm_ref *pkvm_vm_ref;
@@ -98,6 +91,7 @@ static int allocate_pkvm_vm_handle(struct pkvm_vm *pkvm_vm)
 	}
 	__set_bit(idx, pkvm_vms_bitmap);
 
+	pkvm_vm->kvm.arch.pkvm.handle = idx;
 	pkvm_vm_ref = &pkvm_vms_ref[idx];
 	pkvm_vm_ref->pkvm_vm = pkvm_vm;
 	atomic_set(&pkvm_vm_ref->refcount, 1);
@@ -184,8 +178,6 @@ static int pkvm_vm_init(phys_addr_t host_kvm_pa, phys_addr_t pkvm_vm_pa,
 	ret = allocate_pkvm_vm_handle(pkvm_vm);
 	if (ret < 0)
 		goto mmu_destroy;
-
-	kvm->arch.pkvm.handle = ret;
 
 	ret = kvm_x86_call(vm_init)(kvm);
 	if (ret)
@@ -366,12 +358,20 @@ unshare_apic:
 	return ret;
 }
 
+/*
+ * TODO: simplify the code by consolidating pkvm_vm_finalize() and
+ * postponed_per_vm_setup(). I.e. instead of finalizing the VM before
+ * running the first vCPU and using a dedicated hypercall for that,
+ * finalize it when creating the first vCPU, same way as the setup in
+ * postponed_per_vm_setup(), and then combine postponed_per_vm_setup()
+ * into pkvm_vm_finalize().
+ */
 static int pkvm_vm_finalize(int vm_handle)
 {
 	struct kvm *kvm, *shared_kvm;
 	struct pkvm_vm *pkvm_vm;
 	struct kvm_vcpu *vcpu;
-	u64 pvmfw_load_addr;
+	gpa_t pvmfw_load_addr;
 	int ret = 0, i;
 
 	pkvm_vm = pkvm_get_vm(vm_handle);
@@ -395,7 +395,11 @@ static int pkvm_vm_finalize(int vm_handle)
 
 	pvmfw_load_addr = READ_ONCE(shared_kvm->arch.pkvm.pvmfw_load_addr);
 	if (pvmfw_load_addr != INVALID_GPA) {
-		if (!pvmfw_present || U64_MAX - pvmfw_load_addr < pvmfw_size) {
+		gpa_t pvmfw_end = pvmfw_load_addr + pvmfw_size;
+
+		if (!pvmfw_present || pvmfw_end < pvmfw_load_addr ||
+		    pvmfw_end > pkvm_pgtable_max_size(&pkvm_vm->mmu) ||
+		    pvmfw_end > SZ_4G) {
 			ret = -EINVAL;
 			goto unlock;
 		}
@@ -414,7 +418,8 @@ static int pkvm_vm_finalize(int vm_handle)
 		}
 	}
 
-	kvm->arch.pkvm.finalized = true;
+	/* Pairs with smp_load_acquire() in pkvm_host_donate_guest(). */
+	smp_store_release(&kvm->arch.pkvm.finalized, true);
 	shared_kvm->arch.pkvm.finalized = true;
 unlock:
 	pkvm_spin_unlock(&pkvm_vm->lock);
@@ -483,15 +488,35 @@ static void pkvm_vcpu_reset(struct kvm_vcpu *vcpu, bool init_event)
 	}
 }
 
-static void postponed_per_vm_setup(struct kvm *kvm)
+static int postponed_per_vm_setup(struct kvm *kvm)
 {
 	struct pkvm_vm *pkvm_vm = to_pkvm(kvm);
-	struct kvm *shared_kvm;
+	struct kvm *shared_kvm = pkvm_vm->shared_kvm;
+	enum kvm_irqchip_mode irqchip_mode;
+	u32 max_vcpu_ids, bsp_vcpu_id;
 	u64 apic_bus_cycle_ns;
 
-	pkvm_spin_lock(&pkvm_vm->lock);
+	if (pkvm_vm->postponed_setup_done)
+		return 0;
 
-	shared_kvm = pkvm_vm->shared_kvm;
+	irqchip_mode = READ_ONCE(shared_kvm->arch.irqchip_mode);
+	if (irqchip_mode != KVM_IRQCHIP_NONE &&
+	    irqchip_mode != KVM_IRQCHIP_KERNEL &&
+	    irqchip_mode != KVM_IRQCHIP_SPLIT)
+		return -EINVAL;
+
+	max_vcpu_ids = READ_ONCE(shared_kvm->arch.max_vcpu_ids);
+	if (!max_vcpu_ids || max_vcpu_ids > KVM_MAX_VCPU_IDS)
+		return -EINVAL;
+
+	bsp_vcpu_id = READ_ONCE(shared_kvm->arch.bsp_vcpu_id);
+	if (bsp_vcpu_id >= max_vcpu_ids)
+		return -EINVAL;
+
+	apic_bus_cycle_ns = READ_ONCE(shared_kvm->arch.apic_bus_cycle_ns);
+	if (!apic_bus_cycle_ns)
+		return -EINVAL;
+
 	/*
 	 * The following setup is per VM, not per vCPU, however it cannot be
 	 * done during VM creation, since these values are set by the host VMM
@@ -501,52 +526,67 @@ static void postponed_per_vm_setup(struct kvm *kvm)
 	 * creating vCPUs. So it is ok to assume these host's values here are
 	 * up-to-date.
 	 */
-	if (!kvm->arch.bus_lock_detection_enabled &&
-	    shared_kvm->arch.bus_lock_detection_enabled &&
-	    kvm_caps.has_bus_lock_exit)
-		kvm->arch.bus_lock_detection_enabled = true;
 
-	if (!kvm->arch.notify_vmexit_flags &&
-	    shared_kvm->arch.notify_vmexit_flags &&
-	    kvm_caps.has_notify_vmexit) {
+	kvm->arch.irqchip_mode = irqchip_mode;
+	kvm->arch.max_vcpu_ids = max_vcpu_ids;
+	kvm->arch.bsp_vcpu_id = bsp_vcpu_id;
+	kvm->arch.apic_bus_cycle_ns = apic_bus_cycle_ns;
+
+	if (kvm_caps.has_bus_lock_exit)
+		kvm->arch.bus_lock_detection_enabled =
+			shared_kvm->arch.bus_lock_detection_enabled;
+
+	if (kvm_caps.has_notify_vmexit) {
 		kvm->arch.notify_window = shared_kvm->arch.notify_window;
 		kvm->arch.notify_vmexit_flags = shared_kvm->arch.notify_vmexit_flags;
 	}
 
-	apic_bus_cycle_ns = READ_ONCE(shared_kvm->arch.apic_bus_cycle_ns);
-	if (apic_bus_cycle_ns)
-		kvm->arch.apic_bus_cycle_ns = apic_bus_cycle_ns;
-
 	if (!pkvm_is_protected_vm(kvm))
 		kvm->arch.disabled_exits = shared_kvm->arch.disabled_exits;
 
-	if (!kvm->created_vcpus)
-		kvm->arch.bsp_vcpu_id = shared_kvm->arch.bsp_vcpu_id;
-
-	pkvm_spin_unlock(&pkvm_vm->lock);
+	pkvm_vm->postponed_setup_done = true;
+	return 0;
 }
 
 static int __vcpu_create(struct kvm *kvm, struct kvm_vcpu *vcpu, struct fpstate *fps,
 			 struct kvm_lapic *shared_apic)
 {
 	struct pkvm_vcpu *pkvm_vcpu = to_pkvm_vcpu(vcpu);
-	int ret = kvm_x86_call(vcpu_precreate)(kvm);
 	struct pkvm_vm *pkvm_vm = to_pkvm(kvm);
 	void *unused = (void *)pkvm_vcpu +
 		       PKVM_VCPU_BASE_SIZE +
 		       kvm_vcpu_sz;
 	int cpu = raw_smp_processor_id();
+	int ret;
 
-	if (ret)
+	pkvm_spin_lock(&pkvm_vm->lock);
+
+	ret = postponed_per_vm_setup(kvm);
+	if (ret) {
+		pkvm_spin_unlock(&pkvm_vm->lock);
 		return ret;
+	}
 
-	postponed_per_vm_setup(kvm);
+	ret = kvm_x86_call(vcpu_precreate)(kvm);
+	if (ret) {
+		pkvm_spin_unlock(&pkvm_vm->lock);
+		return ret;
+	}
+
+	pkvm_spin_unlock(&pkvm_vm->lock);
 
 	vcpu->kvm = kvm;
 	/* Set cpu to -1 to indicate it is not loaded on any CPU */
 	vcpu->cpu = -1;
 
-	vcpu->vcpu_id = pkvm_vcpu->shared_vcpu->vcpu_id;
+	vcpu->vcpu_id = READ_ONCE(pkvm_vcpu->shared_vcpu->vcpu_id);
+	if (vcpu->vcpu_id < 0 || vcpu->vcpu_id >= kvm->arch.max_vcpu_ids)
+		return -EINVAL;
+	/*
+	 * TODO: check if there is no existing vCPU with the same vcpu_id.
+	 * See also https://lore.kernel.org/kvm/al6eg7C-2sDBEAFD@google.com/
+	 */
+
 	vcpu->arch.last_vmentry_cpu = -1;
 	vcpu->arch.regs_avail = ~0;
 	vcpu->arch.regs_dirty = ~0;
@@ -799,14 +839,6 @@ static int pkvm_vcpu_load(int vm_handle, int vcpu_handle)
 		 * must be a pkvm bug.
 		 */
 		BUG_ON(pkvm_vcpu != pkvm_get_vcpu(vm_handle, vcpu_handle));
-
-		/*
-		 * Save the PKRU used by the host for the pKVM hypervisor to
-		 * switch with the guest. The XCR0 and XSS are already saved in
-		 * the kvm_host structure which are not changed at the running
-		 * time.
-		 */
-		vcpu->arch.host_pkru = read_pkru();
 
 		this_cpu_write(cur_guest_vcpu, vcpu);
 	} else if (loaded_cpu == cpu) {
@@ -1213,7 +1245,8 @@ static void pkvm_cancel_injection(struct kvm_vcpu *vcpu)
 		 * is not allowed to inject the pVM's software interrupt, and
 		 * the pending pVM's software interrupt (exits during delivering
 		 * a software interrupt) should be injected by the pKVM, thus
-		 * the host cannot cancel such injection.
+		 * the canceled software interrupt should not be handed over to
+		 * the host.
 		 */
 		if (!pkvm_is_protected_vcpu(vcpu) || !vcpu->arch.interrupt.soft) {
 			kvm_queue_interrupt(shared_vcpu, vcpu->arch.interrupt.nr,
@@ -1222,10 +1255,10 @@ static void pkvm_cancel_injection(struct kvm_vcpu *vcpu)
 		}
 	} else if (!pkvm_is_protected_vcpu(vcpu) && vcpu->arch.exception.injected) {
 		/*
-		 * For the pVM, the exception can only be injected and canceled
-		 * by the pkvm hypervisor.
-		 * For the npVM, the exception can be injected and canceled by
-		 * both sides.
+		 * For the pVM, the exception can only be injected by the pKVM
+		 * thus the canceled exception should not be handed over to the
+		 * host.
+		 * For the npVM, the exception can be injected by both sides.
 		 */
 		shared_vcpu->arch.exception = vcpu->arch.exception;
 		kvm_clear_exception_queue(vcpu);
@@ -1303,7 +1336,10 @@ static int pkvm_vcpu_after_set_cpuid(struct kvm_vcpu *vcpu,
 	int new_nent, old_nent, ret;
 	u64 size, aligned_size;
 
-	new_nent = to_pkvm_vcpu(vcpu)->shared_vcpu->arch.cpuid_nent;
+	new_nent = READ_ONCE(to_pkvm_vcpu(vcpu)->shared_vcpu->arch.cpuid_nent);
+	if (new_nent < 0 || new_nent > KVM_MAX_CPUID_ENTRIES)
+		return -EINVAL;
+
 	size = sizeof(struct kvm_cpuid_entry2) * new_nent;
 	aligned_size = PAGE_ALIGN(size);
 	ret = pkvm_host_donate_hyp(cpuid_pa, aligned_size, false);
@@ -2047,9 +2083,6 @@ void pkvm_handle_host_hypercall(struct kvm_vcpu *vcpu)
 	case __pkvm__check_processor_compatibility:
 		ret = kvm_x86_call(check_processor_compatibility)();
 		break;
-	case __pkvm__enable_virtualization_cpu:
-		ret = pkvm_enable_virtualization_cpu();
-		break;
 	case __pkvm__vm_init:
 		ret = pkvm_vm_init(pkvm_host_gpa_to_phys(pkvm_hc_input1(vcpu)),
 				   pkvm_host_gpa_to_phys(pkvm_hc_input2(vcpu)),
@@ -2402,6 +2435,66 @@ int pkvm_walk_each_vm(pkvm_vm_func_t func, void *arg)
 	}
 
 	pkvm_spin_unlock(&pkvm_vms_lock);
+
+	return ret;
+}
+
+static void *admit_host_page(void *arg)
+{
+	struct pkvm_memcache *host_mc = arg;
+	bool share_ro = host_mc->flags & PKVM_MC_DONATE_SHARE_RO;
+	phys_addr_t addr;
+	void *page;
+	int ret;
+
+	if (!host_mc->count || WARN_ON_ONCE(host_mc->head.nr_pages != 1))
+		return NULL;
+
+	/*
+	 * Should donate the page from the host memcache before pop it out
+	 * because pop will read data from this page to get the next head, and
+	 * then will write this data to the host memcache's head. Without
+	 * donating, doing that may leak sensitive data as this page may be a
+	 * private page of a pVM or the hypervisor.
+	 *
+	 * The page is donated uncleared. Consumers of the refilled memcache
+	 * are responsible for zeroing the page before use.
+	 */
+	addr = pkvm_host_gpa_to_phys(host_mc->head.addr);
+	ret = share_ro ? pkvm_host_donate_hyp_share_ro(addr, PAGE_SIZE, false) :
+			 pkvm_host_donate_hyp(addr, PAGE_SIZE, false);
+	if (WARN_ON_ONCE(ret))
+		return NULL;
+
+	page = pop_pkvm_memcache_page(host_mc, pkvm_host_gpa_to_virt);
+	/*
+	 * The head page is already donated so the pop has no reason to fail
+	 * unless there is a code bug.
+	 */
+	BUG_ON(!page);
+
+	return page;
+}
+
+/* Refill our local memcache by popping pages from the one provided by the host. */
+int pkvm_refill_memcache(struct pkvm_memcache *mc, unsigned long min_pages,
+			 struct pkvm_memcache *host_mc)
+{
+	/*
+	 * The host mc is shared and can be modified by the host while popping.
+	 * Copy it to local and use the local one to prevent the host from
+	 * changing it with unexpected values, e.g., the host change the
+	 * host_mc->head.addr to a private page address after addr is donated
+	 * but before popping up, making the pop_pkvm_memcache_page reading
+	 * from the private page and leaking data to the host.
+	 */
+	struct pkvm_memcache tmp_mc = *(volatile typeof(*host_mc) *)host_mc;
+	int ret;
+
+	ret = topup_pkvm_memcache(mc, min_pages, admit_host_page,
+				  pkvm_virt_to_phys, &tmp_mc);
+
+	*(volatile typeof(*host_mc) *)host_mc = tmp_mc;
 
 	return ret;
 }

@@ -10,6 +10,7 @@
 #include <asm/desc.h>
 #include <asm/kvm_para.h>
 #include <asm/pkvm_image.h>
+#include <asm/pkvm_redef.h>
 
 #define PKVM_MEMBLOCK_REGIONS		128
 #define PKVM_STACK_SIZE			SZ_16K
@@ -55,13 +56,14 @@ struct pkvm_mem_info {
 	u64 prot;
 };
 
+#define PKVM_HOST_VM_HANDLE	INT_MAX
+
 #ifdef CONFIG_PKVM_INTEL
 struct clear_ce_data {
 	u64 phys;
 	u8 bus;
 	u8 devfn;
 	u8 ats_qdep;
-	u8 ats_supported: 1;
 };
 
 struct set_lm_ce_data {
@@ -93,13 +95,11 @@ struct pasid_setup_fl_data {
 	u64 fsptptr_gpa;
 	u64 donation_page_gpa;
 	u32 pasid;
-	u32 flags;
 	u16 did;
-	u16 old_did; /* replace_fl */
 	u8 bus;
 	u8 devfn;
 	u8 ats_qdep;
-	u8 ats_supported: 1;
+	u8 force_snoop: 1;
 };
 
 struct pasid_setup_sl_data {
@@ -108,11 +108,9 @@ struct pasid_setup_sl_data {
 	u64 donation_page_gpa;
 	u32 pasid;
 	u16 did;
-	u16 old_did; /* replace_sl */
 	u8 bus;
 	u8 devfn;
 	u8 ats_qdep;
-	u8 ats_supported: 1;
 };
 
 struct pasid_teardown_data {
@@ -121,7 +119,6 @@ struct pasid_teardown_data {
 	u8 bus;
 	u8 devfn;
 	u8 ats_qdep;
-	u8 ats_supported: 1;
 };
 
 struct alloc_domain_data {
@@ -825,90 +822,133 @@ static inline size_t pkvm_guest_initial_fpstate_size(struct kvm *kvm)
 	return PAGE_ALIGN(size);
 }
 
-#ifdef __PKVM_HYP__
+static inline void push_pkvm_memcache(struct pkvm_memcache *mc,
+				      void *addr, size_t size,
+				      phys_addr_t (*to_pa)(void *virt))
+{
+	struct pkvm_page_range *head = addr;
 
-#undef kvm_err
-#undef kvm_info
-#undef kvm_debug
-#undef kvm_debug_ratelimited
-#undef kvm_pr_unimpl
+	if (WARN_ON_ONCE(!PAGE_ALIGNED(addr) || !PAGE_ALIGNED(size)))
+		return;
 
-#ifdef CONFIG_PKVM_X86_DEBUG
+	*head = mc->head;
+	mc->head.addr = to_pa(addr);
+	mc->head.nr_pages = size >> PAGE_SHIFT;
 
-#define kvm_err(fmt, ...) \
-	pr_err("pkvm: " fmt, ## __VA_ARGS__)
-#define kvm_info(fmt, ...) \
-	pr_info("pkvm: " fmt, ## __VA_ARGS__)
-#define kvm_debug(fmt, ...) \
-	pr_debug("pkvm: " fmt, ## __VA_ARGS__)
-#define kvm_debug_ratelimited(fmt, ...) \
-	pr_debug_ratelimited("pkvm: " fmt, ## __VA_ARGS__)
-#define kvm_pr_unimpl(fmt, ...) \
-	pr_err_ratelimited("pkvm: " fmt, ## __VA_ARGS__)
+	mc->count++;
+}
 
-#else /* CONFIG_PKVM_X86_DEBUG */
+static inline struct pkvm_page_range
+pop_pkvm_memcache(struct pkvm_memcache *mc, void *(*to_va)(phys_addr_t phys))
+{
+	struct pkvm_page_range head = { 0 };
 
-#define kvm_err(fmt, ...) do {} while(0)
-#define kvm_info(fmt, ...) do {} while(0)
-#define kvm_debug(fmt, ...) do {} while(0)
-#define kvm_debug_ratelimited(fmt, ...) do {} while(0)
-#define kvm_pr_unimpl(fmt, ...) do {} while(0)
+	if (!mc->count)
+		return head;
 
-#undef WARN_ON
-#undef WARN
-#undef WARN_ON_ONCE
-#undef WARN_ONCE
+	/*
+	 * The popped memory should be at least one page which contains the
+	 * next head.
+	 */
+	if (WARN_ON_ONCE(!mc->head.nr_pages))
+		return head;
 
-#define WARN_ON(condition) ({						\
-	int __ret_warn_on = !!(condition);				\
-	unlikely(__ret_warn_on);					\
-})
+	head = mc->head;
+	mc->head = *(struct pkvm_page_range *)to_va(head.addr);
 
-#define WARN(condition, format...) ({					\
-	int __ret_warn_on = !!(condition);				\
-	no_printk(format);						\
-	unlikely(__ret_warn_on);					\
-})
+	mc->count--;
 
-#define WARN_ON_ONCE(condition) WARN_ON(condition)
-#define WARN_ONCE(condition, format...) WARN(condition, format)
+	return head;
+}
 
-#endif /* CONFIG_PKVM_X86_DEBUG */
+static inline void push_pkvm_memcache_page(struct pkvm_memcache *mc,
+					   void *addr,
+					   phys_addr_t (*to_pa)(void *virt))
+{
+	push_pkvm_memcache(mc, addr, PAGE_SIZE, to_pa);
+}
 
-void __noreturn pkvm_panic(const char *fmt, ...);
+/* For memcaches containing single-page ranges only. */
+static inline void *pop_pkvm_memcache_page(struct pkvm_memcache *mc,
+					   void *(*to_va)(phys_addr_t phys))
+{
+	if (!mc->count)
+		return NULL;
+
+	if (WARN_ON_ONCE(mc->head.nr_pages != 1))
+		return NULL;
+
+	return to_va(pop_pkvm_memcache(mc, to_va).addr);
+}
+
+/* For memcaches containing single-page ranges only. */
+static inline int topup_pkvm_memcache(struct pkvm_memcache *mc,
+				      unsigned long min_pages,
+				      void *(*alloc_pg)(void *arg),
+				      phys_addr_t (*to_pa)(void *virt),
+				      void *arg)
+{
+	while (mc->count < min_pages) {
+		void *p = alloc_pg(arg);
+
+		if (!p)
+			return -ENOMEM;
+
+		push_pkvm_memcache_page(mc, p, to_pa);
+	}
+
+	return 0;
+}
+
+static inline void free_pkvm_memcache(struct pkvm_memcache *mc,
+				      void (*free)(struct pkvm_page_range range,
+						   void *arg),
+				      void *(*to_va)(phys_addr_t phys),
+				      void *arg)
+{
+	while (mc->count)
+		free(pop_pkvm_memcache(mc, to_va), arg);
+}
+
+static inline void init_pkvm_mmu_memcache(struct pkvm_memcache *mc)
+{
+	memset(mc, 0, sizeof(*mc));
+	mc->flags = PKVM_MC_ACCOUNT_PGTABLE_PAGES;
+}
+
+struct pkvm_mapping {
+	struct rb_node node;
+	gfn_t gfn;
+	kvm_pfn_t pfn;
+	gfn_t nr_pages;
+	gfn_t __subtree_last;	/* Internal member for interval tree */
+
+	struct page *pinned_page;
+};
+
+void pkvm_mapping_insert(struct pkvm_mapping *node,
+			 struct rb_root_cached *root);
+void pkvm_mapping_remove(struct pkvm_mapping *node,
+			 struct rb_root_cached *root);
+struct pkvm_mapping *pkvm_mapping_iter_first(struct rb_root_cached *root,
+					     gfn_t start, gfn_t last);
+struct pkvm_mapping *pkvm_mapping_iter_next(struct pkvm_mapping *node,
+					    gfn_t start, gfn_t last);
 
 /*
- * Directly call the panic handler with file/line info. This avoids the use
- * of 'ud2' instructions and associated 'bug_table' metadata parsing, which
- * would unnecessarily increase the TCB and complexity of the hypervisor's
- * emergency recovery path. This is also critical for production (non-debug)
- * environments where hypervisor doesn't have its own kallsyms or access to
- * the host's metadata.
+ * Iterates the interval tree safely, allowing removing __map node from it
+ * while iterating.
+ * Caution: __start and __end are evaluated multiple times.
  */
-#undef BUG
-#define BUG() do { pkvm_panic("\n==================================\n"	\
-			      "pKVM BUG at %s:%u\n"			\
-			      "==================================\n",	\
-			       __FILE__, __LINE__);			\
-			      __builtin_unreachable();			\
-		} while (0)
-
-#undef BUG_ON
-#define BUG_ON(condition) do { if (unlikely(condition)) BUG(); } while (0)
-
-#undef KVM_BUG_ON
-#define KVM_BUG_ON(cond, kvm)						\
-({									\
-	bool __ret = !!(cond);						\
-									\
-	BUG_ON(__ret);							\
-	unlikely(__ret);						\
-})
-
-#undef KVM_BUG
-#define KVM_BUG(cond, kvm, fmt...)		KVM_BUG_ON(cond, kvm)
-
-#endif /* __PKVM_HYP__ */
+#define for_each_pkvm_mapping(__kvm, __start, __end, __map)					\
+	for (struct pkvm_mapping *__tmp = pkvm_mapping_iter_first(&(__kvm)->arch.pkvm.mappings,	\
+								  (__start), (__end) - 1);	\
+	     __tmp && ({									\
+				__map = __tmp;							\
+				__tmp = pkvm_mapping_iter_next(__map, (__start), (__end) - 1);	\
+				true;								\
+		       });									\
+	    )
 
 #else /* !CONFIG_PKVM_X86 */
 

@@ -460,12 +460,6 @@ s32 scx_select_cpu_dfl(struct task_struct *p, s32 prev_cpu, u64 wake_flags,
 	preempt_disable();
 
 	/*
-	 * Check whether @prev_cpu is still within the allowed set. If not,
-	 * we can still try selecting a nearby CPU.
-	 */
-	is_prev_allowed = cpumask_test_cpu(prev_cpu, allowed);
-
-	/*
 	 * Determine the subset of CPUs usable by @p within @cpus_allowed.
 	 */
 	if (allowed != p->cpus_ptr) {
@@ -480,6 +474,12 @@ s32 scx_select_cpu_dfl(struct task_struct *p, s32 prev_cpu, u64 wake_flags,
 			goto out_enable;
 		}
 	}
+
+	/*
+	 * Check whether @prev_cpu is still within the allowed set. If not,
+	 * we can still try selecting a nearby CPU.
+	 */
+	is_prev_allowed = cpumask_test_cpu(prev_cpu, allowed);
 
 	/*
 	 * This is necessary to protect llc_cpus.
@@ -692,8 +692,12 @@ static void update_builtin_idle(int cpu, bool idle)
 {
 	int node = scx_cpu_node_if_enabled(cpu);
 	struct cpumask *idle_cpus = idle_cpumask(node)->cpu;
+	bool allowed = true;
 
-	assign_cpu(cpu, idle_cpus, idle);
+	if (idle)
+		trace_android_vh_scx_cpu_allowed(NULL, cpu, &allowed);
+
+	assign_cpu(cpu, idle_cpus, idle && allowed);
 
 #ifdef CONFIG_SCHED_SMT
 	if (sched_smt_active()) {

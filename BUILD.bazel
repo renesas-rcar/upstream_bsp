@@ -204,6 +204,7 @@ filegroup(
     srcs = [
         # keep sorted
         "gki/aarch64/symbols/allwinner",
+        "gki/aarch64/symbols/asr",
         "gki/aarch64/symbols/db845c",
         "gki/aarch64/symbols/desktop",
         "gki/aarch64/symbols/exynos",
@@ -650,6 +651,7 @@ kernel_abi(
     name = "wonder_aarch64_abi",
     kernel_build = ":wonder_aarch64",
     kernel_modules = [":wonder_ddk_modules"],
+    kmi_symbol_list_add_only = True,
 )
 
 kernel_modules_install(
@@ -985,6 +987,7 @@ kernel_build(
 kernel_abi(
     name = "db845c_abi",
     kernel_build = ":db845c",
+    kmi_symbol_list_add_only = True,
 )
 
 kernel_modules_install(
