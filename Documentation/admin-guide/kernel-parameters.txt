@@ -2802,6 +2802,14 @@
 			[KVM,ARM] Minimum order for each protected VM fault.
 			This range from 0 (default) to 9.
 
+	kvm-arm.psci_mem_protect=
+			[KVM,ARM,EARLY] Control usage of PSCI MEM_PROTECT.
+
+			force: Enforce PSCI MEM_PROTECT handling regardless of
+			advertised PSCI version.
+
+			off: Skip PSCI MEM_PROTECT handling.
+
 	kvm-arm.vgic_v3_group0_trap=
 			[KVM,ARM,EARLY] Trap guest accesses to GICv3 group-0
 			system registers
@@ -4817,6 +4825,12 @@
 
 	pm_debug_messages	[SUSPEND,KNL]
 			Enable suspend/resume debug messages during boot up.
+
+	pm.dpm_watchdog_enabled=
+			[PM] Enable or disable the DPM watchdog.  Requires
+			CONFIG_PM_SLEEP and CONFIG_DPM_WATCHDOG enabled.
+			Format: <bool>
+			Default value is set by CONFIG_DPM_WATCHDOG_ENABLED.
 
 	pnp.debug=1	[PNP]
 			Enable PNP debug messages (depends on the
