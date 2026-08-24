@@ -81,7 +81,6 @@ v6.15     / media: i2c: imx219: remove context around case
 v6.15     / media: i2c: imx219: Scale the pixel rate for analog binning
 v6.15     / media: i2c: imx219: Increase minimum LLP to fix blocky artefacts
 v6.15     / media: i2c: imx219: make HBLANK r/w to allow longer exposures
-v6.15     / media: i2c: imx219: Rename VTS to FRM_LENGTH
 v6.19     / drm/panel: ilitek-ili9881c: Add configuration for 5" Raspberry Pi 720x1280
 v6.19     / drm/panel: ilitek-ili9881c: Turn ILI9881C_COMMAND_INSTR() parameters lowercase
 v6.18     / drm/panel: ilitek-ili9881c: Add Bestar BSD1218-A101KL68 support
