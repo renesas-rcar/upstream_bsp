@@ -1,7 +1,7 @@
 #
 # Video capture (VIN, CSI-2, ISP) drivers
 #
-9046028a16589 media: renesas: Update to fix style issues reported by checkpatch
+25ca7ec5fb8f9 media: renesas: Update to fix style issues reported by checkpatch
 9bfd72f259bdb media: renesas: rcar-vin: Add VIN's parent clock
 bc23821444991 media: renesas: rcar-vin: Add workaround for I/O error to toggle module clock via SCP
 f30498741ab1f media: renesas: rcar-csi2: Add callback support for enable_link
@@ -21,7 +21,6 @@ a48fb184cbf77 media: rcar-vin: Add support for crop function for Gen3 and above
 dc2b76c49b932 media: rcar-isp: Corect start up sequence follow description in HWUM
 e9411b103398b media: rcar-vin: rcar-dma: Fix error state message reports by V4L2 videobuf2 framework
 08473e2d45b9c media: rcar-vin: Add support for R-Car X5H
-8b6658813f574 media: rcar-csi2: Remove v4l2_async_notifier_cleanup in remove function
 
 #
 # Video capture (VIN, CSI-2, ISP) device tree

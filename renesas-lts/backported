@@ -1,3 +1,42 @@
+Local     / ASoC: ak4619: Add suspend and resume callbacks
+Local     / clk: renesas: r8a779g0: Add ZG clocks
+Local     / clk: renesas: rcar-gen4: Tidy up DEF_GEN4_Z()
+v6.19     / clk: renesas: r8a779a0: Add 3DGE module clock
+v6.19     / clk: renesas: r8a779a0: Add ZG Core clock
+v6.19     / dt-bindings: clock: r8a779a0: Add ZG core clock
+v6.19     / clk: renesas: rcar-gen4: Add support for clock dividers in FRQCRB
+v6.15     / clk: renesas: cpg-mssr: Remove obsolete nullify check
+v6.15     / clk: renesas: r8a779h0: Add VSPX clock
+v6.15     / clk: renesas: r8a779h0: Add FCPVX clock
+v6.15     / clk: renesas: r8a779h0: Add ISP core clocks
+v6.15     / clk: renesas: r8a779a0: Add ISP core clocks
+v6.15     / clk: renesas: r8a779a0: Add FCPVX clocks
+v6.13     / clk: renesas: Remove duplicate and trailing empty lines
+v7.2      / clk: renesas: r8a779g0: Add DSC clock
+Local     / media: rppx1: bls: read the raw pattern from the PRE2 acquisition module
+Local     / media: rppx1: describe the MAIN_POST white balance gains block
+Local     / media: rppx1: lin: Add support for gamma sensor linearization
+Local     / media: rppx1: ga: Add support for gamma out correction
+Local     / media: rppx1: lsc: Add support for lens shade correction
+Local     / media: rppx1: ccor: Add support for color correction matrix
+Local     / media: rppx1: bls: Add support for black level compensation
+Local     / media: rppx1: hist: Add support histogram measurement
+Local     / media: rppx1: exm: Add support for exposure measurement
+Local     / media: rppx1: awbg: Add support for white balance gain settings
+Local     / media: rppx1: wbmeas: Add support for white balance measurement
+Local     / media: rcar-isp: Add support for ISPCORE
+Local     / media: rppx1: Add framework to support Dreamchip RPPX1 ISP
+Local     / media: uapi: Add extensible param and stats blocks for RPPX1
+Local     / media: Add RPPX1_PARAMS and RPPX1_STATS meta formats
+Local     / media: uapi: v4l2-isp: Add extensible statistics
+Local     / media: v4l2-isp: Add helpers for stats buffer
+Local     / media: v4l2-isp: Add per-block validation callback
+Local     / media: v4l2-isp: Rename v4l2_isp_params_buffer_size
+v6.19     / media: v4l2-isp: Rename block_info to block_type_info
+Local     / arm64: dts: renesas: sparrow-hawk: Always enable edge connector I2C busses
+v7.2      / media: rcar-vin: Drop min_queued_buffers
+v7.1      / media: renesas: vin: Fix RAW8 (again)
+Local     / PCI: rcar-gen4: Limit Max_Read_Request_Size and Max_Payload_Size to 256 Bytes
 v6.19     / dma-buf: heaps: cma: Create CMA heap for each CMA reserved region
 v6.19     / doc: dma-buf: List the heaps by name
 v6.19     / Documentation: dma-buf: heaps: Add naming guidelines
@@ -339,8 +378,6 @@ v6.14     / dt-bindings: soc: renesas: Document R8A779G3 White Hawk Single
 v6.14     / dt-bindings: soc: renesas: Move R8A779G0 White Hawk up
 v6.15     / dt-bindings: timer: Correct indentation and style in DTS example
 v6.13     / of: property: use new of_graph functions
-v6.13     / of: property: add of_graph_get_next_port_endpoint()
-v6.13     / of: property: add of_graph_get_next_port()
 v6.13     / ASoC: rsnd: check rsnd_adg_clk_enable() return value
 v6.13     / ASoC: Rename "sh" to "renesas"
 v6.14     / arm64: dts: renesas: white-hawk-single: Add R-Car Sound support

@@ -1,18 +1,56 @@
-69e19cdfb2cd3 drivers: usb: dwc3: renesas: Reset the controller before hardware initialization
-310014c756cdc arm64: defconfig: Enable virtio-scmi and virtio-i2c
-639c7136f744f arm64: dts: renesas: perceptor: Temporarily disable some drivers in SDKv4.37.0
-b2183b68ddc8a arm64: dts: renesas: perceptor-uio: Add UIO variant without power-domains
-610254cb39547 arm64: dts: renesas: perceptor-uio: Add UIO device support for R8J78070 (R-Car X5HAIH)
-d7f9e0f6feafb arm64: dts: renesas: Add R8J78070 Perceptor board code
-54573ede44e11 arm64: dts: renesas: Add R8J78070 X5HAIH(MDP) DTs
-5df450e29a251 clk: scmi: return 0 instead of -EACCES for restricted clocks on R-Car X5H only
-58e9d9b4f85a5 arm64: defconfig: Disable unused CONFIG_RCAR_SCP_FIXUP
-c1f36d01f9924 firmware: arm_scmi: Remove SCP clock rate fixup workaround
-5cb8af836a786 serial: sh-sci: Use hardcored fck rate as fallback only
-dfb7a0164bb77 arm64: defconfig: Enable NUMA support
-5aedfba433ea5 uio: uio_pdrv_genirq: Fix coding style issues
-ea9ddc30c75ee PCI: dwc: rcar-gen5: Remove rcar_gen5_pcie6_set_max_link_width() function from PCIe6 driver
-e479c887e49d8 net: ethernet: renesas: rswitch3: restart all TX queues on open
+e1e83b5711610 arm64: dts: renesas: r8j78070-perceptor: Enable RPMsg support
+9fd7508f2a71e arm64: dts: renesas: r8a78000: Add RPMsg over UCIe nodes
+2f4c20cb0215d virtio: ring: Use phys_to_dma() for the physical-address mapping
+7af812a3bc8b7 remoteproc: virtio: Set DMA offset for the vdev carveout
+78721b993adf3 remoteproc: rcar_gen5_rproc: Add polling mode support for devices without IPI
+b5ef0911736fb misc: pci_endpoint_test: Add support for Renesas AI-ACC (r8a78060)
+0b2e48a81dce2 misc: pci_endpoint_test: Support polling the status register
+4b860a3c4e502 arm64: defconfig: Build in the R-Car UCIe host controller
+8410a53208393 arm64: dts: renesas: r8j78070-perceptor: Enable UCIe host controllers
+3d3ae2cd5f443 arm64: dts: renesas: r8a78000: Add UCIe device nodes
+b978ba1c383eb PCI: dwc: ucie-rcar: Hardcode PLL9 clock programming as a workaround
+3358e056524b0 PCI: dwc: ucie-rcar: Add UCIe controller support for R-Car X5H
+f541d10fbb7d6 PCI: dwc: pcie6-designware: Add link_report callback to dw_pcie6_ops
+6f2003f00964b net: ethernet: renesas: rswitch3: Add runtime speed change handling
+5a779b5a47d08 net: renesas: rswitch3: Serialize MDIO accesses to shared MPSM
+dec6d6a973319 net: ethernet: renesas: rswitch3: Add fully reset the switch on resume from deepstop
+7bde26e71da0f net: ethernet: renesas: rtsn: Reattach TSNES during suspend/resume
+1815123f952c5 net: ethernet: renesas: rtsn: Add multi-descriptor frame support
+ceb9b0fd63b9b arm64: dts: renesas: r8a78000: Modify device tree node for RTSN
+2981d5da0220c arm64: dts: renesas: ironhide-common: Synchronize RTSN configuration with native DT
+ae481a27f4686 net: renesas: rswitch3: add RX checksum offload support
+ce2f704734886 drivers: usb: dwc3: renesas: Allow userspace role switch control
+9a45a56f4b003 arm64: dts: renesas: ironhide: Enable USB role switch
+a1f87be4dd3bb arm64: dts: renesas: r8a78000: Enable bypass mode for SMMU
+2bd76b3f660cd iommu/arm-smmu-v3: Add bypass mode for unmatched streams
+c8927bf134db0 drm: renesas: rcar-vcon: Use assigned reserved memory region
+f79532eaf8dc2 arm64: dts: renesas: ironhide-common: Assign CMA region for display
+39f8de648e50e arm64: dts: renesas: ironhide-uio: Disable SMMU for UIO
+6d32268368ebf arm64: dts: renesas: r8a78000: Enable SMMU for display
+1710b7154f4e2 drm: renesas: rcar-vcon: Fix header guard in rcar_dw_dp_fw_3.h
+f2612a4cc98c7 arm64: dts: renesas: r8a78000: Use SCMI clocks for PWM and TPU
+b7b139d6e49d7 arm64: dts: renesas: perceptor: Enable USB device nodes on Perceptor
+466cf3a08362d arm64: dts: renesas: r8a78000: Fix MSIOF clock source for MSIOF4-7
+1c361e8e31d3e arm64: dts: renesas: perceptor: Enable CRC, KCRC, WCRC device nodes on Perceptor
+612e157fae1bb arm64: dts: renesas: perceptor: Enable eMMC device nodes on Perceptor
+555ac1ec40694 PCI: dwc: rcar-gen5: Update to fix style issues from PCIe4 reported by checkpatch
+10926ce02b350 PCI: dwc: rcar-gen5: Update to fix style issues reported by checkpatch
+3338438a9bd3c arm64: dts: renesas: perceptor: Enable RPC, PCIe4, PCIe6, UFS device nodes on Perceptor
+855a8c3519458 drivers: usb: dwc3: renesas: Reset the controller before hardware initialization
+8b71298511136 arm64: defconfig: Enable virtio-scmi and virtio-i2c
+c770e53097e1e arm64: dts: renesas: perceptor: Temporarily disable some drivers in SDKv4.37.0
+039401f4eec13 arm64: dts: renesas: perceptor-uio: Add UIO variant without power-domains
+7cad3a54af33a arm64: dts: renesas: perceptor-uio: Add UIO device support for R8J78070 (R-Car X5HAIH)
+ffaf2b3b03610 arm64: dts: renesas: Add R8J78070 Perceptor board code
+098f6d679b4e3 arm64: dts: renesas: Add R8J78070 X5HAIH(MDP) DTs
+8b105e67da199 clk: scmi: return 0 instead of -EACCES for restricted clocks on R-Car X5H only
+673b87936eec3 arm64: defconfig: Disable unused CONFIG_RCAR_SCP_FIXUP
+3b03e0855d916 firmware: arm_scmi: Remove SCP clock rate fixup workaround
+26079e757c501 serial: sh-sci: Use hardcored fck rate as fallback only
+a9cdcb1835516 arm64: defconfig: Enable NUMA support
+3b087c553af20 uio: uio_pdrv_genirq: Fix coding style issues
+52c2fbc3f36fe PCI: dwc: rcar-gen5: Remove rcar_gen5_pcie6_set_max_link_width() function from PCIe6 driver
+4c9a7a9108b56 net: ethernet: renesas: rswitch3: restart all TX queues on open
 0d57e837518ed kconfig: Enable GCC_ASM_GOTO_OUTPUT_BROKEN on GCC 15
 0bcb5baa8c908 clk: Fix clk_set_rate bail-early to respect CLK_GET_RATE_NOCACHE flag
 835689d9e8489 dt-bindings: display: bridge: Add TI TDP2004 DisplayPort redriver
@@ -116,17 +154,9 @@ edd311e97477e ASoC: renesas: Add R-Car X5H to R-Car Sound Driver
 db39bcc236d8f pwm: tpu: Add compatible string for X5H
 88b937b757c6e pwm: rcar: Add S2R support for R-Car X5H PWM driver
 b983d47b8e8f2 pwm: rcar: Add SCMI clock support for R-Car X5H PWM driver
-e302251e40c3e rtc: rcar: Add SCMI clock support for R-Car X5H RTC Driver
-db17ccea5af44 rtc: rcar: Add additional information for proc interface
-f018e70966742 rtc: rcar: Add support for interrupt requests generator and output pulse control
-1b175469ffe6c rtc: rcar: Update time reading procedure
-83c267fb1952c rtc: rcar: Add compatible string for X5H
-07c2583004656 rtc: Add Renesas R-Car RTC driver
 d237466d40574 arm64: dts: renesas: ironhide-coresight: Add Coresight support
 35bf27d8ee50b arm64: defconfig: Enable ARM-SMMU-V3 as defconfig
 491e6f6c41851 iommu/arm-smmu-v3: Add suspend/resume support for Renesas RCar Gen5
-b5ebfbe9afee0 hwspinlock: rcar: Add support for R-Car X5H SoC
-c9ee6f8da9258 hwspinlock: rcar: Add support for R-Car Gen3 Hardware Spinlock
 0e019db4a1c22 arm64: dts: renesas: add scmi clock for RWDT driver
 57baa7b965bc5 renesas: watchdog: enable clock and support devicetree fallback rate
 7c9883b7f7d9c renesas: watchdog: add compatible string to support R-Car Gen5 Soc.
@@ -301,8 +331,6 @@ f648f715ebf51 dt-bindings: PCI: renesas: Add R-Car Gen5 PCIe 6.0 Host
 e01ad8b50eb2e dt-bindings: PCI: renesas: Add R-Car Gen5 PCIe 4.0 Host
 39084392d5f87 dt-bindings: rsnd: Add r8a78000 support
 6ab3ffd2aed3b dt-bindings: ufs: renesas: Add efuse registers area
-742f789dd8b63 dt-bindings: hwlock: rcar: Add binding documentation for R-Car hardware spinlock
-80f31738655be dt-bindings: rtc: rcar: Add R-Car Gen5 RTC support
 064604aa92fb0 dt-bindings: window watchdog: Document R-Car X5H support
 568551619e42e dt-bindings: can: renesas,rcar-canfd: Document R-Car X5H support
 2ebeba3752c23 dt-bindings: spi: renesas,sh-msiof: Add support for R-Car X5H
