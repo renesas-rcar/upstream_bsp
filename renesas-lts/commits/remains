@@ -126,8 +126,6 @@ f018e70966742 rtc: rcar: Add support for interrupt requests generator and output
 d237466d40574 arm64: dts: renesas: ironhide-coresight: Add Coresight support
 35bf27d8ee50b arm64: defconfig: Enable ARM-SMMU-V3 as defconfig
 491e6f6c41851 iommu/arm-smmu-v3: Add suspend/resume support for Renesas RCar Gen5
-b5ebfbe9afee0 hwspinlock: rcar: Add support for R-Car X5H SoC
-c9ee6f8da9258 hwspinlock: rcar: Add support for R-Car Gen3 Hardware Spinlock
 0e019db4a1c22 arm64: dts: renesas: add scmi clock for RWDT driver
 57baa7b965bc5 renesas: watchdog: enable clock and support devicetree fallback rate
 7c9883b7f7d9c renesas: watchdog: add compatible string to support R-Car Gen5 Soc.
@@ -302,7 +300,6 @@ f648f715ebf51 dt-bindings: PCI: renesas: Add R-Car Gen5 PCIe 6.0 Host
 e01ad8b50eb2e dt-bindings: PCI: renesas: Add R-Car Gen5 PCIe 4.0 Host
 39084392d5f87 dt-bindings: rsnd: Add r8a78000 support
 6ab3ffd2aed3b dt-bindings: ufs: renesas: Add efuse registers area
-742f789dd8b63 dt-bindings: hwlock: rcar: Add binding documentation for R-Car hardware spinlock
 80f31738655be dt-bindings: rtc: rcar: Add R-Car Gen5 RTC support
 064604aa92fb0 dt-bindings: window watchdog: Document R-Car X5H support
 568551619e42e dt-bindings: can: renesas,rcar-canfd: Document R-Car X5H support

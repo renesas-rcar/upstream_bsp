@@ -1,5 +1,10 @@
 # Empty line below is needed
 
+# upstream: 0f63ba15dde8748ed3818fa6553c81b5296318f1 dt-bindings: soc: renesas: Document MFIS IP core
+742f789dd8b63 dt-bindings: hwlock: rcar: Add binding documentation for R-Car hardware spinlock
+# upstream: 504e3ae911d1398c2941063fcbe979a2e6aa90cd soc: renesas: rcar-mfis: Add hwspinlock support
+b5ebfbe9afee0 hwspinlock: rcar: Add support for R-Car X5H SoC
+c9ee6f8da9258 hwspinlock: rcar: Add support for R-Car Gen3 Hardware Spinlock
 # upstream: 91a7088096a49eb413ca11a9d80bc8ba60695c18 media: dt-bindings: Add property to describe CSI-2 C-PHY line orders
 b19186d95d663 dt-bindings: media: Define pin-swap order macro for R-Car X5H
 # upstream: 005fa59aeb86aa70815104d3d0c65ac0ea80513b soc: renesas: Add Renesas R-Car MFIS driver
