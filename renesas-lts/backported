@@ -364,8 +364,6 @@ v6.14     / dt-bindings: soc: renesas: Document R8A779G3 White Hawk Single
 v6.14     / dt-bindings: soc: renesas: Move R8A779G0 White Hawk up
 v6.15     / dt-bindings: timer: Correct indentation and style in DTS example
 v6.13     / of: property: use new of_graph functions
-v6.13     / of: property: add of_graph_get_next_port_endpoint()
-v6.13     / of: property: add of_graph_get_next_port()
 v6.13     / ASoC: rsnd: check rsnd_adg_clk_enable() return value
 v6.13     / ASoC: Rename "sh" to "renesas"
 v6.14     / arm64: dts: renesas: white-hawk-single: Add R-Car Sound support
