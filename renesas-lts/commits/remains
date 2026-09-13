@@ -117,12 +117,6 @@ edd311e97477e ASoC: renesas: Add R-Car X5H to R-Car Sound Driver
 db39bcc236d8f pwm: tpu: Add compatible string for X5H
 88b937b757c6e pwm: rcar: Add S2R support for R-Car X5H PWM driver
 b983d47b8e8f2 pwm: rcar: Add SCMI clock support for R-Car X5H PWM driver
-e302251e40c3e rtc: rcar: Add SCMI clock support for R-Car X5H RTC Driver
-db17ccea5af44 rtc: rcar: Add additional information for proc interface
-f018e70966742 rtc: rcar: Add support for interrupt requests generator and output pulse control
-1b175469ffe6c rtc: rcar: Update time reading procedure
-83c267fb1952c rtc: rcar: Add compatible string for X5H
-07c2583004656 rtc: Add Renesas R-Car RTC driver
 d237466d40574 arm64: dts: renesas: ironhide-coresight: Add Coresight support
 35bf27d8ee50b arm64: defconfig: Enable ARM-SMMU-V3 as defconfig
 491e6f6c41851 iommu/arm-smmu-v3: Add suspend/resume support for Renesas RCar Gen5
@@ -300,7 +294,6 @@ f648f715ebf51 dt-bindings: PCI: renesas: Add R-Car Gen5 PCIe 6.0 Host
 e01ad8b50eb2e dt-bindings: PCI: renesas: Add R-Car Gen5 PCIe 4.0 Host
 39084392d5f87 dt-bindings: rsnd: Add r8a78000 support
 6ab3ffd2aed3b dt-bindings: ufs: renesas: Add efuse registers area
-80f31738655be dt-bindings: rtc: rcar: Add R-Car Gen5 RTC support
 064604aa92fb0 dt-bindings: window watchdog: Document R-Car X5H support
 568551619e42e dt-bindings: can: renesas,rcar-canfd: Document R-Car X5H support
 2ebeba3752c23 dt-bindings: spi: renesas,sh-msiof: Add support for R-Car X5H
