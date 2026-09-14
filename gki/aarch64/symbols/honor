@@ -7,6 +7,8 @@
   tcp_sync_mss
   udp4_lib_lookup
   udp6_lib_lookup
+  __traceiter_android_vh_binder_before_restore_priority
+  __tracepoint_android_vh_binder_before_restore_priority
   __traceiter_android_vh_fuse_request_end
   __traceiter_android_vh_fuse_request_send
   __tracepoint_android_vh_fuse_request_end
@@ -185,6 +187,10 @@
   __tracepoint_block_rq_merge
   __traceiter_block_rq_requeue
   __tracepoint_block_rq_requeue
+  __traceiter_android_vh_mem_cgroup_over_high_reclaim
+  __tracepoint_android_vh_mem_cgroup_over_high_reclaim
+  __traceiter_android_vh_mem_cgroup_over_high_penalty
+  __tracepoint_android_vh_mem_cgroup_over_high_penalty
   mempool_exit
   dm_register_target
   dm_unregister_target
@@ -317,6 +323,8 @@
   __traceiter_android_vh_f2fs_printk
   __tracepoint_android_vh_f2fs_create
   __traceiter_android_vh_f2fs_create
+  __tracepoint_android_vh_io_statistics
+  __traceiter_android_vh_io_statistics
   wb_wakeup
   redirty_tail_locked
   bdi_list

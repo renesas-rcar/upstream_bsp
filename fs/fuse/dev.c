@@ -329,12 +329,20 @@ EXPORT_SYMBOL_GPL(fuse_req_hash);
 /*
  * A new request is available, wake fiq->waitq
  */
-static void fuse_dev_wake_and_unlock(struct fuse_iqueue *fiq)
+static void __fuse_dev_wake_and_unlock(struct fuse_iqueue *fiq, bool sync)
 __releases(fiq->lock)
 {
-	wake_up(&fiq->waitq);
+	if (sync)
+		wake_up_sync(&fiq->waitq);
+	else
+		wake_up(&fiq->waitq);
 	kill_fasync(&fiq->fasync, SIGIO, POLL_IN);
 	spin_unlock(&fiq->lock);
+}
+
+static void fuse_dev_wake_and_unlock(struct fuse_iqueue *fiq)
+{
+	__fuse_dev_wake_and_unlock(fiq, false);
 }
 
 void fuse_dev_queue_forget(struct fuse_iqueue *fiq,
@@ -395,11 +403,13 @@ EXPORT_SYMBOL_GPL(fuse_request_assign_unique);
 
 static void fuse_dev_queue_req(struct fuse_iqueue *fiq, struct fuse_req *req)
 {
+	bool sync = test_and_clear_bit(FR_SYNC_WAKEUP, &req->flags);
+
 	spin_lock(&fiq->lock);
 	if (fiq->connected) {
 		fuse_request_assign_unique_locked(fiq, req);
 		list_add_tail(&req->list, &fiq->pending);
-		fuse_dev_wake_and_unlock(fiq);
+		__fuse_dev_wake_and_unlock(fiq, sync);
 	} else {
 		spin_unlock(&fiq->lock);
 		req->out.h.error = -ENOTCONN;
@@ -603,6 +613,11 @@ static void __fuse_request_send(struct fuse_req *req)
 	/* acquire extra reference, since request is still needed after
 	   fuse_request_end() */
 	__fuse_get_request(req);
+	/*
+	 * This is a synchronous request: the caller will block waiting for
+	 * the answer. Hint the scheduler via wake_up_sync().
+	 */
+	set_bit(FR_SYNC_WAKEUP, &req->flags);
 	fuse_send_one(fiq, req);
 
 	request_wait_answer(req);
@@ -2270,9 +2285,14 @@ static ssize_t fuse_dev_do_write(struct fuse_dev *fud,
 	if (!err && req->in.h.opcode == FUSE_CANONICAL_PATH && !oh.error) {
 		char *path = (char *)req->args->out_args[0].value;
 
-		path[req->args->out_args[0].size - 1] = 0;
-		req->out.h.error =
-			kern_path(path, 0, req->args->canonical_path);
+		if (req->args->out_args[0].size == 0) {
+			req->out.h.error = -EBADMSG;
+		} else {
+			/* NUL-terminate inside the page; size<=PATH_MAX by construction */
+			path[min_t(unsigned int, req->args->out_args[0].size, PATH_MAX) - 1] = 0;
+			req->out.h.error =
+				kern_path(path, 0, req->args->canonical_path);
+		}
 	}
 
 	if (!err && (req->in.h.opcode == FUSE_LOOKUP ||
@@ -2282,8 +2302,19 @@ static ssize_t fuse_dev_do_write(struct fuse_dev *fud,
 				req->args->out_args[1].value;
 		struct fuse_entry_bpf *feb = container_of(febo, struct fuse_entry_bpf, out);
 
-		if (febo->backing_action == FUSE_ACTION_REPLACE)
-			feb->backing_file = fget(febo->backing_fd);
+		if (febo->backing_action == FUSE_ACTION_REPLACE) {
+			struct file *bf = fget(febo->backing_fd);
+
+			if (bf) {
+				if (bf->f_inode->i_sb->s_magic == FUSE_SUPER_MAGIC ||
+				    bf->f_inode->i_sb->s_stack_depth >=
+						FILESYSTEM_MAX_STACK_DEPTH) {
+					fput(bf);
+					bf = ERR_PTR(-ELOOP);
+				}
+			}
+			feb->backing_file = bf;
+		}
 		if (febo->bpf_action == FUSE_ACTION_REPLACE)
 			feb->bpf_file = fget(febo->bpf_fd);
 	}

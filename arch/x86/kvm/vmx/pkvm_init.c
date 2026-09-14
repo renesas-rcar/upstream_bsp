@@ -147,6 +147,7 @@ static __init int pkvm_setup_host_vmcs_config(void)
 	struct vmcs_config_setting setting = {
 		.cpu_based_vm_exec_ctrl_req =
 			CPU_BASED_INTR_WINDOW_EXITING |
+			CPU_BASED_USE_IO_BITMAPS |
 			CPU_BASED_USE_MSR_BITMAPS |
 			CPU_BASED_ACTIVATE_SECONDARY_CONTROLS,
 		.cpu_based_vm_exec_ctrl_opt = 0,
@@ -271,6 +272,15 @@ static __init int pkvm_setup_host_vm(struct pkvm_hyp *pkvm)
 		pr_err("no kvm_vmx memory\n");
 		return -ENOMEM;
 	}
+
+	kvmx->io_bitmap = pkvm_sym(pkvm_early_alloc_contig)(2);
+	if (!kvmx->io_bitmap) {
+		pr_err("no io_bitmap pages\n");
+		return -ENOMEM;
+	}
+
+	if (pkvm_sym(gsmi_present))
+		__set_bit(pkvm_sym(smi_command_port), kvmx->io_bitmap);
 
 	kvmx->kvm.arch.pkvm.handle = PKVM_HOST_VM_HANDLE;
 	/*
@@ -464,7 +474,7 @@ static __init int pkvm_setup_per_cpu(int cpu)
 	 * as the same percpu base will be used by the pKVM and the host in the
 	 * debug build.
 	 */
-	if (pkvm_sym(pkvm_setup_per_cpu)(cpu, __pa(__per_cpu_offset[cpu]),
+	if (pkvm_sym(pkvm_setup_per_cpu)(cpu, __per_cpu_offset[cpu],
 					 __pa(pcpu), __pa(vcpu))) {
 		pr_err("no percpu page for CPU%d\n", cpu);
 		return -ENOMEM;
@@ -1021,6 +1031,8 @@ static __init void init_host_state_area(struct vcpu_vmx *vmx)
 
 static __init void init_execution_control(struct vcpu_vmx *vmx)
 {
+	struct kvm_vmx *kvmx = to_kvm_vmx(vmx->vcpu.kvm);
+
 	/* Preemption timer is toggled dynamically */
 	pin_controls_set(vmx, pkvm_sym(host_vmcs_config).pin_based_exec_ctrl &
 			      ~PIN_BASED_VMX_PREEMPTION_TIMER);
@@ -1049,12 +1061,6 @@ static __init void init_execution_control(struct vcpu_vmx *vmx)
 	if (boot_cpu_has(X86_FEATURE_INTEL_PT))
 		secondary_exec_controls_clearbit(vmx, SECONDARY_EXEC_PT_USE_GPA);
 
-	/*
-	 * Shadow VMCS will not be used as the VMCS will be exposed via PV-based
-	 * method.
-	 */
-	vmcs_write64(VMCS_LINK_POINTER, INVALID_GPA);
-
 	/* Host VM owns cr3 */
 	vmcs_write32(CR3_TARGET_COUNT, 0);
 
@@ -1062,6 +1068,9 @@ static __init void init_execution_control(struct vcpu_vmx *vmx)
 	vmcs_write32(EXCEPTION_BITMAP, 0);
 
 	vmcs_write64(MSR_BITMAP, __pa(vmx->vmcs01.msr_bitmap));
+
+	vmcs_write64(IO_BITMAP_A, __pa(kvmx->io_bitmap));
+	vmcs_write64(IO_BITMAP_B, __pa((u8 *)kvmx->io_bitmap + PAGE_SIZE));
 
 	/*
 	 * Host VM owns cr0 and cr4 except VMXE bit.
@@ -1130,6 +1139,7 @@ static __init void init_vmentry_control(struct vcpu_vmx *vmx)
 static __init int pkvm_host_init_vmx(struct vcpu_vmx *vmx)
 {
 	vmx->loaded_vmcs = &vmx->vmcs01;
+	vmcs_clear(vmx->loaded_vmcs->vmcs);
 	vmcs_load(vmx->loaded_vmcs->vmcs);
 	vmx->loaded_vmcs->cpu = smp_processor_id();
 
@@ -1173,16 +1183,11 @@ static noinline int local_deprivilege_cpu(void)
 static DEFINE_PER_CPU(bool, deprivileged);
 static __init void pkvm_host_reprivilege_cpu(void *data)
 {
-	unsigned long flags;
-	int cpu = get_cpu();
+	int cpu = smp_processor_id();
 	int ret;
 
-	if (!this_cpu_read(deprivileged)) {
-		put_cpu();
+	if (!this_cpu_read(deprivileged))
 		return;
-	}
-
-	local_irq_save(flags);
 
 	/*
 	 * Load the RW GDT page for reprivilege code
@@ -1209,12 +1214,9 @@ static __init void pkvm_host_reprivilege_cpu(void *data)
 		this_cpu_write(deprivileged, false);
 		kvm_cpu_vmxoff();
 		pr_info("%s: CPU%d back in host mode\n", __func__, cpu);
-	} else {
-		pr_warn("%s: CPU%d failed to reprivilege(err=%d)\n", __func__, cpu, ret);
 	}
 
-	local_irq_restore(flags);
-	put_cpu();
+	*(int *)data = ret;
 }
 
 static __init void pkvm_host_reprivilege_cpus(void)
@@ -1222,11 +1224,16 @@ static __init void pkvm_host_reprivilege_cpus(void)
 	int cpu;
 
 	for_each_possible_cpu(cpu) {
+		int ret, reprivilege_ret = 0;
+
 		if (!per_cpu(deprivileged, cpu))
 			continue;
 
-		smp_call_function_single(cpu, pkvm_host_reprivilege_cpu,
-					 NULL, true);
+		ret = smp_call_function_single(cpu, pkvm_host_reprivilege_cpu,
+					       &reprivilege_ret, true);
+		if (ret || reprivilege_ret)
+			panic("CPU%d failed to reprivilege(smp_call=%d, reprivilege=%d)\n",
+			      cpu, ret, reprivilege_ret);
 	}
 }
 
@@ -1311,6 +1318,13 @@ static void do_pkvm_hyp_init(void *data)
 			.va	= (unsigned long)__va(pkvm_mem_base + data_size),
 			.pa	= pkvm_mem_base + data_size,
 			.size	= pkvm_mem_size - data_size,
+			.prot	= pgprot_val(PAGE_KERNEL),
+		},
+		{
+			.type	= PKVM_RESERVED_USED_MEMORY,
+			.va	= (unsigned long)__va(pkvm_mem32_base),
+			.pa	= pkvm_mem32_base,
+			.size	= pkvm_mem32_size,
 			.prot	= pgprot_val(PAGE_KERNEL),
 		},
 		{
@@ -1453,6 +1467,14 @@ int __init vmx_pkvm_init(void)
 
 	pkvm_setup_syms();
 
+	/*
+	 * Must be before pkvm_setup_host_vm(), since io_bitmap setup depends
+	 * on whether gsmi is present or not.
+	 */
+	ret = pkvm_gsmi_init();
+	if (ret)
+		goto out;
+
 	ret = pkvm_setup_host_vmcs_config();
 	if (ret) {
 		pr_err("setup host vmcs config failed\n");
@@ -1539,6 +1561,8 @@ int __init vmx_pkvm_init(void)
 	 */
 	WARN_ON(set_memory_np((unsigned long)__va(pkvm_mem_base),
 			      pkvm_mem_size >> PAGE_SHIFT));
+	WARN_ON(set_memory_np((unsigned long)__va(pkvm_mem32_base),
+			      pkvm_mem32_size >> PAGE_SHIFT));
 
 	pkvm_hypercall(init_finalize);
 

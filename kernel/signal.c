@@ -69,6 +69,8 @@
  * SLAB caches for signal bits.
  */
 
+EXPORT_TRACEPOINT_SYMBOL_GPL(signal_generate);
+
 static struct kmem_cache *sigqueue_cachep;
 
 int print_fatal_signals __read_mostly;
@@ -1372,8 +1374,16 @@ struct sighand_struct *__lock_task_sighand(struct task_struct *tsk,
 	rcu_read_lock();
 	for (;;) {
 		sighand = rcu_dereference(tsk->sighand);
-		if (unlikely(sighand == NULL))
+		if (unlikely(sighand == NULL)) {
+			/*
+			 * Pairs with the smp_store_release() in
+			 * __exit_signal().  It ensures that all state
+			 * modifications to the task preceeding the store are
+			 * visible to the callers of lock_task_sighand().
+			 */
+			smp_acquire__after_ctrl_dep();
 			break;
+		}
 
 		/*
 		 * This sighand can be already freed and even reused, but
