@@ -44,6 +44,11 @@ struct f2fs_folio_state {
 	unsigned int		read_pages_pending;
 };
 
+struct f2fs_bio {
+	struct work_struct work;
+	struct bio bio;
+};
+
 #define	F2FS_BIO_POOL_SIZE	NR_CURSEG_TYPE
 
 EXPORT_TRACEPOINT_SYMBOL_GPL(f2fs_write_begin);
@@ -51,7 +56,7 @@ EXPORT_TRACEPOINT_SYMBOL_GPL(f2fs_write_begin);
 int __init f2fs_init_bioset(void)
 {
 	return bioset_init(&f2fs_bioset, F2FS_BIO_POOL_SIZE,
-					0, BIOSET_NEED_BVECS);
+			   offsetof(struct f2fs_bio, bio), BIOSET_NEED_BVECS);
 }
 
 void f2fs_destroy_bioset(void)
@@ -557,6 +562,7 @@ void f2fs_submit_read_bio(struct f2fs_sb_info *sbi, struct bio *bio,
 	trace_f2fs_submit_read_bio(sbi->sb, type, bio);
 
 	iostat_update_submit_ctx(bio, type);
+	trace_android_vh_f2fs_iostat_submit(sbi->sb, type, bio);
 	submit_bio(bio);
 }
 
@@ -566,6 +572,7 @@ static void f2fs_submit_write_bio(struct f2fs_sb_info *sbi, struct bio *bio,
 	WARN_ON_ONCE(is_read_io(bio_op(bio)));
 	trace_f2fs_submit_write_bio(sbi->sb, type, bio);
 	iostat_update_submit_ctx(bio, type);
+	trace_android_vh_f2fs_iostat_submit(sbi->sb, type, bio);
 	submit_bio(bio);
 }
 
@@ -1164,6 +1171,8 @@ static void __set_data_blkaddr(struct dnode_of_data *dn, block_t blkaddr)
 {
 	__le32 *addr = get_dnode_addr(dn->inode, dn->node_page);
 
+	trace_android_vh_f2fs_dnode_set_blkaddr(dn->inode, blkaddr);
+
 	dn->data_blkaddr = blkaddr;
 	addr[dn->ofs_in_node] = cpu_to_le32(dn->data_blkaddr);
 }
@@ -1263,10 +1272,11 @@ retry:
 
 	if (folio_test_large(folio)) {
 		pgoff_t folio_index = mapping_align_index(mapping, index);
+		unsigned long nr_pages = folio_nr_pages(folio);
 
 		f2fs_folio_put(folio, true);
 		invalidate_inode_pages2_range(mapping, folio_index,
-				folio_index + folio_nr_pages(folio) - 1);
+				folio_index + nr_pages - 1);
 		f2fs_io_schedule_timeout(DEFAULT_IO_TIMEOUT);
 		goto retry;
 	}
@@ -3569,6 +3579,7 @@ static int __f2fs_write_data_pages(struct address_space *mapping,
 	struct blk_plug plug;
 	int ret;
 	bool locked = false;
+	bool wb_done = false;
 
 	/* skip writing if there is no dirty page in this inode */
 	if (!get_dirty_pages(inode) && wbc->sync_mode == WB_SYNC_NONE)
@@ -3608,7 +3619,14 @@ static int __f2fs_write_data_pages(struct address_space *mapping,
 	account_writeback(inode, true);
 
 	blk_start_plug(&plug);
+
+	trace_android_rvh_f2fs_write_cache_pages(mapping, wbc, &ret, &wb_done);
+	if (wb_done)
+		goto blk_finish;
+
 	ret = f2fs_write_cache_pages(mapping, wbc, io_type);
+
+blk_finish:
 	blk_finish_plug(&plug);
 
 	account_writeback(inode, false);
