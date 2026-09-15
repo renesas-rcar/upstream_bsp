@@ -69,6 +69,12 @@
 
 		> git fetch --tags --force ${upstream_bsp}
 
+* Test Result
+
+	You can see the Test Result at
+
+	https://github.com/renesas-rcar/upstream_bsp/wiki
+
 * renesas_defconfig
 
 	You can find "renesas_defconfig" for Renesas SoC/Board which removed
