@@ -1,3 +1,48 @@
+v6.19     / soc: renesas: Use bitfield helpers
+v6.19     / clk: renesas: Use bitfield helpers
+v6.19     / ALSA: usb-audio: Convert to common field_{get,prep}() helpers
+v6.19     / pinctrl: ma35: Convert to common field_{get,prep}() helpers
+v6.19     / iio: mlx90614: Convert to common field_{get,prep}() helpers
+v6.19     / iio: dac: Convert to common field_prep() helper
+v6.19     / gpio: aspeed: Convert to common field_{get,prep}() helpers
+v6.19     / EDAC/ie31200: Convert to common field_get() helper
+v6.19     / crypto: qat - convert to common field_get() helper
+v6.19     / clk: at91: Convert to common field_{get,prep}() helpers
+v6.19     / ALSA: usb-audio: #undef field_{get,prep}() before local definition
+v6.19     / pinctrl: ma35: #undef field_{get,prep}() before local definition
+v6.19     / iio: mlx90614: #undef field_{get,prep}() before local definition
+v6.19     / iio: dac: ad3530r: #undef field_prep() before local definition
+v6.19     / gpio: aspeed: #undef field_{get,prep}() before local definition
+v6.19     / EDAC/ie31200: #undef field_get() before local definition
+v6.19     / crypto: qat - #undef field_get() before local definition
+v6.19     / clk: at91: pmc: #undef field_{get,prep}() before definition
+v7.1      / PCI: dwc: Disable BARs in common code instead of in each glue driver
+v6.19     / usb: dwc3: eic7700: Add EIC7700 USB driver
+v6.19     / usb: dwc3: dwc3-generic-plat: Add layerscape dwc3 support
+v6.19     / usb: dwc3: Add software-managed properties for flattened model
+v6.19     / soc: renesas: rz-sysc: Convert to common field_get() helper
+v6.19     / bitfield: Add non-constant field_{prep,get}() helpers
+v6.19     / bitfield: Add less-checking __FIELD_{GET,PREP}()
+Local     / PCI: rcar-gen4: Add support for R-Car X5H PCIe4
+Local     / PCI: rcar-gen4: Handle PERST# via reset subsystem
+Local     / PCI: rcar-gen4: Add .speed_control() callback
+Local     / PCI: rcar-gen4: Add .deinit() callback
+Local     / PCI: rcar-gen4: Rework .additional_common_init() into .init()
+Local     / dt-bindings: PCI: rcar-gen4-pci-host: Add R-Car X5H PCIe4 compatible
+Local     / PCI: rcar-gen4: Use .post_deinit() to handle dw_pcie_ep_init() failures
+Local     / PCI: dwc: Add dw_pcie_ep_ops->post_deinit() callback
+Local     / PCI: dwc: Handle return value from endpoint .pre_init callback
+Local     / PCI: dwc: Handle return value from endpoint .init callback
+Local     / dt-bindings: PCI: rcar-gen4-pci-host: Document optional msi-parent
+Local     / PCI: rcar-gen4: Configure AXIINTC if iMSI-RX is not used
+Local     / PCI: dwc: Move iMSI-RX check before calling 'pp->ops->init()'
+v7.0      / PCI: dwc: Rename dw_pcie_rp::has_msi_ctrl to dw_pcie_rp::use_imsi_rx for clarity
+v7.0      / PCI: dwc: Remove MSI/MSIX capability for Root Port if iMSI-RX is used as MSI controller
+Local     / irqchip/gic-v3: Add Renesas R-Car Gen4 erratum workaround
+Local     / irqchip/gic-v3: Refactor GIC600 limited to 32bit PA erratum handling
+Local     / gpio: rcar: Add R-Car X5H (R8A78000) support
+Local     / dt-bindings: gpio: renesas,rcar-gpio: Document R-Car X5H (R8A78000) support
+Local     / gpio: rcar: Drop unused FILONOFF macro
 Local     / ASoC: ak4619: Add suspend and resume callbacks
 Local     / clk: renesas: r8a779g0: Add ZG clocks
 Local     / clk: renesas: rcar-gen4: Tidy up DEF_GEN4_Z()
