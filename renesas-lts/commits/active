@@ -1,13 +1,6 @@
 # Empty line below is needed
 
 # Wolfram
-# git://git.kernel.org/pub/scm/linux/kernel/git/wsa/linux.git renesas/x5h/i2c-experimental
-# - lore: 20260909094009.2167-6-wsa+renesas@sang-engineering.com
-6dd61b9a71617 dmaengine: rcar-dmac: Enable channel 0 when using SMMU
-7da2c066c191c dt-bindings: renesas,rcar-dmac: Add R-Car X5H SoC support
-6a44573397f60 dmaengine: rcar-dmac: Add support for X5H SoC
-
-# Wolfram
 # git://git.kernel.org/pub/scm/linux/kernel/git/wsa/linux.git renesas/x5h/rtc-experimental
 # - lore: 20260917111349.52250-1-wsa+renesas@sang-engineering.com
 80f31738655be dt-bindings: rtc: rcar: Add R-Car Gen5 RTC support
