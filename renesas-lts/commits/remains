@@ -233,16 +233,6 @@ aa9efcb4a4199 wwdt: rcar: add suspend/resume support
 66f594fe8aec4 wwdt: rcar: add window watchdog support on R-Car X5H
 9fa86c4e31cf8 MAINTAINERS: add Renesas WWDT driver
 0fb4821812362 arm64: dts: ironhide: drop unused I2C sensor node in I3C
-5c28e19452016 i3cdev: i3c: Add sysfs attribute for IBI handling in userspace
-d05fe7100a5be i3c: rcar: add suspend/resume support
-74cba0f5d76ae i3c: rcar: Add support for in-band interrupts
-4f2b8b6329870 i3c: rcar: add "force-i2c" DT property for testing I2C mode
-49619329c5120 i3c: add i3cdev module to expose i3c dev in /dev
-de9f99ad308c9 i3c: master: add i3c_for_each_dev helper
-d04030e7de8b0 i3c: master: export i3c_masterdev_type
-28637409e70a0 i3c: rcar: feat: add I2C legacy support
-9fe94ef68a2f2 i3c: rcar: add I3C driver support for R-Car X5H
-64eec21623eab dt-bindings: i3c: Add binding for Renesas R-Car I3C master controller
 7f17b5cba2d14 can: rcar_canfd: set clock rate to match hardware specification
 cf95bd44b7149 arm64: dts: r8a78000: add fallback clockrate for CANFD driver
 ca14d0ada85ac can: rcar_canfd: Register each IRQ number for each channel on R-Car X5H
