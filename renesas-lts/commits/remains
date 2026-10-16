@@ -1,3 +1,4 @@
+f018e70966742 rtc: rcar: Add support for interrupt requests generator and output pulse control
 e1e83b5711610 arm64: dts: renesas: r8j78070-perceptor: Enable RPMsg support
 9fd7508f2a71e arm64: dts: renesas: r8a78000: Add RPMsg over UCIe nodes
 2f4c20cb0215d virtio: ring: Use phys_to_dma() for the physical-address mapping
