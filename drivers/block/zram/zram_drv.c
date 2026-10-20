@@ -1279,8 +1279,10 @@ int zram_prefetch_slots(struct zram *zram, struct zram_pp_ctl *ctl)
 
 		if (!page) {
 			page = alloc_page(GFP_KERNEL);
-			if (!page)
-				return -ENOMEM;
+			if (!page) {
+				ret = -ENOMEM;
+				break;
+			}
 		}
 
 		/* Read the page from backing device and restore to zram */
@@ -1404,6 +1406,9 @@ next:
 	 */
 	if (req)
 		release_wb_req(req);
+
+	if (blk_idx != INVALID_BDEV_BLOCK)
+		zram_release_bdev_block(zram, blk_idx);
 
 	while (atomic_read(&wb_ctl->num_inflight) > 0) {
 		wait_event(wb_ctl->done_wait, !list_empty(&wb_ctl->done_reqs));
@@ -2421,6 +2426,8 @@ static int read_from_zspool_raw(struct zram *zram, struct page *page, u32 index)
 	memcpy_to_page(page, 0, src, size);
 	zs_obj_read_end(zram->mem_pool, handle, src);
 	zcomp_stream_put(zstrm);
+
+	memzero_page(page, size, PAGE_SIZE - size);
 
 	return 0;
 }
