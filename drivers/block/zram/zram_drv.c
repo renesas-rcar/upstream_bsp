@@ -1264,8 +1264,10 @@ int zram_prefetch_slots(struct zram *zram, struct zram_pp_ctl *ctl)
 
 		if (!page) {
 			page = alloc_page(GFP_KERNEL);
-			if (!page)
-				return -ENOMEM;
+			if (!page) {
+				ret = -ENOMEM;
+				break;
+			}
 		}
 
 		/* Read the page from backing device and restore to zram */
@@ -3393,6 +3395,7 @@ static const struct block_device_operations zram_devops = {
 	.submit_bio = zram_submit_bio,
 	.swap_slot_free_notify = zram_slot_free_notify,
 	.ioctl = zram_ioctl,
+	.compat_ioctl = blkdev_compat_ptr_ioctl,
 	.owner = THIS_MODULE
 };
 
