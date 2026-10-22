@@ -1,3 +1,10 @@
+Local     / arm64: dts: renesas: ironhide: Align inline ECC carveout sizes with bootloader settings
+v7.2      / arm64: dts: renesas: ironhide: Describe inline ECC carveouts
+Local     / clk: renesas: r8a78000: Add SGASYNCD8_PERW_BUS
+Local     / arm64: dts: renesas: r8a78000: Add I2C nodes
+Local     / arm64: dts: renesas: r8a78000: Add MSIOF nodes
+Local     / dt-bindings: clock: renesas,r8a78000-cpg: Add MSIOF clocks
+Local     / pmdomain: renesas: r8a78000: Fix lockdep false positive
 v6.19     / soc: renesas: Use bitfield helpers
 v6.19     / clk: renesas: Use bitfield helpers
 v6.19     / ALSA: usb-audio: Convert to common field_{get,prep}() helpers
@@ -16,7 +23,6 @@ v6.19     / gpio: aspeed: #undef field_{get,prep}() before local definition
 v6.19     / EDAC/ie31200: #undef field_get() before local definition
 v6.19     / crypto: qat - #undef field_get() before local definition
 v6.19     / clk: at91: pmc: #undef field_{get,prep}() before definition
-v7.1      / PCI: dwc: Disable BARs in common code instead of in each glue driver
 v6.19     / usb: dwc3: eic7700: Add EIC7700 USB driver
 v6.19     / usb: dwc3: dwc3-generic-plat: Add layerscape dwc3 support
 v6.19     / usb: dwc3: Add software-managed properties for flattened model
@@ -28,21 +34,22 @@ Local     / PCI: rcar-gen4: Handle PERST# via reset subsystem
 Local     / PCI: rcar-gen4: Add .speed_control() callback
 Local     / PCI: rcar-gen4: Add .deinit() callback
 Local     / PCI: rcar-gen4: Rework .additional_common_init() into .init()
+v7.1      / PCI: dwc: Disable BARs in common code instead of in each glue driver
 Local     / dt-bindings: PCI: rcar-gen4-pci-host: Add R-Car X5H PCIe4 compatible
 Local     / PCI: rcar-gen4: Use .post_deinit() to handle dw_pcie_ep_init() failures
 Local     / PCI: dwc: Add dw_pcie_ep_ops->post_deinit() callback
-Local     / PCI: dwc: Handle return value from endpoint .pre_init callback
-Local     / PCI: dwc: Handle return value from endpoint .init callback
-Local     / dt-bindings: PCI: rcar-gen4-pci-host: Document optional msi-parent
-Local     / PCI: rcar-gen4: Configure AXIINTC if iMSI-RX is not used
-Local     / PCI: dwc: Move iMSI-RX check before calling 'pp->ops->init()'
+v7.3      / PCI: dwc: Handle return value from endpoint .pre_init callback
+v7.3      / PCI: dwc: Handle return value from endpoint .init callback
+v7.3      / dt-bindings: PCI: rcar-gen4-pci-host: Document optional msi-parent
+v7.3      / PCI: rcar-gen4: Configure AXIINTC if iMSI-RX is not used
+v7.3      / PCI: dwc: Move iMSI-RX check before calling 'pp->ops->init()'
 v7.0      / PCI: dwc: Rename dw_pcie_rp::has_msi_ctrl to dw_pcie_rp::use_imsi_rx for clarity
 v7.0      / PCI: dwc: Remove MSI/MSIX capability for Root Port if iMSI-RX is used as MSI controller
-Local     / irqchip/gic-v3: Add Renesas R-Car Gen4 erratum workaround
-Local     / irqchip/gic-v3: Refactor GIC600 limited to 32bit PA erratum handling
+v7.3      / irqchip/gic-v3: Add Renesas R-Car Gen4 erratum workaround
+v7.3      / irqchip/gic-v3: Refactor GIC600 limited to 32bit PA erratum handling
 Local     / gpio: rcar: Add R-Car X5H (R8A78000) support
 Local     / dt-bindings: gpio: renesas,rcar-gpio: Document R-Car X5H (R8A78000) support
-Local     / gpio: rcar: Drop unused FILONOFF macro
+v7.3      / gpio: rcar: Drop unused FILONOFF macro
 Local     / ASoC: ak4619: Add suspend and resume callbacks
 Local     / clk: renesas: r8a779g0: Add ZG clocks
 Local     / clk: renesas: rcar-gen4: Tidy up DEF_GEN4_Z()
@@ -51,35 +58,35 @@ v6.19     / clk: renesas: r8a779a0: Add ZG Core clock
 v6.19     / dt-bindings: clock: r8a779a0: Add ZG core clock
 v6.19     / clk: renesas: rcar-gen4: Add support for clock dividers in FRQCRB
 v7.2      / clk: renesas: r8a779g0: Add DSC clock
-Local     / media: rppx1: bls: read the raw pattern from the PRE2 acquisition module
-Local     / media: rppx1: describe the MAIN_POST white balance gains block
-Local     / media: rppx1: lin: Add support for gamma sensor linearization
-Local     / media: rppx1: ga: Add support for gamma out correction
-Local     / media: rppx1: lsc: Add support for lens shade correction
-Local     / media: rppx1: ccor: Add support for color correction matrix
-Local     / media: rppx1: bls: Add support for black level compensation
-Local     / media: rppx1: hist: Add support histogram measurement
-Local     / media: rppx1: exm: Add support for exposure measurement
-Local     / media: rppx1: awbg: Add support for white balance gain settings
-Local     / media: rppx1: wbmeas: Add support for white balance measurement
-Local     / media: rcar-isp: Add support for ISPCORE
-Local     / media: rppx1: Add framework to support Dreamchip RPPX1 ISP
-Local     / media: uapi: Add extensible param and stats blocks for RPPX1
-Local     / media: Add RPPX1_PARAMS and RPPX1_STATS meta formats
-Local     / media: uapi: v4l2-isp: Add extensible statistics
-Local     / media: v4l2-isp: Add helpers for stats buffer
-Local     / media: v4l2-isp: Add per-block validation callback
-Local     / media: v4l2-isp: Rename v4l2_isp_params_buffer_size
+v7.3      / media: rppx1: bls: read the raw pattern from the PRE2 acquisition module
+v7.3      / media: rppx1: describe the MAIN_POST white balance gains block
+v7.3      / media: rppx1: lin: Add support for gamma sensor linearization
+v7.3      / media: rppx1: ga: Add support for gamma out correction
+v7.3      / media: rppx1: lsc: Add support for lens shade correction
+v7.3      / media: rppx1: ccor: Add support for color correction matrix
+v7.3      / media: rppx1: bls: Add support for black level compensation
+v7.3      / media: rppx1: hist: Add support histogram measurement
+v7.3      / media: rppx1: exm: Add support for exposure measurement
+v7.3      / media: rppx1: awbg: Add support for white balance gain settings
+v7.3      / media: rppx1: wbmeas: Add support for white balance measurement
+v7.3      / media: rcar-isp: Add support for ISPCORE
+v7.3      / media: rppx1: Add framework to support Dreamchip RPPX1 ISP
+v7.3      / media: uapi: Add extensible param and stats blocks for RPPX1
+v7.3      / media: Add RPPX1_PARAMS and RPPX1_STATS meta formats
+v7.3      / media: uapi: v4l2-isp: Add extensible statistics
+v7.3      / media: v4l2-isp: Add helpers for stats buffer
+v7.3      / media: v4l2-isp: Add per-block validation callback
+v7.3      / media: v4l2-isp: Rename v4l2_isp_params_buffer_size
 v6.19     / media: v4l2-isp: Rename block_info to block_type_info
 Local     / arm64: dts: renesas: sparrow-hawk: Always enable edge connector I2C busses
 v7.2      / media: rcar-vin: Drop min_queued_buffers
-Local     / PCI: rcar-gen4: Limit Max_Read_Request_Size and Max_Payload_Size to 256 Bytes
+Local     / PCI: rcar-gen4: Limit Max_Read_Request_Size to 256 Bytes
 Local     / arm64: dts: renesas: r8a78000: Add MDLC nodes
 Local     / arm64: dts: renesas: r8a78000: Add CPG node
-Local     / pmdomain: renesas: Add R-Car X5H MDLC driver
-Local     / dt-bindings: power: Document Renesas R-Car X5H Module Controller
-Local     / clk: renesas: Add R-Car X5H CPG driver
-Local     / dt-bindings: clock: Document Renesas R-Car X5H Clock Pulse Generator
+v7.3      / pmdomain: renesas: Add R-Car X5H MDLC driver
+v7.3      / dt-bindings: power: Document Renesas R-Car X5H Module Controller
+v7.3      / clk: renesas: Add R-Car X5H CPG driver
+v7.3      / dt-bindings: clock: Document Renesas R-Car X5H Clock Pulse Generator
 v6.19     / dma-buf: heaps: cma: Create CMA heap for each CMA reserved region
 v6.19     / doc: dma-buf: List the heaps by name
 v6.19     / Documentation: dma-buf: heaps: Add naming guidelines
@@ -93,13 +100,13 @@ v6.19     / mmc: renesas_sdhi: Switch to SYSTEM_SLEEP_PM_OPS()/RUNTIME_PM_OPS() 
 v6.19     / mmc: renesas_sdhi: enable bigger data ports where available
 v6.19     / mmc: renesas_sdhi: Deassert the reset signal on probe
 v7.2      / firmware: arm_scmi: Rename struct scmi_revision_info to scmi_base_info
-Local     / arm64: dts: renesas: r8a78000: Enable application CPU cores via PSCI
+v7.3      / arm64: dts: renesas: r8a78000: Enable application CPU cores via PSCI
 v7.0      / can: rcar_canfd: Add support for FD-Only mode
 v6.19     / can: rcar_canfd: Add suspend/resume support
 v6.19     / can: rcar_canfd: Convert to DEFINE_SIMPLE_DEV_PM_OPS()
 v6.19     / can: rcar_canfd: Invert CAN clock and close_candev() order
 v7.2      / soc: renesas: rcar-mfis: Add R-Car V4H/V4M support
-Local     / dt-bindings: soc: renesas: mfis: add R-Car V4H/V4M support
+v7.2      / dt-bindings: soc: renesas: mfis: Add R-Car V4H/V4M support
 v7.2      / arm64: dts: renesas: ironhide: Enable to use SCMI
 v7.2      / arm64: dts: renesas: ironhide: Describe all reserved memory
 v7.2      / arm64: dts: renesas: r8a78000: Add MFIS, MFIS-SCP, and transport nodes
